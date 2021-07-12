@@ -1,6 +1,6 @@
 Copyright (c) 2021 Hunter Schafer
 
----------------------------------- Commentary 
+---------------------------------- Commentary ----------------------------------
 
 The license for this repo is much like the license for [Crafting Interpreters](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE). 
 
