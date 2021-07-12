@@ -1,10 +1,13 @@
 Copyright (c) 2021 Hunter Schafer
 
----------------------------------- Commentary ----------------------------------
+---------------------------------- Commentary 
+
 The license for this repo is much like the license for [Crafting Interpreters](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE). 
 
-Most of the content of this repo is text and video that I created, so feels a bit more "me" than just any code in the book. 
-So like Crafting Interpreters, we will use two licenses, one for the "text" of the book and the other for the surrounding code.
+Most of the content of this repo is text and video that I created, so feels 
+a bit more "me" than just any code in the book. So like Crafting Interpreters, 
+we will use two licenses, one for the "text" of the book and the other for the 
+surrounding code.
 
 ---------------------------------- License(s) ----------------------------------
 
