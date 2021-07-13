@@ -87,10 +87,14 @@ class EdStemXMLVisitor:
             self.visit_callout(element)
         elif element.tag == "code":
             self.visit_code(element)
+        elif element.tag == "figure":
+            self.visit_figure(element)
         elif element.tag == "heading":
             self.visit_heading(element)
         elif element.tag == "italic":
             self.visit_italic(element)
+        elif element.tag == "link":
+            self.visit_link(element)
         elif element.tag == "list":
             self.visit_list(element)
         elif element.tag == "paragraph":
@@ -130,6 +134,19 @@ class EdStemXMLVisitor:
     def visit_code(self, element):
         self._print(f"`{element.text}`")
 
+    def visit_figure(self, element):
+        img = element.find("image")
+        src = img.get("src")
+        alt = img.get("alt", "TODO")
+        width = img.get("width")
+
+        self._print("```{image} " + src)
+        self._print(f":alt: {alt}")
+        self._print(f":width: {width}")
+        self._print(f":align: center")
+        self._print("```")
+        self._print()
+
     def visit_heading(self, element):
         level = int(element.get("level"))
         level = level + self.starting_heading_level
@@ -147,6 +164,9 @@ class EdStemXMLVisitor:
 
     def visit_italic(self, element):
         self._print(f"*{element.text}*")
+
+    def visit_link(self, element):
+        self._print(f"[{element.get('text')}]({element.get('href')})")
 
     def visit_list(self, element):
         is_numbered = element.get("style") == "numbered"
