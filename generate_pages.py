@@ -220,9 +220,13 @@ class EdStemXMLVisitor:
         self._print()
 
     def visit_video(self, element):
+        # Have to change the /share/ of the URL to /embed
+        src = element.get("src")
+        src = src.replace("/share/", "/embed/")
+
         video_tag = f"""
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="{element.get('src')}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="{src}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>"""
         self._print(video_tag)
         self._print()
