@@ -11,6 +11,8 @@ from pytablewriter import MarkdownTableWriter
 LESSONS_DIR = "../lesson_data"
 OUTPUT_DIR = "book_source/source/"
 
+IGNORE_LESSONS = ["lesson-28-web-scraping-not-worth-credit"]
+
 
 def slugify(value, allow_unicode=False):
     """
@@ -263,7 +265,7 @@ def main():
 
         for lesson in module["lessons"]:
 
-            if "lesson" in lesson["id"]:
+            if "lesson" in lesson["id"] and lesson["id"] not in IGNORE_LESSONS:
                 lesson_ids.append(lesson["id"])
 
                 # Make a folder for each lesson
