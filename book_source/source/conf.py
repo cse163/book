@@ -19,7 +19,6 @@
 
 project = "Intermediate Data Programming"
 copyright = "2021, Hunter Schafer"
-author = "Hunter Schafer"
 
 # The full version, including alpha/beta/rc tags
 release = "0.0.0"
@@ -57,5 +56,13 @@ html_theme = "sphinx_book_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-# -- Configuring Sidebar -------------------------------------------------
 html_title = project
+html_logo = "_static/logo.png"
+
+# -- Configuring BookTheme -------------------------------------------------
+html_theme_options = {
+    "repository_url": "https://github.com/cse163/book",
+    "use_repository_button": True,
+    "use_issues_button": True,
+    "use_edit_page_button": True,
+}
