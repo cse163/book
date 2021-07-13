@@ -108,9 +108,21 @@ class EdStemXMLVisitor:
         self._print(f"**{element.text}**")
 
     def visit_callout(self, element, print_stripped=True):
-        callout_type = element.get("type")
+        # Get type of callout
+        callout_type_translations = {
+            "success": "tip",
+            "info": "note",
+            "warning": "warning",
+            "error": "error",
+        }
 
-        self._print("```{" + callout_type + "}")
+        callout_type = callout_type_translations[element.get("type")]
+
+        # Print callout
+        self._print("```{admonition} " + callout_type.capitalize())
+        self._print(f":class: {callout_type}")
+        self._print()
+
         self._visit_mixed_body(element, print_stripped=print_stripped)
         self._print("```")
         self._print()
