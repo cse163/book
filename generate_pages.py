@@ -197,6 +197,10 @@ class EdStemXMLVisitor:
         self._print("````")
         self._print()
 
+    def visit_underline(self, element):
+        # There is no underline in MyST so we will bold instead
+        self.visit_bold(element)
+
     def visit_snippet(self, element):
         # TODO do I need to turn py to python?
         language = element.get("language")
