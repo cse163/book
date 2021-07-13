@@ -1,0 +1,1234 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defining Fairness &#8212; Intermediate Data Programming</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tradeoff Between Accuracy and Fairness" href="tradeoff-between-accuracy-and-fairness.html" />
+    <link rel="prev" title="📚 Lesson 28: Fairness" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Intermediate Data Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-1-introduction-to-python/index.html">
+   Week 1: Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-1-introduction-to-python/lesson-3-strings-and-lists/index.html">
+     📚 Lesson 3: Strings and Lists
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-1-introduction-to-python/lesson-3-strings-and-lists/strings.html">
+       Strings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-1-introduction-to-python/lesson-3-strings-and-lists/string-functions.html">
+       String Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-1-introduction-to-python/lesson-3-strings-and-lists/slicing-strings.html">
+       Slicing Strings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-1-introduction-to-python/lesson-3-strings-and-lists/negative-indices.html">
+       Negative Indices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-1-introduction-to-python/lesson-3-strings-and-lists/lists.html">
+       Lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-1-introduction-to-python/lesson-3-strings-and-lists/documentation-matters.html">
+       Documentation Matters
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-1-introduction-to-python/lesson-3-strings-and-lists/none.html">
+       None
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-2-data-structures-and-files/index.html">
+   Week 2: Data Structures and Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-4-lists-and-files/index.html">
+     📚 Lesson 4: Lists and Files
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-4-lists-and-files/file-processing.html">
+       File Processing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-4-lists-and-files/advanced-lists.html">
+       Advanced Lists
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/index.html">
+     📚 Lesson 5: Data Structures - Tuple, Set, Dict
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/recap-lists.html">
+       Recap: Lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/list-comprehensions.html">
+       List Comprehensions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/tuple.html">
+       Tuple
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/dictionaries-dict.html">
+       Dictionaries (dict)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-6-csv-data/index.html">
+     📚 Lesson 6: CSV Data
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-6-csv-data/dictionary-methods.html">
+       Dictionary Methods
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-6-csv-data/comma-separated-values-csv.html">
+       Comma Separated Values (CSV)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-2-data-structures-and-files/lesson-6-csv-data/processing-a-csv.html">
+       Processing a CSV
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-3-pandas/index.html">
+   Week 3: Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-3-pandas/lesson-7-introduction-to-pandas/index.html">
+     📚 Lesson 7: Introduction to Pandas
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-7-introduction-to-pandas/imports.html">
+       Imports
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-7-introduction-to-pandas/pandas.html">
+       Pandas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-7-introduction-to-pandas/pandas-recap.html">
+       Pandas Recap
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-3-pandas/lesson-8-more-pandas/index.html">
+     📚 Lesson 8: More Pandas
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-8-more-pandas/recap-pandas.html">
+       Recap: Pandas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-8-more-pandas/keyword-arguments.html">
+       Keyword Arguments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-8-more-pandas/sorting-and-top-k.html">
+       Sorting and top-k
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-3-pandas/lesson-9-time-series/index.html">
+     Lesson 9: Time Series
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-9-time-series/missing-data.html">
+       Missing Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-9-time-series/sorting-and-top-k.html">
+       Sorting and top-k
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-3-pandas/lesson-9-time-series/time-series.html">
+       Time Series
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-4-libraries-for-data-science/index.html">
+   Week 4: Libraries for Data Science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-10-data-visualization/index.html">
+     📚 Lesson 10: Data Visualization
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-10-data-visualization/default-parameters.html">
+       Default Parameters
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-10-data-visualization/missing-data.html">
+       Missing Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-10-data-visualization/principles-of-data-visualization.html">
+       Principles of Data Visualization
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-11-machine-learning/index.html">
+     📚 Lesson 11: Machine Learning
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-11-machine-learning/introduction.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-11-machine-learning/understanding-decision-trees.html">
+       Understanding Decision Trees
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/index.html">
+     📚 Lesson 12: Machine Learning pt. 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/recap-terms.html">
+       Recap Terms
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/when-to-not-use-ml.html">
+       When to Not Use ML
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-5-classes-and-objects/index.html">
+   Week 5: Classes and Objects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-5-classes-and-objects/lesson-13-classes-and-objects/index.html">
+     📚 Lesson 13: Classes and Objects
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-13-classes-and-objects/objects-and-references.html">
+       Objects and References
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-13-classes-and-objects/the-class-define-your-own-objects.html">
+       The Class: Define Your Own Objects
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-5-classes-and-objects/lesson-14-more-classes-and-modules/index.html">
+     📚 Lesson 14: More Classes and Modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-14-more-classes-and-modules/recap.html">
+       Recap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-14-more-classes-and-modules/private-fields.html">
+       Private Fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-14-more-classes-and-modules/warning-default-parameters.html">
+       Warning: Default Parameters
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-14-more-classes-and-modules/lambdas.html">
+       Lambdas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/index.html">
+     📚 Lesson 15: Special Methods + HW4 Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/main-method-pattern.html">
+       Main Method Pattern
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/equality-and-identity.html">
+       Equality and Identity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/defining-equality.html">
+       Defining Equality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/fancy-syntax.html">
+       Fancy Syntax
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
+       A Search Engine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/hw4-introduction.html">
+       HW4 Introduction
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-6-efficiency/index.html">
+   Week 6: Efficiency
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-6-efficiency/lesson-16-efficiency/index.html">
+     📚 Lesson 16: Efficiency
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-16-efficiency/what-does-efficiency-mean.html">
+       What Does Efficiency Mean?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-16-efficiency/how-can-we-measure-time-efficiency.html">
+       How Can We Measure Time Efficiency?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-16-efficiency/counting-steps.html">
+       Counting Steps
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-16-efficiency/big-o.html">
+       Big-O
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-16-efficiency/data-structures.html">
+       Data Structures
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-6-efficiency/lesson-17-profiling-and-program-speed/index.html">
+     📚 Lesson 17: Profiling and Program Speed
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-17-profiling-and-program-speed/revisiting-time-efficiency.html">
+       Revisiting Time Efficiency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-17-profiling-and-program-speed/profiling-code.html">
+       Profiling Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-17-profiling-and-program-speed/slow-python.html">
+       Slow Python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-17-profiling-and-program-speed/class-today.html">
+       Class Today
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-6-efficiency/lesson-24-memory/index.html">
+     Lesson 24: Memory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-24-memory/computer-memory.html">
+       Computer Memory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-24-memory/memory-hiearchy.html">
+       Memory Hiearchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-6-efficiency/lesson-24-memory/pickle.html">
+       Pickle
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-7-geospatial-data/index.html">
+   Week 7: Geospatial Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+  <label for="toctree-checkbox-23">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-7-geospatial-data/lesson-18-geospatial-data-misc-python/index.html">
+     📚 Lesson 18: Geospatial Data +  Misc Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-18-geospatial-data-misc-python/introduction-to-geospatial-data.html">
+       Introduction to Geospatial Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-18-geospatial-data-misc-python/zip.html">
+       Zip
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-18-geospatial-data-misc-python/matplotlib-plotting.html">
+       Matplotlib Plotting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-7-geospatial-data/lesson-20-dissolve-join/index.html">
+     📚 Lesson 20: Dissolve + Join
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-20-dissolve-join/dissolve.html">
+       Dissolve
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-20-dissolve-join/joins.html">
+       Joins
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-20-dissolve-join/join-types.html">
+       Join Types
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-7-geospatial-data/lesson-21-indexes-trees/index.html">
+     📚 Lesson 21: Indexes / Trees 🌳
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-21-indexes-trees/indexing-databases.html">
+       Indexing (Databases)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-21-indexes-trees/binary-search-tree.html">
+       Binary Search Tree
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-7-geospatial-data/lesson-21-indexes-trees/spatial-index.html">
+       Spatial Index
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-8-images/index.html">
+   Week 8: Images
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+  <label for="toctree-checkbox-27">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-8-images/lesson-22-reading-numpy/index.html">
+     📚 Lesson 22 Reading: Numpy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-22-reading-numpy/numpy.html">
+       numpy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-22-reading-numpy/multiple-dimensions.html">
+       Multiple Dimensions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-22-reading-numpy/arithmetic-and-logical-operators.html">
+       Arithmetic and Logical Operators
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-22-reading-numpy/broadcasting.html">
+       Broadcasting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-22-reading-numpy/images.html">
+       Images
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-8-images/lesson-23-reading-more-numpy-and-images/index.html">
+     📚 Lesson 23 Reading: More Numpy and Images
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-23-reading-more-numpy-and-images/recap.html">
+       Recap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-23-reading-more-numpy-and-images/numpy-functions.html">
+       numpy functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-23-reading-more-numpy-and-images/convolutions.html">
+       Convolutions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-23-reading-more-numpy-and-images/why-convolutions.html">
+       Why Convolutions?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-8-images/lesson-24-reading-machine-learning-and-images/index.html">
+     📚 Lesson 24 Reading: Machine Learning and Images
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-24-reading-machine-learning-and-images/recap-of-machine-learning.html">
+       Recap of Machine Learning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-24-reading-machine-learning-and-images/machine-learning-and-images.html">
+       Machine Learning and Images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-24-reading-machine-learning-and-images/neural-networks.html">
+       Neural Networks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-24-reading-machine-learning-and-images/neural-networks-code.html">
+       Neural Networks Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-8-images/lesson-24-reading-machine-learning-and-images/optional-scikit-image.html">
+       Optional: Scikit-Image
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../week-9-miscellaneous-topics/index.html">
+   Week 9: Miscellaneous Topics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+  <label for="toctree-checkbox-31">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-26-reading-hashing/index.html">
+     📚 Lesson 26 Reading: Hashing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-26-reading-hashing/data-structure-time-complexity.html">
+       Data Structure Time Complexity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-26-reading-hashing/hashing.html">
+       Hashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-26-reading-hashing/collisions.html">
+       Collisions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-26-reading-hashing/hash-functions.html">
+       Hash Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-26-reading-hashing/hashing-in-practice.html">
+       Hashing in Practice
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-26-reading-hashing/optional-count-min-sketch.html">
+       Optional: Count-Min Sketch
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/index.html">
+     📚 Lesson 27 Reading: Ethics in Data Science
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-0-gaydar.html">
+       Case Study 0: “Gaydar”
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-rides-of-glory.html">
+       Case Study 1: “Rides of Glory”
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-2-compas.html">
+       Case Study 2: COMPAS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-3-potholes-in-baltimore.html">
+       Case Study 3: Potholes in Baltimore
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-4-facial-recognition.html">
+       Case Study 4: Facial Recognition
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/wrap-up-and-assignment.html">
+       🚧 Wrap-up and Assignment
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../week-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/clearviewai.html">
+       Clearview.ai
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Week 10: Beyond 163
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+  <label for="toctree-checkbox-34">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     📚 Lesson 28: Fairness
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+    <label for="toctree-checkbox-35">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Defining Fairness
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="tradeoff-between-accuracy-and-fairness.html">
+       Tradeoff Between Accuracy and Fairness
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="worldview-limitations-of-fairness.html">
+       Worldview / Limitations of Fairness
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../lesson-29-privacy/index.html">
+     📚 Lesson 29: Privacy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-29-privacy/is-your-data-anonymous.html">
+       Is Your Data Anonymous?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-29-privacy/privacy-in-practice-the-census.html">
+       Privacy in Practice: The Census
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-29-privacy/differential-privacy.html">
+       Differential Privacy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-29-privacy/jittering-laplace-mechanism.html">
+       Jittering (Laplace Mechanism)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-29-privacy/randomized-response.html">
+       Randomized Response
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-29-privacy/recap-and-next-steps-for-differential-privacy.html">
+       Recap and Next Steps for Differential Privacy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/week-10-beyond-163/lesson-28-fairness/defining-fairness.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-first-attempt-shape-blind">
+   A first attempt: “Shape-blind”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fairness-definition-1-statistical-parity">
+   Fairness Definition 1: Statistical Parity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fairness-definition-2-equal-opportunity">
+   Fairness Definition 2: Equal Opportunity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fairness-definition-3-predictive-equality">
+   Fairness Definition 3: Predictive Equality
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-definitions-of-fairness">
+   More Definitions of Fairness
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="defining-fairness">
+<h1>Defining Fairness<a class="headerlink" href="#defining-fairness" title="Permalink to this headline">¶</a></h1>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;">
+    <iframe src="https://www.loom.com/share/8ab3e18d61224f15b39ed28a7a7b2af7?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+<p>What does it mean for an algorithm to be fair? How can we come up with a definition of what makes a decision fair and what makes a decision unfair? It turns out there are many definitions of fairness, each one taking its own view on what “fair” means. It turns out, that many of these definitions are useful, but many of them conflict with others so we will see it’s not possible to have a universal definition of fairness.</p>
+<p>In this first part of the lesson, we will particularly be talking about the notion of
+<strong>group fairness</strong>
+which is an attempt to define a measurement of how fair a process is, in order to avoid discrimination against a particular subgroup. These subgroups are commonly thought of as being defined by race or sex, but they can be broadly defined to capture concepts like religious or political identity, different abilities, or any intersection of these traits. Usually (but not always) a subgroup is defined based on a characteristic that someone has no control over. A key goal in a system is to avoid discrimination based on membership in one of these protected groups, as to avoid them being treated unfairly due to factors outside of their control.</p>
+<p>In this lesson, we will be focusing on a rather narrow and simplistic example to better convey the ideas of fairness. Most of the stuff we will talk about today extend quite naturally to real-world subgroups we might care to avoid discriminating against. Please forgive the overly simple assumptions we make since they are there to make this discussion tractable; the assumptions are not an indication of how we think the world actually is. The point of showing that things can go wrong with even simple, contrived examples is to highlight that in real life where things are more complex and multi-faceted, things are likely to go even more wrong.</p>
+<p>Suppose for the sake of simplicity, we are considering an alternate Earth inhabited by people that belong to one of two races: Circles and Squares. Circles make up about 2/3 of the population (a majority), which leaves the Squares to be 1/3 of the population (a minority). Our example today will be focusing on a process for deciding on college admissions, and talking about how to define fairness to prevent discrimination against either group: Circles or Squares.</p>
+<p>&lt;Element ‘figure’ at 0x7fcd23760270&gt;
+For this example, we will ultimately try to train a model that can make decisions about college admissions (which may or may not actually be a good idea!). To do this, we will assume we have some historical data on who was “successful” in college and try to make predictions about new students having that success. This example can be agnostic to how you define success (e.g., it could be just graduating, or getting a job after college, or donating a bunch of money to UW after graduating) but we assume we are working with some definition of success for our future applicants, and we don’t know that true label yet.</p>
+<div class="section" id="a-first-attempt-shape-blind">
+<h2>A first attempt: “Shape-blind”<a class="headerlink" href="#a-first-attempt-shape-blind" title="Permalink to this headline">¶</a></h2>
+<p>If our goal is to prevent discrimination against either race, you might imagine the simplest thing you can do is to make sure your decision process is agnostic to an individual’s race. The thought is that it is impossible to discriminate if your process isn’t able to look at the features you want to protect.</p>
+<p>Unfortunately, the reality isn’t always so simple. Last time, we talked about the COMPAS algorithm having discriminatory outputs for recidivism based on race, even though the model itself had no direct input telling it someone’s race. This is because race and many other factors about you can be fairly accurately inferred using others. We are actually very familiar with this idea that properties of our identity can be inferred from others when we experience internet ads every day on the internet. The whole system of targeted advertisements is predicated on the ability to make inferences about your interests while only having access to correlations that are provided by your other interactions on websites (e.g., if you started searching for a crib for a baby on Amazon, you are more likely to be expecting a child).</p>
+<p>It turns out that approaches that try to constrain the inputs to a process or an algorithm tend to not work well in practice since so much can be inferred from the other wealth of data about you. Instead, a common practice for defining fairness is on the
+<strong>outputs</strong>
+or
+<strong>decisions</strong>
+of the process/algorithm rather than restriction of the inputs. In the following sections, we will define some possible ways to define fairness based on the outputs of our college admissions model.</p>
+</div>
+<div class="section" id="fairness-definition-1-statistical-parity">
+<h2>Fairness Definition 1: Statistical Parity<a class="headerlink" href="#fairness-definition-1-statistical-parity" title="Permalink to this headline">¶</a></h2>
+<p>The first, fairly natural, definition of fairness we will discuss is called
+<strong>statistical parity.</strong>
+As a reminder, we are in the running example of trying to determine college admissions (a admit/deny decision) on a population of people that fall into one of two races (Circle or Square). Statistical parity in this setting says:</p>
+<p>&lt;Element ‘blockquote’ at 0x7fcd26039950&gt;
+For example, if we let in 30% of the Circle population into our college, to meet statistical parity, we would also need to let in 30% of the Square population. That’s it! Nothing really fancy in this definition. However, it turns out statistical parity ends up being a rather weak definition of fairness.</p>
+<p>We’ll see that this definition of fairness says nothing about which Circles/Squares get admitted or that true label of “success”. You could admit a completely random subset of the population to meet statistical parity, regardless of how successful each might actually be. This may or may not actually be a bad example based on how you assume the world works (e.g., you might believe every person can succeed, so random sampling is appropriate), but since you are doing an admissions process in the first place you probably have some belief that there is a fair way that you might be able to determine success. It seems rather weak that you can achieve fairness using this definition by just randomly picking people.</p>
+<p>The second, more subtle challenge with statistical parity, is the scenario in which the distribution of which people are “successful” is not the same across the Circle/Square groups. So just for the sake of example, suppose 30% of the Circles are “successful” and therefore should be admitted while only 15% of the Squares are. This
+<strong>should be</strong>
+a very questionable assumption for the sake of example (saying one race is more/less qualified), but this is not something that is unthinkable in real-world data:</p>
+<p>&lt;Element ‘list’ at 0x7fcd26039e50&gt;
+When these differences in the data exist, statistical parity puts you in a really tough position. Even if you had a “perfect predictor” that could 100% predict success, you wouldn’t be able to let in the 30% of Circles and 15% of Squares. That would violate statistical parity even though your predictions were perfect! This then forces you to make the choice:</p>
+<p>&lt;Element ‘list’ at 0x7fcd26039d10&gt;
+Both of these choices seem less than desirable (but which one is worse depends on the context you are working in). So to fix this, we need to look into slightly more complex examples of fairness.</p>
+</div>
+<div class="section" id="fairness-definition-2-equal-opportunity">
+<h2>Fairness Definition 2: Equal Opportunity<a class="headerlink" href="#fairness-definition-2-equal-opportunity" title="Permalink to this headline">¶</a></h2>
+<p>One rather simple fix to the idea of statistical parity is to look at the rates of the mistakes we make in admission rather than the rate of admissions themselves. So instead of looking at what percent of Circles/Squares we admit, we could look at what percent of Circles/Squares we wrongfully reject. A wrongful rejection is someone who truly would be successful, but we denied admission which we often call a
+<strong>false negative</strong>
+in the terminology of classification. A false negative is when we predicted a negative result (e.g., “not successful”) when the true label was positive.</p>
+<p>Commonly, we refer to the
+<strong>false-negative rate</strong>
+as the ratio of examples that are truly positive that got falsely labeled as negatives. So mathematically, the false-negative rate is</p>
+<div class="math notranslate nohighlight">
+\[FNR = \frac{\text{\# false negatives}}{\text{\# all examples that actually have a positive label}}\]</div>
+<p>So for example, if 5 people would truly be successful in college, and 2 of them we predicted a deny status, the FNR would be 0.4.</p>
+<p>Our second definition of fairness is called
+<strong>equal opportunity</strong>
+and it requires
+<strong>equality of false-negative rate</strong>
+(or commonly at least approximate equality) of our admissions decisions. In other words, the percent of the population that would truly be successful that was rejected needs to be the same across groups. This definition of fairness controls for the mistakes made against those that ultimately would have succeeded.</p>
+<p>The intuition here is we want to prevent one group from being unfairly rejected more frequently than another. Again, a false negative happens when you truly would have been successful, but our admission decision said that you would not. In other words, all else being equal, your race (Circle/Square) should have no impact on the probability our admission decision harms you.</p>
+<p>This definition of fairness is generally better than statistical parity but still might not feel exactly right to you. Under the definition of equal opportunity, if our model accidentally rejects 20% of the Squares who were truly “successful” then our model is considered fair as long as it also accidentally rejects 20% of the Circles who were truly “successful”. That probably doesn’t sound “fair” to you, if you were one of those rejected Squares! It probably doesn’t make you feel better that your rejection is considered fair by our definition since an equal proportion of Circles were also wrongly denied!</p>
+<p>This is actually a key point to highlight, both definitions we have shown so far (statistical parity, and equal opportunity) are notions of
+<strong>group fairness</strong>
+. They are mathematical definitions to spot potential discrimination against a particular protected group but say
+&lt;Element ‘italic’ at 0x7fcd2603cf40&gt;
+about fairness when it comes to discussing individuals within those groups. We’ll talk more about this tension between group fairness and individual fairness in our last slide of the lesson today.</p>
+</div>
+<div class="section" id="fairness-definition-3-predictive-equality">
+<h2>Fairness Definition 3: Predictive Equality<a class="headerlink" href="#fairness-definition-3-predictive-equality" title="Permalink to this headline">¶</a></h2>
+<p>We will briefly mention that there is another definition of fairness called
+<strong>predictive equality</strong>
+that focuses on the other type of mistake possible, called a
+<strong>false-positive</strong>
+. A false positive occurs in our college admissions example is admitting someone (making a positive prediction) on an applicant who would ultimately not be “successful”. Which type of mistake, a false-positive or a false-negative, is worse overall depends on the context you are working in. You have to think carefully about the relative harm caused by a false-negative vs. a false-positive and you usually want to make sure you provide equality in the one with more potential for harm. Pretty much everything we discussed in the last section on equal opportunity applies to predictive equality as well.</p>
+</div>
+<div class="section" id="more-definitions-of-fairness">
+<h2>More Definitions of Fairness<a class="headerlink" href="#more-definitions-of-fairness" title="Permalink to this headline">¶</a></h2>
+<p>It turns out, there is a myriad of mathematical functions to attempt to define what fairness means. Many of them share the form of the examples we have shown far, that require some statistical similarity when looking at decisions made across groups. We are in no position to outline them all, but there are a lot. What we will see though, is that there is
+<strong>no</strong>
+universal definition of fairness. Each definition makes assumptions about how we think the world should work and what outcomes are fair.</p>
+<p>This wealth of definitions of fairness is actually a good thing, not a bad one!
+<strong>This just serves as a reminder that there is a crucial role that people must play in the design and use of models.</strong>
+Since there isn’t just a  “one and done” definition of what we mean by “fair”, we have to work together in our context to critically examine what we value and collectively decide on what values our system should uphold. This emphasizes the role of people (e.g., policymakers, regulators, philosophers) in this decision-making process and that it’s very unlikely that our solution to fixing problems will be purely algorithmic in nature.</p>
+<p>In the next slide, we will explore a notion we did not bring up in this one about the tradeoff between fairness and accuracy, and then we will briefly highlight a generalized statement of worldviews that can help you reason about fairness.</p>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">📚 Lesson 28: Fairness</a>
+    <a class='right-next' id="next-link" href="tradeoff-between-accuracy-and-fairness.html" title="next page">Tradeoff Between Accuracy and Fairness</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021, Hunter Schafer.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

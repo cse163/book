@@ -1,0 +1,19 @@
+# Case Study 0: "Gaydar"
+## Task
+
+Read
+<Element 'link' at 0x7fcd26039810>
+and then respond to the following questions. One of the article's authors is Blaise Agüera y Arcas, who leads Google’s AI group in Seattle and sometimes teaches a
+<Element 'link' at 0x7fcd26039c70>
+.
+
+## Recap
+
+Data scientists use models to not only make predictions but also to justify some phenomena (e.g., an interpretable machine learning model). While this is a useful endeavor, it can have some downfalls. Make sure you explore alternative hypotheses (maybe simpler ones) that are also likely to explain the phenomena. It would be best if you took the time to reflect on your explanation to check for any implicit biases present (e.g., confirmation bias). While it's hard to spot implicit biases (because they are implicit), taking time to use your
+<Element 'link' at 0x7fcd26039c20>
+can help catch them.
+
+It's incredibly important to start any data analysis project by asking who will use its results. Is it possible for someone to use this model to the detriment of other's health, safety, or privacy? In the case of this "gaydar," there are some pretty clear bad-actors that could use this model. For example, homophobic governments or agencies can use this tool to screen the population at an alarming rate. If these groups have power over other people, they could easily use this tool to suppress this minority group.
+
+It is a bit tricky to navigate since it's probably the case that you could argue that anyone can use any tool to cause harm. It helps to think about the negatives in contrast to the value a tool adds to the world. If there is an excellent argument for value-added, then the calculus on risk-reward will be more difficult to navigate. It's tricky to navigate since different people have different views on injury and value, but having that discussion in the first place is a critical first step.
+
