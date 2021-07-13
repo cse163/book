@@ -4,8 +4,7 @@
     <iframe src="https://www.loom.com/share/90ee7401ddbb412a87347a5a333c7476?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-Think back to our example of finding the maximum difference between elements in a list.
-
+Think back to our example of finding the maximum difference between elements in a list.  
 ```py
 def max_diff1(nums):
     # Find the max difference between any pair of nunber
@@ -34,42 +33,14 @@ def max_diff3(nums):
     return max(nums) - min(nums)
 ```
 
-Even though we saw that
-`max_diff2`
-and
-`max_diff3`
-have the same Big-O runtime, which one do we think is faster? It turns out
-`max_diff3`
-is
-**MUCH**
-faster in practice.
+Even though we saw that `max_diff2` and `max_diff3` have the same Big-O runtime, which one do we think is faster? It turns out `max_diff3` is **MUCH** faster in practice.  
+##  Profiler  
 
-## Profiler
-
-
-<Element 'italic' at 0x7fcd2603c950>
-
-<Element 'italic' at 0x7fcd2603ccc0>
-
-
-An easier way to identify the relative runtime of programs is to use something called a
-**profiler**
-. A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.
-
-A common profiler is the
-`line_profiler`
-package (also called
-`kernprof`
-).
-`kernprof`
-is nice because it lets you annotate your functions with an
-`@profile`
-tag to have it profile your method. For example, the following snippet shows a file called
-`test.py`
-that defines these three functions with an
-`@profile`
-annotation above each function.
-
+*
+			Note: Ed does not have the following tool installed, so we describe its output rather than actually running it for you! If you are interested in trying this out, you can install it from your terminal using 
+			*  *on your computer if you are using Mac/Linux. For Windows, you will likely need to use the Anaconda Navigator to install it.*   
+An easier way to identify the relative runtime of programs is to use something called a **profiler** . A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.  
+A common profiler is the `line_profiler` package (also called `kernprof` ). `kernprof` is nice because it lets you annotate your functions with an `@profile` tag to have it profile your method. For example, the following snippet shows a file called `test.py` that defines these three functions with an `@profile` annotation above each function.  
 ```py
 # File: test.py
 
@@ -129,10 +100,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Now, we can run this program in the profiler, we use the command
-`kernprof -v -l test.py`
-(assuming you have it installed) and get the following output.
-
+Now, we can run this program in the profiler, we use the command `kernprof -v -l test.py` (assuming you have it installed) and get the following output.  
 ```text
 Total time: 24.1163 s
 File: test.py
@@ -207,21 +175,5 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     54         1        146.0    146.0      0.0      print(max_diff3(nums))
 ````
 
-This output shows both how long each function took to run (in the output above the function code) as well as how much time was spent on each line inside each function. You can see that even for
-`n=5000`
-,
-`max_diff1`
-took 20 seconds to run! While
-`max_diff2`
-and
-`max_diff3`
-look close in runtime in comparison,
-`max_diff3`
-still runs about 50x faster than
-`max_diff2`
-!
-
-To understand why
-`max_diff3`
-is the fastest, we need to discuss why Python is a very slow language by design.
-
+This output shows both how long each function took to run (in the output above the function code) as well as how much time was spent on each line inside each function. You can see that even for `n=5000` , `max_diff1` took 20 seconds to run! While `max_diff2` and `max_diff3` look close in runtime in comparison, `max_diff3` still runs about 50x faster than `max_diff2` !  
+To understand why `max_diff3` is the fastest, we need to discuss why Python is a very slow language by design.  

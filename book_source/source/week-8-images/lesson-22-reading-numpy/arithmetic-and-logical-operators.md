@@ -4,16 +4,9 @@
     <iframe src="https://www.loom.com/share/5aaed7a534ca499e9b61618cd5265e1f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-## Arithmetic Operators
+##  Arithmetic Operators  
 
-Just like
-`pandas`
-,
-`numpy`
-supports convenient usage of mathematical and logical operators on
-`numpy.array`
-s. The following code cell shows and explains some of the most common operations.
-
+Just like `pandas` , `numpy` supports convenient usage of mathematical and logical operators on `numpy.array` s. The following code cell shows and explains some of the most common operations.  
 ```py
 import numpy as np
 
@@ -48,26 +41,9 @@ print(m * 3 + m / 2)
 print()
 ```
 
-## Logical Operators
+##  Logical Operators  
 
-You can also use logical operators (
-`==`
-,
-`<`
-,
-`>=`
-) to compare elements of
-`numpy.array`
-s. You can use
-`&`
-(and),
-`|`
-(or), and
-`~`
-(not) just like
-`pandas`
-.
-
+You can also use logical operators ( `==` , `<` , `>=` ) to compare elements of `numpy.array` s. You can use `&` (and), `|` (or), and `~` (not) just like `pandas` .  
 ```py
 import numpy as np
 
@@ -87,16 +63,7 @@ print((x < 3) & (x % 2 == 0))
 print()
 ```
 
-Not surprisingly, just like
-`pandas`
-, you can use these
-`numpy.array`
-s of
-`bool`
-values to filter down to certain values in the
-`numpy.array`
-!
-
+Not surprisingly, just like `pandas` , you can use these `numpy.array` s of `bool` values to filter down to certain values in the `numpy.array` !  
 ```py
 import numpy as np
 
@@ -115,7 +82,10 @@ print('y = x[mask]')
 print(y)
 ```
 
-```{info}
+
+```{admonition} Note
+:class: note
+
 We commonly compare
 `numpy`
 and

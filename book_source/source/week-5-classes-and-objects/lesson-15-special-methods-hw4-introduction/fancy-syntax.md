@@ -4,11 +4,18 @@
     <iframe src="https://www.loom.com/share/5aafdcb9496e4fd28a06f4f069dbd0d2?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-It turns out that most of the common syntax in Python is really just "special methods" that can be defined in your class. Below is a list of common features you might define when writing your own classes.
+It turns out that most of the common syntax in Python is really just "special methods" that can be defined in your class. Below is a list of common features you might define when writing your own classes.  
 
-<Element 'web-snippet' at 0x7fcd2377e3b0>
-For example, here is a toy class that implements all of these methods to prove that they get called when you use the syntax shown above.
+| Syntax |    Method Call    |
+|--------|-------------------|
+|x < y   |x.__lt__(y)        |
+|x == y  |x.__eq__(y)        |
+|x >= y  |x.__ge__(y)        |
+|print(x)|print(x.__repr__())|
+|x[i]    |x.__getitem__(i)   |
+|x[i] = v|x.__setitem__(i, v)|
 
+For example, here is a toy class that implements all of these methods to prove that they get called when you use the syntax shown above.  
 ```py
 class SomeClass:
     def __lt__(self, other):
@@ -60,7 +67,10 @@ print(x[0])
 x[14] = 4
 ```
 
-```{info}
+
+```{admonition} Note
+:class: note
+
 It turns out that because we implement
 `__lt__`
 and
@@ -84,13 +94,13 @@ and
 could be implemented as
 `x.__lt__(y) or x.__eq_(y)`
 !
-<Element 'break' at 0x7fcd260411d0>
+<br />
 
-<Element 'break' at 0x7fcd26041130>
+<br />
 You could have chosen another operator besides
 `__lt__`
 , but basically if you implement any less than / greater than operator and equals, you get all of the others for free!
-<Element 'break' at 0x7fcd260414a0>
+<br />
 
 
 ```
