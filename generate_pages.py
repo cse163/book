@@ -81,34 +81,14 @@ class EdStemXMLVisitor:
             self.visit(el)
 
     def visit(self, element):
-        if element.tag == "blockquote":
-            self.visit_blockquote(element)
-        elif element.tag == "bold":
-            self.visit_bold(element)
-        elif element.tag == "break":
-            self.visit_break(element)
-        elif element.tag == "callout":
-            self.visit_callout(element)
-        elif element.tag == "code":
-            self.visit_code(element)
-        elif element.tag == "figure":
-            self.visit_figure(element)
-        elif element.tag == "heading":
-            self.visit_heading(element)
-        elif element.tag == "italic":
-            self.visit_italic(element)
-        elif element.tag == "link":
-            self.visit_link(element)
-        elif element.tag == "list":
-            self.visit_list(element)
-        elif element.tag == "paragraph":
-            self.visit_paragraph(element)
-        elif element.tag == "pre":
-            self.visit_pre(element)
-        elif element.tag == "snippet":
-            self.visit_snippet(element)
-        elif element.tag == "video":
-            self.visit_video(element)
+        # Kind of a gross way to simplify this visitor
+        # Programmatically find if they have a method
+        # for the given tag type, and if so call that
+        # visit function. Otherwise just print a placeholder.
+        visit_func_name = f"visit_{element.tag}"
+        if hasattr(self, visit_func_name):
+            visit_func = getattr(self, visit_func_name)
+            visit_func(element)
         else:
             self._print(element)
 
