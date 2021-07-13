@@ -36,19 +36,39 @@ class EdStemXMLVisitor:
         self.tree = tree
         self.out = out
         self.starting_heading_level = starting_heading_level
+        self.indent = 0
+        self.skip_indents = 0
 
-    def _print(self, text=""):
-        self.out.write(str(text))
-        self.out.write("\n")
+    def _print(self, text="", newline=True, force_indent=False):
+        should_indent = text or force_indent
+        if should_indent and self.skip_indents == 0:
+            indent = "  " * self.indent
+        else:
+            indent = ""
+            if should_indent and self.skip_indents > 0:
+                self.skip_indents -= 1
+
+        self.out.write(indent + str(text))
+        if newline:
+            self.out.write("\n")
 
     def _visit_mixed_body(self, element, print_stripped=True):
-        if element.text:
-            self._print(element.text.strip() if print_stripped else element.text)
+        def strip_none_safe(s):
+            if s:
+                return s.strip() if print_stripped else s
+            else:
+                return s
+
+        text = strip_none_safe(element.text)
+
+        if text:
+            self._print(text)
 
         for child in element:
             self.visit(child)
             if child.tail:
-                self._print(child.tail.strip() if print_stripped else element.text)
+                child_text = strip_none_safe(child.tail)
+                self._print(child_text)
         self._print()
 
     def start(self):
@@ -64,6 +84,10 @@ class EdStemXMLVisitor:
             self.visit_code(element)
         elif element.tag == "heading":
             self.visit_heading(element)
+        elif element.tag == "italic":
+            self.visit_italic(element)
+        elif element.tag == "list":
+            self.visit_list(element)
         elif element.tag == "paragraph":
             self.visit_paragraph(element)
         elif element.tag == "pre":
@@ -96,6 +120,25 @@ class EdStemXMLVisitor:
 
         self._print(f"{'#' * level} {title}")
         self._print()
+
+    def visit_italic(self, element):
+        self._print(f"*{element.text}*")
+
+    def visit_list(self, element):
+        is_numbered = element.get("style") == "numbered"
+
+        self.indent += 1
+        for i, item in enumerate(element.findall("list-item")):
+            if is_numbered:
+                self._print(f"{i + 1}. ", newline=False)
+            else:
+                self._print("- ", newline=False)
+
+            self.skip_indents = 1
+            for child in item:
+                self.visit(child)
+
+        self.indent -= 1
 
     def visit_paragraph(self, element, print_stripped=True):
         self._visit_mixed_body(element, print_stripped=print_stripped)
