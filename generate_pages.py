@@ -191,10 +191,9 @@ class EdStemXMLVisitor:
 
 def write_toc(out, ref_names, max_depth=2, caption="Contents"):
     out.write("```{toctree}\n")
-    out.write("\n")
     out.write(f":maxdepth: {max_depth}\n")
     out.write(f":caption: {caption}\n")
-    out.write("")
+    out.write("\n")
 
     for ref in ref_names:
         out.write(f"{ref}\n")
