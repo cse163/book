@@ -1,5 +1,34 @@
-import sys
+import os
+import pathlib
+import re
+import unicodedata
 import xml.etree.ElementTree as ET
+
+import yaml
+
+LESSONS_DIR = "../lesson_data"
+OUTPUT_DIR = "book_source/source/"
+
+
+def slugify(value, allow_unicode=False):
+    """
+    Taken from https://github.com/django/django/blob/master/django/utils/text.py
+    Convert to ASCII if 'allow_unicode' is False. Convert spaces or repeated
+    dashes to single dashes. Remove characters that aren't alphanumerics,
+    underscores, or hyphens. Convert to lowercase. Also strip leading and
+    trailing whitespace, dashes, and underscores.
+    """
+    value = str(value)
+    if allow_unicode:
+        value = unicodedata.normalize("NFKC", value)
+    else:
+        value = (
+            unicodedata.normalize("NFKD", value)
+            .encode("ascii", "ignore")
+            .decode("ascii")
+        )
+    value = re.sub(r"[^\w\s-]", "", value.lower())
+    return re.sub(r"[-\s]+", "-", value).strip("-_")
 
 
 class EdStemXMLVisitor:
@@ -98,14 +127,81 @@ class EdStemXMLVisitor:
         self._print()
 
 
+def write_toc(out, ref_names, max_depth=2, caption="Contents"):
+    out.write("```{toctree}\n")
+    out.write("\n")
+    out.write(f":maxdepth: {max_depth}\n")
+    out.write(f":caption: {caption}\n")
+    out.write("")
+
+    for ref in ref_names:
+        out.write(f"{ref}\n")
+    out.write("```")
+
+
 def main():
-    tree = ET.parse("lesson.xml")
+    with open(os.path.join(LESSONS_DIR, "modules.yaml")) as f:
+        modules = yaml.safe_load(f)
 
-    with open("book_source/source/out.md", "w") as f:
-        f.write(f"# Title of Lesson")
+    for module in modules["modules"]:
+        # Make module folder
+        module_path = os.path.join(OUTPUT_DIR, slugify(module["name"]))
+        pathlib.Path(module_path).mkdir(exist_ok=True)
 
-        visitor = EdStemXMLVisitor(tree, f, starting_heading_level=1)
-        visitor.start()
+        lesson_ids = []
+
+        for lesson in module["lessons"]:
+
+            if "lesson" in lesson["id"]:
+                lesson_ids.append(lesson["id"])
+
+                # Make a folder for each lesson
+                lesson_path = os.path.join(module_path, lesson["id"])
+                pathlib.Path(lesson_path).mkdir(exist_ok=True)
+
+                # Load lesson metadata
+                with open(os.path.join(LESSONS_DIR, lesson["id"], "toc.yaml")) as f:
+                    slide_info = yaml.safe_load(f)
+
+                slide_ids = []
+                for slide in slide_info:
+                    if slide["type"] == "document":
+                        # Use a special naming convention for the overview slide
+                        is_overview = slide["id"] == "overview"
+                        if is_overview:
+                            title = lesson["title"]
+                            slide_file_name = "index.md"
+                        else:
+                            slide_ids.append(slide["id"])
+                            title = slide["title"]
+                            slide_file_name = slide["id"] + ".md"
+
+                        with open(os.path.join(lesson_path, slide_file_name), "w") as f:
+                            f.write(f"# {title}\n")
+
+                            tree = ET.parse(
+                                os.path.join(LESSONS_DIR, lesson["id"], slide["id"])
+                            )
+                            visitor = EdStemXMLVisitor(
+                                tree, f, starting_heading_level=1
+                            )
+                            visitor.start()
+
+                lesson_index_file = os.path.join(lesson_path, "index.md")
+                if os.path.exists(lesson_index_file):
+
+                    with open(lesson_index_file, "a") as f:
+                        f.write("\n")
+                        f.write("\n")
+                        f.write("## Table of Contents\n")
+                        f.write("\n")
+
+                        write_toc(f, slide_ids)
+
+        with open(os.path.join(module_path, "index.md"), "w") as f:
+            f.write(f"# {module['name']}\n")
+
+            write_toc(f, [l + "/index" for l in lesson_ids])
 
 
 if __name__ == "__main__":
