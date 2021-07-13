@@ -24,7 +24,7 @@ for t in tas:
 
 To explain in English, the process of joining them on `ta_id` and `grader_id` finds all pairs of rows from each table, and keeps them if they match on `ta_id` and `grader_id` .  
 Now this pseudo-code isn't going to actually look like what we will write for `pandas` . Joining is such a common operation with data that `pandas` provides a function to do so that looks like the following (there is a bit of setup to create the datasets):  
-```py
+```python
 import pandas as pd
 
 # Make the tas DataFrame
@@ -64,7 +64,7 @@ You might be wondering, what would happen to rows that don't "line up". What if 
 ```
 
 Let's see what happens when we run `merge` on these datasets.  
-```py
+```python
 import pandas as pd
 
 # Make the tas DataFrame

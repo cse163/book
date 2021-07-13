@@ -1,6 +1,6 @@
 # Sorting and top-k
 Another very common operation in `pandas` needs you to sort the data. This could either be for presentation reasons or you might be interested in finding the "top 10" rows based on some criteria. `pandas` makes sorting really easy! Using the same fMRI dataset from before, the following snippet shows how to  
-```py
+```python
 import pandas as pd
 
 df = pd.read_csv('/course/lecture-readings/fmri.csv')
@@ -34,7 +34,7 @@ If you want to keep the sorting, you need to save the result in a variable (i.e.
 ##  Top-k  
 
 Instead of actually sorting the data, you might want to find the 10 highest signals in the data. `pandas` also provides a way to do this with the `nlargest` function.  
-```py
+```python
 import pandas as pd
 
 df = pd.read_csv('/course/lecture-readings/fmri.csv')

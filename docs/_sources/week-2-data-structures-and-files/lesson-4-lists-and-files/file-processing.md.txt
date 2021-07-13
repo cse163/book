@@ -1,7 +1,7 @@
 # File Processing
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/620e2a3aca0a45b0ba52c7913f725375?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/620e2a3aca0a45b0ba52c7913f725375?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 **Files** on computers store some type of data. This data could be pictures, a word document, a video game, etc. For the first part of this class, we will only work with files that store text data. One such file type that holds text data is the `.txt` file type.  
@@ -14,7 +14,7 @@ For example, if you are using a Mac or Linux system (or are on Ed!), you can ope
 ##  Files in Python  
 
 With Python, you can open and read files using the `open` built-in function. The syntax is shown in the following snippet. Note that the value you pass into the `open` is a **path** to the file. We will talk about file paths in a bit, but think of it like a full-name of a file on a computer!  
-```py
+```python
 with open('/course/lecture-readings/poem.txt') as f:
     content = f.read()  # returns the file contents as a str
     print(content)
@@ -52,7 +52,7 @@ syntax to do it for you!
 A very common pattern is to read the file **line by line** so that you can process each line on its own. We could accomplish this with the `split` function on the content of the file, but Python conveniently provides a `readlines` function on the file object that returns the lines in a list of strings.  
 For example, the following code snippet will print out the file with a line number in front of each line. In this example `lines` will store a list of each line in the file and our loop over that just keeps track of a counter and prints that before the line itself.  
 As a minor detail, each line will still contain a special **new-line** character ( `\n` ) at the end. To make sure our output doesn't have extra new-lines in it, we `strip` each line to remove this trailing whitespace.  
-```py
+```python
 def number_lines(file_name):
     """
     Takes a file name as a parameter and prints out the file 
@@ -98,7 +98,7 @@ For example, what if we wanted to print out the number of odd length words on ea
 
 This might sound complicated at first, but we can actually use what we know about strings in Python to solve this in our loop over the lines of the files. Why? **Because each line is just a string!** Recall, there is a really useful string method called `split` that lets us break apart a string into parts based on some delimiter (in this case, spaces).  
 It will help to start by solving a sub-part of this problem before trying to solve the entire thing. What if I was given a string, and wanted to count the number of odd-length words in that string? You could write code that splits the string up by spaces and then loops over that list of words to count up all the ones with odd lengths.  
-```py
+```python
 s = 'I am a really cool sentence.'
 words = s.split()
 count = 0
@@ -112,7 +112,7 @@ print('Number of odd-length words:', count)
 
 Now that we have this sub-problem solved, we can tackle the larger problem of doing this task above multiple times, once for each line in the file.  
 We start with the code with the general pattern of looping over the lines of a file  
-```py
+```python
 def count_odd(file_name):
     """
     Takes a file name as a parameter and prints out the file 
@@ -125,7 +125,7 @@ def count_odd(file_name):
 ```
 
 Now that we have that starter code, we can go ahead and use the ideas we saw to count the number of odd length words in a single line inside this loop over the lines! The only other thing that needs to be added is some book-keeping to keep track of the line number for printing.  
-```py
+```python
 def count_odd(file_name):
     """
     Takes a file name as a parameter and for each line

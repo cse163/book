@@ -6,7 +6,7 @@
 
 One clever notion in Python is the idea of a "negative index" that allows you to index into a string starting at the end. To understand this, it helps to refer to the normal indices of a string.  
 Suppose we had the following string and slice:  
-```py
+```python
 s = 'hello world'
 print(s[2:len(s) - 2])
 ```
@@ -28,7 +28,7 @@ Asking Python to go " `n` before the end" is such a common task, they provide an
 ```
 
 This means you can get the same output as above by referring to index `-2` instead of `len(s) - 2` , just like in the code below.  
-```py
+```python
 s = 'hello world'
 print(s[2:-2])
 ```
@@ -37,7 +37,7 @@ Notice that the end index is still exclusive, we are just able to use `-2` as th
 ##  Pause And Think  
 
 Before pressing run on the next cell, what do you think it would print?  
-```py
+```python
 s = 'hello world'
 print(s[10:2:-2])
 ```

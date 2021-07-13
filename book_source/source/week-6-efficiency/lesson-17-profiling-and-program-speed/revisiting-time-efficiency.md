@@ -6,7 +6,7 @@
 
 Last time we introduced the notion of efficiency, namely in terms of time taken to run the program. We saw that time was unreliable and that computer scientists instead discuss an algorithm's efficiency in terms of its Big-O notation. Today, we will discuss some limitations of Big-O notation and highlight the importance of why it is used (since it is often misunderstood).  
 For example, consider the following code snippet that shows three different methods for computing the maximum difference between any pair of values in a list.  
-```py
+```python
 def max_diff1(nums):
     # Find the max difference between any pair of nunber
     max_diff = 0

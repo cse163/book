@@ -22,7 +22,7 @@ Let's consider some various implementation of `__hash__` for the `str` class to 
 ###  Attempt 1: Length of `str`   
 
 The simplest hash function you could probably think of to take a `str` and output its `len` . If you used this hash function with this implementation, you would see the following behavior.  
-```py
+```python
 hash('')     # 0
 hash('hi')   # 2
 hash('abc')  # 3
@@ -35,7 +35,7 @@ Valient first effort, but let's try something else.
 As we've discussed before, a computer is only able to understand binary (1s and 0s). This means, at the end of the day, almost any piece of data on your computer needs to be represented as a number so it can easily be translated to binary; text data is no exception.  
 Your computer uses an encoding to represent each character in some text as a number. A common encoding is called ASCII (the American Standard Code for Information Interchange). In ASCII, the letter `'a'` is represented as the number 97, `'b'` is 98, `'c'` is 99, etc. Every character in the English language (including symbols like `.` , `:` , `!` ) get a number associated for them.  
 So then a more clever hash function could take each `str` and turn it into the sum of the ASCII values of its characters. In the snippet below, we show some example computations for the same strings as before.  
-```py
+```python
 hash('')     # 0
 hash('hi')   # 104 (h) + 105 (i) = 209
 hash('dog')  # 97 (d) + 111 (o) + 103 (g) = 314 

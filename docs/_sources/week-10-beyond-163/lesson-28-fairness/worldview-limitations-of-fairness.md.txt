@@ -1,7 +1,7 @@
 # Worldview / Limitations of Fairness
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/d7bf9d9173c64e2da48e052d615ceeaa?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/d7bf9d9173c64e2da48e052d615ceeaa?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 So far in this lesson, we have discussed just a few of the many possible definitions of fairness in the specific context of *group fairness* . While we didn't explicitly talk about how these definitions conflict, it should not be surprising that different fairness on decisions might impose completely disparate requirements on your model's outputs that can potentially conflict with each other. In the last slide, we also talked about a general tradeoff between fairness and accuracy. Given both of these trends, it only highlights the importance of keeping people informed and in the loop to decide which fairness definition to use and what level of tradeoff between accuracy and fairness is.  

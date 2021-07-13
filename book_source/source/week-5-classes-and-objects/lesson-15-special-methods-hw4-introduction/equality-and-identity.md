@@ -5,7 +5,7 @@
 </div>
 
 Consider the code block below and the question: Are `l1` and `l2` equal?  
-```py
+```python
 l1 = [1, 2, 3]
 l2 = [1, 2, 3]
 ```
@@ -29,7 +29,7 @@ To capture these two notions of equality, Python has two ways to check "equals" 
 -  `x is y`     compares     `x`     and     `y`     's identity to see if they are the same object (i.e. identity-equivalent).  
 
 With that knowledge, you should try to predict what the following code block will output before pressing run!  
-```py
+```python
 l1 = [1, 2, 3]
 l2 = [1, 2, 3]
 l3 = l1

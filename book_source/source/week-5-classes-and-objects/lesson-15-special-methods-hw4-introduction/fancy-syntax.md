@@ -16,7 +16,7 @@ It turns out that most of the common syntax in Python is really just "special me
 |x[i] = v|x.__setitem__(i, v)|
 
 For example, here is a toy class that implements all of these methods to prove that they get called when you use the syntax shown above.  
-```py
+```python
 class SomeClass:
     def __lt__(self, other):
         print('Calling __lt__')

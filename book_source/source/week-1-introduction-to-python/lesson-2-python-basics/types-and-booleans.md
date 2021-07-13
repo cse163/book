@@ -18,14 +18,14 @@ For those that know Java, this is the equivalent to Java's
 ```
 
 Just like any other value, you can store `bool` s in variables.  
-```py
+```python
 b1 = True
 b2 = False
 print(b1, b2)
 ```
 
 With `bool` it's common to do logical operations to combine different `bool` values. Below is a sample program that shows the different operations you can use on `bool` types.  
-```py
+```python
 b1 = False
 b2 = True
 
@@ -55,7 +55,7 @@ We won't show the full precedence table for Python, since it has many operators 
 ###  Comparisons  
 
 You can also create `bool` values by doing comparisons between other values. There are additional operators in Python that let you logically compare values.  
-```py
+```python
 x = 3
 print(x < 4)   # "Is x is less than 4?"
 print(x >= 5)  # "Is x greater than or equal to 5?"
@@ -67,14 +67,14 @@ print(x != 2)  # "Is x not equal to 2?"
 
 You can convert a value between types with **casting** . Casting takes a value of one type and converts it to its corresponding value in another type.  
 For example, the following program shows how a number like `1.4` (a `float` ) can be converted to an `int` using casting.  
-```py
+```python
 x = 1.4
 print('x =', x)
 print('To int:', int(x)) 
 ```
 
 Casting has a lot of complex rules of which values can or can't be cast to another type. For example, Python provides a convenient way of converting data in text (type `str` ) to the cast-type. For example, below you can see casting can extract the value from the `str` but it might fail if it doesn't make sense to do a particular conversion.  
-```py
+```python
 x = "1.7"
 print('To float:', float(x))
 print('To int:', int(x))   # This causes an error! 

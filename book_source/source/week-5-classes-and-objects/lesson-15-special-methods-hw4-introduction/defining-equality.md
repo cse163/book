@@ -5,7 +5,7 @@
 </div>
 
 Recall the `Dog` class we wrote in Lesson 13.  
-```py
+```python
 class Dog:
     def __init__(self, name):
         self._name = name
@@ -45,7 +45,7 @@ class, so you should know how to use their private fields without causing any er
 
 ```
 
-```py
+```python
 class Dog:
     def __init__(self, name):
         """

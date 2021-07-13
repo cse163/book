@@ -5,7 +5,7 @@
 </div>
 
 Think back to our example of finding the maximum difference between elements in a list.  
-```py
+```python
 def max_diff1(nums):
     # Find the max difference between any pair of nunber
     max_diff = 0
@@ -41,7 +41,7 @@ Even though we saw that `max_diff2` and `max_diff3` have the same Big-O runtime,
 			*  *on your computer if you are using Mac/Linux. For Windows, you will likely need to use the Anaconda Navigator to install it.*   
 An easier way to identify the relative runtime of programs is to use something called a **profiler** . A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.  
 A common profiler is the `line_profiler` package (also called `kernprof` ). `kernprof` is nice because it lets you annotate your functions with an `@profile` tag to have it profile your method. For example, the following snippet shows a file called `test.py` that defines these three functions with an `@profile` annotation above each function.  
-```py
+```python
 # File: test.py
 
 @profile

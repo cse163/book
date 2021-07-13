@@ -7,7 +7,7 @@
 As a reminder, we defined a string as a sequence of characters, where each character has an index; we often refer to strings as being an indexed-sequence of characters for short.  
 A few slides back, we learned of some string functions (e.g. `upper` , `lower` , `split` ). Recall that we defined the `split` function to break up some string based on a delimiter (a special character separating values), but we did not really explain what the type of the value returned was.  
 Consider the following snippet.  
-```py
+```python
 s = "I'm just going to the store, to the store"
 print(s)
 print(s.split())
@@ -31,7 +31,7 @@ in Python can do so much more (as we'll see in Lesson 4)!
 ```
 
 The great thing about `list` s in Python, is that they share a lot of the same syntax for operations as `str` s. The following snippet shows you all of the string syntaxes we learned this lecture also applies to lists.  
-```py
+```python
 l = ['dog', 'says', 'woof']
 
 # Length
@@ -56,7 +56,7 @@ for word in l:
 
 Some key differences/things to point out:  
 First, to specify the values of a list, the syntax uses square brackets around a comma-separated list of values (of any type).  
-```py
+```python
 l1 = ['I', 'love', 'dogs']
 l2 = [7, 8, 9]
 l3 = ['I', 3, 'dogs']  # can mix types too!
@@ -66,7 +66,7 @@ Second, because this is now a list, not a `str` , the values returned by indexin
 ##  Assignment  
 
 One way `list` s are able to do a bit more than `str` s comes from the fact that you are allowed to change the contents of a list by assigning into it. Just like you can use an index to get a value out of a list, you can use an index to set a value at a particular spot.  
-```py
+```python
 l1 = ['I', 'love', 'dogs']
 
 print(l1)

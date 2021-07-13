@@ -6,7 +6,7 @@
 
 Last time, we saw how to call functions by using keyword arguments (also called named parameters or pass by name). We mentioned briefly that one motivation for having this feature is it allows libraries to define methods that take many parameters and you can pass them in by name without needing to memorize the order the parameters were defined. We also mentioned that they also have some functionality for specifying **default values** for parameters not passed. That's what we are going to see today!  
 When defining a function that takes parameters, you can use the syntax `param=value` in the parameter list to give the parameter `param` the default value of `value` when it was not specified by the client. See the following snippet for an example which you can run to see the output.  
-```py
+```python
 def div(a=10, b=1):
     return a / b
 

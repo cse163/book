@@ -17,7 +17,7 @@ Below is an example plot that shows information about opioid overdoses on top of
 A very common format for geospatial data is just a plain CSV that we could parse with `pandas` . However, they usually also contain a special column to indicate the location in the world that row corresponds to. A very simple representation uses latitude and longitude for each row, but geospatial data can store a very rich set of geospatial features in general.  
 In order to process this special column format to encode geospatial information, we have to use a new library called `geopandas` . Don't worry, everything you know from `pandas` carries over here with some added on features!  
 In the code cell below, we show how to load in one of these geospatial datasets with `geopandas` . The dataset contains information about various countries of the world and information like their population and GDP. The file we will use a is a shapefile ( `.shp` ). The file format itself is actually pretty complex so we will only look at the data after parsing it in `geopandas` rather than looking at the file directly.  
-```py
+```python
 import geopandas as gpd
 
 df = gpd.read_file('/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp')
@@ -33,7 +33,7 @@ print(df.loc[0])
 ```
 
 The type of the value `df` in the cell above is a `GeoDataFrame` . It behaves exactly like a `DataFrame` but knows how to do some extra geospatial processing. There is also a `GeoSeries` type unsurprisingly. To start seeing the power of `geopandas` , you can see what happens if you ask the `GeoDataFrame` to plot itself.  
-```py
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
@@ -44,7 +44,7 @@ plt.savefig('world.png')
 ```
 
 You can get fancier have it color each country by its population using the `column` parameter, like in the snippet below.  
-```py
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
@@ -59,7 +59,7 @@ plt.savefig('world_population.png')
 ##  Geometry  
 
 Each row in the data corresponds to one country. The dataset has a special column called `'geometry'` that stores the shape of each country with a **geometry** .  
-```py
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 

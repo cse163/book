@@ -5,7 +5,7 @@
 </div>
 
 Suppose you work at Spacebook (a cheap knock-off of Facebook and MySpace) and you are working on the team that manages Spacebook profiles. Suppose your team has a Python class to define a single Spacebook user, shown in the snippet below, and stores instances of this class in a list.  
-```py
+```python
 class SBUser:
     def __init__(self, name, user_id):
         self._name = name

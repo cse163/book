@@ -1,11 +1,11 @@
 # Indexing (Databases)
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/f1a3d4af3f6b4f75b369902cce641b8e?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/f1a3d4af3f6b4f75b369902cce641b8e?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 Suppose you work at Spacebook (a cheap knock-off of Facebook and MySpace) and you are working on the team that manages Spacebook profiles. Suppose your team has a Python class to define a single Spacebook user, shown in the snippet below, and stores instances of this class in a list.  
-```py
+```python
 class SBUser:
     def __init__(self, name, user_id):
         self._name = name

@@ -1,7 +1,7 @@
 # Spatial Index
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/25cfbaf327ea4288b7bba27f31303330?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/25cfbaf327ea4288b7bba27f31303330?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 Now that we have a cursory idea of how to use a tree index to help us find data in a large collection more efficiently, we can now explore how the same principle can be applied to geospatial data.  

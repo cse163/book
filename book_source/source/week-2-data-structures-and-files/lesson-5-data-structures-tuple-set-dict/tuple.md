@@ -17,7 +17,7 @@ The syntax for lists and `tuple` s look very similar but have some key differenc
 -  Tuples don't have any meaningful methods like     `list`     does since you cannot modify it.  
 
 To access values in a `tuple` , you can index into them just like lists. To prove to you that you can't modify `tuple` s, look at the following code segment:  
-```py
+```python
 l = [1, 2, 3]
 print('l[0] =',l[0])
 print('l before', l)
@@ -35,7 +35,7 @@ Notice that it prints everything before `'t  after'` as it crashes on line 10 an
 ##  Unpacking Tuples  
 
 One nice feature Python allows you to do is to "unpack" a `tuple` so that you can give a variable name to each component rather than having to specify the values by index (i.e. `t[2]` ). For example, you are allowed to write a program like the following:  
-```py
+```python
 t = (4, 5, 6)
 print(t[1] + t[2])
 
@@ -44,13 +44,13 @@ print(b + c)
 ```
 
 It's very important that your unpacking "matches up" with the `tuple` you are unpacking. For example, the following two snippets show what happens when you try to unpack too many or too few items (both are errors).  
-```py
+```python
 t = (4, 5, 6)
 a, b, c, d = t  # Try to unpack it into 4 variables
 print(b + c)
 ```
 
-```py
+```python
 t = (4, 5, 6)
 a, b, = t  # Try to only unpack the first two values
 print(a)
@@ -72,7 +72,7 @@ is the dynamic size and ability to modify the contents. It doesn't make as much 
 
 So far, it seems like `tuple` s are just `list` s but worse since you can't modify them. Again, it's more about what tool is right for the job. Sure, you can use a screwdriver as to put a nail in a wall, but sometimes it just makes more sense to use a hammer! If you know exactly how many elements should go in your data structure, a `tuple` is right for the job! While it's not obvious why it's sometimes nice to know that the data in a `tuple` can't change. You don't have to worry about passing a `tuple` to a function and that function somehow destroying your data or messing it up.  
 `tuple` s normally appear as a way to return more than one value from a function. For example, if I wanted to write a function that returned both the first and second letter from a word, I could write it such that it returns both!  
-```py
+```python
 def first_two(word):
     return  word[0], word[1]
 

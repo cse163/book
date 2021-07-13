@@ -18,7 +18,7 @@ As a bit of a preview, the reason the main-method pattern is necessary is to mak
 
 We use importing to get values or functions defined inside one module so they can be used in another module. You have already been using this on your homework! We defined a module `cse163_utils` and in order to use the function `assert_equals` defined in that module, you had to import it.  
 There are 2 main (and a half, sort of)  ways to import in Python that we will explore in this slide. For the following examples, assume we have defined the module `module_a` with the file `module_a.py` as shown below.  
-```py
+```python
 # Contents of: module_a.py
 def fun1():
     print("Calling a's fun1")
@@ -35,7 +35,7 @@ Our goal is to call `fun2` inside another module, `module_b` . To do this, we ne
 ##  Option 1) `import module_a`   
 
 The simplest syntax simply uses the `import` statement to import a module. The following snippet shows a short program that uses `fun2` defined in `module_a` .  
-```py
+```python
 # Contents of: module_b.py
 import module_a 
 
@@ -78,7 +78,7 @@ Notice that `module_a` 's `fun2` behaves exactly the same as it was defined, eve
 
 This syntax has the exact same semantics as the one before, but it lets you define a shorthand name for the module. In this case, we essentially renamed `module_a` to `m` in our module so in our code, we can just say `m.f2()` . Semantically, these are really the same ways to import a module, but this one has an extra step to "rename" it.  
 Here, we show the complete `module_b` that uses the syntax. The output and behavior of the program are exactly the same.  
-```py
+```python
 # Contents of: module_b.py
 import module_a as m
 
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
 Sometimes, it is very tedious to import a whole module and prefix every function call with `module_name.function_name` . Python provides another syntax that lets you import a specific function from another module. When you say `from module_a import fun2` you are importing just the function `fun2` from `module_a` . When this syntax is used, Python just adds `fun2` to your current scope. This means you don't need to call it with `module_a.f2()` , you can just say `f2()` .  
 The following snippet shows how to use this syntax.  
-```py
+```python
 # Contents of: module_b.py
 from module_a import fun2
     

@@ -14,7 +14,7 @@ There are four common types of joins:
 -  An     **outer join**     (     `how='outer'`     ): The combination of the three above! It has the combination of all rows from the inner-join, left-join, and right-join!  
 
 With the same, modified, dataset from the last slide, try out the various join strategies by changing the value of the `how` parameter!  
-```py
+```python
 import pandas as pd
 
 # Make the tas DataFrame

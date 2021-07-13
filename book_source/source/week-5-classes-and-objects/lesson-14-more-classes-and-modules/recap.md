@@ -1,7 +1,7 @@
 # Recap
 In Lesson 12, we learned about **classes** and **objects** . Here's a quick recap of the terminology that we learned since it will be important to know these terms.  
 -  A     **class**     is a blueprint that can be used to construct     *instances*     of that blueprint. A class defines the     *state*     of the     *object*     and what     *behaviors*     it has. For example, we defined the     `Dog`     class as follows:  
-    ```py
+    ```python
     class Dog:
     def __init__(self, name):
         self.name = name
@@ -11,14 +11,14 @@ In Lesson 12, we learned about **classes** and **objects** . Here's a quick reca
     ```
 
 -  An     **object**     (or     **instance**     ) is an instantiation of a     *class*     that has its own set of fields. You can create an instance of the     `Dog`     class by using the following syntax.  
-    ```py
+    ```python
     d = Dog('Fido')
     ```
 
 -  The     **state**     of the object is represented by its     **fields.**     A field is essentially a variable owned by that object that is around for that object's lifetime. The     `Dog`     class has the field     `name`     .  
 -  The     **behavior**     of an object is defined by the methods written in its     *class.*     The     `Dog`     class has the method     `bark`     .  
 -  Variables store     **references**     to objects rather than the objects themselves. This means the following program has 2     `Dog`     objects and 3     `Dog`     references.  
-    ```py
+    ```python
     d1 = Dog('Chester')
 d2 = Dog('Scout')
 d3 = d1
@@ -33,7 +33,7 @@ d3 = d1
 
 -  `__init__`     is a special method used when creating an instance of the object. It determines which parameters need to be passed when you create a new instance.  
 -  Every method defined in a class needs to take a parameter     `self`     so the method can access the fields/methods of the instance the method is being called on.  
-    ```py
+    ```python
     d1 = Dog('Chester')
 d2 = Dog('Scout')
 d3 = d1

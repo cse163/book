@@ -1,7 +1,7 @@
 # 📚 Lesson 29: Privacy
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/1891cb98018b4f84b843803bb6371e62?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/1891cb98018b4f84b843803bb6371e62?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 In the last lesson, we talked about fairness. Fairness is a crucial area (albeit a more recent area) being examined by data and computer scientists alike. We saw that defining something abstract like fairness is very difficult, and requires clear statements of values; this emphasized the importance of people in decision-making processes related to fairness in data science.  

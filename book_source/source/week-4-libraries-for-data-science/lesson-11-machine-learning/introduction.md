@@ -31,7 +31,7 @@ One thing that is particularly difficult is that there are a lot of concepts/ter
 
 Congrats! You have been hired as a data scientist at Twitter! Your boss comes up to you and tells you that your first task is to answer the age-old question: Which is more popular on the internet, cats or dogs?  
 As a Twitter employee, you learned how to access all the tweets on the website in Python. Using your CSE 163 knowledge so far, you come up with a good first attempt at trying to answer this question. Your idea is to just scan through all the tweets (a list of strings) and just count the number of tweets contain the string `'dog'` or `'cat'` . You go ahead and write something like the following code.  
-```py
+```python
 cats = []
 dogs = []
 for tweet in tweets:
@@ -50,7 +50,7 @@ A big part fo the reason we are able to solve this problem, is because it's "eas
 ##  Instagram: Image Data  
 
 The job market is good for data scientists so you decide to switch jobs and work at Instagram instead. Your reputation as an expert in the field of cat-vs-dog precedes you. Your new boss asks you to solve the same problem but using Instagram's dataset of images instead. You decide to start with what you know and try something similar to what you did at Twitter by writing the following code.  
-```py
+```python
 cats = []
 dogs = []
 for pic in pictures:

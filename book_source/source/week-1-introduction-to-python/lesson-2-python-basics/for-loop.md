@@ -18,7 +18,7 @@ If you have taken CSE 143, the for loop in Python behaves a lot more like the fo
 
 In Python, the **for loop** lets you iterate over a sequence of values. The for loop has a **body** that runs for each item in a **sequence** and uses a **loop variable** to keep track of the current item.  
 We'll start by showing an example and then explain the parts.  
-```py
+```python
 for i in range(5):
     print('Loop', i)
 ```

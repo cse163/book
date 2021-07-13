@@ -3,7 +3,7 @@ Last time, we introduced the idea of working with images with a new library call
 While there can be a lot of syntax, the nice thing is a lot of it is fairly similar to `pandas` (since `pandas` was built on top of `numpy` ). It helps to relate what you are learning now to what you learned before. Additionally, the *key concepts* are the most important to come back to always. Whenever I write code that uses `numpy` , I always have to ask myself "What is the shape of the data I have right now?" and "How do I access or transform the data I have to the data I want?". I almost always need a pencil and paper by my side for me to draw out a sketch of the data I have and what I want to do with it.  
 ##  `numpy`   
 
-```py
+```python
 import numpy as np
 
 # Create numpy arrays

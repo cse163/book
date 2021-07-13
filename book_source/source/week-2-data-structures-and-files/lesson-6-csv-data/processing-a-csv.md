@@ -23,7 +23,7 @@ To accomplish this, we will start by storing our data in some data structure ( `
 
 This data structure is a `list` that stores `dict` s as its entries; therefore we call it a list of dictionaries. Each dictionary represents a single row of the dataset: this is why there are 3 dictionaries inside this list. Inside each dictionary, there is a key/value pair for every column of the data showing the values for each row and that column.  
 This is a bit complex when you see it at first because the data structures are nested! Inside the `list` are dictionaries! This means if you stored that above data in a variable called data, you could access a dictionary by indexing into a list.  For example, to get the name of the TA at index 1, you might write:  
-```py
+```python
 data = [
     {'Name': 'Madrona', 'Salary': 3},
     {'Name': 'Rit',     'Salary': 1},
@@ -46,7 +46,7 @@ print("type(ta['Name'])", type(ta['Name']))
 ```
 
 It turns out, it's not necessary to save the value of `data[1]` in a variable before accessing it! It is much more common to write code like the following:  
-```py
+```python
 data = [
     {'Name': 'Madrona', 'Salary': 3},
     {'Name': 'Rit',   'Salary': 1},
@@ -57,7 +57,7 @@ print('Name of TA in Row 2:', data[1]['Name'])
 ```
 
 Let's try another example. **Before pressing the "Run" button, make a prediction of what each line of code will do and see if your prediction matches reality!**   
-```py
+```python
 data = [
     {'Name': 'Madrona', 'Salary': 3},
     {'Name': 'Rit',   'Salary': 1},
@@ -77,7 +77,7 @@ The second one does not work at all and causes an `Error` ! Why is that? Well `d
 ##  Looping over the list of dictionaries  
 
 Let's look back to our example from earlier where we want to compute the sum of the TAs' salaries. We start by writing a loop to go over each TA in the list (each TA is a dictionary). We then access the `'Salary'` entry in each dictionary and add that to a variable for a cumulative sum.  
-```py
+```python
 data = [
     {'Name': 'Madrona', 'Salary': 3},
     {'Name': 'Rit',   'Salary': 1},

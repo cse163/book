@@ -44,7 +44,7 @@ At first glance, 255 might seem like an arbitrary number. So where does it come 
 
 We are going to use a library called `imageio` to help read in an image to a `numpy` array. The following snippet reads in an image, prints some values about it, and then uses a slightly new `matplotlib` feature to plot an image from a `numpy` array. We have to pass in a colormap `cmap` to tell `matplotlib` to plot the values as grayscale since by default, it uses that yellow/purple color scheme (if you take out the parameter, you can see what it does when you run it!).  
 The last example in the snippet modifies the array (using slice syntax). Before you open `pic2.png` , what do you think the image will look like?  
-```py
+```python
 import imageio
 import matplotlib.pyplot as plt
 import numpy as np
@@ -90,7 +90,7 @@ To index into a color image, you now need to specify 3 values. For example `img[
 ##  Color Image Code  
 
 We start with a simple example as we did with grayscale. Notice in this example, the shape printed has 3 dimensions and the third one has shape 3 (for the 3 color channels). As a note, we do not need to specify a `cmap` since `matplotlib` does the right thing for 3D `numpy.array` s by default.  
-```py
+```python
 import imageio
 import matplotlib.pyplot as plt
 import numpy as np
@@ -110,7 +110,7 @@ plt.savefig('pic1.png')
 ```
 
 Now let's do something slightly more complex where we modify the colors in the image. Notice in the last example we had to specify three values to index into the image. The same applies here. As we modify each section, we are setting one of the R, G, or B values respectively.  
-```py
+```python
 import imageio
 import matplotlib.pyplot as plt
 import numpy as np

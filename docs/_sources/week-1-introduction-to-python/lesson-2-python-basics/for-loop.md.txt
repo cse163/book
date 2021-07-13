@@ -1,7 +1,7 @@
 # For Loop
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/7b213be0506d4fcc8876aa6863e7991f?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/7b213be0506d4fcc8876aa6863e7991f?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 
@@ -18,7 +18,7 @@ If you have taken CSE 143, the for loop in Python behaves a lot more like the fo
 
 In Python, the **for loop** lets you iterate over a sequence of values. The for loop has a **body** that runs for each item in a **sequence** and uses a **loop variable** to keep track of the current item.  
 We'll start by showing an example and then explain the parts.  
-```py
+```python
 for i in range(5):
     print('Loop', i)
 ```

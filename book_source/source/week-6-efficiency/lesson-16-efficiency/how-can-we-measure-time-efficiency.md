@@ -5,7 +5,7 @@
 </div>
 
 Consider the following two methods to compute the sum of the numbers from 1 to some input `n` .  
-```py
+```python
 def sum1(n):
     total = 0
     for i in range(n + 1):
@@ -24,7 +24,7 @@ The second one uses a clever formula discovered by Gauss that computes the sum o
 Most people probably have an intuition that the second seems better, but it's hard to state exactly "why" that's the case. Is it because it has fewer lines to code? While it's definitely shorter, it's also less easy to understand since it requires knowing this obscure formula from math.  
 Remember, it's important to state what resources we care about before deciding which is more efficient. As we said before, the most common resource to worry about is **time** (if we ever omit this, you should assume we are discussing time). To answer which one is more efficient, we might actually try to write code to time how long it takes them to finish.  
 The details of the snippet below are not important, but we could try timing each implementation by using the `time` package that is built into Python. `time` has a method called `time` that reports the number of seconds since the "epoch" (midnight on Jan 1, 1970 in UTC time). We can then figure out how much time each method call takes.  
-```py
+```python
 import time
 
 
@@ -62,7 +62,7 @@ Note that understanding the code in this cell is not really relevant to this rea
 
 ```
 
-```py
+```python
 import time
 
 import matplotlib.pyplot as plt

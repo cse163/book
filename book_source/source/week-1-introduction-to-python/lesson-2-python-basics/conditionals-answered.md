@@ -5,7 +5,7 @@
 </div>
 
 In the previous slide, we showed the following code block and asked a couple of questions.  
-```py
+```python
 x = 14
 if x < 10:
     print('A')

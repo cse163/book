@@ -1,7 +1,7 @@
 # Is Your Data Anonymous?
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/8e3fc6cffe2741bab99f788dfe32692e?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/8e3fc6cffe2741bab99f788dfe32692e?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 We generally provide our data to be used by researchers and stakeholders, but we generally have an expectation that they do not release confidential information that may negatively impact your wellbeing if that data were released. We share our data though because we hope that the data will help them improve outcomes for us individually, or the world more broadly. For example, you let your doctor record information about your health when you go to get a checkup so that they can better serve your health needs as they evolve over time (e.g., spotting a developing condition, or knowing you are allergic to a particular drug before trying to prescribe it to you). Other times, you may participate in health research to help scientists investigate trends in health or test new treatments that could potentially save lives in the future.  

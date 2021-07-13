@@ -7,7 +7,7 @@
 So we saw that objects exist in Python, but now we want to answer how you can define your own objects!  
 To do this, you need to write a **class** . A class is a "blueprint" for an object, so you can make many objects from that blueprint. The `pandas` developers defined a `DataFrame` class so that you can construct `DataFrame` objects to use (another common word for "object" is "instance").  
 We start by showing the syntax for defining our own class and then explaining what the components are.  
-```py
+```python
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -28,7 +28,7 @@ This defines a new type called `Dog` . The state of the `Dog` will be the **fiel
 
 
 To use a `Dog` object, you would write the following code (we have to redefine the class in the cell below since all the snippets in these readings are independent).  
-```py
+```python
 class Dog:
     def __init__(self, name):
         self.name = name

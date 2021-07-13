@@ -5,7 +5,7 @@
 </div>
 
 Last week, we learned about how to define **default parameters** for your function. What this means is we specify what a default value should be for a parameter and the client can optionally provide a value for that parameter (it takes the default value if not specified). For example,  
-```py
+```python
 def some_function(x, y=2):
     print(x * y)
 
@@ -14,7 +14,7 @@ some_function(3)  # default will be y=2
 ```
 
 One important thing to mention: you are allowed to give default values for any parameter you want, however, there is a rule about the order of parameters when you define default values. If you define a default value for a parameter, every parameter after that one in the list of parameters must also have a default value. This means you would not be able to write a function like the one below. If you run it, you will see an error.  
-```py
+```python
 def some_function(a, b=2, c): 
    print(a * b * c)
 ```
@@ -23,7 +23,7 @@ def some_function(a, b=2, c):
 
 Default parameters are great, but there is one case you have usually think about when you are programming in Python.  
 Suppose I wanted to write a function called `append_to` that takes a value and a `list` and appends the value to the end of the list, returning the `list` back to the caller. Suppose we wanted to make the `list` parameter optional, in which case the default value is the empty list. In the following cell, we define such a method and then call it a couple of times. **Before you press Run, think about what this program should print out.**   
-```py
+```python
 def append_to(element, to=[]):
     to.append(element)
     return to
@@ -57,7 +57,7 @@ At this point, some students might confuse this with creating a list regularly u
 ##  How do we fix this?  
 
 The general pattern is to make the default value `None` and then write code inside the method to create an empty `list` if the value is `None` . For example, the fixed code block using this pattern would look like:  
-```py
+```python
 def append_to(element, to=None):
     if to is None:
         to = []
@@ -74,7 +74,7 @@ And now it prints the output we expected originally!  Each time `append_to` was 
 ##  Fancier Syntax  
 
 It can be kind of tedious to sometimes write out an entire if-else block to set a value. Python has a **conditional expression** that lets you write this in shorter syntax (some call this the "ternary operator"). Below we show the original if-else block (the original way you're familiar with) and then we show the conditional expression that achieve the same value assignment.  
-```py
+```python
 condition = True  # Or any boolean value
 
 # Option 1
@@ -91,7 +91,7 @@ print(x)
 
 The syntax looks a little weird at first, but it's meant to read like English "x should have the value 14 if the condition is true, otherwise, it should be 42".  
 We could then rewrite our `append_to` example using this slightly cleaner syntax:  
-```py
+```python
 def append_to(element, to=None):
     to = [] if to is None else to
     to.append(element)

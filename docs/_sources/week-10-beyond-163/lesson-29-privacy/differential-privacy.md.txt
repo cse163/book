@@ -1,7 +1,7 @@
 # Differential Privacy
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/e3d9e4b466904c319bb0b0aea05eb821?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/e3d9e4b466904c319bb0b0aea05eb821?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 In the last slide, we saw a video about the 2020 US Census and privacy guarantees they make using this tool called **differential privacy** . Let's dive in a little into what this term means and one specific technique to achieve it.  

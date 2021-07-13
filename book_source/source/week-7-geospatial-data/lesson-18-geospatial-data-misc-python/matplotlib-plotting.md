@@ -6,7 +6,7 @@
 
 We have already seen how to make plots using `seaborn` to make simple data visualizations and using `matplotlib` to customize the titles and axes. This week, we are going to explore `matplotlib` a little more in-depth so we can understand how to make even more rich visualizations.  
 Before, when we were using `seaborn` , whenever we were plotting we were plotting on a global **figure** behind the scenes. Some of you might have experienced bugs on HW3 where you used different functions than we instructed. These bugs stem from how different functions interact with this figure. Just like `seaborn` , `pandas` has a way to make simple plots that, by default, also plot on a global figure. Take the following toy-example:  
-```py
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -24,7 +24,7 @@ plt.savefig('plot.png')
 
 This only produced one plot because the second one overwrote the first one on this global figure! If we want to plot these on the same figure, we would need something a little more complex.  
 A **figure** is a `matplotlib` term for a canvas to store the drawings. A **figure** may have one or more **axes** and each **axes** can have multiple plots drawn on them.  You can make very interesting visualizations by putting multiple **axes** on a single **figure** . Instead of using the default-global figure from `seaborn` , we have a way to create our own using `matplotlib` . The code looks like the following.  
-```py
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -50,7 +50,7 @@ Notice that the code is mostly the same, but now we explicitly tell `pandas` to 
 
 From what we have seen so far, it's not very clear why we need to distinguish between a figure and axis. It becomes more clear when you want multiple axes on a single figure. You should think of the figure being the whole window that you can plot in and each axis as being a single set of x/y axes. If you wanted two plots side-by-side, you would have one figure and two axes.  
 For example, to plot the same graphs as above side-by-side, we could write code like the following.  
-```py
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -73,7 +73,7 @@ fig.savefig('plot.png')
 
 The `subplots` call returns a `Figure` and a list of `Axes` objects. In this case, we asked for a subplot with 2 `Axes` objects, so it returned them as a list. We had each call to `plot` use a different `Axes` to draw on. The `Figure` still holds both of the `Axes` , so to save the figure we will ask the `Figure` to do that.  
 `subplots` is actually really generic in the sense that you can make as many axes as you want! `subplots` takes two optional parameters `nrows` and `ncols` to specify how many rows and columns of axes you want. The returned list of `Axes` will be a `list` of `lists` if you ask for multiple rows and multiple columns.  
-```py
+```python
 import matplotlib.pyplot as plt
 
 fig, axs = plt.subplots(nrows=3, ncols=2)
@@ -103,7 +103,7 @@ For example, you will be making a plot like the following on your next take-home
 ##  Subplots Examples  
 
 There are generally two ways of working with axes return of `subplots` , index into it or unpack it. For example, the following snippet shows how to make two small plots using both styles. Not  
-```py
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -129,7 +129,7 @@ fig.savefig('option2.png')
 
 Usually either suffices, but if you start getting more than 4 or so plots, the second option becomes unwieldy. Below, we show a similar example but with a 2x2 plot.  
 Before you press run, think about what the final plot should look like; when we plot `a` and `b` , it is a line with a positive slope ( `/` ) and when we plot `a` and `c` , it is a line with a negative slope ( `\` ).  
-```py
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 

@@ -1,7 +1,7 @@
 # Recap and Next Steps for Differential Privacy
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/78e30ed8485a4f2698629d65523124c4?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/78e30ed8485a4f2698629d65523124c4?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 So we have seen a lot in this lesson! They are all terms that we think you should know and are likely ones you will hear more prominently in your work as people working with data as you move into the future! We start this last slide of the reading by recapping some of the terms we introduced in this lesson and the most important takeaways, highlighting an important reason differential privacy is used in practice, and showing some current and next steps for differential privacy.  

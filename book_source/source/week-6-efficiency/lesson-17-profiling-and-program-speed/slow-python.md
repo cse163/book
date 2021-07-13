@@ -33,7 +33,7 @@ One of the big benefits of this usage of C is the fact that this translation hap
 
 Python brings a whole new set of challenges to this translation because the variables can store any type of data. Additionally, it's common for this translation to computer language to happen in an **interpreter** that runs at the same time the program is running. By default when you just use the provided `python` command, it is interpreting your code.  
 Consider the equivalent Python program.  
-```py
+```python
 a = 1
 b = 2
 c = a + b
@@ -67,7 +67,7 @@ Note that the specific output here is actually made up, so don't put too much em
 So if even a simple program that just makes variables can have so many machine-instructions, you might be able to imagine how much more complex (and slower) things get once you start adding in concepts like looping (e.g., on each iteration of the loop you have to double-check the type of the loop variable each time you access it).  
 So part of the reason Python tends to be slower is that these extra steps to check types just lead to more instructions to run than an equivalent C program. The other big slow down comes from the fact that we commonly use a Python interpreter, which is also doing this translation to machine code on the fly as you run the program. Both of these factors in combination can lead to some **significant** slowdowns in real programs.  
 For example, consider the programs below in C and Python to manually compute `m * n` using loops. You wouldn't actually write this code in practice, but it's a nice way to show why looping in Python is slow. Note that EdStem hides the fact that they first compile the C code before you run it, while they just immediately run the Python interpreter on the Python. You'll find the Python code runs MUCH slower than the C version (assuming the Python version doesn't time out).  
-```py
+```python
 m = 10000
 n = 25000
 

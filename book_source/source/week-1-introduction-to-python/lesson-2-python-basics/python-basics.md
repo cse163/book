@@ -23,12 +23,12 @@ You can always get the original code back for a reading slide by refreshing the 
 ###  Print Statements  
 
 We saw that the `print` statement in Python is very simple  
-```py
+```python
 print('Hello world!')
 ```
 
 One thing that Python is really good at is providing slightly different ways of using the same syntax to do helpful things. For example, you can also pass multiple values to the `print` function and it adds spaces between them!  
-```py
+```python
 print('Hello', 'world', '!')
 ```
 
@@ -37,7 +37,7 @@ print('Hello', 'world', '!')
 A Python program is a series of statements that get executed from top to bottom. Right now the only statement we know is the print statement. But we will learn others!  
 In CSE 163, we will ask you to put a little bit of starter code in every program you write. We call this the **main-method pattern** . We can't really motivate why you need to use this quite yet; you'll have to trust us that it is the right thing to do. We introduce this pattern now to get you in the practice of writing from the onset of your Python journey. We will come back in future weeks and actually dive into what this pattern does and why it's necessary.  
 Recall that we could write a Python program in a file (in Ed, it shows we write a Python snippet) to print hello world like the following:  
-```py
+```python
 print('Hello world')
 ```
 
@@ -52,7 +52,7 @@ is a comment (i.e. not real code, just a description).
 
 ```
 
-```py
+```python
 def main():
     # Put your code, indented inside here
     print('Hello world!')
@@ -83,7 +83,7 @@ the main-method pattern in these readings' snippets. The intent here is to keep 
 
 Variables store values. Each Python value is composed of a value and its type. Unlike Java, Python doesn't require you to define the type of a variable. Additionally, throughout the lifetime of the program running, the variable can be made to hold a new value of a different type using an **assignment statement** .  
 The following snippet creates a variable named `x` that stores the value `3` of type `int` (for integer) and a variable named `y` that stores the value `4.2` of type `float` (for floating-point number). One line 3, it then re-assigned `x` to store the value `3.7` of type `float` . This is why the program prints `x = 3.7` and `y = 4.2` .  
-```py
+```python
 x = 3
 y = 4.2
 x = 3.7
@@ -146,7 +146,7 @@ Python supports many operations for built-in types. Specifically, here are the o
 -  Exponentiation:     `a ** b`     (i.e., raise to a power $a^b$)  
 
 You can also nest expressions (and use parentheses to define order) since all expressions evaluate to some value. You can do something complex like the following:  
-```py
+```python
 a = 3
 print(a - (2 * a) + (a ** (1 + 2)))
 ```

@@ -1,7 +1,7 @@
 # Recap: Pandas
 In Lesson 8, we introduced a new **library** named `pandas` . Recall that a library is some code someone else wrote and packaged up for us to use. `pandas` is a very popular library used by data scientists to process tabular data (i.e. data that comes from a spreadsheet).  
 In the lecture, we saw the Earthquakes dataset stored in `earthquakes.csv` . To read that CSV into `pandas` , we would run the code:  
-```py
+```python
 import pandas as pd
 df = pd.read_csv('/course/lecture-readings/earthquakes.csv')
 
@@ -16,7 +16,7 @@ We discussed the notion of the `pandas`  `DataFrame` having a notion of **column
 ```
 
 We saw that we can access the data columns from `DataFrame` using the following syntax:  
-```py
+```python
 import pandas as pd
 df = pd.read_csv('/course/lecture-readings/earthquakes.csv')
 
@@ -24,7 +24,7 @@ print(df['day'])
 ```
 
 We also saw we can use a **mask** to select which subset of the rows we want by filtering our data to rows that have some specific value. For example, if we want to find all the earthquakes in California from 2016, we would write  
-```py
+```python
 import pandas as pd
 df = pd.read_csv('/course/lecture-readings/earthquakes.csv')
 
@@ -32,7 +32,7 @@ print(df[(df['name'] == 'California') & (df['year'] == 2016)])
 ```
 
 It can be much more readable to save the sub-parts of the query in variables so your query doesn't all have to be in one line. For example, you can achieve the same results in a much more readable way like in the following cell.  
-```py
+```python
 import pandas as pd
 df = pd.read_csv('/course/lecture-readings/earthquakes.csv')
 

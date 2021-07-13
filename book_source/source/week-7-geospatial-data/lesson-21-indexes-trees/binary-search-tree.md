@@ -14,7 +14,7 @@ Pretend for a moment that we are nearing the end of November. Yesterday was Than
 
 Now Hunter knows he is a size 42 and his goal is to make it out of Black Friday alive by finding the shirt in his size as quickly as possible before the crowd stampedes. If Hunter knows his shirt size is 42, would the optimal strategy be to start at the smallest shirt size (1) and go shirt by shirt until he finds his size? Not if he is trying to survive!  
 You probably have a good heuristic to help you find your shirt more quickly than that: start in the middle! If you look at the shirt in the middle of the rack, say size 29, you know that Hunter's shirt size (42) will be after the mid-point since 42 is larger than 29. This enables you to eliminate half of the shirts to look at since there is no way that Hunter's shirt is before the shirt of size 29, assuming the shirts are sorted by size. You can repeat this process again by picking the mid-point of the remaining shirts. This algorithm of repeatedly going to the mid-point and going left or right from that is called **binary search** . The algorithm, written in pseudo-code looks like the following:  
-```txt
+```text
 Input: List of shirts sorted by size and a target value to find
 
 while there are more than 1 shirt remaining:

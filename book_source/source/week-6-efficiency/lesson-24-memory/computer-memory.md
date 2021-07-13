@@ -31,7 +31,7 @@ The following image shows a common layout of the memory allocated to a program b
 Every time you construct a new object in Python (or any programming language for that matter) it uses up a bit of your computer's memory! This is because the object's data needs to be stored somewhere and memory is the most convenient place to do that. They are generally created in the "Heap" portion of your memory.  
 This can cause problems if your program runs for a long time and slowly builds up a ton of objects. You have probably run into this before if you use a browser like Google Chrome or Mozilla Firefox; if you leave too many tabs open for too long, they sometimes cause your computer to freeze up because they use up so much memory after making so many objects!  
 Consider the following snippet, that will make a `list` of `Dog` objects. It's designed purposefully to crash so if you run it, you will eventually get a memory error after a few seconds.  
-```py
+```python
 class Dog:
     def __init__(self, name):
         self._name = name

@@ -13,7 +13,7 @@ For example, we have a dataset of fMRI (brain scan) data that, like most real-li
 -  `signal`     : The measurement value  
 
 If we tried to load it into a `DataFrame` , we would see the following.  
-```py
+```python
 import pandas as pd
 
 df = pd.read_csv('/course/lecture-readings/fmri.csv')
@@ -32,7 +32,7 @@ In Python, `NaN` operates by two rules:
 -  Any boolean comparison on     `NaN`     , evaluates to     `False`   
 
 We can access the value `NaN` most easily by using the library `numpy` (commonly imported as `np` ). We will learn more about `numpy` in Week 7!  
-```py
+```python
 import numpy as np
 
 print(np.nan)            # nan
@@ -44,14 +44,14 @@ print(np.nan == np.nan)  # False
 
 That last line is pretty surprising since we compared `np.nan` to `np.nan` . Remember though, one of the rules of `NaN` is that every boolean comparison on `NaN` is `False` !  
 How is `NaN` different than `None` ? `None` doesn't allow any numeric operations on it, it will cause an error!  
-```py
+```python
 print(1 + None)
 ```
 
 ##  `NaN` in `pandas`   
 
 So now that we know what this magic-value `NaN` is in our dataset. Let's see how to handle it in `pandas` . Let's start by taking the average of the `'signal'` column (that contains `NaN` values).  
-```py
+```python
 import pandas as pd
 
 df = pd.read_csv('/course/lecture-readings/fmri.csv')
@@ -69,7 +69,7 @@ Luckily for us, `pandas` has some logic built into it to skip `NaN` values for m
 
 
 The following code block shows how these operations work  
-```py
+```python
 import pandas as pd
 
 df = pd.read_csv('/course/lecture-readings/fmri.csv')

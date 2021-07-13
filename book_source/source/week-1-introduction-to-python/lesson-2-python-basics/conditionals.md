@@ -7,7 +7,7 @@
 Conditional statements let you execute code conditionally based on some condition; they are similar in nature to the `while` loop but only run at most once.  
 In Python, the keywords to control these conditionals are `if` , `elif` (read "else if") and `else` . For those that know Java, these keywords exactly match the semantics of Java's `if` , `else if` and `else` keywords.  
 A conditional block is an `if` block optionally followed by any number of `elif` blocks optionally followed by at most one `else` block.  
-```py
+```python
 x = 14
 if x < 10:
     print('A')

@@ -7,14 +7,14 @@
 Each string is an **object** . We will talk more about objects in detail in Week 5, but the basic idea is that each string is its own, independent unit that has some **state** and some **behaviors.** The **state** of a string is its characters and their ordering. The **behaviors** of the string are the functions we are allowed to call on them to access or transform the data. You don't need to worry too much about this state/behavior terminology right now as we will emphasize it in Week 5.  
 We have seen a simple function already that allows us to index into the string so it can return the character at that index. You can imagine this indexing as just one special function provided to us by the string (although the syntax looks different than the general notion we will show below).  
 For example, there is also an `find` function that you can call on a string `s1` , that returns the index of a given string `s2` inside `s1` . For example, you could write the following:  
-```py
+```python
 source = 'I really like dogs'
 target = 'll'
 print(source.find(target))
 ```
 
 In this case, it prints 5 because the first occurrence of the substring `'ll'` in `source` appears at index 5. Notice that we call a function on the string `source` by saying `source.<function_name>(...)` where `...` is the parameters we need to pass to that function. If we were to call `target.find(source)` it would be looking for `source` inside `target` and would instead return -1 (as defined in the documentation for `find` ). You can try this in the snippet below.  
-```py
+```python
 source = 'I really like dogs'
 target = 'll'
 print(target.find(source))
@@ -50,7 +50,7 @@ strings rather than modifying the original string
 
 The last two functions are the most complex, so we will do a short example to clarify their use.  
 Suppose we had a string that contained a series of values separated by the `,` character, but we want to print the string out in all upper-case letters separated by `|` characters. We put print statements in between to make the sequence of transformations clearer and to provide comments explaining the step.  
-```py
+```python
 data = 'hunter,madrona,alex,sylvia'
 print('Original   :', data)
 

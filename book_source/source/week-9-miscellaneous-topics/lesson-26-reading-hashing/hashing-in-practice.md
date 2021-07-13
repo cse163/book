@@ -6,7 +6,7 @@
 
 We mentioned before that when defining that a hash function needs to be "consistent". Consistency is all about maintaining the deep relationship between the notions of equality and hashing.  
 We briefly showed this in the last slide, but to get the hash for a Python object you can call the built-in `hash` function like in the snippet below.  
-```py
+```python
 print(hash('hello world'))
 print(hash(4.275))
 ```
@@ -18,7 +18,7 @@ We've mentioned "consistent" a few times by this point: what do we mean by that?
 
 So whenever you implement a class, it's important to make sure `__eq__` and `__hash__` consistent. Almost all implementations of `__hash__` just rely on using Python's `hash` function on your fields so you don't have to come up with something as complex as the last `str` hash function we showed on the last slide.  
 An example of a class that does this well is shown in the following snippet.  
-```py
+```python
 class Example:
     def __init__(self, a, b, c):
         self._a = a

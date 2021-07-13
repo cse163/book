@@ -16,7 +16,7 @@ When I'm trying to understand code without documentation, it often feels like I'
 ```
 
 You can always use the `#` to leave a note in your code, but we are specifically going to talk about a special notion in Python called a **doc-string** that lets you add special documentation for a function. To do this, you use this special triple-quote string (i.e. `""" documentation """` )  as the first lines of the function.  
-```py
+```python
 def mean(a, b):
     """
     Returns the average of a and b
@@ -27,12 +27,12 @@ def mean(a, b):
 Everything that goes inside these triple-quotes now becomes the documentation for a function.  
 Why does it help to specify this special doc-string? Well Python has built-in tools to help you view the doc-strings for any function!  
 Python provides a `help` function that lets you see the documentation for any function! For long documentation, it brings up a special viewer where you can move up/down with the keys `j` / `k` and you can quit with the key `q` .  
-```py
+```python
 help(print)
 ```
 
 To see how this works with code you write, suppose I wrote the function with the following doc-string and asked for help on it.  
-```py
+```python
 def function_with_good_comment():
     """
     This function does some really cool stuff
@@ -43,7 +43,7 @@ help(function_with_good_comment)
 ```
 
 What if instead of using the triple-quote docstring, I just put everything after a `#` comment since I'm more comfortable with that  
-```py
+```python
 def function_with_bad_comment():
     # This function does some really cool stuff, but with a bad comment
     print('ABC')

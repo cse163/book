@@ -9,7 +9,7 @@ So we can see that understanding complexity is important so that you can easily 
 
 For example, consider a `list` with $n$ elements in it. It is useful to know that if you `append` a value to the `list` , this will take $\mathcal{O}(1)$ time; this means it's always a constant-time operation no matter how many elements are in it. Not all operations take the same amount of time though.  
 For example, to run `x in l` where `l` is a `list` , how much time would that take? You might notice it depends on if `x` is in `l` and if it is, where in `l` it is found. Internally, `in` is implemented like the following code snippet.  
-```py
+```python
 def in_implementation(l, x):
     """
     Example showing how x in l might be implemented
@@ -27,7 +27,7 @@ One of the magic things about `set` and `dict` , is that almost all of the opera
 ##  An Example  
 
 To understand why knowing these differences in performance, think back to the example we used when we introduced `set` s. Recall that we had a file and wanted to count the number of unique words in the file. We came up with two implementations that were nearly identical, except one used a `list` and the other used a `set` . These implementations are shown in the cell below.  
-```py
+```python
 def count_unique_list(file_name):
     words = list()  
     with open(file_name) as file:
