@@ -4,7 +4,9 @@ import re
 import unicodedata
 import xml.etree.ElementTree as ET
 
+import pandas as pd
 import yaml
+from pytablewriter import MarkdownTableWriter
 
 LESSONS_DIR = "../lesson_data"
 OUTPUT_DIR = "book_source/source/"
@@ -86,6 +88,7 @@ class EdStemXMLVisitor:
         # for the given tag type, and if so call that
         # visit function. Otherwise just print a placeholder.
         visit_func_name = f"visit_{element.tag}"
+        visit_func_name = visit_func_name.replace("-", "_")
         if hasattr(self, visit_func_name):
             visit_func = getattr(self, visit_func_name)
             visit_func(element)
@@ -120,6 +123,7 @@ class EdStemXMLVisitor:
         callout_type = callout_type_translations[element.get("type")]
 
         # Print callout
+        self._print()
         self._print("```{admonition} " + callout_type.capitalize())
         self._print(f":class: {callout_type}")
         self._print()
@@ -220,6 +224,19 @@ class EdStemXMLVisitor:
 </div>"""
         self._print(video_tag)
         self._print()
+
+    def visit_web_snippet(self, element):
+        html_content = element.find("web-snippet-file[@language='html']")
+        if "table" in html_content.text:
+            table = pd.read_html(html_content.text)
+            if type(table) is list:
+                table = table[0]
+            writer = MarkdownTableWriter()
+            writer.from_dataframe(table)
+            self._print()
+            self._print(writer.dumps())
+        else:
+            self._print(html_content.text)
 
 
 def write_toc(out, ref_names, max_depth=2, caption="Contents"):
