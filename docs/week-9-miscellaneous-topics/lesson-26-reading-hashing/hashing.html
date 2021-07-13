@@ -1080,7 +1080,19 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#an-example-set-of-int">
+   An Example:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     set
+    </span>
+   </code>
+   of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     int
+    </span>
+   </code>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1106,35 +1118,24 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/23e3681131f24f77ad70f256ecf7fbb0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>The secret is that
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-use a trick called
-<strong>hashing</strong>
-to make everything constant time (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time). Our class will focus on
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-, but almost everything is analogous for
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-.</p>
-<p>We will explain what hashing is shortly, but the reason it is fast relies on the fact that a
+<p>The secret is that <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> use a trick called <strong>hashing</strong> to make everything constant time (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time). Our class will focus on <code class="docutils literal notranslate"><span class="pre">set</span></code> , but almost everything is analogous for <code class="docutils literal notranslate"><span class="pre">dict</span></code> .<br />
+We will explain what hashing is shortly, but the reason it is fast relies on the fact that a <code class="docutils literal notranslate"><span class="pre">list</span></code> allows instant access for some, known, integer index (e.g. <code class="docutils literal notranslate"><span class="pre">l[14]</span></code> ).</p>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p><strong>Big Idea:</strong>
+Create a large
 <code class="docutils literal notranslate"><span class="pre">list</span></code>
-allows instant access for some, known, integer index (e.g.
-<code class="docutils literal notranslate"><span class="pre">l[14]</span></code>
-).</p>
-<p>Hash functions are a generic idea of being able to transform a value of any type into an index of the hash table. In the example we show below, we use the values being integers as well but later we will show how to define other hash functions for different types.</p>
-<div class="section" id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>	An Example: 
-</pre></div>
+to store the values. We call this list a
+<strong>hash table</strong>
+. Each value should get a special spot in the
+<code class="docutils literal notranslate"><span class="pre">list</span></code>
+so we know exactly where the index is for a given value, allowing instant access to it. The method of determining an index from a value is called a
+<strong>hash function.</strong></p>
 </div>
-<p>Suppose I wanted to make a
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-of
-<code class="docutils literal notranslate"><span class="pre">int</span></code>
-s like in the code cell below. Our goal is to figure out how this structure is interpreted internally such that it can add and check membership of values in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time. After the code cell, we illustrate how we use this big idea from above to implement this
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-. Below, we show a line of code in the gray code-block and then explain how it affects the hash table idea discussed above.</p>
+<p>Hash functions are a generic idea of being able to transform a value of any type into an index of the hash table. In the example we show below, we use the values being integers as well but later we will show how to define other hash functions for different types.</p>
+<div class="section" id="an-example-set-of-int">
+<h2>An Example: <code class="docutils literal notranslate"><span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">int</span></code><a class="headerlink" href="#an-example-set-of-int" title="Permalink to this headline">¶</a></h2>
+<p>Suppose I wanted to make a <code class="docutils literal notranslate"><span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">int</span></code> s like in the code cell below. Our goal is to figure out how this structure is interpreted internally such that it can add and check membership of values in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time. After the code cell, we illustrate how we use this big idea from above to implement this <code class="docutils literal notranslate"><span class="pre">set</span></code> . Below, we show a line of code in the gray code-block and then explain how it affects the hash table idea discussed above.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="n">nums</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
 <span class="n">nums</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span>
@@ -1148,120 +1149,43 @@ s like in the code cell below. Our goal is to figure out how this structure is i
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nums = set()
 </pre></div>
 </div>
-<p>From the big idea above, we start by making a large
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-called a
-<strong>hash table</strong>
-that has many places to store values. We make the table start with size 10 and since there are no values in it yet, it corresponds to the empty set.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd2603cbd0&gt;</p>
+<p>From the big idea above, we start by making a large <code class="docutils literal notranslate"><span class="pre">list</span></code> called a <strong>hash table</strong> that has many places to store values. We make the table start with size 10 and since there are no values in it yet, it corresponds to the empty set.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/fCU2l2bZQGZpjECIWDPT7hUK"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/fCU2l2bZQGZpjECIWDPT7hUK" style="width: 743px;" /></a>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nums.add(11)
 </pre></div>
 </div>
-<p>For this problem, we will tell you the function we will use to get the index a particular value will be stored at, called the
-<strong>hash function,</strong>
-is
-<code class="docutils literal notranslate"><span class="pre">h(v)</span> <span class="pre">=</span> <span class="pre">v</span> <span class="pre">%</span> <span class="pre">10</span></code>
-. What this means is that for any given value
-<code class="docutils literal notranslate"><span class="pre">v</span></code>
-, its index in the hash table will be
-<code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">%</span> <span class="pre">10</span></code>
-. (You might already see a potential problem with this approach. Don’t worry, we promise that this will work with some later modifications).</p>
-<p>Since we are adding the number
-<code class="docutils literal notranslate"><span class="pre">11</span></code>
-, its hash value will be
-<code class="docutils literal notranslate"><span class="pre">1</span></code>
-(because
-<code class="docutils literal notranslate"><span class="pre">11</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">==</span> <span class="pre">1</span></code>
-). We will store the value
-<code class="docutils literal notranslate"><span class="pre">11</span></code>
-in index
-<code class="docutils literal notranslate"><span class="pre">1</span></code>
-.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd2603c4a0&gt;</p>
+<p>For this problem, we will tell you the function we will use to get the index a particular value will be stored at, called the <strong>hash function,</strong> is <code class="docutils literal notranslate"><span class="pre">h(v)</span> <span class="pre">=</span> <span class="pre">v</span> <span class="pre">%</span> <span class="pre">10</span></code> . What this means is that for any given value <code class="docutils literal notranslate"><span class="pre">v</span></code> , its index in the hash table will be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">%</span> <span class="pre">10</span></code> . (You might already see a potential problem with this approach. Don’t worry, we promise that this will work with some later modifications).<br />
+Since we are adding the number <code class="docutils literal notranslate"><span class="pre">11</span></code> , its hash value will be <code class="docutils literal notranslate"><span class="pre">1</span></code> (because <code class="docutils literal notranslate"><span class="pre">11</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">==</span> <span class="pre">1</span></code> ). We will store the value <code class="docutils literal notranslate"><span class="pre">11</span></code> in index <code class="docutils literal notranslate"><span class="pre">1</span></code> .</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/NKAXurhkfvkPfdmNRKYS3d1G"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/NKAXurhkfvkPfdmNRKYS3d1G" style="width: 743px;" /></a>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nums.add(49)
 </pre></div>
 </div>
-<p>Like before, we compute the hash value for
-<code class="docutils literal notranslate"><span class="pre">49</span></code>
-and get
-<code class="docutils literal notranslate"><span class="pre">9</span></code>
-. Therefore, we store the value
-<code class="docutils literal notranslate"><span class="pre">49</span></code>
-in index
-<code class="docutils literal notranslate"><span class="pre">9</span></code>
-.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd26039310&gt;</p>
+<p>Like before, we compute the hash value for <code class="docutils literal notranslate"><span class="pre">49</span></code> and get <code class="docutils literal notranslate"><span class="pre">9</span></code> . Therefore, we store the value <code class="docutils literal notranslate"><span class="pre">49</span></code> in index <code class="docutils literal notranslate"><span class="pre">9</span></code> .</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/C12rOvbyYRFCkN4n3V5OQbdu"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/C12rOvbyYRFCkN4n3V5OQbdu" style="width: 743px;" /></a>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nums.add(24)
 </pre></div>
 </div>
-<p>Like before, we compute the hash value for
-<code class="docutils literal notranslate"><span class="pre">24</span></code>
-and get
-<code class="docutils literal notranslate"><span class="pre">4</span></code>
-. Therefore, we store the value
-<code class="docutils literal notranslate"><span class="pre">24</span></code>
-in index
-<code class="docutils literal notranslate"><span class="pre">4</span></code>
-.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd26039e50&gt;
-So far, we haven’t given much intuition as to why this actually helps us answer membership-queries efficiently.  Let’s look at the next line of code that needs to look up a value to make the value of this structure clearer.</p>
+<p>Like before, we compute the hash value for <code class="docutils literal notranslate"><span class="pre">24</span></code> and get <code class="docutils literal notranslate"><span class="pre">4</span></code> . Therefore, we store the value <code class="docutils literal notranslate"><span class="pre">24</span></code> in index <code class="docutils literal notranslate"><span class="pre">4</span></code> .</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/a5SMfDjIJy4dlSsP89l9xeU8"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/a5SMfDjIJy4dlSsP89l9xeU8" style="width: 743px;" /></a>
+<p>So far, we haven’t given much intuition as to why this actually helps us answer membership-queries efficiently.  Let’s look at the next line of code that needs to look up a value to make the value of this structure clearer.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>print(49 in nums)
 </pre></div>
 </div>
-<p>With how we have set up this hash table, how might we answer the question “Is the value
-<code class="docutils literal notranslate"><span class="pre">49</span></code>
-inside this
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-?” If we were just treating this like any other
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-, we would have to search all the indices to find the value. However, we have defined some special structure in the hash table by putting the values in special places. There is only one valid place the value
-<code class="docutils literal notranslate"><span class="pre">49</span></code>
-could go in this hash table. Where is it?</p>
-<p>If you’re thinking index
-<code class="docutils literal notranslate"><span class="pre">9</span></code>
-, that’s exactly right! We will use the same hash function to help us find values. Since we look at index
-<code class="docutils literal notranslate"><span class="pre">9</span></code>
-and we see a
-<code class="docutils literal notranslate"><span class="pre">49</span></code>
-there, we can report the value
-<code class="docutils literal notranslate"><span class="pre">49</span></code>
-is in the
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-, therefore returning
-<code class="docutils literal notranslate"><span class="pre">True</span></code>
-.</p>
-<p>The hash function itself will be a cheap operation (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time). Accessing the value in a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-for a given index is also <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time, so we can find the value
-<code class="docutils literal notranslate"><span class="pre">49</span></code>
-in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time!</p>
-<p>Maybe that’s just a fluke, let’s try to find a value not in the
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-.</p>
+<p>With how we have set up this hash table, how might we answer the question “Is the value <code class="docutils literal notranslate"><span class="pre">49</span></code> inside this <code class="docutils literal notranslate"><span class="pre">set</span></code> ?” If we were just treating this like any other <code class="docutils literal notranslate"><span class="pre">list</span></code> , we would have to search all the indices to find the value. However, we have defined some special structure in the hash table by putting the values in special places. There is only one valid place the value <code class="docutils literal notranslate"><span class="pre">49</span></code> could go in this hash table. Where is it?<br />
+If you’re thinking index <code class="docutils literal notranslate"><span class="pre">9</span></code> , that’s exactly right! We will use the same hash function to help us find values. Since we look at index <code class="docutils literal notranslate"><span class="pre">9</span></code> and we see a <code class="docutils literal notranslate"><span class="pre">49</span></code> there, we can report the value <code class="docutils literal notranslate"><span class="pre">49</span></code> is in the <code class="docutils literal notranslate"><span class="pre">set</span></code> , therefore returning <code class="docutils literal notranslate"><span class="pre">True</span></code> .<br />
+The hash function itself will be a cheap operation (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time). Accessing the value in a <code class="docutils literal notranslate"><span class="pre">list</span></code> for a given index is also <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time, so we can find the value <code class="docutils literal notranslate"><span class="pre">49</span></code> in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time!<br />
+Maybe that’s just a fluke, let’s try to find a value not in the <code class="docutils literal notranslate"><span class="pre">set</span></code> .</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>print(14 in nums)
 </pre></div>
 </div>
-<p>What index should
-<code class="docutils literal notranslate"><span class="pre">14</span></code>
-go to according to the hash function?
-<code class="docutils literal notranslate"><span class="pre">4</span></code>
-!</p>
-<p>When we look at index
-<code class="docutils literal notranslate"><span class="pre">4</span></code>
-, we see the value
-<code class="docutils literal notranslate"><span class="pre">24</span></code>
-. This does not match
-<code class="docutils literal notranslate"><span class="pre">14</span></code>
-(so we know
-<code class="docutils literal notranslate"><span class="pre">14</span></code>
-is not in the set!) Therefore we should return
-<code class="docutils literal notranslate"><span class="pre">False</span></code>
-.</p>
-<p>This is exactly how a
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-answers the contains query in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time! All it does is use a large hash-table and use a hash function to define which index a particular value belongs to.</p>
-<p>There are still some questions we have to answer though to make this really work. We will get to how to solve these questions in the following slides.</p>
-<p>&lt;Element ‘list’ at 0x7fcd237605e0&gt;</p>
+<p>What index should <code class="docutils literal notranslate"><span class="pre">14</span></code> go to according to the hash function? <code class="docutils literal notranslate"><span class="pre">4</span></code> !<br />
+When we look at index <code class="docutils literal notranslate"><span class="pre">4</span></code> , we see the value <code class="docutils literal notranslate"><span class="pre">24</span></code> . This does not match <code class="docutils literal notranslate"><span class="pre">14</span></code> (so we know <code class="docutils literal notranslate"><span class="pre">14</span></code> is not in the set!) Therefore we should return <code class="docutils literal notranslate"><span class="pre">False</span></code> .<br />
+This is exactly how a <code class="docutils literal notranslate"><span class="pre">set</span></code> answers the contains query in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time! All it does is use a large hash-table and use a hash function to define which index a particular value belongs to.<br />
+There are still some questions we have to answer though to make this really work. We will get to how to solve these questions in the following slides.</p>
+<ul class="simple">
+<li><p>What happens if I tried to add the number     <code class="docutils literal notranslate"><span class="pre">19</span></code>     to the     <code class="docutils literal notranslate"><span class="pre">set</span></code>     above? This would cause confusion since the value     <code class="docutils literal notranslate"><span class="pre">49</span></code>     is already in index     <code class="docutils literal notranslate"><span class="pre">9</span></code>     . This is called a     <strong>collision.</strong>     We will have to come up with some way of doing     <strong>collision resolution.</strong></p></li>
+<li><p>How do we write hash functions for other data other than     <code class="docutils literal notranslate"><span class="pre">int</span></code>     s? What if the values were     <code class="docutils literal notranslate"><span class="pre">str</span></code>     instead?</p></li>
+</ul>
 </div>
 </div>
 </div>

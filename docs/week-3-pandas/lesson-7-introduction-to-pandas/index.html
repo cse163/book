@@ -1112,33 +1112,46 @@
 <h1>📚 Lesson 7: Introduction to Pandas<a class="headerlink" href="#lesson-7-introduction-to-pandas" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="context-for-week">
 <h2>Context for Week<a class="headerlink" href="#context-for-week" title="Permalink to this headline">¶</a></h2>
-<p>Last week we started to see how to process these CSV files. We used the list of dictionaries representation to help us answer these questions.</p>
-<p>While the list of dictionaries format was helpful, it was still a bit tedious to write all that code. This week, we will learn about a
-<strong>library</strong>
-that puts most of this tedious code “behind the scenes” so you don’t have to write as much. A library is essentially code someone else wrote and packaged up so you can use it. The library we will learn how to use this week is called
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-.</p>
+<p>Last week we started to see how to process these CSV files. We used the list of dictionaries representation to help us answer these questions.<br />
+While the list of dictionaries format was helpful, it was still a bit tedious to write all that code. This week, we will learn about a <strong>library</strong> that puts most of this tedious code “behind the scenes” so you don’t have to write as much. A library is essentially code someone else wrote and packaged up so you can use it. The library we will learn how to use this week is called <code class="docutils literal notranslate"><span class="pre">pandas</span></code> .</p>
 </div>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <p>In this lesson, you will learn the following concepts:</p>
-<p>&lt;Element ‘list’ at 0x7fcd2603c810&gt;</p>
+<ul class="simple">
+<li><p>How to import code defined somewhere else</p></li>
+<li><p>Learning the fundamentals of     <code class="docutils literal notranslate"><span class="pre">pandas</span></code>     , including their core data structures     <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>     and     <code class="docutils literal notranslate"><span class="pre">Series</span></code>     . As a preview, you will learn:</p>
+<ul>
+<li><p>How to read a         <code class="docutils literal notranslate"><span class="pre">pandas</span></code>          <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>         from a CSV</p></li>
+<li><p>How to access a column of a         <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>         and do computations with it</p></li>
+<li><p>How to filter a         <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>         to rows that meet some condition(s)</p></li>
+<li><p>A more generic way of accessing any part of a         <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>         called         <code class="docutils literal notranslate"><span class="pre">loc</span></code>         .</p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="ed-lessons">
 <h2>Ed Lessons<a class="headerlink" href="#ed-lessons" title="Permalink to this headline">¶</a></h2>
 <p>As a reminder, our suggested way of doing this lesson follows these steps:</p>
-<p>&lt;Element ‘list’ at 0x7fcd26039950&gt;</p>
+<ul class="simple">
+<li><p>Do the reading on your own time before our class session for today’s lesson. Also, respond to the “Pause and Think” question.</p></li>
+<li><p>Call into the class-session prepared to work in groups on the practice problems. It will help to have your notes (and answers from Pause and Think) ready so you can hit the ground running with your group.</p>
+<ul>
+<li><p>We will periodically summarize high-level ideas of the practice problems in the class session.</p></li>
+<li><p>TAs will “walk-around” Zoom breakouts so you can ask them any questions!</p></li>
+</ul>
+</li>
+<li><p>Finish up any of the practice problems afterward!</p></li>
+</ul>
 </div>
 <div class="section" id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="imports.html">Imports</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="imports.html#id1"></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="imports.html#id2"></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="imports.html#id3"></a></li>
+<li class="toctree-l2"><a class="reference internal" href="imports.html#option-1-import-module-a">Option 1) <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_a</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="imports.html#option-2-from-module-a-import-fun2">Option 2) <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_a</span> <span class="pre">import</span> <span class="pre">fun2</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pandas.html">Pandas</a><ul>

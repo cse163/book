@@ -1108,6 +1108,17 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/020818cc801841cb97393a741104047b?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>A note about the format of this reading: This reading involves using multiple Python files. If a code block has a comment at the top saying
+<br /></p>
+<br />
+<p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">File:</span> <span class="pre">hello_world.py</span></code></p>
+<br />
+<br />
+We are indicating that you should read the contents of that code block being in the file with the indicated name.
+<br />
+</div>
 <p>Recall from the first day of class, we saw that there were two ways of writing a “Hello world” program</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: hello_world.py</span>
 
@@ -1124,17 +1135,9 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>We showed that regardless of which one you used if you ran
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello_world.py</span></code>
-it would print out
-<code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">world</span></code>
-. It is helpful to remember what happens when you run a Python program. Whenever you
-&lt;Element ‘italic’ at 0x7fcd23756f90&gt;
-a Python program, it starts at the top of the file and executes each line until it reaches the bottom.</p>
-<p>You probably then wondered: Why did we need all this extra stuff if these two programs do the exact same thing? At the time we couldn’t give a good answer, but now we are able to justify why these are different and why you should always use the second one.</p>
-<p>The case where these two approaches differ is when your program uses
-<code class="docutils literal notranslate"><span class="pre">import</span></code>
-statements.</p>
+<p>We showed that regardless of which one you used if you ran <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello_world.py</span></code> it would print out <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">world</span></code> . It is helpful to remember what happens when you run a Python program. Whenever you <em>run</em> a Python program, it starts at the top of the file and executes each line until it reaches the bottom.<br />
+You probably then wondered: Why did we need all this extra stuff if these two programs do the exact same thing? At the time we couldn’t give a good answer, but now we are able to justify why these are different and why you should always use the second one.<br />
+The case where these two approaches differ is when your program uses <code class="docutils literal notranslate"><span class="pre">import</span></code> statements.</p>
 <div class="section" id="a-tutorial-on-importing">
 <h2>A Tutorial on Importing<a class="headerlink" href="#a-tutorial-on-importing" title="Permalink to this headline">¶</a></h2>
 <p>Suppose I have the following three files that did not use the main-method pattern.</p>
@@ -1162,9 +1165,7 @@ statements.</p>
 <span class="n">module_a</span><span class="o">.</span><span class="n">function_a</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>What would you expect to be the output of
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">module_c.py</span></code>
-? Since we print and call two functions, you would probably expect the following.</p>
+<p>What would you expect to be the output of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">module_c.py</span></code> ? Since we print and call two functions, you would probably expect the following.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Let&#39;s call some functions
 Hello from Function B
 Hello from Function A
@@ -1177,23 +1178,13 @@ Hello from Function B
 Hello from Function A
 </pre></div>
 </div>
-<p>What happened? When you import a file, it runs all statements starting from top to bottom, just like when you run the file! That’s why the first thing printed is
-<code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">love</span> <span class="pre">File</span> <span class="pre">A</span></code>
-. When we import
-<code class="docutils literal notranslate"><span class="pre">module_a</span></code>
-on Line 3 of
-<code class="docutils literal notranslate"><span class="pre">module_c.py</span></code>
-, it goes and runs all statements in that file. Notice it doesn’t print
-<code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">from</span> <span class="pre">Function</span> <span class="pre">A</span></code>
-at that point because we never called
-<code class="docutils literal notranslate"><span class="pre">function_a()</span></code>
-, we just defined it.</p>
-<p>What this means is if you have any code outside of just function definitions, that code will get run whenever you import a file! Now, having a few lines of extra output is not the end of the world, but you could imagine it would be really bad if you accidentally started running some kind of data analysis that would take 4 hours to finish just because you wanted to import one function from a module!</p>
+<p>What happened? When you import a file, it runs all statements starting from top to bottom, just like when you run the file! That’s why the first thing printed is <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">love</span> <span class="pre">File</span> <span class="pre">A</span></code> . When we import <code class="docutils literal notranslate"><span class="pre">module_a</span></code> on Line 3 of <code class="docutils literal notranslate"><span class="pre">module_c.py</span></code> , it goes and runs all statements in that file. Notice it doesn’t print <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">from</span> <span class="pre">Function</span> <span class="pre">A</span></code> at that point because we never called <code class="docutils literal notranslate"><span class="pre">function_a()</span></code> , we just defined it.<br />
+What this means is if you have any code outside of just function definitions, that code will get run whenever you import a file! Now, having a few lines of extra output is not the end of the world, but you could imagine it would be really bad if you accidentally started running some kind of data analysis that would take 4 hours to finish just because you wanted to import one function from a module!</p>
 </div>
 <div class="section" id="how-does-the-main-method-pattern-help">
 <h2>How does the main-method pattern help?<a class="headerlink" href="#how-does-the-main-method-pattern-help" title="Permalink to this headline">¶</a></h2>
-<p>The main-method pattern prevents some of the code in a file from being run on import!</p>
-<p>Let’s go back and explain the components of the “Hello world” program to understand how this happens. Below, we have annotated the “Hello world” program with comments explaining its components.</p>
+<p>The main-method pattern prevents some of the code in a file from being run on import!<br />
+Let’s go back and explain the components of the “Hello world” program to understand how this happens. Below, we have annotated the “Hello world” program with comments explaining its components.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: hello_world.py</span>
 
 <span class="c1"># This defines a function called main (nothing special here)</span>
@@ -1206,15 +1197,12 @@ at that point because we never called
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>So in reality, the only “special” part of the main-method pattern is the if-statement
-<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code>
-. Python uses the special variable
-<code class="docutils literal notranslate"><span class="pre">__name__</span></code>
-to give you information about how your file is being used. All we do in the main-method pattern is only call
-<code class="docutils literal notranslate"><span class="pre">main()</span></code>
-if we know this file is being run rather than imported.</p>
-<p>&lt;Element ‘list’ at 0x7fcd2603c9a0&gt;
-You could imagine making a toy module that just prints out whether it is being run as a program or imported:</p>
+<p>So in reality, the only “special” part of the main-method pattern is the if-statement <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> . Python uses the special variable <code class="docutils literal notranslate"><span class="pre">__name__</span></code> to give you information about how your file is being used. All we do in the main-method pattern is only call <code class="docutils literal notranslate"><span class="pre">main()</span></code> if we know this file is being run rather than imported.</p>
+<ul class="simple">
+<li><p>If you are running the module from the command-line (e.g.     <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello_world.py</span></code>     ),     <code class="docutils literal notranslate"><span class="pre">__name__</span></code>     will have the value     <code class="docutils literal notranslate"><span class="pre">'__main__'</span></code>     . This is why our check verifies if     <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code>     before calling the     <code class="docutils literal notranslate"><span class="pre">main</span></code>     method.</p></li>
+<li><p>If you are importing the module from another Python file (e.g.     <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">hello_world</span></code>     ),     <code class="docutils literal notranslate"><span class="pre">__name__</span></code>     will have the value     <code class="docutils literal notranslate"><span class="pre">'hello_world'</span></code>     (the module that’s being imported).</p></li>
+</ul>
+<p>You could imagine making a toy module that just prints out whether it is being run as a program or imported:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: toy_module.py</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -1228,9 +1216,7 @@ You could imagine making a toy module that just prints out whether it is being r
 </div>
 <div class="section" id="take-away">
 <h2>Take-away<a class="headerlink" href="#take-away" title="Permalink to this headline">¶</a></h2>
-<p>The main-method pattern is important and used very commonly in Python to prevent unintended side-effects from importing a module. Your module should only have function definitions, and if you do want the ability to run it, you should use the main-method pattern. There is almost never a case where you want non-function definition lines of code (e.g.
-<code class="docutils literal notranslate"><span class="pre">print</span></code>
-statements or reading a file) outside of the main-method pattern.</p>
+<p>The main-method pattern is important and used very commonly in Python to prevent unintended side-effects from importing a module. Your module should only have function definitions, and if you do want the ability to run it, you should use the main-method pattern. There is almost never a case where you want non-function definition lines of code (e.g. <code class="docutils literal notranslate"><span class="pre">print</span></code> statements or reading a file) outside of the main-method pattern.</p>
 </div>
 </div>
 

@@ -1085,9 +1085,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/11cc2dc8c14943f28ef63a454aa39f93?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>Recall the
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-class we wrote in Lesson 13.</p>
+<p>Recall the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class we wrote in Lesson 13.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
@@ -1105,50 +1103,24 @@ class we wrote in Lesson 13.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">d1</span> <span class="o">==</span> <span class="n">d2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>With our understanding of
-<code class="docutils literal notranslate"><span class="pre">is</span></code>
-, the first two examples should hopefully make sense. However, the third example (
-<code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">==</span> <span class="pre">d2</span></code>
-) seems a bit surprising! It seems like these two
+<p>With our understanding of <code class="docutils literal notranslate"><span class="pre">is</span></code> , the first two examples should hopefully make sense. However, the third example ( <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">==</span> <span class="pre">d2</span></code> ) seems a bit surprising! It seems like these two <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s should be considered value equal since they have the exact same state!<br />
+Unfortunately, Python does not automatically know how you want to define value-equality between <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s. By default, Python will treat <code class="docutils literal notranslate"><span class="pre">==</span></code> on your object to mean the same thing as <code class="docutils literal notranslate"><span class="pre">is</span></code> , unless you tell it that value equality should be defined otherwise. In this reading, we will talk about how to tell Python what you want <code class="docutils literal notranslate"><span class="pre">==</span></code> to mean for your object.<br />
+To define what <code class="docutils literal notranslate"><span class="pre">==</span></code> should mean, you have to implement a special method called <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> . <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> will be called whenever you use <code class="docutils literal notranslate"><span class="pre">==</span></code> and its return value ( <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> ) determines the value of <code class="docutils literal notranslate"><span class="pre">==</span></code> . To be more concrete, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code> gets translate to <code class="docutils literal notranslate"><span class="pre">x.__eq__(y)</span></code> behind the scenes!<br />
+So let’s define the <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method so that <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s can be compared. Notice we are defining what equality means here for the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. Let’s define it that two <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s are equal if they have the same name (notice we could define it however we want, but with only one field, there isn’t a lot of options).</p>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Even though
+<code class="docutils literal notranslate"><span class="pre">_name</span></code>
+is a private field on the
 <code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-s should be considered value equal since they have the exact same state!</p>
-<p>Unfortunately, Python does not automatically know how you want to define value-equality between
+class, it is okay for one
 <code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-s. By default, Python will treat
-<code class="docutils literal notranslate"><span class="pre">==</span></code>
-on your object to mean the same thing as
-<code class="docutils literal notranslate"><span class="pre">is</span></code>
-, unless you tell it that value equality should be defined otherwise. In this reading, we will talk about how to tell Python what you want
-<code class="docutils literal notranslate"><span class="pre">==</span></code>
-to mean for your object.</p>
-<p>To define what
-<code class="docutils literal notranslate"><span class="pre">==</span></code>
-should mean, you have to implement a special method called
-<code class="docutils literal notranslate"><span class="pre">__eq__</span></code>
-.
-<code class="docutils literal notranslate"><span class="pre">__eq__</span></code>
-will be called whenever you use
-<code class="docutils literal notranslate"><span class="pre">==</span></code>
-and its return value (
-<code class="docutils literal notranslate"><span class="pre">True</span></code>
-or
-<code class="docutils literal notranslate"><span class="pre">False</span></code>
-) determines the value of
-<code class="docutils literal notranslate"><span class="pre">==</span></code>
-. To be more concrete,
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code>
-gets translate to
-<code class="docutils literal notranslate"><span class="pre">x.__eq__(y)</span></code>
-behind the scenes!</p>
-<p>So let’s define the
-<code class="docutils literal notranslate"><span class="pre">__eq__</span></code>
-method so that
+to access the private fields of another
 <code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-s can be compared. Notice we are defining what equality means here for the
+. The rationale here is you are the one that wrote the
 <code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-class. Let’s define it that two
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-s are equal if they have the same name (notice we could define it however we want, but with only one field, there isn’t a lot of options).</p>
+class, so you should know how to use their private fields without causing any errors.</p>
+</div>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>

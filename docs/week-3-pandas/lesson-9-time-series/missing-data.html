@@ -1078,11 +1078,33 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#nan-vs-none">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NaN
+    </span>
+   </code>
+   vs.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     None
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#nan-in-pandas">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NaN
+    </span>
+   </code>
+   in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1103,55 +1125,35 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="missing-data">
 <h1>Missing Data<a class="headerlink" href="#missing-data" title="Permalink to this headline">¶</a></h1>
-<p>&lt;Element ‘link’ at 0x7fcd236d64f0&gt;
-. It might be in a format that you will have trouble reading from or it might have errors in the data! One of the most common types of errors in datasets is
-<strong>missing data</strong>
-, where a row might have some of its column entries just missing!</p>
-<p>For example, we have a dataset of fMRI (brain scan) data that, like most real-life datasets, is a little messy. The dataset has the following columns:</p>
-<p>&lt;Element ‘list’ at 0x7fcd23756f90&gt;
-If we tried to load it into a
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-, we would see the following.</p>
+<p><a class="reference external" href="https://github.com/Quartz/bad-data-guide">None</a> . It might be in a format that you will have trouble reading from or it might have errors in the data! One of the most common types of errors in datasets is <strong>missing data</strong> , where a row might have some of its column entries just missing!<br />
+For example, we have a dataset of fMRI (brain scan) data that, like most real-life datasets, is a little messy. The dataset has the following columns:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">subject</span></code>     : An identifier for the person being measured</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timepoint</span></code>     : The time in the study</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">event</span></code>     : What type of stimulus the subject was given</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">region</span></code>     : Where the fMRI measurement was taken</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">signal</span></code>     : The measurement value</p></li>
+</ul>
+<p>If we tried to load it into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> , we would see the following.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>  <span class="c1"># Prints the last rows</span>
 </pre></div>
 </div>
-<p>Notice that row 1059 has this weird value
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-for both the timepoint and the signal!</p>
-<p><code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-, or “Not a Number”, is a common value in Python to represent the absence of a data-value. You should think of it a lot like
-<code class="docutils literal notranslate"><span class="pre">None</span></code>
-but has some slightly different properties that make it more amenable for numerical processing (will be explained in the next section).</p>
-<p>The fact that we see
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-values in our data means the dataset is messy and we will have to deal with it. There is a myriad of ways to try to handle missing data, some more complicated than others. For right now, we will focus on how to detect missing data in the dataset and how to filter it out!</p>
-<p>By default most
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-operations just ignore missing values so this isn’t a problem if you are just in the
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-world. However, we will see next week that other libraries for data visualization and machine learning will crash if we give them datasets that contain missing values, so we should learn how to deal with that now.</p>
-<div class="section" id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-is some kind of numerical equivalent to
-<code class="docutils literal notranslate"><span class="pre">None</span></code>
-. It represents a number that is, in some sense, invalid or missing.</p>
-<p>In Python,
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-operates by two rules:</p>
-<p>&lt;Element ‘list’ at 0x7fcd2377e630&gt;
-We can access the value
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-most easily by using the library
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-(commonly imported as
-<code class="docutils literal notranslate"><span class="pre">np</span></code>
-). We will learn more about
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-in Week 7!</p>
+<p>Notice that row 1059 has this weird value <code class="docutils literal notranslate"><span class="pre">NaN</span></code> for both the timepoint and the signal!<br />
+<code class="docutils literal notranslate"><span class="pre">NaN</span></code> , or “Not a Number”, is a common value in Python to represent the absence of a data-value. You should think of it a lot like <code class="docutils literal notranslate"><span class="pre">None</span></code> but has some slightly different properties that make it more amenable for numerical processing (will be explained in the next section).<br />
+The fact that we see <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values in our data means the dataset is messy and we will have to deal with it. There is a myriad of ways to try to handle missing data, some more complicated than others. For right now, we will focus on how to detect missing data in the dataset and how to filter it out!<br />
+By default most <code class="docutils literal notranslate"><span class="pre">pandas</span></code> operations just ignore missing values so this isn’t a problem if you are just in the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> world. However, we will see next week that other libraries for data visualization and machine learning will crash if we give them datasets that contain missing values, so we should learn how to deal with that now.</p>
+<div class="section" id="nan-vs-none">
+<h2><code class="docutils literal notranslate"><span class="pre">NaN</span></code> vs. <code class="docutils literal notranslate"><span class="pre">None</span></code><a class="headerlink" href="#nan-vs-none" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> is some kind of numerical equivalent to <code class="docutils literal notranslate"><span class="pre">None</span></code> . It represents a number that is, in some sense, invalid or missing.<br />
+In Python, <code class="docutils literal notranslate"><span class="pre">NaN</span></code> operates by two rules:</p>
+<ul class="simple">
+<li><p>Any arithmetic operation on     <code class="docutils literal notranslate"><span class="pre">NaN</span></code>     , evaluates to     <code class="docutils literal notranslate"><span class="pre">NaN</span></code></p></li>
+<li><p>Any boolean comparison on     <code class="docutils literal notranslate"><span class="pre">NaN</span></code>     , evaluates to     <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<p>We can access the value <code class="docutils literal notranslate"><span class="pre">NaN</span></code> most easily by using the library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (commonly imported as <code class="docutils literal notranslate"><span class="pre">np</span></code> ). We will learn more about <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in Week 7!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>            <span class="c1"># nan</span>
@@ -1161,58 +1163,37 @@ in Week 7!</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>  <span class="c1"># False</span>
 </pre></div>
 </div>
-<p>That last line is pretty surprising since we compared
-<code class="docutils literal notranslate"><span class="pre">np.nan</span></code>
-to
-<code class="docutils literal notranslate"><span class="pre">np.nan</span></code>
-. Remember though, one of the rules of
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-is that every boolean comparison on
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-is
-<code class="docutils literal notranslate"><span class="pre">False</span></code>
-!</p>
-<p>How is
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-different than
-<code class="docutils literal notranslate"><span class="pre">None</span></code>
-?
-<code class="docutils literal notranslate"><span class="pre">None</span></code>
-doesn’t allow any numeric operations on it, it will cause an error!</p>
+<p>That last line is pretty surprising since we compared <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> to <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> . Remember though, one of the rules of <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is that every boolean comparison on <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> !<br />
+How is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> different than <code class="docutils literal notranslate"><span class="pre">None</span></code> ? <code class="docutils literal notranslate"><span class="pre">None</span></code> doesn’t allow any numeric operations on it, it will cause an error!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>So now that we know what this magic-value
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-is in our dataset. Let’s see how to handle it in
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-. Let’s start by taking the average of the
-<code class="docutils literal notranslate"><span class="pre">'signal'</span></code>
-column (that contains
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-values).</p>
+<div class="section" id="nan-in-pandas">
+<h2><code class="docutils literal notranslate"><span class="pre">NaN</span></code> in <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#nan-in-pandas" title="Permalink to this headline">¶</a></h2>
+<p>So now that we know what this magic-value <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is in our dataset. Let’s see how to handle it in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . Let’s start by taking the average of the <code class="docutils literal notranslate"><span class="pre">'signal'</span></code> column (that contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values).</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;signal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>Luckily for us,
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-has some logic built into it to skip
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-values for many of the simple operations like
-<code class="docutils literal notranslate"><span class="pre">mean</span></code>
-! However, this won’t always work so we will need some special
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-methods for finding and removing
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-(although, they have a weird naming convention).</p>
-<p>&lt;Element ‘list’ at 0x7fcd2375b590&gt;
-The following code block shows how these operations work</p>
+<p>Luckily for us, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has some logic built into it to skip <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values for many of the simple operations like <code class="docutils literal notranslate"><span class="pre">mean</span></code> ! However, this won’t always work so we will need some special <code class="docutils literal notranslate"><span class="pre">pandas</span></code> methods for finding and removing <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (although, they have a weird naming convention).</p>
+<ul class="simple">
+<li><p>To detect if there are missing values:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">isnull()</span></code>         returns a         <code class="docutils literal notranslate"><span class="pre">bool</span></code>          <code class="docutils literal notranslate"><span class="pre">Series</span></code>         , where         <code class="docutils literal notranslate"><span class="pre">True</span></code>         marks         <code class="docutils literal notranslate"><span class="pre">NaN</span></code>         values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notnull()</span></code>         returns a         <code class="docutils literal notranslate"><span class="pre">bool</span></code>          <code class="docutils literal notranslate"><span class="pre">Series</span></code>         , where         <code class="docutils literal notranslate"><span class="pre">True</span></code>         marks non-         <code class="docutils literal notranslate"><span class="pre">NaN</span></code>         values.</p></li>
+</ul>
+</li>
+<li><p>To return a new     <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>     with     <code class="docutils literal notranslate"><span class="pre">NaN</span></code>     removed:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dropna()</span></code>         removes all rows with missing data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fillna(val)</span></code>         replaces missing data with the given value</p></li>
+</ul>
+</li>
+</ul>
+<p>The following code block shows how these operations work</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
@@ -1228,7 +1209,7 @@ The following code block shows how these operations work</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition warning">
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Notice that the first two examples
 **

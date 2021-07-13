@@ -1085,21 +1085,16 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/dbfef11ad462496984ff19cfa2ccb233?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>To handle rows that don’t line up, we actually think of there being multiple types of joins. The join I described earlier is called an
-<strong>inner-join.</strong>
-An inner-join only shows rows that have values that appear in both tables.</p>
-<p>Before listing the other joins, we note that we commonly refer to a “left” table and a “right” table in the join process. For the
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-call, this is determined by
-<code class="docutils literal notranslate"> &#160;&#160; </code>
-. The
-<code class="docutils literal notranslate"><span class="pre">how</span></code>
-parameter determines which type of join to use in the list below. There is no inherent difference between what goes on the left vs the right, it’s just determined by which dataset you indicate as the left.</p>
-<p>There are four common types of joins:</p>
-<p>&lt;Element ‘list’ at 0x7fcd236d6360&gt;
-With the same, modified, dataset from the last slide, try out the various join strategies by changing the value of the
-<code class="docutils literal notranslate"><span class="pre">how</span></code>
-parameter!</p>
+<p>To handle rows that don’t line up, we actually think of there being multiple types of joins. The join I described earlier is called an <strong>inner-join.</strong> An inner-join only shows rows that have values that appear in both tables.<br />
+Before listing the other joins, we note that we commonly refer to a “left” table and a “right” table in the join process. For the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> call, this is determined by <code class="docutils literal notranslate"> &#160;&#160; </code> . The <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter determines which type of join to use in the list below. There is no inherent difference between what goes on the left vs the right, it’s just determined by which dataset you indicate as the left.<br />
+There are four common types of joins:</p>
+<ul class="simple">
+<li><p>An     <strong>inner-join</strong>     (default): Keeps values from each table as long as there is at least one match in the other table.</p></li>
+<li><p>A     <strong>left</strong>      <strong>join</strong>     (     <code class="docutils literal notranslate"><span class="pre">how='left'</span></code>     ): Same results as an inner-join but also includes all rows left-out of the left table by including NaNs as the associated values in the right table.</p></li>
+<li><p>A     <strong>right join</strong>     (     <code class="docutils literal notranslate"><span class="pre">how='right'</span></code>     ): Same results as an inner-join but also includes all rows left-out of the right table by including NaNs as the associated values from the left table.</p></li>
+<li><p>An     <strong>outer join</strong>     (     <code class="docutils literal notranslate"><span class="pre">how='outer'</span></code>     ): The combination of the three above! It has the combination of all rows from the inner-join, left-join, and right-join!</p></li>
+</ul>
+<p>With the same, modified, dataset from the last slide, try out the various join strategies by changing the value of the <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the tas DataFrame</span>

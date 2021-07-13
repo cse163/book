@@ -1082,14 +1082,26 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="recap-of-machine-learning">
 <h1>Recap of Machine Learning<a class="headerlink" href="#recap-of-machine-learning" title="Permalink to this headline">¶</a></h1>
-<p>We have lightly discussed the topic of machine learning in this course so far. As a reminder, machine learning uses
-<strong>features</strong>
-of a dataset and a
-<strong>learning algorithm</strong>
-to learn a target concept to
-<strong>predict the label</strong>
-for a given example. As a reminder of some terminology we used:</p>
-<p>&lt;Element ‘list’ at 0x7fcd23756270&gt;</p>
+<p>We have lightly discussed the topic of machine learning in this course so far. As a reminder, machine learning uses <strong>features</strong> of a dataset and a <strong>learning algorithm</strong> to learn a target concept to <strong>predict the label</strong> for a given example. As a reminder of some terminology we used:</p>
+<ul class="simple">
+<li><p>A     <strong>model</strong>     (created by a learning algorithm), is a concrete set of rules to take an example (maybe from the dataset) and predict the label.</p>
+<ul>
+<li><p>We might train a         <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code>         on a dataset about surviving the Titanic to create a specific model that can predict survival for data of that type.</p></li>
+<li><p>The term model is often overloaded when discussed by machine learning practitioners. They sometimes refer to the specific model learned after training (e.g. this specific         <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code>         that is the result of training on this data). Other times, they refer to the type of models you are considering (e.g. we are looking over the space of all         <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifiers</span></code>         of height at most 5 to find which one is best for this specific task). It is often confusing to figure out if they are talking about a specific model or a class of models. We commonly use the terminology of “model” to refer to a specific model and ”         <strong>model class</strong>         ” to refer to the class of all models of some type.</p></li>
+</ul>
+</li>
+<li><p>A dataset that has     <strong>features</strong>     and     <strong>labels</strong>     .</p>
+<ul>
+<li><p>We always split a dataset into a         <strong>training set</strong>         and a         <strong>test set</strong>         . The training set is used by the learning algorithm to train the model. The test set is used to assess the model’s performance on data it did not train on, in order to get an unbiased estimate of its future performance.</p></li>
+<li><p>So far, we have just used CSV data for machine learning since we could simply just use the values in each column as the various features. In this section, we will learn how to use another type of data: images.</p></li>
+</ul>
+</li>
+<li><p>Slightly new terminology: The     <strong>parameters</strong>     of a model are the details of how a particular model is specified. For example, the parameters of a decision tree model are all of the split points and stop points in the tree. An alternative way of phrasing the learning algorithm is an algorithm that tries to find the optimal setting of the parameters (e.g. what the split and stop points should be) to maximize the accuracy. The     <strong>hyperparameters</strong>     of a model are the parameters you specify as a programmer to control which models can be selected. For example, setting the maximum height of the decision tree is a hyperparameter you choose that then effect which parameterization is chosen by the learning algorithm.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>You should remember that parameters are things learned by the learning algorithm while hyperparameters are things you specify.</p>
+</div>
 </div>
 
 

@@ -1082,49 +1082,24 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="recap-pandas">
 <h1>Recap: Pandas<a class="headerlink" href="#recap-pandas" title="Permalink to this headline">¶</a></h1>
-<p>In Lesson 8, we introduced a new
-<strong>library</strong>
-named
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-. Recall that a library is some code someone else wrote and packaged up for us to use.
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-is a very popular library used by data scientists to process tabular data (i.e. data that comes from a spreadsheet).</p>
-<p>In the lecture, we saw the Earthquakes dataset stored in
-<code class="docutils literal notranslate"><span class="pre">earthquakes.csv</span></code>
-. To read that CSV into
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-, we would run the code:</p>
+<p>In Lesson 8, we introduced a new <strong>library</strong> named <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . Recall that a library is some code someone else wrote and packaged up for us to use. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is a very popular library used by data scientists to process tabular data (i.e. data that comes from a spreadsheet).<br />
+In the lecture, we saw the Earthquakes dataset stored in <code class="docutils literal notranslate"><span class="pre">earthquakes.csv</span></code> . To read that CSV into <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , we would run the code:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We discussed the notion of the
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-having a notion of
-<strong>columns</strong>
-and
-<strong>rows</strong>
-. Each column has a
-<strong>column name</strong>
-that identifies it, while the rows have an
-<strong>index</strong>
-that lets you identify each row.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd26039360&gt;
-We saw that we can access the data columns from
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-using the following syntax:</p>
+<p>We discussed the notion of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code>  <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> having a notion of <strong>columns</strong> and <strong>rows</strong> . Each column has a <strong>column name</strong> that identifies it, while the rows have an <strong>index</strong> that lets you identify each row.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/GfJqb4XtPdxZXyasISaKFK8I"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/GfJqb4XtPdxZXyasISaKFK8I" style="width: 744px;" /></a>
+<p>We saw that we can access the data columns from <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the following syntax:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>We also saw we can use a
-<strong>mask</strong>
-to select which subset of the rows we want by filtering our data to rows that have some specific value. For example, if we want to find all the earthquakes in California from 2016, we would write</p>
+<p>We also saw we can use a <strong>mask</strong> to select which subset of the rows we want by filtering our data to rows that have some specific value. For example, if we want to find all the earthquakes in California from 2016, we would write</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/earthquakes.csv&#39;</span><span class="p">)</span>
 
@@ -1140,7 +1115,7 @@ to select which subset of the rows we want by filtering our data to rows that ha
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">is_california</span> <span class="o">&amp;</span> <span class="n">is_2016</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="admonition warning">
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Remember: When you want to filter by multiple conditions using the
 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>
@@ -1150,26 +1125,20 @@ operators with
 <code class="docutils literal notranslate"><span class="pre">pandas</span></code>
 , you need to put parentheses around the sub-expressions, otherwise it will break. You can avoid needing parentheses by using something more like the second example where you save the masks into variables.</p>
 </div>
-<p>We also learned about the
-<code class="docutils literal notranslate"><span class="pre">loc</span></code>
-property that let us select rows and columns with a more general syntax. You can specify a row indexer and a column indexer to select your data. We saw the following things used as indexers:</p>
-<p>&lt;Element ‘list’ at 0x7fcd2603cb30&gt;
-One thing that is also complex about
-<code class="docutils literal notranslate"><span class="pre">.loc</span></code>
-is the type of the value returns depends on the types of the indexers. Recall that a
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-is a 2-dimensional strucutre (rows and columns) while a
-<code class="docutils literal notranslate"><span class="pre">Series</span></code>
-is a single
-<code class="docutils literal notranslate"><span class="pre">row</span></code>
-or single
-<code class="docutils literal notranslate"><span class="pre">column</span></code>
-.</p>
-<p>To tell what the return type of a
-<code class="docutils literal notranslate"><span class="pre">.loc</span></code>
-call is, you need to look for the “single value” type of indexer.</p>
-<p>&lt;Element ‘list’ at 0x7fcd2603c220&gt;</p>
+<p>We also learned about the <code class="docutils literal notranslate"><span class="pre">loc</span></code> property that let us select rows and columns with a more general syntax. You can specify a row indexer and a column indexer to select your data. We saw the following things used as indexers:</p>
+<ul class="simple">
+<li><p>A single value (row index for rows, column name for columns)</p></li>
+<li><p>A list of values or a slice (row index for rows, column names for columns)</p></li>
+<li><p>A mask</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>     to select all values</p></li>
+</ul>
+<p>One thing that is also complex about <code class="docutils literal notranslate"><span class="pre">.loc</span></code> is the type of the value returns depends on the types of the indexers. Recall that a <code class="docutils literal notranslate"><span class="pre">pandas</span></code>  <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a 2-dimensional strucutre (rows and columns) while a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a single <code class="docutils literal notranslate"><span class="pre">row</span></code> or single <code class="docutils literal notranslate"><span class="pre">column</span></code> .<br />
+To tell what the return type of a <code class="docutils literal notranslate"><span class="pre">.loc</span></code> call is, you need to look for the “single value” type of indexer.</p>
+<ul class="simple">
+<li><p>If both the row and column indexers are a single value, returns a single value. This will be whatever the value is at the location so its type will be the same as the     <code class="docutils literal notranslate"><span class="pre">dtype</span></code>     of the column it comes from.</p></li>
+<li><p>If only one of the row and colum indexers is a single value (meaning the other is multiple values), returns a     <code class="docutils literal notranslate"><span class="pre">Series</span></code>     .</p></li>
+<li><p>If neither of the row and column indexers are single values (meaning both are multiple values), returns a     <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>     .</p></li>
+</ul>
 </div>
 
 

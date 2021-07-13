@@ -1103,24 +1103,10 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/8cf97c1c51074ede9bb28a47d4761206?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>If you want to repeat some computation, a programming language usually provides a construct called a
-<strong>loop</strong>
-that lets you repeat code some number of times. For those that know Java, Python has very similar constructs to the for loop and the while loop.</p>
+<p>If you want to repeat some computation, a programming language usually provides a construct called a <strong>loop</strong> that lets you repeat code some number of times. For those that know Java, Python has very similar constructs to the for loop and the while loop.</p>
 <div class="section" id="while-loop">
 <h2>While Loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">¶</a></h2>
-<p>A
-<strong>while loop</strong>
-has a
-<strong>condition</strong>
-and a
-<strong>body.</strong>
-The while loop proceeds in iterations, each iteration executes the
-<strong>body</strong>
-only if the
-<strong>condition</strong>
-is
-<code class="docutils literal notranslate"><span class="pre">True</span></code>
-, otherwise the loop ends. In general, a loop while loop looks like</p>
+<p>A <strong>while loop</strong> has a <strong>condition</strong> and a <strong>body.</strong> The while loop proceeds in iterations, each iteration executes the <strong>body</strong> only if the <strong>condition</strong> is <code class="docutils literal notranslate"><span class="pre">True</span></code> , otherwise the loop ends. In general, a loop while loop looks like</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>while condition:
     # Loop body
     statement
@@ -1137,18 +1123,8 @@ is
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After loop&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notice that the condition here is
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code>
-so the loop keeps executing the body (
-<code class="docutils literal notranslate"><span class="pre">print(x)</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">2</span></code>
-) until the next iteration it is false (when
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">128</span></code>
-). After the loop ends, it continues on to the code after the loop (
-<code class="docutils literal notranslate"><span class="pre">print('After</span> <span class="pre">loop',</span> <span class="pre">x)</span></code>
-)</p>
-<div class="admonition warning">
+<p>Notice that the condition here is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code> so the loop keeps executing the body ( <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">2</span></code> ) until the next iteration it is false (when <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">128</span></code> ). After the loop ends, it continues on to the code after the loop ( <code class="docutils literal notranslate"><span class="pre">print('After</span> <span class="pre">loop',</span> <span class="pre">x)</span></code> )</p>
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>It was probably easy to miss, but you need a
 <code class="docutils literal notranslate"><span class="pre">:</span></code>
@@ -1158,14 +1134,8 @@ loop! This is how Python knows you are saying that this is where the condition e
 </div>
 <div class="section" id="a-very-important-point-about-python">
 <h3>A Very Important Point About Python<a class="headerlink" href="#a-very-important-point-about-python" title="Permalink to this headline">¶</a></h3>
-<p>Notice in the example above, Python is somehow able to differentiate that the
-<code class="docutils literal notranslate"><span class="pre">print</span></code>
-statement at the end of the program is outside the loop! How does it decide what is inside or outside a loop?
-<strong>Indentation.</strong>
-Unlike other languages that use explicit delimiters (like
-<code class="docutils literal notranslate"><span class="pre">{}</span></code>
-in Java) to determine what goes inside a loop, Python only uses indentation.</p>
-<p>In Python, getting your indentation right is very important. A very common error for beginning Python programmers comes from incorrectly indenting your code. If you see the error</p>
+<p>Notice in the example above, Python is somehow able to differentiate that the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement at the end of the program is outside the loop! How does it decide what is inside or outside a loop? <strong>Indentation.</strong> Unlike other languages that use explicit delimiters (like <code class="docutils literal notranslate"><span class="pre">{}</span></code> in Java) to determine what goes inside a loop, Python only uses indentation.<br />
+In Python, getting your indentation right is very important. A very common error for beginning Python programmers comes from incorrectly indenting your code. If you see the error</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>IndentationError: unexpected indent 
 </pre></div>
 </div>

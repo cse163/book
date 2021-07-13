@@ -1085,39 +1085,27 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/607ec0c54b254632b1ac27651717e5f0?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>Consider the code block below and the question: Are
-<code class="docutils literal notranslate"><span class="pre">l1</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">l2</span></code>
-equal?</p>
+<p>Consider the code block below and the question: Are <code class="docutils literal notranslate"><span class="pre">l1</span></code> and <code class="docutils literal notranslate"><span class="pre">l2</span></code> equal?</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>This sounds like a simple question, but the answer can be complex since it depends on what we mean by “equal”. Equality usually means one of two things:</p>
-<p>&lt;Element ‘list’ at 0x7fcd236cf860&gt;
-To understand these two notions of equality, remember to think back to the memory model we could construct for this code. Recall that
-<code class="docutils literal notranslate"><span class="pre">l1</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">l2</span></code>
-refer to different
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-instances because
-<code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>
-evaluates to a brand new
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd26041bd0&gt;
-The first notion of equality, value equality, is asking if both
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-s store the same values. In this case, we would consider them equal because they both store the same values in the same order: 1, 2, and 3.</p>
-<p>The second notion of equality, identity equality, is asking if both variables refer to the same list. In this case, there are two
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-objects (that just happen to have the same values inside), but they can’t have the same identity because they are different objects!</p>
-<p>For a more familiar analogy, think about two identical twins. We might consider them to be value-equivalent, assuming (unrealistically) they are the same in all ways that matter to being “human”. However, we would not consider them identity-equivalent since they are fundamentally two different people.</p>
-<p>To capture these two notions of equality, Python has two ways to check “equals” depending on what definition you want to use.</p>
-<p>&lt;Element ‘list’ at 0x7fcd26041b80&gt;
-With that knowledge, you should try to predict what the following code block will output before pressing run!</p>
+<ul class="simple">
+<li><p>The objects have states that are equivalent. We call this     <strong>value equality.</strong></p></li>
+<li><p>The objects are actually the same object. We call this     <strong>identity equality.</strong></p></li>
+</ul>
+<p>To understand these two notions of equality, remember to think back to the memory model we could construct for this code. Recall that <code class="docutils literal notranslate"><span class="pre">l1</span></code> and <code class="docutils literal notranslate"><span class="pre">l2</span></code> refer to different <code class="docutils literal notranslate"><span class="pre">list</span></code> instances because <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> evaluates to a brand new <code class="docutils literal notranslate"><span class="pre">list</span></code> .</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/CmtTeBSblCEUgH3AtpoN8bAJ"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/CmtTeBSblCEUgH3AtpoN8bAJ" style="width: 400px;" /></a>
+<p>The first notion of equality, value equality, is asking if both <code class="docutils literal notranslate"><span class="pre">list</span></code> s store the same values. In this case, we would consider them equal because they both store the same values in the same order: 1, 2, and 3.<br />
+The second notion of equality, identity equality, is asking if both variables refer to the same list. In this case, there are two <code class="docutils literal notranslate"><span class="pre">list</span></code> objects (that just happen to have the same values inside), but they can’t have the same identity because they are different objects!<br />
+For a more familiar analogy, think about two identical twins. We might consider them to be value-equivalent, assuming (unrealistically) they are the same in all ways that matter to being “human”. However, we would not consider them identity-equivalent since they are fundamentally two different people.<br />
+To capture these two notions of equality, Python has two ways to check “equals” depending on what definition you want to use.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code>     compares     <code class="docutils literal notranslate"><span class="pre">x</span></code>     and     <code class="docutils literal notranslate"><span class="pre">y</span></code>     are value-equivalent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">y</span></code>     compares     <code class="docutils literal notranslate"><span class="pre">x</span></code>     and     <code class="docutils literal notranslate"><span class="pre">y</span></code>     ‘s identity to see if they are the same object (i.e. identity-equivalent).</p></li>
+</ul>
+<p>With that knowledge, you should try to predict what the following code block will output before pressing run!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">l3</span> <span class="o">=</span> <span class="n">l1</span>

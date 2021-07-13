@@ -1082,35 +1082,14 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="pickle">
 <h1>Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h1>
-<p>Even though we talked about disk being slow, it’s convenient because it is persistent. This means after your computer shuts down, everything on disk will still be there after your restart. This can sometimes be very helpful for data analysis. For example, what if you trained a really great machine learning model and want to save that exact model for the future? This would not be possible if you just stored it in a Python variable, since if your computer restarted or the Python session ended, then
-&lt;Element ‘italic’ at 0x7fcd2603c630&gt;
-, that model is gone!</p>
-<p>There is a convenient module called
-<code class="docutils literal notranslate"><span class="pre">pickle</span></code>
-that lets you save a Python object to a file so that you can read it in later! The following program makes a list of numbers, saves it to a file (and prints out that it was saved) before reading it in again! This is not the most convincing example in an Ed snippet since we run it all at once, but believe us that you can write the “reading” code from a pickle you made yesterday and it will work just fine!</p>
-<p>The one note we will make about
-<code class="docutils literal notranslate"><span class="pre">pickle</span></code>
-, is it requires us to use one other feature of reading/writing to files. The
-<code class="docutils literal notranslate"><span class="pre">open</span></code>
-call takes a second parameter called
-<code class="docutils literal notranslate"><span class="pre">mode</span></code>
-that tells Python how you want to use the file. By default,
-<code class="docutils literal notranslate"><span class="pre">mode</span></code>
-has value
-<code class="docutils literal notranslate"><span class="pre">'r'</span></code>
-, which means you want to read the file. If you want to write to the file, you need to use the mode
-<code class="docutils literal notranslate"><span class="pre">'w'</span></code>
-by making the call
-<code class="docutils literal notranslate"><span class="pre">open('file.txt',</span> <span class="pre">'w')</span></code>
-. Even more confusing, since
-<code class="docutils literal notranslate"><span class="pre">pickle</span></code>
-needs to write the data in a special binary format (i.e., not plain-text like a
-<code class="docutils literal notranslate"><span class="pre">.txt</span></code>
-), you need to pass in the modes
-<code class="docutils literal notranslate"><span class="pre">'rb'</span></code>
-for read binary and
-<code class="docutils literal notranslate"><span class="pre">'wb'</span></code>
-for write binary respectively.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Loom video can be found here:
+<a class="reference external" href="https://www.loom.com/share/e16bc40b4ab84837a9de6f21866b25ec">None</a></p>
+</div>
+<p>Even though we talked about disk being slow, it’s convenient because it is persistent. This means after your computer shuts down, everything on disk will still be there after your restart. This can sometimes be very helpful for data analysis. For example, what if you trained a really great machine learning model and want to save that exact model for the future? This would not be possible if you just stored it in a Python variable, since if your computer restarted or the Python session ended, then <em>poof</em> , that model is gone!<br />
+There is a convenient module called <code class="docutils literal notranslate"><span class="pre">pickle</span></code> that lets you save a Python object to a file so that you can read it in later! The following program makes a list of numbers, saves it to a file (and prints out that it was saved) before reading it in again! This is not the most convincing example in an Ed snippet since we run it all at once, but believe us that you can write the “reading” code from a pickle you made yesterday and it will work just fine!<br />
+The one note we will make about <code class="docutils literal notranslate"><span class="pre">pickle</span></code> , is it requires us to use one other feature of reading/writing to files. The <code class="docutils literal notranslate"><span class="pre">open</span></code> call takes a second parameter called <code class="docutils literal notranslate"><span class="pre">mode</span></code> that tells Python how you want to use the file. By default, <code class="docutils literal notranslate"><span class="pre">mode</span></code> has value <code class="docutils literal notranslate"><span class="pre">'r'</span></code> , which means you want to read the file. If you want to write to the file, you need to use the mode <code class="docutils literal notranslate"><span class="pre">'w'</span></code> by making the call <code class="docutils literal notranslate"><span class="pre">open('file.txt',</span> <span class="pre">'w')</span></code> . Even more confusing, since <code class="docutils literal notranslate"><span class="pre">pickle</span></code> needs to write the data in a special binary format (i.e., not plain-text like a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> ), you need to pass in the modes <code class="docutils literal notranslate"><span class="pre">'rb'</span></code> for read binary and <code class="docutils literal notranslate"><span class="pre">'wb'</span></code> for write binary respectively.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 

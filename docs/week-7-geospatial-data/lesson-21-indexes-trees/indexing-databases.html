@@ -1113,29 +1113,11 @@
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>Now suppose Jasmine goes to her Spacebook profile (
-<code class="docutils literal notranslate"><span class="pre">https://www.spacebook.com/profile.php?id=42</span></code>
-[don’t go to this link, it’s spam]). The Spacebook service needs to find the appropriate object for the given user ID so it can display their information.</p>
-<p>The key question is: How can we find the
-<code class="docutils literal notranslate"><span class="pre">SBUser</span></code>
-object for Jasmine without needing to search through all of the Python objects in this list to find the object with matching user ID? If we had to loop over the whole list, then loading a user profile would be an <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> operation where <span class="math notranslate nohighlight">\(n\)</span> is the number of Spacebook users. Now, this probably doesn’t seem like a big deal with our measly 5 users, but we plan to beat our competitor Facebook one day so it would be nice if we don’t have to loop through all 1.7 billion users we plan to have one day.</p>
-<p>You could imagine making a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-where the key is the user id and the value is the
-<code class="docutils literal notranslate"><span class="pre">SBUser</span></code>
-so that we can look up the value with <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> lookup. This is an excellent solution, but one that we will pretend we are not able to use right now. We want to showcase a different type of solution at this point since we will use it to understand a data structure that we can make finding geospatial objects more quickly.</p>
-<p>Putting everything in a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-where the keys are user IDs is a specific approach to a more general idea called
-<strong>indexing</strong>
-. This terminology is reminiscent of the index of a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-or a
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-object since it’s the same in principle. Indexing is a process of storing your information in a particular way (almost always by using a little extra memory), to allow efficient lookup by some value.  In other words, indexing is the process of making a new data structure that allows faster lookup a particular value.</p>
-<p>In the next slide, we will see a special data structure called a
-<strong>binary search tree</strong>
-that lets us create an index over our data.</p>
+<p>Now suppose Jasmine goes to her Spacebook profile ( <code class="docutils literal notranslate"><span class="pre">https://www.spacebook.com/profile.php?id=42</span></code> [don’t go to this link, it’s spam]). The Spacebook service needs to find the appropriate object for the given user ID so it can display their information.<br />
+The key question is: How can we find the <code class="docutils literal notranslate"><span class="pre">SBUser</span></code> object for Jasmine without needing to search through all of the Python objects in this list to find the object with matching user ID? If we had to loop over the whole list, then loading a user profile would be an <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> operation where <span class="math notranslate nohighlight">\(n\)</span> is the number of Spacebook users. Now, this probably doesn’t seem like a big deal with our measly 5 users, but we plan to beat our competitor Facebook one day so it would be nice if we don’t have to loop through all 1.7 billion users we plan to have one day.<br />
+You could imagine making a <code class="docutils literal notranslate"><span class="pre">dict</span></code> where the key is the user id and the value is the <code class="docutils literal notranslate"><span class="pre">SBUser</span></code> so that we can look up the value with <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> lookup. This is an excellent solution, but one that we will pretend we are not able to use right now. We want to showcase a different type of solution at this point since we will use it to understand a data structure that we can make finding geospatial objects more quickly.<br />
+Putting everything in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> where the keys are user IDs is a specific approach to a more general idea called <strong>indexing</strong> . This terminology is reminiscent of the index of a <code class="docutils literal notranslate"><span class="pre">list</span></code> or a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> object since it’s the same in principle. Indexing is a process of storing your information in a particular way (almost always by using a little extra memory), to allow efficient lookup by some value.  In other words, indexing is the process of making a new data structure that allows faster lookup a particular value.<br />
+In the next slide, we will see a special data structure called a <strong>binary search tree</strong> that lets us create an index over our data.</p>
 </div>
 
 

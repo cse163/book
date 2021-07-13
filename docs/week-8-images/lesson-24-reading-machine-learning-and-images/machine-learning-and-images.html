@@ -1095,26 +1095,21 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="machine-learning-and-images">
 <h1>Machine Learning and Images<a class="headerlink" href="#machine-learning-and-images" title="Permalink to this headline">¶</a></h1>
-<p>In the recap, we mentioned how when we first learned about ML, we talked about it in the context of CSV data where it is easier to define what the features used by the model should be. This doesn’t necessarily have to be the case, features can be generic to be any number you compute from your data!</p>
-<p>When working with images, it’s a little less clear on how to define these features. Suppose we wanted to train a classifier to tell dog images from cat images. We would somehow need to derive features from the image that would be useful in predicting if the image contains a dog or a cat. Maybe we could try writing code to produce features like
-<code class="docutils literal notranslate"><span class="pre">LikesPeople,</span> <span class="pre">LooksFriendly,</span> <span class="pre">FloppyEars</span></code>
-from an image, then we could plug that into something like a
-<code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code>
-and we would be done!</p>
-<p>As you might be able to tell though, it is not clear at all how we could begin to write code to take pixels from an image and compute these high-level features! So instead, we will rethink our approach to let the machine learning algorithm try to learn how to predict the label from the image itself!</p>
-<p>There are two very common practices when working with image data for machine learning:</p>
-<p>&lt;Element ‘list’ at 0x7fcd236cf900&gt;</p>
+<p>In the recap, we mentioned how when we first learned about ML, we talked about it in the context of CSV data where it is easier to define what the features used by the model should be. This doesn’t necessarily have to be the case, features can be generic to be any number you compute from your data!<br />
+When working with images, it’s a little less clear on how to define these features. Suppose we wanted to train a classifier to tell dog images from cat images. We would somehow need to derive features from the image that would be useful in predicting if the image contains a dog or a cat. Maybe we could try writing code to produce features like <code class="docutils literal notranslate"><span class="pre">LikesPeople,</span> <span class="pre">LooksFriendly,</span> <span class="pre">FloppyEars</span></code> from an image, then we could plug that into something like a <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> and we would be done!<br />
+As you might be able to tell though, it is not clear at all how we could begin to write code to take pixels from an image and compute these high-level features! So instead, we will rethink our approach to let the machine learning algorithm try to learn how to predict the label from the image itself!<br />
+There are two very common practices when working with image data for machine learning:</p>
+<ul class="simple">
+<li><p>”     <strong>Vectorize</strong>     ” the image so it is usable by standard machine learning approaches (explained below).</p></li>
+<li><p>Use a very powerful model class called     <strong>neural networks</strong>     to learn high-level concepts from low-level features like pixels (discussed in the next slide).</p></li>
+</ul>
 <div class="section" id="vectorizing-images">
 <h2>Vectorizing Images<a class="headerlink" href="#vectorizing-images" title="Permalink to this headline">¶</a></h2>
 <p>The idea here is to “unroll” the image so instead of having 2-dimensions, it only has 1. Pictorially for a very small example image, this looks like the image below.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd236d6310&gt;
-Most machine learning models are generic enough to take any series of features (commonly called a vector from mathematics) and learn a model from them. By unrolling the image, we now have created a feature for every pixel in the image! If you are working with color images, you would unroll the color channels into this long vector too!</p>
-<p>You can imagine this will be complicated because there are lots of pixels in even moderately sized images! In our
-<code class="docutils literal notranslate"><span class="pre">dog.jpg</span></code>
-example from Lecture 22, there are almost 500,000 pixel values in the image if you count each color channel separately! That is way more features than we ever used for a model in class!</p>
-<p>This will then be a very complex and difficult learning task since there are so many features to work with. This is why we commonly use the second strategy listed above, which is using
-<strong>neural networks.</strong>
-This is explained on the next slide.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/eFfUjOrUcEN3ZRAUJSQAzgpL"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/eFfUjOrUcEN3ZRAUJSQAzgpL" style="width: 743px;" /></a>
+<p>Most machine learning models are generic enough to take any series of features (commonly called a vector from mathematics) and learn a model from them. By unrolling the image, we now have created a feature for every pixel in the image! If you are working with color images, you would unroll the color channels into this long vector too!<br />
+You can imagine this will be complicated because there are lots of pixels in even moderately sized images! In our <code class="docutils literal notranslate"><span class="pre">dog.jpg</span></code> example from Lecture 22, there are almost 500,000 pixel values in the image if you count each color channel separately! That is way more features than we ever used for a model in class!<br />
+This will then be a very complex and difficult learning task since there are so many features to work with. This is why we commonly use the second strategy listed above, which is using <strong>neural networks.</strong> This is explained on the next slide.</p>
 </div>
 </div>
 

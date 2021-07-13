@@ -1110,12 +1110,8 @@
 </div>
 <div class="section" id="new-data">
 <h2>New Data<a class="headerlink" href="#new-data" title="Permalink to this headline">¶</a></h2>
-<p>For this slide, let’s change the data up a bit to give you a sense of how generic this work in
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-can be. We have been using examples with earthquake data that came from a CSV format, but many datasets provide CSV formats of their data.</p>
-<p>In this slide, we will use an example from fMRI (e.g., brain scans) data to show activation in various regions of the brain. Don’t worry, you don’t need to actually understand how brains work to follow along with this example, but we did want to show how all of these examples are just stand-ins for basically anything you want to compute (assuming it’s in a CSV). Note that this dataset has a special value called
-<code class="docutils literal notranslate"><span class="pre">NaN</span></code>
-in it that we will talk more about next week!</p>
+<p>For this slide, let’s change the data up a bit to give you a sense of how generic this work in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> can be. We have been using examples with earthquake data that came from a CSV format, but many datasets provide CSV formats of their data.<br />
+In this slide, we will use an example from fMRI (e.g., brain scans) data to show activation in various regions of the brain. Don’t worry, you don’t need to actually understand how brains work to follow along with this example, but we did want to show how all of these examples are just stand-ins for basically anything you want to compute (assuming it’s in a CSV). Note that this dataset has a special value called <code class="docutils literal notranslate"><span class="pre">NaN</span></code> in it that we will talk more about next week!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
@@ -1125,11 +1121,7 @@ in it that we will talk more about next week!</p>
 </div>
 <div class="section" id="sorting">
 <h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
-<p>Another very common operation in
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-needs you to sort the data. This could either be for presentation reasons or you might be interested in finding the “top 10” rows based on some criteria.
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-makes sorting really easy!</p>
+<p>Another very common operation in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> needs you to sort the data. This could either be for presentation reasons or you might be interested in finding the “top 10” rows based on some criteria. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> makes sorting really easy!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
@@ -1137,10 +1129,8 @@ makes sorting really easy!</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Notice that this prints out all the data where the rows sorted by
-<code class="docutils literal notranslate"><span class="pre">'signal'</span></code>
-. Notice that the index of each row stays the same meaning the index is no longer in sorted-order!</p>
-<div class="admonition warning">
+<p>Notice that this prints out all the data where the rows sorted by <code class="docutils literal notranslate"><span class="pre">'signal'</span></code> . Notice that the index of each row stays the same meaning the index is no longer in sorted-order!</p>
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Like in the last slide
 <code class="docutils literal notranslate"><span class="pre">df.sort_values('signal')</span></code>
@@ -1151,20 +1141,16 @@ does not actually sort
 where all the rows are sorted by
 <code class="docutils literal notranslate"><span class="pre">'signal'</span></code>
 .
-&lt;Element ‘break’ at 0x7fcd2603ce00&gt;</p>
-<p>&lt;Element ‘break’ at 0x7fcd2603cb80&gt;
+<br /></p>
+<br />
 If you want to keep the sorting, you need to save the result in a variable (i.e.
-<code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">df.sort_values('signal')</span></code>
-)</p>
+`df = df.sort_values('signal')`
+)
 </div>
 </div>
 <div class="section" id="top-k">
 <h2>Top-k<a class="headerlink" href="#top-k" title="Permalink to this headline">¶</a></h2>
-<p>Instead of actually sorting the data, you might want to find the 10 highest signals in the data.
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-also provides a way to do this with the
-<code class="docutils literal notranslate"><span class="pre">nlargest</span></code>
-function.</p>
+<p>Instead of actually sorting the data, you might want to find the 10 highest signals in the data. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> also provides a way to do this with the <code class="docutils literal notranslate"><span class="pre">nlargest</span></code> function.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>

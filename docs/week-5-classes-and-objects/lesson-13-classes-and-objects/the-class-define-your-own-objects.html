@@ -1098,17 +1098,9 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/e10d04adc79e4015a810538ee96e2c01?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>So we saw that objects exist in Python, but now we want to answer how you can define your own objects!</p>
-<p>To do this, you need to write a
-<strong>class</strong>
-. A class is a “blueprint” for an object, so you can make many objects from that blueprint. The
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-developers defined a
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-class so that you can construct
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-objects to use (another common word for “object” is “instance”).</p>
-<p>We start by showing the syntax for defining our own class and then explaining what the components are.</p>
+<p>So we saw that objects exist in Python, but now we want to answer how you can define your own objects!<br />
+To do this, you need to write a <strong>class</strong> . A class is a “blueprint” for an object, so you can make many objects from that blueprint. The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> developers defined a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class so that you can construct <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> objects to use (another common word for “object” is “instance”).<br />
+We start by showing the syntax for defining our own class and then explaining what the components are.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -1117,22 +1109,23 @@ objects to use (another common word for “object” is “instance”).</p>
         <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;: Woof&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This defines a new type called
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-. The state of the
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-will be the
-<strong>field</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">name</span></code>
-. A field is basically a variable that lives inside the object for the duration of its lifetime. The behaviors of the
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-include a
-<code class="docutils literal notranslate"><span class="pre">bark</span></code>
-method. This code has multiple parts so we try to explain each part</p>
-<p>&lt;Element ‘list’ at 0x7fcd26041bd0&gt;
-To use a
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-object, you would write the following code (we have to redefine the class in the cell below since all the snippets in these readings are independent).</p>
+<p>This defines a new type called <code class="docutils literal notranslate"><span class="pre">Dog</span></code> . The state of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> will be the <strong>field</strong>  <code class="docutils literal notranslate"><span class="pre">name</span></code> . A field is basically a variable that lives inside the object for the duration of its lifetime. The behaviors of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> include a <code class="docutils literal notranslate"><span class="pre">bark</span></code> method. This code has multiple parts so we try to explain each part</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Dog</span></code>     defines a new class named     <code class="docutils literal notranslate"><span class="pre">Dog</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">__init__(self,</span> <span class="pre">name)</span></code>     is a special method called an     <strong>initializer</strong>     . This is a special method that gets called when you construct the object.     **
+Every method defined in the class has to take a special parameter
+**     to indicate which     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     object it is working with (remember, there can be many instances built from the same     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     blueprint). In this example, we also pass another parameter to the constructor for the dogs name.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.name</span> <span class="pre">=</span> <span class="pre">name</span></code>         creates a field called         <code class="docutils literal notranslate"><span class="pre">name</span></code>         on the         <code class="docutils literal notranslate"><span class="pre">Dog</span></code>         instance and initializes it to the parameter’s value.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">bark(self):</span></code>     defines a method on the     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class. Like     <code class="docutils literal notranslate"><span class="pre">__init__</span></code>     it has to take     <code class="docutils literal notranslate"><span class="pre">self</span></code>     at least, but we decided to include no other parameters.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(self.name</span> <span class="pre">+</span> <span class="pre">':</span> <span class="pre">Woof')</span></code>         prints some output using the value stored in this objects         <code class="docutils literal notranslate"><span class="pre">name</span></code>         field.</p></li>
+</ul>
+</li>
+</ul>
+<p>To use a <code class="docutils literal notranslate"><span class="pre">Dog</span></code> object, you would write the following code (we have to redefine the class in the cell below since all the snippets in these readings are independent).</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -1147,52 +1140,16 @@ object, you would write the following code (we have to redefine the class in the
 <span class="n">d2</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># Prints: &quot;Scout: Woof&quot;</span>
 </pre></div>
 </div>
-<p>Notice we call methods on objects as we did before where we say
-<code class="docutils literal notranslate"><span class="pre">object.method()</span></code>
-. In the line
-<code class="docutils literal notranslate"><span class="pre">d1.bark()</span></code>
-, we call the
-<code class="docutils literal notranslate"><span class="pre">bark</span></code>
-method passing
-<code class="docutils literal notranslate"><span class="pre">d1</span></code>
-as the value for
-<code class="docutils literal notranslate"><span class="pre">self</span></code>
-(that’s why
-<code class="docutils literal notranslate"><span class="pre">self.name</span></code>
-evaluates to
-<code class="docutils literal notranslate"><span class="pre">'Chester'</span></code>
-in that call).</p>
-<p>On line 9 and 10 of this program, we construct new instances from this
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-class. You can think of this as calling up the
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-factory and they make a new object from the blueprint that is the
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-class. When passing in the
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-s
-<code class="docutils literal notranslate"><span class="pre">'Chester'</span></code>
-or
-<code class="docutils literal notranslate"><span class="pre">'Scout'</span></code>
-, we are specifying what value we want for the
-<code class="docutils literal notranslate"><span class="pre">name</span></code>
-parameter in the initializer. In fact, when you say
-<code class="docutils literal notranslate"><span class="pre">Dog(some_value)</span></code>
-you are really calling that special method
-<code class="docutils literal notranslate"><span class="pre">__init__</span></code>
-passing in a new
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-instance (which starts out with no state) and the other parameter values specified (in this case
-<code class="docutils literal notranslate"><span class="pre">name=some_value</span></code>
-); the initializer is meant to set up the state of the
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-so the client that requested the
-<code class="docutils literal notranslate"><span class="pre">Dog</span></code>
-can use it afterwards.</p>
+<p>Notice we call methods on objects as we did before where we say <code class="docutils literal notranslate"><span class="pre">object.method()</span></code> . In the line <code class="docutils literal notranslate"><span class="pre">d1.bark()</span></code> , we call the <code class="docutils literal notranslate"><span class="pre">bark</span></code> method passing <code class="docutils literal notranslate"><span class="pre">d1</span></code> as the value for <code class="docutils literal notranslate"><span class="pre">self</span></code> (that’s why <code class="docutils literal notranslate"><span class="pre">self.name</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">'Chester'</span></code> in that call).<br />
+On line 9 and 10 of this program, we construct new instances from this <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. You can think of this as calling up the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> factory and they make a new object from the blueprint that is the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. When passing in the <code class="docutils literal notranslate"><span class="pre">str</span></code> s <code class="docutils literal notranslate"><span class="pre">'Chester'</span></code> or <code class="docutils literal notranslate"><span class="pre">'Scout'</span></code> , we are specifying what value we want for the <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter in the initializer. In fact, when you say <code class="docutils literal notranslate"><span class="pre">Dog(some_value)</span></code> you are really calling that special method <code class="docutils literal notranslate"><span class="pre">__init__</span></code> passing in a new <code class="docutils literal notranslate"><span class="pre">Dog</span></code> instance (which starts out with no state) and the other parameter values specified (in this case <code class="docutils literal notranslate"><span class="pre">name=some_value</span></code> ); the initializer is meant to set up the state of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> so the client that requested the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> can use it afterwards.</p>
 <div class="section" id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <p>Here are some example questions (there are definitely more out there!) that are good to check your understanding of the content! Make sure to include them in your notes and that your notes include enough detail to answer them!</p>
-<p>&lt;Element ‘list’ at 0x7fcd26044d60&gt;</p>
+<ul class="simple">
+<li><p>What is the difference between a class and an object?</p></li>
+<li><p>Why does every method defined in a class need to take a self parameter? How do you access the fields/methods of an instance from inside the class definition.</p></li>
+<li><p>When calling a method on an object (in the client), why don’t you need to pass     <code class="docutils literal notranslate"><span class="pre">self</span></code>     in as one of the parameters?</p></li>
+</ul>
 </div>
 </div>
 

@@ -1085,49 +1085,19 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/45449525974a471ca97929ea5b13d2fc?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>We’re going to take a quick step away from geospatial data for the next flew slides, but this concept will be very relevant for the example we will be doing with geospatial data.</p>
-<p>Let’s go back to the world of CSV data that we would process with
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-. Suppose I had two different
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-shown below. The left one
-<code class="docutils literal notranslate"><span class="pre">tas</span></code>
-stores information about the TAs and
-<code class="docutils literal notranslate"><span class="pre">grading</span></code>
-on the right stores information about students and which TA will be grading them (
-<code class="docutils literal notranslate"><span class="pre">ta_id</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">grader_id</span></code>
-will match if that TA is grading that student). Our final goal will be trying to find the number of students each TA will grade.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd26041180&gt;
-You might wonder why I would represent data in this way such that they are in separate tables. This is a very common situation when you have data coming from many sources! You might have gotten two datasets from completely different sources, but you know there is an identifier column that relates information in one table to that of another. From my perspective as a teacher, this is a very common situation for my data where I get all my data identifying you (name, email, UW NetID, section) from MyUW while I get your grade data from Ed (where it stores your email and grades).</p>
-<p>The process of trying to combine two datasets in such a way to “align” them based on some column values is called a
-<strong>join</strong>
-. If we were to join these columns on
-<code class="docutils literal notranslate"><span class="pre">ta_id</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">grader_id</span></code>
-, you would imagine that the process looks something like this pseudo-code (this is not real Python!).</p>
+<p>We’re going to take a quick step away from geospatial data for the next flew slides, but this concept will be very relevant for the example we will be doing with geospatial data.<br />
+Let’s go back to the world of CSV data that we would process with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . Suppose I had two different <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> shown below. The left one <code class="docutils literal notranslate"><span class="pre">tas</span></code> stores information about the TAs and <code class="docutils literal notranslate"><span class="pre">grading</span></code> on the right stores information about students and which TA will be grading them ( <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> will match if that TA is grading that student). Our final goal will be trying to find the number of students each TA will grade.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/XefeN513eek9ajoDicHmXplz"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/XefeN513eek9ajoDicHmXplz" style="width: 758px;" /></a>
+<p>You might wonder why I would represent data in this way such that they are in separate tables. This is a very common situation when you have data coming from many sources! You might have gotten two datasets from completely different sources, but you know there is an identifier column that relates information in one table to that of another. From my perspective as a teacher, this is a very common situation for my data where I get all my data identifying you (name, email, UW NetID, section) from MyUW while I get your grade data from Ed (where it stores your email and grades).<br />
+The process of trying to combine two datasets in such a way to “align” them based on some column values is called a <strong>join</strong> . If we were to join these columns on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> , you would imagine that the process looks something like this pseudo-code (this is not real Python!).</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>for t in tas:
   for g in grading:
     if t[&#39;ta_id&#39;] == g[&#39;grader_id&#39;]:
         output(t, g)
 </pre></div>
 </div>
-<p>To explain in English, the process of joining them on
-<code class="docutils literal notranslate"><span class="pre">ta_id</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">grader_id</span></code>
-finds all pairs of rows from each table, and keeps them if they match on
-<code class="docutils literal notranslate"><span class="pre">ta_id</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">grader_id</span></code>
-.</p>
-<p>Now this pseudo-code isn’t going to actually look like what we will write for
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-. Joining is such a common operation with data that
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-provides a function to do so that looks like the following (there is a bit of setup to create the datasets):</p>
+<p>To explain in English, the process of joining them on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> finds all pairs of rows from each table, and keeps them if they match on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> .<br />
+Now this pseudo-code isn’t going to actually look like what we will write for <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . Joining is such a common operation with data that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provides a function to do so that looks like the following (there is a bit of setup to create the datasets):</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the tas DataFrame</span>
@@ -1158,30 +1128,10 @@ provides a function to do so that looks like the following (there is a bit of se
 <span class="nb">print</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notice that the output contains all pairs of rows that match up on
-<code class="docutils literal notranslate"><span class="pre">ta_id</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">grader_id</span></code>
-! There are now two rows for
-<code class="docutils literal notranslate"><span class="pre">Nicole</span></code>
-because there were two rows in the original
-<code class="docutils literal notranslate"><span class="pre">grading</span></code>
-table that had her ID. At this point
-<code class="docutils literal notranslate"><span class="pre">merged</span></code>
-is a new
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-with the four columns shown in the output above. To compute how many students each TA was grading, we could easily solve this with a
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code>
-on this new
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-!</p>
-<p>You might be wondering, what would happen to rows that don’t “line up”. What if there was a TA who didn’t have anyone they were grading or a student had a
-<code class="docutils literal notranslate"><span class="pre">grader_id</span></code>
-for a grader that doesn’t exist in the other table? Suppose we had the following dataset instead. We removed James from the left table and changed Wen to be graded by Nicole on the right.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd2375bd10&gt;
-Let’s see what happens when we run
-<code class="docutils literal notranslate"><span class="pre">merge</span></code>
-on these datasets.</p>
+<p>Notice that the output contains all pairs of rows that match up on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> ! There are now two rows for <code class="docutils literal notranslate"><span class="pre">Nicole</span></code> because there were two rows in the original <code class="docutils literal notranslate"><span class="pre">grading</span></code> table that had her ID. At this point <code class="docutils literal notranslate"><span class="pre">merged</span></code> is a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the four columns shown in the output above. To compute how many students each TA was grading, we could easily solve this with a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> on this new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> !<br />
+You might be wondering, what would happen to rows that don’t “line up”. What if there was a TA who didn’t have anyone they were grading or a student had a <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> for a grader that doesn’t exist in the other table? Suppose we had the following dataset instead. We removed James from the left table and changed Wen to be graded by Nicole on the right.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/Gr191GcMoBCpwe1U78FtMLM2"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/Gr191GcMoBCpwe1U78FtMLM2" style="width: 743px;" /></a>
+<p>Let’s see what happens when we run <code class="docutils literal notranslate"><span class="pre">merge</span></code> on these datasets.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the tas DataFrame</span>

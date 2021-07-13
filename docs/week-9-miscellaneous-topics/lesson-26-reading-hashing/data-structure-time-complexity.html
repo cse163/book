@@ -1110,31 +1110,43 @@
 <p>Back in Lesson 16, we introduced the notion of run-time complexity and talked about this in the context of various complexities of the data structures we learned. Below, we introduce all the important operations for each data structure we learned with a short justification for why.</p>
 <div class="section" id="list">
 <h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
-<p>A
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-is a series of values, each with an index (starting at 0, then 1, and so on).</p>
-<p>&lt;Element ‘list’ at 0x7fcd2377e630&gt;</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> is a series of values, each with an index (starting at 0, then 1, and so on).</p>
+<ul class="simple">
+<li><p>Add:     <code class="docutils literal notranslate"><span class="pre">l.append(v)</span></code>     takes <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time</p>
+<ul>
+<li><p>Just adds to the end of the         <code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+</ul>
+</li>
+<li><p>Contains:     <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">in</span> <span class="pre">l</span></code>     takes <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> time</p>
+<ul>
+<li><p>Has to search through whole list for         <code class="docutils literal notranslate"><span class="pre">v</span></code></p></li>
+</ul>
+</li>
+<li><p>Get:     <code class="docutils literal notranslate"><span class="pre">l[i]</span></code>     take <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time</p>
+<ul>
+<li><p>The way         <code class="docutils literal notranslate"><span class="pre">list</span></code>         is implemented, provided instant access to a value if you know its index. This is because         <code class="docutils literal notranslate"><span class="pre">list</span></code>         s are a contiguous block of memory and it is easy for the computer to go to spot         <code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="set">
 <h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
-<p>A
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-is a collection of unique values, no sense of “order”. All allowed operations are “magically” implemented in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time.</p>
-<p>&lt;Element ‘list’ at 0x7fcd26044f40&gt;</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">set</span></code> is a collection of unique values, no sense of “order”. All allowed operations are “magically” implemented in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time.</p>
+<ul class="simple">
+<li><p>Add:     <code class="docutils literal notranslate"><span class="pre">s.add(v)</span></code>     takes <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time</p></li>
+<li><p>Contains:     <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">in</span> <span class="pre">s</span></code>     takes <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time</p></li>
+<li><p>Get: s     <code class="docutils literal notranslate"><span class="pre">[i]</span></code>      <strong>not allowed</strong></p></li>
+</ul>
 </div>
 <div class="section" id="dictionary">
 <h2>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
-<p>Like a
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-, but a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-maps distinct keys to values.</p>
-<p>&lt;Element ‘list’ at 0x7fcd26044b30&gt;
-Understanding how
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-magically do the contains operation in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time, regardless of how much data is in the structure, is very interesting and the idea we want to understand in this lecture.</p>
+<p>Like a <code class="docutils literal notranslate"><span class="pre">set</span></code> , but a <code class="docutils literal notranslate"><span class="pre">dict</span></code> maps distinct keys to values.</p>
+<ul class="simple">
+<li><p>Add:     <code class="docutils literal notranslate"><span class="pre">d[k]</span> <span class="pre">=</span> <span class="pre">v</span></code>     takes <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time</p></li>
+<li><p>Contains:     <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">in</span> <span class="pre">d</span></code>     takes <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time</p></li>
+<li><p>Get:     <code class="docutils literal notranslate"><span class="pre">d[k]</span></code>     take <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time</p></li>
+</ul>
+<p>Understanding how <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> magically do the contains operation in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time, regardless of how much data is in the structure, is very interesting and the idea we want to understand in this lecture.</p>
 </div>
 </div>
 

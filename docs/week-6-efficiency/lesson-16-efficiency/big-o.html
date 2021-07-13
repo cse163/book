@@ -1117,11 +1117,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/6ea3c9015df14605ad29976b9f92f603?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>Now that we feel a little bit more comfortable counting steps, we can go back to trying to compare
-<code class="docutils literal notranslate"><span class="pre">sum1</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">sum2</span></code>
-. Recall these functions were defined as:</p>
+<p>Now that we feel a little bit more comfortable counting steps, we can go back to trying to compare <code class="docutils literal notranslate"><span class="pre">sum1</span></code> and <code class="docutils literal notranslate"><span class="pre">sum2</span></code> . Recall these functions were defined as:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -1133,12 +1129,8 @@ and
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>To answer the question of how many steps it takes to run these functions, we now need to talk about the number of steps in terms of the input
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-(since the number of steps might depend on
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-).</p>
-<p>Below, we annotate the code with step counting.</p>
+<p>To answer the question of how many steps it takes to run these functions, we now need to talk about the number of steps in terms of the input <code class="docutils literal notranslate"><span class="pre">n</span></code> (since the number of steps might depend on <code class="docutils literal notranslate"><span class="pre">n</span></code> ).<br />
+Below, we annotate the code with step counting.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># Total: n + 3 steps</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># 1 step</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>   <span class="c1"># Runs n + 1 times, for a total of n + 1</span>
@@ -1150,59 +1142,17 @@ and
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># 1 step</span>
 </pre></div>
 </div>
-<p>So with this counting rule,
-<code class="docutils literal notranslate"><span class="pre">sum1(n)</span></code>
-runs in
-<code class="docutils literal notranslate"><span class="pre">n+3</span></code>
-steps while
-<code class="docutils literal notranslate"><span class="pre">sum2(n)</span></code>
-always runs in
-<code class="docutils literal notranslate"><span class="pre">1</span></code>
-step!</p>
-<p>Amazingly, this weird counting rule matches the graph that we produced earlier with timing code! We saw that
-<code class="docutils literal notranslate"><span class="pre">sum1</span></code>
-grew proportionally to its input
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-while
-<code class="docutils literal notranslate"><span class="pre">sum2</span></code>
-always seemed about the same. With these counting rules, it’s easier to come to that conclusion without having to go through the process of actually timing the code!</p>
-<p>&lt;Element ‘figure’ at 0x7fcd2375b680&gt;</p>
+<p>So with this counting rule, <code class="docutils literal notranslate"><span class="pre">sum1(n)</span></code> runs in <code class="docutils literal notranslate"><span class="pre">n+3</span></code> steps while <code class="docutils literal notranslate"><span class="pre">sum2(n)</span></code> always runs in <code class="docutils literal notranslate"><span class="pre">1</span></code> step!<br />
+Amazingly, this weird counting rule matches the graph that we produced earlier with timing code! We saw that <code class="docutils literal notranslate"><span class="pre">sum1</span></code> grew proportionally to its input <code class="docutils literal notranslate"><span class="pre">n</span></code> while <code class="docutils literal notranslate"><span class="pre">sum2</span></code> always seemed about the same. With these counting rules, it’s easier to come to that conclusion without having to go through the process of actually timing the code!</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/UEmjcGL60KC1zovZQd88i3Q4"><img alt="Graph showing runtime of sum1 and sum2 functions. sum1 is a linear function that takes more time as n increases while sum2 is a flat line that always takes &lt; 0.1 seconds to complete" class="align-center" src="https://static.us.edusercontent.com/files/UEmjcGL60KC1zovZQd88i3Q4" style="width: 640px;" /></a>
 <div class="section" id="reporting-steps">
 <h2>Reporting Steps<a class="headerlink" href="#reporting-steps" title="Permalink to this headline">¶</a></h2>
-<p>Since everything we’ve done with counting steps is a super loose approximation, we don’t really want to promise that the relationship for the run time is something exactly like
-<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">3</span></code>
-. Instead, we want to report that there is some dependence on
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-for the run-time so that we get the idea of how the function scales, without spending too much time quibbling over whether it’s truly
-<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">3</span></code>
-or
-<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">2</span></code>
-.</p>
-<p>Instead, computer scientists generally drop any constants or low-order terms from the expression
-<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">3</span></code>
-and just report that it “grows like
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-.” The notation we use is called
-<strong>Big-O</strong>
-notation. Instead of reporting
-<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">3</span></code>
-as the growth of steps, we instead report <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>. This means that the growth is proportional to
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-but we aren’t saying the exact number of steps.</p>
-<p>You get used to this process of dropping information with practice.</p>
+<p>Since everything we’ve done with counting steps is a super loose approximation, we don’t really want to promise that the relationship for the run time is something exactly like <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">3</span></code> . Instead, we want to report that there is some dependence on <code class="docutils literal notranslate"><span class="pre">n</span></code> for the run-time so that we get the idea of how the function scales, without spending too much time quibbling over whether it’s truly <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">3</span></code> or <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">2</span></code> .<br />
+Instead, computer scientists generally drop any constants or low-order terms from the expression <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">3</span></code> and just report that it “grows like <code class="docutils literal notranslate"><span class="pre">n</span></code> .” The notation we use is called <strong>Big-O</strong> notation. Instead of reporting <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">3</span></code> as the growth of steps, we instead report <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>. This means that the growth is proportional to <code class="docutils literal notranslate"><span class="pre">n</span></code> but we aren’t saying the exact number of steps.<br />
+You get used to this process of dropping information with practice.</p>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>Suppose we did the step counting procedure for some block of code that depends on its input
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-and counted <span class="math notranslate nohighlight">\(2n^2 + 5n+ 3\)</span> (we can get <span class="math notranslate nohighlight">\(n^2\)</span> from nested loops that both go to
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-). Instead of reporting this entire formula, we will report the part that has the
-<strong>biggest impact</strong>
-on its run-time. Out of all the terms, when
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-is very large, the term <span class="math notranslate nohighlight">\(2n^2\)</span> contributes the most to the overall run-time. This is why we will report <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> instead of the whole formula we counted (we also drop constants since they don’t matter as much when
-<code class="docutils literal notranslate"><span class="pre">n</span></code>
-is very large).</p>
+<p>Suppose we did the step counting procedure for some block of code that depends on its input <code class="docutils literal notranslate"><span class="pre">n</span></code> and counted <span class="math notranslate nohighlight">\(2n^2 + 5n+ 3\)</span> (we can get <span class="math notranslate nohighlight">\(n^2\)</span> from nested loops that both go to <code class="docutils literal notranslate"><span class="pre">n</span></code> ). Instead of reporting this entire formula, we will report the part that has the <strong>biggest impact</strong> on its run-time. Out of all the terms, when <code class="docutils literal notranslate"><span class="pre">n</span></code> is very large, the term <span class="math notranslate nohighlight">\(2n^2\)</span> contributes the most to the overall run-time. This is why we will report <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> instead of the whole formula we counted (we also drop constants since they don’t matter as much when <code class="docutils literal notranslate"><span class="pre">n</span></code> is very large).</p>
 </div>
 <div class="section" id="another-example">
 <h3>Another Example<a class="headerlink" href="#another-example" title="Permalink to this headline">¶</a></h3>
@@ -1218,21 +1168,51 @@ is very large).</p>
 </pre></div>
 </div>
 <p>What is the run-time of this function in Big-O notation? Students will commonly come up with an answer like <span class="math notranslate nohighlight">\(\mathcal{O}(2n^2 + 3)\)</span> which is not correct on two counts:</p>
-<p>&lt;Element ‘list’ at 0x7fcd2603cbd0&gt;
-Putting these together, this means the correct answer would be <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>! Try our step counting see that the formula for steps would be something like 18</p>
+<ul class="simple">
+<li><p>The first is a common misconception where people assume nested loops mean something like <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>. This is not the case! This is only true if both loops run <span class="math notranslate nohighlight">\(n\)</span> times! In this case, the outer loop runs 9 times and the inner-loop runs <span class="math notranslate nohighlight">\(n\)</span> times so it will be something on the order of <span class="math notranslate nohighlight">\(9n\)</span> steps, not <span class="math notranslate nohighlight">\(n^2\)</span> steps!</p></li>
+<li><p>The second is that when you report a Big-O result, you should always drop constants in front of terms and lower-order terms. This formula for steps is wrong in the first place, but assuming it was correct, you would report <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> after dropping the constants and lower-order terms.</p></li>
+</ul>
+<p>Putting these together, this means the correct answer would be <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>! Try our step counting see that the formula for steps would be something like 18</p>
 </div>
 </div>
 <div class="section" id="why-is-this-useful">
 <h2>Why is this useful?<a class="headerlink" href="#why-is-this-useful" title="Permalink to this headline">¶</a></h2>
-<p>Even though it feels weird to throw away things like constants and low-order terms, the Big-O notation is helpful because it lets us communicate how our algorithms scale very simply. By scale, we mean quantifying approximately how much longer a program will run if you were to increase its input size. For example, if I told you an algorithm was <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>, you would know that if I were to double the input size <span class="math notranslate nohighlight">\(n\)</span>, that the program would take
-&lt;Element ‘italic’ at 0x7fcd2603c1d0&gt;
-4x as long to run (because of the squared)!</p>
-<p>Computer scientists use Big-O notation so much, we consider algorithms by which
-<strong>complexity class</strong>
-they are in. The word complexity is a CS term for Big-O run-time. Here are some common complexity classes</p>
-<p>&lt;Element ‘list’ at 0x7fcd2603c7c0&gt;
-It sometimes helps to compare how these things grow pictorially. Below is a graph showing the approximate number of steps for each complexity class as <span class="math notranslate nohighlight">\(n\)</span> increases. Notice which ones grow slowly and which ones shoot off the graph for even small <span class="math notranslate nohighlight">\(n \approx 10\)</span>.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd26039b80&gt;</p>
+<p>Even though it feels weird to throw away things like constants and low-order terms, the Big-O notation is helpful because it lets us communicate how our algorithms scale very simply. By scale, we mean quantifying approximately how much longer a program will run if you were to increase its input size. For example, if I told you an algorithm was <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>, you would know that if I were to double the input size <span class="math notranslate nohighlight">\(n\)</span>, that the program would take <em>about</em> 4x as long to run (because of the squared)!<br />
+Computer scientists use Big-O notation so much, we consider algorithms by which <strong>complexity class</strong> they are in. The word complexity is a CS term for Big-O run-time. Here are some common complexity classes</p>
+<ul class="simple">
+<li><p>Constant: <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(n\)</span> doubles, run-time stays the same</p></li>
+</ul>
+</li>
+<li><p>Logarithmic: <span class="math notranslate nohighlight">\(\mathcal{O}(\log(n))\)</span></p>
+<ul>
+<li><p>Grows very slowly</p></li>
+</ul>
+</li>
+<li><p>Linear: <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(n\)</span> doubles, run-time doubles</p></li>
+</ul>
+</li>
+<li><p>Quadratic: <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span></p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(n\)</span> doubles, run-time quadruples</p></li>
+</ul>
+</li>
+<li><p>Cubic: <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span></p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(n\)</span> doubles, run-time multiplies by 8</p></li>
+</ul>
+</li>
+<li><p>Exponential: <span class="math notranslate nohighlight">\(\mathcal{O}(2^n)\)</span></p>
+<ul>
+<li><p>Not good… Even for some moderately sized <span class="math notranslate nohighlight">\(n\)</span>, say around 200, <span class="math notranslate nohighlight">\(2^n\)</span> is larger than the number of atoms in the observable universe!</p></li>
+</ul>
+</li>
+</ul>
+<p>It sometimes helps to compare how these things grow pictorially. Below is a graph showing the approximate number of steps for each complexity class as <span class="math notranslate nohighlight">\(n\)</span> increases. Notice which ones grow slowly and which ones shoot off the graph for even small <span class="math notranslate nohighlight">\(n \approx 10\)</span>.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/zPly0cFMKtjHM4JLUP0MHuFi"><img alt="Showing growth rates of various functions that scale with O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n) and O(n!)" class="align-center" src="https://static.us.edusercontent.com/files/zPly0cFMKtjHM4JLUP0MHuFi" style="width: 743px;" /></a>
 </div>
 </div>
 

@@ -1100,40 +1100,21 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/38de6c8f202b46688036c19687b4990f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>So the first thing we need to handle to make a work hash table is to handle a
-<strong>collision</strong>
-. A collision occurs if two values that are added to the hash table end up hashing to the same index. This causes a problem with our current approach since we use the hashing trick to instantly know which index a particular value belongs in.</p>
-<p>It turns out though, this is relatively easy to fix by allowing our hash table to store multiple values at a single index. The way this is commonly implemented is with an approach called
-<strong>separate-chaining</strong>
-, where we make a chain of values at a particular index that is linked together. A hash table that uses separate-chaining to handle might look like the following image. Now, instead of each index of the hash table storing a single value, it stores these chains of values so it can handle collisions. For those that have taken CSE 143, this chain is implemented as a Linked List.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd2603cea0&gt;
-It’s not sufficient enough to say that we will store these multiple values at an index in a chain, we need to re-specify how
-<code class="docutils literal notranslate"><span class="pre">add</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">in</span></code>
-should work with this new structure.</p>
-<p>&lt;Element ‘list’ at 0x7fcd26039bd0&gt;
-That’s basically it! Now we have a working hash table that can handle collisions!</p>
+<p>So the first thing we need to handle to make a work hash table is to handle a <strong>collision</strong> . A collision occurs if two values that are added to the hash table end up hashing to the same index. This causes a problem with our current approach since we use the hashing trick to instantly know which index a particular value belongs in.<br />
+It turns out though, this is relatively easy to fix by allowing our hash table to store multiple values at a single index. The way this is commonly implemented is with an approach called <strong>separate-chaining</strong> , where we make a chain of values at a particular index that is linked together. A hash table that uses separate-chaining to handle might look like the following image. Now, instead of each index of the hash table storing a single value, it stores these chains of values so it can handle collisions. For those that have taken CSE 143, this chain is implemented as a Linked List.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/c2TvCiXTINrel1ZsA8kOQP4B"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/c2TvCiXTINrel1ZsA8kOQP4B" style="width: 525px;" /></a>
+<p>It’s not sufficient enough to say that we will store these multiple values at an index in a chain, we need to re-specify how <code class="docutils literal notranslate"><span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">in</span></code> should work with this new structure.</p>
+<ul class="simple">
+<li><p>To check if a value is     <code class="docutils literal notranslate"><span class="pre">in</span></code>     the hash table, you still use the hashing trick to figure out which index it should go to. However, now you can’t immediately say whether or not the value is at the table, because you will need to search through the values at that index to find the one you are looking for. So this involves starting at the first value in the chain and looping until the end of that chain to find the target value. If the value you are looking for is nowhere in the chain, you can confidently return     <code class="docutils literal notranslate"><span class="pre">False</span></code>     that the value is in this set.</p></li>
+<li><p>When you     <code class="docutils literal notranslate"><span class="pre">add</span></code>     a value, you still use the hashing trick to identify which index it belongs in. You also generally check to make sure the value isn’t already in this chain since     <code class="docutils literal notranslate"><span class="pre">sets</span></code>     don’t allow duplicates. If the value is not present in the chain at that index, then you can simply add a new link to the chain. By convention (and for simplicity), we always add the value to the front of the chain. So that means if a chain has     <code class="docutils literal notranslate"><span class="pre">item1-&gt;item2</span></code>     (where     <code class="docutils literal notranslate"><span class="pre">item1</span></code>     is the front) and we add     <code class="docutils literal notranslate"><span class="pre">item3</span></code>     to it, the chain will now become     <code class="docutils literal notranslate"><span class="pre">item3-&gt;item1-&gt;item2</span></code>     .</p></li>
+</ul>
+<p>That’s basically it! Now we have a working hash table that can handle collisions!</p>
 <div class="section" id="efficiency">
 <h2>Efficiency<a class="headerlink" href="#efficiency" title="Permalink to this headline">¶</a></h2>
-<p>You might be wondering: is this actually going to always be <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> lookup for a value since this new approach now requires us to loop through a chain of values? That’s a very astute observation and definitely something we should be worried about!</p>
-<p>It turns out under some reasonable assumptions (particularly, that you use a good hash function as we will describe in the next slide), it should be unlikely for collisions to happen in the first place. This means the number of items in a single index should be relatively small in comparison to the total number of items in the whole hash table (the <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>).</p>
-<p>To make sure this is true, a hash table has to care about its
-<strong>load factor</strong>
-, which is the average number of elements in the table per index (
-<code class="docutils literal notranslate"><span class="pre">num_elements</span> <span class="pre">/</span> <span class="pre">size_of_table</span></code>
-).  If the load factor is too large, it is more likely for collisions to happen since the table is more full. To fix this, we generally make sure the load factor is small by
-<strong>rehashing</strong>
-if the hash table gets too crowded. Rehashing is a process of building a new, larger hash table and putting all the values in the original table into this new one. When you rehash, the collisions you saw before are unlikely to happen again, since you will be modding by a different table length (e.g., even though
-<code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">%</span> <span class="pre">5</span> <span class="pre">==</span> <span class="pre">7</span> <span class="pre">%</span> <span class="pre">5</span></code>
-, it’s
-&lt;Element ‘italic’ at 0x7fcd26044c70&gt;
-the case that
-<code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">==</span> <span class="pre">7</span> <span class="pre">%</span> <span class="pre">10</span></code>
-).</p>
-<p>By doing this process whenever the load factor gets too large, we can control the number of collisions that will occur by reducing the load factor any time it exceeds some threshold. And remember, a lower load factor means fewer elements per bucket to search through making sure our searches are fast. While the rehashing process is computationally expensive, it happens infrequently so
-&lt;Element ‘italic’ at 0x7fcd26044590&gt;
-operations on the hash table are constant time.</p>
+<p>You might be wondering: is this actually going to always be <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> lookup for a value since this new approach now requires us to loop through a chain of values? That’s a very astute observation and definitely something we should be worried about!<br />
+It turns out under some reasonable assumptions (particularly, that you use a good hash function as we will describe in the next slide), it should be unlikely for collisions to happen in the first place. This means the number of items in a single index should be relatively small in comparison to the total number of items in the whole hash table (the <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>).<br />
+To make sure this is true, a hash table has to care about its <strong>load factor</strong> , which is the average number of elements in the table per index ( <code class="docutils literal notranslate"><span class="pre">num_elements</span> <span class="pre">/</span> <span class="pre">size_of_table</span></code> ).  If the load factor is too large, it is more likely for collisions to happen since the table is more full. To fix this, we generally make sure the load factor is small by <strong>rehashing</strong> if the hash table gets too crowded. Rehashing is a process of building a new, larger hash table and putting all the values in the original table into this new one. When you rehash, the collisions you saw before are unlikely to happen again, since you will be modding by a different table length (e.g., even though <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">%</span> <span class="pre">5</span> <span class="pre">==</span> <span class="pre">7</span> <span class="pre">%</span> <span class="pre">5</span></code> , it’s <em>not</em> the case that <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">==</span> <span class="pre">7</span> <span class="pre">%</span> <span class="pre">10</span></code> ).<br />
+By doing this process whenever the load factor gets too large, we can control the number of collisions that will occur by reducing the load factor any time it exceeds some threshold. And remember, a lower load factor means fewer elements per bucket to search through making sure our searches are fast. While the rehashing process is computationally expensive, it happens infrequently so <em>most</em> operations on the hash table are constant time.</p>
 </div>
 </div>
 

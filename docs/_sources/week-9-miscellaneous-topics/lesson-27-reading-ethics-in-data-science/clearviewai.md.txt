@@ -1,9 +1,3 @@
 # Clearview.ai
-
-<Element 'link' at 0x7fcd234697c0>
-
-
-
-<Element 'link' at 0x7fcd23760b80>
-
-
+[None](https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html)   
+[None](https://www.youtube.com/watch?v=jZjmlJPJgug&t=575s)   

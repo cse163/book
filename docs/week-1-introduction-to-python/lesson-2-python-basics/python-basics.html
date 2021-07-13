@@ -32,6 +32,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -1113,39 +1115,44 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python-basics">
 <h1>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this headline">¶</a></h1>
-<p>&lt;Element ‘list’ at 0x7fcd26039b80&gt;</p>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/fdf9802363e74c8db885031d985be706?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>In an Ed reading, there will be multiple Python
-<strong>snippets</strong>
-. You should think of each snippet as its own Python file (like Hunter showed at the end of Lecture 1). Recall from the Ed Tutorial, you can (and should!) run each block as you’re reading to see its output.</p>
+<p>In an Ed reading, there will be multiple Python <strong>snippets</strong> . You should think of each snippet as its own Python file (like Hunter showed at the end of Lecture 1). Recall from the Ed Tutorial, you can (and should!) run each block as you’re reading to see its output.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>You can also (and are encouraged) to edit the block to see what would happen if you tried to change the code in some way! Go out and explore a bit! 😊
+<br /></p>
+<br />
+<p><em>Tip:</em>
+You can always get the original code back for a reading slide by refreshing the page.</p>
+</div>
 <div class="section" id="print-statements">
 <h2>Print Statements<a class="headerlink" href="#print-statements" title="Permalink to this headline">¶</a></h2>
-<p>We saw that the
-<code class="docutils literal notranslate"><span class="pre">print</span></code>
-statement in Python is very simple</p>
+<p>We saw that the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement in Python is very simple</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>One thing that Python is really good at is providing slightly different ways of using the same syntax to do helpful things. For example, you can also pass multiple values to the
-<code class="docutils literal notranslate"><span class="pre">print</span></code>
-function and it adds spaces between them!</p>
+<p>One thing that Python is really good at is providing slightly different ways of using the same syntax to do helpful things. For example, you can also pass multiple values to the <code class="docutils literal notranslate"><span class="pre">print</span></code> function and it adds spaces between them!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="python-program-main-method-pattern">
 <h2>Python Program + Main Method Pattern<a class="headerlink" href="#python-program-main-method-pattern" title="Permalink to this headline">¶</a></h2>
-<p>A Python program is a series of statements that get executed from top to bottom. Right now the only statement we know is the print statement. But we will learn others!</p>
-<p>In CSE 163, we will ask you to put a little bit of starter code in every program you write. We call this the
-<strong>main-method pattern</strong>
-. We can’t really motivate why you need to use this quite yet; you’ll have to trust us that it is the right thing to do. We introduce this pattern now to get you in the practice of writing from the onset of your Python journey. We will come back in future weeks and actually dive into what this pattern does and why it’s necessary.</p>
-<p>Recall that we could write a Python program in a file (in Ed, it shows we write a Python snippet) to print hello world like the following:</p>
+<p>A Python program is a series of statements that get executed from top to bottom. Right now the only statement we know is the print statement. But we will learn others!<br />
+In CSE 163, we will ask you to put a little bit of starter code in every program you write. We call this the <strong>main-method pattern</strong> . We can’t really motivate why you need to use this quite yet; you’ll have to trust us that it is the right thing to do. We introduce this pattern now to get you in the practice of writing from the onset of your Python journey. We will come back in future weeks and actually dive into what this pattern does and why it’s necessary.<br />
+Recall that we could write a Python program in a file (in Ed, it shows we write a Python snippet) to print hello world like the following:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>However, instead, we will commonly ask you to write a few extra lines of code “around” the program you wanted to write as the following.</p>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>The line that starts with a
+<code class="docutils literal notranslate"><span class="pre">#</span></code>
+is a comment (i.e. not real code, just a description).</p>
+</div>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Put your code, indented inside here</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
@@ -1156,44 +1163,20 @@ function and it adds spaces between them!</p>
 </pre></div>
 </div>
 <p>We’ll start you off by providing the main-method pattern as a starter code for your practice problems on Ed, but you will get used to writing these weird symbols by yourself! Again, we promise to explain this later, we just can’t right now!</p>
-<div class="admonition warning">
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>We said that these Python snippets are basically like a Python file, which is mostly true. However, a big difference is we will commonly
 <strong>omit</strong>
 the main-method pattern in these readings’ snippets. The intent here is to keep the readings shorter and better at communicating the big idea of the reading.
-&lt;Element ‘break’ at 0x7fcd26041bd0&gt;</p>
-<p>&lt;Element ‘break’ at 0x7fcd26041a90&gt;</p>
+<br /></p>
+<br />
 <p><strong>For your take-home assessments, you will always need to use the main-method pattern for the files you write.</strong></p>
 </div>
 </div>
 <div class="section" id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
-<p>Variables store values. Each Python value is composed of a value and its type. Unlike Java, Python doesn’t require you to define the type of a variable. Additionally, throughout the lifetime of the program running, the variable can be made to hold a new value of a different type using an
-<strong>assignment statement</strong>
-.</p>
-<p>The following snippet creates a variable named
-<code class="docutils literal notranslate"><span class="pre">x</span></code>
-that stores the value
-<code class="docutils literal notranslate"><span class="pre">3</span></code>
-of type
-<code class="docutils literal notranslate"><span class="pre">int</span></code>
-(for integer) and a variable named
-<code class="docutils literal notranslate"><span class="pre">y</span></code>
-that stores the value
-<code class="docutils literal notranslate"><span class="pre">4.2</span></code>
-of type
-<code class="docutils literal notranslate"><span class="pre">float</span></code>
-(for floating-point number). One line 3, it then re-assigned
-<code class="docutils literal notranslate"><span class="pre">x</span></code>
-to store the value
-<code class="docutils literal notranslate"><span class="pre">3.7</span></code>
-of type
-<code class="docutils literal notranslate"><span class="pre">float</span></code>
-. This is why the program prints
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3.7</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">4.2</span></code>
-.</p>
+<p>Variables store values. Each Python value is composed of a value and its type. Unlike Java, Python doesn’t require you to define the type of a variable. Additionally, throughout the lifetime of the program running, the variable can be made to hold a new value of a different type using an <strong>assignment statement</strong> .<br />
+The following snippet creates a variable named <code class="docutils literal notranslate"><span class="pre">x</span></code> that stores the value <code class="docutils literal notranslate"><span class="pre">3</span></code> of type <code class="docutils literal notranslate"><span class="pre">int</span></code> (for integer) and a variable named <code class="docutils literal notranslate"><span class="pre">y</span></code> that stores the value <code class="docutils literal notranslate"><span class="pre">4.2</span></code> of type <code class="docutils literal notranslate"><span class="pre">float</span></code> (for floating-point number). One line 3, it then re-assigned <code class="docutils literal notranslate"><span class="pre">x</span></code> to store the value <code class="docutils literal notranslate"><span class="pre">3.7</span></code> of type <code class="docutils literal notranslate"><span class="pre">float</span></code> . This is why the program prints <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3.7</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">4.2</span></code> .</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">4.2</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mf">3.7</span>
@@ -1215,7 +1198,7 @@ x |  3.7  |    y |  4.2  |
 </pre></div>
 </div>
 <p>When we get to lines 5 and 6, they just “look inside” the box and use whatever value that’s in the current state of the program!</p>
-<div class="admonition warning">
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>For those that now Java, this is a big difference than what you have seen before. In Java, a
 <strong>variable’s type</strong>
@@ -1223,28 +1206,32 @@ is determined by the variable itself (e.g.,
 <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span></code>
 ). But in Python, a variable’s type is determined
 <strong>by the value in the variable.</strong></p>
-<p>&lt;Element ‘break’ at 0x7fcd26033810&gt;</p>
-<p>&lt;Element ‘break’ at 0x7fcd260337c0&gt;
-Another way of phrasing this, is that it doesn’t make sense to think of Python variables as having types. A variable in Python is just a box to store values of any types, the value itself knows what type it is (
-<code class="docutils literal notranslate"><span class="pre">4</span></code>
+<br />
+<br />
+Another way of phrasing this, is that it doesn't make sense to think of Python variables as having types. A variable in Python is just a box to store values of any types, the value itself knows what type it is (
+`4`
 knows it is an
-<code class="docutils literal notranslate"><span class="pre">int</span></code>
+`int`
 ,
-<code class="docutils literal notranslate"><span class="pre">4.2</span></code>
+`4.2`
 knows it is a
-<code class="docutils literal notranslate"><span class="pre">float</span></code>
-).</p>
+`float`
+).
 </div>
 </div>
 <div class="section" id="expressions">
 <h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h2>
-<p>Python supports many operations for built-in types. Specifically, here are the operations defined for numeric types like
-<code class="docutils literal notranslate"><span class="pre">int</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">float</span></code>
-.</p>
-<p>&lt;Element ‘list’ at 0x7fcd26033e00&gt;
-You can also nest expressions (and use parentheses to define order) since all expressions evaluate to some value. You can do something complex like the following:</p>
+<p>Python supports many operations for built-in types. Specifically, here are the operations defined for numeric types like <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> .</p>
+<ul class="simple">
+<li><p>Addition:     <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code></p></li>
+<li><p>Subtraction:     <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code></p></li>
+<li><p>Multiplication:     <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code></p></li>
+<li><p>Division:     <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code>     (e.g.,     <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">3</span> <span class="pre">==</span> <span class="pre">2.333333333</span></code>     )</p></li>
+<li><p>Integer division:     <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">//</span> <span class="pre">b</span></code>     (e.g.,     <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">//</span> <span class="pre">3</span> <span class="pre">==</span> <span class="pre">2</span></code>     )</p></li>
+<li><p>Mod:     <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code>     (i.e., leftover from integer division as in     <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">%</span> <span class="pre">3</span> <span class="pre">==</span> <span class="pre">1</span></code>     )</p></li>
+<li><p>Exponentiation:     <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">**</span> <span class="pre">b</span></code>     (i.e., raise to a power <span class="math notranslate nohighlight">\(a^b\)</span>)</p></li>
+</ul>
+<p>You can also nest expressions (and use parentheses to define order) since all expressions evaluate to some value. You can do something complex like the following:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)))</span>
 </pre></div>

@@ -1098,41 +1098,27 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/a9b0a03d46324244bc0feae35720118a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>As a reminder, we defined a string as a sequence of characters, where each character has an index; we often refer to strings as being an indexed-sequence of characters for short.</p>
-<p>A few slides back, we learned of some string functions (e.g.
-<code class="docutils literal notranslate"><span class="pre">upper</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">lower</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">split</span></code>
-). Recall that we defined the
-<code class="docutils literal notranslate"><span class="pre">split</span></code>
-function to break up some string based on a delimiter (a special character separating values), but we did not really explain what the type of the value returned was.</p>
-<p>Consider the following snippet.</p>
+<p>As a reminder, we defined a string as a sequence of characters, where each character has an index; we often refer to strings as being an indexed-sequence of characters for short.<br />
+A few slides back, we learned of some string functions (e.g. <code class="docutils literal notranslate"><span class="pre">upper</span></code> , <code class="docutils literal notranslate"><span class="pre">lower</span></code> , <code class="docutils literal notranslate"><span class="pre">split</span></code> ). Recall that we defined the <code class="docutils literal notranslate"><span class="pre">split</span></code> function to break up some string based on a delimiter (a special character separating values), but we did not really explain what the type of the value returned was.<br />
+Consider the following snippet.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m just going to the store, to the store&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>The first thing to point out in this example is that we didn’t pass any parameter to
-<code class="docutils literal notranslate"><span class="pre">split</span></code>
-even though the table in our String Functions slide showed it taking a
-<code class="docutils literal notranslate"><span class="pre">delim</span></code>
-parameter! This is because by default (if you don’t pass in a delimiter),
-<code class="docutils literal notranslate"><span class="pre">split</span></code>
-will break up the string by whitespace.</p>
-<p>The second thing to point out is that that return value broke up all the words in the string and is showing them all! What is the type of that result? It’s a
-<code class="docutils literal notranslate"> &#160;&#160; </code>
-. A
+<p>The first thing to point out in this example is that we didn’t pass any parameter to <code class="docutils literal notranslate"><span class="pre">split</span></code> even though the table in our String Functions slide showed it taking a <code class="docutils literal notranslate"><span class="pre">delim</span></code> parameter! This is because by default (if you don’t pass in a delimiter), <code class="docutils literal notranslate"><span class="pre">split</span></code> will break up the string by whitespace.<br />
+The second thing to point out is that that return value broke up all the words in the string and is showing them all! What is the type of that result? It’s a <code class="docutils literal notranslate"> &#160;&#160; </code> . A <code class="docutils literal notranslate"><span class="pre">list</span></code> is an indexed-sequence of values of any type. In some sense, a string is like a special case of a <code class="docutils literal notranslate"><span class="pre">list</span></code> since it is an index-sequence of characters specifically.</p>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>For those of you that know Java, a
 <code class="docutils literal notranslate"><span class="pre">list</span></code>
-is an indexed-sequence of values of any type. In some sense, a string is like a special case of a
+is a lot like an array. So in this case, the return type is something like a
+<code class="docutils literal notranslate"><span class="pre">String[]</span></code>
+. We’ll see that this analogy doesn’t quite hold up because a
 <code class="docutils literal notranslate"><span class="pre">list</span></code>
-since it is an index-sequence of characters specifically.</p>
-<p>The great thing about
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-s in Python, is that they share a lot of the same syntax for operations as
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-s. The following snippet shows you all of the string syntaxes we learned this lecture also applies to lists.</p>
+in Python can do so much more (as we’ll see in Lesson 4)!</p>
+</div>
+<p>The great thing about <code class="docutils literal notranslate"><span class="pre">list</span></code> s in Python, is that they share a lot of the same syntax for operations as <code class="docutils literal notranslate"><span class="pre">str</span></code> s. The following snippet shows you all of the string syntaxes we learned this lecture also applies to lists.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;says&#39;</span><span class="p">,</span> <span class="s1">&#39;woof&#39;</span><span class="p">]</span>
 
 <span class="c1"># Length</span>
@@ -1155,32 +1141,17 @@ s. The following snippet shows you all of the string syntaxes we learned this le
 
 </pre></div>
 </div>
-<p>Some key differences/things to point out:</p>
-<p>First, to specify the values of a list, the syntax uses square brackets around a comma-separated list of values (of any type).</p>
+<p>Some key differences/things to point out:<br />
+First, to specify the values of a list, the syntax uses square brackets around a comma-separated list of values (of any type).</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 <span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">]</span>  <span class="c1"># can mix types too!</span>
 </pre></div>
 </div>
-<p>Second, because this is now a list, not a
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-, the values returned by indexing are different. By indexing into index 0 of
-<code class="docutils literal notranslate"><span class="pre">l1</span></code>
-, it returns the value that’s in that index (in this case, the
-<code class="docutils literal notranslate"><span class="pre">str</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">'I'</span></code>
-). Similarly, when you slice into a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-you get a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-back (although it’s shorter).</p>
+<p>Second, because this is now a list, not a <code class="docutils literal notranslate"><span class="pre">str</span></code> , the values returned by indexing are different. By indexing into index 0 of <code class="docutils literal notranslate"><span class="pre">l1</span></code> , it returns the value that’s in that index (in this case, the <code class="docutils literal notranslate"><span class="pre">str</span></code>  <code class="docutils literal notranslate"><span class="pre">'I'</span></code> ). Similarly, when you slice into a <code class="docutils literal notranslate"><span class="pre">list</span></code> you get a <code class="docutils literal notranslate"><span class="pre">list</span></code> back (although it’s shorter).</p>
 <div class="section" id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
-<p>One way
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-s are able to do a bit more than
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-s comes from the fact that you are allowed to change the contents of a list by assigning into it. Just like you can use an index to get a value out of a list, you can use an index to set a value at a particular spot.</p>
+<p>One way <code class="docutils literal notranslate"><span class="pre">list</span></code> s are able to do a bit more than <code class="docutils literal notranslate"><span class="pre">str</span></code> s comes from the fact that you are allowed to change the contents of a list by assigning into it. Just like you can use an index to get a value out of a list, you can use an index to set a value at a particular spot.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>

@@ -1078,7 +1078,13 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#introduction-to-dict">
+   Introduction to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1102,53 +1108,12 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/117da2a64cdd4b2caaeb503b4c7dd7c7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>For one of your practice problems for today, you will be implementing a function to find the count of each word in a file. It’s not clear how you could use a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-or
-<code class="docutils literal notranslate"><span class="pre">set</span></code>
-to solve this problem since you need to be able to answer the question: “for a given word, how many of them have we seen?”</p>
-<p>A
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-seems like it’s more on the right track, but unfortunately, the indices have to be numbers! There is no way of using a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-to say that a word should be an index.</p>
-<div class="section" id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>	Introduction to 
-</pre></div>
-</div>
-<p>The last data structure we are going to learn today is called a dictionary (in Python, written as
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-). A
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-is a very powerful data structure since it acts, in some sense, as a more generalized
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-. Essentially a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-is much like a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-, but allows you to store any type as the index while a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-only allows numbers from
-<code class="docutils literal notranslate"><span class="pre">0</span></code>
-to
-<code class="docutils literal notranslate"><span class="pre">len</span> <span class="pre">-</span> <span class="pre">1</span></code>
-as valid indices.</p>
-<p>To create a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-in Python, you use the syntax in the following snippet. Note that
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact,
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-uses a different term for the index to reduce confusion with
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-s: we call the “index” of an entry in a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-its
-<strong>key</strong>
-. We describe a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-as a bunch of key/value pairs that are accessible via the key.</p>
+<p>For one of your practice problems for today, you will be implementing a function to find the count of each word in a file. It’s not clear how you could use a <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code> to solve this problem since you need to be able to answer the question: “for a given word, how many of them have we seen?”<br />
+A <code class="docutils literal notranslate"><span class="pre">list</span></code> seems like it’s more on the right track, but unfortunately, the indices have to be numbers! There is no way of using a <code class="docutils literal notranslate"><span class="pre">list</span></code> to say that a word should be an index.</p>
+<div class="section" id="introduction-to-dict">
+<h2>Introduction to <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#introduction-to-dict" title="Permalink to this headline">¶</a></h2>
+<p>The last data structure we are going to learn today is called a dictionary (in Python, written as <code class="docutils literal notranslate"><span class="pre">dict</span></code> ). A <code class="docutils literal notranslate"><span class="pre">dict</span></code> is a very powerful data structure since it acts, in some sense, as a more generalized <code class="docutils literal notranslate"><span class="pre">list</span></code> . Essentially a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is much like a <code class="docutils literal notranslate"><span class="pre">list</span></code> , but allows you to store any type as the index while a <code class="docutils literal notranslate"><span class="pre">list</span></code> only allows numbers from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">len</span> <span class="pre">-</span> <span class="pre">1</span></code> as valid indices.<br />
+To create a <code class="docutils literal notranslate"><span class="pre">dict</span></code> in Python, you use the syntax in the following snippet. Note that <code class="docutils literal notranslate"><span class="pre">dict</span></code> supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, <code class="docutils literal notranslate"><span class="pre">dict</span></code> uses a different term for the index to reduce confusion with <code class="docutils literal notranslate"><span class="pre">list</span></code> s: we call the “index” of an entry in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> its <strong>key</strong> . We describe a <code class="docutils literal notranslate"><span class="pre">dict</span></code> as a bunch of key/value pairs that are accessible via the key.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">47</span><span class="p">:</span> <span class="s1">&#39;scurvy&#39;</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="c1"># This makes a dictionary with the following keys/values:</span>
@@ -1167,36 +1132,14 @@ as a bunch of key/value pairs that are accessible via the key.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The nice thing is you have a pretty solid understanding of how to use a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-already because you know how to use
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-s! The semantics of accessing/setting a value associated to a key are very similar to accessing/setting a value associated to an index in a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-.</p>
-<p>If you try to look up a key that is not in the
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-, you will run into a
-<code class="docutils literal notranslate"><span class="pre">KeyError</span></code>
-, as shown in the following snippet. As a note, we also show how to make an empty
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-with the syntax
-<code class="docutils literal notranslate"><span class="pre">{}</span></code>
-(just like an empty
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-is
-<code class="docutils literal notranslate"><span class="pre">[]</span></code>
-).</p>
+<p>The nice thing is you have a pretty solid understanding of how to use a <code class="docutils literal notranslate"><span class="pre">dict</span></code> already because you know how to use <code class="docutils literal notranslate"><span class="pre">list</span></code> s! The semantics of accessing/setting a value associated to a key are very similar to accessing/setting a value associated to an index in a <code class="docutils literal notranslate"><span class="pre">list</span></code> .<br />
+If you try to look up a key that is not in the <code class="docutils literal notranslate"><span class="pre">dict</span></code> , you will run into a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> , as shown in the following snippet. As a note, we also show how to make an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code> with the syntax <code class="docutils literal notranslate"><span class="pre">{}</span></code> (just like an empty <code class="docutils literal notranslate"><span class="pre">list</span></code> is <code class="docutils literal notranslate"><span class="pre">[]</span></code> ).</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dogs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;very cute&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;cats&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>To prevent this error, you can use the
-<code class="docutils literal notranslate"><span class="pre">in</span></code>
-keyword to see if a key is in a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-before trying to access it.</p>
+<p>To prevent this error, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword to see if a key is in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> before trying to access it.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dogs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;very cute&#39;</span>
 <span class="k">if</span> <span class="s1">&#39;cats&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
@@ -1208,24 +1151,8 @@ before trying to access it.</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<p>Imagine we had a list of strings, and we wanted to find sum of the word lengths that start with each letter. For example, with the list
-<code class="docutils literal notranslate"><span class="pre">['cats',</span> <span class="pre">'dogs',</span> <span class="pre">'deers']</span></code>
-we would report the sum of the lengths of strings that start with
-<code class="docutils literal notranslate"><span class="pre">'c'</span></code>
-is 4 while the sum of the lengths of strings that start with
-<code class="docutils literal notranslate"><span class="pre">d</span></code>
-is 9. We will write a function called
-<code class="docutils literal notranslate"><span class="pre">count_lengths</span></code>
-to solve this problem. The function should take a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-of words (all
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-) and we can assume none of the
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-are the empty string.</p>
-<p>This seems like the task of a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-where the keys are the first letters of the words, and the values are the sum of the lengths. Let’s try to write a function to use the things we have seen so far to do this!</p>
+<p>Imagine we had a list of strings, and we wanted to find sum of the word lengths that start with each letter. For example, with the list <code class="docutils literal notranslate"><span class="pre">['cats',</span> <span class="pre">'dogs',</span> <span class="pre">'deers']</span></code> we would report the sum of the lengths of strings that start with <code class="docutils literal notranslate"><span class="pre">'c'</span></code> is 4 while the sum of the lengths of strings that start with <code class="docutils literal notranslate"><span class="pre">d</span></code> is 9. We will write a function called <code class="docutils literal notranslate"><span class="pre">count_lengths</span></code> to solve this problem. The function should take a <code class="docutils literal notranslate"><span class="pre">list</span></code> of words (all <code class="docutils literal notranslate"><span class="pre">str</span></code> ) and we can assume none of the <code class="docutils literal notranslate"><span class="pre">str</span></code> are the empty string.<br />
+This seems like the task of a <code class="docutils literal notranslate"><span class="pre">dict</span></code> where the keys are the first letters of the words, and the values are the sum of the lengths. Let’s try to write a function to use the things we have seen so far to do this!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_lengths</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
     <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
@@ -1236,31 +1163,14 @@ where the keys are the first letters of the words, and the values are the sum of
 <span class="nb">print</span><span class="p">(</span><span class="n">count_lengths</span><span class="p">([</span><span class="s1">&#39;cats&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">,</span> <span class="s1">&#39;deers&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p>We ran into an error! What happened?</p>
-<p>It turns out we crashed on the first word in the list
-<code class="docutils literal notranslate"><span class="pre">'cats'</span></code>
-. We get the first letter
-<code class="docutils literal notranslate"><span class="pre">'c'</span></code>
-and we try to get the value in the dictionary associated to the key
-<code class="docutils literal notranslate"><span class="pre">'c'</span></code>
-when we evaluate
-<code class="docutils literal notranslate"><span class="pre">counts[first_letter]</span> <span class="pre">+</span> <span class="pre">len(word)</span></code>
-. Remember though, if a key is not present, we get a
-<code class="docutils literal notranslate"><span class="pre">KeyError</span></code>
-which is exactly what happened in this snippet.</p>
-<p>To fix this, we need to introduce a common pattern when working with
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-s. If you are ever adding values to a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-, you commonly need to think about the cases:</p>
-<p>&lt;Element ‘list’ at 0x7fcd26041f40&gt;
-Depending on which case you are in, you need to write different code to handle the fact that the key is not present in the
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>
-in the first case. We can easily fix this by introducing a check that uses
-<code class="docutils literal notranslate"><span class="pre">in</span></code>
-, but the pattern does look a bit odd at first. All of the added code is inside the loop, and is there to avoid getting this
-<code class="docutils literal notranslate"><span class="pre">KeyError</span></code>
-.</p>
+<p>We ran into an error! What happened?<br />
+It turns out we crashed on the first word in the list <code class="docutils literal notranslate"><span class="pre">'cats'</span></code> . We get the first letter <code class="docutils literal notranslate"><span class="pre">'c'</span></code> and we try to get the value in the dictionary associated to the key <code class="docutils literal notranslate"><span class="pre">'c'</span></code> when we evaluate <code class="docutils literal notranslate"><span class="pre">counts[first_letter]</span> <span class="pre">+</span> <span class="pre">len(word)</span></code> . Remember though, if a key is not present, we get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> which is exactly what happened in this snippet.<br />
+To fix this, we need to introduce a common pattern when working with <code class="docutils literal notranslate"><span class="pre">dict</span></code> s. If you are ever adding values to a <code class="docutils literal notranslate"><span class="pre">dict</span></code> , you commonly need to think about the cases:</p>
+<ul class="simple">
+<li><p>This is the first time we have seen the key</p></li>
+<li><p>We have seen the key before</p></li>
+</ul>
+<p>Depending on which case you are in, you need to write different code to handle the fact that the key is not present in the <code class="docutils literal notranslate"><span class="pre">dict</span></code> in the first case. We can easily fix this by introducing a check that uses <code class="docutils literal notranslate"><span class="pre">in</span></code> , but the pattern does look a bit odd at first. All of the added code is inside the loop, and is there to avoid getting this <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> .</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_lengths</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
     <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
@@ -1274,9 +1184,13 @@ in the first case. We can easily fix this by introducing a check that uses
 <span class="nb">print</span><span class="p">(</span><span class="n">count_lengths</span><span class="p">([</span><span class="s1">&#39;cats&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">,</span> <span class="s1">&#39;deers&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p>To explain what this
-<code class="docutils literal notranslate"><span class="pre">if</span></code>
--check is doing in English: If we haven’t seen the key before, we can just go ahead and set it to the length of the current word. If we have seen it before, we take the current sum for this key and add on the length of the current word.</p>
+<p>To explain what this <code class="docutils literal notranslate"><span class="pre">if</span></code> -check is doing in English: If we haven’t seen the key before, we can just go ahead and set it to the length of the current word. If we have seen it before, we take the current sum for this key and add on the length of the current word.</p>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>**
+A very common bug when you’re first working with
+**</p>
+</div>
 </div>
 </div>
 

@@ -1090,7 +1090,14 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#creating-numpy-array-s">
+   Creating
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy.array
+    </span>
+   </code>
+   s
   </a>
  </li>
 </ul>
@@ -1109,36 +1116,12 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/ad8f8164d3924e8d86eb6b8e0a009885" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>The first three slides will go by a little fast because you should be mostly familiar with these ideas for
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-since they closely match the semantics of
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-. The last two reading slides will most likely be the more complex topics of this reading.</p>
-<p>Like always, you get better at things with practice and we will continue to get practice with
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-!</p>
+<p>The first three slides will go by a little fast because you should be mostly familiar with these ideas for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> since they closely match the semantics of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . The last two reading slides will most likely be the more complex topics of this reading.<br />
+Like always, you get better at things with practice and we will continue to get practice with <code class="docutils literal notranslate"><span class="pre">numpy</span></code> !</p>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-is one of the most popular Python libraries that is used for numerical processing. We have used
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-(imported as
-<code class="docutils literal notranslate"><span class="pre">np</span></code>
-) a few times before, but this week we will really dive into how to use it.</p>
-<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-‘s primary data structure is the
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-. An array will store a sequence of values
-<strong>of the same type</strong>
-. You can think of a
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-as being something a lot like a
-<code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code>
-, but the index is always integer values like a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-. The syntax to create one of these
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-s looks like the following.</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> is one of the most popular Python libraries that is used for numerical processing. We have used <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (imported as <code class="docutils literal notranslate"><span class="pre">np</span></code> ) a few times before, but this week we will really dive into how to use it.<br />
+<code class="docutils literal notranslate"><span class="pre">numpy</span></code> ‘s primary data structure is the <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> . An array will store a sequence of values <strong>of the same type</strong> . You can think of a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> as being something a lot like a <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code> , but the index is always integer values like a <code class="docutils literal notranslate"><span class="pre">list</span></code> . The syntax to create one of these <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s looks like the following.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -1148,39 +1131,28 @@ s looks like the following.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notice we are calling the function
-<code class="docutils literal notranslate"><span class="pre">np.array</span></code>
-passing in a list of values, the return type is a
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-class called an
-<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>
-(stands for <span class="math notranslate nohighlight">\(n\)</span>-dimensional array).</p>
+<p>Notice we are calling the function <code class="docutils literal notranslate"><span class="pre">np.array</span></code> passing in a list of values, the return type is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> class called an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> (stands for <span class="math notranslate nohighlight">\(n\)</span>-dimensional array).</p>
 </div>
 <div class="section" id="applications">
 <h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
-<p>Any time you need to represent a series of numbers in Python,
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-is almost always the way to go because it is an incredibly efficient library for numerical computations. Just like we showed you that using built-in functions like
-<code class="docutils literal notranslate"><span class="pre">min</span></code>
-or
-<code class="docutils literal notranslate"><span class="pre">max</span></code>
-can significantly improve the speed of your programs, using
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-can do the same for numerical processing.</p>
-<p>Some example applications include:</p>
-<p>&lt;Element ‘list’ at 0x7fcd236cf810&gt;
-&lt;Element ‘figure’ at 0x7fcd260392c0&gt;
-&lt;Element ‘list’ at 0x7fcd26039bd0&gt;
-&lt;Element ‘figure’ at 0x7fcd26039900&gt;</p>
+<p>Any time you need to represent a series of numbers in Python, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is almost always the way to go because it is an incredibly efficient library for numerical computations. Just like we showed you that using built-in functions like <code class="docutils literal notranslate"><span class="pre">min</span></code> or <code class="docutils literal notranslate"><span class="pre">max</span></code> can significantly improve the speed of your programs, using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> can do the same for numerical processing.<br />
+Some example applications include:</p>
+<ul class="simple">
+<li><p>Representing images (each pixel stores a value indicating color)</p>
+<ul>
+<li><p>More complex representation where we make an         <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>         of         <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>         s.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/5yqR3Z3mkqzYtYSuGzv30lej"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/5yqR3Z3mkqzYtYSuGzv30lej" style="width: 743px;" /></a>
+<ul class="simple">
+<li><p>Representing sound (each point in time shows an amplitude for a frequency)</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/hbAOHuHkTlpSkjtKfHKAZSjN"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/hbAOHuHkTlpSkjtKfHKAZSjN" style="width: 743px;" /></a>
 </div>
-<div class="section" id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>	Creating 
-</pre></div>
-</div>
-<p>We showed you how to create
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-s, but there are a few more helpful ones that are used commonly to make an array of any size.</p>
+<div class="section" id="creating-numpy-array-s">
+<h2>Creating <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s<a class="headerlink" href="#creating-numpy-array-s" title="Permalink to this headline">¶</a></h2>
+<p>We showed you how to create <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s, but there are a few more helpful ones that are used commonly to make an array of any size.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># array initializer takes a list of values</span>

@@ -1095,11 +1095,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="sorting-and-top-k">
 <h1>Sorting and top-k<a class="headerlink" href="#sorting-and-top-k" title="Permalink to this headline">¶</a></h1>
-<p>Another very common operation in
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-needs you to sort the data. This could either be for presentation reasons or you might be interested in finding the “top 10” rows based on some criteria.
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-makes sorting really easy! Using the same fMRI dataset from before, the following snippet shows how to</p>
+<p>Another very common operation in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> needs you to sort the data. This could either be for presentation reasons or you might be interested in finding the “top 10” rows based on some criteria. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> makes sorting really easy! Using the same fMRI dataset from before, the following snippet shows how to</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
@@ -1107,10 +1103,8 @@ makes sorting really easy! Using the same fMRI dataset from before, the followin
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Notice that this prints out all the data where the rows sorted by
-<code class="docutils literal notranslate"><span class="pre">'signal'</span></code>
-. Notice that the index of each row stays the same meaning the index is no longer in sorted-order!</p>
-<div class="admonition warning">
+<p>Notice that this prints out all the data where the rows sorted by <code class="docutils literal notranslate"><span class="pre">'signal'</span></code> . Notice that the index of each row stays the same meaning the index is no longer in sorted-order!</p>
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Like in the last slide
 <code class="docutils literal notranslate"><span class="pre">df.sort_values('signal')</span></code>
@@ -1121,19 +1115,15 @@ does not actually sort
 where all the rows are sorted by
 <code class="docutils literal notranslate"><span class="pre">'signal'</span></code>
 .
-&lt;Element ‘break’ at 0x7fcd236cf720&gt;</p>
-<p>&lt;Element ‘break’ at 0x7fcd236cf4a0&gt;
+<br /></p>
+<br />
 If you want to keep the sorting, you need to save the result in a variable (i.e.
-<code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">df.sort_values('signal')</span></code>
-)</p>
+`df = df.sort_values('signal')`
+)
 </div>
 <div class="section" id="top-k">
 <h2>Top-k<a class="headerlink" href="#top-k" title="Permalink to this headline">¶</a></h2>
-<p>Instead of actually sorting the data, you might want to find the 10 highest signals in the data.
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-also provides a way to do this with the
-<code class="docutils literal notranslate"><span class="pre">nlargest</span></code>
-function.</p>
+<p>Instead of actually sorting the data, you might want to find the 10 highest signals in the data. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> also provides a way to do this with the <code class="docutils literal notranslate"><span class="pre">nlargest</span></code> function.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>

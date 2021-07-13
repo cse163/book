@@ -1082,11 +1082,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="numpy-functions">
 <h1>numpy functions<a class="headerlink" href="#numpy-functions" title="Permalink to this headline">¶</a></h1>
-<p>Consider the case where you have a
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-and want to find the sums of the values. One way to do this is to write a loop over the array since arrays support iteration and it also supports the
-<code class="docutils literal notranslate"><span class="pre">len</span></code>
-function. For example, you could write this solution in two ways:</p>
+<p>Consider the case where you have a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> and want to find the sums of the values. One way to do this is to write a loop over the array since arrays support iteration and it also supports the <code class="docutils literal notranslate"><span class="pre">len</span></code> function. For example, you could write this solution in two ways:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1104,17 +1100,7 @@ function. For example, you could write this solution in two ways:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>While this works, remember that whenever possible you want to avoid using loops since Python is slow. Conveniently,
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-provides a
-<code class="docutils literal notranslate"><span class="pre">sum</span></code>
-function to take the sum for us. Like with
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-, this
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-code is written in that fast language C, so calling out to that is incredibly fast. Kind of confusingly, there are two common ways to call
-<code class="docutils literal notranslate"><span class="pre">sum</span></code>
-that are essentially equivalent. We show both since you will probably run into both.</p>
+<p>While this works, remember that whenever possible you want to avoid using loops since Python is slow. Conveniently, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> provides a <code class="docutils literal notranslate"><span class="pre">sum</span></code> function to take the sum for us. Like with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , this <code class="docutils literal notranslate"><span class="pre">numpy</span></code> code is written in that fast language C, so calling out to that is incredibly fast. Kind of confusingly, there are two common ways to call <code class="docutils literal notranslate"><span class="pre">sum</span></code> that are essentially equivalent. We show both since you will probably run into both.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1128,17 +1114,7 @@ that are essentially equivalent. We show both since you will probably run into b
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Just like
-<code class="docutils literal notranslate"><span class="pre">sum</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-also provides functions for
-<code class="docutils literal notranslate"><span class="pre">min</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">max</span></code>
-, and
-<code class="docutils literal notranslate"><span class="pre">mean</span></code>
-which are also commonly used.</p>
+<p>Just like <code class="docutils literal notranslate"><span class="pre">sum</span></code> , <code class="docutils literal notranslate"><span class="pre">numpy</span></code> also provides functions for <code class="docutils literal notranslate"><span class="pre">min</span></code> , <code class="docutils literal notranslate"><span class="pre">max</span></code> , and <code class="docutils literal notranslate"><span class="pre">mean</span></code> which are also commonly used.</p>
 </div>
 
 

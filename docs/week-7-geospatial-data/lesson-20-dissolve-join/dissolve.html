@@ -1098,9 +1098,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/f59c69e387da4953832d2efe0001eef0?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>Consider our world dataset from last time. Recall we use
-<code class="docutils literal notranslate"><span class="pre">geopandas</span></code>
-to process and plot datasets that contain information about the location of an event. As a reminder, the following snippet shows a preview of the data and a plot of the world’s GDP.</p>
+<p>Consider our world dataset from last time. Recall we use <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> to process and plot datasets that contain information about the location of an event. As a reminder, the following snippet shows a preview of the data and a plot of the world’s GDP.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -1118,42 +1116,10 @@ to process and plot datasets that contain information about the location of an e
 </div>
 <div class="section" id="gdp-by-continent">
 <h2>GDP by Continent<a class="headerlink" href="#gdp-by-continent" title="Permalink to this headline">¶</a></h2>
-<p>Suppose we wanted to compute the total population for each continent. Since our dataset is tabular, you might suspect that since we are trying to compute a value “for each” group, that we would want to use a group-by! This is exactly the right idea! Remember, a group-by operation is one where we want to put each row into a group (e.g., the continent the country belongs to) and compute an aggregate for each group (e.g., the sum of the population). It turns out while
-<code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>
-s do have a
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code>
-function, it is not going to behave as we want it to!</p>
-<p>The big problem for
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code>
-here is that it comes from
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-and is not geospatial aware. What this means is that if we were to use a
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code>
-here, it would not know how to handle the geometry column of the
-<code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>
-! This means there is not a well-defined answer for what the resulting geometry for the continent should be.</p>
-<p>However, don’t worry!
-<code class="docutils literal notranslate"><span class="pre">geopandas</span></code>
-provides another function called
-<code class="docutils literal notranslate"><span class="pre">dissolve</span></code>
-that behaves
-<strong>exactly</strong>
-like
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code>
-, but has added logic to combine all the geometries for the group into one. This means you can still compute aggregates like
-<code class="docutils literal notranslate"><span class="pre">sum</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">min</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">max</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">mean</span></code>
-for the columns of interest. Additionally, it will combine the
-<code class="docutils literal notranslate"><span class="pre">geometry</span></code>
-column in a special way to make one
-<code class="docutils literal notranslate"><span class="pre">geometry</span></code>
-for the group. The default (and most common) thing to do is to just take the overlap of all the geometries for that group.</p>
-<p>Below, we run a full example that dissolves by the continent to show the total population in each continent, and then below explain the syntax. When you run the snippet, you should see an output that looks like we would expect: where each continent is its own color that looks like to have a value that is the sum of all the countries in that continent.</p>
+<p>Suppose we wanted to compute the total population for each continent. Since our dataset is tabular, you might suspect that since we are trying to compute a value “for each” group, that we would want to use a group-by! This is exactly the right idea! Remember, a group-by operation is one where we want to put each row into a group (e.g., the continent the country belongs to) and compute an aggregate for each group (e.g., the sum of the population). It turns out while <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> s do have a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> function, it is not going to behave as we want it to!<br />
+The big problem for <code class="docutils literal notranslate"><span class="pre">groupby</span></code> here is that it comes from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and is not geospatial aware. What this means is that if we were to use a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> here, it would not know how to handle the geometry column of the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> ! This means there is not a well-defined answer for what the resulting geometry for the continent should be.<br />
+However, don’t worry! <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> provides another function called <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> that behaves <strong>exactly</strong> like <code class="docutils literal notranslate"><span class="pre">groupby</span></code> , but has added logic to combine all the geometries for the group into one. This means you can still compute aggregates like <code class="docutils literal notranslate"><span class="pre">sum</span></code> , <code class="docutils literal notranslate"><span class="pre">min</span></code> , <code class="docutils literal notranslate"><span class="pre">max</span></code> , <code class="docutils literal notranslate"><span class="pre">mean</span></code> for the columns of interest. Additionally, it will combine the <code class="docutils literal notranslate"><span class="pre">geometry</span></code> column in a special way to make one <code class="docutils literal notranslate"><span class="pre">geometry</span></code> for the group. The default (and most common) thing to do is to just take the overlap of all the geometries for that group.<br />
+Below, we run a full example that dissolves by the continent to show the total population in each continent, and then below explain the syntax. When you run the snippet, you should see an output that looks like we would expect: where each continent is its own color that looks like to have a value that is the sum of all the countries in that continent.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -1169,36 +1135,8 @@ for the group. The default (and most common) thing to do is to just take the ove
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notice this
-<code class="docutils literal notranslate"><span class="pre">dissolve</span></code>
-call has a lot of the same components as a
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code>
-, but the syntax looks quite different. Instead of saying
-<code class="docutils literal notranslate"><span class="pre">df.groupby('col1')['col2'].sum()</span></code>
-, you say
-<code class="docutils literal notranslate"><span class="pre">df.dissolve(by='col1',</span> <span class="pre">aggfunc='sum')</span></code>
-. The
-<code class="docutils literal notranslate"><span class="pre">dissolve</span></code>
-operation is applied to ALL columns of the
-<code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>
-. As a result, it is common that you will need to filter down to just the columns of interest before doing a dissolve. In our example with
-<code class="docutils literal notranslate"><span class="pre">col1</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">col2</span></code>
-, you would need to filter
-<code class="docutils literal notranslate"><span class="pre">df</span></code>
-down to
-<code class="docutils literal notranslate"><span class="pre">['col1',</span> <span class="pre">'col2',</span> <span class="pre">'geometry']</span></code>
-since the the
-<code class="docutils literal notranslate"><span class="pre">dissolve</span></code>
-only happens on those columns.</p>
-<p>Don’t believe us when we say that you can’t use
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code>
-here? Try it out in the following snippet and see what the resulting plot looks like! The problem comes from the fact that our
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code>
-call throws away the geometry column, making this a non-geospatial dataset; it would not be easy to modify this to account for the geometry in the way that
-<code class="docutils literal notranslate"><span class="pre">dissolve</span></code>
-is designed to do!</p>
+<p>Notice this <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> call has a lot of the same components as a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> , but the syntax looks quite different. Instead of saying <code class="docutils literal notranslate"><span class="pre">df.groupby('col1')['col2'].sum()</span></code> , you say <code class="docutils literal notranslate"><span class="pre">df.dissolve(by='col1',</span> <span class="pre">aggfunc='sum')</span></code> . The <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> operation is applied to ALL columns of the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . As a result, it is common that you will need to filter down to just the columns of interest before doing a dissolve. In our example with <code class="docutils literal notranslate"><span class="pre">col1</span></code> and <code class="docutils literal notranslate"><span class="pre">col2</span></code> , you would need to filter <code class="docutils literal notranslate"><span class="pre">df</span></code> down to <code class="docutils literal notranslate"><span class="pre">['col1',</span> <span class="pre">'col2',</span> <span class="pre">'geometry']</span></code> since the the <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> only happens on those columns.<br />
+Don’t believe us when we say that you can’t use <code class="docutils literal notranslate"><span class="pre">groupby</span></code> here? Try it out in the following snippet and see what the resulting plot looks like! The problem comes from the fact that our <code class="docutils literal notranslate"><span class="pre">groupby</span></code> call throws away the geometry column, making this a non-geospatial dataset; it would not be easy to modify this to account for the geometry in the way that <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> is designed to do!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 

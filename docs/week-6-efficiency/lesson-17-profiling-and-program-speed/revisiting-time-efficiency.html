@@ -1087,8 +1087,8 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/daed6d4d9565498e87d036c7864b82e4?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>Last time we introduced the notion of efficiency, namely in terms of time taken to run the program. We saw that time was unreliable and that computer scientists instead discuss an algorithm’s efficiency in terms of its Big-O notation. Today, we will discuss some limitations of Big-O notation and highlight the importance of why it is used (since it is often misunderstood).</p>
-<p>For example, consider the following code snippet that shows three different methods for computing the maximum difference between any pair of values in a list.</p>
+<p>Last time we introduced the notion of efficiency, namely in terms of time taken to run the program. We saw that time was unreliable and that computer scientists instead discuss an algorithm’s efficiency in terms of its Big-O notation. Today, we will discuss some limitations of Big-O notation and highlight the importance of why it is used (since it is often misunderstood).<br />
+For example, consider the following code snippet that shows three different methods for computing the maximum difference between any pair of values in a list.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="c1"># Find the max difference between any pair of nunber</span>
     <span class="n">max_diff</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1117,23 +1117,34 @@
 </pre></div>
 </div>
 <p>What are the Big-O run-times of each of these functions? Let <span class="math notranslate nohighlight">\(n\)</span> be the length of the input list.</p>
-<p>&lt;Element ‘list’ at 0x7fcd2375b220&gt;
-&lt;Element ‘list’ at 0x7fcd2375b4f0&gt;
-So according to Big-O,
-<code class="docutils literal notranslate"><span class="pre">max_diff1</span></code>
-is clearly the worst while
-<code class="docutils literal notranslate"><span class="pre">max_diff2</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">max_diff3</span></code>
-are equivalent. We’ll see that this might not be all to this story.</p>
-<p>You have to be a bit careful when considering Big-O notation since it has some specific uses and some specific drawbacks.</p>
-<p>&lt;Element ‘list’ at 0x7fcd2375b680&gt;
-To understand the last point, consider the algorithm for matrix multiplication that you might use in a linear algebra class. Don’t worry, you don’t need to understand what matrix multiplication is, but just know it’s a problem that there is an algorithm to tell you the answer for multiplying to <span class="math notranslate nohighlight">\(n \times n\)</span> matrices. The algorithm that you would learn in a linear algebra class is sometimes called the “naive” algorithm, which takes <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span> time.</p>
-<p>This operation is so important in computing in science, <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span> does not suffice for many modern applications where <span class="math notranslate nohighlight">\(n\)</span> is large. Many researchers have spent their careers trying to find asymptotically faster algorithms. In the graph below, we show the progress on finding algorithm that scale faster than <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span>. The x-axis shows years and the y-axis shows <span class="math notranslate nohighlight">\(\omega\)</span> which represents the exponent in <span class="math notranslate nohighlight">\(\mathcal{O}(n^\omega)\)</span>.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd236cf720&gt;
-Although recent advancements in algorithm design have found algorithms to do matrix multiplication in time less than <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2.5})\)</span>, those algorithms are rarely used in practice! The reason is that the constants that <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2.5})\)</span> hides are so large, that the run-time still ends up being way slower than a simpler algorithm with a larger exponent. So while these algorithms are asymptotically faster (as <span class="math notranslate nohighlight">\(n\)</span> goes to infinity), in practice for sizes of <span class="math notranslate nohighlight">\(n\)</span> that can actually fit on a computer, sometimes an asymptotically slower algorithm is faster because there are lower constants.</p>
-<p>For a concrete example, consider how <span class="math notranslate nohighlight">\(2n^2 \leq100n\)</span> for all <span class="math notranslate nohighlight">\(0 \leq n \leq 50\)</span>. So while the <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> equation on the right-hand side is asymptotically faster than the <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> on the left, the constants it hides can make it slower for some smaller <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>In the next, slide, we will see another tool that can help us understand the performance of our programs.</p>
+<ul class="simple">
+<li><p>For     <code class="docutils literal notranslate"><span class="pre">max_diff1</span></code>     , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>.</p></li>
+<li><p>For     <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code>     , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p></li>
+<li><p>For     <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code>     , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p></li>
+</ul>
+<p>So according to Big-O, <code class="docutils literal notranslate"><span class="pre">max_diff1</span></code> is clearly the worst while <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> and <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> are equivalent. We’ll see that this might not be all to this story.<br />
+You have to be a bit careful when considering Big-O notation since it has some specific uses and some specific drawbacks.</p>
+<ul class="simple">
+<li><p><strong>Pros</strong></p>
+<ul>
+<li><p>It clearly describes how an algorithm will         <strong>scale</strong>         (e.g., if you double the input, it will take X time longer).</p></li>
+<li><p>The Big-O notation is independent of the programming language you are writing in or the computer you are writing the program on. When considering raw time taken by a program to run, these factors have a huge impact on the run-time of the program.</p></li>
+<li><p>Easy to figure out by just looking at the code (with practice 😊)</p></li>
+</ul>
+</li>
+<li><p><strong>Cons</strong></p>
+<ul>
+<li><p>It can be overly-simplistic. It’s not actually the case that every step takes the same amount of time (e.g., multiplication is actually slower than addition).</p></li>
+<li><p>The constants and lower-order terms we drop can sometimes have a BIG impact on performance.</p></li>
+</ul>
+</li>
+</ul>
+<p>To understand the last point, consider the algorithm for matrix multiplication that you might use in a linear algebra class. Don’t worry, you don’t need to understand what matrix multiplication is, but just know it’s a problem that there is an algorithm to tell you the answer for multiplying to <span class="math notranslate nohighlight">\(n \times n\)</span> matrices. The algorithm that you would learn in a linear algebra class is sometimes called the “naive” algorithm, which takes <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span> time.<br />
+This operation is so important in computing in science, <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span> does not suffice for many modern applications where <span class="math notranslate nohighlight">\(n\)</span> is large. Many researchers have spent their careers trying to find asymptotically faster algorithms. In the graph below, we show the progress on finding algorithm that scale faster than <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span>. The x-axis shows years and the y-axis shows <span class="math notranslate nohighlight">\(\omega\)</span> which represents the exponent in <span class="math notranslate nohighlight">\(\mathcal{O}(n^\omega)\)</span>.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/bG0KLngTwRwJkcDM6erV1Nea"><img alt="Graph of matrix multiply runtime over time. The graph shows that the runtime has improved starting a O(n^3) in 1950 going down to about O(n^2.4) in 2010." class="align-center" src="https://static.us.edusercontent.com/files/bG0KLngTwRwJkcDM6erV1Nea" style="width: 350px;" /></a>
+<p>Although recent advancements in algorithm design have found algorithms to do matrix multiplication in time less than <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2.5})\)</span>, those algorithms are rarely used in practice! The reason is that the constants that <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2.5})\)</span> hides are so large, that the run-time still ends up being way slower than a simpler algorithm with a larger exponent. So while these algorithms are asymptotically faster (as <span class="math notranslate nohighlight">\(n\)</span> goes to infinity), in practice for sizes of <span class="math notranslate nohighlight">\(n\)</span> that can actually fit on a computer, sometimes an asymptotically slower algorithm is faster because there are lower constants.<br />
+For a concrete example, consider how <span class="math notranslate nohighlight">\(2n^2 \leq100n\)</span> for all <span class="math notranslate nohighlight">\(0 \leq n \leq 50\)</span>. So while the <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> equation on the right-hand side is asymptotically faster than the <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> on the left, the constants it hides can make it slower for some smaller <span class="math notranslate nohighlight">\(n\)</span>.<br />
+In the next, slide, we will see another tool that can help us understand the performance of our programs.</p>
 </div>
 
 

@@ -1082,12 +1082,51 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="recap">
 <h1>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h1>
-<p>In Lesson 12, we learned about
-<strong>classes</strong>
-and
-<strong>objects</strong>
-. Here’s a quick recap of the terminology that we learned since it will be important to know these terms.</p>
-<p>&lt;Element ‘list’ at 0x7fcd26025d60&gt;</p>
+<p>In Lesson 12, we learned about <strong>classes</strong> and <strong>objects</strong> . Here’s a quick recap of the terminology that we learned since it will be important to know these terms.</p>
+<ul>
+<li><p>A     <strong>class</strong>     is a blueprint that can be used to construct     <em>instances</em>     of that blueprint. A class defines the     <em>state</em>     of the     <em>object</em>     and what     <em>behaviors</em>     it has. For example, we defined the     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;: Woof&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>An     <strong>object</strong>     (or     <strong>instance</strong>     ) is an instantiation of a     <em>class</em>     that has its own set of fields. You can create an instance of the     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class by using the following syntax.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Fido&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>The     <strong>state</strong>     of the object is represented by its     <strong>fields.</strong>     A field is essentially a variable owned by that object that is around for that object’s lifetime. The     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class has the field     <code class="docutils literal notranslate"><span class="pre">name</span></code>     .</p></li>
+<li><p>The     <strong>behavior</strong>     of an object is defined by the methods written in its     <em>class.</em>     The     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class has the method     <code class="docutils literal notranslate"><span class="pre">bark</span></code>     .</p></li>
+<li><p>Variables store     <strong>references</strong>     to objects rather than the objects themselves. This means the following program has 2     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     objects and 3     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     references.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Chester&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>d2 = Dog(‘Scout’)
+d3 = d1
+```</p>
+<ul>
+<li><p>A     <strong>memory model</strong>     is a picture that helps us see which objects exist in our program and which variables reference which objects.     <br /></p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/klq5hkNl8mnQsfjtNrk2bwxq"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/klq5hkNl8mnQsfjtNrk2bwxq" style="width: 360px;" /></a>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code>     is a special method used when creating an instance of the object. It determines which parameters need to be passed when you create a new instance.</p></li>
+<li><p>Every method defined in a class needs to take a parameter     <code class="docutils literal notranslate"><span class="pre">self</span></code>     so the method can access the fields/methods of the instance the method is being called on.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Chester&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>d2 = Dog(‘Scout’)
+d3 = d1
+d1.bark()  # When running, self refers to Dog(‘Chester’)
+d2.bark()  # When running, self refers to Dog(‘Scout’)
+d3.bark()  # When running, self refers to Dog(‘Chester’)
+```</p>
 </div>
 
 

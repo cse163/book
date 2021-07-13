@@ -1126,35 +1126,18 @@
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Even though we saw that
-<code class="docutils literal notranslate"><span class="pre">max_diff2</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">max_diff3</span></code>
-have the same Big-O runtime, which one do we think is faster? It turns out
-<code class="docutils literal notranslate"><span class="pre">max_diff3</span></code>
-is
-<strong>MUCH</strong>
-faster in practice.</p>
+<p>Even though we saw that <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> and <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> have the same Big-O runtime, which one do we think is faster? It turns out <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> is <strong>MUCH</strong> faster in practice.</p>
 <div class="section" id="profiler">
 <h2>Profiler<a class="headerlink" href="#profiler" title="Permalink to this headline">¶</a></h2>
-<p>&lt;Element ‘italic’ at 0x7fcd2603c950&gt;</p>
-<p>&lt;Element ‘italic’ at 0x7fcd2603ccc0&gt;</p>
-<p>An easier way to identify the relative runtime of programs is to use something called a
-<strong>profiler</strong>
-. A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.</p>
-<p>A common profiler is the
-<code class="docutils literal notranslate"><span class="pre">line_profiler</span></code>
-package (also called
-<code class="docutils literal notranslate"><span class="pre">kernprof</span></code>
-).
-<code class="docutils literal notranslate"><span class="pre">kernprof</span></code>
-is nice because it lets you annotate your functions with an
-<code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code>
-tag to have it profile your method. For example, the following snippet shows a file called
-<code class="docutils literal notranslate"><span class="pre">test.py</span></code>
-that defines these three functions with an
-<code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code>
-annotation above each function.</p>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  	Note: Ed does not have the following tool installed, so we describe its output rather than actually running it for you! If you are interested in trying this out, you can install it from your terminal using 
+  	*  *on your computer if you are using Mac/Linux. For Windows, you will likely need to use the Anaconda Navigator to install it.*   
+</pre></div>
+</div>
+</li>
+</ul>
+<p>An easier way to identify the relative runtime of programs is to use something called a <strong>profiler</strong> . A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.<br />
+A common profiler is the <code class="docutils literal notranslate"><span class="pre">line_profiler</span></code> package (also called <code class="docutils literal notranslate"><span class="pre">kernprof</span></code> ). <code class="docutils literal notranslate"><span class="pre">kernprof</span></code> is nice because it lets you annotate your functions with an <code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code> tag to have it profile your method. For example, the following snippet shows a file called <code class="docutils literal notranslate"><span class="pre">test.py</span></code> that defines these three functions with an <code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code> annotation above each function.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: test.py</span>
 
 <span class="nd">@profile</span>
@@ -1213,9 +1196,7 @@ annotation above each function.</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Now, we can run this program in the profiler, we use the command
-<code class="docutils literal notranslate"><span class="pre">kernprof</span> <span class="pre">-v</span> <span class="pre">-l</span> <span class="pre">test.py</span></code>
-(assuming you have it installed) and get the following output.</p>
+<p>Now, we can run this program in the profiler, we use the command <code class="docutils literal notranslate"><span class="pre">kernprof</span> <span class="pre">-v</span> <span class="pre">-l</span> <span class="pre">test.py</span></code> (assuming you have it installed) and get the following output.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Total time: 24.1163 s
 File: test.py
 Function: max_diff1 at line 5
@@ -1289,22 +1270,8 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     54         1        146.0    146.0      0.0      print(max_diff3(nums))
 </pre></div>
 </div>
-<p>This output shows both how long each function took to run (in the output above the function code) as well as how much time was spent on each line inside each function. You can see that even for
-<code class="docutils literal notranslate"><span class="pre">n=5000</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">max_diff1</span></code>
-took 20 seconds to run! While
-<code class="docutils literal notranslate"><span class="pre">max_diff2</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">max_diff3</span></code>
-look close in runtime in comparison,
-<code class="docutils literal notranslate"><span class="pre">max_diff3</span></code>
-still runs about 50x faster than
-<code class="docutils literal notranslate"><span class="pre">max_diff2</span></code>
-!</p>
-<p>To understand why
-<code class="docutils literal notranslate"><span class="pre">max_diff3</span></code>
-is the fastest, we need to discuss why Python is a very slow language by design.</p>
+<p>This output shows both how long each function took to run (in the output above the function code) as well as how much time was spent on each line inside each function. You can see that even for <code class="docutils literal notranslate"><span class="pre">n=5000</span></code> , <code class="docutils literal notranslate"><span class="pre">max_diff1</span></code> took 20 seconds to run! While <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> and <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> look close in runtime in comparison, <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> still runs about 50x faster than <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> !<br />
+To understand why <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> is the fastest, we need to discuss why Python is a very slow language by design.</p>
 </div>
 </div>
 

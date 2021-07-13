@@ -1085,16 +1085,8 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/f3ceb3d5100b4bbbabf4eb591c2a2b5f?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>Last time, we saw how to call functions by using keyword arguments (also called named parameters or pass by name). We mentioned briefly that one motivation for having this feature is it allows libraries to define methods that take many parameters and you can pass them in by name without needing to memorize the order the parameters were defined. We also mentioned that they also have some functionality for specifying
-<strong>default values</strong>
-for parameters not passed. That’s what we are going to see today!</p>
-<p>When defining a function that takes parameters, you can use the syntax
-<code class="docutils literal notranslate"><span class="pre">param=value</span></code>
-in the parameter list to give the parameter
-<code class="docutils literal notranslate"><span class="pre">param</span></code>
-the default value of
-<code class="docutils literal notranslate"><span class="pre">value</span></code>
-when it was not specified by the client. See the following snippet for an example which you can run to see the output.</p>
+<p>Last time, we saw how to call functions by using keyword arguments (also called named parameters or pass by name). We mentioned briefly that one motivation for having this feature is it allows libraries to define methods that take many parameters and you can pass them in by name without needing to memorize the order the parameters were defined. We also mentioned that they also have some functionality for specifying <strong>default values</strong> for parameters not passed. That’s what we are going to see today!<br />
+When defining a function that takes parameters, you can use the syntax <code class="docutils literal notranslate"><span class="pre">param=value</span></code> in the parameter list to give the parameter <code class="docutils literal notranslate"><span class="pre">param</span></code> the default value of <code class="docutils literal notranslate"><span class="pre">value</span></code> when it was not specified by the client. See the following snippet for an example which you can run to see the output.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">div</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 
@@ -1105,33 +1097,9 @@ when it was not specified by the client. See the following snippet for an exampl
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;div()&#39;</span><span class="p">,</span> <span class="n">div</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>Notice that on many of the calls, we omit passing one of
-<code class="docutils literal notranslate"><span class="pre">a</span></code>
-or
-<code class="docutils literal notranslate"><span class="pre">b</span></code>
-. This does not cause an error because
-<code class="docutils literal notranslate"><span class="pre">a</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">b</span></code>
-were defined in the function to have default values! If you look at the function definition at the top of the snippet, you can see we have defined the default value of
-<code class="docutils literal notranslate"><span class="pre">a</span></code>
-to be
-<code class="docutils literal notranslate"><span class="pre">10</span></code>
-and the default value of
-<code class="docutils literal notranslate"><span class="pre">b</span></code>
-to be
-<code class="docutils literal notranslate"><span class="pre">1</span></code>
-.</p>
-<p>Notice that the features for default parameters and keyword arguments are
-&lt;Element ‘italic’ at 0x7fcd26039810&gt;
-. What this means is you could have one without the other, but the fact that Python provides both allows library writers to write some truly flexible code!</p>
-<p>You’ll see that in the library we learn today, we will commonly always pass in keyword arguments to the functions. The functions take many possible parameters and it helps to be explicit with what we are passing in rather than relying on the order the parameters were defined! What we mean by that is even though you could call the
-<code class="docutils literal notranslate"><span class="pre">div</span></code>
-function above with
-<code class="docutils literal notranslate"><span class="pre">div(1,</span> <span class="pre">2)</span></code>
-, we will commonly be more explicit and write out the parameter names as in
-<code class="docutils literal notranslate"><span class="pre">div(a=1,</span> <span class="pre">b=2)</span></code>
-when calling library functions that take many parameters.</p>
+<p>Notice that on many of the calls, we omit passing one of <code class="docutils literal notranslate"><span class="pre">a</span></code> or <code class="docutils literal notranslate"><span class="pre">b</span></code> . This does not cause an error because <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> were defined in the function to have default values! If you look at the function definition at the top of the snippet, you can see we have defined the default value of <code class="docutils literal notranslate"><span class="pre">a</span></code> to be <code class="docutils literal notranslate"><span class="pre">10</span></code> and the default value of <code class="docutils literal notranslate"><span class="pre">b</span></code> to be <code class="docutils literal notranslate"><span class="pre">1</span></code> .<br />
+Notice that the features for default parameters and keyword arguments are <em>orthogonal</em> . What this means is you could have one without the other, but the fact that Python provides both allows library writers to write some truly flexible code!<br />
+You’ll see that in the library we learn today, we will commonly always pass in keyword arguments to the functions. The functions take many possible parameters and it helps to be explicit with what we are passing in rather than relying on the order the parameters were defined! What we mean by that is even though you could call the <code class="docutils literal notranslate"><span class="pre">div</span></code> function above with <code class="docutils literal notranslate"><span class="pre">div(1,</span> <span class="pre">2)</span></code> , we will commonly be more explicit and write out the parameter names as in <code class="docutils literal notranslate"><span class="pre">div(a=1,</span> <span class="pre">b=2)</span></code> when calling library functions that take many parameters.</p>
 </div>
 
 

@@ -1105,13 +1105,7 @@
 </div>
 <div class="section" id="arithmetic-operators">
 <h2>Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this headline">¶</a></h2>
-<p>Just like
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-supports convenient usage of mathematical and logical operators on
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-s. The following code cell shows and explains some of the most common operations.</p>
+<p>Just like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , <code class="docutils literal notranslate"><span class="pre">numpy</span></code> supports convenient usage of mathematical and logical operators on <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s. The following code cell shows and explains some of the most common operations.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -1148,23 +1142,7 @@ s. The following code cell shows and explains some of the most common operations
 </div>
 <div class="section" id="logical-operators">
 <h2>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">¶</a></h2>
-<p>You can also use logical operators (
-<code class="docutils literal notranslate"><span class="pre">==</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>
-) to compare elements of
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-s. You can use
-<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>
-(and),
-<code class="docutils literal notranslate"><span class="pre">|</span></code>
-(or), and
-<code class="docutils literal notranslate"><span class="pre">~</span></code>
-(not) just like
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-.</p>
+<p>You can also use logical operators ( <code class="docutils literal notranslate"><span class="pre">==</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> ) to compare elements of <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s. You can use <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (and), <code class="docutils literal notranslate"><span class="pre">|</span></code> (or), and <code class="docutils literal notranslate"><span class="pre">~</span></code> (not) just like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> .</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -1183,15 +1161,7 @@ s. You can use
 <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Not surprisingly, just like
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-, you can use these
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-s of
-<code class="docutils literal notranslate"><span class="pre">bool</span></code>
-values to filter down to certain values in the
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-!</p>
+<p>Not surprisingly, just like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , you can use these <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s of <code class="docutils literal notranslate"><span class="pre">bool</span></code> values to filter down to certain values in the <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> !</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1208,6 +1178,24 @@ values to filter down to certain values in the
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = x[mask]&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>We commonly compare
+<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
+and
+<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
+since they were designed to be similar. Since we learned
+<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
+first, we commonly refer to
+<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
+as being similar to
+<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
+. However, historically
+<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
+came first so it’s actually
+<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
+that borrowed a lot of the terminology/syntax since it came out later!</p>
 </div>
 </div>
 </div>

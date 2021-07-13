@@ -1078,7 +1078,12 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#len">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     len
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -1097,78 +1102,63 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/a4e92e76179f4f5bb7118a9b25b41463?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>Each string is an
-<strong>object</strong>
-. We will talk more about objects in detail in Week 5, but the basic idea is that each string is its own, independent unit that has some
-<strong>state</strong>
-and some
-<strong>behaviors.</strong>
-The
-<strong>state</strong>
-of a string is its characters and their ordering. The
-<strong>behaviors</strong>
-of the string are the functions we are allowed to call on them to access or transform the data. You don’t need to worry too much about this state/behavior terminology right now as we will emphasize it in Week 5.</p>
-<p>We have seen a simple function already that allows us to index into the string so it can return the character at that index. You can imagine this indexing as just one special function provided to us by the string (although the syntax looks different than the general notion we will show below).</p>
-<p>For example, there is also an
-<code class="docutils literal notranslate"><span class="pre">find</span></code>
-function that you can call on a string
-<code class="docutils literal notranslate"><span class="pre">s1</span></code>
-, that returns the index of a given string
-<code class="docutils literal notranslate"><span class="pre">s2</span></code>
-inside
-<code class="docutils literal notranslate"><span class="pre">s1</span></code>
-. For example, you could write the following:</p>
+<p>Each string is an <strong>object</strong> . We will talk more about objects in detail in Week 5, but the basic idea is that each string is its own, independent unit that has some <strong>state</strong> and some <strong>behaviors.</strong> The <strong>state</strong> of a string is its characters and their ordering. The <strong>behaviors</strong> of the string are the functions we are allowed to call on them to access or transform the data. You don’t need to worry too much about this state/behavior terminology right now as we will emphasize it in Week 5.<br />
+We have seen a simple function already that allows us to index into the string so it can return the character at that index. You can imagine this indexing as just one special function provided to us by the string (although the syntax looks different than the general notion we will show below).<br />
+For example, there is also an <code class="docutils literal notranslate"><span class="pre">find</span></code> function that you can call on a string <code class="docutils literal notranslate"><span class="pre">s1</span></code> , that returns the index of a given string <code class="docutils literal notranslate"><span class="pre">s2</span></code> inside <code class="docutils literal notranslate"><span class="pre">s1</span></code> . For example, you could write the following:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;I really like dogs&#39;</span>
 <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;ll&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>In this case, it prints 5 because the first occurrence of the substring
-<code class="docutils literal notranslate"><span class="pre">'ll'</span></code>
-in
-<code class="docutils literal notranslate"><span class="pre">source</span></code>
-appears at index 5. Notice that we call a function on the string
-<code class="docutils literal notranslate"><span class="pre">source</span></code>
-by saying
-<code class="docutils literal notranslate"><span class="pre">source.&lt;function_name&gt;(...)</span></code>
-where
-<code class="docutils literal notranslate"><span class="pre">...</span></code>
-is the parameters we need to pass to that function. If we were to call
-<code class="docutils literal notranslate"><span class="pre">target.find(source)</span></code>
-it would be looking for
-<code class="docutils literal notranslate"><span class="pre">source</span></code>
-inside
-<code class="docutils literal notranslate"><span class="pre">target</span></code>
-and would instead return -1 (as defined in the documentation for
-<code class="docutils literal notranslate"><span class="pre">find</span></code>
-). You can try this in the snippet below.</p>
+<p>In this case, it prints 5 because the first occurrence of the substring <code class="docutils literal notranslate"><span class="pre">'ll'</span></code> in <code class="docutils literal notranslate"><span class="pre">source</span></code> appears at index 5. Notice that we call a function on the string <code class="docutils literal notranslate"><span class="pre">source</span></code> by saying <code class="docutils literal notranslate"><span class="pre">source.&lt;function_name&gt;(...)</span></code> where <code class="docutils literal notranslate"><span class="pre">...</span></code> is the parameters we need to pass to that function. If we were to call <code class="docutils literal notranslate"><span class="pre">target.find(source)</span></code> it would be looking for <code class="docutils literal notranslate"><span class="pre">source</span></code> inside <code class="docutils literal notranslate"><span class="pre">target</span></code> and would instead return -1 (as defined in the documentation for <code class="docutils literal notranslate"><span class="pre">find</span></code> ). You can try this in the snippet below.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;I really like dogs&#39;</span>
 <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;ll&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">source</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Here is a shortlist of useful functions for
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-in Python.</p>
-<p>&lt;Element ‘web-snippet’ at 0x7fcd237607c0&gt;</p>
-<div class="admonition warning">
+<p>Here is a shortlist of useful functions for <code class="docutils literal notranslate"><span class="pre">str</span></code> in Python.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>s.lower()</p></td>
+<td><p>Returns a new string that is the lowercase version of s</p></td>
+</tr>
+<tr class="row-odd"><td><p>s.upper()</p></td>
+<td><p>Returns a new string that is the uppercase version of s</p></td>
+</tr>
+<tr class="row-even"><td><p>s.find(target)</p></td>
+<td><p>Returns the index of the first occurrence of target in s. If not found, returns -1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>s.strip()</p></td>
+<td><p>Returns a new string that has all the leading and trailing whitespace removed.Also has functions lstrip() and rstrip() that remove only left whitespace or right whitespace respectively.</p></td>
+</tr>
+<tr class="row-even"><td><p>s.split(delim)</p></td>
+<td><p>Splits s up into parts using the given delimiter to break the string apart. Returns the result as a list.</p></td>
+</tr>
+<tr class="row-odd"><td><p>s.join(strings)</p></td>
+<td><p>Combines the strings in the given list, separated by s</p></td>
+</tr>
+</tbody>
+</table>
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Because strings are immutable, all of the methods above like
 <code class="docutils literal notranslate"><span class="pre">upper</span></code>
 and
 <code class="docutils literal notranslate"><span class="pre">strip</span></code>
 return
-&lt;Element ‘italic’ at 0x7fcd2603c400&gt;
+*
+*
 strings rather than modifying the original string
 <code class="docutils literal notranslate"><span class="pre">s</span></code>
 .</p>
 </div>
-<p>The last two functions are the most complex, so we will do a short example to clarify their use.</p>
-<p>Suppose we had a string that contained a series of values separated by the
-<code class="docutils literal notranslate"><span class="pre">,</span></code>
-character, but we want to print the string out in all upper-case letters separated by
-<code class="docutils literal notranslate"><span class="pre">|</span></code>
-characters. We put print statements in between to make the sequence of transformations clearer and to provide comments explaining the step.</p>
+<p>The last two functions are the most complex, so we will do a short example to clarify their use.<br />
+Suppose we had a string that contained a series of values separated by the <code class="docutils literal notranslate"><span class="pre">,</span></code> character, but we want to print the string out in all upper-case letters separated by <code class="docutils literal notranslate"><span class="pre">|</span></code> characters. We put print statements in between to make the sequence of transformations clearer and to provide comments explaining the step.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;hunter,madrona,alex,sylvia&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original   :&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 
@@ -1187,20 +1177,10 @@ characters. We put print statements in between to make the sequence of transform
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After  join:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To understand fully how this solution works (i.e. “what is the type of the value returned by split”), we have to wait for a few slides and talk about this other type called
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-.</p>
-<div class="section" id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Notice that in the table above we did not show you how to find the length of a string. Recall from the last slide, the syntax for this is
-<code class="docutils literal notranslate"><span class="pre">len(s)</span></code>
-. We did not add it to the function list because
-<code class="docutils literal notranslate"><span class="pre">len</span></code>
-is not a function defined on a
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-object, but rather a built-in function to Python. We’ll see later that
-<code class="docutils literal notranslate"><span class="pre">len</span></code>
-works on basically any type that represents a sequence of values. This is a bit weird that there are these different syntaxes for calling these functions, but you’ll get used to it with practice and making lots of mistakes!</p>
+<p>To understand fully how this solution works (i.e. “what is the type of the value returned by split”), we have to wait for a few slides and talk about this other type called <code class="docutils literal notranslate"><span class="pre">list</span></code> .</p>
+<div class="section" id="len">
+<h2><code class="docutils literal notranslate"><span class="pre">len</span></code><a class="headerlink" href="#len" title="Permalink to this headline">¶</a></h2>
+<p>Notice that in the table above we did not show you how to find the length of a string. Recall from the last slide, the syntax for this is <code class="docutils literal notranslate"><span class="pre">len(s)</span></code> . We did not add it to the function list because <code class="docutils literal notranslate"><span class="pre">len</span></code> is not a function defined on a <code class="docutils literal notranslate"><span class="pre">str</span></code> object, but rather a built-in function to Python. We’ll see later that <code class="docutils literal notranslate"><span class="pre">len</span></code> works on basically any type that represents a sequence of values. This is a bit weird that there are these different syntaxes for calling these functions, but you’ll get used to it with practice and making lots of mistakes!</p>
 </div>
 </div>
 

@@ -1095,14 +1095,23 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="what-does-efficiency-mean">
 <h1>What Does Efficiency Mean?<a class="headerlink" href="#what-does-efficiency-mean" title="Permalink to this headline">¶</a></h1>
-<p>Programmers spend a lot of time talking about “efficiency”, but what does that actually mean?</p>
-<p>Talking about the efficiency of a program requires coming up with some way to measure how much of a particular resource it uses in order to run. This is a very vague statement because a program could be “efficient” in one of many ways depending on which computing resource you care about. Some common examples:</p>
-<p>&lt;Element ‘list’ at 0x7fcd2375bc70&gt;
-Most commonly, when programmers talk about “efficiency”, they are referring to the notion of time, or how long a program takes to run. However, it’s always a good idea to consider how in different situations, we might value different things.</p>
+<p>Programmers spend a lot of time talking about “efficiency”, but what does that actually mean?<br />
+Talking about the efficiency of a program requires coming up with some way to measure how much of a particular resource it uses in order to run. This is a very vague statement because a program could be “efficient” in one of many ways depending on which computing resource you care about. Some common examples:</p>
+<ul class="simple">
+<li><p><strong>Computer Time:</strong>     How much time it takes the program to run (e.g. microseconds).</p></li>
+<li><p><strong>Space/Memory</strong>     : How much memory your program requires to run (e.g. kilobytes).</p></li>
+<li><p><strong>Programmer Time:</strong>     How long did it take you to implement the program correctly (e.g. hours/days).</p></li>
+<li><p><strong>Energy:</strong>     How much electricity/natural resources does your program require to run (e.g. kiloWatts)</p>
+<ul>
+<li><p>Example:         <a class="reference external" href="https://arxiv.org/pdf/1907.10597.pdf">None</a></p></li>
+</ul>
+</li>
+</ul>
+<p>Most commonly, when programmers talk about “efficiency”, they are referring to the notion of time, or how long a program takes to run. However, it’s always a good idea to consider how in different situations, we might value different things.</p>
 <div class="section" id="how-does-it-scale">
 <h2>How does it scale?<a class="headerlink" href="#how-does-it-scale" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes it’s sufficient to only worry about how much of a resource is used for a given program input, but generally, we tend to worry about how your program will scale. What happens if we double the size of the input? Would your program require twice as much time? Four times the time?</p>
-<p>As data scientists and computer scientists, this is an extremely important question to us since the amount of data available is exploding rapidly. It’s not good enough that our algorithm is fast “now”, but we should worry about what will happen as new data comes in and we need to process more and more.</p>
+<p>Sometimes it’s sufficient to only worry about how much of a resource is used for a given program input, but generally, we tend to worry about how your program will scale. What happens if we double the size of the input? Would your program require twice as much time? Four times the time?<br />
+As data scientists and computer scientists, this is an extremely important question to us since the amount of data available is exploding rapidly. It’s not good enough that our algorithm is fast “now”, but we should worry about what will happen as new data comes in and we need to process more and more.</p>
 </div>
 </div>
 

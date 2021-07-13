@@ -1120,47 +1120,17 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/0cd37f8288354279b9317acf22c684ab" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>In the last slide, we saw that you can do element-wise arithmetic with
-<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>
-s. We showed that you could do something like
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">3</span></code>
-and it would add 3 to each value in the array. While this did work, it also seems reasonable that this cause an error since the shapes of
-<code class="docutils literal notranslate"><span class="pre">x</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">3</span></code>
-disagree. The reason it is not an error is that
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-has a well-defined series of rules to transform values that disagree in shape for these operations. These rules form what is known as
-<strong>broadcasting</strong>
-. In other words, broadcasting is a procedure
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-uses to transform values that disagree in shape so that the result is well defined.</p>
-<p>Before we state the rules, let us point out that this is in some sense an arbitrary decision on
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-‘s part. They could have very easily said that if any shapes disagree, it causes an error. They chose the following set of rules to do some automatic transformations. If you want anything outside of these transformations provided, you would have to write the code yourself. We will start by stating the rules, and then do a worked example which should hopefully clear up what is going on.</p>
+<p>In the last slide, we saw that you can do element-wise arithmetic with <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s. We showed that you could do something like <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">3</span></code> and it would add 3 to each value in the array. While this did work, it also seems reasonable that this cause an error since the shapes of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> disagree. The reason it is not an error is that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> has a well-defined series of rules to transform values that disagree in shape for these operations. These rules form what is known as <strong>broadcasting</strong> . In other words, broadcasting is a procedure <code class="docutils literal notranslate"><span class="pre">numpy</span></code> uses to transform values that disagree in shape so that the result is well defined.<br />
+Before we state the rules, let us point out that this is in some sense an arbitrary decision on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> ‘s part. They could have very easily said that if any shapes disagree, it causes an error. They chose the following set of rules to do some automatic transformations. If you want anything outside of these transformations provided, you would have to write the code yourself. We will start by stating the rules, and then do a worked example which should hopefully clear up what is going on.</p>
 <div class="section" id="broadcasting-rules">
 <h2>Broadcasting Rules<a class="headerlink" href="#broadcasting-rules" title="Permalink to this headline">¶</a></h2>
-<p>Consider some element-wise operation like
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>
-that operates on two
-<code class="docutils literal notranslate"><span class="pre">numpy.arrays</span></code>
-. This operation is well-defined if both
-<code class="docutils literal notranslate"><span class="pre">x</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">y</span></code>
-have the shape. If
-<code class="docutils literal notranslate"><span class="pre">x</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">y</span></code>
-disagree on their shape,
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>
-will run the following steps in order to make the shapes match up.</p>
-<p>&lt;Element ‘list’ at 0x7fcd26044c70&gt;
-The process of broadcasting doesn’t actually modify
-<code class="docutils literal notranslate"><span class="pre">x</span></code>
-or
-<code class="docutils literal notranslate"><span class="pre">y</span></code>
-, but rather creates a temporary structure with the shape described in this algorithm to do the operation.</p>
+<p>Consider some element-wise operation like <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> that operates on two <code class="docutils literal notranslate"><span class="pre">numpy.arrays</span></code> . This operation is well-defined if both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> have the shape. If <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> disagree on their shape, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> will run the following steps in order to make the shapes match up.</p>
+<ul class="simple">
+<li><p>If the two arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded on it’s left side.</p></li>
+<li><p>If the shape of two arrays does not match on any dimension, the array with shape equal to 1 in that dimension is stretched to match the other shape. This will happen for all dimensions that don’t match and one has a shape equal to 1.</p></li>
+<li><p>If in any dimension the sizes disagree and neither is equal to 1, an error is raised.</p></li>
+</ul>
+<p>The process of broadcasting doesn’t actually modify <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">y</span></code> , but rather creates a temporary structure with the shape described in this algorithm to do the operation.</p>
 </div>
 <div class="section" id="broadcasting-example">
 <h2>Broadcasting Example<a class="headerlink" href="#broadcasting-example" title="Permalink to this headline">¶</a></h2>
@@ -1186,14 +1156,12 @@ v (3,)
 <div class="section" id="step-1-pad-dimensions">
 <h3>Step 1: Pad Dimensions<a class="headerlink" href="#step-1-pad-dimensions" title="Permalink to this headline">¶</a></h3>
 <p>The first rule of broadcasting says:</p>
-<p>&lt;Element ‘blockquote’ at 0x7fcd26025e00&gt;
-Since
-<code class="docutils literal notranslate"><span class="pre">m</span></code>
-has 2 dimensions and
-<code class="docutils literal notranslate"><span class="pre">v</span></code>
-has 1, we will need to pad
-<code class="docutils literal notranslate"><span class="pre">v</span></code>
-with dimensions of shape 1 on the left of its shape. After this step, we will be working with the following shape/values.</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>If the two arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded on it’s left side.
+Since <code class="docutils literal notranslate"><span class="pre">m</span></code> has 2 dimensions and <code class="docutils literal notranslate"><span class="pre">v</span></code> has 1, we will need to pad <code class="docutils literal notranslate"><span class="pre">v</span></code> with dimensions of shape 1 on the left of its shape. After this step, we will be working with the following shape/values.</p></li>
+</ol>
+</div></blockquote>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>		m (2, 3)
 [[1, 1, 1],
  [1, 1, 1]]
@@ -1202,7 +1170,7 @@ v (
 		
 </pre></div>
 </div>
-<div class="admonition warning">
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Important: While we are saying that
 <code class="docutils literal notranslate"><span class="pre">v.shape</span></code>
@@ -1222,23 +1190,13 @@ and transforms that. For simplicity we refer to it as
 <div class="section" id="step-2-stretch-dimensions">
 <h3>Step 2: Stretch Dimensions<a class="headerlink" href="#step-2-stretch-dimensions" title="Permalink to this headline">¶</a></h3>
 <p>The second rule of broadcasting says:</p>
-<p>&lt;Element ‘blockquote’ at 0x7fcd26039270&gt;
-We can see after Step 1, that the first dimension of
-<code class="docutils literal notranslate"><span class="pre">m</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">v</span></code>
-disagree since
-<code class="docutils literal notranslate"><span class="pre">m</span></code>
-‘s first dimension has shape 2 and
-<code class="docutils literal notranslate"><span class="pre">v</span></code>
-‘s first dimension has shape 1. This means we will stretch
-<code class="docutils literal notranslate"><span class="pre">v</span></code>
-along its first dimension so that it becomes a
-<code class="docutils literal notranslate"><span class="pre">(2,2)</span></code>
-. Semantically, this means we will add a new row (since first dimension is rows) to
-<code class="docutils literal notranslate"><span class="pre">v</span></code>
-with the exact same values as the first row. This is because we “stretch” the values along that dimension.</p>
-<p>After this step, we will be working with the following shape/values.</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>If the shape of two arrays does not match on any dimension, the array with shape equal to 1 in that dimension is stretched to match the other shape. This will happen for all dimensions that don’t match and one has a shape equal to 1.
+We can see after Step 1, that the first dimension of <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> disagree since <code class="docutils literal notranslate"><span class="pre">m</span></code> ‘s first dimension has shape 2 and <code class="docutils literal notranslate"><span class="pre">v</span></code> ‘s first dimension has shape 1. This means we will stretch <code class="docutils literal notranslate"><span class="pre">v</span></code> along its first dimension so that it becomes a <code class="docutils literal notranslate"><span class="pre">(2,2)</span></code> . Semantically, this means we will add a new row (since first dimension is rows) to <code class="docutils literal notranslate"><span class="pre">v</span></code> with the exact same values as the first row. This is because we “stretch” the values along that dimension.<br />
+After this step, we will be working with the following shape/values.</p></li>
+</ol>
+</div></blockquote>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>		m (2, 3)
 [[1, 1, 1],
  [1, 1, 1]]
@@ -1247,25 +1205,19 @@ v (
 		
 </pre></div>
 </div>
-<p>Importantly, we
-**
-**
-do this stretching in the case of a mismatch for the array that has shape 1 for that dimension.</p>
+<p>Importantly, we **
+** do this stretching in the case of a mismatch for the array that has shape 1 for that dimension.</p>
 </div>
 <div class="section" id="step-3-check-for-errors">
 <h3>Step 3: Check for Errors<a class="headerlink" href="#step-3-check-for-errors" title="Permalink to this headline">¶</a></h3>
 <p>The third rule of broadcasting says:</p>
-<p>&lt;Element ‘blockquote’ at 0x7fcd2375b680&gt;
-After step 2, our shapes match so there is not an error.</p>
-<p>You might be wondering, how could an error occur with this algorithm? Consider trying to add a shape
-<code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">3)</span></code>
-to a
-<code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">6)</span></code>
-. According to Step 1, we wouldn’t need to pad since there is the same number of dimensions. In Step 2 when we stretch, we would only stretch the first dimension of the first array since that’s the only one that has shape 1. This means you cannot stretch the second dimension from 3 to 6 since the rule says it will only stretch dimensions with shape 1 if it disagrees. Then we would get to Step 3 and see that we have a
-<code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">3)</span></code>
-and a
-<code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">6)</span></code>
-which disagree on a dimension and neither are one.</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>If in any dimension the sizes disagree and neither is equal to 1, an error is raised.
+After step 2, our shapes match so there is not an error.<br />
+You might be wondering, how could an error occur with this algorithm? Consider trying to add a shape <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">3)</span></code> to a <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">6)</span></code> . According to Step 1, we wouldn’t need to pad since there is the same number of dimensions. In Step 2 when we stretch, we would only stretch the first dimension of the first array since that’s the only one that has shape 1. This means you cannot stretch the second dimension from 3 to 6 since the rule says it will only stretch dimensions with shape 1 if it disagrees. Then we would get to Step 3 and see that we have a <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">3)</span></code> and a <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">6)</span></code> which disagree on a dimension and neither are one.</p></li>
+</ol>
+</div></blockquote>
 </div>
 </div>
 </div>

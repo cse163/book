@@ -1098,12 +1098,8 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/00a911a2a8ec482ca6af4fc94be9def7?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>This slide doesn’t describe anything particular about
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-, but a general feature of Python.</p>
-<p>In the following code cell, we define a function called
-<code class="docutils literal notranslate"><span class="pre">div</span></code>
-and show two different ways to call it! The first is the way we have seen it this whole time and the second is a brand-new way!</p>
+<p>This slide doesn’t describe anything particular about <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , but a general feature of Python.<br />
+In the following code cell, we define a function called <code class="docutils literal notranslate"><span class="pre">div</span></code> and show two different ways to call it! The first is the way we have seen it this whole time and the second is a brand-new way!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">div</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dividing&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;by&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
@@ -1119,59 +1115,23 @@ and show two different ways to call it! The first is the way we have seen it thi
 <span class="n">div</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Why did we call these two methods “by position” and “by name”? When you were originally calling
-<code class="docutils literal notranslate"><span class="pre">div(1,</span> <span class="pre">2)</span></code>
-you might have taken it a bit for granted how it determined that
-<code class="docutils literal notranslate"><span class="pre">a</span></code>
-should be
-<code class="docutils literal notranslate"><span class="pre">1</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">b</span></code>
-should be
-<code class="docutils literal notranslate"><span class="pre">2</span></code>
-. When calling a function in the way we showed originally, it determined that the first value passed (
-<code class="docutils literal notranslate"><span class="pre">1</span></code>
-) should be assigned to the first parameter (
-<code class="docutils literal notranslate"><span class="pre">a</span></code>
-), the second value (
-<code class="docutils literal notranslate"><span class="pre">2</span></code>
-) for the second parameter (
-<code class="docutils literal notranslate"><span class="pre">b</span></code>
-), and so on if there were more parameters. This is why we call this “by position” since the position of the value in the function call determines which parameter will have that value.</p>
-<p>Instead, Python also provides a way to specify which parameter should have which value by using the names of the parameters in the function call! When you say
-<code class="docutils literal notranslate"><span class="pre">div(b=2,</span> <span class="pre">a=1)</span></code>
-you are telling Python you want the parameter
-<code class="docutils literal notranslate"><span class="pre">b</span></code>
-to have value
-<code class="docutils literal notranslate"><span class="pre">2</span></code>
-and the parameter
-<code class="docutils literal notranslate"><span class="pre">a</span></code>
-to have value
-<code class="docutils literal notranslate"><span class="pre">1</span></code>
-. Now the position of the arguments doesn’t matter, but the name you specify does. Notice that
-<code class="docutils literal notranslate"><span class="pre">div(b=1,</span> <span class="pre">a=2)</span></code>
-is very different than
-<code class="docutils literal notranslate"><span class="pre">div(b=2,</span> <span class="pre">a=1</span></code>
-)!</p>
-<p>We will see these named-parameters pop-up quite often in the libraries we learn! They usually provide functions with tons of parameters (with some default values)! It would be horrible if you had to specify them all by position (requiring you to know which parameter came 3rd in the list). Instead, you can pass them by name and it simplifies your code!</p>
-<p>To see how many parameters a
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-function actually takes, look at its documentation!</p>
+<p>Why did we call these two methods “by position” and “by name”? When you were originally calling <code class="docutils literal notranslate"><span class="pre">div(1,</span> <span class="pre">2)</span></code> you might have taken it a bit for granted how it determined that <code class="docutils literal notranslate"><span class="pre">a</span></code> should be <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> should be <code class="docutils literal notranslate"><span class="pre">2</span></code> . When calling a function in the way we showed originally, it determined that the first value passed ( <code class="docutils literal notranslate"><span class="pre">1</span></code> ) should be assigned to the first parameter ( <code class="docutils literal notranslate"><span class="pre">a</span></code> ), the second value ( <code class="docutils literal notranslate"><span class="pre">2</span></code> ) for the second parameter ( <code class="docutils literal notranslate"><span class="pre">b</span></code> ), and so on if there were more parameters. This is why we call this “by position” since the position of the value in the function call determines which parameter will have that value.<br />
+Instead, Python also provides a way to specify which parameter should have which value by using the names of the parameters in the function call! When you say <code class="docutils literal notranslate"><span class="pre">div(b=2,</span> <span class="pre">a=1)</span></code> you are telling Python you want the parameter <code class="docutils literal notranslate"><span class="pre">b</span></code> to have value <code class="docutils literal notranslate"><span class="pre">2</span></code> and the parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> to have value <code class="docutils literal notranslate"><span class="pre">1</span></code> . Now the position of the arguments doesn’t matter, but the name you specify does. Notice that <code class="docutils literal notranslate"><span class="pre">div(b=1,</span> <span class="pre">a=2)</span></code> is very different than <code class="docutils literal notranslate"><span class="pre">div(b=2,</span> <span class="pre">a=1</span></code> )!<br />
+We will see these named-parameters pop-up quite often in the libraries we learn! They usually provide functions with tons of parameters (with some default values)! It would be horrible if you had to specify them all by position (requiring you to know which parameter came 3rd in the list). Instead, you can pass them by name and it simplifies your code!<br />
+To see how many parameters a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function actually takes, look at its documentation!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">help</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">)</span> <span class="c1"># Press q to quit</span>
 </pre></div>
 </div>
 <div class="section" id="a-note-about-mixing-conventions">
 <h2>A note about mixing conventions<a class="headerlink" href="#a-note-about-mixing-conventions" title="Permalink to this headline">¶</a></h2>
-<p>Python lets you use both passing by-name and by-position in a single function call. For example, if you want to use the
-<code class="docutils literal notranslate"><span class="pre">print</span></code>
-function, but don’t want the new-line on the end, you would write:</p>
+<p>Python lets you use both passing by-name and by-position in a single function call. For example, if you want to use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function, but don’t want the new-line on the end, you would write:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try changing end to something else to see it print at the end!</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>How does Python determine which is which? It first uses the arguments passed by-position to fill up the first parameters and then fills in the remaining with the ones passed by-name. You aren’t allowed to specify something by-name if it was already specified by-position.</p>
-<p>This might make more sense with an example we define.</p>
+<p>How does Python determine which is which? It first uses the arguments passed by-position to fill up the first parameters and then fills in the remaining with the ones passed by-name. You aren’t allowed to specify something by-name if it was already specified by-position.<br />
+This might make more sense with an example we define.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 

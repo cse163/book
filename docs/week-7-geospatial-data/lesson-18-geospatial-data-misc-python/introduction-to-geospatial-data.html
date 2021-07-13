@@ -1078,7 +1078,13 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#introduction-to-geopandas">
+   Introduction to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     geopandas
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1102,31 +1108,14 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/share/10868442f5ff4b85b65788af88780c9c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>A lot of data we work with is associated with someone or someplace in the real world.
-<strong>Geospatial</strong>
-data is data that contains information about a place in the world.</p>
-<p>Below is an example plot that shows information about opioid overdoses on top of a map of Minnesota. We don’t have access to the data itself, but we can see something special in this plot: each data point is associated with an area on the map that is shaded depending on its data values. Geospatial information records the areas and shapes of an object to facilitate analysis and visualization.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd2375b9a0&gt;</p>
-<div class="section" id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>	Introduction to 
-</pre></div>
-</div>
-<p>A very common format for geospatial data is just a plain CSV that we could parse with
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-. However, they usually also contain a special column to indicate the location in the world that row corresponds to. A very simple representation uses latitude and longitude for each row, but geospatial data can store a very rich set of geospatial features in general.</p>
-<p>In order to process this special column format to encode geospatial information, we have to use a new library called
-<code class="docutils literal notranslate"><span class="pre">geopandas</span></code>
-. Don’t worry, everything you know from
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-carries over here with some added on features!</p>
-<p>In the code cell below, we show how to load in one of these geospatial datasets with
-<code class="docutils literal notranslate"><span class="pre">geopandas</span></code>
-. The dataset contains information about various countries of the world and information like their population and GDP. The file we will use a is a shapefile (
-<code class="docutils literal notranslate"><span class="pre">.shp</span></code>
-). The file format itself is actually pretty complex so we will only look at the data after parsing it in
-<code class="docutils literal notranslate"><span class="pre">geopandas</span></code>
-rather than looking at the file directly.</p>
+<p>A lot of data we work with is associated with someone or someplace in the real world. <strong>Geospatial</strong> data is data that contains information about a place in the world.<br />
+Below is an example plot that shows information about opioid overdoses on top of a map of Minnesota. We don’t have access to the data itself, but we can see something special in this plot: each data point is associated with an area on the map that is shaded depending on its data values. Geospatial information records the areas and shapes of an object to facilitate analysis and visualization.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/TspGBZsK4hClAyse74W8kJhL"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/TspGBZsK4hClAyse74W8kJhL" style="width: 758px;" /></a>
+<div class="section" id="introduction-to-geopandas">
+<h2>Introduction to <code class="docutils literal notranslate"><span class="pre">geopandas</span></code><a class="headerlink" href="#introduction-to-geopandas" title="Permalink to this headline">¶</a></h2>
+<p>A very common format for geospatial data is just a plain CSV that we could parse with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . However, they usually also contain a special column to indicate the location in the world that row corresponds to. A very simple representation uses latitude and longitude for each row, but geospatial data can store a very rich set of geospatial features in general.<br />
+In order to process this special column format to encode geospatial information, we have to use a new library called <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> . Don’t worry, everything you know from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> carries over here with some added on features!<br />
+In the code cell below, we show how to load in one of these geospatial datasets with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> . The dataset contains information about various countries of the world and information like their population and GDP. The file we will use a is a shapefile ( <code class="docutils literal notranslate"><span class="pre">.shp</span></code> ). The file format itself is actually pretty complex so we will only look at the data after parsing it in <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> rather than looking at the file directly.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
@@ -1141,19 +1130,7 @@ rather than looking at the file directly.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>The type of the value
-<code class="docutils literal notranslate"><span class="pre">df</span></code>
-in the cell above is a
-<code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>
-. It behaves exactly like a
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-but knows how to do some extra geospatial processing. There is also a
-<code class="docutils literal notranslate"><span class="pre">GeoSeries</span></code>
-type unsurprisingly. To start seeing the power of
-<code class="docutils literal notranslate"><span class="pre">geopandas</span></code>
-, you can see what happens if you ask the
-<code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>
-to plot itself.</p>
+<p>The type of the value <code class="docutils literal notranslate"><span class="pre">df</span></code> in the cell above is a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . It behaves exactly like a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> but knows how to do some extra geospatial processing. There is also a <code class="docutils literal notranslate"><span class="pre">GeoSeries</span></code> type unsurprisingly. To start seeing the power of <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> , you can see what happens if you ask the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to plot itself.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -1163,9 +1140,7 @@ to plot itself.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;world.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can get fancier have it color each country by its population using the
-<code class="docutils literal notranslate"><span class="pre">column</span></code>
-parameter, like in the snippet below.</p>
+<p>You can get fancier have it color each country by its population using the <code class="docutils literal notranslate"><span class="pre">column</span></code> parameter, like in the snippet below.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -1180,11 +1155,7 @@ parameter, like in the snippet below.</p>
 </div>
 <div class="section" id="geometry">
 <h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
-<p>Each row in the data corresponds to one country. The dataset has a special column called
-<code class="docutils literal notranslate"><span class="pre">'geometry'</span></code>
-that stores the shape of each country with a
-<strong>geometry</strong>
-.</p>
+<p>Each row in the data corresponds to one country. The dataset has a special column called <code class="docutils literal notranslate"><span class="pre">'geometry'</span></code> that stores the shape of each country with a <strong>geometry</strong> .</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -1193,14 +1164,8 @@ that stores the shape of each country with a
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>You don’t need to memorize the different types of geometries, but it helps to be familiar with what can be represented in this column. The picture below shows different types of geometries. Most countries are represented by a
-<code class="docutils literal notranslate"><span class="pre">Polygon</span></code>
-or a
-<code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code>
-(e.g. if they have multiple bodies of land) while you would likely not find any
-<code class="docutils literal notranslate"><span class="pre">LineString</span></code>
-countries in this dataset.</p>
-<p>&lt;Element ‘figure’ at 0x7fcd26041c20&gt;</p>
+<p>You don’t need to memorize the different types of geometries, but it helps to be familiar with what can be represented in this column. The picture below shows different types of geometries. Most countries are represented by a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> or a <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code> (e.g. if they have multiple bodies of land) while you would likely not find any <code class="docutils literal notranslate"><span class="pre">LineString</span></code> countries in this dataset.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC" style="width: 743px;" /></a>
 </div>
 </div>
 

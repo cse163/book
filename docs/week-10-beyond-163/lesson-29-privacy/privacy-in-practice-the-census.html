@@ -32,6 +32,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Differential Privacy" href="differential-privacy.html" />
@@ -1101,7 +1103,12 @@
 </div>
 <div class="section" id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
-<p>&lt;Element ‘list’ at 0x7fcd23760c70&gt;</p>
+<ul class="simple">
+<li><p>The goal of differential privacy is to prevent the leak of confidential information about an individual. The context is slightly different than the one we tackled in the last slide, where here we are publishing statistics about demographics rather than a database of (hopefully) anonymous individual data. The overall concern is the same though, where we are concerned that potential linkage of different datasets might reveal private information about an individual.</p></li>
+<li><p>The thought process behind it is thinking about the possible databases that could result in the published summary statistics and how likely they might be. So this definition of privacy is a probabilistic one, trying to make the probability of a single unambiguous option for the data unlikely.</p></li>
+<li><p>One way of achieving this guarantee in privacy is “Jittering” the data to provide some uncertainty in the published values. This jittering can ensure privacy (if done carefully) at the loss of accuracy (since we have less precise numbers).</p></li>
+<li><p>This notion of privacy is composable. That means if you publish two separate <span class="math notranslate nohighlight">\(\varepsilon\)</span>-private statistics, you can still guarantee <span class="math notranslate nohighlight">\(2\varepsilon\)</span>-privacy. This is commonly phrased as having a fixed “privacy budget” and controlling for what level of accuracy you provide across statistics you do publish, without going over that “privacy budget”. So for example if you want your overall set of statistics published to ensure 10-differential privacy, you can only release 20 statistics, each with individual 0.5-differential privacy.</p></li>
+</ul>
 </div>
 </div>
 

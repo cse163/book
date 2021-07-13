@@ -1082,36 +1082,18 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="time-series">
 <h1>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h1>
-<p><strong>Time series</strong>
-data is data that represents a sequence of events separated by time. This is generally more than just having a column for “date”. We think about time series data being a dataset that’s
-<strong>indexed</strong>
-by the time each event happened.</p>
-<p>For example, here is a time series dataset showing the number of bikers over Seattle’s Fremont Bridge.</p>
+<p><strong>Time series</strong> data is data that represents a sequence of events separated by time. This is generally more than just having a column for “date”. We think about time series data being a dataset that’s <strong>indexed</strong> by the time each event happened.<br />
+For example, here is a time series dataset showing the number of bikers over Seattle’s Fremont Bridge.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/bicycles.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notice that each row represents a slice of time, where each slice shows the number of bikers going over the east side or the west side of the bridge.</p>
-<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-does an excellent job working with time series data! Let’s read the dataset in again, but this time give some extra parameters to
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-so that it knows to treat the date itself as the index. Remember, the index of a
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
-is just a value that uniquely identifies each row. By default, the index is a row number, but you could use any column of unique values as an index!</p>
-<p>Recall that in the last lesson, we learned about keyword arguments (i.e., passing parameters by name). This feature is incredibly useful to library writers since they can have their functions take many parameters (many of which have default values, which we will learn how to do next week) that you can specify by name rather than having to know the exact order they come in. For reference,
-<code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>
-has about 49 parameters! With keyword arguments, you can just specify them by name rather than having to specify all 49 by position!</p>
-<p>To get
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-to recognize the fact that this is a time-series dataset, we need to tell it which column contains the unique identifiers (
-<code class="docutils literal notranslate"><span class="pre">index_col='Date'</span></code>
-) and pass in a special parameter to tell it to interpret these as dates (
-<code class="docutils literal notranslate"><span class="pre">parse_dates=True</span></code>
-). The following snippet shows how to do this, and
-<strong>notice in its output it shows the date column shows the index</strong>
-!</p>
+<p>Notice that each row represents a slice of time, where each slice shows the number of bikers going over the east side or the west side of the bridge.<br />
+<code class="docutils literal notranslate"><span class="pre">pandas</span></code> does an excellent job working with time series data! Let’s read the dataset in again, but this time give some extra parameters to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> so that it knows to treat the date itself as the index. Remember, the index of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is just a value that uniquely identifies each row. By default, the index is a row number, but you could use any column of unique values as an index!<br />
+Recall that in the last lesson, we learned about keyword arguments (i.e., passing parameters by name). This feature is incredibly useful to library writers since they can have their functions take many parameters (many of which have default values, which we will learn how to do next week) that you can specify by name rather than having to know the exact order they come in. For reference, <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> has about 49 parameters! With keyword arguments, you can just specify them by name rather than having to specify all 49 by position!<br />
+To get <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to recognize the fact that this is a time-series dataset, we need to tell it which column contains the unique identifiers ( <code class="docutils literal notranslate"><span class="pre">index_col='Date'</span></code> ) and pass in a special parameter to tell it to interpret these as dates ( <code class="docutils literal notranslate"><span class="pre">parse_dates=True</span></code> ). The following snippet shows how to do this, and <strong>notice in its output it shows the date column shows the index</strong> !</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/bicycles.csv&#39;</span><span class="p">,</span> 

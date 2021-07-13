@@ -1083,7 +1083,14 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#the-in-keyword">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     in
+    </span>
+   </code>
+   keyword
   </a>
  </li>
 </ul>
@@ -1104,22 +1111,45 @@
 </div>
 <div class="section" id="list-methods">
 <h2>List Methods<a class="headerlink" href="#list-methods" title="Permalink to this headline">¶</a></h2>
-<p>Just like with strings,
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-also has methods you can call on a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-object to observe or modify its values. You can call any of these methods on a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-object.</p>
-<p>&lt;Element ‘web-snippet’ at 0x7fcd23760810&gt;
-Notice that
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-s are NOT immutable. This means methods like
-<code class="docutils literal notranslate"><span class="pre">append</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">remove</span></code>
-actually modify the list you call the method on.</p>
-<p>The following snippet shows some example of how to call some of these methods</p>
+<p>Just like with strings, <code class="docutils literal notranslate"><span class="pre">list</span></code> also has methods you can call on a <code class="docutils literal notranslate"><span class="pre">list</span></code> object to observe or modify its values. You can call any of these methods on a <code class="docutils literal notranslate"><span class="pre">list</span></code> object.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l.append(x)</p></td>
+<td><p>Adds x to the end of l</p></td>
+</tr>
+<tr class="row-odd"><td><p>l.extend(xs)</p></td>
+<td><p>Adds all elements in xs at the end of l</p></td>
+</tr>
+<tr class="row-even"><td><p>l.insert(i, x)</p></td>
+<td><p>Inserts x at index i in l</p></td>
+</tr>
+<tr class="row-odd"><td><p>l.remove(x)</p></td>
+<td><p>Removes the first instance of x from l</p></td>
+</tr>
+<tr class="row-even"><td><p>l.pop([i])</p></td>
+<td><p>Removes the value at index i from l. Parameter is optional, default is last index of list.  Note: The syntax [i] for a parameter is commonly used in Python documentation to indicate i is an optional paramter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>l.clear()</p></td>
+<td><p>Removes all values from l</p></td>
+</tr>
+<tr class="row-even"><td><p>l.index(x)</p></td>
+<td><p>Returns the first index that contains x in l. If it is not found it raises an error.</p></td>
+</tr>
+<tr class="row-odd"><td><p>l.reverse()</p></td>
+<td><p>Reverses all the order of elements of l</p></td>
+</tr>
+<tr class="row-even"><td><p>l.sort()</p></td>
+<td><p>Sorts the values of l</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">list</span></code> s are NOT immutable. This means methods like <code class="docutils literal notranslate"><span class="pre">append</span></code> , <code class="docutils literal notranslate"><span class="pre">remove</span></code> actually modify the list you call the method on.<br />
+The following snippet shows some example of how to call some of these methods</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Empty list</span>
 <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -1141,30 +1171,11 @@ actually modify the list you call the method on.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>	The 
-</pre></div>
-</div>
-<p>Have you ever asked yourself, “Is the number
-<code class="docutils literal notranslate"><span class="pre">2</span></code>
-in this list of numbers?” Probably not, but we’ll show you how to do it anyway!</p>
-<p>The idea of checking if a
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-contains a value is incredibly important for applications like trying to find all the distinct values in a collection or only trying to look at values in a subset of all possible values (like looking at all students from WA, OR, or CA).</p>
-<p>There is a special keyword in Python precisely made for doing these contains queries (we also call them
-<strong>membership queries</strong>
-). The following snippet shows the syntax for this keyword. The syntax goes
-<code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">in</span> <span class="pre">collection</span></code>
-and it is an expression that evaluates to
-<code class="docutils literal notranslate"><span class="pre">True/False</span></code>
-which means you could use it in an
-<code class="docutils literal notranslate"><span class="pre">if</span></code>
-statement or a
-<code class="docutils literal notranslate"><span class="pre">while</span></code>
-loop. You can try editing the code block to see what happens if you searched for the word
-<code class="docutils literal notranslate"><span class="pre">'cats'</span></code>
-instead.</p>
+<div class="section" id="the-in-keyword">
+<h2>The <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword<a class="headerlink" href="#the-in-keyword" title="Permalink to this headline">¶</a></h2>
+<p>Have you ever asked yourself, “Is the number <code class="docutils literal notranslate"><span class="pre">2</span></code> in this list of numbers?” Probably not, but we’ll show you how to do it anyway!<br />
+The idea of checking if a <code class="docutils literal notranslate"><span class="pre">list</span></code> contains a value is incredibly important for applications like trying to find all the distinct values in a collection or only trying to look at values in a subset of all possible values (like looking at all students from WA, OR, or CA).<br />
+There is a special keyword in Python precisely made for doing these contains queries (we also call them <strong>membership queries</strong> ). The following snippet shows the syntax for this keyword. The syntax goes <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">in</span> <span class="pre">collection</span></code> and it is an expression that evaluates to <code class="docutils literal notranslate"><span class="pre">True/False</span></code> which means you could use it in an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement or a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. You can try editing the code block to see what happens if you searched for the word <code class="docutils literal notranslate"><span class="pre">'cats'</span></code> instead.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">]</span>
 <span class="k">if</span> <span class="s1">&#39;dogs&#39;</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Found it!&#39;</span><span class="p">)</span>
@@ -1172,14 +1183,8 @@ instead.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No luck :(&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notice that we didn’t say you could only use this on lists. It turns out that you can use it on almost all structures we learn in this class that store values. For example, you can use it on strings too:
-<code class="docutils literal notranslate"><span class="pre">'og'</span> <span class="pre">in</span> <span class="pre">'dogs'</span></code>
-.</p>
-<p>To see if something is not in a list, you can use
-<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>
-as shown in the next example (it’s exactly the opposite of the
-<code class="docutils literal notranslate"><span class="pre">in</span></code>
-keyword)</p>
+<p>Notice that we didn’t say you could only use this on lists. It turns out that you can use it on almost all structures we learn in this class that store values. For example, you can use it on strings too: <code class="docutils literal notranslate"><span class="pre">'og'</span> <span class="pre">in</span> <span class="pre">'dogs'</span></code> .<br />
+To see if something is not in a list, you can use <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> as shown in the next example (it’s exactly the opposite of the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword)</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">]</span>
 <span class="k">if</span> <span class="s1">&#39;cats&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not there!&#39;</span><span class="p">)</span>

@@ -1115,38 +1115,30 @@
 </div>
 <div class="section" id="id1">
 <h2>Functions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>A
-<strong>function</strong>
-is a named procedure with a series of instructions that can be
-<strong>called</strong>
-in your program to execute those instructions.</p>
-<p>To call a function, you use its name and use
-<code class="docutils literal notranslate"><span class="pre">()</span></code>
-after it to make it a call For example,
-<code class="docutils literal notranslate"><span class="pre">print</span></code>
-is actually a function defined by Python, so a “print statement” is really just calling this
-<code class="docutils literal notranslate"><span class="pre">print</span></code>
-function.</p>
+<p>A <strong>function</strong> is a named procedure with a series of instructions that can be <strong>called</strong> in your program to execute those instructions.<br />
+To call a function, you use its name and use <code class="docutils literal notranslate"><span class="pre">()</span></code> after it to make it a call For example, <code class="docutils literal notranslate"><span class="pre">print</span></code> is actually a function defined by Python, so a “print statement” is really just calling this <code class="docutils literal notranslate"><span class="pre">print</span></code> function.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>  <span class="c1"># Prints a blank line</span>
 </pre></div>
 </div>
-<p>As we saw earlier, we can pass
-<strong>parameters</strong>
-to this function call to give it inputs. For example, the
-<code class="docutils literal notranslate"><span class="pre">print</span></code>
-function takes parameters for the things to print.</p>
+<p>As we saw earlier, we can pass <strong>parameters</strong> to this function call to give it inputs. For example, the <code class="docutils literal notranslate"><span class="pre">print</span></code> function takes parameters for the things to print.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Functions defined by Python are commonly called
-<strong>built-in</strong>
-functions. Some examples of built-in functions we will use commonly in CSE 163 are:</p>
-<p>&lt;Element ‘list’ at 0x7fcd236d6180&gt;
-Many functions can also
-<strong>return</strong>
-a value from their computation. For example
-<code class="docutils literal notranslate"><span class="pre">min</span></code>
-returns the minimum value of its inputs. You can do some more complex operations by combining the inputs and outputs of various functions like in the snippet below:</p>
+<p>Functions defined by Python are commonly called <strong>built-in</strong> functions. Some examples of built-in functions we will use commonly in CSE 163 are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range</span></code></p></li>
+<li><p>Casting:     <code class="docutils literal notranslate"><span class="pre">int</span></code>     ,     <code class="docutils literal notranslate"><span class="pre">float</span></code>     ,     <code class="docutils literal notranslate"><span class="pre">bool</span></code>     ,     <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>Math:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs</span></code>         to find absolute value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max</span></code>         to find the max of a sequence of numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min</span></code>         to find the min of a sequence of numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum</span></code>         to find the sum of a sequence of numbers</p></li>
+</ul>
+</li>
+</ul>
+<p>Many functions can also <strong>return</strong> a value from their computation. For example <code class="docutils literal notranslate"><span class="pre">min</span></code> returns the minimum value of its inputs. You can do some more complex operations by combining the inputs and outputs of various functions like in the snippet below:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># x will store 4 (the return value of this function)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># y will store 5 (the return value of this function)</span>
 </pre></div>
@@ -1154,15 +1146,13 @@ returns the minimum value of its inputs. You can do some more complex operations
 </div>
 <div class="section" id="define-your-own-functions">
 <h2>Define your own Functions<a class="headerlink" href="#define-your-own-functions" title="Permalink to this headline">¶</a></h2>
-<p>In the following snippet, we show how to define a function called
-<code class="docutils literal notranslate"><span class="pre">greetings</span></code>
-.</p>
+<p>In the following snippet, we show how to define a function called <code class="docutils literal notranslate"><span class="pre">greetings</span></code> .</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greetings</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hola!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that by putting nothing in the parentheses, we are saying it takes no parameters.</p>
-<p>To call the function, you need to actually use a function call like we showed before!</p>
+<p>Note that by putting nothing in the parentheses, we are saying it takes no parameters.<br />
+To call the function, you need to actually use a function call like we showed before!</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greetings</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hola!&#39;</span><span class="p">)</span>
     
@@ -1171,11 +1161,7 @@ returns the minimum value of its inputs. You can do some more complex operations
 </div>
 <div class="section" id="defining-parameters-or-returns">
 <h3>Defining Parameters or Returns<a class="headerlink" href="#defining-parameters-or-returns" title="Permalink to this headline">¶</a></h3>
-<p>If you want to define a function that takes parameters, you put variable names in between the
-<code class="docutils literal notranslate"><span class="pre">()</span></code>
-for each parameter you want the function to take. If you want the function to return a value, you use a
-<code class="docutils literal notranslate"><span class="pre">return</span></code>
-statement like the example below.</p>
+<p>If you want to define a function that takes parameters, you put variable names in between the <code class="docutils literal notranslate"><span class="pre">()</span></code> for each parameter you want the function to take. If you want the function to return a value, you use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement like the example below.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calling mean with&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
@@ -1188,16 +1174,8 @@ statement like the example below.</p>
 </div>
 <div class="section" id="functions-in-context">
 <h2>Functions in Context<a class="headerlink" href="#functions-in-context" title="Permalink to this headline">¶</a></h2>
-<p>Recall that we said our reading snippets normally don’t show the main-method pattern. We make an exception in the next snippet to show a full Python program.</p>
-<p>Notice, we are having you define a function called
-<code class="docutils literal notranslate"><span class="pre">main</span></code>
-by saying
-<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">main():</span></code>
-! The
-<code class="docutils literal notranslate"><span class="pre">mean</span></code>
-function only gets called when we are actually running the program and the
-<code class="docutils literal notranslate"><span class="pre">main</span></code>
-method calls it.</p>
+<p>Recall that we said our reading snippets normally don’t show the main-method pattern. We make an exception in the next snippet to show a full Python program.<br />
+Notice, we are having you define a function called <code class="docutils literal notranslate"><span class="pre">main</span></code> by saying <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">main():</span></code> ! The <code class="docutils literal notranslate"><span class="pre">mean</span></code> function only gets called when we are actually running the program and the <code class="docutils literal notranslate"><span class="pre">main</span></code> method calls it.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calling mean with&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
