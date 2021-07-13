@@ -1,7 +1,7 @@
 # Multiple Dimensions
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/c88750e3a444434296bdcd0690052a77" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/c88750e3a444434296bdcd0690052a77" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 As we alluded to in the applications above, it's possible to make a nested `numpy.array` (can think of it as an array of arrays). A core concept for a `numpy.array` is its **shape** . The shape determines the number of dimensions and how many elements are in one. The `numpy.ones` function actually takes a tuple specifying the shape instead of just a number.  

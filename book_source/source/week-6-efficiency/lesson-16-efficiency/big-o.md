@@ -1,7 +1,7 @@
 # Big-O
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/6ea3c9015df14605ad29976b9f92f603?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/6ea3c9015df14605ad29976b9f92f603?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 Now that we feel a little bit more comfortable counting steps, we can go back to trying to compare `sum1` and `sum2` . Recall these functions were defined as:  

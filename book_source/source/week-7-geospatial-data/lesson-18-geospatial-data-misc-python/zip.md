@@ -1,7 +1,7 @@
 # Zip
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/ff2cbac74ed743bbafe62257da8601d1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/ff2cbac74ed743bbafe62257da8601d1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 In our next example, we will need to use a very useful function in Python called `zip` . It takes two lists and "zips" them up so you can iterate over pairs of elements from both lists. This is much clearer with an example.  

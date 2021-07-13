@@ -1,7 +1,7 @@
 # Convolutions
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/1e5d2e1c109748ceb89641f3885fc062?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/1e5d2e1c109748ceb89641f3885fc062?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 So far we have seen some very simple ways of transforming images. In this slide, we will describe a very type of operation done in image analysis to help extract **local**  **information** in an image. An example of local information would be something like "is there an edge in this part of the image?" This type of approach for analyzing images has been instrumental in building state-of-the-art image recognition systems used today (more on this later). The type of operation we are going to describe here is called a **convolution.**   

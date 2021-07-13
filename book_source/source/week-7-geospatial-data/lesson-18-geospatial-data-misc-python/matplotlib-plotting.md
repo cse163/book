@@ -1,7 +1,7 @@
 # Matplotlib Plotting
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/00731b3ee509429f814b5acf818897bf" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/00731b3ee509429f814b5acf818897bf" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 We have already seen how to make plots using `seaborn` to make simple data visualizations and using `matplotlib` to customize the titles and axes. This week, we are going to explore `matplotlib` a little more in-depth so we can understand how to make even more rich visualizations.  

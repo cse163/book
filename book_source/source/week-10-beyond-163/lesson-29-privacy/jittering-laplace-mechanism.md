@@ -1,7 +1,7 @@
 # Jittering (Laplace Mechanism)
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/d35baca166b547fd9a0772b0dfe28766?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/d35baca166b547fd9a0772b0dfe28766?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 In the video about the Census, they described the process of jittering published statistics to ensure differential privacy. The act of "jittering" the data is adding some amount of random noise to the published statistics, to add uncertainty in the world about what the true value is. It turns out that there is a very simple procedure for jittering that tells you exactly what level of differential-privacy you can expect from your result.  

@@ -9,7 +9,7 @@ This slide is optional, but you must at least view it to mark it as complete in 
 
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/3d55dbb6311b4d52b5018cd0ed365f61" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/3d55dbb6311b4d52b5018cd0ed365f61" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 While hashing is most commonly used in applications such as making `set` and `dict` have constant-time lookup, hashing has an incredible number of applications to helping algorithms scale to large datasets. To see one such example of using hashing in a large-data application, we will focus on the task of counting.  

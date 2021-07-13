@@ -15,7 +15,7 @@ In addition to these readings, I will also be recording short videos of me walki
 
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/732b9b2cb52d4380b4e21ea4cf53f2ab?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/732b9b2cb52d4380b4e21ea4cf53f2ab?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 In the first lesson, we introduced the purpose and place of this course and introduced a lot of the important points from the [None](https://courses.cs.washington.edu/courses/cse163/21wi/syllabus.html) .  

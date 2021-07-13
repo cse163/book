@@ -1,7 +1,7 @@
 # Data Structures
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/005a2fbfe4f84e548189f6dfd9ce639a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/005a2fbfe4f84e548189f6dfd9ce639a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 So we can see that understanding complexity is important so that you can easily analyze (after some practice) how your algorithm will scale. Another important application of this knowledge is to understand how efficient your code is when using data structures like `list` , `set` , and `dict` .  

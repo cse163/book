@@ -1,7 +1,7 @@
 # Broadcasting
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/0cd37f8288354279b9317acf22c684ab" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/0cd37f8288354279b9317acf22c684ab" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 In the last slide, we saw that you can do element-wise arithmetic with `numpy.array` s. We showed that you could do something like `x + 3` and it would add 3 to each value in the array. While this did work, it also seems reasonable that this cause an error since the shapes of `x` and `3` disagree. The reason it is not an error is that `numpy` has a well-defined series of rules to transform values that disagree in shape for these operations. These rules form what is known as **broadcasting** . In other words, broadcasting is a procedure `numpy` uses to transform values that disagree in shape so that the result is well defined.  

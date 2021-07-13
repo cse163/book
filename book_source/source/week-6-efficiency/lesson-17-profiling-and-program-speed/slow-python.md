@@ -1,7 +1,7 @@
 # Slow Python
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/5e53d4b490bf4898b12b866867fdb631?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/5e53d4b490bf4898b12b866867fdb631?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 We have briefly mentioned that Python generally uses an interpreter to run. This is opposed to how you might have used Java CSE 142/143 where you compiled your program before you ran it. When you interpret a program, you are essentially compiling it **as you run it** . This requirement to translate your code from human-readable Python to computer-understandable computer instructions while it is running causes a huge slow-down for Python. On top of being interpreted, the fact that variables store values of dynamic types also tends to add to this inefficiency.  

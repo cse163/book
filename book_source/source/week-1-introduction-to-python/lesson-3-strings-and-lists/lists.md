@@ -1,7 +1,7 @@
 # Lists
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/a9b0a03d46324244bc0feae35720118a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/a9b0a03d46324244bc0feae35720118a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 As a reminder, we defined a string as a sequence of characters, where each character has an index; we often refer to strings as being an indexed-sequence of characters for short.  

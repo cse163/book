@@ -1,7 +1,7 @@
 # String Functions
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/a4e92e76179f4f5bb7118a9b25b41463?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/a4e92e76179f4f5bb7118a9b25b41463?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 Each string is an **object** . We will talk more about objects in detail in Week 5, but the basic idea is that each string is its own, independent unit that has some **state** and some **behaviors.** The **state** of a string is its characters and their ordering. The **behaviors** of the string are the functions we are allowed to call on them to access or transform the data. You don't need to worry too much about this state/behavior terminology right now as we will emphasize it in Week 5.  

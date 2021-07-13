@@ -1,7 +1,7 @@
 # Collisions
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/38de6c8f202b46688036c19687b4990f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/38de6c8f202b46688036c19687b4990f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 So the first thing we need to handle to make a work hash table is to handle a **collision** . A collision occurs if two values that are added to the hash table end up hashing to the same index. This causes a problem with our current approach since we use the hashing trick to instantly know which index a particular value belongs in.  

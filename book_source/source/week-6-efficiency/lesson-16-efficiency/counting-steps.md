@@ -1,7 +1,7 @@
 # Counting Steps
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/ae9ee85dfe704826b74eaf3d413b5ee3?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/ae9ee85dfe704826b74eaf3d413b5ee3?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 Instead of trying to measure time, we will instead count "steps" the program takes. This is a very inexact approximation and will feel weird at first but is a very helpful exercise.  

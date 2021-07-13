@@ -1,7 +1,7 @@
 # Randomized Response
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/cae22f5a50404b05bef82d70392673a7?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/cae22f5a50404b05bef82d70392673a7?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 When discussing notions of privacy, one important point to bring up that we have not addressed yet relates to issues of *trust* . Who do we trust to take our data and ensure it is differentially private? We might have trust in the Census Beurua to safeguard our data and follow the procedure they set up to ensure differential privacy (in fact, census takers are sworn for life to protect information that may identify individuals). Would we trust Facebook to make sure privacy is guaranteed in our data if they promised some notion of differential privacy?  

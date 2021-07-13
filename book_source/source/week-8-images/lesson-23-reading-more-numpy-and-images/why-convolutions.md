@@ -1,7 +1,7 @@
 # Why Convolutions?
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/fcbd1378aa9a4372a0a9d323fde2238f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/fcbd1378aa9a4372a0a9d323fde2238f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 Consider trying to write a program to solve the task of determining if a given image contains a dog or a cat. This might sound familiar as it was the first problem we described as an example of a machine learning system! While that was our first example, it turns out that machine learning with images is pretty tough to do well. The reason stems from the fact that it's not obvious which features you should use for the model since you are given just a bunch of pixels. We will talk more about how to do ML with images in the next lesson, but we wanted to take some time now to motivate why learning convolutions is important.  

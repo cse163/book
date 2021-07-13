@@ -1,7 +1,7 @@
 # Hashing in Practice
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/share/3a324a37a735426cb462e3eff854ad86" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/3a324a37a735426cb462e3eff854ad86" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
 We mentioned before that when defining that a hash function needs to be "consistent". Consistency is all about maintaining the deep relationship between the notions of equality and hashing.  
