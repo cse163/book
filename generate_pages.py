@@ -81,8 +81,12 @@ class EdStemXMLVisitor:
             self.visit(el)
 
     def visit(self, element):
-        if element.tag == "bold":
+        if element.tag == "blockquote":
+            self.visit_blockquote(element)
+        elif element.tag == "bold":
             self.visit_bold(element)
+        elif element.tag == "break":
+            self.visit_break(element)
         elif element.tag == "callout":
             self.visit_callout(element)
         elif element.tag == "code":
@@ -108,8 +112,21 @@ class EdStemXMLVisitor:
         else:
             self._print(element)
 
+    def visit_blockquote(self, element):
+        if element.text:
+            self._print("> " + element.text.strip())
+
+        for child in element:
+            self._print("> ", newline=False)
+            self.visit(child)
+            if child.tail:
+                self._print("> " + child.tail.strip())
+
     def visit_bold(self, element):
         self._print(f"**{element.text}**")
+
+    def visit_break(self, element):
+        self._print("<br />")
 
     def visit_callout(self, element, print_stripped=True):
         # Get type of callout
