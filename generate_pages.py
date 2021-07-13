@@ -36,21 +36,26 @@ class EdStemXMLVisitor:
         self.tree = tree
         self.out = out
         self.starting_heading_level = starting_heading_level
+
+        # Formatting state
+        self.print_newlines = True
         self.indent = 0
         self.skip_indents = 0
 
     def _print(self, text="", newline=True, force_indent=False):
         should_indent = text or force_indent
         if should_indent and self.skip_indents == 0:
-            indent = "  " * self.indent
+            indent = "    " * self.indent
         else:
             indent = ""
             if should_indent and self.skip_indents > 0:
                 self.skip_indents -= 1
 
         self.out.write(indent + str(text))
-        if newline:
+        if self.print_newlines and newline:
             self.out.write("\n")
+        else:
+            self.out.write(" ")
 
     def _visit_mixed_body(self, element, print_stripped=True):
         def strip_none_safe(s):
@@ -116,9 +121,16 @@ class EdStemXMLVisitor:
     def visit_heading(self, element):
         level = int(element.get("level"))
         level = level + self.starting_heading_level
-        title = element.text
 
-        self._print(f"{'#' * level} {title}")
+        save_print_newlines = self.print_newlines
+        self.print_newlines = False
+
+        self._print(f"{'#' * level} ")
+        self._visit_mixed_body(element)
+
+        self.print_newlines = save_print_newlines
+
+        self._print()
         self._print()
 
     def visit_italic(self, element):
@@ -127,21 +139,28 @@ class EdStemXMLVisitor:
     def visit_list(self, element):
         is_numbered = element.get("style") == "numbered"
 
-        self.indent += 1
         for i, item in enumerate(element.findall("list-item")):
             if is_numbered:
                 self._print(f"{i + 1}. ", newline=False)
             else:
                 self._print("- ", newline=False)
 
+            self.indent += 1
             self.skip_indents = 1
             for child in item:
                 self.visit(child)
+            self.indent -= 1
 
-        self.indent -= 1
+        self._print()
 
     def visit_paragraph(self, element, print_stripped=True):
+        save_print_newlines = self.print_newlines
+
+        self.print_newlines = False
         self._visit_mixed_body(element, print_stripped=print_stripped)
+        self.print_newlines = save_print_newlines
+
+        self._print()
 
     def visit_pre(self, element):
         self._print("```text")
