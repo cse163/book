@@ -208,9 +208,14 @@ class EdStemXMLVisitor:
         self.visit_bold(element)
 
     def visit_snippet(self, element):
-        # TODO do I need to turn py to python?
-        language = element.get("language")
-        language = language if language else "console"
+        language_translation = {
+            "txt": "text",
+            "c": "c",
+            "py": "python",
+            "console": "console",
+        }
+        language = element.get("language", "console")
+        language = language_translation.get(language, language)
 
         content = element.find("snippet-file").text
 
