@@ -30,7 +30,7 @@ release = "0.0.0"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 # extensions = ["myst_parser", "myst_nb"]
-extensions = ["myst_nb"]
+extensions = ["myst_nb", "sphinx_thebe"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -64,7 +64,9 @@ html_logo = "_static/logo.png"
 jupyter_execute_notebooks = "cache"
 
 html_theme_options = {
+    "theme_dev_mode": True,
     "repository_url": "https://github.com/cse163/book",
+    "repository_branch": "main",
     "path_to_docs": "book_source/source/",
     "use_repository_button": True,
     "use_issues_button": True,
@@ -73,5 +75,6 @@ html_theme_options = {
         "binderhub_url": "https://mybinder.org",
         "colab_url": "https://colab.research.google.com/",
         "notebook_interface": "jupyterlab",
+        "thebe": True,
     },
 }
