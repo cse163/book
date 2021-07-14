@@ -29,7 +29,8 @@ release = "0.0.0"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["myst_parser"]
+# extensions = ["myst_parser", "myst_nb"]
+extensions = ["myst_nb"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -60,9 +61,17 @@ html_title = project
 html_logo = "_static/logo.png"
 
 # -- Configuring BookTheme -------------------------------------------------
+jupyter_execute_notebooks = "cache"
+
 html_theme_options = {
     "repository_url": "https://github.com/cse163/book",
+    "path_to_docs": "book_source/source/",
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
+        "notebook_interface": "jupyterlab",
+    },
 }

@@ -11,7 +11,10 @@ from pytablewriter import MarkdownTableWriter
 LESSONS_DIR = "../lesson_data"
 OUTPUT_DIR = "book_source/source/"
 
-IGNORE_LESSONS = ["lesson-28-web-scraping-not-worth-credit"]
+IGNORE_LESSONS = [
+    "lesson-28-web-scraping-not-worth-credit",
+    "lesson-29-distributed-computing-not-worth-credit",
+]
 
 
 def slugify(value, allow_unicode=False):

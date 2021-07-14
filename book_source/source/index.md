@@ -4,6 +4,7 @@
 :maxdepth: 2
 :caption: Contents
 
+test
 week-1-introduction-to-python/index
 week-2-data-structures-and-files/index
 week-3-pandas/index
