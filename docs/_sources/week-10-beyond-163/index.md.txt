@@ -5,5 +5,4 @@
 
 lesson-28-fairness/index
 lesson-29-privacy/index
-lesson-29-distributed-computing-not-worth-credit/index
 ```
