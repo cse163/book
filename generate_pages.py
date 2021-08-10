@@ -3,6 +3,7 @@ import pathlib
 import re
 import unicodedata
 import xml.etree.ElementTree as ET
+import zipfile
 
 import pandas as pd
 import yaml
@@ -274,6 +275,19 @@ def save_lesson_slide(title, output_file_md, input_file_xml):
         visitor.start()
 
 
+def make_scaffold_zip(scaffold_path, output_zip_path, output_root):
+    # Source: https://thispointer.com/python-how-to-create-a-zip-archive-from-multiple-files-or-directory/https://thispointer.com/python-how-to-create-a-zip-archive-from-multiple-files-or-directory/
+    with zipfile.ZipFile(output_zip_path, "w") as out:
+        for folder_name, _, filenames in os.walk(scaffold_path):
+            for filename in filenames:
+                # create complete filepath of file in directory
+                file_path = os.path.join(folder_name, filename)
+                # Add file to zip
+                out_path = os.path.relpath(file_path, scaffold_path)
+                print(f"Saving {file_path} to {out_path}")
+                out.write(file_path, out_path)
+
+
 def main():
     with open(os.path.join(LESSONS_DIR, "modules.yaml")) as f:
         modules = yaml.safe_load(f)
@@ -321,6 +335,13 @@ def main():
                         slide_file_name = slide["id"] + ".md"
                         title = slide["title"]
                         slide_ids.append(slide["id"])
+
+                        # Create a zip file with the scaffold code
+                        scaffold_path = os.path.join(
+                            LESSONS_DIR, lesson["id"], slide["id"], "scaffold"
+                        )
+                        output_zip = os.path.join(lesson_path, slide["id"] + ".zip")
+                        make_scaffold_zip(scaffold_path, output_zip, slide["id"])
 
                         # Coding challenges have a passage file with the problem text
                         output_file_md = os.path.join(lesson_path, slide_file_name)
