@@ -264,6 +264,16 @@ def write_toc(out, ref_names, max_depth=2, caption="Contents"):
     out.write("```")
 
 
+def save_lesson_slide(title, output_file_md, input_file_xml):
+
+    with open(os.path.join(output_file_md), "w") as f:
+        f.write(f"# {title}\n")
+
+        tree = ET.parse(input_file_xml)
+        visitor = EdStemXMLVisitor(tree, f, starting_heading_level=1)
+        visitor.start()
+
+
 def main():
     with open(os.path.join(LESSONS_DIR, "modules.yaml")) as f:
         modules = yaml.safe_load(f)
@@ -288,6 +298,7 @@ def main():
                 with open(os.path.join(LESSONS_DIR, lesson["id"], "toc.yaml")) as f:
                     slide_info = yaml.safe_load(f)
 
+                # Process each slide in the lesson
                 slide_ids = []
                 for slide in slide_info:
                     if slide["type"] == "document":
@@ -301,17 +312,24 @@ def main():
                             title = slide["title"]
                             slide_file_name = slide["id"] + ".md"
 
-                        with open(os.path.join(lesson_path, slide_file_name), "w") as f:
-                            f.write(f"# {title}\n")
+                        output_file_md = os.path.join(lesson_path, slide_file_name)
+                        input_file_xml = os.path.join(
+                            LESSONS_DIR, lesson["id"], slide["id"]
+                        )
+                        save_lesson_slide(title, output_file_md, input_file_xml)
+                    elif slide["type"] == "code":
+                        slide_file_name = slide["id"] + ".md"
+                        title = slide["title"]
+                        slide_ids.append(slide["id"])
 
-                            tree = ET.parse(
-                                os.path.join(LESSONS_DIR, lesson["id"], slide["id"])
-                            )
-                            visitor = EdStemXMLVisitor(
-                                tree, f, starting_heading_level=1
-                            )
-                            visitor.start()
+                        # Coding challenges have a passage file with the problem text
+                        output_file_md = os.path.join(lesson_path, slide_file_name)
+                        input_file_xml = os.path.join(
+                            LESSONS_DIR, lesson["id"], slide["id"], "passage"
+                        )
+                        save_lesson_slide(title, output_file_md, input_file_xml)
 
+                # For the main page of the lesson, save a table of contents
                 lesson_index_file = os.path.join(lesson_path, "index.md")
                 if os.path.exists(lesson_index_file):
 
@@ -323,6 +341,7 @@ def main():
 
                         write_toc(f, slide_ids)
 
+        # Write a table of contents for the module page
         with open(os.path.join(module_path, "index.md"), "w") as f:
             f.write(f"# {module['name']}\n")
 
