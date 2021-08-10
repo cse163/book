@@ -33,4 +33,7 @@ negative-indices
 lists
 documentation-matters
 none
+practice-switch_pairs
+practice-find_range
+practice-count_votes
 ```

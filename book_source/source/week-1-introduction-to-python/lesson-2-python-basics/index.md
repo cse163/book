@@ -24,4 +24,7 @@ for-loop
 conditionals
 conditionals-answered
 functions
+practice-minute-countdown
+practice-countdown
+practice-fibonacci
 ```

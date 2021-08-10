@@ -29,6 +29,9 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 
 recap-lists
 list-comprehensions
+practice-build-a-list-comprehension
 tuple
 dictionaries-dict
+practice-area-codes
+practice-count-words
 ```

@@ -27,4 +27,6 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 introduction-to-geospatial-data
 zip
 matplotlib-plotting
+practice-population-in-south-america
+practice-small-and-rich
 ```

@@ -32,4 +32,5 @@ multiple-dimensions
 arithmetic-and-logical-operators
 broadcasting
 images
+practice-duckie-hat
 ```

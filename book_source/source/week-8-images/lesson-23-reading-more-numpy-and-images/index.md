@@ -27,4 +27,5 @@ recap
 numpy-functions
 convolutions
 why-convolutions
+practice-collapse
 ```

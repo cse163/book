@@ -34,4 +34,9 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 
 file-processing
 advanced-lists
+file-paths
+python-modes
+practice-build-a-list
+practice-filter-long-lines
+practice-count-unique-words
 ```

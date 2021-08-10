@@ -29,4 +29,6 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 default-parameters
 missing-data
 principles-of-data-visualization
+practice-plotting-1
+practice-plotting-2
 ```

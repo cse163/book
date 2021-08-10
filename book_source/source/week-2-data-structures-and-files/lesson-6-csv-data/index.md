@@ -25,6 +25,9 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 :caption: Contents
 
 dictionary-methods
+practice-most-frequent-word
 comma-separated-values-csv
 processing-a-csv
+practice-largest-earthquake
+practice-shakiness-by-location
 ```

@@ -27,4 +27,6 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 
 objects-and-references
 the-class-define-your-own-objects
+practice-point-class
+practice-student-class
 ```

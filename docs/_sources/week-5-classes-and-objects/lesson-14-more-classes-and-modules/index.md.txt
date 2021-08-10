@@ -29,5 +29,8 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 recap
 private-fields
 warning-default-parameters
+reading-working-with-directories
 lambdas
+practice-dogpack
+practice-edpost
 ```

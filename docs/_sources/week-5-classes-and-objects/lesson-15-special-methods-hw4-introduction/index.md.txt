@@ -41,6 +41,7 @@ main-method-pattern
 equality-and-identity
 defining-equality
 fancy-syntax
+practice-pair
 a-search-engine
 hw4-introduction
 ```
