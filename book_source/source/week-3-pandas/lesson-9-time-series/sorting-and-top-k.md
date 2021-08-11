@@ -1,4 +1,5 @@
 # Sorting and top-k
+
 Another very common operation in `pandas` needs you to sort the data. This could either be for presentation reasons or you might be interested in finding the "top 10" rows based on some criteria. `pandas` makes sorting really easy! Using the same fMRI dataset from before, the following snippet shows how to  
 ```python
 import pandas as pd

@@ -1,5 +1,8 @@
 # File Paths
 
+{download}`Download starter code </week-2-data-structures-and-files/lesson-4-lists-and-files/file-paths.zip>`
+
+
 ```{admonition} Warning
 :class: warning
 

@@ -1,5 +1,8 @@
 # Python Modes
 
+{download}`Download starter code </week-2-data-structures-and-files/lesson-4-lists-and-files/python-modes.zip>`
+
+
 ```{admonition} Warning
 :class: warning
 

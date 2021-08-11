@@ -1,4 +1,7 @@
 # 🚧 Practice: Area Codes
+
+{download}`Download starter code </week-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-area-codes.zip>`
+
 Write a function called `area_codes` that takes a `list` of `str` as input where each `str` in the list is a phone number and returns the number of unique area codes found in those phone numbers. Each phone number will be of the format `'123-456-7890'` and the area code is the first three characters in the `str` .  
 For example, if we were to call  
 ```text

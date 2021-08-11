@@ -1,4 +1,5 @@
 # 📚 Lesson 22 Reading: Numpy 
+
 ##  Concepts  
 
 In this lesson, you will learn the following concepts:  

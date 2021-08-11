@@ -1,4 +1,5 @@
 # 📚 Lesson 6: CSV Data
+
 ##  Concepts  
 
 In this lesson, you will learn about the following:  

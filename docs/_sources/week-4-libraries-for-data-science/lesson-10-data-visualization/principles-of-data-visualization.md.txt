@@ -1,5 +1,6 @@
 # Principles of Data Visualization
 
+
 ```{admonition} Note
 :class: note
 

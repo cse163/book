@@ -1,4 +1,7 @@
 # 🚧 Practice: Largest Earthquake
+
+{download}`Download starter code </week-2-data-structures-and-files/lesson-6-csv-data/practice-largest-earthquake.zip>`
+
 ##  Data  
 
 For this problem, we will be using a dataset containing information about earthquakes around the world. The dataset looks like the following (but it has more rows).  

@@ -1,4 +1,5 @@
 # Recap
+
 In Lesson 12, we learned about **classes** and **objects** . Here's a quick recap of the terminology that we learned since it will be important to know these terms.  
 -  A     **class**     is a blueprint that can be used to construct     *instances*     of that blueprint. A class defines the     *state*     of the     *object*     and what     *behaviors*     it has. For example, we defined the     `Dog`     class as follows:  
     ```python

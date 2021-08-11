@@ -1,4 +1,5 @@
 # Recap of Machine Learning
+
 We have lightly discussed the topic of machine learning in this course so far. As a reminder, machine learning uses **features** of a dataset and a **learning algorithm** to learn a target concept to **predict the label** for a given example. As a reminder of some terminology we used:  
 -  A     **model**     (created by a learning algorithm), is a concrete set of rules to take an example (maybe from the dataset) and predict the label.  
     -  We might train a         `DecisionTreeClassifier`         on a dataset about surviving the Titanic to create a specific model that can predict survival for data of that type.  

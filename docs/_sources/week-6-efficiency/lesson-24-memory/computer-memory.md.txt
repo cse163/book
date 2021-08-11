@@ -1,5 +1,6 @@
 # Computer Memory
 
+
 ```{admonition} Tip
 :class: tip
 

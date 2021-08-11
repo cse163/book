@@ -1,5 +1,8 @@
 # 🚧 Practice: Pair
 
+{download}`Download starter code </week-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.zip>`
+
+
 ```{admonition} Note
 :class: note
 

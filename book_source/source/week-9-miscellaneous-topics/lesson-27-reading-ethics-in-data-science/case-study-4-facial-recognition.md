@@ -1,4 +1,5 @@
 # Case Study 4: Facial Recognition
+
 ##  Task  
 
 Read this [None](https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html?module=inline) on the use of facial recognition in machine learning.  

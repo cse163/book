@@ -1,4 +1,5 @@
 # 📚 Lesson 8: More Pandas
+
 ##  Concepts  
 
 In this lesson, you will learn the following concepts:  

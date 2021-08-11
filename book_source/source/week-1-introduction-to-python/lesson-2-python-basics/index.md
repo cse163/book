@@ -1,4 +1,5 @@
 # 📚 Lesson 2: Python Basics
+
 ###  Concepts <br />   
 
 In this lesson, you will learn about the following Python constructs: <br />   

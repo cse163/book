@@ -1,4 +1,5 @@
 # Data Structure Time Complexity
+
 Back in Lesson 16, we introduced the notion of run-time complexity and talked about this in the context of various complexities of the data structures we learned. Below, we introduce all the important operations for each data structure we learned with a short justification for why.  
 ##  List  
 

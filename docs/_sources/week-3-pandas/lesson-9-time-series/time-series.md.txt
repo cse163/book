@@ -1,4 +1,5 @@
 # Time Series
+
 **Time series** data is data that represents a sequence of events separated by time. This is generally more than just having a column for "date". We think about time series data being a dataset that's **indexed** by the time each event happened.  
 For example, here is a time series dataset showing the number of bikers over Seattle's Fremont Bridge.  
 ```python

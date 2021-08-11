@@ -1,4 +1,7 @@
 # 🚧Practice: Population in South America
+
+{download}`Download starter code </week-7-geospatial-data/lesson-18-geospatial-data-misc-python/practice-population-in-south-america.zip>`
+
 Write a program in `main.py` that reads in the world dataset shown in an earlier slide and makes a plot of just the countries in South America colored by their population (using the column `'POP_EST'` ). The plot should have a legend explaining the colors. Save the plot to a file called `south_america.png` .  
 Some notes on your implementation:  
 -  Recall that a     `GeoDataFrame`     is just like a     `DataFrame`     so you can filter down to just the rows for countries in South America (where the     `'CONTINENT'`     column has value     `'South America'`     ).  

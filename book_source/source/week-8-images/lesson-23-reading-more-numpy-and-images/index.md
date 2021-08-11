@@ -1,4 +1,5 @@
 # 📚 Lesson 23 Reading: More Numpy and Images
+
 ##  Concepts  
 
 In this lesson, you will learn the following concepts:  

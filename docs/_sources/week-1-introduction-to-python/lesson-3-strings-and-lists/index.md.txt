@@ -1,4 +1,5 @@
 # 📚 Lesson 3: Strings and Lists
+
 ##  Concepts  
 
 In this lesson, you will learn about the following Python constructs:  

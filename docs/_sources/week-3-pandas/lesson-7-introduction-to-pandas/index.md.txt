@@ -1,4 +1,5 @@
 # 📚 Lesson 7: Introduction to Pandas
+
 ##  Context for Week  
 
 Last week we started to see how to process these CSV files. We used the list of dictionaries representation to help us answer these questions.  

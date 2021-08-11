@@ -1,4 +1,5 @@
 # Pandas Recap
+
 See, that was a ton of syntax! Don't worry though, you'll get plenty of practice with `pandas` over time, this is just your first day! For example, once I started getting better with `pandas` , I stopped using spreadsheets to calculate grades for courses because I got so much better at writing short little programs to compute the values I wanted!  
 On this page, we have a "cheat-sheet" version of everything on the last slide. You'll likely find it to be a good reference! However, we still recommend trying to turn this into something of your own making to help solidify the concepts and help you build up a stronger mental model!  
 ```text

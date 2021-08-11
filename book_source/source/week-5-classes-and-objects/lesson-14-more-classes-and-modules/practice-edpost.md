@@ -1,4 +1,7 @@
 # 🚧 Practice: EdPost
+
+{download}`Download starter code </week-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-edpost.zip>`
+
 Write a class called `EdPost` that represents a question on the message board. The `EdPost` class should have an initializer that takes an argument for each of the 3 fields your class should have.  
 -  The name of the post (a     `str`     ) stored in a field     `title`     . This parameter should not have a default value.  
 -  The topic of the post (a     `str`     ) stored in a field     `tag`     . This field should have the default value     `General`     .  

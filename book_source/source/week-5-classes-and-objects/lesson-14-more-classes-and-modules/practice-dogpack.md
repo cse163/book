@@ -1,4 +1,7 @@
 # 🚧 Practice: DogPack
+
+{download}`Download starter code </week-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-dogpack.zip>`
+
 This practice problem has two parts. The first modifies the `Dog` class we worked on in the lesson last time and the second writes a new class called `DogPack` that stores multiple `Dog` s.  
 All the files have been created in the workspace for you. You can navigate to the files with the tabs at the top or the "Toggle Tree View" at the top-left of the editor. To run the program run `python main.py` in the terminal.  
 ##  Problem 0: Modify `Dog`   

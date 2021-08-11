@@ -1,4 +1,5 @@
 # Missing Data
+
 [None](https://github.com/Quartz/bad-data-guide) . It might be in a format that you will have trouble reading from or it might have errors in the data! One of the most common types of errors in datasets is **missing data** , where a row might have some of its column entries just missing!  
 For example, we have a dataset of fMRI (brain scan) data that, like most real-life datasets, is a little messy. The dataset has the following columns:  
 -  `subject`     : An identifier for the person being measured  

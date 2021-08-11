@@ -1,4 +1,7 @@
 # 🚧 Practice: Count Unique Words
+
+{download}`Download starter code </week-2-data-structures-and-files/lesson-4-lists-and-files/practice-count-unique-words.zip>`
+
 Write a method called `count_unique_words` that takes a file name and returns the number of unique tokens that appear in that file.  Remember a token is a sequence of characters separated by spaces.  
 For example, suppose we had a file called `song.txt` had the following contents.  
 ```text

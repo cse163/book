@@ -1,4 +1,5 @@
 # Case Study 0: "Gaydar"
+
 ##  Task  
 
 Read [None](https://medium.com/@blaisea/do-algorithms-reveal-sexual-orientation-or-just-expose-our-stereotypes-d998fafdf477) and then respond to the following questions. One of the article's authors is Blaise Agüera y Arcas, who leads Google’s AI group in Seattle and sometimes teaches a [None](https://intelligentmachinerycourse.com/) .  

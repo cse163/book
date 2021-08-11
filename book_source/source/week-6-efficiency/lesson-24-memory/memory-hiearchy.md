@@ -1,5 +1,6 @@
 # Memory Hiearchy
 
+
 ```{admonition} Tip
 :class: tip
 

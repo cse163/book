@@ -1,4 +1,5 @@
 # 📚 Lesson 26 Reading: Hashing
+
 ##  This is the last lesson worth points this quarter!  
 
 ##  Concepts  

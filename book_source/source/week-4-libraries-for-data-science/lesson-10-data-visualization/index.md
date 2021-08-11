@@ -1,4 +1,5 @@
 # 📚 Lesson 10: Data Visualization
+
 ##  Concepts  
 
 In this lesson, you will learn the following concepts:  

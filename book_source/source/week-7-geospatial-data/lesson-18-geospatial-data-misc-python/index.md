@@ -1,4 +1,5 @@
 # 📚 Lesson 18: Geospatial Data +  Misc Python
+
 ##  Concepts  
 
 In this lesson, you will learn the following concepts:  

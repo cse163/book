@@ -1,4 +1,7 @@
 # 🚧 Practice: Duckie Hat 🦆🎩
+
+{download}`Download starter code </week-8-images/lesson-22-reading-numpy/practice-duckie-hat.zip>`
+
 Write a function called `duckie_hat` that takes an RGB image of a duck (a `numpy.array` with shape `(Height, Width, Color Channels)` ) and returns a new image with the same pixels but modified so the duck is now wearing a fancy green top-hat.  
 Our algorithm won't do anything fancy like detect where the duck is. Instead, we will just hard-code where the hat should be.  
 You should make a hat but setting all the pixels in the following regions to be fully green and the other channels off. The locations below are in terms of `(0, 0)` being the top left and the first dimension going down the image and the second dimension going to the right.  

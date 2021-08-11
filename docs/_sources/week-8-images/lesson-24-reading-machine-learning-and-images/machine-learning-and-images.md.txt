@@ -1,4 +1,5 @@
 # Machine Learning and Images
+
 In the recap, we mentioned how when we first learned about ML, we talked about it in the context of CSV data where it is easier to define what the features used by the model should be. This doesn't necessarily have to be the case, features can be generic to be any number you compute from your data!  
 When working with images, it's a little less clear on how to define these features. Suppose we wanted to train a classifier to tell dog images from cat images. We would somehow need to derive features from the image that would be useful in predicting if the image contains a dog or a cat. Maybe we could try writing code to produce features like `LikesPeople, LooksFriendly, FloppyEars` from an image, then we could plug that into something like a `DecisionTreeClassifier` and we would be done!  
 As you might be able to tell though, it is not clear at all how we could begin to write code to take pixels from an image and compute these high-level features! So instead, we will rethink our approach to let the machine learning algorithm try to learn how to predict the label from the image itself!  

@@ -1,5 +1,6 @@
 # 📚 Lesson 4: Lists and Files
 
+
 ```{admonition} Note
 :class: note
 

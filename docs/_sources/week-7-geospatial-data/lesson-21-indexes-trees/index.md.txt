@@ -1,4 +1,5 @@
 # 📚 Lesson 21: Indexes / Trees 🌳
+
 ##  Concepts  
 
 In this lesson, you will learn the following concepts:  

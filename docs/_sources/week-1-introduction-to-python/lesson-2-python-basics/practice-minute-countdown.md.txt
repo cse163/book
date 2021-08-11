@@ -1,4 +1,7 @@
 # 🚧 Practice: Minute Countdown
+
+{download}`Download starter code </week-1-introduction-to-python/lesson-2-python-basics/practice-minute-countdown.zip>`
+
 Write a program that counts down from a minute in decrements of 10 seconds using a `for` loop. The output of the program should be the following:  
 ```text
 One minute countdown

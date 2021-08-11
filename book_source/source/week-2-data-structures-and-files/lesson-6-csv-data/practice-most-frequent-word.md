@@ -1,5 +1,8 @@
 # 🚧 Practice: Most Frequent Word
 
+{download}`Download starter code </week-2-data-structures-and-files/lesson-6-csv-data/practice-most-frequent-word.zip>`
+
+
 ```{admonition} Note
 :class: note
 

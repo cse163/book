@@ -1,4 +1,7 @@
 # 🚧 Practice: Fibonacci
+
+{download}`Download starter code </week-1-introduction-to-python/lesson-2-python-basics/practice-fibonacci.zip>`
+
 Write a function named `fibonacci` to compute the first Fibonacci number larger than a given value `n` .  
 The Fibonacci Sequence is the following sequence of numbers: 1, 1, 2, 3, 5, 8, 13, ... The sequence starts with 1 and 1. The next number in the sequence is the sum of the previous two.  
 Your function should **return** the first Fibonacci number in the sequence that exceeds the given value `n` . For example, the following snippet that uses your function shows the output in the comments next to each line.  

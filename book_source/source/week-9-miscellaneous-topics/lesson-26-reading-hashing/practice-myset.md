@@ -1,4 +1,7 @@
 # 🚧 Practice: MySet
+
+{download}`Download starter code </week-9-miscellaneous-topics/lesson-26-reading-hashing/practice-myset.zip>`
+
 ##  Part 1: `MySet`   
 
 In the file `my_set.py` , write a class named `MySet` that implements something like the `set` implemented with a hash table that we have been describing in this reading. `MySet` will be simpler than the full hash table we described in the reading and will be more similar to the first version described in the [None](https://edstem.org/us/courses/3016/lessons/7903/slides/38827) .  

@@ -1,4 +1,5 @@
 # A Search Engine
+
 In Take-home assessment 4, you will be implementing a search engine like Google to help find documents based on search queries. This slide will introduce you to some of the underlying ideas we will need to implement a search engine. We will see how all these pieces fit together to build a search engine in lecture and on your assignment!  
 The goal of a search engine is to take a search query and return the set of the most relevant documents from a set of documents. The whole set of documents is generally called a **corpus** .  
 ##  Organizing with an Index  

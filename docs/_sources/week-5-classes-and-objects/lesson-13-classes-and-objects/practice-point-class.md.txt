@@ -1,4 +1,7 @@
 # 🚧 Practice: Point class
+
+{download}`Download starter code </week-5-classes-and-objects/lesson-13-classes-and-objects/practice-point-class.zip>`
+
 Define a class `Point` that represents a 2D point `(x, y)` in the file `point.py` .  
 The `Point` class should have fields for the `x` and `y` coordinates and should have the following methods.  
 -  An initializer that takes the     `x`     and     `y`     values.  

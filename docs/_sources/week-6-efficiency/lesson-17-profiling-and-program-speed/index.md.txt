@@ -1,4 +1,5 @@
 # 📚 Lesson 17: Profiling and Program Speed 
+
 ##  Concepts  
 
 In this lesson, you will learn the following concepts:  

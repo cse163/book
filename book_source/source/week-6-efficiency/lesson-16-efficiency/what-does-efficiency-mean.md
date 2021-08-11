@@ -1,4 +1,5 @@
 # What Does Efficiency Mean?
+
 Programmers spend a lot of time talking about "efficiency", but what does that actually mean?  
 Talking about the efficiency of a program requires coming up with some way to measure how much of a particular resource it uses in order to run. This is a very vague statement because a program could be "efficient" in one of many ways depending on which computing resource you care about. Some common examples:  
 -  **Computer Time:**     How much time it takes the program to run (e.g. microseconds).  

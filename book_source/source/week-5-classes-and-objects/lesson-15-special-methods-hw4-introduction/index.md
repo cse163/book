@@ -1,5 +1,6 @@
 # 📚 Lesson 15: Special Methods + HW4 Introduction
 
+
 ```{admonition} Note
 :class: note
 

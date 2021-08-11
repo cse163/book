@@ -1,5 +1,8 @@
 # 🚧 Practice: Build a List
 
+{download}`Download starter code </week-2-data-structures-and-files/lesson-4-lists-and-files/practice-build-a-list.zip>`
+
+
 ```{admonition} Note
 :class: note
 

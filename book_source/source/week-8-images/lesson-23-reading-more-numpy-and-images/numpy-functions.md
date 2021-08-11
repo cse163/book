@@ -1,4 +1,5 @@
 # numpy functions
+
 Consider the case where you have a `numpy.array` and want to find the sums of the values. One way to do this is to write a loop over the array since arrays support iteration and it also supports the `len` function. For example, you could write this solution in two ways:  
 ```python
 import numpy as np

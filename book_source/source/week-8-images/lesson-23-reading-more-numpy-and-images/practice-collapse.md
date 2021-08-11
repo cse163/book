@@ -1,4 +1,7 @@
 # 🚧 Practice: Collapse
+
+{download}`Download starter code </week-8-images/lesson-23-reading-more-numpy-and-images/practice-collapse.zip>`
+
 Write a function called `collapse` that takes a **grayscale**  **image** as a parameter and returns the result of "collapsing" each row down to a single column that represents the sum of all the values in that row. The input shape of the image will be `(height, width)` and your return shape should be a `nump.array` with shape `(height, 1)` .  
 Consider the input image is represented by the `numpy.array` named `a` with shape `(3, 4)`   
 ```text

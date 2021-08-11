@@ -1,4 +1,5 @@
 # Recap: Pandas
+
 In Lesson 8, we introduced a new **library** named `pandas` . Recall that a library is some code someone else wrote and packaged up for us to use. `pandas` is a very popular library used by data scientists to process tabular data (i.e. data that comes from a spreadsheet).  
 In the lecture, we saw the Earthquakes dataset stored in `earthquakes.csv` . To read that CSV into `pandas` , we would run the code:  
 ```python

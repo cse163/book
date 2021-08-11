@@ -1,4 +1,7 @@
 # 🚧 Practice: Population Maps
+
+{download}`Download starter code </week-7-geospatial-data/lesson-20-dissolve-join/practice-population-maps.zip>`
+
 Write a program in `main.py` that reads in the world dataset and makes a plot containing three axes in one figure. The top-most plot should plot the population (column `POP_EST` ) by country (the original data format). The middle plot should plot the population aggregated by the sub-region (column `SUBREGION` ).  The last plot should plot the population aggregated by the continent (column `CONTINENT` ).  
 The final result should look like the one below.  
 ```{image} https://static.us.edusercontent.com/files/vl5wN71vcxzGJULdLyYAZ9tu

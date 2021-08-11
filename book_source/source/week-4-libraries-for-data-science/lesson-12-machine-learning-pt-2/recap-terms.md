@@ -1,4 +1,5 @@
 # Recap Terms
+
 ##  Recap  
 
 Last time we learned a lot about the basic terminology and ideas from Machine Learning! We learned the following bolded terms. There were some terms that appear below that we didn't bold last time since they didn't appear in the first part of the reading. They are still useful to know.  
