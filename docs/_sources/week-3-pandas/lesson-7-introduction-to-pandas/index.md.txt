@@ -35,5 +35,7 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 
 imports
 pandas
+practicereading-pandas-tutorial/PandasTutorial
 pandas-recap
+practice-earthquakes/PandasTutorial
 ```

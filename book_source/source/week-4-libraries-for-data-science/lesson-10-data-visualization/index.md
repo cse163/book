@@ -29,6 +29,7 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 
 default-parameters
 missing-data
+data-visualization/DataViz
 principles-of-data-visualization
 practice-plotting-1
 practice-plotting-2

@@ -32,6 +32,7 @@ recap-lists
 list-comprehensions
 practice-build-a-list-comprehension
 tuple
+sets-set/SetDemo
 dictionaries-dict
 practice-area-codes
 practice-count-words

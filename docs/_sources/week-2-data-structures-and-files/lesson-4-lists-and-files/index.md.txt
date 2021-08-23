@@ -37,6 +37,7 @@ file-processing
 advanced-lists
 file-paths
 python-modes
+jupyter-notebooks/DemoNotebook
 practice-build-a-list
 practice-filter-long-lines
 practice-count-unique-words

@@ -26,6 +26,7 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 
 recap
 numpy-functions
+vectorization/Untitled
 convolutions
 why-convolutions
 practice-collapse

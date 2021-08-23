@@ -25,5 +25,7 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 :caption: Contents
 
 introduction
+machine-learning-code/MachineLearning
 understanding-decision-trees
+practice-coding-machine-learning/MLforWeather
 ```

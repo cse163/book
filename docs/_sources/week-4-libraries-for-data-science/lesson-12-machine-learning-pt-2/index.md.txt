@@ -27,5 +27,7 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 :caption: Contents
 
 recap-terms
+the-ml-pipeline-categorical-data-and-assessing-performance/MachineLearning
 when-to-not-use-ml
+practice-coding-machine-learning/MLforMushrooms
 ```

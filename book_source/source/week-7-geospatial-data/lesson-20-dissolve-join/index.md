@@ -28,5 +28,6 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 dissolve
 joins
 join-types
+hurricane-florence/HurricanFlorence
 practice-population-maps
 ```

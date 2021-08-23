@@ -29,4 +29,6 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 missing-data
 sorting-and-top-k
 time-series
+time-series-2/TimeSeries
+practice-time-series/TimeSeriesPractice
 ```

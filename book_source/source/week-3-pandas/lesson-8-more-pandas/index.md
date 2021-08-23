@@ -26,6 +26,9 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 :caption: Contents
 
 recap-pandas
+groupby/GroupByExample
+apply/ApplyExample
 keyword-arguments
 sorting-and-top-k
+practice-more-pandas/PandasPractice
 ```
