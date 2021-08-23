@@ -61,7 +61,7 @@ html_title = project
 html_logo = "_static/logo.png"
 
 # -- Configuring BookTheme -------------------------------------------------
-jupyter_execute_notebooks = "cache"
+jupyter_execute_notebooks = "off"
 
 html_theme_options = {
     "theme_dev_mode": True,

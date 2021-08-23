@@ -1,6 +1,8 @@
+import json
 import os
 import pathlib
 import re
+import shutil
 import unicodedata
 import xml.etree.ElementTree as ET
 import zipfile
@@ -362,6 +364,44 @@ def main():
                             input_file_xml,
                             sub_heading_text=sub_heading_text,
                         )
+                    elif slide["type"] == "jupyter":
+                        # Start by getting the ID for this slide by getting the name of the .ipynb
+                        # file in this scaffold.
+                        scaffold_path = os.path.join(
+                            LESSONS_DIR, lesson["id"], slide["id"], "scaffold"
+                        )
+
+                        notebook_name = [
+                            f for f in os.listdir(scaffold_path) if f.endswith(".ipynb")
+                        ]
+                        assert len(notebook_name) == 1, notebook_name
+                        notebook_name = notebook_name[0]
+
+                        # Note that we don't want the .ipynb in the slide_id
+                        slide_id = os.path.join(
+                            slide["id"], pathlib.Path(notebook_name).stem
+                        )
+                        slide_ids.append(slide_id)
+
+                        # Make a copy of the scaffold folder in a folder with the slide name
+                        output_path = os.path.join(lesson_path, slide["id"])
+                        shutil.copytree(scaffold_path, output_path, dirs_exist_ok=True)
+
+                        # Need to add a title cell at the top of the notebook for the build
+                        output_notebook_path = os.path.join(output_path, notebook_name)
+                        with open(output_notebook_path, "r") as f:
+                            notebook = json.load(f)
+                        cells = notebook["cells"]
+                        cells.insert(
+                            0,
+                            {
+                                "cell_type": "markdown",
+                                "metadata": {},
+                                "source": [f"# {slide['title']}"],
+                            },
+                        )
+                        with open(output_notebook_path, "w") as f:
+                            json.dump(notebook, f)
 
                 # For the main page of the lesson, save a table of contents
                 lesson_index_file = os.path.join(lesson_path, "index.md")
