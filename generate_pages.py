@@ -330,7 +330,7 @@ def save_questions(output_file_md, questions):
                 input_str="Write your answer down in your own space.",
                 mode="a",
             )
-        elif q_type == "multiple-choice":
+        elif q_type in ["multiple-choice", "reorder"]:
             save_lesson_slide(
                 output_file_md,
                 subtitle=q_title,
@@ -339,25 +339,35 @@ def save_questions(output_file_md, questions):
             )
             write_task_header()
 
-            if question["data"]["multiple_selection"]:
-                task_text = "Select 0 or more options. Write your answer down in your own space."
-            else:
-                task_text = (
-                    "Select one option. Write your answer down in your own space."
-                )
+            if q_type == "multiple-choice":
+                items_property = "answers"
+                if question["data"]["multiple_selection"]:
+                    task_text = "Select 0 or more options. Write your answer down in your own space."
+                else:
+                    task_text = (
+                        "Select one option. Write your answer down in your own space."
+                    )
+            else:  # q_type == "reorder"
+                items_property = "items"
+                task_text = "Reorder the following options. Write your answer down in your own space."
 
             save_lesson_slide(
                 output_file_md, input_str=task_text, mode="a",
             )
 
             # Write options
-            for j, option in enumerate(question["data"]["answers"]):
+            for j, option in enumerate(question["data"][items_property]):
                 save_lesson_slide(
                     output_file_md, input_str=f"\n\n*❓ Option {j}*\n\n", mode="a",
                 )
-                save_lesson_slide(
-                    output_file_md, input_xml_str=option, mode="a",
-                )
+                if q_type == "multiple-choice":
+                    save_lesson_slide(
+                        output_file_md, input_xml_str=option, mode="a",
+                    )
+                else:  # q_type == "reorder"
+                    save_lesson_slide(
+                        output_file_md, input_str=option, mode="a",
+                    )
 
         else:
             logging.error("Unknown question type: %s (%s)", q_type, output_file_md)
