@@ -203,6 +203,7 @@ class EdStemXMLVisitor:
         self.print_newlines = save_print_newlines
 
         self._print()
+        self._print()
 
     def visit_pre(self, element):
         self._print("```text")
