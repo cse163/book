@@ -309,7 +309,7 @@ def save_lesson_slide(
 
 
 def save_questions(output_file_md, questions):
-    def write_task():
+    def write_task_header():
         save_lesson_slide(
             output_file_md, input_str="\n\n**📝 Your Task**\n\n", mode="a",
         )
@@ -324,12 +324,40 @@ def save_questions(output_file_md, questions):
                 input_xml_str=question["data"]["content"],
                 mode="a",
             )
-            write_task()
+            write_task_header()
             save_lesson_slide(
                 output_file_md,
                 input_str="Write your answer down in your own space.",
                 mode="a",
             )
+        elif q_type == "multiple-choice":
+            save_lesson_slide(
+                output_file_md,
+                subtitle=q_title,
+                input_xml_str=question["data"]["content"],
+                mode="a",
+            )
+            write_task_header()
+
+            if question["data"]["multiple_selection"]:
+                task_text = "Select 0 or more options. Write your answer down in your own space."
+            else:
+                task_text = (
+                    "Select one option. Write your answer down in your own space."
+                )
+
+            save_lesson_slide(
+                output_file_md, input_str=task_text, mode="a",
+            )
+
+            # Write options
+            for j, option in enumerate(question["data"]["answers"]):
+                save_lesson_slide(
+                    output_file_md, input_str=f"\n\n*❓ Option {j}*\n\n", mode="a",
+                )
+                save_lesson_slide(
+                    output_file_md, input_xml_str=option, mode="a",
+                )
 
         else:
             logging.error("Unknown question type: %s (%s)", q_type, output_file_md)
