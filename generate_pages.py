@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import pathlib
 import re
@@ -267,17 +268,22 @@ def write_toc(out, ref_names, max_depth=2, caption="Contents"):
     out.write("```")
 
 
-def save_lesson_slide(title, output_file_md, input_file_xml, sub_heading_text=""):
+def save_lesson_slide(
+    title, output_file_md, input_file_xml, sub_heading_text="", mode="w"
+):
 
-    with open(os.path.join(output_file_md), "w") as f:
+    with open(os.path.join(output_file_md), mode) as f:
         f.write(f"# {title}\n\n")
 
         if sub_heading_text:
             f.write(f"{sub_heading_text}\n\n")
 
-        tree = ET.parse(input_file_xml)
-        visitor = EdStemXMLVisitor(tree, f, starting_heading_level=1)
-        visitor.start()
+        try:
+            tree = ET.parse(input_file_xml)
+            visitor = EdStemXMLVisitor(tree, f, starting_heading_level=1)
+            visitor.start()
+        except ET.ParseError:
+            logging.warning(f"XML Parse Error {input_file_xml}")
 
 
 def make_scaffold_zip(scaffold_path, output_zip_path, output_root):
@@ -402,6 +408,17 @@ def main():
                         )
                         with open(output_notebook_path, "w") as f:
                             json.dump(notebook, f)
+                    elif slide["type"] == "quiz":
+                        slide_ids.append(slide["id"])
+                        title = slide["title"]
+
+                        input_file_xml = os.path.join(
+                            LESSONS_DIR, lesson["id"], slide["id"], "passage"
+                        )
+                        output_file_md = os.path.join(lesson_path, slide["id"] + ".md")
+
+                        print(input_file_xml)
+                        save_lesson_slide(title, output_file_md, input_file_xml)
 
                 # For the main page of the lesson, save a table of contents
                 lesson_index_file = os.path.join(lesson_path, "index.md")
