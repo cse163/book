@@ -480,7 +480,7 @@ def main():
                         f.write("## Table of Contents\n")
                         f.write("\n")
 
-                        write_toc(f, slide_ids)
+                        write_toc(f, slide_ids, max_depth=1)
 
         # Write a table of contents for the module page
         with open(os.path.join(module_path, "index.md"), "w") as f:
