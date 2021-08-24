@@ -342,7 +342,7 @@ def save_questions(output_file_md, questions):
             if q_type == "multiple-choice":
                 items_property = "answers"
                 if question["data"]["multiple_selection"]:
-                    task_text = "Select 0 or more options. Write your answer down in your own space."
+                    task_text = "Select one or more options. Write your answer down in your own space."
                 else:
                     task_text = (
                         "Select one option. Write your answer down in your own space."
