@@ -8,7 +8,9 @@
 ##  New Data  
 
 For this slide, let's change the data up a bit to give you a sense of how generic this work in `pandas` can be. We have been using examples with earthquake data that came from a CSV format, but many datasets provide CSV formats of their data.  
+
 In this slide, we will use an example from fMRI (e.g., brain scans) data to show activation in various regions of the brain. Don't worry, you don't need to actually understand how brains work to follow along with this example, but we did want to show how all of these examples are just stand-ins for basically anything you want to compute (assuming it's in a CSV). Note that this dataset has a special value called `NaN` in it that we will talk more about next week!  
+
 ```python
 import pandas as pd
 
@@ -19,6 +21,7 @@ print(df)
 ##  Sorting  
 
 Another very common operation in `pandas` needs you to sort the data. This could either be for presentation reasons or you might be interested in finding the "top 10" rows based on some criteria. `pandas` makes sorting really easy!  
+
 ```python
 import pandas as pd
 
@@ -28,6 +31,7 @@ print(df.sort_values('signal'))
 ```
 
 Notice that this prints out all the data where the rows sorted by `'signal'` . Notice that the index of each row stays the same meaning the index is no longer in sorted-order!  
+
 
 ```{admonition} Warning
 :class: warning
@@ -53,6 +57,7 @@ If you want to keep the sorting, you need to save the result in a variable (i.e.
 ##  Top-k  
 
 Instead of actually sorting the data, you might want to find the 10 highest signals in the data. `pandas` also provides a way to do this with the `nlargest` function.  
+
 ```python
 import pandas as pd
 
@@ -63,3 +68,4 @@ print(df.nlargest(10, 'signal'))
 ```
 
  
+

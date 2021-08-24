@@ -6,14 +6,22 @@
 </div>
 
 [None](https://github.com/Quartz/bad-data-guide) . It might be in a format that you will have trouble reading from or it might have errors in the data! One of the most common types of errors in datasets is **missing data** , where a row might have some of its column entries just missing!  
+
 For example, we have a dataset of fMRI (brain scan) data that, like most real-life datasets, is a little messy. The dataset has the following columns:  
+
 -  `subject`     : An identifier for the person being measured  
+
 -  `timepoint`     : The time in the study  
+
 -  `event`     : What type of stimulus the subject was given  
+
 -  `region`     : Where the fMRI measurement was taken  
+
 -  `signal`     : The measurement value  
 
+
 If we tried to load it into a `DataFrame` , we would see the following.  
+
 ```python
 import pandas as pd
 
@@ -22,17 +30,26 @@ print(df.tail())  # Prints the last rows
 ```
 
 Notice that row 1059 has this weird value `NaN` for both the timepoint and the signal!  
+
 `NaN` , or "Not a Number", is a common value in Python to represent the absence of a data-value. You should think of it a lot like `None` but has some slightly different properties that make it a little more usable in some numerical processing applications (will be explained in the next section).  
+
 The fact that we see `NaN` values in our data means the dataset is messy and we will have to deal with it. There is a myriad of ways to try to handle missing data, some more complicated than others. For right now, we will focus on how to detect missing data in the dataset and how to filter it out!  
+
 By default most `pandas` operations just ignore missing values so this isn't a problem if you are just in the `pandas` world. However, we will see this next week that other libraries for data visualization and machine learning will crash if we give them datasets that contain missing values, so we should learn how to deal with that now.  
+
 ##  `NaN` vs. `None`   
 
 `NaN` is some kind of numerical equivalent to `None` . It represents a number that is, in some sense, invalid or missing.  
+
 In Python, `NaN` operates by two rules:  
+
 -  Any arithmetic operation on     `NaN`     , evaluates to     `NaN`   
+
 -  Any boolean comparison on     `NaN`     , evaluates to     `False`   
 
+
 We can access the value `NaN` most easily by using the library `numpy` (commonly imported as `np` ). We will learn more about `numpy` in Week 7!  
+
 ```python
 import numpy as np
 
@@ -44,7 +61,9 @@ print(np.nan == np.nan)  # False
 ```
 
 That last line is pretty surprising since we compared `np.nan` to `np.nan` . Remember though, one of the rules of `NaN` is that every boolean comparison on `NaN` is `False` !  
+
 How is `NaN` different than `None` ? `None` doesn't allow any numeric operations on it, it will cause an error!  
+
 ```python
 print(1 + None)
 ```
@@ -52,6 +71,7 @@ print(1 + None)
 ##  `NaN` in `pandas`   
 
 So now that we know what this magic-value `NaN` is in our dataset. Let's see how to handle it in `pandas` . Let's start by taking the average of the `'signal'` column (that contains `NaN` values).  
+
 ```python
 import pandas as pd
 
@@ -60,16 +80,24 @@ print(df['signal'].mean())
 ```
 
 Luckily for us, `pandas` has some logic built into it to skip `NaN` values for many of the simple operations like `mean` ! However, this won't always work so we will need some special `pandas` methods for finding and removing `NaN` (although, they have a weird naming convention).  
+
 -  To detect if there are missing values:  
+
     -  `isnull()`         returns a         `bool`          `Series`         , where         `True`         marks         `NaN`         values  
+
     -  `notnull()`         returns a         `bool`          `Series`         , where         `True`         marks non-         `NaN`         values.  
 
+
 -  To return a new     `DataFrame`     with     `NaN`     removed:  
+
     -  `dropna()`         removes all rows with missing data.  
+
     -  `fillna(val)`         replaces missing data with the given value  
 
 
+
 The following code block shows how these operations work  
+
 ```python
 import pandas as pd
 
@@ -115,3 +143,4 @@ so the result stays.
 ##  Warning about Missing Data  
 
 On take-home assessment 3, we will ask for you to deal with missing data. Think very carefully about which data you want to remove and how you will remove it. A common bug students run into involves removing too many rows or too few rows that have missing data for the relevant columns.  
+

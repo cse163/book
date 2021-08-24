@@ -20,10 +20,14 @@ In addition to these readings, I will also be recording short videos of me walki
 </div>
 
 In the first lesson, we introduced the purpose and place of this course and introduced a lot of the important points from the [None](https://courses.cs.washington.edu/courses/cse163/21wi/syllabus.html) .  
+
 Recall that without the exams, we have a little more time this quarter, so we are purposefully trying to slow down the pace of the beginning a little. Many students have reported this part of the quarter is quite difficult to adjust to a new language.  
+
 Now, this doesn't mean the first two weeks will be easy! You will be learning a lot of new tools and many of you are learning Python for the first time! But our hope is that this deliberate practice we are setting up will make this transition easier!  
+
 <hr>
 In this lesson, we will learn many of the basics constructs for Python that can be used to formulate almost any program.  
+
 
 ```{admonition} Note
 :class: note
@@ -48,3 +52,4 @@ If you took CSE 160: This week and next will be lots of reviews. We promise that
 
 
  
+

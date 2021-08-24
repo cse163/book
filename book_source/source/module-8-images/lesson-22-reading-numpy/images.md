@@ -6,9 +6,11 @@
 </div>
 
 One of the applications of `numpy` we discussed earlier was representing image data. We will discuss analyzing images and manipulating them for the rest of the week. While we will show some code, the more important bit for today is just the conceptual understanding of how we will represent an image in Python.  
+
 ##  Grayscale Images  
 
 To start, let's consider black-white images, which are commonly called grayscale images. Here is a picture of a grayscale dog.  
+
 ```{image} https://static.us.edusercontent.com/files/2RQnyxXq5iUnDa6sf2jkueIx
 :alt: Grayscale dog
 :width: 347
@@ -16,8 +18,11 @@ To start, let's consider black-white images, which are commonly called grayscale
 ```
 
 From the computer's perspective, we think of images as just a big grid of values called **pixels** . This mirrors how your screen actually displays images! It is a bunch of these pixels that can show a color based on a specified value. For a grayscale image, each pixel needs to know how white or how black it should display.  
+
 Conventionally, we represent each pixel as a number between 0 and 255. 0 is the darkest value possible (black) while 255 is the lightest value possible (white). This means a grayscale image is really just a big 2D array of numbers between 0 and 255!  
+
 You could imagine a low-resolution image (one with very few pixels) would look something like this  
+
 ```{image} https://static.us.edusercontent.com/files/Oa1CYhhty89Z0H7oBrG1bXbA
 :alt: TODO
 :width: 298
@@ -25,6 +30,7 @@ You could imagine a low-resolution image (one with very few pixels) would look s
 ```
 
 In `numpy` , we would represent this with a 2D array with values that look something like the following.  
+
 ```text
 [[0, 100, 175, 120],
  [180, 61, 83, 130],
@@ -33,6 +39,7 @@ In `numpy` , we would represent this with a 2D array with values that look somet
 ````
 
 Where the values are low, we get darker colors, while where the values are high, we get lighter ones. The dog image above is just a really large 2D array of these values 0 to 255!  
+
 
 ```{admonition} Note
 :class: note
@@ -44,7 +51,9 @@ At first glance, 255 might seem like an arbitrary number. So where does it come 
 ##  Grayscale Image Code  
 
 We are going to use a library called `imageio` to help read in an image to a `numpy` array. The following snippet reads in an image, prints some values about it, and then uses a slightly new `matplotlib` feature to plot an image from a `numpy` array. We have to pass in a colormap `cmap` to tell `matplotlib` to plot the values as grayscale since by default, it uses that yellow/purple color scheme (if you take out the parameter, you can see what it does when you run it!).  
+
 The last example in the snippet modifies the array (using slice syntax). Before you open `pic2.png` , what do you think the image will look like?  
+
 ```python
 import imageio
 import matplotlib.pyplot as plt
@@ -72,6 +81,7 @@ plt.savefig('pic2.png')
 ##  Color Images  
 
 Let's brighten up the world a bit and switch to color images. A color image is commonly represented in a format called RGB. RGB stands for "Red, Blue, Green". An RGB image is really just 3 "grayscale" images stacked on top of each other, but each sub-image corresponds to a particular color channel.  
+
 ```{image} https://static.us.edusercontent.com/files/TLxAi1Al9GVLbs0UdcDUOtgi
 :alt: TODO
 :width: 713
@@ -79,8 +89,11 @@ Let's brighten up the world a bit and switch to color images. A color image is c
 ```
 
 So each pixel in an image is really 3 numbers to tell it how much red, blue, and green respectively to output. Your brain does all the real work of combining how much red/blue/green corresponds to a more complex color like the orange/brown color that the cat is.  
+
 In turn, a `numpy` array will just have to represent all 3 colors for each pixel. Each pixel will store 3 values between 0 and 255; a low value means that color channel is more off (black) while a high value means that color channel is more on (red, blue, or green respectively). Since each pixel needs to know 3 numbers, we will represent this as a 3D `numpy.array` !  
+
 Notice, none of our discussion about `numpy` actually limits it to 1D or 2D arrays. We can actually have arbitrarily many dimensions! A color image in `numpy` will commonly be represented as a 3D array with shape `(height, width, 3)` . The last dimension has shape 3 because there will be one dimension for each color channel at that pixel location. Visually this makes it  kind of like a cube that has "depth" 3 (in the z direction).  
+
 ```{image} https://static.us.edusercontent.com/files/byPNZvmbUeMRLOhhm6uo8rS6
 :alt: TODO
 :width: 269
@@ -88,9 +101,11 @@ Notice, none of our discussion about `numpy` actually limits it to 1D or 2D arra
 ```
 
 To index into a color image, you now need to specify 3 values. For example `img[row, col, channel]`   
+
 ##  Color Image Code  
 
 We start with a simple example as we did with grayscale. Notice in this example, the shape printed has 3 dimensions and the third one has shape 3 (for the 3 color channels). As a note, we do not need to specify a `cmap` since `matplotlib` does the right thing for 3D `numpy.array` s by default.  
+
 ```python
 import imageio
 import matplotlib.pyplot as plt
@@ -111,6 +126,7 @@ plt.savefig('pic1.png')
 ```
 
 Now let's do something slightly more complex where we modify the colors in the image. Notice in the last example we had to specify three values to index into the image. The same applies here. As we modify each section, we are setting one of the R, G, or B values respectively.  
+
 ```python
 import imageio
 import matplotlib.pyplot as plt
@@ -134,3 +150,4 @@ plt.savefig('pic1.png')
 ```
 
  
+

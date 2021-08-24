@@ -7,6 +7,7 @@
 
 It turns out that most of the common syntax in Python is really just "special methods" that can be defined in your class. Below is a list of common features you might define when writing your own classes.  
 
+
 | Syntax |    Method Call    |
 |--------|-------------------|
 |x < y   |x.__lt__(y)        |
@@ -17,6 +18,7 @@ It turns out that most of the common syntax in Python is really just "special me
 |x[i] = v|x.__setitem__(i, v)|
 
 For example, here is a toy class that implements all of these methods to prove that they get called when you use the syntax shown above.  
+
 ```python
 class SomeClass:
     def __lt__(self, other):

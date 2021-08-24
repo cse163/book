@@ -9,6 +9,7 @@
 
 Just like with strings, `list` also has methods you can call on a `list` object to observe or modify its values. You can call any of these methods on a `list` object.  
 
+
 |   Function   |                                                                                                  Description                                                                                                   |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |l.append(x)   |Adds x to the end of l                                                                                                                                                                                          |
@@ -22,7 +23,9 @@ Just like with strings, `list` also has methods you can call on a `list` object 
 |l.sort()      |Sorts the values of l                                                                                                                                                                                           |
 
 Notice that `list` s are NOT immutable. This means methods like `append` , `remove` actually modify the list you call the method on.  
+
 The following snippet shows some example of how to call some of these methods  
+
 ```python
 l = []  # Empty list
 l.append(1)
@@ -47,8 +50,11 @@ print('After extend()', l)
 ##  The `in` keyword  
 
 Have you ever asked yourself, "Is the number `2` in this list of numbers?" Probably not, but we'll show you how to do it anyway!  
+
 The idea of checking if a `list` contains a value is incredibly important for applications like trying to find all the distinct values in a collection or only trying to look at values in a subset of all possible values (like looking at all students from WA, OR, or CA).  
+
 There is a special keyword in Python precisely made for doing these contains queries (we also call them **membership queries** ). The following snippet shows the syntax for this keyword. The syntax goes `value in collection` and it is an expression that evaluates to `True/False` which means you could use it in an `if` statement or a `while` loop. You can try editing the code block to see what happens if you searched for the word `'cats'` instead.  
+
 ```python
 words = ['I', 'love', 'dogs']
 if 'dogs' in words:
@@ -58,7 +64,9 @@ else:
 ```
 
 Notice that we didn't say you could only use this on lists. It turns out that you can use it on almost all structures we learn in this class that store values. For example, you can use it on strings too: `'og' in 'dogs'` .  
+
 To see if something is not in a list, you can use `not in` as shown in the next example (it's exactly the opposite of the `in` keyword)  
+
 ```python
 words = ['I', 'love', 'dogs']
 if 'cats' not in words:

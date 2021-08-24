@@ -15,27 +15,38 @@ We put the Practice problems before the Pause and Think to reflect that you migh
 ##  Concepts  
 
 In this lesson, you will learn the following concepts:  
+
 -  Why we need the main method pattern  
+
 -  Equality vs Identity  
+
 -  How to implement classes so they can be used with Python's built-in syntax  
+
 -  Introduction to HW4  
+
 
 ##  Ed Lessons  
 
 As a reminder, our suggested way of doing this lesson follows these steps:  
+
 -  Do the reading on your own time before our class session for today's lesson. Also, respond to the "Pause and Think" question.  
+
 -  Call into the class-session prepared to work in groups on the practice problems. It will help to have your notes (and answers from Pause and Think) ready so you can hit the ground running with your group.  
+
     -  We will periodically summarize high-level ideas of the practice problems in the class session.  
+
     -  TAs will "walk-around" Zoom breakouts so you can ask them any questions!  
 
+
 -  Finish up any of the practice problems afterward!  
+
 
 
 
 ## Table of Contents
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Contents
 
 main-method-pattern
@@ -45,4 +56,6 @@ fancy-syntax
 practice-pair
 a-search-engine
 hw4-introduction
+practice-search-engine
+pause-and-think
 ```

@@ -6,6 +6,7 @@
 </div>
 
 Recall the `Dog` class we wrote in Lesson 13.  
+
 ```python
 class Dog:
     def __init__(self, name):
@@ -25,9 +26,13 @@ print(d1 == d2)
 ```
 
 With our understanding of `is` , the first two examples should hopefully make sense. However, the third example ( `d1 == d2` ) seems a bit surprising! It seems like these two `Dog` s should be considered value equal since they have the exact same state!  
+
 Unfortunately, Python does not automatically know how you want to define value-equality between `Dog` s. By default, Python will treat `==` on your object to mean the same thing as `is` , unless you tell it that value equality should be defined otherwise. In this reading, we will talk about how to tell Python what you want `==` to mean for your object.  
+
 To define what `==` should mean, you have to implement a special method called `__eq__` . `__eq__` will be called whenever you use `==` and its return value ( `True` or `False` ) determines the value of `==` . To be more concrete, `x == y` gets translate to `x.__eq__(y)` behind the scenes!  
+
 So let's define the `__eq__` method so that `Dog` s can be compared. Notice we are defining what equality means here for the `Dog` class. Let's define it that two `Dog` s are equal if they have the same name (notice we could define it however we want, but with only one field, there isn't a lot of options).  
+
 
 ```{admonition} Note
 :class: note
@@ -81,3 +86,4 @@ print(d1 == d2)
 ```
 
 And now this code block prints what we would expect.  
+

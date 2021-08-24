@@ -6,8 +6,11 @@
 </div>
 
 In the last lesson, we talked about fairness. Fairness is a crucial area (albeit a more recent area) being examined by data and computer scientists alike. We saw that defining something abstract like fairness is very difficult, and requires clear statements of values; this emphasized the importance of people in decision-making processes related to fairness in data science.  
+
 Another key area of research applicable to data science is regarding the notion of **privacy** when it comes to user's data. This is both in work defining what privacy even means and mechanisms to make sure definitions of privacy can be met. In this lesson, we will provide an overview of some of the foundational work in the field of defining and ensuring privacy.  
+
 Do note that a lot of these definitions require a rigorous mathematical definition and proof of correctness, that we don't have the background material to tackle. So you'll have to trust me that the guarantees we make are true since we cannot include a proof of their correctness (but proofs do exist).  
+
 
 ```{admonition} Note
 :class: note
@@ -19,27 +22,38 @@ This lesson is heavily inspired by The Ethical Algorithm by Michael Kearns and A
 ##  Concepts  
 
 -  k-anonymity  
+
 -  Differential Privacy  
+
 -  Jittering Numbers (specific example: Laplace Mechanism)  
+
 -  Randomized Response  
+
 
 ##  Ed Lessons  
 
 As a reminder, our suggested way of doing this lesson follows these steps:  
+
 -  Do the reading on your own time before our class session for today's lesson. Do everything up to, and including the "Pause and Think" question before coming to class.  
+
 -  Call into the class-session prepared to work in groups on the practice problems. It will help to have your notes (and answers from Pause and Think) ready so you can hit the ground running with your group.  
+
     -  We will periodically summarize high-level ideas of the practice problems in the class session.  
+
     -  TAs will "walk-around" Zoom breakouts so you can ask them any questions!  
+
 
 -  Finish up any of the practice problems afterward!  
 
+
  
+
 
 
 ## Table of Contents
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Contents
 
 is-your-data-anonymous
@@ -48,4 +62,6 @@ differential-privacy
 jittering-laplace-mechanism
 randomized-response
 recap-and-next-steps-for-differential-privacy
+pause-and-think
+practice-privacy
 ```

@@ -6,6 +6,7 @@
 </div>
 
 In the previous slide, we showed the following code block and asked a couple of questions.  
+
 ```python
 x = 14
 if x < 10:
@@ -19,9 +20,12 @@ else:
 ```
 
  
+
 ##  What values of `x` will enter the `else` block?  
 
 The only values of `x` that can cause the code to enter the `else` block are `10` , `11` , and `12` . Any number less than `10` will enter the first `if` while any number greater than `12` will enter the first `elif` .  
+
 ##  Why is it not possible to enter the second `elif` block?  
 
 Using the logic from the previous question, no value of `x` can satisfy this condition if it doesn't satisfy the previous two. To enter the second `elif` block, `x` would need to be some value `>= 10` , `< 13` , and `>= 20` . No such number exists!  
+

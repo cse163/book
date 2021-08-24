@@ -8,6 +8,7 @@
 ##  Arithmetic Operators  
 
 Just like `pandas` , `numpy` supports convenient usage of mathematical and logical operators on `numpy.array` s. The following code cell shows and explains some of the most common operations.  
+
 ```python
 import numpy as np
 
@@ -45,6 +46,7 @@ print()
 ##  Logical Operators  
 
 You can also use logical operators ( `==` , `<` , `>=` ) to compare elements of `numpy.array` s. You can use `&` (and), `|` (or), and `~` (not) just like `pandas` .  
+
 ```python
 import numpy as np
 
@@ -65,6 +67,7 @@ print()
 ```
 
 Not surprisingly, just like `pandas` , you can use these `numpy.array` s of `bool` values to filter down to certain values in the `numpy.array` !  
+
 ```python
 import numpy as np
 
