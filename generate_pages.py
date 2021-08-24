@@ -219,12 +219,17 @@ class EdStemXMLVisitor:
             "txt": "text",
             "c": "c",
             "py": "python",
+            "py3": "python",
             "console": "console",
         }
         language = element.get("language", "console")
         language = language_translation.get(language, language)
 
-        content = element.find("snippet-file").text
+        snippet_file = element.find("snippet-file")
+        if snippet_file is not None:
+            content = snippet_file.text
+        else:
+            content = element.text
 
         self._print(f"```{language}")
         self._print(content)
@@ -269,21 +274,58 @@ def write_toc(out, ref_names, max_depth=2, caption="Contents"):
 
 
 def save_lesson_slide(
-    title, output_file_md, input_file_xml, sub_heading_text="", mode="w"
+    output_file_md,
+    title=None,
+    input_file_xml=None,
+    input_xml_str=None,
+    input_str=None,
+    subtitle=None,
+    sub_heading_text=None,
+    mode="w",
 ):
 
     with open(os.path.join(output_file_md), mode) as f:
-        f.write(f"# {title}\n\n")
+        if title:
+            f.write(f"# {title}\n\n")
+        elif subtitle:
+            f.write(f"## {subtitle}\n\n")
 
         if sub_heading_text:
             f.write(f"{sub_heading_text}\n\n")
 
-        try:
-            tree = ET.parse(input_file_xml)
-            visitor = EdStemXMLVisitor(tree, f, starting_heading_level=1)
-            visitor.start()
-        except ET.ParseError:
-            logging.warning(f"XML Parse Error {input_file_xml}")
+        if input_file_xml or input_xml_str:
+            try:
+                if input_file_xml:
+                    tree = ET.parse(input_file_xml)
+                else:  # input_xml_str
+                    tree = ET.ElementTree(ET.fromstring(input_xml_str))
+                visitor = EdStemXMLVisitor(tree, f, starting_heading_level=1)
+                visitor.start()
+            except ET.ParseError:
+                logging.warning(f"XML Parse Error {input_file_xml}")
+        elif input_str:
+            f.write(input_str)
+
+
+def save_questions(output_file_md, questions):
+    for question in questions:
+        q_type = question["data"]["type"]
+        q_title = f"Question {question['index']}"
+        if q_type == "short-answer":
+            # print(question["data"]["content"])
+            save_lesson_slide(
+                output_file_md,
+                subtitle=q_title,
+                input_xml_str=question["data"]["content"],
+                mode="a",
+            )
+            save_lesson_slide(
+                output_file_md,
+                input_str="\n\nWrite your answer down in your own space.\n\n",
+                mode="a",
+            )
+        else:
+            logging.error("Unknown question type: %s (%s)", q_type, output_file_md)
 
 
 def make_scaffold_zip(scaffold_path, output_zip_path, output_root):
@@ -340,7 +382,7 @@ def main():
                         input_file_xml = os.path.join(
                             LESSONS_DIR, lesson["id"], slide["id"]
                         )
-                        save_lesson_slide(title, output_file_md, input_file_xml)
+                        save_lesson_slide(output_file_md, title, input_file_xml)
                     elif slide["type"] == "code":
                         slide_file_name = slide["id"] + ".md"
                         title = slide["title"]
@@ -365,8 +407,8 @@ def main():
                         )
 
                         save_lesson_slide(
-                            title,
                             output_file_md,
+                            title,
                             input_file_xml,
                             sub_heading_text=sub_heading_text,
                         )
@@ -412,13 +454,20 @@ def main():
                         slide_ids.append(slide["id"])
                         title = slide["title"]
 
+                        # Read passage file and save it as the start of the quiz page
                         input_file_xml = os.path.join(
                             LESSONS_DIR, lesson["id"], slide["id"], "passage"
                         )
                         output_file_md = os.path.join(lesson_path, slide["id"] + ".md")
 
-                        print(input_file_xml)
-                        save_lesson_slide(title, output_file_md, input_file_xml)
+                        save_lesson_slide(output_file_md, title, input_file_xml)
+
+                        # Read the questions (JSON) file to save each question
+                        input_file_json = os.path.join(
+                            LESSONS_DIR, lesson["id"], slide["id"], "questions"
+                        )
+                        questions = json.load(open(input_file_json, "r"))
+                        save_questions(output_file_md, questions)
 
                 # For the main page of the lesson, save a table of contents
                 lesson_index_file = os.path.join(lesson_path, "index.md")
