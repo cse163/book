@@ -416,6 +416,10 @@ def main():
                 # Process each slide in the lesson
                 slide_ids = []
                 for slide in slide_info:
+                    if "Attending Class?" in slide["title"]:
+                        # Skip these slides, they aren't useful
+                        continue
+
                     if slide["type"] == "document":
                         # Use a special naming convention for the overview slide
                         is_overview = slide["id"] == "overview"
