@@ -1,0 +1,2 @@
+Guido van Rossum (Dutch: [ˈɣido vɑn ˈrɔsʏm, -səm]; born 31 January 1956) is a Dutch programmer best known as the author of the Python programming language, for which he was the "Benevolent dictator for life" (BDFL) until he stepped down from the position in July 2018.[5][6]
+He is currently a member of the Python Steering Council,[7] however he has withdrawn from nominations for the 2020 Python Steering Council.[8]

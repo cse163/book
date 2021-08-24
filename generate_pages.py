@@ -14,6 +14,7 @@ from pytablewriter import MarkdownTableWriter
 
 LESSONS_DIR = "../lesson_data"
 OUTPUT_DIR = "book_source/source/"
+CODE_DIR = "book_source/coding_problems"
 
 IGNORE_LESSONS = [
     "lesson-28-web-scraping-not-worth-credit",
@@ -441,12 +442,30 @@ def main():
                         title = slide["title"]
                         slide_ids.append(slide["id"])
 
-                        # Create a zip file with the scaffold code
+                        # Variables for input/output paths
+                        # Path to scaffold directory
                         scaffold_path = os.path.join(
                             LESSONS_DIR, lesson["id"], slide["id"], "scaffold"
                         )
-                        output_zip = os.path.join(lesson_path, slide["id"] + ".zip")
+
+                        # Path to directory to store copied code files
+                        code_dir_path = os.path.relpath(lesson_path, start=OUTPUT_DIR)
+                        code_dir_path = os.path.join(
+                            CODE_DIR, code_dir_path, slide["id"]
+                        )
+
+                        # Ensure the directory exists
+                        pathlib.Path(code_dir_path).mkdir(parents=True, exist_ok=True)
+
+                        # Make a copy of the starter files in the code directory
+                        shutil.copytree(
+                            scaffold_path, code_dir_path, dirs_exist_ok=True
+                        )
+
+                        """
+                        # Create a zip file with the scaffold code
                         make_scaffold_zip(scaffold_path, output_zip, slide["id"])
+                        """
 
                         # Coding challenges have a passage file with the problem text
                         output_file_md = os.path.join(lesson_path, slide_file_name)
@@ -454,7 +473,9 @@ def main():
                             LESSONS_DIR, lesson["id"], slide["id"], "passage"
                         )
 
-                        zip_url = os.path.relpath(output_zip, OUTPUT_DIR)
+                        # Make URL to download ZIP
+                        zip_url = os.path.join(lesson_path, slide["id"] + ".zip")
+                        zip_url = os.path.relpath(zip_url, start=OUTPUT_DIR)
                         sub_heading_text = (
                             "{download}`Download starter code </" + zip_url + ">`"
                         )
