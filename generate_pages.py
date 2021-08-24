@@ -314,11 +314,10 @@ def save_questions(output_file_md, questions):
             output_file_md, input_str="\n\n**📝 Your Task**\n\n", mode="a",
         )
 
-    for question in questions:
+    for i, question in enumerate(questions):
         q_type = question["data"]["type"]
-        q_title = f"Question {question['index']}"
-        if q_type == "short-answer":
-            # print(question["data"]["content"])
+        q_title = f"Question {i}"
+        if q_type in ["numerical", "short-answer", "true-false", "general"]:
             save_lesson_slide(
                 output_file_md,
                 subtitle=q_title,
