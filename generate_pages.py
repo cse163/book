@@ -309,6 +309,11 @@ def save_lesson_slide(
 
 
 def save_questions(output_file_md, questions):
+    def write_task():
+        save_lesson_slide(
+            output_file_md, input_str="\n\n**📝 Your Task**\n\n", mode="a",
+        )
+
     for question in questions:
         q_type = question["data"]["type"]
         q_title = f"Question {question['index']}"
@@ -320,13 +325,19 @@ def save_questions(output_file_md, questions):
                 input_xml_str=question["data"]["content"],
                 mode="a",
             )
+            write_task()
             save_lesson_slide(
                 output_file_md,
-                input_str="\n\nWrite your answer down in your own space.\n\n",
+                input_str="Write your answer down in your own space.",
                 mode="a",
             )
+
         else:
             logging.error("Unknown question type: %s (%s)", q_type, output_file_md)
+
+        save_lesson_slide(
+            output_file_md, input_str="\n\n", mode="a",
+        )
 
 
 def make_scaffold_zip(scaffold_path, output_zip_path, output_root):
