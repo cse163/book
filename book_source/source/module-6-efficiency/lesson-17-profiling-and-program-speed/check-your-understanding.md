@@ -8,7 +8,7 @@ Consider the task of trying to compute the sum of numbers between `1` and `n` . 
 
 **📝 Your Task**
 
-Select 0 or more options. Write your answer down in your own space.
+Select one or more options. Write your answer down in your own space.
 
 *❓ Option 0*
 
@@ -55,7 +55,7 @@ Select all that apply
 
 **📝 Your Task**
 
-Select 0 or more options. Write your answer down in your own space.
+Select one or more options. Write your answer down in your own space.
 
 *❓ Option 0*
 

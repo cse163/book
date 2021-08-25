@@ -58,7 +58,7 @@ Consider our discussion of a differential privacy mechanism for jittering publis
 
 **📝 Your Task**
 
-Select 0 or more options. Write your answer down in your own space.
+Select one or more options. Write your answer down in your own space.
 
 *❓ Option 0*
 

@@ -81,7 +81,7 @@ Which of the following code blocks helps us answer that question? **Select all t
 
 **📝 Your Task**
 
-Select 0 or more options. Write your answer down in your own space.
+Select one or more options. Write your answer down in your own space.
 
 *❓ Option 0*
 
