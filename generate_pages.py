@@ -21,7 +21,7 @@ IGNORE_LESSONS = [
     "lesson-29-distributed-computing-not-worth-credit",
 ]
 
-REGENERATE_PAGES = False
+REGENERATE_PAGES = True
 REGENERATE_ZIPS = True
 
 
@@ -186,7 +186,6 @@ def make_all_scaffold_zips():
                 output_zip_path = os.path.join(
                     OUTPUT_DIR, module, lesson, slide + ".zip"
                 )
-                print(slide_path, output_zip_path)
                 make_scaffold_zip(slide_path, output_zip_path)
 
 
@@ -229,10 +228,13 @@ def generate_slide(lesson, slide, lesson_path):
         # Make a copy of the starter files in the code directory
         shutil.copytree(scaffold_path, code_dir_path, dirs_exist_ok=True)
 
-        """
-        # Create a zip file with the scaffold code
-        make_scaffold_zip(scaffold_path, output_zip, slide["id"])
-        """
+        # Make a test directory in the scaffold directory for the test-runner
+        test_input_path = os.path.join(
+            LESSONS_DIR, lesson["id"], slide["id"], "testbase"
+        )
+        if os.path.exists(test_input_path):
+            test_output_path = os.path.join(code_dir_path, "test")
+            shutil.copytree(test_input_path, test_output_path, dirs_exist_ok=True)
 
         # Coding challenges have a passage file with the problem text
         output_file_md = os.path.join(lesson_path, slide_file_name)
