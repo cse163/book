@@ -21,6 +21,9 @@ IGNORE_LESSONS = [
     "lesson-29-distributed-computing-not-worth-credit",
 ]
 
+REGENERATE_PAGES = False
+REGENERATE_ZIPS = True
+
 
 def slugify(value, allow_unicode=False):
     """
@@ -157,7 +160,7 @@ def save_questions(output_file_md, questions):
         )
 
 
-def make_scaffold_zip(scaffold_path, output_zip_path, output_root):
+def make_scaffold_zip(scaffold_path, output_zip_path):
     # Source: https://thispointer.com/python-how-to-create-a-zip-archive-from-multiple-files-or-directory/https://thispointer.com/python-how-to-create-a-zip-archive-from-multiple-files-or-directory/
     with zipfile.ZipFile(output_zip_path, "w") as out:
         for folder_name, _, filenames in os.walk(scaffold_path):
@@ -167,6 +170,24 @@ def make_scaffold_zip(scaffold_path, output_zip_path, output_root):
                 # Add file to zip
                 out_path = os.path.relpath(file_path, scaffold_path)
                 out.write(file_path, out_path)
+
+
+def make_all_scaffold_zips():
+    """
+    Makes a zip of each directory in CODE_DIR and copies them
+    to the appropriate place in the book source.
+    """
+    for module in os.listdir(CODE_DIR):
+        module_path = os.path.join(CODE_DIR, module)
+        for lesson in os.listdir(module_path):
+            lesson_path = os.path.join(module_path, lesson)
+            for slide in os.listdir(lesson_path):
+                slide_path = os.path.join(lesson_path, slide)
+                output_zip_path = os.path.join(
+                    OUTPUT_DIR, module, lesson, slide + ".zip"
+                )
+                print(slide_path, output_zip_path)
+                make_scaffold_zip(slide_path, output_zip_path)
 
 
 def generate_slide(lesson, slide, lesson_path):
@@ -328,12 +349,17 @@ def generate_module(module):
 
 
 def main():
-    # Load in modules info
-    with open(os.path.join(LESSONS_DIR, "modules.yaml")) as f:
-        modules = yaml.safe_load(f)
+    if REGENERATE_PAGES:
+        with open(os.path.join(LESSONS_DIR, "modules.yaml")) as f:
+            modules = yaml.safe_load(f)
 
-    for module in modules["modules"]:
-        generate_module(module)
+        for module in modules["modules"]:
+            generate_module(module)
+
+    if REGENERATE_ZIPS:
+        # Zip up all the files in the code folder
+        # Kind of weird but we do this step last so we could potentially make edits and still run this script
+        make_all_scaffold_zips()
 
 
 if __name__ == "__main__":
