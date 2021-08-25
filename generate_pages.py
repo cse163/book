@@ -21,7 +21,7 @@ IGNORE_LESSONS = [
     "lesson-29-distributed-computing-not-worth-credit",
 ]
 
-REGENERATE_PAGES = True
+REGENERATE_PAGES = False
 REGENERATE_ZIPS = True
 
 
