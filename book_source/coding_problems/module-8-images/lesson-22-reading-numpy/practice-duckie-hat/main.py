@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    duck = imageio.imread('/course/lecture-readings/duck.jpg')
+    duck = imageio.imread("duck.jpg")
     duck = duckie_hat(duck)
     plt.imshow(duck)
-    plt.savefig('duckie_hat.png')
+    plt.savefig("duckie_hat.png")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
