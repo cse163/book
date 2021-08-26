@@ -88,7 +88,7 @@ Your friend is working on a data analysis project and notices their program is r
 
 **📝 Your Task**
 
-Select 0 or more options. Write your answer down in your own space.
+Select one or more options. Write your answer down in your own space.
 
 *❓ Option 0*
 

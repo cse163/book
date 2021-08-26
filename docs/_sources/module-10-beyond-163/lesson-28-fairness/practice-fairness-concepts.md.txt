@@ -187,7 +187,7 @@ Using the same plot of possible tradeoffs, between error and unfairness, select 
 
 **📝 Your Task**
 
-Select 0 or more options. Write your answer down in your own space.
+Select one or more options. Write your answer down in your own space.
 
 *❓ Option 0*
 

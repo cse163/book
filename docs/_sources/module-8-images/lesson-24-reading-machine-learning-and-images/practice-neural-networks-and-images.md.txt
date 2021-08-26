@@ -32,7 +32,7 @@ Below we have mixed up a list of the **parameters** and **hyperparameters** of a
 
 **📝 Your Task**
 
-Select 0 or more options. Write your answer down in your own space.
+Select one or more options. Write your answer down in your own space.
 
 *❓ Option 0*
 
