@@ -14,9 +14,7 @@ print(fibonacci(6))  # 8
 print(fibonacci(-2)) # 1
 ```
 
-*
-			Hint: You will want to store the previous two numbers in the sequence in variables, one to keep track of the current number and one to keep track of the previous. The next number is the sum of 
-			*   
+*Hint: You will want to store the previous two numbers in the sequence in variables, one to keep track of the current number and one to keep track of the previous. The next number is the sum of `curr` and `prev`.*   
 
 ##  Requirements  
 

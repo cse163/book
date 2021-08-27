@@ -18,9 +18,7 @@ Done!
 
 *Hint: The lines of numbers should all be produced by your for loop while the first and last lines will appear outside the loop (since they only happen once).*   
 
-*
-			Hint: Think carefully about what the inputs to 
-			*   
+*Hint: Think carefully about what the inputs to `range` will be! The parameter values are allowed to be negative! Ask yourself what the sequence of values need to be and what the values you need to pass to `range` are!*   
 
 ##  Requirements  
 
@@ -31,8 +29,7 @@ Done!
 
 ##  Running / Submitting  
 
--  Remember to run your program you can press the "Run" button or use the terminal by using the command     `python main.py`     (since the name of the file is     `main.py`     ).  
-
--  To submit your program, you need to press the "Mark" button.  
+-  To complete this practice, download the starter code using the link at the top of the reading slide and open it on your local editor.
+-  Remember to run your program you can use the terminal by using the command     `python main.py`     (since the name of the file is     `main.py`     ). 
 
 

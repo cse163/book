@@ -6,21 +6,11 @@
     <iframe src="https://www.loom.com/embed/fdf9802363e74c8db885031d985be706?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-In an Ed reading, there will be multiple Python **snippets** . You should think of each snippet as its own Python file (like Hunter showed at the end of Lecture 1). Recall from the Ed Tutorial, you can (and should!) run each block as you're reading to see its output.  
-
-
-```{admonition} Tip
-:class: tip
-
-You can also (and are encouraged) to edit the block to see what would happen if you tried to change the code in some way! Go out and explore a bit! 😊
-<br />
-
-<br />
-
-*Tip:*
-You can always get the original code back for a reading slide by refreshing the page.
-
-```
+In a lesson reading, there will be multiple Python **snippets** . You should think of each snippet as its own Python file.
+While you cannot run the code blocks in the readings, we encourage you to copy and
+paste them to a Python editor as you are reading to see their output. You can also
+edit the code to see what would happen if you tried to change the code in some way!
+Go out and explore a bit! 😊
 
 ###  Print Statements  
 
@@ -40,9 +30,9 @@ print('Hello', 'world', '!')
 
 A Python program is a series of statements that get executed from top to bottom. Right now the only statement we know is the print statement. But we will learn others!  
 
-In CSE 163, we will ask you to put a little bit of starter code in every program you write. We call this the **main-method pattern** . We can't really motivate why you need to use this quite yet; you'll have to trust us that it is the right thing to do. We introduce this pattern now to get you in the practice of writing from the onset of your Python journey. We will come back in future weeks and actually dive into what this pattern does and why it's necessary.  
+In CSE 163, we will ask you to put a little bit of starter code in every program you write. We call this the **main-method pattern**. We can't really motivate why you need to use this quite yet; you'll have to trust us that it is the right thing to do. We introduce this pattern now to get you in the practice of writing from the onset of your Python journey. We will come back in future weeks and actually dive into what this pattern does and why it's necessary.  
 
-Recall that we could write a Python program in a file (in Ed, it shows we write a Python snippet) to print hello world like the following:  
+Recall that we could write a Python program in a file to print hello world like the following:  
 
 ```python
 print('Hello world')
@@ -70,7 +60,7 @@ if __name__ == '__main__':
     main()
 ```
 
-We'll start you off by providing the main-method pattern as a starter code for your practice problems on Ed, but you will get used to writing these weird symbols by yourself! Again, we promise to explain this later, we just can't right now!  
+We'll start you off by providing the main-method pattern as a starter code for your practice problems in the reading, but you will get used to writing these weird symbols by yourself! Again, we promise to explain this later, we just can't right now!  
 
 
 ```{admonition} Warning
@@ -136,6 +126,7 @@ is determined by the variable itself (e.g.,
 <br />
 
 <br />
+
 Another way of phrasing this, is that it doesn't make sense to think of Python variables as having types. A variable in Python is just a box to store values of any types, the value itself knows what type it is (
 `4`
 knows it is an

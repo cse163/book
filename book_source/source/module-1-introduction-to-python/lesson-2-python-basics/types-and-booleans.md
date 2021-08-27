@@ -75,7 +75,7 @@ print(x != 2)  # "Is x not equal to 2?"
 
 ##  Casting Types  
 
-You can convert a value between types with **casting** . Casting takes a value of one type and converts it to its corresponding value in another type.  
+You can convert a value between types with **casting**. Casting takes a value of one type and converts it to its corresponding value in another type.  
 
 For example, the following program shows how a number like `1.4` (a `float` ) can be converted to an `int` using casting.  
 

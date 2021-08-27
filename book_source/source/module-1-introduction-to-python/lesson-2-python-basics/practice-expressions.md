@@ -1,9 +1,6 @@
 # 🚧 Practice: Expressions
 
 In this checkpoint, you will test your understanding how to evaluate expressions and to pay attention to their types.  
-
-*Note: This question will tell you if your answer is wrong, and once you get it correct will show the right answer and an explanation.*   
-
  
 
 ## Question 0

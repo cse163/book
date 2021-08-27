@@ -6,7 +6,7 @@ This problem is very similar to the last practice problem, but now we want you t
 
 If the sequence does not evenly end with a `0` (e.g. if the countdown starts from `15` ), then `0` will not be printed. This shown in the example calls below.  
 
-The `countdown` function should take one `int` parameter for the starting point. You may assume the parameter is an `int` . If the parameter value is less than `0` , it should instead print `Start must be non-negative!` .  
+The `countdown` function should take one `int` parameter for the starting point. You may assume the parameter is an `int`. If the parameter value is less than `0` , it should instead print `Start must be non-negative!` .  
 
 Here are four example calls to the function and their output is shown after ( `print` statements included to space out output).  
 
@@ -50,12 +50,5 @@ Done!
 -  Your solution should use a     `for`     loop and should not use a     `while`     loop.  
 
 -  Your program should use the main-method pattern (we provided the starter code) and should define a function named     `countdown`     (as described above) before the     `main`     method.  
-
-
-##  Running / Submitting  
-
--  Remember to run your program you can press the "Run" button or use the terminal by using the command     `python main.py`     (since the name of the file is     `main.py`     ).  
-
--  To submit your program, you need to press the "Mark" button.  
 
 
