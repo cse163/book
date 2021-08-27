@@ -1710,17 +1710,18 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/a47eaf00be10430c844fb210b33e91c7?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>When you write a Python file (like <code class="docutils literal notranslate"><span class="pre">my_file.py</span></code> ) you are defining a Python <strong>module</strong> . You can think of using the words module and file interchangeably. A Python module can do one (or both) of the following:</p>
 <ul class="simple">
-<li><p>Be run as a program (e.g.,     <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_file.py</span></code>     ).</p></li>
-<li><p>Be     <strong>imported</strong>     so that another module can use the values defined in it.</p></li>
+<li><p>Be run as a program (e.g., <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_file.py</span></code> ).</p></li>
+<li><p>Be <strong>imported</strong> so that another module can use the values defined in it.</p></li>
 </ul>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
 <p>As a bit of a preview, the reason the main-method pattern is necessary is to make sure these behaviors don’t get mixed up! If you don’t include the main-method pattern, all the things you want to run in a module as a script will aslo be run when you import it! We’ll give a complete explanation in a later lesson.</p>
 </div>
 <p>We use importing to get values or functions defined inside one module so they can be used in another module. You have already been using this on your homework! We defined a module <code class="docutils literal notranslate"><span class="pre">cse163_utils</span></code> and in order to use the function <code class="docutils literal notranslate"><span class="pre">assert_equals</span></code> defined in that module, you had to import it.</p>
-<p>There are 2 main (and a half, sort of)  ways to import in Python that we will explore in this slide. For the following examples, assume we have defined the module <code class="docutils literal notranslate"><span class="pre">module_a</span></code> with the file <code class="docutils literal notranslate"><span class="pre">module_a.py</span></code> as shown below.</p>
+<p>There are 2 main (and a half, sort of) ways to import in Python that we will explore in this slide. For the following examples, assume we have defined the module <code class="docutils literal notranslate"><span class="pre">module_a</span></code> with the file <code class="docutils literal notranslate"><span class="pre">module_a.py</span></code> as shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of: module_a.py</span>
 <span class="k">def</span> <span class="nf">fun1</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calling a&#39;s fun1&quot;</span><span class="p">)</span>
@@ -1738,7 +1739,7 @@
 <h2>Option 1) <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_a</span></code><a class="headerlink" href="#option-1-import-module-a" title="Permalink to this headline">¶</a></h2>
 <p>The simplest syntax simply uses the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement to import a module. The following snippet shows a short program that uses <code class="docutils literal notranslate"><span class="pre">fun2</span></code> defined in <code class="docutils literal notranslate"><span class="pre">module_a</span></code> .</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
-<span class="kn">import</span> <span class="nn">module_a</span> 
+<span class="kn">import</span> <span class="nn">module_a</span>
 
 
 <span class="k">def</span> <span class="nf">fun1</span><span class="p">():</span>
@@ -1749,12 +1750,12 @@
 <span class="k">def</span> <span class="nf">fun2</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calling b&#39;s fun2&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ending b&#39;s fun2&quot;</span><span class="p">)</span>
-    
-    
+
+
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">fun2</span><span class="p">()</span>
     <span class="n">module_a</span><span class="o">.</span><span class="n">fun2</span><span class="p">()</span>
-    
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
@@ -1762,9 +1763,10 @@
 </div>
 <p>When you import a module, you are importing the whole thing (including all values defined inside of it). In some sense, when you <code class="docutils literal notranslate"><span class="pre">import</span></code> a module, you are running all of the code defined in that module.</p>
 <p>However, to keep things manageable for you, Python keeps all these values defined in <code class="docutils literal notranslate"><span class="pre">module_a</span></code> in a different scope (sometimes called a “namespace”). This helps prevent confusion if <code class="docutils literal notranslate"><span class="pre">module_b</span></code> also defines a function with the same name, as we did in this example. That means to call <code class="docutils literal notranslate"><span class="pre">fun2</span></code> from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> , you have to write <code class="docutils literal notranslate"><span class="pre">module_a.fun2()</span></code> to make it clear you want the one from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> .</p>
-<p>To double-check your understanding: **
-What is the output of running
-** Take a second  to think about that before scrolling down.</p>
+<p>To double-check your understanding: <strong>What is the output of running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">module_b.py</span></code></strong> as defined above? Take a second to make a prediction
+before expanding the answer below.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Output</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Calling b&#39;s fun2
 Ending b&#39;s fun2
 Calling a&#39;s fun2
@@ -1774,6 +1776,7 @@ Ending a&#39;s fun2
 </pre></div>
 </div>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">module_a</span></code> ‘s <code class="docutils literal notranslate"><span class="pre">fun2</span></code> behaves exactly the same as it was defined, even though we defined our own <code class="docutils literal notranslate"><span class="pre">fun1</span></code> and <code class="docutils literal notranslate"><span class="pre">fun2</span></code> in <code class="docutils literal notranslate"><span class="pre">module_b</span></code> (the scopes are different).</p>
+</div>
 <div class="section" id="option-1-5-import-module-a-as-m">
 <h3>Option 1.5) <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_a</span> <span class="pre">as</span> <span class="pre">m</span></code><a class="headerlink" href="#option-1-5-import-module-a-as-m" title="Permalink to this headline">¶</a></h3>
 <p>This syntax has the exact same semantics as the one before, but it lets you define a shorthand name for the module. In this case, we essentially renamed <code class="docutils literal notranslate"><span class="pre">module_a</span></code> to <code class="docutils literal notranslate"><span class="pre">m</span></code> in our module so in our code, we can just say <code class="docutils literal notranslate"><span class="pre">m.f2()</span></code> . Semantically, these are really the same ways to import a module, but this one has an extra step to “rename” it.</p>
@@ -1790,12 +1793,12 @@ Ending a&#39;s fun2
 <span class="k">def</span> <span class="nf">fun2</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calling b&#39;s fun2&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ending b&#39;s fun2&quot;</span><span class="p">)</span>
-    
-    
+
+
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">fun2</span><span class="p">()</span>
     <span class="n">m</span><span class="o">.</span><span class="n">fun2</span><span class="p">()</span>  <span class="c1"># Notice m instead of module_a</span>
-    
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
@@ -1809,8 +1812,8 @@ Ending a&#39;s fun2
 <p>The following snippet shows how to use this syntax.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
 <span class="kn">from</span> <span class="nn">module_a</span> <span class="kn">import</span> <span class="n">fun2</span>
-    
-    
+
+
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">fun2</span><span class="p">()</span> <span class="c1"># Calling module_a&#39;s fun2</span>
 
@@ -1820,7 +1823,7 @@ Ending a&#39;s fun2
 </pre></div>
 </div>
 <p>This syntax is nice when you know exactly which function you want from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> and you now you will call it often.</p>
-<p>You might wonder what would happen if I defined a <code class="docutils literal notranslate"><span class="pre">fun2</span></code> in <code class="docutils literal notranslate"><span class="pre">module_b.py</span></code> (since we removed that from the previous examples). How would Python know which <code class="docutils literal notranslate"><span class="pre">fun2</span></code> to call if there was one that came from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> and one from <code class="docutils literal notranslate"><span class="pre">module_b</span></code> and both are in the same scope?  It turns out, if you define two functions with the same name, it will always use the one most recently defined. This is because by defining a function, you essentially are storing it in a variable with that function name. If you redefine, it will just update which function is stored at that variable name (just like updating a plain-old variable). That means if we defined a <code class="docutils literal notranslate"><span class="pre">fun2</span></code> after importing it from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> using this syntax, we would essentially lose the value we imported.</p>
+<p>You might wonder what would happen if I defined a <code class="docutils literal notranslate"><span class="pre">fun2</span></code> in <code class="docutils literal notranslate"><span class="pre">module_b.py</span></code> (since we removed that from the previous examples). How would Python know which <code class="docutils literal notranslate"><span class="pre">fun2</span></code> to call if there was one that came from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> and one from <code class="docutils literal notranslate"><span class="pre">module_b</span></code> and both are in the same scope? It turns out, if you define two functions with the same name, it will always use the one most recently defined. This is because by defining a function, you essentially are storing it in a variable with that function name. If you redefine, it will just update which function is stored at that variable name (just like updating a plain-old variable). That means if we defined a <code class="docutils literal notranslate"><span class="pre">fun2</span></code> after importing it from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> using this syntax, we would essentially lose the value we imported.</p>
 </div>
 </div>
 

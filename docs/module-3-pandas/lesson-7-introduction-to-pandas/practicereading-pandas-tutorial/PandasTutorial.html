@@ -1772,24 +1772,33 @@
                 
   <div class="section" id="practice-reading-pandas-tutorial">
 <h1>🚧 Practice/Reading: Pandas Tutorial<a class="headerlink" href="#practice-reading-pandas-tutorial" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clickin the “Run All” button above.</p>
-</div></blockquote>
+<div class="admonition-jupyter-notebooks admonition">
+<p class="admonition-title">Jupyter Notebooks</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch
+an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/0f2347abbdfcd1c53c68b47a134e5943/tas.csv"><code class="xref download docutils literal notranslate"><span class="pre">tas.csv</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/2d1de460aaa7fb3bce913cf52b925a8e/emissions.csv"><code class="xref download docutils literal notranslate"><span class="pre">emissions.csv</span></code></a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clickin the “Run All” button above.</p>
+</div>
 <p>The first thing we will do is use the <code class="docutils literal notranslate"><span class="pre">import</span></code> command to load the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library. We will use this syntax shown below to “rename” <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to <code class="docutils literal notranslate"><span class="pre">pd</span></code> so in your cells below, we only have to write out <code class="docutils literal notranslate"><span class="pre">pd</span></code> whenever we want to use a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> feature.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Next, we will load the data from the CSV file <code class="docutils literal notranslate"><span class="pre">tas.csv</span></code> that has the example data we were working with before. We will save it in a variable called <code class="docutils literal notranslate"><span class="pre">df</span></code> (stands for data frame which is a common <code class="docutils literal notranslate"><span class="pre">pandas</span></code> term). We do this with a provided function from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> called <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>.</p>
-<blockquote>
-<div><p>Note we have to use the absolute path <code class="docutils literal notranslate"><span class="pre">/home/tas.csv</span></code> just like you need to in your take-home assessment tests! This is really so it works in the “Mark” interface.</p>
-</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/tas.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;tas.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -1846,7 +1855,7 @@
 <p>For example, you can get all of the TAs’ names with the following call.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1866,7 +1875,7 @@ Name: Name, dtype: object
 <p>In the cell below, write the code to access the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column of the data and store it in a variable named <code class="docutils literal notranslate"><span class="pre">ans0</span></code>! <strong>For testing purposes, your variable name has to exactly be <code class="docutils literal notranslate"><span class="pre">ans0</span></code>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_salary) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your answer here!</span>
 </pre></div>
 </div>
 </div>
@@ -1886,7 +1895,7 @@ Name: Name, dtype: object
 <p>For example, if I wanted to compute the average <code class="docutils literal notranslate"><span class="pre">Salary</span></code> of the TAs, I would write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">average_salary</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">average_salary</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">average_salary</span>
 </pre></div>
 </div>
@@ -1913,7 +1922,7 @@ Name: Name, dtype: object
 <p><em>Hint: You might need to make two separate calls to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to compute this since you need both the min and the max.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_salary_range) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your answer here!</span>
 </pre></div>
 </div>
 </div>
@@ -1925,7 +1934,7 @@ Name: Name, dtype: object
 <p>For the rest of this slide, let’s consider a slightly more complex dataset that has a few more columns. This dataset tracks the emissions for cities around the world (but only has a few rows).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/emissions.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;emissions.csv&#39;</span><span class="p">)</span>
 <span class="n">df2</span>
 </pre></div>
 </div>
@@ -1998,7 +2007,7 @@ Name: Name, dtype: object
 <p>If we wanted to access the emissions column, we could write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2016,7 +2025,7 @@ Name: emissions, dtype: int64
 <p>Or if we wanted to access the population columm, we could write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2034,7 +2043,7 @@ Name: population, dtype: int64
 <p>One useful feature of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is it lets you combine values from different <code class="docutils literal notranslate"><span class="pre">Series</span></code>. For example, if we wanted to, we could add the values of the emissions column and the population column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2056,7 +2065,7 @@ dtype: int64
 <p><em>Hint: You can save a <code class="docutils literal notranslate"><span class="pre">Series</span></code> in a variable! It’s just like any other Python value!</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_emissions_per_capita) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your answer here!</span>
 </pre></div>
 </div>
 </div>
@@ -2064,7 +2073,7 @@ dtype: int64
 <p>These element-wise computations also work if a one of the values is a single value rather than a <code class="docutils literal notranslate"><span class="pre">Series</span></code>. For example, the following cell adds 4 to each of the populations. Notice this doesn’t modify the original <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, it just returns a new <code class="docutils literal notranslate"><span class="pre">Series</span></code> with the old values plus 4.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">4</span>
 </pre></div>
 </div>
 </div>
@@ -2083,7 +2092,7 @@ Name: population, dtype: int64
 <p>Another useful case for something like this is to compare the values of a column to a value. For example, the following cell computes which cities have an emissions value of 200 or more. Notice that the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> here is <code class="docutils literal notranslate"><span class="pre">bool</span></code> since each value is a <code class="docutils literal notranslate"><span class="pre">True/False</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
 </pre></div>
 </div>
 </div>
@@ -2106,7 +2115,7 @@ Name: emissions, dtype: bool
 <p>For example, what if I wanted to print the names of the cities that have an emissions of 200 or more? I can use this <code class="docutils literal notranslate"><span class="pre">bool</span></code> <code class="docutils literal notranslate"><span class="pre">Series</span></code> to filter which rows I want! The syntax looks like the following cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">]</span>
 <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -2130,7 +2139,7 @@ Name: city, dtype: object
 <p>We commonly call a <code class="docutils literal notranslate"><span class="pre">Series</span></code> with <code class="docutils literal notranslate"><span class="pre">dtype=bool</span></code> used for this context a <strong>mask</strong>. It usually makes your program more readable to save those masks in a variable. The following cell shows the exact same example, but adding a variable for readability for the mask.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">high_emissions</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_emissions</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
 <span class="n">df3</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">high_emissions</span><span class="p">]</span>
 <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span>
 </pre></div>
@@ -2160,7 +2169,7 @@ Name: city, dtype: object
 <p>Whenever you run into ambiguities from precedence, on way you can always fix it is to the sub-expressions in parentheses like in the following cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;USA&#39;</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;USA&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -2218,7 +2227,7 @@ Name: city, dtype: object
 <p>A much more readable solution involves saving each mask in a variable so you don’t have to worry about this precedence. This has an added benefit of giving each condition a human-readable name if you use good variable names!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">high_emissions</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_emissions</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
 <span class="n">is_usa</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;USA&#39;</span>
 <span class="n">df2</span><span class="p">[</span><span class="n">high_emissions</span> <span class="o">|</span> <span class="n">is_usa</span><span class="p">]</span>
 </pre></div>
@@ -2281,7 +2290,7 @@ Name: city, dtype: object
 <p>In the cell below, write code to select all rows from the dataset that are in France and have a population greater than 50. <strong>For testing purposes, save the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans3</span></code></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_filter) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your answer here!</span>
 </pre></div>
 </div>
 </div>
@@ -2299,7 +2308,7 @@ Name: city, dtype: object
 <p>It turns out the the column indexer is optional, so you can leave that out. For example, if I want to get the first row (row with index 0), I could write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2316,7 +2325,7 @@ Name: 0, dtype: object
 <p>Interestingly, this actually returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code>! It looks different than the <code class="docutils literal notranslate"><span class="pre">Series</span></code> returned from something like <code class="docutils literal notranslate"><span class="pre">df['name']</span></code> since now it has an index that are the column names themselves! This means I could index into a specifc column by doing something like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">s</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -2330,7 +2339,7 @@ Name: 0, dtype: object
 <p>Now this was a bit tedious to have to use double <code class="docutils literal notranslate"><span class="pre">[]</span></code> to acess the column as well, which is exactly why <code class="docutils literal notranslate"><span class="pre">loc</span></code> lets you specify a column as a “column indexer”. Instead, it’s more common to write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2346,7 +2355,7 @@ Name: 0, dtype: object
 <p>For example, you can use a list of values as an indexer to select many rows or many columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;emissions&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;emissions&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -2406,7 +2415,7 @@ Name: 0, dtype: object
 <p>For example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2465,7 +2474,7 @@ Name: 0, dtype: object
 <p>You can also use a <code class="docutils literal notranslate"><span class="pre">bool</span></code> Series as an indexer to grab all the rows or columns that are marked <code class="docutils literal notranslate"><span class="pre">True</span></code>. This is similar to masking we saw before, but can now put the mask as a possible indexer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">high_emissions</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_emissions</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
 <span class="n">is_usa</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;USA&#39;</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">high_emissions</span> <span class="o">|</span> <span class="n">is_usa</span><span class="p">]</span>
 </pre></div>
@@ -2529,7 +2538,7 @@ Name: 0, dtype: object
 <p>Instead of relying on defaults, you can explicitly ask for “all of the columns” using the special range <code class="docutils literal notranslate"><span class="pre">:</span></code>. This is a common syntax for many numerical processing libraries so <code class="docutils literal notranslate"><span class="pre">pandas</span></code> adopts it too. It looks like the following</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -2587,7 +2596,7 @@ Name: 0, dtype: object
 <p>You can also do this for the rows as well!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
