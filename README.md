@@ -2,7 +2,7 @@
 
 Author: [Hunter Schafer](https://homes.cs.washington.edu/~hschafer/)
 
-Contributors: Wen Qiu and Mitchell Estberg
+Contributors: Wen Qiu, Mitchell Estberg, Ryan Siu, Rit Shah, Apollo Zhu, Soham Pardeshi for proofreading and adding practice problems. Wen Qiu helped edit the lessons to this publicly accessible website.
 
 This repository stores the source files for the public-facing resources for our UW course, CSE 163: Intermediate Data Programming.
 
@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 ### Editing the book
 
-The book text is stored in `book_source/source`. Each MyST file (`.md`) corresponds to a single page of the book. Some pages, like the `index.md` files for the Modules don't contain any useful information other than links.
+The book text is stored in `book_source/source`. Each MyST file (`.md`) corresponds to a single page of the book. Some pages, like the `index.md` files for the Modules don't contain any useful information other than links. Some of the book pages are Juptyer notebooks which also get converted to HTML.
 
 Edit the book text by editing the appropriate MyST file. See [MyST's documentation](https://myst-parser.readthedocs.io/en/latest/) for syntax examples (note: it is incredibly similar to plain markdown, with some extra macros available).
 
