@@ -30,7 +30,11 @@ release = "0.0.0"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 # extensions = ["myst_parser", "myst_nb"]
-extensions = ["myst_nb", "sphinx_thebe"]
+extensions = [
+    "myst_nb",
+    "sphinx_thebe",
+    "sphinx_copybutton",
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
