@@ -4,6 +4,7 @@
 :maxdepth: 3
 :caption: Contents
 
+lesson-1-first-lesson/index
 lesson-2-python-basics/index
 lesson-3-strings-and-lists/index
 ```
