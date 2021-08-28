@@ -34,5 +34,5 @@ practicereading-pandas-tutorial/PandasTutorial
 pandas-recap
 pause-and-think
 practice-types
-practice-earthquakes/PandasTutorial
+practice-earthquakes/Earthquakes
 ```

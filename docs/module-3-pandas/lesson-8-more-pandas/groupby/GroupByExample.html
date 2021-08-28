@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../lesson-9-time-series/index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-9-time-series/time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-9-time-series/pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1666,17 +1654,12 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   groupby
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#processing-a-list-of-dictionaries">
    Processing a List of Dictionaries
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#processing-a-pandas-dataframe">
    Processing a
    <code class="docutils literal notranslate">
@@ -1691,12 +1674,12 @@
    </code>
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-s-going-on-here">
    What’s going on here?
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#when-to-use-this">
    When to use this?
   </a>
@@ -1714,11 +1697,24 @@
                 
   <div class="section" id="groupby">
 <h1>groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-jupyter-notebooks admonition">
+<p class="admonition-title">Jupyter Notebooks</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch
+an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/a9d5e95eb3321e21408b50d8992428d9/earthquakes.csv"><code class="xref download docutils literal notranslate"><span class="pre">earthquakes.csv</span></code></a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clickin the “Run All” button above.</p>
+</div>
 <p>Think back to the list of dictionaries problem we did last week computing how “shaky” each location was (a made-up metric by Hunter, the wannabe seismologist). The Shake Factor for each location is just the sum of all the magnitudes of earthquakes in that location across all time.</p>
 <p>On your next take-home assessment, we will ask you to make computations like this (albeit for a different dataset) and we will ask you to do each problem twice: once processing the data as a list of dictionaries (like you did last week), and again using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. It is helpful to understand that the “magic” behind pandas is really just code like you would write for the list of dictionaries! So before showing you how to solve this problem with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, let’s walk through the solution here.</p>
-</div>
 <div class="section" id="processing-a-list-of-dictionaries">
-<h1>Processing a List of Dictionaries<a class="headerlink" href="#processing-a-list-of-dictionaries" title="Permalink to this headline">¶</a></h1>
+<h2>Processing a List of Dictionaries<a class="headerlink" href="#processing-a-list-of-dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>For this problem, we want to process the <code class="docutils literal notranslate"><span class="pre">earthquakes.csv</span></code> as a list of dictionaries and return the result as a dictionary (where the keys are place names and the values are ShakeFactor).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1730,7 +1726,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the code we wrote to parse the CSV to a list of dictionaries</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">cse163_utils</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;/home/earthquakes.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">cse163_utils</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># First 5 rows</span>
 </pre></div>
 </div>
@@ -1970,10 +1966,10 @@
 </ul>
 </div>
 <div class="section" id="processing-a-pandas-dataframe">
-<h1>Processing a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#processing-a-pandas-dataframe" title="Permalink to this headline">¶</a></h1>
+<h2>Processing a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#processing-a-pandas-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>Now, if you were trying to do this with a list of dictionaries, you would have to write specialized code for every different type of group by you might want to try (e.g. finding the max or finding the average). However, with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, things become much simpler to write.</p>
 <p>Understanding how the list of dictionaries approach works is a good starting point to understand what happens in the background when using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
-<p>We will start by loading the data and showing what the syntax for this looks like to compute the ShakeFactor for each place.</p>
+<p>We will start by loading the data into <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1983,7 +1979,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/earthquakes.csv&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -2144,6 +2140,7 @@
 <p>8394 rows × 8 columns</p>
 </div></div></div>
 </div>
+<p>We will first just show how to do this type of grouping operation in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and then we will walk through piece-by-piece to understand what each part of the code is doing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)[</span><span class="s1">&#39;magnitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -2192,7 +2189,7 @@ Name: magnitude, Length: 118, dtype: float64
 </div>
 </div>
 <div class="section" id="what-s-going-on-here">
-<h1>What’s going on here?<a class="headerlink" href="#what-s-going-on-here" title="Permalink to this headline">¶</a></h1>
+<h2>What’s going on here?<a class="headerlink" href="#what-s-going-on-here" title="Permalink to this headline">¶</a></h2>
 <p>It’s pretty incredible that such a short line of code can do something so complex. In the bullet-list above, I described the steps that happen here but I find it easier to think about it with a small example. The figure below shows a visual explanation of what is going on when you do a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>.</p>
 <ol class="simple">
 <li><p>(Teal, <code class="docutils literal notranslate"><span class="pre">data</span></code>) You start by specifying <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> you want to do this computation on</p></li>
@@ -2449,7 +2446,7 @@ Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;], dtype=&#39;object&#39;, name=&#39
 </div>
 </div>
 <div class="section" id="when-to-use-this">
-<h1>When to use this?<a class="headerlink" href="#when-to-use-this" title="Permalink to this headline">¶</a></h1>
+<h2>When to use this?<a class="headerlink" href="#when-to-use-this" title="Permalink to this headline">¶</a></h2>
 <p>Whenever you want to separate your data into groups to get some value for each one, this is the natural time to ues a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>! Whenever you see “for each” or “per” in a question, it’s likely you will want to use a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>.</p>
 <p>Here are some example questions you can solve with a groupby. We provide some “code” to compute each one, assuming the data had columns with the relevant names.</p>
 <ul>
@@ -2469,6 +2466,7 @@ Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;], dtype=&#39;object&#39;, name=&#39
 </div>
 </li>
 </ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
