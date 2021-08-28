@@ -1,9 +1,11 @@
-# For Loop
+# For Loops
 
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/7b213be0506d4fcc8876aa6863e7991f?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+
+---
 
 
 ```{admonition} Warning
@@ -13,7 +15,8 @@ For those that know Java, the for loop in Python looks quite different than the 
 <br />
 
 <br />
-If you have taken CSE 143, the for loop in Python behaves a lot more like the for-each loop (also called the "enhanced for loop").
+
+If you have learned for-each loops in Java, the for loop in Python behaves a lot more like the for-each loop (also called the "enhanced for loop").
 
 ```
 

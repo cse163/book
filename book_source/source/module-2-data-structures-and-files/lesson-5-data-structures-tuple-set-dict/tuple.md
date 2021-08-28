@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/d82da2364b0542b69f8bdb8aca4cfe40?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 In this lesson, we will learn about a few other **data structures** . They are similar to `list` s in that they store some collection of values, but they differ in the properties and semantics of how the data structure behaves.  
 
 For example, when I say `list` , I am implying a few properties:  
@@ -16,12 +18,11 @@ For example, when I say `list` , I am implying a few properties:
 
 Other data structures might have different properties that encourage them to be used in different contexts. An analogy here comes from thinking about tools in a toolshed. A hammer and screwdriver have different properties that allow one to be the better tool for the job, say, when you want to put a nail in a wall; while yes, you could use a screwdriver for that, it seems like there is another tool that better suits the task. This is why we want to have more than one type of data structure: so we can have the best tool for any given job.  
 
-One such data structure is the **
-			** (pronounced either like "two pull" or to rhyme with "supple"). A `tuple` is much like a list in that it has integer indices, but it is different in that it is **immutable.** A `tuple` will have a pre-defined number of values inside of it, and you can't modify them!  
+One such data structure is the `tuple` (pronounced either like "two pull" or to rhyme with "supple"). A `tuple` is much like a list in that it has integer indices, but it is different in that it is **immutable.** A `tuple` will have a pre-defined number of values inside of it, and you can't modify them!  
 
 The syntax for lists and `tuple` s look very similar but have some key differences.  
 
--  The list uses square brackets (i.e.,     `[1, 2, 3]`     is a list) while a     `tuple`     uses parentheses (i.e.,     `(1, 2, 3)`     is a     `tuple`     ). They both have 3 elements that store 1, then 2, then 3, but while the list could be modified, the tuple can't.  
+-  The list uses square brackets (i.e.,     `[1, 2, 3]`     is a list) while a     `tuple`     uses parentheses (i.e.,     `(1, 2, 3)`     is a     `tuple`). They both have 3 elements that store 1, then 2, then 3, but while the list could be modified, the tuple can't.  
 
 -  Tuples don't have any meaningful methods like     `list`     does since you cannot modify it.  
 

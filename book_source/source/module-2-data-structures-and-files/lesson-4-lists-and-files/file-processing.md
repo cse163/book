@@ -1,25 +1,33 @@
 # File Processing
-
+```{reading-data}
+{static-data-download}`poem.txt`
+```
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/620e2a3aca0a45b0ba52c7913f725375?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 **Files** on computers store some type of data. This data could be pictures, a word document, a video game, etc. For the first part of this class, we will only work with files that store text data. One such file type that holds text data is the `.txt` file type.  
 
-For example, if you are using a Mac or Linux system (or are on Ed!), you can open up a terminal and use the `cat` program to print out the contents of a file. Suppose I had a file called `poem.txt` on my computer. If I ran the following command in my terminal, it would print:  
+For example, if you are using a Mac or Linux system, you can open up a terminal and use the `cat` program to print out the contents of a file. Suppose I had a file called `poem.txt` on my computer. If I ran the following command in my terminal, it would print:  
 
-```text
-
-		
+```
+> cat poem.txt
+she sells
+sea
+shells by
+the sea shore
 ````
 
 ##  Files in Python  
 
-With Python, you can open and read files using the `open` built-in function. The syntax is shown in the following snippet. Note that the value you pass into the `open` is a **path** to the file. We will talk about file paths in a bit, but think of it like a full-name of a file on a computer!  
+With Python, you can open and read files using the `open` built-in function. The syntax is shown in the following snippet. Note that the value you pass into the `open` is a **path** to the file. We will talk about file paths in a bit, but think of it like a full-name of a file on a computer! For example,
+if there is a file named `poem.txt` in the same directory as your Python script, the following code snippet will print the content of that file:
 
 ```python
-with open('/course/lecture-readings/poem.txt') as f:
+with open('poem.txt') as f:
     content = f.read()  # returns the file contents as a str
     print(content)
 ```
@@ -48,6 +56,7 @@ syntax we have shown above automatically closes the file when you are done with 
 <br />
 
 <br />
+
 This is kind of like the person who doesn't put a shopping cart back after taking their groceries to their car. You don't want to be that person. Instead of having to write the code to close it explicitly, just use this fancy
 `with`
 syntax to do it for you!
@@ -79,7 +88,7 @@ def number_lines(file_name):
 
             
 def main():
-    number_lines('/course/lecture-readings/poem.txt')
+    number_lines('poem.txt')
         
 
 if __name__ == '__main__':
@@ -90,7 +99,7 @@ So while the code is getting more complex, all of the code kind of falls into so
 
 -  The standard main-method pattern code and defining the function for     `number_lines`   
 
--  The standard code for opening a file (     `with open...`     ) and to read the lines of a file (     `f.readlines()`     )  
+-  The standard code for opening a file (`with open...`) and to read the lines of a file (`f.readlines()`)  
 
 -  The rest is just a problem we could have solved from Lesson 3 that involves looping over a list!  
 
@@ -170,7 +179,7 @@ def count_odd(file_name):
 
     
 def main():
-    count_odd('/course/lecture-readings/poem.txt')
+    count_odd('poem.txt')
         
 
 if __name__ == '__main__':

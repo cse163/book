@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/0f46f457b6ed496aa6abe13391c07d39" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 ##  List Methods  
 
 Just like with strings, `list` also has methods you can call on a `list` object to observe or modify its values. You can call any of these methods on a `list` object.  
@@ -12,15 +14,15 @@ Just like with strings, `list` also has methods you can call on a `list` object 
 
 |   Function   |                                                                                                  Description                                                                                                   |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|l.append(x)   |Adds x to the end of l                                                                                                                                                                                          |
-|l.extend(xs)  |Adds all elements in xs at the end of l                                                                                                                                                                         |
-|l.insert(i, x)|Inserts x at index i in l                                                                                                                                                                                       |
-|l.remove(x)   |Removes the first instance of x from l                                                                                                                                                                          |
-|l.pop([i])    |Removes the value at index i from l. Parameter is optional, default is last index of list.  Note: The syntax [i] for a parameter is commonly used in Python documentation to indicate i is an optional paramter.|
-|l.clear()     |Removes all values from l                                                                                                                                                                                       |
-|l.index(x)    |Returns the first index that contains x in l. If it is not found it raises an error.                                                                                                                            |
-|l.reverse()   |Reverses all the order of elements of l                                                                                                                                                                         |
-|l.sort()      |Sorts the values of l                                                                                                                                                                                           |
+|`l.append(x)`|Adds `x` to the end of `l`.|
+|`l.extend(xs)`|Adds all elements in `xs` at the end of `l`.|
+|`l.insert(i, x)`|Inserts `x` at index `i` in `l`.|
+|`l.remove(x)`|Removes the first instance of `x` from `l`.|
+|`l.pop([i])`|Removes the value at index `i` from `l`. Parameter is optional, default is last index of list.  Note: The syntax `[i]` for a parameter is commonly used in Python documentation to indicate `i` is an optional paramter.|
+|`l.clear()`|Removes all values from `l`.|
+|`l.index(x)`|Returns the first index that contains `x` in `l`. If it is not found it raises an error.|
+|`l.reverse()`|Reverses all the order of elements of `l`.|
+|`l.sort()`|Sorts the values of `l`.|
 
 Notice that `list` s are NOT immutable. This means methods like `append` , `remove` actually modify the list you call the method on.  
 

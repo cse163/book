@@ -1,5 +1,4 @@
 # 🚧 Practice: Largest Earthquake
-
 {download}`Download starter code </module-2-data-structures-and-files/lesson-6-csv-data/practice-largest-earthquake.zip>`
 
 ##  Data  
@@ -7,17 +6,11 @@
 For this problem, we will be using a dataset containing information about earthquakes around the world. The dataset looks like the following (but it has more rows).  
 
 ```{image} https://static.us.edusercontent.com/files/oaCPDgcs0UnvR6oJUZNfHVZP
-:alt: TODO
+:alt: largest earthquake data
 :width: 758
 :align: center
 ```
-
-The dataset is stored in a shared location on Ed with the path  
-
-```text
-/course/lecture-readings/earthquakes.csv 
-
-````
+You can download the dataset with the link above.
 
 ##  Problem  
 

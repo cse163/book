@@ -19,7 +19,7 @@ Each of the questions asks for the value at one index. Write your result as an i
 :class: note
 
 This problem was borrowed from
-[None](https://www.codestepbystep.com/problem/view/python/collections/list/mystery1)
+[Code Step by Step](https://www.codestepbystep.com/problem/view/python/collections/list/mystery1)
 .
 
 ```

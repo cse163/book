@@ -1,9 +1,10 @@
 # Processing a CSV
 
-
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/dd229affd69d4e489a9ad1a7a81e2358" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+
+---
 
 Now that we understand what a CSV looks like, let's discuss how we might process that data to answer questions about it. For example, what if I want to find the total of all the TAs' salary?  
 
@@ -11,12 +12,12 @@ You might imagine that we will solve this with the skills we have learned so far
 
 -  The code is not very flexible if I want to compute some other value. What if I want to compute the TA who makes the most money? I would have to duplicate all this nasty code to parse the file just to access the information again. This also comes at a cost of efficiency (e.g. speed of program) since, for each task, you will need to re-read the file.  
 
--  Our example CSV is relatively simple, but they can get much more complicated. It would be nice to separate the logic of     **parsing**     the data from our     **computations**     so our code for computations is more readable and maintainable.  
+-  Our example CSV is relatively simple, but they can get much more complicated. It would be nice to separate the logic of **parsing** the data from our **computations** so our code for computations is more readable and maintainable.  
 
 
 ##  List of Dictionaries  
 
-To accomplish this, we will start by storing our data in some data structure ( `list` , `set` , `dictionary` , etc.) that will help us process it later. A very common thing to do when processing this type of data is to store it in a **list of dictionaries** . It helps to see what the data looks like first, then we will explain what it is.  
+To accomplish this, we will start by storing our data in some data structure ( `list` , `set` , `dictionary` , etc.) that will help us process it later. A very common thing to do when processing this type of data is to store it in a **list of dictionaries**. It helps to see what the data looks like first, then we will explain what it is.  
 
 ```text
 [
@@ -24,7 +25,6 @@ To accomplish this, we will start by storing our data in some data structure ( `
     {'Name': 'Rit',     'Salary': 1},
     {'Name': 'Ryan',    'Salary': 3}
 ]
-
 ````
 
 This data structure is a `list` that stores `dict` s as its entries; therefore we call it a list of dictionaries. Each dictionary represents a single row of the dataset: this is why there are 3 dictionaries inside this list. Inside each dictionary, there is a key/value pair for every column of the data showing the values for each row and that column.  
@@ -50,7 +50,6 @@ print('Types')
 print('type(data)', type(data))
 print('type(data[1])', type(data[1]))
 print("type(ta['Name'])", type(ta['Name']))
-
 ```
 
 It turns out, it's not necessary to save the value of `data[1]` in a variable before accessing it! It is much more common to write code like the following:  
@@ -65,7 +64,7 @@ data = [
 print('Name of TA in Row 2:', data[1]['Name'])
 ```
 
-Let's try another example. **Before pressing the "Run" button, make a prediction of what each line of code will do and see if your prediction matches reality!**   
+Let's try another example. **Before running the code snippet below, make a prediction of what each line of code will do and see if your prediction matches reality!**   
 
 ```python
 data = [
@@ -109,7 +108,7 @@ It sometimes helps to pause and think about the types again. Recall that the typ
 
 You might be asking: How do you write the code to parse this CSV into the list of dictionaries? <br />  <br /> That actually turns out to be a very hard problem that is well outside of what we have learned so far! There are lots of edge cases to handle around getting the types of the values correct (i.e. knowing when to turn the values of a column into `ints` rather than `str` s).  
 
-We write this method for you and call it `parse` . It will be made available to you on your homework and lessons in a file called `cse163_utils` and you do not need to know how it's implemented. This is similar to how we provide `assert_equals` in `cse163_utils` .  
+We write this method for you and call it `parse`. It will be made available to you on your homework and lessons in a file called `cse163_utils` and you do not need to know how it's implemented. This is similar to how we provide `assert_equals` in `cse163_utils`.  
 
 
 ```{admonition} Note

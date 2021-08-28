@@ -8,7 +8,7 @@ s = 'I have eaten the plums that were in the icebox'
 
 For this checkpoint, you should do these by hand and not type the lines into a computer.  
 
-Please write your answers **without** surrounding quotes. This means if the substring returns would have been the string `'have eaten'` , you should write:  
+Please write your answers **without** surrounding quotes. This means if the substring returns would have been the string `'have eaten'`, you should write:  
 
 ```text
 have eaten

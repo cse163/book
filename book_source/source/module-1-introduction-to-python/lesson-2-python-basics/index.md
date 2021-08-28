@@ -1,6 +1,6 @@
 # 📚 Lesson 2: Python Basics
 
-###  Concepts <br />   
+##  Concepts
 
 In this lesson, you will learn about the following Python constructs: <br />   
 
@@ -23,13 +23,12 @@ In this lesson, you will learn about the following Python constructs: <br />
 :maxdepth: 1
 :caption: Contents
 
-context-first-two-weeks-of-cse-163
+context-first-two-modules-of-cse-163
 python-basics
 types-and-booleans
 while-loops
-for-loop
+for-loops
 conditionals
-conditionals-answered
 functions
 pause-and-think
 practice-expressions

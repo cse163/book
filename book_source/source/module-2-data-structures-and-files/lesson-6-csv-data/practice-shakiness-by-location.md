@@ -1,5 +1,4 @@
 # 🚧 Practice: Shakiness by Location
-
 {download}`Download starter code </module-2-data-structures-and-files/lesson-6-csv-data/practice-shakiness-by-location.zip>`
 
 For this problem, we will use the same earthquakes dataset as the last problem.  
