@@ -1,6 +1,7 @@
 # Module 6: Efficiency
+
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents
 
 lesson-16-efficiency/index

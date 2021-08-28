@@ -1,6 +1,7 @@
 # Module 8: Images
+
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents
 
 lesson-22-reading-numpy/index

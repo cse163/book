@@ -1,6 +1,7 @@
 # Module 2: Data Structures and Files
+
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents
 
 lesson-4-lists-and-files/index
