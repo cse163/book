@@ -40,7 +40,7 @@ class DataDownloadLinks(SphinxDirective):
 
         new_content = (
             self.prefix_content()
-            + [self.download_prefix() + line for line in self.content]
+            + [self.download_prefix() + line for line in self.content if line]
             + self.postfix_content()
         )
 
