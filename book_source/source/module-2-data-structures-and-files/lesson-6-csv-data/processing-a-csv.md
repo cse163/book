@@ -4,13 +4,15 @@
     <iframe src="https://www.loom.com/embed/dd229affd69d4e489a9ad1a7a81e2358" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Now that we understand what a CSV looks like, let's discuss how we might process that data to answer questions about it. For example, what if I want to find the total of all the TAs' salary?  
 
 You might imagine that we will solve this with the skills we have learned so far in file-processing. We could do something by reading the file line by line in a loop, splitting the line based on commas, and then doing our computation on the data we've extracted. Unfortunately, this ends up being much more complicated than we anticipated:  
 
 -  The code is not very flexible if I want to compute some other value. What if I want to compute the TA who makes the most money? I would have to duplicate all this nasty code to parse the file just to access the information again. This also comes at a cost of efficiency (e.g. speed of program) since, for each task, you will need to re-read the file.  
 
--  Our example CSV is relatively simple, but they can get much more complicated. It would be nice to separate the logic of     **parsing**     the data from our     **computations**     so our code for computations is more readable and maintainable.  
+-  Our example CSV is relatively simple, but they can get much more complicated. It would be nice to separate the logic of **parsing** the data from our **computations** so our code for computations is more readable and maintainable.  
 
 
 ##  List of Dictionaries  
@@ -106,7 +108,7 @@ It sometimes helps to pause and think about the types again. Recall that the typ
 
 You might be asking: How do you write the code to parse this CSV into the list of dictionaries? <br />  <br /> That actually turns out to be a very hard problem that is well outside of what we have learned so far! There are lots of edge cases to handle around getting the types of the values correct (i.e. knowing when to turn the values of a column into `ints` rather than `str` s).  
 
-We write this method for you and call it `parse` . It will be made available to you on your homework and lessons in a file called `cse163_utils` and you do not need to know how it's implemented. This is similar to how we provide `assert_equals` in `cse163_utils` .  
+We write this method for you and call it `parse`. It will be made available to you on your homework and lessons in a file called `cse163_utils` and you do not need to know how it's implemented. This is similar to how we provide `assert_equals` in `cse163_utils`.  
 
 
 ```{admonition} Note

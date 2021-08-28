@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/117da2a64cdd4b2caaeb503b4c7dd7c7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 For one of your practice problems for today, you will be implementing a function to find the count of each word in a file. It's not clear how you could use a `list` or `set` to solve this problem since you need to be able to answer the question: "for a given word, how many of them have we seen?"  
 
 A `list` seems like it's more on the right track, but unfortunately, the indices have to be numbers! There is no way of using a `list` to say that a word should be an index.  

@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/cc2e27f4df774142a4aa2d232a40bcb3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 In Lesson 5, we learned about the dictionary or `dict` type in Python to store a relationship between **keys** and **values**. For example, you could define a dictionary with some keys and values, and then access/modify using the bracket-syntax we used for `list`s.  
 
 ```python

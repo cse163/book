@@ -4,7 +4,7 @@
 
 In this lesson, you will learn about the following:  
 
--  More advanced features of the     `dict`     type.  
+-  More advanced features of the `dict` type.  
 
 -  The comma-separated value (CSV) file format.  
 

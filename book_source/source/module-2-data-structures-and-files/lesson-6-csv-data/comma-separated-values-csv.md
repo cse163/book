@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/d590b946c39840f2ac6ad61ebe184a17" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 The first type of data we will explore this quarter will be a well-structured type of text-data called a CSV. If you are familiar with an Excel Spreadsheet, you already understand the basic idea behind what a CSV is!  
 
 Consider a spreadsheet of TA salaries:  
