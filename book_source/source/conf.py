@@ -64,6 +64,7 @@ html_static_path = ["_static"]
 
 html_title = project
 html_logo = "_static/logo.png"
+html_favicon = "_static/favicon.png"
 
 # -- Configuring BookTheme -------------------------------------------------
 jupyter_execute_notebooks = "off"
