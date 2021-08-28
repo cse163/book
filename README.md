@@ -58,33 +58,22 @@ Build the new book HTML by running:
 
 ```
 # From the top-most directory
-make --directory book_source github
+make --directory book_source html
 
 # Or, from the book_source directory
-make github
+make html
 ```
 
-This will rebuild the whole book into the `docs` directory, which might take some time depending on the change.
+This will rebuild the whole book into the `book_source/build` directory, which might take some time depending on the change.
 
 ### Committing and pushing changes
 
-Since we are using GitHub pages, we unfortunately need to commit the generated HTML files in `docs` 😭. We recommend
-making separate commits for your changes to `book_source` and then one final commit to commit all the changes to `docs`.
-If you look at the repository's commit history, you will see many commits that have big changes to the `docs` folder with
-the commit message
+Stage any changes to the `book_source` and push. We **do not** stage any changes to build files. Whenever we push to `main`,
+GitHub Actions will build the site again and deploy it to the `gh-pages` branch.
 
-```
-Docs: Bump docs
-```
 
-This is preferred to separate the "logical" changes in `book_source` from the generated changes in `docs`.
+**Special note aboute deploying:**
 
-### Special Note
-
-This will likely not matter, but is a bug we ran into a few times when setting up the book. While `docs` is
-all generated files, GitHub pages requires that we have an empty file called `docs/.nojekyll` for it to function
-correctly. This will likely not matter, but if you ended up deleting the whole `docs` folder, make sure you run:
-
-```bash
-touch docs/.nojekyll
-```
+This will likely not matter, but is a bug we ran into a few times when setting up the book so I thought we should docunment it. T
+here must be a file called `.nojekyll` in the directory wherever GitHub Pages is deployed. This file exists on the `gh-pages` branch
+and should stay there by itself. If something weird happens though, check to make sure it is still there.

@@ -13,10 +13,10 @@ jobs:
       - name: Install and Build 🔧 
         run: |
           pip install -r requirements.txt
-          make --directory book_source github
+          make --directory book_source html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: docs     # The folder the action should deploy.
+          branch: gh-pages
+          folder: book_source/build
