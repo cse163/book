@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/864c9a4d3dcd48b4b86e6dca7d101835?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Recall earlier in the quarter when we were learning `pandas` , we learned that the `apply` function could take a function as another parameter! Instead of talking about `pandas` , we will simplify this to write our own `apply_fun` function that does something similar to a list of values. It takes a list of values and another function as a parameter, and returns a new list that is the result of applying the given function to each element in the input list.  
 
 ```python
@@ -24,7 +26,7 @@ Notice that in this example, we treat the `function` parameter just like any oth
 
 It's a bit tedious that we have to write out a whole function called `times_two` just so we can pass it in as a parameter. Multiplying something by two should be simple enough so it would be nice if there were a way to use a short-hand to do this for simple operations.  
 
-Enter the **lambda** (commonly called an *anonymous function* ). The idea behind a lambda is to let you specify a function without needing to go through the whole `def` syntax. This works best for very simple operations. Below is an example showing how to do this with our `apply_fun` .  
+Enter the **lambda** (commonly called an *anonymous function*). The idea behind a lambda is to let you specify a function without needing to go through the whole `def` syntax. This works best for very simple operations. Below is an example showing how to do this with our `apply_fun`.  
 
 ```python
 def apply_fun(values, function):

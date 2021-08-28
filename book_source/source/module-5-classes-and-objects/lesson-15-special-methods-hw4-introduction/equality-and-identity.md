@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/607ec0c54b254632b1ac27651717e5f0?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Consider the code block below and the question: Are `l1` and `l2` equal?  
 
 ```python
@@ -40,7 +42,7 @@ To capture these two notions of equality, Python has two ways to check "equals" 
 -  `x is y`     compares     `x`     and     `y`     's identity to see if they are the same object (i.e. identity-equivalent).  
 
 
-With that knowledge, you should try to predict what the following code block will output before pressing run!  
+With that knowledge, you should try to predict what the following code block will output before running the code!  
 
 ```python
 l1 = [1, 2, 3]
