@@ -1,15 +1,9 @@
 # 🚧 Practice: Most Frequent Word
-
 {download}`Download starter code </module-2-data-structures-and-files/lesson-6-csv-data/practice-most-frequent-word.zip>`
-
 
 ```{admonition} Note
 :class: note
 
-Notice we put this practice problem above the "Pause and Think" because we think it would be more useful for you to try this problem before coming to class! We will have some time to go over it earlier in the class, but it would help if you are most of the way done solving a problem so you and your group can hit the ground running!
-<br />
-
-<br />
 This practice problem will also be a little bit different since we provide almost all of the code. Most of the content is the reading material here, but we do ask you to make a change to the program to fix some bugs!
 
 ```
@@ -37,5 +31,5 @@ We have provided some starter code for this problem, but it has some bugs. Below
 -  Return the most frequent word.  
 
 
-Your task is to fix the bugs we introduced in this program so that it successfully passes all the tests! You might want to refer to the "Common Python Errors" link on the [None](https://courses.cs.washington.edu/courses/cse163/20sp/resources.html) .  
+Your task is to fix the bugs we introduced in this program so that it successfully passes all the tests! You might want to refer to the "Common Python Errors" link on the [Resources page](https://courses.cs.washington.edu/courses/cse163/21wi/resources.html) .  
 

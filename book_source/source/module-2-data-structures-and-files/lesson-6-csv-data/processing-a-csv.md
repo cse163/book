@@ -1,6 +1,5 @@
 # Processing a CSV
 
-
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/dd229affd69d4e489a9ad1a7a81e2358" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
@@ -16,7 +15,7 @@ You might imagine that we will solve this with the skills we have learned so far
 
 ##  List of Dictionaries  
 
-To accomplish this, we will start by storing our data in some data structure ( `list` , `set` , `dictionary` , etc.) that will help us process it later. A very common thing to do when processing this type of data is to store it in a **list of dictionaries** . It helps to see what the data looks like first, then we will explain what it is.  
+To accomplish this, we will start by storing our data in some data structure ( `list` , `set` , `dictionary` , etc.) that will help us process it later. A very common thing to do when processing this type of data is to store it in a **list of dictionaries**. It helps to see what the data looks like first, then we will explain what it is.  
 
 ```text
 [
@@ -24,7 +23,6 @@ To accomplish this, we will start by storing our data in some data structure ( `
     {'Name': 'Rit',     'Salary': 1},
     {'Name': 'Ryan',    'Salary': 3}
 ]
-
 ````
 
 This data structure is a `list` that stores `dict` s as its entries; therefore we call it a list of dictionaries. Each dictionary represents a single row of the dataset: this is why there are 3 dictionaries inside this list. Inside each dictionary, there is a key/value pair for every column of the data showing the values for each row and that column.  
@@ -50,7 +48,6 @@ print('Types')
 print('type(data)', type(data))
 print('type(data[1])', type(data[1]))
 print("type(ta['Name'])", type(ta['Name']))
-
 ```
 
 It turns out, it's not necessary to save the value of `data[1]` in a variable before accessing it! It is much more common to write code like the following:  
@@ -65,7 +62,7 @@ data = [
 print('Name of TA in Row 2:', data[1]['Name'])
 ```
 
-Let's try another example. **Before pressing the "Run" button, make a prediction of what each line of code will do and see if your prediction matches reality!**   
+Let's try another example. **Before running the code snippet below, make a prediction of what each line of code will do and see if your prediction matches reality!**   
 
 ```python
 data = [

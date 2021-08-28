@@ -5,7 +5,7 @@
     <iframe src="https://www.loom.com/embed/cc2e27f4df774142a4aa2d232a40bcb3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-In Lesson 5, we learned about the dictionary or `dict` type in Python to store a relationship between **keys** and **values** . For example, you could define a dictionary with some keys and values, and then access/modify using the bracket-syntax we used for `list` s.  
+In Lesson 5, we learned about the dictionary or `dict` type in Python to store a relationship between **keys** and **values**. For example, you could define a dictionary with some keys and values, and then access/modify using the bracket-syntax we used for `list`s.  
 
 ```python
 d = {'a': 1, 'b': 2}
@@ -15,7 +15,7 @@ print(d['b'])
 print(d)
 ```
 
-`dict` s, like `list` s, are objects so they also have methods you can call on them. We show a table with the most common methods below. In the next section, we show an example using some of these methods.  
+`dict`s, like `list`s, are objects so they also have methods you can call on them. We show a table with the most common methods below. In the next section, we show an example using some of these methods.  
 
 
 |  Function  |                    Description                     |
@@ -28,7 +28,7 @@ print(d)
 
 ##  Looping over a Dictionary  
 
-You might have been wondering from the last lesson how you would loop over a `dict` . With the methods we have shown, you might see how you could loop over the keys of a dictionary. For example, if you want to iterate over the keys of a `dict` , you use the `keys` method. The `keys` method returns a collection (similar to a `set` ) of all the keys in the `dict` .  
+You might have been wondering from the last lesson how you would loop over a `dict` . With the methods we have shown, you might see how you could loop over the keys of a dictionary. For example, if you want to iterate over the keys of a `dict` , you use the `keys` method. The `keys` method returns a collection (similar to a `set`) of all the keys in the `dict`.  
 
 ```python
 d = {'a': 1, 'b': 2, 'c': 3}
@@ -36,7 +36,7 @@ for k in d.keys():
     print(k, '-', d[k])
 ```
 
-Similarly, you could use the `values` method to get a collection of all the values in a `dict` . A common approach is to use the `items` method to get a tuple of both keys and values for each entry.  
+Similarly, you could use the `values` method to get a collection of all the values in a `dict`. A common approach is to use the `items` method to get a tuple of both keys and values for each entry.  
 
 ```python
 d = {'a': 1, 'b': 2, 'c': 3}
