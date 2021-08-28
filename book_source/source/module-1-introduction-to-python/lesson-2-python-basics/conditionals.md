@@ -27,9 +27,9 @@ This code prints `B` because the first `if` test fails ( `x < 10` is `False` ) a
 
 Two questions you should consider:  
 
--  What values of     `x`     enter the     `else`     statement?  
+-  What values of `x` enter the `else` statement?  
 
--  Why is it not possible to enter the third block (the second     `elif`     block)?  
+-  Why is it not possible to enter the third block (the second `elif` block)?  
 
 
 You should think about these questions before clicking onto the next slide to see the answer!  

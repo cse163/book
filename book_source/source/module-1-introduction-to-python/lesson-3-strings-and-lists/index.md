@@ -10,18 +10,7 @@ In this lesson, you will learn about the following Python constructs:
 
 -  None  
 
--  How to document your code  
-
-
-##  Lessons
-
-As a reminder, our suggested way of doing this lesson follows these steps:  
-
--  Do the reading first and respond to the "Pause and Think" question.  
-
--  Work on the practice problems. It will help to have your notes (and answers from Pause and Think) ready so you can hit the ground running when
-you start working.
-
+-  How to document your code
 
 ## Table of Contents
 
