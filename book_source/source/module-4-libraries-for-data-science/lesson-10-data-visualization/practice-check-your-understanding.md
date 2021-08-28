@@ -5,18 +5,9 @@
 The following questions are here to help you test your understanding of the past reading so far!  
 
 
-```{admonition} Warning
-:class: warning
-
-Completing this quiz requires getting the answers right, but you have multiple attempts!
-
-```
-
- 
-
 ## Question 0
 
-Suppose I had this small dataset (shown below) in a variable called `df` . We want to only filter `df` so that we have all the data but the rows where `'C'` is `NaN` .  
+Suppose I had this small dataset (shown below) in a variable called `df`. We want to only filter `df` so that we have all the data but the rows where `'C'` is `NaN`.  
 
 Which of the following methods successfully filters this dataset as described?  
 
