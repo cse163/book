@@ -1,9 +1,0 @@
-print('Hello world')
-
-1 + 1
-
-x = min(1, 2)
-y = min(4, 5)
-x
-
-x

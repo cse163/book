@@ -1,3 +1,0 @@
-### edTest(test_variables) ###
-
-# Don't edit this cell!
