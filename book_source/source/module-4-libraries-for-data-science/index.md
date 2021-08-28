@@ -1,6 +1,7 @@
 # Module 4: Libraries for Data Science
+
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents
 
 lesson-10-data-visualization/index

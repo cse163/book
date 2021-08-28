@@ -1,6 +1,7 @@
 # Module 1: Introduction to Python
+
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents
 
 lesson-2-python-basics/index

@@ -1,6 +1,7 @@
 # Module 9: Miscellaneous Topics
+
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents
 
 lesson-26-reading-hashing/index

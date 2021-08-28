@@ -1,6 +1,7 @@
 # Module 5: Classes and Objects
+
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents
 
 lesson-13-classes-and-objects/index

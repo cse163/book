@@ -1,6 +1,7 @@
 # Module 7: Geospatial Data
+
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents
 
 lesson-18-geospatial-data-misc-python/index
