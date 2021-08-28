@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../lesson-9-time-series/index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-9-time-series/time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-9-time-series/pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1648,63 +1636,64 @@
 <h1>Pandas Recap<a class="headerlink" href="#pandas-recap" title="Permalink to this headline">¶</a></h1>
 <p>See, that was a ton of syntax! Don’t worry though, you’ll get plenty of practice with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> over time, this is just your first day! For example, once I started getting better with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , I stopped using spreadsheets to calculate grades for courses because I got so much better at writing short little programs to compute the values I wanted!</p>
 <p>On this page, we have a “cheat-sheet” version of everything on the last slide. You’ll likely find it to be a good reference! However, we still recommend trying to turn this into something of your own making to help solidify the concepts and help you build up a stronger mental model!</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-# Read a file
-df = pd.read_csv(&#39;some_file.csv&#39;)
+<span class="c1"># Read a file</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;some_file.csv&#39;</span><span class="p">)</span>
 
-# Access a column
-df[&#39;col&#39;]
+<span class="c1"># Access a column</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span>
 
-# Summary statistic of column
-df[&#39;col&#39;].mean()
+<span class="c1"># Summary statistic of column</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-# Lots of summary functions to use
-#   mean: Calculates the average value of the Series
-#   min: Calculates the minimum value of the Series
-#   max: Calculates the maximum value of the Series
-#   idxmin: Calculates the index of the minimum value of the Series
-#   idxmax: Calculates the index of the maximum value of the Series
-#   count: Calculates the number values in the Series
-#   unique: Returns a new Series with all the unique values from the Series
+<span class="c1"># Lots of summary functions to use</span>
+<span class="c1">#   mean: Calculates the average value of the Series</span>
+<span class="c1">#   min: Calculates the minimum value of the Series</span>
+<span class="c1">#   max: Calculates the maximum value of the Series</span>
+<span class="c1">#   idxmin: Calculates the index of the minimum value of the Series</span>
+<span class="c1">#   idxmax: Calculates the index of the maximum value of the Series</span>
+<span class="c1">#   count: Calculates the number values in the Series</span>
+<span class="c1">#   unique: Returns a new Series with all the unique values from the Series</span>
 
-# Element-wise operations
-df[&#39;col1&#39;] + df[&#39;col2&#39;]
+<span class="c1"># Element-wise operations</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span>
 
-# Also works with single values
-df[&#39;col&#39;] // 2
-df[&#39;col&#39;] &gt; 2
+<span class="c1"># Also works with single values</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span>
 
-# Filter a DataFrame (&amp; for and, | for or, ~ for not)
-mask1 = df[&#39;col&#39;] &gt; 2
-df[mask1]
+<span class="c1"># Filter a DataFrame (&amp; for and, | for or, ~ for not)</span>
+<span class="n">mask1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span>
+<span class="n">df</span><span class="p">[</span><span class="n">mask1</span><span class="p">]</span>
 
-mask2 = df[&#39;col2&#39;] == 2
-df[mask1 &amp; mask2]
-df[mask2 | ~mask1]
+<span class="n">mask2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">df</span><span class="p">[</span><span class="n">mask1</span> <span class="o">&amp;</span> <span class="n">mask2</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="n">mask2</span> <span class="o">|</span> <span class="o">~</span><span class="n">mask1</span><span class="p">]</span>
 
-# Location: df.loc[row_indexer, column_indexer] (column_indexer is optional, default all)
-# Indexers can be many types (can mix and match for row/col!): 
-#   * List of values or a slice
-#   * Mask
-#   * : (for everything)
-#   * Single value
+<span class="c1"># Location: df.loc[row_indexer, column_indexer] (column_indexer is optional, default all)</span>
+<span class="c1"># Indexers can be many types (can mix and match for row/col!):</span>
+<span class="c1">#   * List of values or a slice</span>
+<span class="c1">#   * Mask</span>
+<span class="c1">#   * : (for everything)</span>
+<span class="c1">#   * Single value</span>
 
-# Single value
-df.loc[0, &#39;col&#39;] # Returns value
+<span class="c1"># Single value</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;col&#39;</span><span class="p">]</span> <span class="c1"># Returns value</span>
 
-# List or slice of values
-df.loc[[0, 2, 1], [&#39;col1&#39;, &#39;col2&#39;]]  # Returns DataFrame
-df.loc[0:4, &#39;col1&#39;:&#39;col5&#39;]  # Returns DataFrame
+<span class="c1"># List or slice of values</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">]]</span>  <span class="c1"># Returns DataFrame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;col1&#39;</span><span class="p">:</span><span class="s1">&#39;col5&#39;</span><span class="p">]</span>  <span class="c1"># Returns DataFrame</span>
 
-# Everything
-df.loc[:, :]  # DataFrame
+<span class="c1"># Everything</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">:]</span>  <span class="c1"># DataFrame</span>
 
-# Other examples
-df.loc[0]  # Series, default for column indexer is :
-df.loc[0:5, &#39;col&#39;]  # Series
-df.loc[1, &#39;col&#39;:&#39;col&#39; ] # Series
-df.loc[0:5, [&#39;col1&#39;, &#39;col2&#39;]] # DataFrame
+<span class="c1"># Other examples</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Series, default for column indexer is :</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;col&#39;</span><span class="p">]</span>  <span class="c1"># Series</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;col&#39;</span><span class="p">:</span><span class="s1">&#39;col&#39;</span> <span class="p">]</span> <span class="c1"># Series</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">]]</span> <span class="c1"># DataFrame</span>
+
 </pre></div>
 </div>
 </div>

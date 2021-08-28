@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../lesson-9-time-series/index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-9-time-series/time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-9-time-series/pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1646,33 +1634,37 @@
                 
   <div class="section" id="recap-pandas">
 <h1>Recap: Pandas<a class="headerlink" href="#recap-pandas" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-data admonition">
+<p class="admonition-title">Data</p>
+<p>You can download the dataset used in this reading here: <a class="reference download internal" download="" href="../../_downloads/014a3e126b4bc408c5a5e92816fd4ef6/earthquakes.csv"><code class="xref download docutils literal notranslate"><span class="pre">earthquakes.csv</span></code></a></p>
+</div>
 <p>In Lesson 8, we introduced a new <strong>library</strong> named <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . Recall that a library is some code someone else wrote and packaged up for us to use. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is a very popular library used by data scientists to process tabular data (i.e. data that comes from a spreadsheet).</p>
 <p>In the lecture, we saw the Earthquakes dataset stored in <code class="docutils literal notranslate"><span class="pre">earthquakes.csv</span></code> . To read that CSV into <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , we would run the code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/earthquakes.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We discussed the notion of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code>  <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> having a notion of <strong>columns</strong> and <strong>rows</strong> . Each column has a <strong>column name</strong> that identifies it, while the rows have an <strong>index</strong> that lets you identify each row.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/GfJqb4XtPdxZXyasISaKFK8I"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/GfJqb4XtPdxZXyasISaKFK8I" style="width: 744px;" /></a>
+<p>We discussed the notion of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> having a notion of <strong>columns</strong> and <strong>rows</strong> . Each column has a <strong>column name</strong> that identifies it, while the rows have an <strong>index</strong> that lets you identify each row.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/GfJqb4XtPdxZXyasISaKFK8I"><img alt="Image of a data table showing rows and columns. Column names are highlighted as &quot;columns&quot; and row labels are highlighted as &quot;index&quot;." class="align-center" src="https://static.us.edusercontent.com/files/GfJqb4XtPdxZXyasISaKFK8I" style="width: 744px;" /></a>
 <p>We saw that we can access the data columns from <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the following syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/earthquakes.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>We also saw we can use a <strong>mask</strong> to select which subset of the rows we want by filtering our data to rows that have some specific value. For example, if we want to find all the earthquakes in California from 2016, we would write</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/earthquakes.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;California&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2016</span><span class="p">)])</span>
 </pre></div>
 </div>
 <p>It can be much more readable to save the sub-parts of the query in variables so your query doesn’t all have to be in one line. For example, you can achieve the same results in a much more readable way like in the following cell.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/earthquakes.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="n">is_california</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;California&#39;</span>
 <span class="n">is_2016</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2016</span>
@@ -1694,14 +1686,14 @@ operators with
 <li><p>A single value (row index for rows, column name for columns)</p></li>
 <li><p>A list of values or a slice (row index for rows, column names for columns)</p></li>
 <li><p>A mask</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>     to select all values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code> to select all values</p></li>
 </ul>
-<p>One thing that is also complex about <code class="docutils literal notranslate"><span class="pre">.loc</span></code> is the type of the value returns depends on the types of the indexers. Recall that a <code class="docutils literal notranslate"><span class="pre">pandas</span></code>  <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a 2-dimensional strucutre (rows and columns) while a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a single <code class="docutils literal notranslate"><span class="pre">row</span></code> or single <code class="docutils literal notranslate"><span class="pre">column</span></code> .</p>
+<p>One thing that is also complex about <code class="docutils literal notranslate"><span class="pre">.loc</span></code> is the type of the value returns depends on the types of the indexers. Recall that a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a 2-dimensional strucutre (rows and columns) while a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a single <code class="docutils literal notranslate"><span class="pre">row</span></code> or single <code class="docutils literal notranslate"><span class="pre">column</span></code> .</p>
 <p>To tell what the return type of a <code class="docutils literal notranslate"><span class="pre">.loc</span></code> call is, you need to look for the “single value” type of indexer.</p>
 <ul class="simple">
-<li><p>If both the row and column indexers are a single value, returns a single value. This will be whatever the value is at the location so its type will be the same as the     <code class="docutils literal notranslate"><span class="pre">dtype</span></code>     of the column it comes from.</p></li>
-<li><p>If only one of the row and colum indexers is a single value (meaning the other is multiple values), returns a     <code class="docutils literal notranslate"><span class="pre">Series</span></code>     .</p></li>
-<li><p>If neither of the row and column indexers are single values (meaning both are multiple values), returns a     <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>     .</p></li>
+<li><p>If both the row and column indexers are a single value, returns a single value. This will be whatever the value is at the location so its type will be the same as the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of the column it comes from.</p></li>
+<li><p>If only one of the row and colum indexers is a single value (meaning the other is multiple values), returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> .</p></li>
+<li><p>If neither of the row and column indexers are single values (meaning both are multiple values), returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> .</p></li>
 </ul>
 </div>
 

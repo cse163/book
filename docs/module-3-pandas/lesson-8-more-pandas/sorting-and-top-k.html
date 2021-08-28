@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../lesson-9-time-series/index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-9-time-series/time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-9-time-series/pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-9-time-series/practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1672,13 +1660,21 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/1223f3c9c2ff4068bb013ea8b8e3a4a3?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
+<div class="admonition">
+<p class="admonition-title">Data</p>
+<p>You can download the dataset used in this reading here:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/074750138495d9eaac7ff0ce7b5e2663/fmri.csv">fmri.csv</a></p></li>
+</ul>
+</div>
 <div class="section" id="new-data">
 <h2>New Data<a class="headerlink" href="#new-data" title="Permalink to this headline">¶</a></h2>
 <p>For this slide, let’s change the data up a bit to give you a sense of how generic this work in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> can be. We have been using examples with earthquake data that came from a CSV format, but many datasets provide CSV formats of their data.</p>
 <p>In this slide, we will use an example from fMRI (e.g., brain scans) data to show activation in various regions of the brain. Don’t worry, you don’t need to actually understand how brains work to follow along with this example, but we did want to show how all of these examples are just stand-ins for basically anything you want to compute (assuming it’s in a CSV). Note that this dataset has a special value called <code class="docutils literal notranslate"><span class="pre">NaN</span></code> in it that we will talk more about next week!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fmri.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1688,7 +1684,7 @@
 <p>Another very common operation in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> needs you to sort the data. This could either be for presentation reasons or you might be interested in finding the “top 10” rows based on some criteria. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> makes sorting really easy!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fmri.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">))</span>
 </pre></div>
@@ -1717,10 +1713,10 @@ If you want to keep the sorting, you need to save the result in a variable (i.e.
 <p>Instead of actually sorting the data, you might want to find the 10 highest signals in the data. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> also provides a way to do this with the <code class="docutils literal notranslate"><span class="pre">nlargest</span></code> function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/fmri.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fmri.csv&#39;</span><span class="p">)</span>
 
 <span class="c1"># Returns a new DataFrame with the 10 rows with the largest `signal`.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;signal&#39;</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;signal&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>

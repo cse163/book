@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -46,7 +49,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Lesson 9: Time Series" href="../../lesson-9-time-series/index.html" />
+    <link rel="next" title="📚 Lesson 9: Time Series" href="../../lesson-9-time-series/index.html" />
     <link rel="prev" title="⏸ Pause and 🧠 Think" href="../pause-and-think.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../lesson-9-time-series/index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-9-time-series/time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-9-time-series/pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1666,27 +1654,22 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   🚧 Practice: More pandas
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-0">
    Problem 0
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-1">
    Problem 1
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-2">
    Problem 2
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-3">
    Problem 3
   </a>
@@ -1704,38 +1687,51 @@
                 
   <div class="section" id="practice-more-pandas">
 <h1>🚧 Practice: More pandas<a class="headerlink" href="#practice-more-pandas" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-jupyter-notebooks admonition">
+<p class="admonition-title">Jupyter Notebooks</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch
+an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/3e26516de910eca0606d32f94b9e03c5/ufos.csv"><code class="xref download docutils literal notranslate"><span class="pre">ufos.csv</span></code></a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clickin the “Run All” button above.</p>
+</div>
 <p>For this problem, we will be using the earthquakes dataset from the last lesson.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/ufos.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ufos.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># Method to only display the first few rows</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="problem-0">
-<h1>Problem 0<a class="headerlink" href="#problem-0" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 0<a class="headerlink" href="#problem-0" title="Permalink to this headline">¶</a></h2>
 <p>Compute the average duration (<code class="docutils literal notranslate"><span class="pre">'duration</span> <span class="pre">(seconds)'</span></code>) for each UFO shape (<code class="docutils literal notranslate"><span class="pre">'shape'</span></code>).</p>
 <p><strong>For testing purposes, store the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans0</span></code>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_0) ###</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="problem-1">
-<h1>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h2>
 <p>For this problem, we will provide you with some buggy starter code. Your job is to fix it so it meets the specification below!</p>
 <p>Write code to compute the longest duration UFO sighting (<code class="docutils literal notranslate"><span class="pre">'duration</span> <span class="pre">(seconds)'</span></code>) for each city (<code class="docutils literal notranslate"><span class="pre">'city'</span></code>) that is in a “positive location”. A “positive location” is one where either at least one of its latitude (<code class="docutils literal notranslate"><span class="pre">'latitude'</span></code>) or longitude (<code class="docutils literal notranslate"><span class="pre">'longitude'</span></code>) are greater than 0.</p>
 <p><strong>For testing purposes, store the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans1</span></code>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_1) ###</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fix this code!</span>
 <span class="n">ans1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;city&#39;</span><span class="p">)[</span><span class="s1">&#39;duration (seconds)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">|</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">ans1</span>
 </pre></div>
@@ -1744,26 +1740,27 @@
 </div>
 </div>
 <div class="section" id="problem-2">
-<h1>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
 <p>Find the name of the city (<code class="docutils literal notranslate"><span class="pre">'city'</span></code>) that has the longest total duration of UFO sightings. Use the column <code class="docutils literal notranslate"><span class="pre">'duration</span> <span class="pre">(seconds)'</span></code> to compute the total duration of all UFO sightings in each city.</p>
 <p><strong>For testing purposes, store the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans2</span></code>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_2) ###</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="problem-3">
-<h1>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h2>
 <p>Compute how many words are in each comment (<code class="docutils literal notranslate"><span class="pre">'comments'</span></code>). Your result should be a <code class="docutils literal notranslate"><span class="pre">Series</span></code> of the same length as <code class="docutils literal notranslate"><span class="pre">df</span></code> that has the number of words in the comment as values. Like with previous problems we have done with counting words, we are just looking for the number of sequences of characters separated by whitespace.</p>
 <p><strong>For testing purposes, store the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans3</span></code>.</strong></p>
 <p><em>Hint: How would you do this for a single string <code class="docutils literal notranslate"><span class="pre">'I</span> <span class="pre">love</span> <span class="pre">dogs!'</span></code>?</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_3) ###</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1811,7 +1808,7 @@
         <a class="right-next" href="../../lesson-9-time-series/index.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 9: Time Series</p>
+                <p class="prevnext-title">📚 Lesson 9: Time Series</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

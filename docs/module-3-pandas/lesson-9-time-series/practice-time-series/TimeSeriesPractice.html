@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -47,7 +50,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Module 4: Libraries for Data Science" href="../../../module-4-libraries-for-data-science/index.html" />
-    <link rel="prev" title="🚧 Practice: Check your understanding" href="../practice-check-your-understanding.html" />
+    <link rel="prev" title="⏸ Pause and 🧠 Think" href="../pause-and-think.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="../index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -1666,32 +1654,27 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   🚧 Practice: Time Series
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-0">
    Problem 0
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-1">
    Problem 1
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-2">
    Problem 2
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-3">
    Problem 3
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-4">
    Problem 4
   </a>
@@ -1709,11 +1692,27 @@
                 
   <div class="section" id="practice-time-series">
 <h1>🚧 Practice: Time Series<a class="headerlink" href="#practice-time-series" title="Permalink to this headline">¶</a></h1>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/5a77540d1f314c0c9821b960e198d0b8/google.csv">google.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
 <blockquote>
 <div><p>In this notebook, we use a few features of this library called <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (renamed as <code class="docutils literal notranslate"><span class="pre">plt</span></code>) to save a plot to a file. You do not need to understand this part and can leave those parts of the code untouched. We will discuss <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> next week!</p>
 </div></blockquote>
-<p>In this problem we will be working with stock-market data. Don’t worry, you don’t need to understand how stocks work to do this problem (I sure don’t!). All the background you need to know is that a higher number corresponds to more value (money), and a lower number corresponds to less value (money).</p>
-<p><img alt="Stonks" src="../../../_images/stonks.jpeg" /></p>
+<div class="margin figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/stonks.jpeg"><img alt="../../../_images/stonks.jpeg" src="../../../_images/stonks.jpeg" style="width: 192.0px; height: 108.0px;" /></a>
+<p class="caption"><span class="caption-text">How I assume the stock market works</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>In this problem we will be working with stock-market data. Don’t worry, you don’t need to understand how stocks work to do this problem (Hunter sure doesn’t!). All the background you need to know is that a higher number corresponds to more value (money), and a lower number corresponds to less value (money).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1725,16 +1724,14 @@
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="problem-0">
-<h1>Problem 0<a class="headerlink" href="#problem-0" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 0<a class="headerlink" href="#problem-0" title="Permalink to this headline">¶</a></h2>
 <p>Load in the Google stocks dataset from the file <code class="docutils literal notranslate"><span class="pre">google.csv</span></code> so that the <code class="docutils literal notranslate"><span class="pre">Date</span></code> column becomes the time-series index.</p>
-<p>Rememeber, you will need to use the absolute path <code class="docutils literal notranslate"><span class="pre">/home/google.csv</span></code> on Ed.</p>
 <p><strong>For testing purposes, store the result in a variable called <code class="docutils literal notranslate"><span class="pre">goog</span></code>.</strong></p>
 <p>You might also want to make sure you display <code class="docutils literal notranslate"><span class="pre">goog.head()</span></code> so you can get an idea what the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> looks like.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_0) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
 </div>
 </div>
@@ -1742,14 +1739,14 @@
 <p>For this notebook, we will only be looking at the column <code class="docutils literal notranslate"><span class="pre">Adj</span> <span class="pre">Close</span></code> that represents the value of the stock on the end of the day. Whenever we ask you to plot something, you should grab the <code class="docutils literal notranslate"><span class="pre">Series</span></code> for that column and plot with the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function in it (e.g., <code class="docutils literal notranslate"><span class="pre">df['col'].plot()</span></code>)</p>
 </div>
 <div class="section" id="problem-1">
-<h1>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function to plot the <code class="docutils literal notranslate"><span class="pre">Adj</span> <span class="pre">Close</span></code> column for the entire dataset.</p>
 <p><strong>Do not customize your plot in any way for this problem, since we will compare it to the plain plot.</strong></p>
 <p>Your plot should look like the plot below:</p>
 <p><img alt="Problem 1" src="../../../_images/prob1.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_1) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below this comment and above the next comment!</span>
 
 
 <span class="c1"># Write your code above this line!</span>
@@ -1760,13 +1757,13 @@
 </div>
 </div>
 <div class="section" id="problem-2">
-<h1>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
 <p>Let’s get a closer look to see how the pandemic we are experiencing has impacted Google’s stocks. Select the subset of the data from October 2019 (month 10) to April 2020 (month 4). You should not specify any days in your indexing. Store your result of the <code class="docutils literal notranslate"><span class="pre">Adj</span> <span class="pre">Close</span></code> prices for this range of dates as a <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
 <p><strong>For testing purproses, store your result in a variable called <code class="docutils literal notranslate"><span class="pre">ans2</span></code>.</strong></p>
 <p>At the end of the testing cell, we plot your <code class="docutils literal notranslate"><span class="pre">ans2</span></code> to visually inspect the change in the stock price.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_2) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below this comment and above the next comment!</span>
 
 
 <span class="c1"># Write your code above!</span>
@@ -1777,7 +1774,7 @@
 </div>
 </div>
 <div class="section" id="problem-3">
-<h1>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h2>
 <p>To remove some of the noise, let’s change the frequency of the data from daily to <strong>monthly</strong> to see how Google has done year to year.</p>
 <p>Compute the monthly <strong>average</strong> value for the column <code class="docutils literal notranslate"><span class="pre">Adj</span> <span class="pre">Close</span></code>. Your result should be a <code class="docutils literal notranslate"><span class="pre">Series</span></code> indexed by each month over the 15 or so years of data and each value is the average value for all rows that belonged to that year.</p>
 <p><strong>For testing purposes, store the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans3</span></code>.</strong></p>
@@ -1785,7 +1782,9 @@
 <p><em>Hint: Look at the reading before to see how we change the time-frequency of a time-series dataset.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_3) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below this comment and above the next comment!</span>
+
+
 
 <span class="c1"># Write your solution above!</span>
 <span class="n">ans3</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
@@ -1795,7 +1794,7 @@
 </div>
 </div>
 <div class="section" id="problem-4">
-<h1>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h2>
 <p>For this problem, we are going to be a little adventurous and have you explore some <strong>documentation</strong> to learn how to use a new <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function. We highly recommend that you start by reading the brief description at the top and then looking down at the examples. There is NO way that you will read this and understand every parameter available or all the syntax they use, but you WILL be able to look at an example and translate it to what you need.</p>
 <p>For this problem, we want to compute a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html">rolling average</a> of the data over a two-week period. Recall that each row corresponds to a single day so two weeks corresponds to 14 days. This is different than a resample operation since for each day, it will take the average of the last 14 days (hence why it’s called a rolling average).</p>
 <p>Your result should be a <code class="docutils literal notranslate"><span class="pre">Series</span></code> with the same index. The first few rows should be <code class="docutils literal notranslate"><span class="pre">NaN</span></code> as the documentation linked in the last paragraph suggests in their examples (since there is not enough data for the rolling average at the start).</p>
@@ -1819,12 +1818,15 @@
 <p><img alt="Problem 4" src="../../../_images/prob4.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_problem_4) ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below this comment and above the next comment!</span>
+
+
 
 <span class="c1"># Write your solution above</span>
 <span class="n">ans4</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ans4</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1860,11 +1862,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../practice-check-your-understanding.html" title="previous page">
+        <a class="left-prev" href="../pause-and-think.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">🚧 Practice: Check your understanding</p>
+                <p class="prevnext-title">⏸ Pause and 🧠 Think</p>
             </div>
         </a>
     </div>

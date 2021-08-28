@@ -1,35 +1,36 @@
-# Lesson 9: Time Series
+# 📚 Lesson 9: Time Series
 
-##  Concepts  
+```{note}
 
-In this lesson, you will learn the following concepts:  
+This topic is not covered every single quarter of our course. We leave the chapters in for those
+that are interested or if you are covering it in your version of the course.
+```
 
--  Missing data and how to handle it in     `pandas`   
+## Concepts
 
--  Sorting data in     `pandas`   
+In this lesson, you will learn the following concepts:
 
--  Working with time series data  
+- Missing data and how to handle it in `pandas`
 
+- Sorting data in `pandas`
 
-##  Ed Lessons  
+- Working with time series data
 
-As a reminder, our suggested way of doing this lesson follows these steps:  
+## Ed Lessons
 
--  Do the reading on your own time before our class session for today's lesson. Also, respond to the "Pause and Think" question.  
+As a reminder, our suggested way of doing this lesson follows these steps:
 
--  Call into the class-session prepared to work in groups on the practice problems. It will help to have your notes (and answers from Pause and Think) ready so you can hit the ground running with your group.  
+- Do the reading on your own time before our class session for today's lesson. Also, respond to the "Pause and Think" question.
 
-    -  We will periodically summarize high-level ideas of the practice problems in the class session.  
+- Call into the class-session prepared to work in groups on the practice problems. It will help to have your notes (and answers from Pause and Think) ready so you can hit the ground running with your group.
 
-    -  TAs will "walk-around" Zoom breakouts so you can ask them any questions!  
+  - We will periodically summarize high-level ideas of the practice problems in the class session.
 
+  - TAs will "walk-around" Zoom breakouts so you can ask them any questions!
 
--  Finish up any of the practice problems afterward!  
+- Finish up any of the practice problems afterward!
 
-
-**Regardless if you follow this plan or not, all slides and practice problems need to be completed by 19:00 (PDT) on the day of this lesson.**   
-
-
+**Regardless if you follow this plan or not, all slides and practice problems need to be completed by 19:00 (PDT) on the day of this lesson.**
 
 ## Table of Contents
 
@@ -37,11 +38,8 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 :maxdepth: 1
 :caption: Contents
 
-missing-data
-sorting-and-top-k
 time-series
 time-series-2/TimeSeries
 pause-and-think
-practice-check-your-understanding
 practice-time-series/TimeSeriesPractice
 ```

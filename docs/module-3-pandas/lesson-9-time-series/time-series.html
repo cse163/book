@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -47,7 +50,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Time Series" href="time-series-2/TimeSeries.html" />
-    <link rel="prev" title="Sorting and top-k" href="sorting-and-top-k.html" />
+    <link rel="prev" title="📚 Lesson 9: Time Series" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1646,11 +1634,18 @@
                 
   <div class="section" id="time-series">
 <h1>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h1>
+<div class="admonition">
+<p class="admonition-title">Data</p>
+<p>You can download the dataset used in this reading here:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/23cd27ffb460fddac6805f47944a4926/bicycles.csv">bicycles.csv</a></p></li>
+</ul>
+</div>
 <p><strong>Time series</strong> data is data that represents a sequence of events separated by time. This is generally more than just having a column for “date”. We think about time series data being a dataset that’s <strong>indexed</strong> by the time each event happened.</p>
 <p>For example, here is a time series dataset showing the number of bikers over Seattle’s Fremont Bridge.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/bicycles.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bicycles.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1660,7 +1655,7 @@
 <p>To get <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to recognize the fact that this is a time-series dataset, we need to tell it which column contains the unique identifiers ( <code class="docutils literal notranslate"><span class="pre">index_col='Date'</span></code> ) and pass in a special parameter to tell it to interpret these as dates ( <code class="docutils literal notranslate"><span class="pre">parse_dates=True</span></code> ). The following snippet shows how to do this, and <strong>notice in its output it shows the date column shows the index</strong> !</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/bicycles.csv&#39;</span><span class="p">,</span> 
+<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bicycles.csv&#39;</span><span class="p">,</span>
                 <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
@@ -1698,11 +1693,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="sorting-and-top-k.html" title="previous page">
+        <a class="left-prev" href="index.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Sorting and top-k</p>
+                <p class="prevnext-title">📚 Lesson 9: Time Series</p>
             </div>
         </a>
     </div>

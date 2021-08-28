@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../lesson-9-time-series/index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-9-time-series/time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-9-time-series/pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-9-time-series/practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1666,12 +1654,7 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   apply
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#built-in-functions-on-pandas">
    Built-in Functions on
    <code class="docutils literal notranslate">
@@ -1681,12 +1664,12 @@
    </code>
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Apply
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#saving-results">
    Saving Results
   </a>
@@ -1704,6 +1687,20 @@
                 
   <div class="section" id="apply">
 <h1>apply<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h1>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/e414888ad84741da80efa69997a62574" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/ca336d13376cacd101d57c2735be1017/earthquakes.csv">earthquakes.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1713,7 +1710,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/earthquakes.csv&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -1919,9 +1916,8 @@ Name: magnitude, Length: 8394, dtype: float64
 <li><p>Logical operators (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code>)</p></li>
 </ul>
 <p>This means anything else will act on the <code class="docutils literal notranslate"><span class="pre">Series</span></code> itself, just like this <code class="docutils literal notranslate"><span class="pre">len</span></code> function did!</p>
-</div>
 <div class="section" id="built-in-functions-on-pandas">
-<h1>Built-in Functions on <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#built-in-functions-on-pandas" title="Permalink to this headline">¶</a></h1>
+<h2>Built-in Functions on <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#built-in-functions-on-pandas" title="Permalink to this headline">¶</a></h2>
 <p>The syntax looks a bit weird at first, but if you want to call the <code class="docutils literal notranslate"><span class="pre">len</span></code> function on a each <code class="docutils literal notranslate"><span class="pre">str</span></code>, you have to use this syntax below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1974,7 +1970,7 @@ Name: name, Length: 8394, dtype: object
 <p>Do note that this does not modify the original name column, but rather returns a new <code class="docutils literal notranslate"><span class="pre">Series</span></code> with all the names upper-cased.</p>
 </div>
 <div class="section" id="id1">
-<h1>Apply<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h2>Apply<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>What if you wanted to write your own function to transform a value and apply it to each element in a <code class="docutils literal notranslate"><span class="pre">Series</span></code>? For example, what if I wanted to grab the first two characters from each name?</p>
 <p>This is where we will need the more general <code class="docutils literal notranslate"><span class="pre">apply</span></code> function defined for <code class="docutils literal notranslate"><span class="pre">pandas</span></code> objects. <code class="docutils literal notranslate"><span class="pre">apply</span></code> is more general than using the specific <code class="docutils literal notranslate"><span class="pre">str</span></code> functions we saw above since it will let you use almost any function for your data transfomration.</p>
 <p>Before we show how to do the specific example of grabbing the first two characters from the names, let’s use this new approach to find the <code class="docutils literal notranslate"><span class="pre">len</span></code> of each name. We first show how to do this, and then explain what is happening.</p>
@@ -2007,7 +2003,7 @@ Name: name, Length: 8394, dtype: int64
 <p>The cell below implements something sort of like this behavior but using <code class="docutils literal notranslate"><span class="pre">list</span></code>s instead.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">list_apply</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">list_apply</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">fun</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Takes a list of values and a function, and applies that function</span>
 <span class="sd">    to each value in values. The given function must take one parameter</span>
@@ -2016,7 +2012,7 @@ Name: name, Length: 8394, dtype: int64
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># It&#39;s not necessary to use a list comprehension here, </span>
     <span class="c1"># but it&#39;s the easiest way to write this method!</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">function</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">fun</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]</span>
 
 <span class="n">list_apply</span><span class="p">([</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">],</span> <span class="nb">len</span><span class="p">)</span>
 </pre></div>
@@ -2063,7 +2059,7 @@ Name: name, Length: 8394, dtype: object
 </div>
 </div>
 <div class="section" id="saving-results">
-<h1>Saving Results<a class="headerlink" href="#saving-results" title="Permalink to this headline">¶</a></h1>
+<h2>Saving Results<a class="headerlink" href="#saving-results" title="Permalink to this headline">¶</a></h2>
 <p>Remember this <code class="docutils literal notranslate"><span class="pre">apply</span></code> function doesn’t modify any data in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code>, but rather returns a new one. It’s common that you want to save the result of an <code class="docutils literal notranslate"><span class="pre">apply</span></code> to your dataset to use those values later. Just like how you can use the <code class="docutils literal notranslate"><span class="pre">[]</span></code> syntax to select columns from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, you can use it to set columns in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>Below, we create a new column in the dataset by assigning to the new column name. Notice that <code class="docutils literal notranslate"><span class="pre">df</span></code> now has this extra column.</p>
 <div class="cell docutils container">
@@ -2240,6 +2236,7 @@ Name: name, Length: 8394, dtype: object
 </table>
 <p>8394 rows × 9 columns</p>
 </div></div></div>
+</div>
 </div>
 </div>
 

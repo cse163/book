@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 9: Time Series &#8212; Intermediate Data Programming</title>
+    <title>📚 Lesson 9: Time Series &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -46,7 +49,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Missing Data" href="missing-data.html" />
+    <link rel="next" title="Time Series" href="time-series.html" />
     <link rel="prev" title="🚧 Practice: More pandas" href="../lesson-8-more-pandas/practice-more-pandas/PandasPractice.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="current reference internal" href="#">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1668,13 +1656,18 @@
               <div>
                 
   <div class="section" id="lesson-9-time-series">
-<h1>Lesson 9: Time Series<a class="headerlink" href="#lesson-9-time-series" title="Permalink to this headline">¶</a></h1>
+<h1>📚 Lesson 9: Time Series<a class="headerlink" href="#lesson-9-time-series" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This topic is not covered every single quarter of our course. We leave the chapters in for those
+that are interested or if you are covering it in your version of the course.</p>
+</div>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <p>In this lesson, you will learn the following concepts:</p>
 <ul class="simple">
-<li><p>Missing data and how to handle it in     <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
-<li><p>Sorting data in     <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+<li><p>Missing data and how to handle it in <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+<li><p>Sorting data in <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
 <li><p>Working with time series data</p></li>
 </ul>
 </div>
@@ -1698,20 +1691,12 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="missing-data.html">Missing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sorting-and-top-k.html">Sorting and top-k</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time-series.html">Time Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time-series-2/TimeSeries.html">Time Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time-series-2/TimeSeries.html#plotting">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time-series-2/TimeSeries.html#resample-vs-group-by">Resample vs Group By</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pause-and-think.html">⏸ Pause and 🧠 Think</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practice-check-your-understanding.html">🚧 Practice: Check your understanding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="practice-time-series/TimeSeriesPractice.html">🚧 Practice: Time Series</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practice-time-series/TimeSeriesPractice.html#problem-0">Problem 0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practice-time-series/TimeSeriesPractice.html#problem-1">Problem 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practice-time-series/TimeSeriesPractice.html#problem-2">Problem 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practice-time-series/TimeSeriesPractice.html#problem-3">Problem 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practice-time-series/TimeSeriesPractice.html#problem-4">Problem 4</a></li>
 </ul>
 </div>
 </div>
@@ -1756,10 +1741,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="missing-data.html" title="next page">
+        <a class="right-next" href="time-series.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Missing Data</p>
+                <p class="prevnext-title">Time Series</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

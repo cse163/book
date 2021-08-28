@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -35,6 +36,8 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -473,7 +476,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/PandasTutorial.html">
+      <a class="reference internal" href="../../lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
        🚧 Practice: Earthquakes
       </a>
      </li>
@@ -528,7 +531,7 @@
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="../index.html">
-     Lesson 9: Time Series
+     📚 Lesson 9: Time Series
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -536,16 +539,6 @@
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../missing-data.html">
-       Missing Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../sorting-and-top-k.html">
-       Sorting and top-k
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../time-series.html">
        Time Series
@@ -559,11 +552,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../pause-and-think.html">
        ⏸ Pause and 🧠 Think
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../practice-check-your-understanding.html">
-       🚧 Practice: Check your understanding
       </a>
      </li>
      <li class="toctree-l3">
@@ -1694,7 +1682,20 @@
                 
   <div class="section" id="time-series">
 <h1>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h1>
-<p>We start by loading the dataset into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the same code as in the last slide to index the data by the date.</p>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/8cfb27e1060ca269d177c4cca6886ddc/bicycles.csv">bicycles.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
+<p>We start by loading the biycycles dataset into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the same code as in the last slide to index the data by the date.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some setup code to get the plotting library correct</span>
@@ -1708,7 +1709,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/bicycles.csv&#39;</span><span class="p">,</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bicycles.csv&#39;</span><span class="p">,</span> 
                  <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Sorts the rows so the index is sorted</span>
@@ -2309,7 +2310,7 @@ Name: 2019-03-31 15:00:00, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f3d35ecdc40&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/TimeSeries_17_1.png" src="../../../_images/TimeSeries_17_1.png" />
+<img alt="../../../_images/TimeSeries_16_1.png" src="../../../_images/TimeSeries_16_1.png" />
 </div>
 </div>
 <p>This is not exactly readable… The problem is the data is too “high resolution”: it’s drawing a line for every hour of every day for 6 years! No wonder we can’t actually see anything.</p>
@@ -2326,7 +2327,7 @@ Name: 2019-03-31 15:00:00, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f3d354c6280&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/TimeSeries_19_1.png" src="../../../_images/TimeSeries_19_1.png" />
+<img alt="../../../_images/TimeSeries_18_1.png" src="../../../_images/TimeSeries_18_1.png" />
 </div>
 </div>
 <p>Much more legible! Now we can see both East and West traffic. Looking at the graphs, we see some seasonality in the data - there are peaks in the summer and troughs in the winter.</p>
@@ -2360,7 +2361,7 @@ Name: 2019-03-31 15:00:00, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f3d354a3c70&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/TimeSeries_21_1.png" src="../../../_images/TimeSeries_21_1.png" />
+<img alt="../../../_images/TimeSeries_20_1.png" src="../../../_images/TimeSeries_20_1.png" />
 </div>
 </div>
 <p>Wow! Why does that look so different?!?!</p>
