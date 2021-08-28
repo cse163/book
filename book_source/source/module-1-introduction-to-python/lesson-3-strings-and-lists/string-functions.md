@@ -32,12 +32,12 @@ Here is a shortlist of useful functions for `str` in Python.
 
 |   Function    |                                                                                       Description                                                                                       |
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|`s.lower()`      |Returns a new string that is the lowercase version of `s`                                                                                                                                  |
-|`s.upper()`      |Returns a new string that is the uppercase version of `s`                                                                                                                                 |
-|`s.find(target)` |Returns the index of the first occurrence of `target` in `s`. If not found, returns `-1`.                                                                                                      |
-|`s.strip()`      |Returns a new string that has all the leading and trailing whitespace removed. Also has functions `lstrip()` and `rstrip()` that remove only left whitespace or right whitespace respectively.|
-|`s.split(delim)` |Splits `s` up into parts using the given delimiter `delim` to break the string apart. Returns the result as a `list`.                                                                                |
-|`s.join(strings)`|Combines the strings in the given list `strings`, separated by `s`                                                                                                                                   |
+|`s.lower()`|Returns a new string that is the lowercase version of `s`.|
+|`s.upper()`|Returns a new string that is the uppercase version of `s`.|
+|`s.find(target)`|Returns the index of the first occurrence of `target` in `s`. If not found, returns `-1`.|
+|`s.strip()`|Returns a new string that has all the leading and trailing whitespace removed. Also has functions `lstrip()` and `rstrip()` that remove only left whitespace or right whitespace respectively.|
+|`s.split(delim)`|Splits `s` up into parts using the given delimiter `delim` to break the string apart. Returns the result as a `list`.|
+|`s.join(strings)`|Combines the strings in the given list `strings`, separated by `s`.|
 
 
 ```{admonition} Warning

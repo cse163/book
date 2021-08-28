@@ -16,6 +16,8 @@ This slide has some starter code for you to download to follow along, but there 
     <iframe src="https://www.loom.com/embed/e959f9e2b2284d598c4136f972427f0b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Files in your computer are stored in folders. Folders can contain other folders or other files and this makes a hierarchy in your computer. If you have a Mac, you can use the Finder application to navigate these folders. If you have a Windows PC, you can use the File Explorer. For example, below, I have a screenshot of the Finder looking at the files in the folder I downloaded from this lesson.  
 
 ```{image} https://static.us.edusercontent.com/files/Hst9iQLxU1Yj7N3tvKPt85Tg

@@ -7,6 +7,8 @@
     <iframe src="https://www.loom.com/embed/620e2a3aca0a45b0ba52c7913f725375?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 **Files** on computers store some type of data. This data could be pictures, a word document, a video game, etc. For the first part of this class, we will only work with files that store text data. One such file type that holds text data is the `.txt` file type.  
 
 For example, if you are using a Mac or Linux system, you can open up a terminal and use the `cat` program to print out the contents of a file. Suppose I had a file called `poem.txt` on my computer. If I ran the following command in my terminal, it would print:  

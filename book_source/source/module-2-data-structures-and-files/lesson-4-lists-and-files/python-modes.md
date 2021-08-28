@@ -16,6 +16,8 @@ This slide has some starter code for you to download to follow along, but there 
     <iframe src="https://www.loom.com/embed/b27fda7ec1724f85b14fb2bae3382806" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 It turns out there are actually two "mode"s that people commonly interact with Python.  
 
 ##  Script  
