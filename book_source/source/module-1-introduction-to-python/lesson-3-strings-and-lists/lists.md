@@ -19,8 +19,7 @@ print(s.split())
 
 The first thing to point out in this example is that we didn't pass any parameter to `split` even though the table in our String Functions slide showed it taking a `delim` parameter! This is because by default (if you don't pass in a delimiter), `split` will break up the string by whitespace.  
 
-The second thing to point out is that that return value broke up all the words in the string and is showing them all! What is the type of that result? It's a `
-			` . A `list` is an indexed-sequence of values of any type. In some sense, a string is like a special case of a `list` since it is an index-sequence of characters specifically.  
+The second thing to point out is that that return value broke up all the words in the string and is showing them all! What is the type of that result? It's a `list` . A `list` is an indexed-sequence of values of any type. In some sense, a string is like a special case of a `list` since it is an index-sequence of characters specifically.  
 
 
 ```{admonition} Note
@@ -58,12 +57,11 @@ for i in range(len(l)):
 
 for word in l:
     print(word)
-
 ```
 
 Some key differences/things to point out:  
 
-First, to specify the values of a list, the syntax uses square brackets around a comma-separated list of values (of any type).  
+First, to specify the values of a `list`, the syntax uses square brackets around a comma-separated list of values (of any type).  
 
 ```python
 l1 = ['I', 'love', 'dogs']
@@ -71,7 +69,7 @@ l2 = [7, 8, 9]
 l3 = ['I', 3, 'dogs']  # can mix types too!
 ```
 
-Second, because this is now a list, not a `str` , the values returned by indexing are different. By indexing into index 0 of `l1` , it returns the value that's in that index (in this case, the `str`  `'I'` ). Similarly, when you slice into a `list` you get a `list` back (although it's shorter).  
+Second, because this is now a `list`, not a `str` , the values returned by indexing are different. By indexing into index 0 of `l1` , it returns the value that's in that index (in this case, the `str`  `'I'` ). Similarly, when you slice into a `list` you get a `list` back (although it's shorter).  
 
 ##  Assignment  
 

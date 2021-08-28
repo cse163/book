@@ -16,7 +16,7 @@ Note that this function returns a string and does not print anything.
 :class: note
 
 This problem was created on
-[None](https://www.codestepbystep.com/problem/view/python/strings/switch_pairs)
+[Code Step by Step](https://www.codestepbystep.com/problem/view/python/strings/switch_pairs)
 .
 
 ```

@@ -17,7 +17,7 @@ print(s[2:7])
 The slice shown above means "all characters starting at index 2 and up to (not including) 7" (because stop is exclusive, just like with `range` ). If you take this with the picture below, it can clarify why the cell above prints `llo w` .  
 
 ```{image} https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd
-:alt: TODO
+:alt: hello world string indexing
 :width: 743
 :align: center
 ```

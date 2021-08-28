@@ -14,12 +14,10 @@ s = 'hello world'
 print(s[2:len(s) - 2])
 ```
 
-This is the same idea of slices that we saw in the last slide. To understand why this prints `llo wor` , we can think of the picture showing the indices of the `str` Tas shown in the following image ( *
-			Hint: Think of where 
-			* ).  
+This is the same idea of slices that we saw in the last slide. To understand why this prints `llo wor` , we can think of the picture showing the indices of the `str` Tas shown in the following image ( *Hint: Think of where `2` and `len(s)-2` fall on this picture* ).  
 
 ```{image} https://static.us.edusercontent.com/files/O6DgXxSxp4AtJg2JsGibHOpf
-:alt: TODO
+:alt: hello world string indexing
 :width: 744
 :align: center
 ```
@@ -27,7 +25,7 @@ This is the same idea of slices that we saw in the last slide. To understand why
 Asking Python to go " `n` before the end" is such a common task, they provide another scheme for indexing that uses negative numbers! The idea is you start at the last character ( `'d'` ) being at index `-1` (since it is at index `len(s) - 1` in our indexing scheme), the second to last ( `'l'` ) being `-2` , etc. Pictorially, the negative indices are shown in the following image.  
 
 ```{image} https://static.us.edusercontent.com/files/oeDlJkGmqUtQXpUmO1wtDBXH
-:alt: TODO
+:alt: hello world string with negative indexing
 :width: 744
 :align: center
 ```
@@ -43,7 +41,7 @@ Notice that the end index is still exclusive, we are just able to use `-2` as th
 
 ##  Pause And Think  
 
-Before pressing run on the next cell, what do you think it would print?  
+Before running the code in the next cell, what do you think it would print?  
 
 ```python
 s = 'hello world'

@@ -27,7 +27,7 @@ Done!
 -  Your program should use the main-method pattern (we provided the starter code). You do not need to define any other functions for this problem!  
 
 
-##  Running / Submitting  
+##  Running Instructions
 
 -  To complete this practice, download the starter code using the link at the top of the reading slide and open it on your local editor.
 -  Remember to run your program you can use the terminal by using the command     `python main.py`     (since the name of the file is     `main.py`     ). 
