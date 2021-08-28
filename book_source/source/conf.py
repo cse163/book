@@ -34,7 +34,6 @@ release = "0.0.0"
 extensions = [
     "custom_directives",
     "myst_nb",
-    "sphinx_thebe",
     "sphinx_copybutton",
 ]
 
@@ -81,7 +80,6 @@ html_theme_options = {
         "binderhub_url": "https://mybinder.org",
         "colab_url": "https://colab.research.google.com/",
         "notebook_interface": "jupyterlab",
-        "thebe": True,
     },
     "extra_footer": 'Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!',
 }
