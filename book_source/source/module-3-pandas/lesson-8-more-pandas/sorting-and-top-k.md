@@ -6,8 +6,8 @@
 
 ---
 
-```{admonition} Data
-You can download the dataset used in this reading here: {download}`fmri.csv </_static/data/fmri.csv>`
+```{reading-data}
+{static-data-download}`fmri.csv`
 ```
 
 ## New Data
