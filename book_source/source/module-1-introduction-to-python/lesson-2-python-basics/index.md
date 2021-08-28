@@ -27,9 +27,8 @@ context-first-two-modules-of-cse-163
 python-basics
 types-and-booleans
 while-loops
-for-loop
+for-loops
 conditionals
-conditionals-answered
 functions
 pause-and-think
 practice-expressions

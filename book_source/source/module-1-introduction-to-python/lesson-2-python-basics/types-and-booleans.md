@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/dc02aef95fae4c9d9fc56b8ba8c3080f?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 ##  `bool` Type in Python  
 
 As mentioned before, each Python value has a value and a type. We have only seen numeric types so far `int` for integer values (e.g., `3` ) and `float` for real-number values (e.g., `3.4` ). There are many other types of data in Python. One of these types is `bool` for values that only take on the values `True` or `False` .  

@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/8cf97c1c51074ede9bb28a47d4761206?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 If you want to repeat some computation, a programming language usually provides a construct called a **loop** that lets you repeat code some number of times. For those that know Java, Python has very similar constructs to the for loop and the while loop.  
 
 ##  While Loop  

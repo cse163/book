@@ -18,6 +18,8 @@ In addition to these readings, I will also be recording short videos of me walki
     <iframe src="https://www.loom.com/embed/732b9b2cb52d4380b4e21ea4cf53f2ab?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 In the first two modules, you will be learning a lot of new tools and many of you are learning Python for the first time! But our hope is that this deliberate practice we are setting up will make this transition easier!  
 
 <hr>

@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/335c608ff6204eeba9238568a87afcc3?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 At this point, you've finished all of the new lesson content. All that's left is completing the practice problems for the day!  
 
 Before you go onto the practice problems though, we want you to think back on what you've seen so far and reflect on it. There are most likely some questions about what you've seen so far, and in the off-case there is not, there must be something related to this that you would like to learn more about.  

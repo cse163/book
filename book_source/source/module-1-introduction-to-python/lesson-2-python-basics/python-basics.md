@@ -6,6 +6,8 @@
     <iframe src="https://www.loom.com/embed/fdf9802363e74c8db885031d985be706?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 In a lesson reading, there will be multiple Python **snippets** . You should think of each snippet as its own Python file.
 While you cannot run the code blocks in the readings, we encourage you to copy and
 paste them to a Python editor as you are reading to see their output. You can also
