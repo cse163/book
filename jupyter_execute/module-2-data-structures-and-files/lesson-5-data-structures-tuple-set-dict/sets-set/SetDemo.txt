@@ -1,0 +1,55 @@
+def count_unique_words_list(file_name):
+    unique_words = []
+    with open(file_name) as f:
+        for line in f.readlines():
+            for word in line.split():
+                if word not in unique_words:
+                    unique_words.append(word)
+    return len(unique_words)
+
+%%time
+count_unique_words_list('green-eggs.txt')
+
+%%time
+count_unique_words_list('bee-movie.txt')
+
+%%time
+count_unique_words_list('mobydick.txt')
+
+nums = set()  # Creates an empty set
+print(nums)
+
+nums.add(1)
+nums.add(2)
+nums.add(3)
+nums.add(4)
+nums.add(2)  # Is a duplicate, so it's ignored
+nums.add(-1)
+
+print(nums)
+
+print(len(nums))
+
+if 5 in nums:
+    print('Found it')
+else:
+    print('Did not find it')
+
+print(nums[0])
+
+def count_unique_words_set(file_name):
+    unique_words = set()
+    with open(file_name) as f:
+        for line in f.readlines():
+            for word in line.split():
+                unique_words.add(word)
+    return len(unique_words)
+
+%%time
+count_unique_words_set('green-eggs.txt')
+
+%%time
+count_unique_words_set('bee-movie.txt')
+
+%%time
+count_unique_words_set('mobydick.txt')

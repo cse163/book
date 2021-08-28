@@ -1,0 +1,40 @@
+import pandas as pd
+
+df = pd.read_csv('earthquakes.csv')
+df
+
+df['magnitude'] * 2
+
+len(df['name'])
+
+df['name'].str.len()
+
+df['name'].str.upper()
+
+df['name'].apply(len)
+
+def list_apply(values, fun):
+    """
+    Takes a list of values and a function, and applies that function
+    to each value in values. The given function must take one parameter
+    as input and the returned list will be the result of calling that
+    function once for each value in the list.
+    """
+    # It's not necessary to use a list comprehension here, 
+    # but it's the easiest way to write this method!
+    return [fun(v) for v in values]
+
+list_apply(['I', 'love', 'dogs'], len)
+
+def first_two(s):
+    """
+    Returns the first two characters of the given str as a str.
+    
+    Assumes there are at least two characters in s.
+    """
+    return s[:2]
+
+df['name'].apply(first_two)
+
+df['first_two_letters'] = df['name'].apply(first_two)
+df

@@ -1,0 +1,14 @@
+import pandas as pd
+
+df = pd.read_csv('ufos.csv')
+df.head() # Method to only display the first few rows
+
+# Write your code here!
+
+# Fix this code!
+ans1 = df.groupby('city')['duration (seconds)'].max()[df['latitude'] > 0 | df['longitude'] > 0]
+ans1
+
+# Write your code here!
+
+# Write your code here!

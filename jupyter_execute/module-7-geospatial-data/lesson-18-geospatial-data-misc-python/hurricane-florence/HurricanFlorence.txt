@@ -1,0 +1,41 @@
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# A special command for Notebooks to get the plots inline
+%matplotlib inline 
+
+country = gpd.read_file('gz_2010_us_040_00_5m.json')
+country.head()
+
+country.plot()
+
+country = country[(country['NAME'] != 'Alaska') & (country['NAME'] != 'Hawaii')]
+country.plot()
+
+florence = pd.read_csv('stormhistory.csv')
+florence.head()
+
+florence.plot()
+
+from shapely.geometry import Point
+
+# Add new-lines for clarity
+florence['coordinates'] = [
+    Point(-long, lat) 
+    for long, lat 
+    in zip(florence['Long'], florence['Lat'])
+]
+
+florence = gpd.GeoDataFrame(florence, geometry='coordinates')
+florence.head()
+
+florence.plot()
+
+country.plot()
+florence.plot(color='black', markersize=10)
+
+fig, ax = plt.subplots(1, figsize=(15, 7))
+
+country.plot(ax=ax)
+florence.plot(color='black', markersize=10, ax=ax)

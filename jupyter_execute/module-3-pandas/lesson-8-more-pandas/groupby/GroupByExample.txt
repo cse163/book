@@ -1,0 +1,65 @@
+import cse163_utils
+
+# Using the code we wrote to parse the CSV to a list of dictionaries
+data = cse163_utils.parse('earthquakes.csv')
+data[:5]  # First 5 rows
+
+shake_factors = {}  # Empty dictionary
+for earthquake in data:
+    place = earthquake['name']
+    magnitude = earthquake['magnitude']
+    shake_factors[place] += magnitude
+
+shake_factors
+
+shake_factors = {}  # Empty dictionary
+for earthquake in data:
+    place = earthquake['name']
+    magnitude = earthquake['magnitude']
+    if place in shake_factors:
+        shake_factors[place] += magnitude
+    else:
+        # Don't increment, just create the key/value
+        shake_factors[place] = magnitude  
+        
+    # An alternative solution uses the following structure instead of the if/else
+    # if place not in shake_facotrs:
+    #     shake_factors[place] = 0
+    # shake_factors[place] += magnitude
+        
+shake_factors
+
+import pandas as pd
+
+df = pd.read_csv('earthquakes.csv')
+df
+
+df.groupby('name')['magnitude'].sum()
+
+shake_factor_pandas = df.groupby('name')['magnitude'].sum()
+shake_factor_pandas['California']
+
+# Make a DataFrame by giving it a list of dictionaries
+example_data = pd.DataFrame([
+    {'col1': 'A', 'col2': 1},
+    {'col1': 'B', 'col2': 2},
+    {'col1': 'C', 'col2': 3},
+    {'col1': 'A', 'col2': 4},
+    {'col1': 'C', 'col2': 5},
+])
+
+example_data
+
+groupby = example_data.groupby('col1') # Notice no aggregate
+groupby
+
+for key, group in groupby: 
+    print('==== Next Group: ' + str(key) + ' ====')
+    display(group) # To get the fancy Jupyter Notebook display of table
+
+result = example_data.groupby('col1')['col2'].sum()
+result
+
+print(type(result))
+print(result.index)
+print(result['C'])

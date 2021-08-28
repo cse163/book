@@ -1,0 +1,31 @@
+import pandas as pd
+
+data = pd.read_csv('/home/pokemon.csv')
+
+data  # For display
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set()  # Don't forget this!
+
+# Only for Jupyter
+%matplotlib inline
+
+sns.relplot(x='Attack', y='Defense', data=data)
+
+sns.relplot(x='Attack', y='Defense', size='Stage', data=data)
+
+sns.catplot(x='Type 1', kind='count', data=data)
+
+sns.catplot(x='Type 1', kind='count', color='b', data=data)
+
+sns.catplot(x='Type 1', kind='count', color='b', data=data)
+plt.xticks(rotation=-45)
+
+sns.catplot(x='Type 1', kind='count', color='b', data=data)
+plt.xticks(rotation=-45)
+
+plt.title('Count of Each Primary Pokemon Type')
+plt.xlabel('Primary Type')
+plt.ylabel('Number of Pokemon')

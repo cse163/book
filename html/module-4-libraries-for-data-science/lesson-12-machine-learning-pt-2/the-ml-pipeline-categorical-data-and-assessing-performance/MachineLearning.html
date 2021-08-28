@@ -1,0 +1,2482 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The ML Pipeline: Categorical Data and Assessing Performance &#8212; Intermediate Data Programming</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="🚧 Practice: Machine Learning Questions" href="../practice-machine-learning-questions.html" />
+    <link rel="prev" title="Recap Terms" href="../recap-terms.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Intermediate Data Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-1-introduction-to-python/index.html">
+   Module 1: Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/index.html">
+     📚 Lesson 2: Python Basics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
+       Context: First Two Weeks of CSE 163
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/python-basics.html">
+       Python Basics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/types-and-booleans.html">
+       Types and Booleans
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/while-loops.html">
+       While Loops
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
+       For Loop
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
+       Conditionals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
+       Conditionals Answered
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/functions.html">
+       Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/practice-expressions.html">
+       🚧 Practice: Expressions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/practice-minute-countdown.html">
+       🚧 Practice: Minute Countdown
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/practice-countdown.html">
+       🚧 Practice: Countdown
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-2-python-basics/practice-fibonacci.html">
+       🚧 Practice: Fibonacci
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/index.html">
+     📚 Lesson 3: Strings and Lists
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/strings.html">
+       Strings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/string-functions.html">
+       String Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/slicing-strings.html">
+       Slicing Strings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/negative-indices.html">
+       Negative Indices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/lists.html">
+       Lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/documentation-matters.html">
+       Documentation Matters
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/none.html">
+       None
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/practice-slices.html">
+       🚧 Practice: Slices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/practice-mystery1.html">
+       🚧 Practice: mystery1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/practice-switch_pairs.html">
+       🚧 Practice: switch_pairs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/practice-find_range.html">
+       🚧 Practice: find_range
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-1-introduction-to-python/lesson-3-strings-and-lists/practice-count_votes.html">
+       🚧 Practice: count_votes
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-2-data-structures-and-files/index.html">
+   Module 2: Data Structures and Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/index.html">
+     📚 Lesson 4: Lists and Files
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/file-processing.html">
+       File Processing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/advanced-lists.html">
+       Advanced Lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/file-paths.html">
+       File Paths
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/python-modes.html">
+       Python Modes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/jupyter-notebooks/DemoNotebook.html">
+       Jupyter Notebooks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/practice-build-a-list.html">
+       🚧 Practice: Build a List
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/practice-filter-long-lines.html">
+       🚧 Practice: Filter Long Lines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-4-lists-and-files/practice-count-unique-words.html">
+       🚧 Practice: Count Unique Words
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/index.html">
+     📚 Lesson 5: Data Structures - Tuple, Set, Dict
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/recap-lists.html">
+       Recap: Lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/list-comprehensions.html">
+       List Comprehensions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-reading-list-comprehensions.html">
+       🚧 Practice: Reading List Comprehensions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-build-a-list-comprehension.html">
+       🚧 Practice: Build a List Comprehension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/tuple.html">
+       Tuple
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/sets-set/SetDemo.html">
+       Sets (set)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/dictionaries-dict.html">
+       Dictionaries (dict)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-area-codes.html">
+       🚧 Practice: Area Codes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-count-words.html">
+       🚧 Practice: Count Words
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-6-csv-data/index.html">
+     📚 Lesson 6: CSV Data
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-6-csv-data/dictionary-methods.html">
+       Dictionary Methods
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-6-csv-data/practice-most-frequent-word.html">
+       🚧 Practice: Most Frequent Word
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-6-csv-data/comma-separated-values-csv.html">
+       Comma Separated Values (CSV)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-6-csv-data/processing-a-csv.html">
+       Processing a CSV
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-6-csv-data/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-6-csv-data/practice-largest-earthquake.html">
+       🚧 Practice: Largest Earthquake
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-2-data-structures-and-files/lesson-6-csv-data/practice-shakiness-by-location.html">
+       🚧 Practice: Shakiness by Location
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-3-pandas/index.html">
+   Module 3: Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-3-pandas/lesson-7-introduction-to-pandas/index.html">
+     📚 Lesson 7: Introduction to Pandas
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-7-introduction-to-pandas/imports.html">
+       Imports
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-7-introduction-to-pandas/pandas.html">
+       Pandas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-7-introduction-to-pandas/practicereading-pandas-tutorial/PandasTutorial.html">
+       🚧 Practice/Reading: Pandas Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-7-introduction-to-pandas/pandas-recap.html">
+       Pandas Recap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-7-introduction-to-pandas/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-7-introduction-to-pandas/practice-types.html">
+       🚧 Practice: Types
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html">
+       🚧 Practice: Earthquakes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-3-pandas/lesson-8-more-pandas/index.html">
+     📚 Lesson 8: More Pandas
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-8-more-pandas/recap-pandas.html">
+       Recap: Pandas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-8-more-pandas/groupby/GroupByExample.html">
+       groupby
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-8-more-pandas/apply/ApplyExample.html">
+       apply
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-8-more-pandas/keyword-arguments.html">
+       Keyword Arguments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-8-more-pandas/sorting-and-top-k.html">
+       Sorting and top-k
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-8-more-pandas/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-8-more-pandas/practice-more-pandas/PandasPractice.html">
+       🚧 Practice: More pandas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-3-pandas/lesson-9-time-series/index.html">
+     📚 Lesson 9: Time Series
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-9-time-series/time-series.html">
+       Time Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-9-time-series/time-series-2/TimeSeries.html">
+       Time Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-9-time-series/pause-and-think.html">
+       ⏸ Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-3-pandas/lesson-9-time-series/practice-time-series/TimeSeriesPractice.html">
+       🚧 Practice: Time Series
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../index.html">
+   Module 4: Libraries for Data Science
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../lesson-10-data-visualization/index.html">
+     📚 Lesson 10: Data Visualization
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-10-data-visualization/default-parameters.html">
+       Default Parameters
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-10-data-visualization/missing-data.html">
+       Missing Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-10-data-visualization/practice-check-your-understanding.html">
+       🚧 Practice: Check your understanding
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-10-data-visualization/data-visualization/DataViz.html">
+       Data Visualization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-10-data-visualization/principles-of-data-visualization.html">
+       Principles of Data Visualization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-10-data-visualization/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-10-data-visualization/practice-plotting-1.html">
+       🚧 Practice: Plotting 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-10-data-visualization/practice-plotting-2.html">
+       🚧 Practice: Plotting 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../lesson-11-machine-learning/index.html">
+     📚 Lesson 11: Machine Learning
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-11-machine-learning/introduction.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-11-machine-learning/machine-learning-code/MachineLearning.html">
+       Machine Learning Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-11-machine-learning/understanding-decision-trees.html">
+       Understanding Decision Trees
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-11-machine-learning/practice-machine-learning-questions.html">
+       🚧 Practice: Machine Learning Questions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-11-machine-learning/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../lesson-11-machine-learning/practice-coding-machine-learning/MLforWeather.html">
+       🚧 Practice: Coding Machine Learning
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../index.html">
+     📚 Lesson 12: Machine Learning pt. 2
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../recap-terms.html">
+       Recap Terms
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       The ML Pipeline: Categorical Data and Assessing Performance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../practice-machine-learning-questions.html">
+       🚧 Practice: Machine Learning Questions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../when-to-not-use-ml.html">
+       When to Not Use ML
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../practice-coding-machine-learning/MLforMushrooms.html">
+       🚧 Practice: Coding Machine Learning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../practice-reflecting-on-when-to-not-use-ml.html">
+       🚧 Practice: Reflecting on When to Not Use ML
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-5-classes-and-objects/index.html">
+   Module 5: Classes and Objects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-13-classes-and-objects/index.html">
+     📚 Lesson 13: Classes and Objects
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-13-classes-and-objects/objects-and-references.html">
+       Objects and References
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-13-classes-and-objects/the-class-define-your-own-objects.html">
+       The Class: Define Your Own Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-13-classes-and-objects/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-13-classes-and-objects/practice-point-class.html">
+       🚧 Practice: Point class
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-13-classes-and-objects/practice-student-class.html">
+       🚧 Practice: Student class
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/index.html">
+     📚 Lesson 14: More Classes and Modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/recap.html">
+       Recap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/private-fields.html">
+       Private Fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/warning-default-parameters.html">
+       Warning: Default Parameters
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/reading-working-with-directories.html">
+       🚧 Reading: Working with Directories
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/lambdas.html">
+       Lambdas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-dogpack.html">
+       🚧 Practice: DogPack
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-edpost.html">
+       🚧 Practice: EdPost
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/index.html">
+     📚 Lesson 15: Special Methods + HW4 Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/main-method-pattern.html">
+       Main Method Pattern
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/equality-and-identity.html">
+       Equality and Identity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/defining-equality.html">
+       Defining Equality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/fancy-syntax.html">
+       Fancy Syntax
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       🚧 Practice: Pair
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
+       A Search Engine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/hw4-introduction.html">
+       HW4 Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
+       🚧 Practice: Search Engine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-6-efficiency/index.html">
+   Module 6: Efficiency
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+  <label for="toctree-checkbox-20">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/index.html">
+     📚 Lesson 16: Efficiency
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/what-does-efficiency-mean.html">
+       What Does Efficiency Mean?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/how-can-we-measure-time-efficiency.html">
+       How Can We Measure Time Efficiency?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/counting-steps.html">
+       Counting Steps
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/practice-count-steps.html">
+       🚧 Practice: Count Steps
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/big-o.html">
+       Big-O
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/data-structures.html">
+       Data Structures
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-16-efficiency/practice-big-o.html">
+       🚧 Practice: Big-O
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/index.html">
+     📚 Lesson 17: Profiling and Program Speed
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/revisiting-time-efficiency.html">
+       Revisiting Time Efficiency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/profiling-code.html">
+       Profiling Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/slow-python.html">
+       Slow Python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       🚧 Check your Understanding
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/class-today.html">
+       Class Today
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-6-efficiency/lesson-24-memory/index.html">
+     Lesson 24: Memory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-24-memory/computer-memory.html">
+       Computer Memory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-24-memory/memory-hiearchy.html">
+       Memory Hiearchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-24-memory/pickle.html">
+       Pickle
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-24-memory/practice-memory.html">
+       🚧 Practice: Memory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-24-memory/pause-and-think.html">
+       ⏸ Pause and 🧠 Think
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-7-geospatial-data/index.html">
+   Module 7: Geospatial Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+  <label for="toctree-checkbox-24">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-7-geospatial-data/lesson-18-geospatial-data-misc-python/index.html">
+     📚 Lesson 18: Geospatial Data +  Misc Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-18-geospatial-data-misc-python/introduction-to-geospatial-data.html">
+       Introduction to Geospatial Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-18-geospatial-data-misc-python/zip.html">
+       Zip
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-18-geospatial-data-misc-python/matplotlib-plotting.html">
+       Matplotlib Plotting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html">
+       Hurricane Florence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-18-geospatial-data-misc-python/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-18-geospatial-data-misc-python/practice-population-in-south-america.html">
+       🚧Practice: Population in South America
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-18-geospatial-data-misc-python/practice-small-and-rich.html">
+       🚧Practice: Small and Rich
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-7-geospatial-data/lesson-20-dissolve-join/index.html">
+     📚 Lesson 20: Dissolve + Join
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-20-dissolve-join/dissolve.html">
+       Dissolve
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-20-dissolve-join/joins.html">
+       Joins
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-20-dissolve-join/join-types.html">
+       Join Types
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-20-dissolve-join/hurricane-florence/HurricanFlorence.html">
+       Hurricane Florence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-20-dissolve-join/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-20-dissolve-join/practice-population-maps.html">
+       🚧 Practice: Population Maps
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-20-dissolve-join/practice-joins.html">
+       🚧 Practice: Joins
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-7-geospatial-data/lesson-21-indexes-trees/index.html">
+     📚 Lesson 21: Indexes / Trees 🌳
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-21-indexes-trees/indexing-databases.html">
+       Indexing (Databases)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-21-indexes-trees/binary-search-tree.html">
+       Binary Search Tree
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-21-indexes-trees/spatial-index.html">
+       Spatial Index
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-21-indexes-trees/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-7-geospatial-data/lesson-21-indexes-trees/practice-indexes-trees.html">
+       🚧 Practice: Indexes / Trees
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-8-images/index.html">
+   Module 8: Images
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+  <label for="toctree-checkbox-28">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/index.html">
+     📚 Lesson 22 Reading: Numpy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/numpy.html">
+       numpy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/multiple-dimensions.html">
+       Multiple Dimensions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/arithmetic-and-logical-operators.html">
+       Arithmetic and Logical Operators
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/practice-numpy.html">
+       🚧 Practice: numpy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/broadcasting.html">
+       Broadcasting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/images.html">
+       Images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/practice-broadcasting.html">
+       🚧 Practice: Broadcasting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-22-reading-numpy/practice-duckie-hat.html">
+       🚧 Practice: Duckie Hat 🦆🎩
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/index.html">
+     📚 Lesson 23 Reading: More Numpy and Images
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/recap.html">
+       Recap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/numpy-functions.html">
+       numpy functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/vectorization/Untitled.html">
+       Vectorization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/convolutions.html">
+       Convolutions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/why-convolutions.html">
+       Why Convolutions?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/practice-convolution-examples.html">
+       🚧 Practice: Convolution Examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-23-reading-more-numpy-and-images/practice-collapse.html">
+       🚧 Practice: Collapse
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-8-images/lesson-24-reading-machine-learning-and-images/index.html">
+     📚 Lesson 24 Reading: Machine Learning and Images
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-24-reading-machine-learning-and-images/recap-of-machine-learning.html">
+       Recap of Machine Learning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-24-reading-machine-learning-and-images/machine-learning-and-images.html">
+       Machine Learning and Images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-24-reading-machine-learning-and-images/neural-networks.html">
+       Neural Networks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-24-reading-machine-learning-and-images/neural-networks-code.html">
+       Neural Networks Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-24-reading-machine-learning-and-images/optional-scikit-image.html">
+       Optional: Scikit-Image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-24-reading-machine-learning-and-images/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-8-images/lesson-24-reading-machine-learning-and-images/practice-neural-networks-and-images.html">
+       🚧 Practice: Neural Networks and Images
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-9-miscellaneous-topics/index.html">
+   Module 9: Miscellaneous Topics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+  <label for="toctree-checkbox-32">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/index.html">
+     📚 Lesson 26 Reading: Hashing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/data-structure-time-complexity.html">
+       Data Structure Time Complexity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/hashing.html">
+       Hashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/collisions.html">
+       Collisions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/hash-functions.html">
+       Hash Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/hashing-in-practice.html">
+       Hashing in Practice
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/optional-count-min-sketch.html">
+       Optional: Count-Min Sketch
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/practice-hashing.html">
+       🚧 Practice: Hashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-26-reading-hashing/practice-myset.html">
+       🚧 Practice: MySet
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/index.html">
+     📚 Lesson 27 Reading: Ethics in Data Science
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-0-gaydar.html">
+       Case Study 0: “Gaydar”
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-rides-of-glory.html">
+       Case Study 1: “Rides of Glory”
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-2-compas.html">
+       Case Study 2: COMPAS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-3-potholes-in-baltimore.html">
+       Case Study 3: Potholes in Baltimore
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-4-facial-recognition.html">
+       Case Study 4: Facial Recognition
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/wrap-up-and-assignment.html">
+       🚧 Wrap-up and Assignment
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../module-10-beyond-163/index.html">
+   Module 10: Beyond 163
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+  <label for="toctree-checkbox-35">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-10-beyond-163/lesson-28-fairness/index.html">
+     📚 Lesson 28: Fairness
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-28-fairness/defining-fairness.html">
+       Defining Fairness
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-28-fairness/tradeoff-between-accuracy-and-fairness.html">
+       Tradeoff Between Accuracy and Fairness
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-28-fairness/worldview-limitations-of-fairness.html">
+       Worldview / Limitations of Fairness
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-28-fairness/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-28-fairness/practice-fairness-concepts.html">
+       🚧 Practice: Fairness Concepts
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/index.html">
+     📚 Lesson 29: Privacy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+    <label for="toctree-checkbox-37">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/is-your-data-anonymous.html">
+       Is Your Data Anonymous?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/privacy-in-practice-the-census.html">
+       Privacy in Practice: The Census
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/differential-privacy.html">
+       Differential Privacy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/jittering-laplace-mechanism.html">
+       Jittering (Laplace Mechanism)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/randomized-response.html">
+       Randomized Response
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/recap-and-next-steps-for-differential-privacy.html">
+       Recap and Next Steps for Differential Privacy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/pause-and-think.html">
+       ⏸  Pause and 🧠 Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-10-beyond-163/lesson-29-privacy/practice-privacy.html">
+       🚧 Practice: Privacy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/the-ml-pipeline-categorical-data-and-assessing-performance/MachineLearning.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cse163/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/the-ml-pipeline-categorical-data-and-assessing-performance/MachineLearning.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/the-ml-pipeline-categorical-data-and-assessing-performance/MachineLearning.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cse163/book/main?urlpath=lab/tree/book_source/source/module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/the-ml-pipeline-categorical-data-and-assessing-performance/MachineLearning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com//github/cse163/book/blob/main/book_source/source/module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/the-ml-pipeline-categorical-data-and-assessing-performance/MachineLearning.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The ML Pipeline: Categorical Data and Assessing Performance
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorical-features">
+   Categorical Features
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assessing-accuracy">
+   Assessing Accuracy
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-do-trees-overfit">
+   Why do Trees Overfit?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-visiualizing-the-bias-variance-tradeoff">
+   Optional: Visiualizing the Bias Variance Tradeoff
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="the-ml-pipeline-categorical-data-and-assessing-performance">
+<h1>The ML Pipeline: Categorical Data and Assessing Performance<a class="headerlink" href="#the-ml-pipeline-categorical-data-and-assessing-performance" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="recap">
+<h1>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h1>
+<p>In the last lesson, we were introduced to the idea of machine learning. We saw how to write code to load in data, separate it into features and labels, train a model on that data, assess its accuracy. We commonly call these steps (or any modification of them) the <strong>machine learning pipeline</strong>. We think of it acting like a pipe, connecting data to the final model that can make predictions from it.</p>
+<p>In the last reading, we ended up seeing our model had 100% accuracy on the data which seemed great at first, but in this lesson, we will see it’s less than ideal. Before describing this in detail, let’s do a slight recap of what we saw last time but with a slightly different dataset.</p>
+<p>For this lesson, we will consider a dataset concerning customers of a particular credit card agency, and whether or not those customers decided to close their credit card (also called “churn”). We won’t go into the specifics of what all the columns mean, since they are mostly specific to financial records. The one term that is important is the label we are trying to predict in the <code class="docutils literal notranslate"><span class="pre">Attrition_Flag</span></code> column where <code class="docutils literal notranslate"><span class="pre">'Existing</span> <span class="pre">Customer'</span></code> means the customer has kept their account, while <code class="docutils literal notranslate"><span class="pre">'Attrited</span> <span class="pre">Customer'</span></code> is one that has closed their account.</p>
+<p>To start, we load in the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/BankChurners.csv&#39;</span><span class="p">)</span>
+
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Attrition_Flag</th>
+      <th>Customer_Age</th>
+      <th>Gender</th>
+      <th>Dependent_count</th>
+      <th>Education_Level</th>
+      <th>Marital_Status</th>
+      <th>Income_Category</th>
+      <th>Card_Category</th>
+      <th>Months_on_book</th>
+      <th>Total_Relationship_Count</th>
+      <th>Months_Inactive_12_mon</th>
+      <th>Contacts_Count_12_mon</th>
+      <th>Credit_Limit</th>
+      <th>Total_Revolving_Bal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Existing Customer</td>
+      <td>45.0</td>
+      <td>F</td>
+      <td>NaN</td>
+      <td>Graduate</td>
+      <td>Married</td>
+      <td>Unknown</td>
+      <td>Blue</td>
+      <td>37.0</td>
+      <td>6.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>14470.0</td>
+      <td>1157.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Existing Customer</td>
+      <td>53.0</td>
+      <td>M</td>
+      <td>3.0</td>
+      <td>Graduate</td>
+      <td>Unknown</td>
+      <td>$80K - $120K</td>
+      <td>Blue</td>
+      <td>49.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4778.0</td>
+      <td>1869.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Existing Customer</td>
+      <td>56.0</td>
+      <td>F</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>Married</td>
+      <td>Less than $40K</td>
+      <td>Blue</td>
+      <td>47.0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>2865.0</td>
+      <td>2022.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Existing Customer</td>
+      <td>26.0</td>
+      <td>F</td>
+      <td>0.0</td>
+      <td>Post-Graduate</td>
+      <td>Single</td>
+      <td>Less than $40K</td>
+      <td>Blue</td>
+      <td>13.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>2902.0</td>
+      <td>1668.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Existing Customer</td>
+      <td>44.0</td>
+      <td>F</td>
+      <td>3.0</td>
+      <td>Uneducated</td>
+      <td>Single</td>
+      <td>$40K - $60K</td>
+      <td>Blue</td>
+      <td>34.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>2245.0</td>
+      <td>1342.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4062</th>
+      <td>Attrited Customer</td>
+      <td>55.0</td>
+      <td>F</td>
+      <td>3.0</td>
+      <td>Uneducated</td>
+      <td>Single</td>
+      <td>Unknown</td>
+      <td>Blue</td>
+      <td>47.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>14657.0</td>
+      <td>2517.0</td>
+    </tr>
+    <tr>
+      <th>4063</th>
+      <td>Attrited Customer</td>
+      <td>41.0</td>
+      <td>M</td>
+      <td>2.0</td>
+      <td>Unknown</td>
+      <td>Divorced</td>
+      <td>$40K - $60K</td>
+      <td>Blue</td>
+      <td>25.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>4277.0</td>
+      <td>2186.0</td>
+    </tr>
+    <tr>
+      <th>4064</th>
+      <td>Attrited Customer</td>
+      <td>44.0</td>
+      <td>F</td>
+      <td>1.0</td>
+      <td>High School</td>
+      <td>Married</td>
+      <td>Less than $40K</td>
+      <td>Blue</td>
+      <td>36.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5409.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4065</th>
+      <td>Attrited Customer</td>
+      <td>30.0</td>
+      <td>M</td>
+      <td>2.0</td>
+      <td>Graduate</td>
+      <td>Unknown</td>
+      <td>$40K - $60K</td>
+      <td>Blue</td>
+      <td>36.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>5281.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4066</th>
+      <td>Attrited Customer</td>
+      <td>43.0</td>
+      <td>F</td>
+      <td>2.0</td>
+      <td>Graduate</td>
+      <td>Married</td>
+      <td>Less than $40K</td>
+      <td>Silver</td>
+      <td>25.0</td>
+      <td>6.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>10388.0</td>
+      <td>1961.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>4067 rows × 14 columns</p>
+</div></div></div>
+</div>
+<p>Now this already looks slightly different than the dataset we saw in Lesson 10!</p>
+<ul class="simple">
+<li><p>Some of the columns, like ‘Gender’ and ‘Educational Data’ don’t store numbers, but rather categorical data like “F” or “M”.</p></li>
+<li><p>Some of the rows store missing values!</p></li>
+</ul>
+<p>Our first step is to remove the missing values because <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> does not handle missing values well. In this problem, we will be using all columns as features, it suffices to just drop a row if it contains any <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values (which is what <code class="docutils literal notranslate"><span class="pre">dropna</span></code> does). In other contexts, you might need to be more careful about which rows you drop, since you only need to drop ones that would eventually be included in the feaures you use in <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
+<p>Remember, we have to save the result of <code class="docutils literal notranslate"><span class="pre">dropna</span></code> because it doesn’t modify the original data!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our next step is to separate the features and labels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;Attrition_Flag&#39;</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Attrition_Flag&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then create a decision tree model and train it on the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the model and accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="c1"># Create an untrained model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+
+<span class="c1"># Train it</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="c1"># Make predictions</span>
+<span class="n">label_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+
+<span class="c1"># Print accuracy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">label_predictions</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">7</span><span class="n">af56cbcd86e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Train it</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Make predictions</span>
+
+<span class="nn">/usr/lib/python3.9/site-packages/sklearn/tree/_classes.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight, check_input, X_idx_sorted)</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span><span class="sd"> </span>
+<span class="ne">--&gt; </span><span class="mi">890</span><span class="sd">         super().fit(</span>
+<span class="g g-Whitespace">    </span><span class="mi">891</span><span class="sd">             X, y,</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span><span class="sd">             sample_weight=sample_weight,</span>
+
+<span class="nn">/usr/lib/python3.9/site-packages/sklearn/tree/_classes.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight, check_input, X_idx_sorted)</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="sd">             check_X_params = dict(dtype=DTYPE, accept_sparse=&quot;csc&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="sd">             check_y_params = dict(ensure_2d=False, dtype=None)</span>
+<span class="ne">--&gt; </span><span class="mi">156</span><span class="sd">             X, y = self._validate_data(X, y,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd">                                        validate_separately=(check_X_params,</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="sd">                                                             check_y_params))</span>
+
+<span class="nn">/usr/lib/python3.9/site-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span><span class="sd">                 # :(</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span><span class="sd">                 check_X_params, check_y_params = validate_separately</span>
+<span class="ne">--&gt; </span><span class="mi">429</span><span class="sd">                 X = check_array(X, **check_X_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span><span class="sd">                 y = check_array(y, **check_y_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span><span class="sd">             else:</span>
+
+<span class="nn">/usr/lib/python3.9/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd">                           FutureWarning)</span>
+<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">72</span><span class="sd">         return f(**kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd">     return inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="sd"> </span>
+
+<span class="nn">/usr/lib/python3.9/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span><span class="sd">                     array = array.astype(dtype, casting=&quot;unsafe&quot;, copy=False)</span>
+<span class="g g-Whitespace">    </span><span class="mi">597</span><span class="sd">                 else:</span>
+<span class="ne">--&gt; </span><span class="mi">598</span><span class="sd">                     array = np.asarray(array, order=order, dtype=dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">599</span><span class="sd">             except ComplexWarning:</span>
+<span class="g g-Whitespace">    </span><span class="mi">600</span><span class="sd">                 raise ValueError(&quot;Complex data not supported\n&quot;</span>
+
+<span class="nn">/usr/lib/python3.9/site-packages/numpy/core/_asarray.py</span> in <span class="ni">asarray</span><span class="nt">(a, dtype, order)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">83</span>     <span class="k">return</span> <span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> 
+<span class="g g-Whitespace">     </span><span class="mi">85</span> 
+
+<span class="nn">/usr/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">__array__</span><span class="nt">(self, dtype)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1779</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1780</span>     <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1781</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1782</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1783</span>     <span class="k">def</span> <span class="nf">__array_wrap__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+<span class="nn">/usr/lib/python3.9/site-packages/numpy/core/_asarray.py</span> in <span class="ni">asarray</span><span class="nt">(a, dtype, order)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span> 
+<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">83</span><span class="s2">     return array(a, dtype, copy=False, order=order)</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2"> </span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;M&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uh oh! Something broke! As we mentioned earlier, the dataset has categorical values than quantitative values for some columns. This ends up causing problems for <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> since it assumes all feature values are numeric!</p>
+<p>To fix this, we need to understand how to handle categorical features for machine learning.</p>
+</section>
+<section id="categorical-features">
+<h1>Categorical Features<a class="headerlink" href="#categorical-features" title="Permalink to this headline">¶</a></h1>
+<p>For this section, let’s suppose we had a smaller dataset that only stored a column for <code class="docutils literal notranslate"><span class="pre">age</span></code> and another column for <code class="docutils literal notranslate"><span class="pre">gender</span></code>. We can see this sample dataset here.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>22.0</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>38.0</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>26.0</td>
+      <td>non-binary</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.0</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>35.0</td>
+      <td>male</td>
+    </tr>
+  </tbody>
+</table>
+<p>Let’s consider some strategies for how to address that the <code class="docutils literal notranslate"><span class="pre">gender</span></code> column is categorical. Your first guess might be to come up with some mapping between the categories to a number. Suppose the <code class="docutils literal notranslate"><span class="pre">gender</span></code> column could be <code class="docutils literal notranslate"><span class="pre">male</span></code>, <code class="docutils literal notranslate"><span class="pre">female</span></code> or <code class="docutils literal notranslate"><span class="pre">non-binary</span></code>. You might propose transforming the data such that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\texttt{`female'} \rightarrow 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{`male'} \rightarrow 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{`non-binary'} \rightarrow 3\)</span></p></li>
+</ul>
+<p>While doing this will “work” in a sense that the model can be trained, this will cause some unintended consequences for how the model interprets those features. By treating each gender as a number, we are now establishing relationships between the genders that should behave like numbers do. So now we have some non-sensical concepts like:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'male'</span> <span class="pre">(2)</span></code> is considered “greater than” <code class="docutils literal notranslate"><span class="pre">'female'</span> <span class="pre">(1)</span></code>! Just like for the age column, an age of 10 is less than an age of 32.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'non-binary'</span> <span class="pre">(3)</span></code> is somehow the same as 3x <code class="docutils literal notranslate"><span class="pre">'female'</span> <span class="pre">(1)</span></code>! This is just like for an age column an age of 40 is 4x an age of 10.</p></li>
+</ul>
+<p>Now this isn’t a mistake on the model’s part! The model has no concept of <code class="docutils literal notranslate"><span class="pre">gender</span></code>. All the features are just numbers to it, and it expects those numbers to behave as numbers do.</p>
+<p>So if this mapping approach doesn’t work, then what does? We will use a slightly more complex techique called a <strong>one-hot encoding</strong>. The idea is as follows:</p>
+<p>Suppose we had this <code class="docutils literal notranslate"><span class="pre">gender</span></code> column that took on values <code class="docutils literal notranslate"><span class="pre">male</span></code>, <code class="docutils literal notranslate"><span class="pre">female</span></code>, and <code class="docutils literal notranslate"><span class="pre">non-binary</span></code>. We will now transform that one column to three: one for <code class="docutils literal notranslate"><span class="pre">gender_male</span></code>, one for <code class="docutils literal notranslate"><span class="pre">gender_female</span></code> and one for <code class="docutils literal notranslate"><span class="pre">gender_non-binary</span></code>. Each column will store 0s and 1s to indicate which category that row belonged to.</p>
+<p>After doing a one-hot encoding of these columns in the sample data shown above, the <code class="docutils literal notranslate"><span class="pre">gender</span></code> column will be expanded into 3 as shown in the table below. Notice that each row has one 1 and the rest 0s for the newly-created <code class="docutils literal notranslate"><span class="pre">gender_&lt;value&gt;</span></code> columns; this is why it’s called a “one-hot encoding”, one of the columns is “hot” (or 1). Also notice that the <code class="docutils literal notranslate"><span class="pre">age</span></code> column does not need this encoding, because it is already a numeric value.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>gender_female</th>
+      <th>gender_male</th>
+      <th>gender_non-binary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>22.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>35.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>Don’t worry, you never have to do this by hand! <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provides a function called <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> that does this for us (a one-hot encoding is sometimes called a dummy encoding)! In the cell below, we show the code to transform the data so the features are no longer categorical! Notice in the output, the previous categorical features now have this one-hot encoding to them!</p>
+<p><strong>Important:</strong> We don’t do the <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> call on the whole dataset <code class="docutils literal notranslate"><span class="pre">data</span></code> because we do not want to one-hot encode the label. <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> is fine with categorical labels, we just need to transform the features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+<span class="n">features</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Customer_Age&#39;, &#39;Dependent_count&#39;, &#39;Months_on_book&#39;,
+       &#39;Total_Relationship_Count&#39;, &#39;Months_Inactive_12_mon&#39;,
+       &#39;Contacts_Count_12_mon&#39;, &#39;Credit_Limit&#39;, &#39;Total_Revolving_Bal&#39;,
+       &#39;Gender_F&#39;, &#39;Gender_M&#39;, &#39;Education_Level_College&#39;,
+       &#39;Education_Level_Doctorate&#39;, &#39;Education_Level_Graduate&#39;,
+       &#39;Education_Level_High School&#39;, &#39;Education_Level_Post-Graduate&#39;,
+       &#39;Education_Level_Uneducated&#39;, &#39;Education_Level_Unknown&#39;,
+       &#39;Marital_Status_Divorced&#39;, &#39;Marital_Status_Married&#39;,
+       &#39;Marital_Status_Single&#39;, &#39;Marital_Status_Unknown&#39;,
+       &#39;Income_Category_$120K +&#39;, &#39;Income_Category_$40K - $60K&#39;,
+       &#39;Income_Category_$60K - $80K&#39;, &#39;Income_Category_$80K - $120K&#39;,
+       &#39;Income_Category_Less than $40K&#39;, &#39;Income_Category_Unknown&#39;,
+       &#39;Card_Category_Blue&#39;, &#39;Card_Category_Gold&#39;, &#39;Card_Category_Platinum&#39;,
+       &#39;Card_Category_Silver&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="assessing-accuracy">
+<h1>Assessing Accuracy<a class="headerlink" href="#assessing-accuracy" title="Permalink to this headline">¶</a></h1>
+<p>So now that we have transformed the data, we can go back to the original task of trying to assess how good the model we fit to the data is! In the cell below, we train the model and evaluate its accuracy on the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an untrained model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+
+<span class="c1"># Train it</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="c1"># Make predictions</span>
+<span class="n">label_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+
+<span class="c1"># Print accuracy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">label_predictions</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>And look at that! Another job well done since we also get 100% accuracy here as well!</p>
+<p>Unfortunately, the story gets more complicated than this and we should <strong>not</strong> expect the model to predict 100% accurately on future data. We didn’t emphasize this before, but the goal of machine learning is generally learn a model that predicts accurately for <strong>future, unseen data</strong> (if we want it to be useful to people using it).</p>
+<p>It turns out that our strategy for assessment so far is a bit optimistic (i.e., overestimates) on the model’s future performance. The model we learned in the last cell is actually <strong>overfit</strong> to the training set, meaning that it was capable of “memorizing” the data in the training set, and thus getting a perfect score when we then tested it using that set.</p>
+<p>The analogy for why this happens is much like a common experience as students when studying for something like an exam.</p>
+<p>Suppose I told you I was going to give you a multiple choice quiz on ML topics tomorrow, but you can use a practice exam (with answers) to study tonight as much as you want. You might spend a few hours studying until you feel really confident about the answers on the practice exam. If you were able to get 100% of the practice questions after studying them for a few hours, would you also expect to get 100% of the real test questions correct?</p>
+<p>We might be a little pessimistic that you would not get 100% on the real exam just because you aced the practice exam after studying it for a few hours. An “easy” way to get 100% on this practice exam is to just spend a ton of time memorizing the answers for those specifics questions. Sure, if I gave you that question on the real test, you would do great, but if I gave you anything else you would have no idea how to answer!</p>
+<p>This is essentially what is happening to our assessment of our model! We gave it the practice exam (the training set) to practice (train) and then are using that exact same practice exam (the training set) to assess how we think it will do on the real exam (when deploying it to the world). This will be an overestimate of how it will do in the future since it was able to shape its knowledge around that exact training set.</p>
+<p>Instead, if we want to estimate how we think the model will do in the future, we will need to <em>hold out</em> data that it will never see during training and then test it on that data set. We call this held-out data the <strong>test set</strong>.</p>
+<p>Here is one of the most important rules in all of machine learning:</p>
+<blockquote>
+<div><p><strong>You need to set aside some data that you never look at while training to assess how your model will do in the future.</strong></p>
+</div></blockquote>
+<p>Because this is so important, <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> provides a function called <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> to break your dataset up (randomly) into a training set and test set. It’s actually important to generally use a random split, since some data can be naturally sorted by some column which would cause a difference in distribution between training and test. For example, in this credit card dataset, if we took the last 20% of the rows to be the test set, that would be mostly the Attrited Customers examples since they are sorted by the label in the original data.</p>
+<p>The cell below shows how to call it. It is a bit weird since it returns a tuple and we unpack it into variables in a very specific order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+
+<span class="n">features_train</span><span class="p">,</span> <span class="n">features_test</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">,</span> <span class="n">labels_test</span> <span class="o">=</span> \
+    <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Print the number of training examples and the number of testing examples</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">features_train</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">features_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3098 775
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we repeat our ML pipeline from before with two important differences:</p>
+<ul class="simple">
+<li><p>We now train on <code class="docutils literal notranslate"><span class="pre">features_train</span></code> and <code class="docutils literal notranslate"><span class="pre">labels_train</span></code> instead of the entire data</p></li>
+<li><p>We print out both the accuracy on the training set and the accuracy on the test set</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an untrained model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+
+<span class="c1"># Train it on the **training set**</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">)</span>
+
+<span class="c1"># Compute training accuracy</span>
+<span class="n">train_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train Accuracy:&#39;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">labels_train</span><span class="p">,</span> <span class="n">train_predictions</span><span class="p">))</span>
+
+<span class="c1"># Compute test accuracy</span>
+<span class="n">test_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test  Accuracy:&#39;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">labels_test</span><span class="p">,</span> <span class="n">test_predictions</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train Accuracy: 1.0
+Test  Accuracy: 0.6967741935483871
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wow! While we got 100% of the training examples correct, we only got a ~68-72% on the test set! Note there is some randomness in your result since the train/test split is random and the learning algorithm used by the decision tree classifier also has some randomness built into it.</p>
+<p>This test accuracy is a MUCH better estimate of how our model will do in the future if we released it to the world since it is being tested on data it hasn’t seen before (a proxy for future data).</p>
+<p>Why is there this discrepency between train and test anyways? This results from the fact that our model is <strong>overfitting</strong>. <strong>Overfitting</strong> happens when a model does too good of a job fitting to the specific training set given to it rather than learning generalizable patterns. In the test-taking analogy, a student overfits to a practice exam if they focus on memorizing the answers on the practice test rather than learning the generalized ideas.</p>
+<p>With everything we have seen so far (except the stuff about categorical features), you can now go back to the <a class="reference external" href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/#classify-test-data">Introduction to Machine Learning</a> we read last time and read the “Reality Check” part and beyond. Go read it! Their visualizations hopefulyl make it clear why these splits near the bottom of the tree, are more likely to contain irrelevant details.</p>
+</section>
+<section id="why-do-trees-overfit">
+<h1>Why do Trees Overfit?<a class="headerlink" href="#why-do-trees-overfit" title="Permalink to this headline">¶</a></h1>
+<p>Why does the tree overfit in this context and how can we prevent that? Overfitting happens for decision trees by default since we allow the tree to grow really tall!</p>
+<p>We aren’t able to use the code from the last lesson to actually visualize the tree we learned, because it’s actually quite large!</p>
+<p>If you think back to the R2D3 reading and how the decision tree is learned, they successively decide to split the data based on some feature and then build up the tree and separating the data as they go down. Notice, for example, that at the bottom of the tree, it is making decisions about splits for VERY few data points. This is because earlier forks split the data relatively evenly. This means that after enough splits when it is at the bottom of the tree, the learning algorithm is essentially making decisions on splits from basically just noise in the data. The fact that this tree is allowed to be as tall as it wants, lets it makes splits until it gets the training set 100% correct!</p>
+<p>To control for overfitting, we can specify a <strong>hyperparameter</strong> to control the height the tree is allowed to grow. We call this value a hyperparameter because it is something you (the ML expert) can specify to the learning algorithm to control how complex you want the model to be.</p>
+<p>For example, the cell below trains the same type of model on the same training set, but it passes a <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> to the <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> to control how tall the tree should be allowed to grow. By passing in 2, we are only allowing the model to be tall enough to reach an answer in at most 2 steps. In this cell, we print both the training and test accuracy as well as plotting the tree in the following cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an untrained model</span>
+<span class="n">short_model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Train it on the **training set**</span>
+<span class="n">short_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">)</span>
+
+<span class="c1"># Compute training accuracy</span>
+<span class="n">train_predictions</span> <span class="o">=</span> <span class="n">short_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train Accuracy:&#39;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">labels_train</span><span class="p">,</span> <span class="n">train_predictions</span><span class="p">))</span>
+
+<span class="c1"># Compute test accuracy</span>
+<span class="n">test_predictions</span> <span class="o">=</span> <span class="n">short_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test  Accuracy:&#39;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">labels_test</span><span class="p">,</span> <span class="n">test_predictions</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train Accuracy: 0.7588766946417044
+Test  Accuracy: 0.7458064516129033
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="kn">import</span> <span class="nn">graphviz</span> 
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">export_graphviz</span>
+
+
+<span class="k">def</span> <span class="nf">plot_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+    <span class="n">dot_data</span> <span class="o">=</span> <span class="n">export_graphviz</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+            <span class="n">feature_names</span><span class="o">=</span><span class="n">features</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>  
+            <span class="n">class_names</span><span class="o">=</span><span class="n">labels</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span>
+            <span class="n">impurity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
+            <span class="n">special_characters</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+    <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;tree.gv&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;/home/tree.gv.png&#39;</span><span class="p">))</span>
+
+<span class="c1"># Import </span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">short_model</span><span class="p">,</span> <span class="n">features_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/MachineLearning_19_0.png" src="../../../_images/MachineLearning_19_0.png" />
+</div>
+</div>
+<p>This tree has depth 2, so it is actually possible for us to visualize. Interestingly, the train accuracy and test accuracy have now gotten closer together. It still makes sense that the train accuracy is slightly higher than the test since we did get to look at that data while training, but by limiting the depth we prevented the model from overfitting as much to the training data.</p>
+<p>This hyperparameter for controlling the height controls the <strong>model complexity</strong>. On one end, short trees are simple (i.e., not complex) and they are unable to fit the training set well. This prevents overfitting, but might still result in a bad model since it doesn’t have the capacity to learn a complex set of rules. On the other hand, if the tree is allowed to be too tall, it will easily overfit to the training set and will generalize poorly due to that overfitting.</p>
+<p>The right choice is somewhere in the middle, but there is no principled answer for where. This tradeoff is commonly called the “bias-variance tradeoff”.</p>
+<p>To summarize this</p>
+<ul class="simple">
+<li><p>Models that are too simple generally have low train accuracy and low test accuracy because they are not able to learn a complex-enough set of rules.</p></li>
+<li><p>Models that are too complex generally have high train accuracy and low test accuracy because they overfit to the training set.</p></li>
+</ul>
+<p>The following code cell tries to demonstrate empirically this phenomena by training models with various <code class="docutils literal notranslate"><span class="pre">max_depths</span></code> and plotting their train and test accuracies as a function of the <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>.</p>
+<p><strong>You do not need to understand the code in this cell, but do look at the visualization below.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="c1"># We re-split the data and put a &quot;random state&quot; to make the results</span>
+<span class="c1"># not actually random for demonstration purposes. </span>
+<span class="c1"># You should not use random_state in your assessments or project.</span>
+<span class="n">features_train</span><span class="p">,</span> <span class="n">features_test</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">,</span> <span class="n">labels_test</span> <span class="o">=</span> \
+    <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">accuracies</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">)</span>
+
+    <span class="n">pred_train</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features_train</span><span class="p">)</span>
+    <span class="n">train_acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">labels_train</span><span class="p">,</span> <span class="n">pred_train</span><span class="p">)</span>
+
+    <span class="n">pred_test</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features_test</span><span class="p">)</span>
+    <span class="n">test_acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">labels_test</span><span class="p">,</span> <span class="n">pred_test</span><span class="p">)</span>
+
+    <span class="n">accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;max depth&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;train accuracy&#39;</span><span class="p">:</span> <span class="n">train_acc</span><span class="p">,</span> 
+                       <span class="s1">&#39;test accuracy&#39;</span><span class="p">:</span> <span class="n">test_acc</span><span class="p">})</span>
+<span class="n">accuracies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">accuracies</span><span class="p">)</span>
+
+
+<span class="c1"># Define a function to plot the accuracies</span>
+
+<span class="k">def</span> <span class="nf">plot_accuracies</span><span class="p">(</span><span class="n">accuracies</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters:</span>
+<span class="sd">        * accuracies: A DataFrame show the train/test accuracy for various max_depths</span>
+<span class="sd">        * column: Which column to plot (e.g., &#39;train accuracy&#39;)</span>
+<span class="sd">        * name: The display name for this column (e.g., &#39;Train&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;max depth&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">column</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">accuracies</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1"> Accuracy as Max Depth Changes&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Max Depth&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1"> Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Display the graph</span>
+
+<span class="c1"># Plot the graphs</span>
+<span class="n">plot_accuracies</span><span class="p">(</span><span class="n">accuracies</span><span class="p">,</span> <span class="s1">&#39;train accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+<span class="n">plot_accuracies</span><span class="p">(</span><span class="n">accuracies</span><span class="p">,</span> <span class="s1">&#39;test accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/MachineLearning_21_0.png" src="../../../_images/MachineLearning_21_0.png" />
+<img alt="../../../_images/MachineLearning_21_1.png" src="../../../_images/MachineLearning_21_1.png" />
+</div>
+</div>
+<p>You can see from these graphs, that empirically we can see this bias-variance tradeoff.</p>
+<ul class="simple">
+<li><p>When the model is too simple (<code class="docutils literal notranslate"><span class="pre">max_depth</span></code> is near 1), the training accuracy and test accuracy are closer together, but are quite low when compared to our initial 100% claim on the training accuracy. This is commonly called <strong>underfitting</strong>.</p></li>
+<li><p>As the complexity increases (<code class="docutils literal notranslate"><span class="pre">max_depth</span></code> is increasing) the train and test accuracies do slightly different things:</p>
+<ul>
+<li><p>The training accuracy is always going up. This is because we are giving the model more room to grow, resulting in a more complex model. This extra complexity allows it to perfectly fit the training set in the extreme of <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> &gt; 20.</p></li>
+<li><p>The test accuracy is very interesting. It starts by increasing to its highest point around <code class="docutils literal notranslate"><span class="pre">max_depth=5</span></code> and then starts decreasing. This is because before <code class="docutils literal notranslate"><span class="pre">max_depth=5</span></code>, the model was too simple for the task (e.g, underfit) but after <code class="docutils literal notranslate"><span class="pre">max_depth=5</span></code> the model starts to overfit (e.g, too complex for the task).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="optional-visiualizing-the-bias-variance-tradeoff">
+<h1>Optional: Visiualizing the Bias Variance Tradeoff<a class="headerlink" href="#optional-visiualizing-the-bias-variance-tradeoff" title="Permalink to this headline">¶</a></h1>
+<p>The authors of that article we read last time made a follow up post describing this tradeoff. You can read it from the link below (but doing so is not required). Do note one very important difference in terminology.</p>
+<blockquote>
+<div><p>In the article, they use the term <strong>parameter</strong> instead of <strong>hyperparameter</strong>. This is not their fault, they just use different terminology (everyone uses slightly different terms). When we come back to ML later in the quarter, we will be very particular with our usage of those two words so you should read their usage of the word “parameter” as our “hyperparameter”.</p>
+</div></blockquote>
+<p><a class="reference external" href="http://www.r2d3.us/visual-intro-to-machine-learning-part-2/">Link to article</a></p>
+<p><a class="reference external" href="http://scott.fortmann-roe.com/docs/BiasVariance.html">Here is another article</a> that explains this idea.</p>
+</section>
+
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../recap-terms.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Recap Terms</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../practice-machine-learning-questions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">🚧 Practice: Machine Learning Questions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2021, Hunter Schafer.<br/>
+          <div class="extra_footer">
+            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

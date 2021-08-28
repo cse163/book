@@ -1,0 +1,41 @@
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# A special command for Notebooks to get the plots inline
+%matplotlib inline 
+
+# Load in US Data
+country = gpd.read_file("gz_2010_us_040_00_5m.json")
+country = country[(country['NAME'] != 'Alaska') & (country['NAME'] != 'Hawaii')]
+country.plot()
+
+from shapely.geometry import Point
+
+# Load in Florence data
+florence = pd.read_csv('stormhistory.csv')
+florence['coordinates'] = [Point(-long, lat) for long, lat in 
+                           zip(florence['Long'], florence['Lat'])]
+florence = gpd.GeoDataFrame(florence, geometry='coordinates')
+# Advanced: Need to specify map projection points so we can join them later
+florence.crs = country.crs 
+
+florence.plot()
+
+# Plot both on top of each other
+fig, ax = plt.subplots(1, figsize=(20,10))
+country.plot(ax=ax)
+florence.plot(ax=ax, color='#000000', markersize=10)
+
+affected_states = gpd.sjoin(country, florence, how='inner', op='intersects')
+
+print('Num Rows', len(affected_states))
+display(affected_states.head())
+
+fig, ax = plt.subplots(1, figsize=(20, 10))
+
+country.plot(ax=ax, color='#EEEEEE', edgecolor='#FFFFFF')
+
+affected_states.plot(ax=ax, edgecolor='#FFFFFF')
+
+florence.plot(ax=ax, color='#000000', markersize=10)

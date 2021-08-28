@@ -1,0 +1,16 @@
+import pandas as pd
+
+df = pd.read_csv('earthquakes.csv')
+df.head() # Method to only display the first few rows
+
+# Write your code here!
+
+
+# Write your code here!
+
+
+# Write your code here!
+
+
+# Write your code here!
+
