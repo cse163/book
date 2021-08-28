@@ -5,25 +5,23 @@
     <iframe src="https://www.loom.com/embed/cbaacf9d52ae4a8a85ee99da5e2fa0b4?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
 
 ```{admonition} Warning
 :class: warning
 
-**Word of Warning**
-
-<br />
-
-<br />
 Learning machine learning can be kind of challenging at first! There are whole courses dedicated to this topic! Our goal in CSE 163 is to provide you with some framework to think about machine learning so that you can be "conversational" in ML. You are not expected to be an expert in this topic after this reading!
 <br />
 
 <br />
+
 This lesson will be a bit different than the rest because it will contain lots of new vocabulary. We usually recommend that you are taking notes on these lessons (so you can synthesize your knowledge), but this one will be very important to take notes on the terms defined in
 **bold**
 . Annoyingly, we aren't able to present mathematically precise definitions for these terms because that requires some mathematical formalism that requires taking one of those courses on ML to understand. However, you can still get an intuition for what the term means from the way we present it!
 <br />
 
 <br />
+
 One thing that is particularly difficult is that there are a lot of concepts/terms that interrelate. It's hard to tell a "linear" story that goes from point A to point B without hitting something we haven't heard before. We want to recognize that the structure of this lesson might be a bit confusing and it's totally expected that you go back to re-read stuff after reading on!
 
 ```
@@ -83,7 +81,7 @@ You might have noticed from the last paragraph, that we said you need to give it
 
 A **machine learning algorithm** (commonly, just called a "learning algorithm") takes this training set and outputs a **model** that it thinks will do the best at the task. A **model** is the "rules" to predict the value for any given example.  
 
-For most setups in machine learning, this training set needs to have **features** and **labels** . The **labels** are the correct values for an example in the training set and the **features** are the description of the example itself. Notice this definition of features is awfully vague! It turns out one of the hardest parts of machine learning is coming up with a good set of features to describe your data that is useful for the learning algorithm to learn from!  
+For most setups in machine learning, this training set needs to have **features** and **labels**. The **labels** are the correct values for an example in the training set and the **features** are the description of the example itself. Notice this definition of features is awfully vague! It turns out one of the hardest parts of machine learning is coming up with a good set of features to describe your data that is useful for the learning algorithm to learn from!  
 
 ##  Features Matter  
 
@@ -149,7 +147,7 @@ Notice: We have yet to bring up the question of "Is this a problem that you can 
 
 ##  Recap Questions  
 
-Use these questions to help you test your understanding. These might be good things to talk about with your group in class!  
+Use these questions to help you test your understanding.
 
 -  Why might we want to use machine learning for the image recognition task, but it might not be as necessary for the tweet-recognition task?  
 
@@ -157,7 +155,4 @@ Use these questions to help you test your understanding. These might be good thi
 
 -  What is the difference between classification and regression?  
 
-    -  Think of the work the         [None](http://www.healthdata.org/)         is doing in predicting the number of active cases of COVID-19. Is this a regression or a classification task?  
-
-
-
+    -  Think of the work the [IMHE](http://www.healthdata.org/) is doing in predicting the number of active cases of COVID-19. Is this a regression or a classification task?
