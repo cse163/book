@@ -1,3 +1,8 @@
-book_source/build
+# Python files
 __pycache__
 **/__pycache__
+
+# Ignore build output
+book_source/build
+# On the main branch, don't include the docs folder
+docs
