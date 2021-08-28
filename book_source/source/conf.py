@@ -48,6 +48,8 @@ exclude_patterns = []
 # Suppress warnings
 suppress_warnings = ["myst.header"]
 
+# Extra syntax
+myst_enable_extensions = ["amsmath", "dollarmath"]
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -84,3 +86,4 @@ html_theme_options = {
     },
     "extra_footer": 'Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!',
 }
+
