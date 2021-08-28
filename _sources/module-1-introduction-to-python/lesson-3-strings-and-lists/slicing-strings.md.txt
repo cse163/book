@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/ab6d2d5e55744fd6b100f1fc9c7d4e74?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 So we already saw how to index into a string to get a value, but what if you wanted to index into a string to get more than one character (e.g. get the first 10 characters of a string)? Python provides a very powerful syntax for accessing multiple characters in a string called **slicing.**   
 
 The syntax slicing looks very similar to simple indexing but lets you specify a start and a stop index separated by a colon `s[<start>:<stop>]` . The start index is inclusive and the stop is exclusive. For example, you could type the following:  
@@ -17,7 +19,7 @@ print(s[2:7])
 The slice shown above means "all characters starting at index 2 and up to (not including) 7" (because stop is exclusive, just like with `range` ). If you take this with the picture below, it can clarify why the cell above prints `llo w` .  
 
 ```{image} https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd
-:alt: TODO
+:alt: hello world string indexing
 :width: 743
 :align: center
 ```

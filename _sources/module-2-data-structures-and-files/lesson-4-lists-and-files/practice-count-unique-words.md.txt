@@ -18,13 +18,10 @@ If we called `count_unique_words('song.txt')` , it would return 14. This is beca
 *Hint: Try to tackle this problem in parts. Start by writing the starter code like the function header and the code to go through the file word-by-word. Then think about how to store data so that you can answer how many words are unique. Is there some structure we learned that lets you store values?*   
 
 
-```{admonition} Error
-:class: error
+```{admonition} Note
+:class: note
 
-Some of you might be familiar with other data structures in Python called a
-`set`
-or
-`dict`
+Some of you might be familiar with other data structures in Python called a `set` or `dict`
 and could help you solve this problem. We will learn about those in Lesson 5 and 6 so we don't want you using those quite yet! Focus on using the material we have learned so far!
 
 ```

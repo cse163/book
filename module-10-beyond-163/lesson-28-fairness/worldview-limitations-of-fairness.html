@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1669,8 +1664,9 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/d7bf9d9173c64e2da48e052d615ceeaa?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>So far in this lesson, we have discussed just a few of the many possible definitions of fairness in the specific context of <em>group fairness</em> . While we didn’t explicitly talk about how these definitions conflict, it should not be surprising that different fairness on decisions might impose completely disparate requirements on your model’s outputs that can potentially conflict with each other. In the last slide, we also talked about a general tradeoff between fairness and accuracy. Given both of these trends, it only highlights the importance of keeping people informed and in the loop to decide which fairness definition to use and what level of tradeoff between accuracy and fairness is.</p>
-<p>Our goal in this framework is to provide some terminology and concepts to think about that can help in making a decision on how to treat the relationship between people and your data. This slide is based on the discussion <a class="reference external" href="https://arxiv.org/abs/1609.07236">None</a> which is interesting but quite mathematically complex. In this slide, we present a more intuitive take-away of their high-level contributions:</p>
+<p>Our goal in this last slide is to provide some terminology and concepts to think about that can help in making a decision on how to treat the relationship between people and your data. This slide is based on the discussion <a class="reference external" href="https://arxiv.org/abs/1609.07236">Friedler et al. (2016)</a> which is an interesting survey of terminology but quite mathematically complex. In this slide, we present a more intuitive take-away of their high-level contributions:</p>
 <ul class="simple">
 <li><p>Being explicit in how we consider our data is gathered and what we are trying to model. This is a step that’s often ignored in the practice of ML</p></li>
 <li><p>Defining individual fairness and group non-discrimination</p></li>
@@ -1683,9 +1679,9 @@
 <p>Now something you probably haven’t thought about in this context, is that we don’t actually care about high school grades or SAT scores themselves. What we care about is trying to find some signal that correlates with collegiate success. So the assumption is that we can use these measurements as a proxy for some underlying qualities like intelligence or grit (perseverance). If that assumption is correct, then this process is well-founded. But what if SAT score is not a good measurement of intelligence (spoiler: it does a bad job at measuring intelligence)? What are we even doing if we are working with data that is not correlated to the concepts of interest?</p>
 <p>Friedler et al. introduce this notion of three spaces in an ML modeling task. These spaces and their relationship are shown pictorially in the image below.</p>
 <ul class="simple">
-<li><p>The     <strong>Construct Space</strong>     is the set of abstract qualities we actually care about. So maybe for college admissions, we care about intelligence, grit, and the ability to work on a team. The problem is all of these notions are abstract, and there is usually not a way of directly measuring them for a particular person.</p></li>
-<li><p>The     <strong>Observed Space</strong>     is the set of data we are able to gather about people. The hope is that we can find measurements that we are able to correlate with these ideals in the Construct Space. We will use this Observed Space data to make predictions about the future.</p></li>
-<li><p>The     <strong>Decision Space</strong>     is the final step of a pipeline, which is the ultimate decisions of the model. In our college admission example, the Decision Space is the set {Admit, Deny}.</p></li>
+<li><p>The <strong>Construct Space</strong> is the set of abstract qualities we actually care about. So maybe for college admissions, we care about intelligence, grit, and the ability to work on a team. The problem is all of these notions are abstract, and there is usually not a way of directly measuring them for a particular person.</p></li>
+<li><p>The <strong>Observed Space</strong> is the set of data we are able to gather about people. The hope is that we can find measurements that we are able to correlate with these ideals in the Construct Space. We will use this Observed Space data to make predictions about the future.</p></li>
+<li><p>The <strong>Decision Space</strong> is the final step of a pipeline, which is the ultimate decisions of the model. In our college admission example, the Decision Space is the set {Admit, Deny}.</p></li>
 </ul>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/SumuCsOERfPNPfqE6ZiXgcbF"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/SumuCsOERfPNPfqE6ZiXgcbF" style="width: 743px;" /></a>
 <p>So the importance of their contribution is trying to be explicit that the data we have (Observed Space) may or may not actually be related to the quantities that we actually care to use in our prediction (Construct Space). What can we say about fairness in the cases when we are able to make good proxy measurements, and what about in the case we can’t?</p>
@@ -1694,9 +1690,9 @@
 <h2>Individual Fairness<a class="headerlink" href="#individual-fairness" title="Permalink to this headline">¶</a></h2>
 <p>So far in the earlier sections of this lesson, we have only been discussing notions of <em>group fairness</em> or trying to prevent <em>discrimination</em> . What might a definition of fairness mean when considering individual people rather than groups of people? Friedler et al. provide a relatively straight-forward approach to defining <strong>individual fairness</strong></p>
 <blockquote>
-<div><p>A system is individually fair if people that are close together in the Construct Space receive similar decisions in the Decision Space
-In other words, if two people are near-equal in all qualities of interest in the Construct Space (e.g., for college admissions we cared about intelligence and grit in our example) then they should receive similar decisions. That’s a very straight-forward notion of fairness, but unfortunately, it’s impossible to ensure it’s true unless you make assumptions on how the world works.</p>
+<div><p>A system is individually fair if people that are close together in the Construct Space receive similar decisions in the Decision Space.</p>
 </div></blockquote>
+<p>In other words, if two people are near-equal in all qualities of interest in the Construct Space (e.g., for college admissions we cared about intelligence and grit in our example) then they should receive similar decisions. That’s a very straight-forward notion of fairness, but unfortunately, it’s impossible to ensure it’s true unless you make assumptions on how the world works.</p>
 <p>Remember, we generally don’t have access to the Construct Space (e.g., the abstract notion of intelligence) so it’s impossible to directly measure if two people are close together in the Construct Space. The only things we do have access to are the Observed Space and we have no idea if those proxies are or aren’t good representations of the Constructs we care about.</p>
 <p>This means that we have to make an assumption of worldview and decide how we think the world works. Friedler et al. outline two worldviews that are commonly taken by ML practitioners which we will talk about in the following sections.</p>
 </section>
@@ -1713,8 +1709,8 @@ In other words, if two people are near-equal in all qualities of interest in the
 <p>To discuss this, we will continue with our toy example of college admissions in a world with the Circle/Square race, but this discussion generalizes to real-world scenarios as well. So we will focus our discussion right now on the groups of Circle people and Square people. In many real-life scenarios, the presence of <strong>structural bias</strong> can cause problems in how data reflects reality. These biases in data can then affect the ultimate decisions of the model, leading to potential discrimination against a group.</p>
 <p>To be careful, Friedler et al. describe two possible sources of discrimination in an ML pipeline:</p>
 <ul class="simple">
-<li><p><strong>Direct Discrimination</strong>     (in the model that takes data from the Observed Space to the Decision Space). Direct discrimination would be the cartoonishly evil example of taking someone’s race as a possible value in the Observed Space and intentionally harming people of a particular group. In many cases, doing something involving direct discrimination is explicitly illegal.</p></li>
-<li><p>There is also a subtler way that a system can learn to discriminate, and that comes from biases in the data itself. This is referred to as     <strong>Structural Bias</strong>     (in the mapping from the Concept Space to the Observed Space) where the data for different sub-groups looks different than it should be based on the Construct Space. This then leads to the model of “fairly” treating the data in the Observed Space, then to biased decisions, since the data it learned from reflects the structural bias of society. In our example of college admissions, this can clearly happen when race is strongly correlated with socioeconomic status. Groups that tend to be better off economically can are more likely to be able to afford test prep resources like SAT prep, which then leads to overly high SAT test scores when compared to their peers that could succeed just as well if they had the means to afford the same preparation.</p></li>
+<li><p><strong>Direct Discrimination</strong> (in the model that takes data from the Observed Space to the Decision Space). Direct discrimination would be the cartoonishly evil example of taking someone’s race as a possible value in the Observed Space and intentionally harming people of a particular group. In many cases, doing something involving direct discrimination is explicitly illegal.</p></li>
+<li><p>There is also a subtler way that a system can learn to discriminate, and that comes from biases in the data itself. This is referred to as <strong>Structural Bias</strong> (in the mapping from the Concept Space to the Observed Space) where the data for different sub-groups looks different than it should be based on the Construct Space. This then leads to the model of “fairly” treating the data in the Observed Space, then to biased decisions, since the data it learned from reflects the structural bias of society. In our example of college admissions, this can clearly happen when race is strongly correlated with socioeconomic status. Groups that tend to be better off economically can are more likely to be able to afford test prep resources like SAT prep, which then leads to overly high SAT test scores when compared to their peers that could succeed just as well if they had the means to afford the same preparation.</p></li>
 </ul>
 <p>So in this worldview where there is a presence of Structural Bias, the goal of a model is to have <em>non-discrimination.</em> The authors are very careful to avoid calling this fairness to avoid confusion with the notion of individual fairness since we will see later that these concepts might actually be in contention.</p>
 <p>So what do we do when we believe there is Structural Bias in our data? We very commonly make another assumption called <strong>We’re All Equal (WAE)</strong> . This assumption recognizes that Structural Bias is present and makes the additional assumption for the task we are trying to model, race <em>should not</em> cause a meaningful difference in things like academic preparation. So this is not saying that different subgroups are completely equal, but that they should be equal enough when considering things relevant to the task at hand. This means then that any differences observed in groups in the Observed Space should be the result of structural bias rather than some inherent quality of the group itself.</p>
@@ -1735,7 +1731,7 @@ In other words, if two people are near-equal in all qualities of interest in the
 <li><p>If you assume Structural Bias and WAE</p>
 <ul>
 <li><p>Non-discrimination is possible! We just need to use one of the group-fairness metrics discussed earlier (e.g., equal opportunity).</p></li>
-<li><p>Attempts to meet individual fairness may actually result in discrimination. Remember, with individual fairness we have to use the Observed Space as our stand-in for how close people are in the Construct Space. But under the worldview where we admit there is Structural Bias, using this observed data as our notion of fairness may lead to discriminatory outcomes to particular groups.         <br />          <br />         While that sounds weird at first, you have to remember that individual fairness only cares about individuals and makes no claim about how groups as a whole are treated. In a very real sense, it is very unfair to individuals of a particular group to be judged by biased data that resulted from them belonging to groups they had no choice of.</p></li>
+<li><p>Attempts to meet individual fairness may actually result in discrimination. Remember, with individual fairness we have to use the Observed Space as our stand-in for how close people are in the Construct Space. But under the worldview where we admit there is Structural Bias, using this observed data as our notion of fairness may lead to discriminatory outcomes to particular groups. <br /> <br /> While that sounds weird at first, you have to remember that individual fairness only cares about individuals and makes no claim about how groups as a whole are treated. In a very real sense, it is very unfair to individuals of a particular group to be judged by biased data that resulted from them belonging to groups they had no choice of.</p></li>
 </ul>
 </li>
 </ul>

@@ -46,7 +46,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Types and Booleans" href="types-and-booleans.html" />
-    <link rel="prev" title="Context: First Two Weeks of CSE 163" href="context-first-two-weeks-of-cse-163.html" />
+    <link rel="prev" title="Context: First Two Modules of CSE 163" href="context-first-two-modules-of-cse-163.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -98,8 +98,8 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -118,18 +118,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="for-loop.html">
-       For Loop
+      <a class="reference internal" href="for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1666,15 +1661,12 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/fdf9802363e74c8db885031d985be706?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>In an Ed reading, there will be multiple Python <strong>snippets</strong> . You should think of each snippet as its own Python file (like Hunter showed at the end of Lecture 1). Recall from the Ed Tutorial, you can (and should!) run each block as you’re reading to see its output.</p>
-<div class="tip admonition">
-<p class="admonition-title">Tip</p>
-<p>You can also (and are encouraged) to edit the block to see what would happen if you tried to change the code in some way! Go out and explore a bit! 😊
-<br /></p>
-<br />
-<p><em>Tip:</em>
-You can always get the original code back for a reading slide by refreshing the page.</p>
-</div>
+<hr class="docutils" />
+<p>In a lesson reading, there will be multiple Python <strong>snippets</strong> . You should think of each snippet as its own Python file.
+While you cannot run the code blocks in the readings, we encourage you to copy and
+paste them to a Python editor as you are reading to see their output. You can also
+edit the code to see what would happen if you tried to change the code in some way!
+Go out and explore a bit! 😊</p>
 <section id="print-statements">
 <h2>Print Statements<a class="headerlink" href="#print-statements" title="Permalink to this headline">¶</a></h2>
 <p>We saw that the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement in Python is very simple</p>
@@ -1689,8 +1681,8 @@ You can always get the original code back for a reading slide by refreshing the 
 <section id="python-program-main-method-pattern">
 <h2>Python Program + Main Method Pattern<a class="headerlink" href="#python-program-main-method-pattern" title="Permalink to this headline">¶</a></h2>
 <p>A Python program is a series of statements that get executed from top to bottom. Right now the only statement we know is the print statement. But we will learn others!</p>
-<p>In CSE 163, we will ask you to put a little bit of starter code in every program you write. We call this the <strong>main-method pattern</strong> . We can’t really motivate why you need to use this quite yet; you’ll have to trust us that it is the right thing to do. We introduce this pattern now to get you in the practice of writing from the onset of your Python journey. We will come back in future weeks and actually dive into what this pattern does and why it’s necessary.</p>
-<p>Recall that we could write a Python program in a file (in Ed, it shows we write a Python snippet) to print hello world like the following:</p>
+<p>In CSE 163, we will ask you to put a little bit of starter code in every program you write. We call this the <strong>main-method pattern</strong>. We can’t really motivate why you need to use this quite yet; you’ll have to trust us that it is the right thing to do. We introduce this pattern now to get you in the practice of writing from the onset of your Python journey. We will come back in future weeks and actually dive into what this pattern does and why it’s necessary.</p>
+<p>Recall that we could write a Python program in a file to print hello world like the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1710,7 +1702,7 @@ is a comment (i.e. not real code, just a description).</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>We’ll start you off by providing the main-method pattern as a starter code for your practice problems on Ed, but you will get used to writing these weird symbols by yourself! Again, we promise to explain this later, we just can’t right now!</p>
+<p>We’ll start you off by providing the main-method pattern as a starter code for your practice problems in the reading, but you will get used to writing these weird symbols by yourself! Again, we promise to explain this later, we just can’t right now!</p>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>We said that these Python snippets are basically like a Python file, which is mostly true. However, a big difference is we will commonly
@@ -1756,15 +1748,15 @@ is determined by the variable itself (e.g.,
 <strong>by the value in the variable.</strong></p>
 <br />
 <br />
-Another way of phrasing this, is that it doesn't make sense to think of Python variables as having types. A variable in Python is just a box to store values of any types, the value itself knows what type it is (
-`4`
+<p>Another way of phrasing this, is that it doesn’t make sense to think of Python variables as having types. A variable in Python is just a box to store values of any types, the value itself knows what type it is (
+<code class="docutils literal notranslate"><span class="pre">4</span></code>
 knows it is an
-`int`
+<code class="docutils literal notranslate"><span class="pre">int</span></code>
 ,
-`4.2`
+<code class="docutils literal notranslate"><span class="pre">4.2</span></code>
 knows it is a
-`float`
-).
+<code class="docutils literal notranslate"><span class="pre">float</span></code>
+).</p>
 </div>
 </section>
 <section id="expressions">
@@ -1802,11 +1794,11 @@ knows it is a
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="context-first-two-weeks-of-cse-163.html" title="previous page">
+        <a class="left-prev" href="context-first-two-modules-of-cse-163.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Context: First Two Weeks of CSE 163</p>
+                <p class="prevnext-title">Context: First Two Modules of CSE 163</p>
             </div>
         </a>
     </div>

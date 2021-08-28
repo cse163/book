@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1646,18 +1641,31 @@
                 
   <section id="file-processing">
 <h1>File Processing<a class="headerlink" href="#file-processing" title="Permalink to this headline">¶</a></h1>
+<div class="admonition">
+<p class="admonition-title">Data</p>
+<p>You can download the dataset used in this reading here:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/9989384dcb269033ecb3b37d1b126783/poem.txt">poem.txt</a></p></li>
+</ul>
+</div>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/620e2a3aca0a45b0ba52c7913f725375?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p><strong>Files</strong> on computers store some type of data. This data could be pictures, a word document, a video game, etc. For the first part of this class, we will only work with files that store text data. One such file type that holds text data is the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file type.</p>
-<p>For example, if you are using a Mac or Linux system (or are on Ed!), you can open up a terminal and use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> program to print out the contents of a file. Suppose I had a file called <code class="docutils literal notranslate"><span class="pre">poem.txt</span></code> on my computer. If I ran the following command in my terminal, it would print:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>		
+<p>For example, if you are using a Mac or Linux system, you can open up a terminal and use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> program to print out the contents of a file. Suppose I had a file called <code class="docutils literal notranslate"><span class="pre">poem.txt</span></code> on my computer. If I ran the following command in my terminal, it would print:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cat</span> <span class="n">poem</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">she</span> <span class="n">sells</span>
+<span class="n">sea</span>
+<span class="n">shells</span> <span class="n">by</span>
+<span class="n">the</span> <span class="n">sea</span> <span class="n">shore</span>
 </pre></div>
 </div>
 <section id="files-in-python">
 <h2>Files in Python<a class="headerlink" href="#files-in-python" title="Permalink to this headline">¶</a></h2>
-<p>With Python, you can open and read files using the <code class="docutils literal notranslate"><span class="pre">open</span></code> built-in function. The syntax is shown in the following snippet. Note that the value you pass into the <code class="docutils literal notranslate"><span class="pre">open</span></code> is a <strong>path</strong> to the file. We will talk about file paths in a bit, but think of it like a full-name of a file on a computer!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/poem.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<p>With Python, you can open and read files using the <code class="docutils literal notranslate"><span class="pre">open</span></code> built-in function. The syntax is shown in the following snippet. Note that the value you pass into the <code class="docutils literal notranslate"><span class="pre">open</span></code> is a <strong>path</strong> to the file. We will talk about file paths in a bit, but think of it like a full-name of a file on a computer! For example,
+if there is a file named <code class="docutils literal notranslate"><span class="pre">poem.txt</span></code> in the same directory as your Python script, the following code snippet will print the content of that file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;poem.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># returns the file contents as a str</span>
     <span class="k">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
@@ -1678,9 +1686,9 @@ statement syntax when working with files in Python, including any assessments in
 syntax we have shown above automatically closes the file when you are done with it so you don’t have to think about it at all!
 <br /></p>
 <br />
-This is kind of like the person who doesn't put a shopping cart back after taking their groceries to their car. You don't want to be that person. Instead of having to write the code to close it explicitly, just use this fancy
-`with`
-syntax to do it for you!
+<p>This is kind of like the person who doesn’t put a shopping cart back after taking their groceries to their car. You don’t want to be that person. Instead of having to write the code to close it explicitly, just use this fancy
+<code class="docutils literal notranslate"><span class="pre">with</span></code>
+syntax to do it for you!</p>
 </div>
 <p>A very common pattern is to read the file <strong>line by line</strong> so that you can process each line on its own. We could accomplish this with the <code class="docutils literal notranslate"><span class="pre">split</span></code> function on the content of the file, but Python conveniently provides a <code class="docutils literal notranslate"><span class="pre">readlines</span></code> function on the file object that returns the lines in a list of strings.</p>
 <p>For example, the following code snippet will print out the file with a line number in front of each line. In this example <code class="docutils literal notranslate"><span class="pre">lines</span></code> will store a list of each line in the file and our loop over that just keeps track of a counter and prints that before the line itself.</p>
@@ -1703,7 +1711,7 @@ syntax to do it for you!
 
             
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">number_lines</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/poem.txt&#39;</span><span class="p">)</span>
+    <span class="n">number_lines</span><span class="p">(</span><span class="s1">&#39;poem.txt&#39;</span><span class="p">)</span>
         
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -1713,7 +1721,7 @@ syntax to do it for you!
 <p>So while the code is getting more complex, all of the code kind of falls into solving one of 3 sub-tasks of the problem:</p>
 <ul class="simple">
 <li><p>The standard main-method pattern code and defining the function for     <code class="docutils literal notranslate"><span class="pre">number_lines</span></code></p></li>
-<li><p>The standard code for opening a file (     <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open...</span></code>     ) and to read the lines of a file (     <code class="docutils literal notranslate"><span class="pre">f.readlines()</span></code>     )</p></li>
+<li><p>The standard code for opening a file (<code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open...</span></code>) and to read the lines of a file (<code class="docutils literal notranslate"><span class="pre">f.readlines()</span></code>)</p></li>
 <li><p>The rest is just a problem we could have solved from Lesson 3 that involves looping over a list!</p></li>
 </ul>
 <p>It usually helps to try to “chunk” the code like this in your head so it makes it more manageable to read!</p>
@@ -1779,7 +1787,7 @@ syntax to do it for you!
 
     
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">count_odd</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/poem.txt&#39;</span><span class="p">)</span>
+    <span class="n">count_odd</span><span class="p">(</span><span class="s1">&#39;poem.txt&#39;</span><span class="p">)</span>
         
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>

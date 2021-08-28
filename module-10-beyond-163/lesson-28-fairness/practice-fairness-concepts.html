@@ -98,8 +98,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -118,18 +118,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1688,8 +1683,8 @@
 <ul class="simple">
 <li><p>There were 15 locations where our model predicted there was a pothole and there truly was a pothole there.</p></li>
 <li><p>There were 20 locations where our model predicted there was a pothole but there actually was not a pothole there.</p></li>
-<li><p>There were 30 locations where our model predicted there was     <em>not</em>     a pothole but there truly was a pothole there.</p></li>
-<li><p>There are 5 locations where our model predicted there was     <em>not</em>     a pothole and there truly was     <em>not</em>     a pothole there.</p></li>
+<li><p>There were 30 locations where our model predicted there was <em>not</em> a pothole but there truly was a pothole there.</p></li>
+<li><p>There are 5 locations where our model predicted there was <em>not</em> a pothole and there truly was <em>not</em> a pothole there.</p></li>
 </ul>
 <p>What is the False Negative Rate of this model? Write your answer as a number between 0 and 1 rounded to two decimal places (e.g., <code class="docutils literal notranslate"><span class="pre">0.25</span></code> ).</p>
 <p><strong>📝 Your Task</strong></p>
@@ -1707,7 +1702,7 @@
 </div>
 <p>In the image below we show the <span class="math notranslate nohighlight">\((error, unfairness)\)</span> score for every possible threshold that could exist for this data. We define the error of the model as</p>
 <div class="math notranslate nohighlight">
-\[error = \frac{\text{\# mistakes}}{\text{\# examples}} = 1 - \text{accuracy}\]</div>
+\[error = \frac{\text{# mistakes}}{\text{# examples}} = 1 - \text{accuracy}\]</div>
 <p>In the lesson we defined a few notions of fairness. Commonly we try to plot out how “unfair” a model is by looking at differences in fairness metrics across subgroups. So for this example, define unfairness as</p>
 <div class="math notranslate nohighlight">
 \[unfairness = |Circle\ FNR -\ Square\ FNR|\]</div>

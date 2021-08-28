@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/13c9ac9a1fef415f9cf9b1755b1e9362?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Whenever you write a function, you should provide some documentation for what it does and any information someone needs to know to use it. Reading code can be hard so we want to provide some instructions people can understand. Code without documentation requires anyone trying to use your code to try and recreate what you were thinking, which essentially ends up with them making guesses at what it does  
 
 
@@ -12,9 +14,7 @@ Whenever you write a function, you should provide some documentation for what it
 :class: warning
 
 When I'm trying to understand code without documentation, it often feels like I'm like a way-less-capable version of Amy Adam's character in the movie
-[None](https://www.imdb.com/title/tt2543164/)
-. Don't write code where I have to feel like that. Write documentation in English (or whichever language you and your team work in) so people know how to use the code you write!
-
+[Arrival](https://www.imdb.com/title/tt2543164/). Don't write code where I have to feel like that. Write documentation in English (or whichever language you and your team work in) so people know how to use the code you write!
 ```
 
 You can always use the `#` to leave a note in your code, but we are specifically going to talk about a special notion in Python called a **doc-string** that lets you add special documentation for a function. To do this, you use this special triple-quote string (i.e. `""" documentation """` )  as the first lines of the function.  

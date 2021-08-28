@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1631,12 +1626,12 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/13c9ac9a1fef415f9cf9b1755b1e9362?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Whenever you write a function, you should provide some documentation for what it does and any information someone needs to know to use it. Reading code can be hard so we want to provide some instructions people can understand. Code without documentation requires anyone trying to use your code to try and recreate what you were thinking, which essentially ends up with them making guesses at what it does</p>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>When I’m trying to understand code without documentation, it often feels like I’m like a way-less-capable version of Amy Adam’s character in the movie
-<a class="reference external" href="https://www.imdb.com/title/tt2543164/">None</a>
-. Don’t write code where I have to feel like that. Write documentation in English (or whichever language you and your team work in) so people know how to use the code you write!</p>
+<a class="reference external" href="https://www.imdb.com/title/tt2543164/">Arrival</a>. Don’t write code where I have to feel like that. Write documentation in English (or whichever language you and your team work in) so people know how to use the code you write!</p>
 </div>
 <p>You can always use the <code class="docutils literal notranslate"><span class="pre">#</span></code> to leave a note in your code, but we are specifically going to talk about a special notion in Python called a <strong>doc-string</strong> that lets you add special documentation for a function. To do this, you use this special triple-quote string (i.e. <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">documentation</span> <span class="pre">&quot;&quot;&quot;</span></code> )  as the first lines of the function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>

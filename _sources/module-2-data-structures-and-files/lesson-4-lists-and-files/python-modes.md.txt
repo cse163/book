@@ -6,8 +6,7 @@
 ```{admonition} Warning
 :class: warning
 
-This slide is coded as a practice problem in Ed's system, but there is no code you have to write. However, this means
-**you need to press Mark to complete this slide.**
+This slide has some starter code for you to download to follow along, but there is no code you have to write.
 
 
 ```
@@ -17,7 +16,7 @@ This slide is coded as a practice problem in Ed's system, but there is no code y
     <iframe src="https://www.loom.com/embed/b27fda7ec1724f85b14fb2bae3382806" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-As a reminder, whenever you press the Run or Mark button in Ed, you are really running a Python program. As we have shown, this is equivalent to running a command in the terminal like `python file.py` where `file.py` is some Python file.  
+---
 
 It turns out there are actually two "mode"s that people commonly interact with Python.  
 
@@ -25,7 +24,7 @@ It turns out there are actually two "mode"s that people commonly interact with P
 
 This is the way we have been doing it so far: Write a `.py` file and run it with `python file.py` .  
 
-This slide has an editor on the right with a file called `test_script.py` . Go ahead and run it in the terminal using `python test_script.py` ! You should see it print out some output.  
+This slide has starter code containing a file called `test_script.py` . You can download the code and run it in the terminal using `python test_script.py`! You should see it print out some output.  
 
 ##  Interactive  
 
@@ -35,7 +34,7 @@ There is a simple way to interact with a Python and a slightly more complex way.
 
 ###  REPL  
 
-A common feature in most programming languages is to provide an interactive mode that lets you type individual lines of Python code and it tells you the output! Programmers commonly call these interactive modes **REPL** s ( **R** ead **E** valuate **P** rint **L** oop).  
+A common feature in most programming languages is to provide an interactive mode that lets you type individual lines of Python code and it tells you the output! Programmers commonly call these interactive modes **REPL**s ( **R** ead **E** valuate **P** rint **L** oop).  
 
 Try it out! Open the terminal and type `python` (notice, no file name afterwards). This will put you in a special Python mode where it asks you to type something in! Try the following things  
 
@@ -64,15 +63,4 @@ or
 
 ```
 
-On the next slide, we introduce a more complex way of interacting with Python that's more popular nowadays.  
-
-
-```{admonition} Warning
-:class: warning
-
-This slide is coded as a practice problem in Ed's system, but there is no code you have to write. However, this means
-**you need to press Mark to complete this slide.**
-
-
-```
-
+On the next slide, we introduce a more complex way of interacting with Python that's more popular nowadays. 

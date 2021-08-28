@@ -43,8 +43,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Conditionals Answered" href="conditionals-answered.html" />
-    <link rel="prev" title="For Loop" href="for-loop.html" />
+    <link rel="next" title="Functions" href="functions.html" />
+    <link rel="prev" title="For Loops" href="for-loops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,8 +96,8 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="for-loop.html">
-       For Loop
+      <a class="reference internal" href="for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1631,6 +1626,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/c1af397581d1469c90f707a968c58022?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Conditional statements let you execute code conditionally based on some condition; they are similar in nature to the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop but only run at most once.</p>
 <p>In Python, the keywords to control these conditionals are <code class="docutils literal notranslate"><span class="pre">if</span></code> , <code class="docutils literal notranslate"><span class="pre">elif</span></code> (read “else if”) and <code class="docutils literal notranslate"><span class="pre">else</span></code> . For those that know Java, these keywords exactly match the semantics of Java’s <code class="docutils literal notranslate"><span class="pre">if</span></code> , <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> keywords.</p>
 <p>A conditional block is an <code class="docutils literal notranslate"><span class="pre">if</span></code> block optionally followed by any number of <code class="docutils literal notranslate"><span class="pre">elif</span></code> blocks optionally followed by at most one <code class="docutils literal notranslate"><span class="pre">else</span></code> block.</p>
@@ -1646,12 +1642,21 @@
 </pre></div>
 </div>
 <p>This code prints <code class="docutils literal notranslate"><span class="pre">B</span></code> because the first <code class="docutils literal notranslate"><span class="pre">if</span></code> test fails ( <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> ) and then the second test succeeds ( <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">13</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> ) so we enter the second body.</p>
-<p>Two questions you should consider:</p>
+<p>Two questions you should consider (you should think about these questions before expanding the output to see the answer!):</p>
 <ul class="simple">
-<li><p>What values of     <code class="docutils literal notranslate"><span class="pre">x</span></code>     enter the     <code class="docutils literal notranslate"><span class="pre">else</span></code>     statement?</p></li>
-<li><p>Why is it not possible to enter the third block (the second     <code class="docutils literal notranslate"><span class="pre">elif</span></code>     block)?</p></li>
+<li><p>What values of <code class="docutils literal notranslate"><span class="pre">x</span></code> enter the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement?</p></li>
 </ul>
-<p>You should think about these questions before clicking onto the next slide to see the answer!</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Output</p>
+<p>The only values of <code class="docutils literal notranslate"><span class="pre">x</span></code> that can cause the code to enter the <code class="docutils literal notranslate"><span class="pre">else</span></code> block are <code class="docutils literal notranslate"><span class="pre">10</span></code> , <code class="docutils literal notranslate"><span class="pre">11</span></code> , and <code class="docutils literal notranslate"><span class="pre">12</span></code> . Any number less than <code class="docutils literal notranslate"><span class="pre">10</span></code> will enter the first <code class="docutils literal notranslate"><span class="pre">if</span></code> while any number greater than <code class="docutils literal notranslate"><span class="pre">12</span></code> will enter the first <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+</div>
+<ul class="simple">
+<li><p>Why is it not possible to enter the third block (the second <code class="docutils literal notranslate"><span class="pre">elif</span></code> block)?</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Output</p>
+<p>Using the logic from the previous question, no value of <code class="docutils literal notranslate"><span class="pre">x</span></code> can satisfy this condition if it doesn’t satisfy the previous two. To enter the second <code class="docutils literal notranslate"><span class="pre">elif</span></code> block, <code class="docutils literal notranslate"><span class="pre">x</span></code> would need to be some value <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">10</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">13</span></code> , and <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">20</span></code> . No such number exists!</p>
+</div>
 </section>
 
 
@@ -1665,19 +1670,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="for-loop.html" title="previous page">
+        <a class="left-prev" href="for-loops.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">For Loop</p>
+                <p class="prevnext-title">For Loops</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="conditionals-answered.html" title="next page">
+        <a class="right-next" href="functions.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Conditionals Answered</p>
+                <p class="prevnext-title">Functions</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

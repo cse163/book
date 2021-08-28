@@ -4,7 +4,7 @@
 
 Write a method called `count_words` that takes a file name and returns a `dict` that stores the words as keys and values that counts the number of times that word appeared in the file.  Remember a token is a sequence of characters separated by spaces.  
 
-For example, suppose we had a file called `popular_techno_song.txt` had the following contents ( [None](https://answers.yahoo.com/question/index?qid=20100314111115AAz2IGy) ).  
+For example, suppose we had a file called `popular_techno_song.txt` had the following contents ([source](https://answers.yahoo.com/question/index?qid=20100314111115AAz2IGy)).  
 
 ```text
 dun dun dun dun

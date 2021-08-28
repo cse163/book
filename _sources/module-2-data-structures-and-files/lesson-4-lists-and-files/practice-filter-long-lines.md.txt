@@ -22,7 +22,7 @@ You might not see me anymore, anymore
 
 We have provided more scaffolding for you for this checkpoint so you don't have to write as much. All the file-processing stuff is your job though!  
 
-*Hint 1:* You will want to use some of the string functions from [None](https://edstem.org/us/courses/3016/lessons/7873/slides/38577) to process each line of the file to find the ones with the right number of words.  
+*Hint 1:* You will want to use some of the string functions from [String Functions](/module-1-introduction-to-python/lesson-3-strings-and-lists/string-functions.md) to process each line of the file to find the ones with the right number of words.  
 
 *Hint 2:* You can use the `len` function on lists too!  
 

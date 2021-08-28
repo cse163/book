@@ -20,7 +20,7 @@ For example, consider the list `[12, 17, 6]` . The largest element in this list 
 :class: note
 
 This problem was created on
-[None](https://www.codestepbystep.com/problem/view/python/collections/list/find_range)
+[Code Step by Step](https://www.codestepbystep.com/problem/view/python/collections/list/find_range)
 .
 
 ```

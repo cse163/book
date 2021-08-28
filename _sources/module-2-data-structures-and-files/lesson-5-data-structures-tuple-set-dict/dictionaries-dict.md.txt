@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/117da2a64cdd4b2caaeb503b4c7dd7c7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 For one of your practice problems for today, you will be implementing a function to find the count of each word in a file. It's not clear how you could use a `list` or `set` to solve this problem since you need to be able to answer the question: "for a given word, how many of them have we seen?"  
 
 A `list` seems like it's more on the right track, but unfortunately, the indices have to be numbers! There is no way of using a `list` to say that a word should be an index.  
@@ -13,7 +15,7 @@ A `list` seems like it's more on the right track, but unfortunately, the indices
 
 The last data structure we are going to learn today is called a dictionary (in Python, written as `dict` ). A `dict` is a very powerful data structure since it acts, in some sense, as a more generalized `list` . Essentially a `dict` is much like a `list` , but allows you to store any type as the index while a `list` only allows numbers from `0` to `len - 1` as valid indices.  
 
-To create a `dict` in Python, you use the syntax in the following snippet. Note that `dict` supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, `dict` uses a different term for the index to reduce confusion with `list` s: we call the "index" of an entry in a `dict` its **key** . We describe a `dict` as a bunch of key/value pairs that are accessible via the key.  
+To create a `dict` in Python, you use the syntax in the following snippet. Note that `dict` supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, `dict` uses a different term for the index to reduce confusion with `list` s: we call the "index" of an entry in a `dict` its **key**. We describe a `dict` as a bunch of key/value pairs that are accessible via the key.  
 
 ```python
 d = {'a': 1, 'b': 17, 47: 'scurvy'}
@@ -105,9 +107,7 @@ To explain what this `if` -check is doing in English: If we haven't seen the key
 ```{admonition} Note
 :class: note
 
-**
-			A very common bug when you're first working with 
-			**
+A very common bug when you're first working with `dict`s is forgetting this type of pattern to handle the first time you see a key.
 
 
 ```

@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1654,15 +1649,16 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/dd229affd69d4e489a9ad1a7a81e2358" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Now that we understand what a CSV looks like, let’s discuss how we might process that data to answer questions about it. For example, what if I want to find the total of all the TAs’ salary?</p>
 <p>You might imagine that we will solve this with the skills we have learned so far in file-processing. We could do something by reading the file line by line in a loop, splitting the line based on commas, and then doing our computation on the data we’ve extracted. Unfortunately, this ends up being much more complicated than we anticipated:</p>
 <ul class="simple">
 <li><p>The code is not very flexible if I want to compute some other value. What if I want to compute the TA who makes the most money? I would have to duplicate all this nasty code to parse the file just to access the information again. This also comes at a cost of efficiency (e.g. speed of program) since, for each task, you will need to re-read the file.</p></li>
-<li><p>Our example CSV is relatively simple, but they can get much more complicated. It would be nice to separate the logic of     <strong>parsing</strong>     the data from our     <strong>computations</strong>     so our code for computations is more readable and maintainable.</p></li>
+<li><p>Our example CSV is relatively simple, but they can get much more complicated. It would be nice to separate the logic of <strong>parsing</strong> the data from our <strong>computations</strong> so our code for computations is more readable and maintainable.</p></li>
 </ul>
 <section id="list-of-dictionaries">
 <h2>List of Dictionaries<a class="headerlink" href="#list-of-dictionaries" title="Permalink to this headline">¶</a></h2>
-<p>To accomplish this, we will start by storing our data in some data structure ( <code class="docutils literal notranslate"><span class="pre">list</span></code> , <code class="docutils literal notranslate"><span class="pre">set</span></code> , <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> , etc.) that will help us process it later. A very common thing to do when processing this type of data is to store it in a <strong>list of dictionaries</strong> . It helps to see what the data looks like first, then we will explain what it is.</p>
+<p>To accomplish this, we will start by storing our data in some data structure ( <code class="docutils literal notranslate"><span class="pre">list</span></code> , <code class="docutils literal notranslate"><span class="pre">set</span></code> , <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> , etc.) that will help us process it later. A very common thing to do when processing this type of data is to store it in a <strong>list of dictionaries</strong>. It helps to see what the data looks like first, then we will explain what it is.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[
     {&#39;Name&#39;: &#39;Madrona&#39;, &#39;Salary&#39;: 3},
     {&#39;Name&#39;: &#39;Rit&#39;,     &#39;Salary&#39;: 1},
@@ -1690,7 +1686,6 @@
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;type(data)&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;type(data[1])&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;type(ta[&#39;Name&#39;])&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">ta</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]))</span>
-
 </pre></div>
 </div>
 <p>It turns out, it’s not necessary to save the value of <code class="docutils literal notranslate"><span class="pre">data[1]</span></code> in a variable before accessing it! It is much more common to write code like the following:</p>
@@ -1703,7 +1698,7 @@
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Name of TA in Row 2:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Let’s try another example. <strong>Before pressing the “Run” button, make a prediction of what each line of code will do and see if your prediction matches reality!</strong></p>
+<p>Let’s try another example. <strong>Before running the code snippet below, make a prediction of what each line of code will do and see if your prediction matches reality!</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>   <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
@@ -1741,7 +1736,7 @@
 <section id="reading-in-a-csv-file">
 <h2>Reading in a CSV File<a class="headerlink" href="#reading-in-a-csv-file" title="Permalink to this headline">¶</a></h2>
 <p>You might be asking: How do you write the code to parse this CSV into the list of dictionaries? <br />  <br /> That actually turns out to be a very hard problem that is well outside of what we have learned so far! There are lots of edge cases to handle around getting the types of the values correct (i.e. knowing when to turn the values of a column into <code class="docutils literal notranslate"><span class="pre">ints</span></code> rather than <code class="docutils literal notranslate"><span class="pre">str</span></code> s).</p>
-<p>We write this method for you and call it <code class="docutils literal notranslate"><span class="pre">parse</span></code> . It will be made available to you on your homework and lessons in a file called <code class="docutils literal notranslate"><span class="pre">cse163_utils</span></code> and you do not need to know how it’s implemented. This is similar to how we provide <code class="docutils literal notranslate"><span class="pre">assert_equals</span></code> in <code class="docutils literal notranslate"><span class="pre">cse163_utils</span></code> .</p>
+<p>We write this method for you and call it <code class="docutils literal notranslate"><span class="pre">parse</span></code>. It will be made available to you on your homework and lessons in a file called <code class="docutils literal notranslate"><span class="pre">cse163_utils</span></code> and you do not need to know how it’s implemented. This is similar to how we provide <code class="docutils literal notranslate"><span class="pre">assert_equals</span></code> in <code class="docutils literal notranslate"><span class="pre">cse163_utils</span></code>.</p>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
 <p>Optional: In fact, this task is actually so nasty to write by yourself, we didn’t even do it! We outsourced it to a code-library that we will learn about called

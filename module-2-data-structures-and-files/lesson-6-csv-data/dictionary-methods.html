@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1644,7 +1639,8 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/cc2e27f4df774142a4aa2d232a40bcb3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>In Lesson 5, we learned about the dictionary or <code class="docutils literal notranslate"><span class="pre">dict</span></code> type in Python to store a relationship between <strong>keys</strong> and <strong>values</strong> . For example, you could define a dictionary with some keys and values, and then access/modify using the bracket-syntax we used for <code class="docutils literal notranslate"><span class="pre">list</span></code> s.</p>
+<hr class="docutils" />
+<p>In Lesson 5, we learned about the dictionary or <code class="docutils literal notranslate"><span class="pre">dict</span></code> type in Python to store a relationship between <strong>keys</strong> and <strong>values</strong>. For example, you could define a dictionary with some keys and values, and then access/modify using the bracket-syntax we used for <code class="docutils literal notranslate"><span class="pre">list</span></code>s.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="n">d</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">d</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
@@ -1652,7 +1648,7 @@
 <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">dict</span></code> s, like <code class="docutils literal notranslate"><span class="pre">list</span></code> s, are objects so they also have methods you can call on them. We show a table with the most common methods below. In the next section, we show an example using some of these methods.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dict</span></code>s, like <code class="docutils literal notranslate"><span class="pre">list</span></code>s, are objects so they also have methods you can call on them. We show a table with the most common methods below. In the next section, we show an example using some of these methods.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Function</p></th>
@@ -1679,13 +1675,13 @@
 </table>
 <section id="looping-over-a-dictionary">
 <h2>Looping over a Dictionary<a class="headerlink" href="#looping-over-a-dictionary" title="Permalink to this headline">¶</a></h2>
-<p>You might have been wondering from the last lesson how you would loop over a <code class="docutils literal notranslate"><span class="pre">dict</span></code> . With the methods we have shown, you might see how you could loop over the keys of a dictionary. For example, if you want to iterate over the keys of a <code class="docutils literal notranslate"><span class="pre">dict</span></code> , you use the <code class="docutils literal notranslate"><span class="pre">keys</span></code> method. The <code class="docutils literal notranslate"><span class="pre">keys</span></code> method returns a collection (similar to a <code class="docutils literal notranslate"><span class="pre">set</span></code> ) of all the keys in the <code class="docutils literal notranslate"><span class="pre">dict</span></code> .</p>
+<p>You might have been wondering from the last lesson how you would loop over a <code class="docutils literal notranslate"><span class="pre">dict</span></code> . With the methods we have shown, you might see how you could loop over the keys of a dictionary. For example, if you want to iterate over the keys of a <code class="docutils literal notranslate"><span class="pre">dict</span></code> , you use the <code class="docutils literal notranslate"><span class="pre">keys</span></code> method. The <code class="docutils literal notranslate"><span class="pre">keys</span></code> method returns a collection (similar to a <code class="docutils literal notranslate"><span class="pre">set</span></code>) of all the keys in the <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Similarly, you could use the <code class="docutils literal notranslate"><span class="pre">values</span></code> method to get a collection of all the values in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> . A common approach is to use the <code class="docutils literal notranslate"><span class="pre">items</span></code> method to get a tuple of both keys and values for each entry.</p>
+<p>Similarly, you could use the <code class="docutils literal notranslate"><span class="pre">values</span></code> method to get a collection of all the values in a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. A common approach is to use the <code class="docutils literal notranslate"><span class="pre">items</span></code> method to get a tuple of both keys and values for each entry.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>  <span class="c1"># pair will be a tuple: (key, value)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>

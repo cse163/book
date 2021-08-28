@@ -98,8 +98,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -118,18 +118,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1646,15 +1641,11 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/81485d90932a4878b4e775e2449fd4b9?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <div class="note admonition">
 <p class="admonition-title">Note</p>
-<p>Again, most of this slide is based very closely on Michael Kearns and Aaron Roth’s
-<em>The Ethical Algorithm</em>
-. They did a fantastic job coming up with an easy-to-approach analogy for the ideas of fairness. I do not want to claim this discussion as my own, since it is heavily based on theirs.
-<br /></p>
-<br />
-The images in this post are directly from
-*The Ethical Algorithm.*
+<p>Again, most of this slide is based very closely on Michael Kearns and Aaron Roth’s <em>The Ethical Algorithm</em>. They did a fantastic job coming up with an easy-to-approach analogy for the ideas of fairness. I do not want to claim this discussion as my own, since it is heavily based on theirs.</p>
+<p>The images in this post are directly from <em>The Ethical Algorithm.</em></p>
 </div>
 <p>One of the things we alluded to in the last slide was a sort of trade-off between an accurate model and a fair model. When discussing statistical parity, we said that the “perfectly accurate model” (one that always knows the true label) would be considered unfair if the rates of success were different across groups. While this example is not feasible in practice (it’s very rare to ever find a perfect predictor), there is a more general notion of the tradeoff between a model’s accuracy and its fairness.</p>
 <p>We again are considering the overly-simplistic and reductive example of college admissions in a world with Circles/Squares. This time, we are going to add one idea in that our decision of college admission will be solely based on the SAT score of each person. This is obviously not how admissions decisions are done in real life, but it’s the simplest analogy we can use to demonstrate our idea.</p>
@@ -1689,17 +1680,8 @@ The images in this post are directly from
 <p>The Pareto frontier <strong>does not say</strong> which tradeoff you should choose along its curve. It just represents the set of valid choices. The relative importance of fairness and accuracy depends on the context you are working in and it cannot make that judgment for you. In some sense, it’s just a more quantitative way of reasoning about the tradeoff but does not tell you what the result should be.</p>
 <p>I think at first this feels very weird to consider quantitatively looking at the tradeoff between fairness and accuracy. To treat fairness like a number along a curve that we just pick seems at odds with the idea of making something fairer for the people affected by a model. Aaron Roth and Michael Kearns describe this uncomfortable experience quite well, so I’ll leave the commentary to them:</p>
 <blockquote>
-<div><p>While the idea of considering cold, quantitative trade-offs between accuracy and fairness might make you uncomfortable, the point is that there is simply no escaping the Pareto frontier. Machine learning engineers and policymakers alike can be ignorant of it or refuse to look at it. But once we pick a decision-making model (which might in fact be a human decision-maker), there are only two possibilities. Either that model is not on the Pareto frontier, in which case it’s a “bad” model (since it could be improved in at least one measure without harm in the other), or it is on the frontier, in which case it implicitly commits to a numerical weighting of the relative importance of error and unfairness. Thinking about fairness in less quantitative ways does nothing to change these realities—it only obscures them.
-<br /></p>
- <br />
-Making the trade-off between accuracy and fairness quantitative does
- **
-</div></blockquote>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>		**
-</pre></div>
-</div>
-<blockquote>
-<div><p>remove the importance of human judgment, policy, and ethics—it simply focuses them where they are most crucial and useful, which is in deciding exactly which model on the Pareto frontier is best (in addition to choosing the notion of fairness in the first place, and which group or groups merit protection under it, both of which we discuss shortly). Such decisions should be informed by many factors that cannot be made quantitative, including what the societal goal of protecting a particular group is and what is at stake. Most of us would agree that while both racial bias in the ads users are shown online and racial bias in lending decisions are undesirable, the potential harms to individuals in the latter far exceed those in the former. So in choosing a point on the Pareto frontier for a lending algorithm, we might prefer to err strongly on the side of fairness—for example, insisting that the false rejection rate across different racial groups be very nearly equal, even at the cost of reducing bank profits. We’ll make more mistakes this way—both false rejections of creditworthy applicants and loans granted to parties who will default—but those mistakes will not be disproportionately concentrated in any one racial group.
+<div><p>While the idea of considering cold, quantitative trade-offs between accuracy and fairness might make you uncomfortable, the point is that there is simply no escaping the Pareto frontier. Machine learning engineers and policymakers alike can be ignorant of it or refuse to look at it. But once we pick a decision-making model (which might in fact be a human decision-maker), there are only two possibilities. Either that model is not on the Pareto frontier, in which case it’s a “bad” model (since it could be improved in at least one measure without harm in the other), or it is on the frontier, in which case it implicitly commits to a numerical weighting of the relative importance of error and unfairness. Thinking about fairness in less quantitative ways does nothing to change these realities—it only obscures them.</p>
+<p>Making the trade-off between accuracy and fairness quantitative does <strong>not</strong> remove the importance of human judgment, policy, and ethics—it simply focuses them where they are most crucial and useful, which is in deciding exactly which model on the Pareto frontier is best (in addition to choosing the notion of fairness in the first place, and which group or groups merit protection under it, both of which we discuss shortly). Such decisions should be informed by many factors that cannot be made quantitative, including what the societal goal of protecting a particular group is and what is at stake. Most of us would agree that while both racial bias in the ads users are shown online and racial bias in lending decisions are undesirable, the potential harms to individuals in the latter far exceed those in the former. So in choosing a point on the Pareto frontier for a lending algorithm, we might prefer to err strongly on the side of fairness—for example, insisting that the false rejection rate across different racial groups be very nearly equal, even at the cost of reducing bank profits. We’ll make more mistakes this way—both false rejections of creditworthy applicants and loans granted to parties who will default—but those mistakes will not be disproportionately concentrated in any one racial group.
 Ultimately, this is a callback to the fact that these problems in our models will not be solved entirely algorithmically. While fairness definitions put some mathematical description to fairness, which one you use is ultimately a statement of values which is decidedly a human affair. Far too often, technologists reach towards algorithmic or technical solutions to problems, but it’s very crucial that humans (both the modeler, the modelled, and others) stay in the loop enforcing what shared values we want to uplift.</p>
 </div></blockquote>
 </section>

@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1654,6 +1649,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/c3d8b5eb6e194b05932ba6331c001740?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>You should have seen strings in your previous programming course. As a reminder, a string is a common data type in programming languages to represent text. In Python, the name of the type <code class="docutils literal notranslate"><span class="pre">str</span></code> represents a string (we use String and <code class="docutils literal notranslate"><span class="pre">str</span></code> interchangeably in this text for readability, but Python always refers to them as <code class="docutils literal notranslate"><span class="pre">str</span></code> ).</p>
 <p>In Python, you define a <code class="docutils literal notranslate"><span class="pre">str</span></code> by putting texts in quotes as shown in the following snippet. You can use either a <code class="docutils literal notranslate"><span class="pre">'</span></code> or a <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> , they are the same (but the opening one has to match the closing one).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
@@ -1665,24 +1661,18 @@
 </div>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
-<p>Which quotation mark you use is a matter of personal preference. Generally it’s best to just pick one and be consistent throughout your program as much as possible. Hunter prefers single quotes, but that’s just a preference! 😊
+<p>Which quotation mark you use is a matter of personal preference. Generally it’s best to just pick one and be consistent throughout your program as much as possible.
 <br /></p>
 <br />
-It's acceptable to deviate from your preferred style when you want to work with a string that contains a character like
-`'`
+<p>It’s acceptable to deviate from your preferred style when you want to work with a string that contains a character like
+<code class="docutils literal notranslate"><span class="pre">'</span></code>
 (e.g. the
-`str`
-<p><code class="docutils literal notranslate"><span class="pre">&quot;you</span> <span class="pre">won't&quot;</span></code>
+<code class="docutils literal notranslate"><span class="pre">str</span></code> <code class="docutils literal notranslate"><span class="pre">&quot;you</span> <span class="pre">won't&quot;</span></code>
 ). In that case, it would not work to define a
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-like
-<code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">won't'</span></code>
+<code class="docutils literal notranslate"><span class="pre">str</span></code> like <code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">won't'</span></code>
 since Python would read the apostrophe as the closing of the string. So if you want to use one of the quotation marks inside the
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-, that means you have to use the other type outside to wrap the
-<code class="docutils literal notranslate"><span class="pre">str</span></code>
-(e.g.
-<code class="docutils literal notranslate"><span class="pre">&quot;you</span> <span class="pre">won't&quot;).</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">str</span></code>, that means you have to use the other type outside to wrap the
+<code class="docutils literal notranslate"><span class="pre">str</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;you</span> <span class="pre">won't&quot;</span></code>).</p>
 </div>
 <section id="string-concatenation">
 <h2>String Concatenation<a class="headerlink" href="#string-concatenation" title="Permalink to this headline">¶</a></h2>
@@ -1691,11 +1681,10 @@ since Python would read the apostrophe as the closing of the string. So if you w
 <span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;CSE 163 is fun!&quot;</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">)</span>
-
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator in this context will work with two values of type <code class="docutils literal notranslate"><span class="pre">str</span></code> to create a new <code class="docutils literal notranslate"><span class="pre">str</span></code> that has the characters from the first followed by the second. Importantly, this does not modify either of <code class="docutils literal notranslate"><span class="pre">s1</span></code> or <code class="docutils literal notranslate"><span class="pre">s2</span></code> , but rather creates a new string that has the same characters as both of them. In fact, strings are what we call <strong>immutable</strong> , meaning that you can’t change the characters of a particular string at all!</p>
-<p>Take a second and think about what the following code snippet should be based on this description of string concatenation before pressing Run… … … Okay! Press Run! Did it do what you expected?</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator in this context will work with two values of type <code class="docutils literal notranslate"><span class="pre">str</span></code> to create a new <code class="docutils literal notranslate"><span class="pre">str</span></code> that has the characters from the first followed by the second. Importantly, this does not modify either of <code class="docutils literal notranslate"><span class="pre">s1</span></code> or <code class="docutils literal notranslate"><span class="pre">s2</span></code> , but rather creates a new string that has the same characters as both of them. In fact, strings are what we call <strong>immutable</strong>, meaning that you can’t change the characters of a particular string at all!</p>
+<p>Take a second and think about what the following code snippet should be based on this description of string concatenation before copying and running the code snippet in your own editor… Okay! Go ahead and run it! Did it do what you expected?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">163</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
@@ -1703,7 +1692,7 @@ since Python would read the apostrophe as the closing of the string. So if you w
 </div>
 <p>It crashed! What happened?!?!</p>
 <p>If you previously had known Java, you probably expected it to do what Java does in this situation and turn the <code class="docutils literal notranslate"><span class="pre">163</span></code> (which is of type <code class="docutils literal notranslate"><span class="pre">int</span></code> ) into a <code class="docutils literal notranslate"><span class="pre">str</span></code> and then do <code class="docutils literal notranslate"><span class="pre">str</span></code> concatenation. Python instead says that string concatenation is only defined between two values that are both of type <code class="docutils literal notranslate"><span class="pre">str</span></code> . It doesn’t want to do any of this magic conversion between types for you.</p>
-<p>To fix this, you have to explicitly turn the value <code class="docutils literal notranslate"><span class="pre">163</span></code> into a <code class="docutils literal notranslate"><span class="pre">str</span></code> ! You could easily just change the code to wrap the value <code class="docutils literal notranslate"><span class="pre">163</span></code> in quotes so it is <code class="docutils literal notranslate"><span class="pre">'163'</span></code> , but that only works under a very narrow set of circumstances. Instead, we will use casting (from <a class="reference external" href="https://edstem.org/us/courses/3016/lessons/7871/slides/38559">None</a> ) to convert the number into a <code class="docutils literal notranslate"><span class="pre">str</span></code> since this is a strategy that works in many situations!</p>
+<p>To fix this, you have to explicitly turn the value <code class="docutils literal notranslate"><span class="pre">163</span></code> into a <code class="docutils literal notranslate"><span class="pre">str</span></code> ! You could easily just change the code to wrap the value <code class="docutils literal notranslate"><span class="pre">163</span></code> in quotes so it is <code class="docutils literal notranslate"><span class="pre">'163'</span></code> , but that only works under a very narrow set of circumstances. Instead, we will use casting (from <a class="reference internal" href="../lesson-2-python-basics/types-and-booleans.html"><span class="doc std std-doc">Lesson 2</span></a> ) to convert the number into a <code class="docutils literal notranslate"><span class="pre">str</span></code> since this is a strategy that works in many situations!</p>
 <p>The fixed code snippet would look like the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">163</span>
@@ -1714,7 +1703,7 @@ since Python would read the apostrophe as the closing of the string. So if you w
 <section id="string-indexing">
 <h2>String Indexing<a class="headerlink" href="#string-indexing" title="Permalink to this headline">¶</a></h2>
 <p>When we think of strings, we commonly think of them as a sequence of characters, where each character has an <strong>index</strong> in the string. For example, the string <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">world'</span></code> should really be thought of as a sequence of characters in the image shown below. Each character has its own spot in the sequence, and the spots are ordered starting at index 0 going up to the end of the string.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/aBbZgPzwwhJOQ5ZP73ZtqsFn"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/aBbZgPzwwhJOQ5ZP73ZtqsFn" style="width: 743px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/aBbZgPzwwhJOQ5ZP73ZtqsFn"><img alt="hello world string indexing" class="align-center" src="https://static.us.edusercontent.com/files/aBbZgPzwwhJOQ5ZP73ZtqsFn" style="width: 743px;" /></a>
 <p>Python lets you access a character at a specific index by using this <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation to index into the <code class="docutils literal notranslate"><span class="pre">str</span></code> itself. Consider the following code snippet ( <em>think about what it will print before you press run).</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -1723,7 +1712,7 @@ since Python would read the apostrophe as the closing of the string. So if you w
 </pre></div>
 </div>
 <p>Each of these goes into the string, and grabs and returns the character at the particular index.</p>
-<p>Trying to get the last character is a very common operation, so it would be annoying to have to count by hand how many characters you need to go till the end. Thankfully, Python provides a way to find the number of characters, called the <strong>length</strong> , of the string. If you have a <code class="docutils literal notranslate"><span class="pre">str</span></code> named <code class="docutils literal notranslate"><span class="pre">s</span></code> , then using the built-in function <code class="docutils literal notranslate"><span class="pre">len</span></code> tells you the number of characters in it.</p>
+<p>Trying to get the last character is a very common operation, so it would be annoying to have to count by hand how many characters you need to go till the end. Thankfully, Python provides a way to find the number of characters, called the <strong>length</strong>, of the string. If you have a <code class="docutils literal notranslate"><span class="pre">str</span></code> named <code class="docutils literal notranslate"><span class="pre">s</span></code> , then using the built-in function <code class="docutils literal notranslate"><span class="pre">len</span></code> tells you the number of characters in it.</p>
 <p>Let’s try to grab that last character using the <code class="docutils literal notranslate"><span class="pre">len</span></code> function in the following snippet</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Length of string:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
@@ -1754,7 +1743,7 @@ since Python would read the apostrophe as the closing of the string. So if you w
     <span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The first value in this sequence is <code class="docutils literal notranslate"><span class="pre">'h'</span></code> , then <code class="docutils literal notranslate"><span class="pre">'e'</span></code> , etc., which is the exact same sequence of values the loop variable <code class="docutils literal notranslate"><span class="pre">c</span></code> will take on over the iterations of the loop!</p>
+<p>The first value in this sequence is <code class="docutils literal notranslate"><span class="pre">'h'</span></code>, then <code class="docutils literal notranslate"><span class="pre">'e'</span></code>, etc., which is the exact same sequence of values the loop variable <code class="docutils literal notranslate"><span class="pre">c</span></code> will take on over the iterations of the loop!</p>
 </section>
 </section>
 

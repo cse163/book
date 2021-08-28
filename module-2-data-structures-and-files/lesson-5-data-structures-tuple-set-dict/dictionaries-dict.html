@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1654,12 +1649,13 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/117da2a64cdd4b2caaeb503b4c7dd7c7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>For one of your practice problems for today, you will be implementing a function to find the count of each word in a file. It’s not clear how you could use a <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">set</span></code> to solve this problem since you need to be able to answer the question: “for a given word, how many of them have we seen?”</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> seems like it’s more on the right track, but unfortunately, the indices have to be numbers! There is no way of using a <code class="docutils literal notranslate"><span class="pre">list</span></code> to say that a word should be an index.</p>
 <section id="introduction-to-dict">
 <h2>Introduction to <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#introduction-to-dict" title="Permalink to this headline">¶</a></h2>
 <p>The last data structure we are going to learn today is called a dictionary (in Python, written as <code class="docutils literal notranslate"><span class="pre">dict</span></code> ). A <code class="docutils literal notranslate"><span class="pre">dict</span></code> is a very powerful data structure since it acts, in some sense, as a more generalized <code class="docutils literal notranslate"><span class="pre">list</span></code> . Essentially a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is much like a <code class="docutils literal notranslate"><span class="pre">list</span></code> , but allows you to store any type as the index while a <code class="docutils literal notranslate"><span class="pre">list</span></code> only allows numbers from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">len</span> <span class="pre">-</span> <span class="pre">1</span></code> as valid indices.</p>
-<p>To create a <code class="docutils literal notranslate"><span class="pre">dict</span></code> in Python, you use the syntax in the following snippet. Note that <code class="docutils literal notranslate"><span class="pre">dict</span></code> supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, <code class="docutils literal notranslate"><span class="pre">dict</span></code> uses a different term for the index to reduce confusion with <code class="docutils literal notranslate"><span class="pre">list</span></code> s: we call the “index” of an entry in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> its <strong>key</strong> . We describe a <code class="docutils literal notranslate"><span class="pre">dict</span></code> as a bunch of key/value pairs that are accessible via the key.</p>
+<p>To create a <code class="docutils literal notranslate"><span class="pre">dict</span></code> in Python, you use the syntax in the following snippet. Note that <code class="docutils literal notranslate"><span class="pre">dict</span></code> supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, <code class="docutils literal notranslate"><span class="pre">dict</span></code> uses a different term for the index to reduce confusion with <code class="docutils literal notranslate"><span class="pre">list</span></code> s: we call the “index” of an entry in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> its <strong>key</strong>. We describe a <code class="docutils literal notranslate"><span class="pre">dict</span></code> as a bunch of key/value pairs that are accessible via the key.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">47</span><span class="p">:</span> <span class="s1">&#39;scurvy&#39;</span><span class="p">}</span>
 <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="c1"># This makes a dictionary with the following keys/values:</span>
@@ -1733,9 +1729,7 @@
 <p>To explain what this <code class="docutils literal notranslate"><span class="pre">if</span></code> -check is doing in English: If we haven’t seen the key before, we can just go ahead and set it to the length of the current word. If we have seen it before, we take the current sum for this key and add on the length of the current word.</p>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
-<p>**
-A very common bug when you’re first working with
-**</p>
+<p>A very common bug when you’re first working with <code class="docutils literal notranslate"><span class="pre">dict</span></code>s is forgetting this type of pattern to handle the first time you see a key.</p>
 </div>
 </section>
 </section>

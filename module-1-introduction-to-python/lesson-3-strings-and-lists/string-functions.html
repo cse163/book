@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1648,9 +1643,10 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/a4e92e76179f4f5bb7118a9b25b41463?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
-<p>Each string is an <strong>object</strong> . We will talk more about objects in detail in Week 5, but the basic idea is that each string is its own, independent unit that has some <strong>state</strong> and some <strong>behaviors.</strong> The <strong>state</strong> of a string is its characters and their ordering. The <strong>behaviors</strong> of the string are the functions we are allowed to call on them to access or transform the data. You don’t need to worry too much about this state/behavior terminology right now as we will emphasize it in Week 5.</p>
+<hr class="docutils" />
+<p>Each string is an <strong>object</strong>. We will talk more about objects in detail in Week 5, but the basic idea is that each string is its own, independent unit that has some <strong>state</strong> and some <strong>behaviors.</strong> The <strong>state</strong> of a string is its characters and their ordering. The <strong>behaviors</strong> of the string are the functions we are allowed to call on them to access or transform the data. You don’t need to worry too much about this state/behavior terminology right now as we will emphasize it in Module 5.</p>
 <p>We have seen a simple function already that allows us to index into the string so it can return the character at that index. You can imagine this indexing as just one special function provided to us by the string (although the syntax looks different than the general notion we will show below).</p>
-<p>For example, there is also an <code class="docutils literal notranslate"><span class="pre">find</span></code> function that you can call on a string <code class="docutils literal notranslate"><span class="pre">s1</span></code> , that returns the index of a given string <code class="docutils literal notranslate"><span class="pre">s2</span></code> inside <code class="docutils literal notranslate"><span class="pre">s1</span></code> . For example, you could write the following:</p>
+<p>For example, there is also an <code class="docutils literal notranslate"><span class="pre">find</span></code> function that you can call on a string <code class="docutils literal notranslate"><span class="pre">s1</span></code> , that returns the index of a given string <code class="docutils literal notranslate"><span class="pre">s2</span></code> inside <code class="docutils literal notranslate"><span class="pre">s1</span></code>. For example, you could write the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;I really like dogs&#39;</span>
 <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;ll&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
@@ -1670,23 +1666,23 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>s.lower()</p></td>
-<td><p>Returns a new string that is the lowercase version of s</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s.lower()</span></code></p></td>
+<td><p>Returns a new string that is the lowercase version of <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>s.upper()</p></td>
-<td><p>Returns a new string that is the uppercase version of s</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s.upper()</span></code></p></td>
+<td><p>Returns a new string that is the uppercase version of <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p>s.find(target)</p></td>
-<td><p>Returns the index of the first occurrence of target in s. If not found, returns -1.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s.find(target)</span></code></p></td>
+<td><p>Returns the index of the first occurrence of <code class="docutils literal notranslate"><span class="pre">target</span></code> in <code class="docutils literal notranslate"><span class="pre">s</span></code>. If not found, returns <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>s.strip()</p></td>
-<td><p>Returns a new string that has all the leading and trailing whitespace removed.Also has functions lstrip() and rstrip() that remove only left whitespace or right whitespace respectively.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s.strip()</span></code></p></td>
+<td><p>Returns a new string that has all the leading and trailing whitespace removed. Also has functions <code class="docutils literal notranslate"><span class="pre">lstrip()</span></code> and <code class="docutils literal notranslate"><span class="pre">rstrip()</span></code> that remove only left whitespace or right whitespace respectively.</p></td>
 </tr>
-<tr class="row-even"><td><p>s.split(delim)</p></td>
-<td><p>Splits s up into parts using the given delimiter to break the string apart. Returns the result as a list.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s.split(delim)</span></code></p></td>
+<td><p>Splits <code class="docutils literal notranslate"><span class="pre">s</span></code> up into parts using the given delimiter <code class="docutils literal notranslate"><span class="pre">delim</span></code> to break the string apart. Returns the result as a <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>s.join(strings)</p></td>
-<td><p>Combines the strings in the given list, separated by s</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s.join(strings)</span></code></p></td>
+<td><p>Combines the strings in the given list <code class="docutils literal notranslate"><span class="pre">strings</span></code>, separated by <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1697,8 +1693,7 @@
 and
 <code class="docutils literal notranslate"><span class="pre">strip</span></code>
 return
-*
-*
+<strong>new</strong>
 strings rather than modifying the original string
 <code class="docutils literal notranslate"><span class="pre">s</span></code>
 .</p>

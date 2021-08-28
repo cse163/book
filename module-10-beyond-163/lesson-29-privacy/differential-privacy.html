@@ -98,8 +98,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -118,18 +118,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1656,6 +1651,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/e3d9e4b466904c319bb0b0aea05eb821?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>In the last slide, we saw a video about the 2020 US Census and privacy guarantees they make using this tool called <strong>differential privacy</strong> . Let’s dive in a little into what this term means and one specific technique to achieve it.</p>
 <section id="what-is-privacy">
 <h2>What is Privacy<a class="headerlink" href="#what-is-privacy" title="Permalink to this headline">¶</a></h2>
@@ -1667,8 +1663,8 @@
 <br /></p>
  <br />
 In this scenario, in which Roger comes to harm as the direct result of a data analysis, should we conclude that his privacy was violated by the British Doctors Study? Consider that the above story plays out in exactly the same way even if Roger was among the third of British physicians who declined to participate in the survey and provide their data. The effect of smoking on lung cancer is real and can be discovered with or without any particular individual’s private data. In other words, the harm that befell Roger was not because of something that someone identified about his data per se but rather because of a general fact about the world that was revealed by the study. If we were to call this a privacy violation, then it would not be possible to conduct any kind of data analysis while respecting privacy—or, indeed, to conduct science, or even observe the world around us. This is because any fact or correlation we observe to hold in the world at large may change our beliefs about an individual if we can observe one of the variables involved in the correlation.
+So just from this example, it seems very difficult to actually ensure the protection of privacy. Using our idea of privacy above, the researchers could never run this study and say it respects privacy since it's learning a true, but negative correlation about the world. However, this might make us think our original definition of privacy might be a little too strict. In this scenario, it wasn't the case that Roger's participation in the study changed the outcome. He was just one data point out of many and the underlying trend discovered was something true about the world, not something dependent on Roger specifically.
 </div></blockquote>
-<p>So just from this example, it seems very difficult to actually ensure the protection of privacy. Using our idea of privacy above, the researchers could never run this study and say it respects privacy since it’s learning a true, but negative correlation about the world. However, this might make us think our original definition of privacy might be a little too strict. In this scenario, it wasn’t the case that Roger’s participation in the study changed the outcome. He was just one data point out of many and the underlying trend discovered was something true about the world, not something dependent on Roger specifically.</p>
 <p>This concept of Roger’s individual participation not actually mattering in big-picture outcome is actually the key inspiration for how we can come up with a definition of privacy that is feasible to satisfy. This definition of privacy is called <strong>differential privacy.</strong></p>
 </section>
 <section id="id1">
@@ -1677,27 +1673,17 @@ In this scenario, in which Roger comes to harm as the direct result of a data an
 <p>To understand this process pictorially, see the image below. The A in the labels can correspond to Roger in our example. So we consider the world with Roger’s data and the world without and we want to make sure that in order to respect his privacy, the results of these two analyses should be similar.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/I88p47k68eDWB4RqekqyEIY2"><img alt="Pictorial depiction of this workflow described above." class="align-center" src="https://static.us.edusercontent.com/files/I88p47k68eDWB4RqekqyEIY2" style="width: 743px;" /></a>
 <p>We can’t require the output of the analysis is <em>exactly</em> the same since then the output of the analysis must not depend on the presence of any individual (which would make the inclusion of people useless). So our hope is to get an output that is at least close with or without an individual.</p>
-<p>Hence, the term <strong>differential privacy</strong> is introduced. The “differential” in this term represents the two universes that do or don’t contain your data, and we say this system is differentially private if the results in these two universes are similar. As mentioned in the video, we don’t think of differential privacy as a “yes” or “no” endeavor. Instead, we have a sort of “knob” we can tune to control how much privacy we want. So technically we say a system is <strong><span class="math notranslate nohighlight">\(\bm{\varepsilon}\)</span>-differentially private,</strong> where <span class="math notranslate nohighlight">\(\varepsilon\)</span> controls how similar we want the results to be.</p>
+<p>Hence, the term <strong>differential privacy</strong> is introduced. The “differential” in this term represents the two universes that do or don’t contain your data, and we say this system is differentially private if the results in these two universes are similar. As mentioned in the video, we don’t think of differential privacy as a “yes” or “no” endeavor. Instead, we have a sort of “knob” we can tune to control how much privacy we want. So technically we say a system is <strong><span class="math notranslate nohighlight">\(\varepsilon\)</span>-differentially private,</strong> where <span class="math notranslate nohighlight">\(\varepsilon\)</span> controls how similar we want the results to be.</p>
 <p>If we choose <span class="math notranslate nohighlight">\(\varepsilon\)</span> to be small (near 0), that means we will require that the results of the analysis must be VERY similar, thus enforcing a stricter notion of privacy (that may or may not always be possible to achieve). In fact, letting <span class="math notranslate nohighlight">\(\varepsilon = 0\)</span> we will require the analysis with and without your data is exactly the same; this means the result of the data analysis must be independent of any person’s data in it! If we choose a larger <span class="math notranslate nohighlight">\(\varepsilon\)</span> this allows for more changes in the output of the analysis if your data was removed, thus having a weaker notion of privacy since we let the result of the analysis vary more. In some sense, you can interpret the <span class="math notranslate nohighlight">\(\varepsilon\)</span> as the allowed measure of how “unprivate” your system is allowed to be (larger value means less privacy).</p>
-<div class="note admonition">
-<p class="admonition-title">Note</p>
-<p>Optional: You do not need to understand the content inside this blue box.
-<br /></p>
-<br />
-If you're curious how this requirement for $\varepsilon$-differential privacy is actually written mathematically, we write the definition out below. We can't go into all the math behind this (e.g., what the probability is defined over), but it's a starting point if you want to learn more!
-<br />
-<br />
-Let $\bm{\vec{x}}$ be a database of individuals' data. Let $\bm{\vec{x}}'$ be an alternative reality version of the dataset where
-**a single**
-person's data was removed. Let $M$ be some mechanism that does a computation on the database (e.g., compute an average). In otherwords, $M$ is a function that takes a database and returns the result of some computation on that database $M(\bm{\vec{x}}) \in \mathbb{R}$.
-<br />
-<br />
-A mechanism $M$ is $\varepsilon$-differentially private if for all subsets $T \subseteq \mathbb{R}$, and for all databases $\bm{\vec{x}}$, $\bm{\vec{x}}'$ that differ at exactly one entry,
-<br />
-$$\Pr(M(\bm{\vec{x}}) \in T) \leq e^\varepsilon \Pr(M(\bm{\vec{x}}') \in T)$$
-<br />
-<br />
-Note from this definition above, you can see the behavior we described earlier that $\varepsilon=0$ requires the probability of some outcome to be very similar while a larger $\varepsilon$ allows the results of the two databases to vary more.
+<div class="tip admonition">
+<p class="admonition-title">Optional</p>
+<p>Optional: You do not need to understand the content inside this box.</p>
+<p>If you’re curious how this requirement for <span class="math notranslate nohighlight">\(\varepsilon\)</span>-differential privacy is actually written mathematically, we write the definition out below. We can’t go into all the math behind this (e.g., what the probability is defined over), but it’s a starting point if you want to learn more!</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{\vec{x}}\)</span> be a database of individuals’ data. Let <span class="math notranslate nohighlight">\(\mathbf{\vec{x}}'\)</span> be an alternative reality version of the dataset where <strong>a single</strong> person’s data was removed. Let <span class="math notranslate nohighlight">\(M\)</span> be some mechanism that does a computation on the database (e.g., compute an average). In otherwords, <span class="math notranslate nohighlight">\(M\)</span> is a function that takes a database and returns the result of some computation on that database <span class="math notranslate nohighlight">\(M(\mathbf{\vec{x}}) \in \mathbb{R}\)</span>.</p>
+<p>A mechanism <span class="math notranslate nohighlight">\(M\)</span> is <span class="math notranslate nohighlight">\(\varepsilon\)</span>-differentially private if for all subsets <span class="math notranslate nohighlight">\(T \subseteq \mathbb{R}\)</span>, and for all databases <span class="math notranslate nohighlight">\(\mathbf{\vec{x}}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{\vec{x}}'\)</span> that differ at exactly one entry,</p>
+<div class="math notranslate nohighlight">
+\[\Pr(M(\mathbf{\vec{x}}) \in T) \leq e^\varepsilon \Pr(M(\mathbf{\vec{x}}') \in T)\]</div>
+<p>Note from this definition above, you can see the behavior we described earlier that <span class="math notranslate nohighlight">\(\varepsilon=0\)</span> requires the probability of some outcome to be very similar while a larger <span class="math notranslate nohighlight">\(\varepsilon\)</span> allows the results of the two databases to vary more.</p>
 </div>
 <p>Note, this definition only applies to changing the database by one person. The analysis is differentially private if it applies to every person in the dataset (no matter how typical or atypical their data is), but the definition is only about removing one person at a time to make sure there aren’t differences in the result. There are extended notions of differential privacy that apply to groups of peoples, but the formulations are slightly more complex.</p>
 <p>In the next two slides, we will see two concrete ways that you can achieve this notion of differential privacy.</p>

@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1655,6 +1650,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/0f46f457b6ed496aa6abe13391c07d39" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <section id="list-methods">
 <h2>List Methods<a class="headerlink" href="#list-methods" title="Permalink to this headline">¶</a></h2>
 <p>Just like with strings, <code class="docutils literal notranslate"><span class="pre">list</span></code> also has methods you can call on a <code class="docutils literal notranslate"><span class="pre">list</span></code> object to observe or modify its values. You can call any of these methods on a <code class="docutils literal notranslate"><span class="pre">list</span></code> object.</p>
@@ -1665,32 +1661,32 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>l.append(x)</p></td>
-<td><p>Adds x to the end of l</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">l.append(x)</span></code></p></td>
+<td><p>Adds <code class="docutils literal notranslate"><span class="pre">x</span></code> to the end of <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>l.extend(xs)</p></td>
-<td><p>Adds all elements in xs at the end of l</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">l.extend(xs)</span></code></p></td>
+<td><p>Adds all elements in <code class="docutils literal notranslate"><span class="pre">xs</span></code> at the end of <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p>l.insert(i, x)</p></td>
-<td><p>Inserts x at index i in l</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">l.insert(i,</span> <span class="pre">x)</span></code></p></td>
+<td><p>Inserts <code class="docutils literal notranslate"><span class="pre">x</span></code> at index <code class="docutils literal notranslate"><span class="pre">i</span></code> in <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>l.remove(x)</p></td>
-<td><p>Removes the first instance of x from l</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">l.remove(x)</span></code></p></td>
+<td><p>Removes the first instance of <code class="docutils literal notranslate"><span class="pre">x</span></code> from <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p>l.pop([i])</p></td>
-<td><p>Removes the value at index i from l. Parameter is optional, default is last index of list.  Note: The syntax [i] for a parameter is commonly used in Python documentation to indicate i is an optional paramter.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">l.pop([i])</span></code></p></td>
+<td><p>Removes the value at index <code class="docutils literal notranslate"><span class="pre">i</span></code> from <code class="docutils literal notranslate"><span class="pre">l</span></code>. Parameter is optional, default is last index of list.  Note: The syntax <code class="docutils literal notranslate"><span class="pre">[i]</span></code> for a parameter is commonly used in Python documentation to indicate <code class="docutils literal notranslate"><span class="pre">i</span></code> is an optional paramter.</p></td>
 </tr>
-<tr class="row-odd"><td><p>l.clear()</p></td>
-<td><p>Removes all values from l</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">l.clear()</span></code></p></td>
+<td><p>Removes all values from <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p>l.index(x)</p></td>
-<td><p>Returns the first index that contains x in l. If it is not found it raises an error.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">l.index(x)</span></code></p></td>
+<td><p>Returns the first index that contains <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">l</span></code>. If it is not found it raises an error.</p></td>
 </tr>
-<tr class="row-odd"><td><p>l.reverse()</p></td>
-<td><p>Reverses all the order of elements of l</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">l.reverse()</span></code></p></td>
+<td><p>Reverses all the order of elements of <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p>l.sort()</p></td>
-<td><p>Sorts the values of l</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">l.sort()</span></code></p></td>
+<td><p>Sorts the values of <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
 </tr>
 </tbody>
 </table>

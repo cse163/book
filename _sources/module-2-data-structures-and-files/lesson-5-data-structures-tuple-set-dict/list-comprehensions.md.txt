@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/3765af6fbd7e4be69fa677ec1fdc8c77?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 In this slide, you will learn some fancy syntax to make it easier to create lists storing specific values.  
 
 So far, we have seen how you can specify a list by hand. We have used the following syntax.  

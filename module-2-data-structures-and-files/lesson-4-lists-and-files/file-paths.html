@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../module-1-introduction-to-python/lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1624,8 +1619,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#absolute-paths-on-ed">
-   Absolute Paths on Ed
+  <a class="reference internal nav-link" href="#absolute-paths">
+   Absolute Paths
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1649,30 +1644,24 @@
 <p><a class="reference download internal" download="" href="../../_downloads/35fda22cfa39fa1b42d9f9422542d1e7/file-paths.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
-<p>This slide is coded as a practice problem in Ed’s system, but there is no code you have to write. However, this means
-<strong>you need to press Mark to complete this slide.</strong></p>
+<p>This slide has some starter code for you to download to follow along, but there is no code you have to write.</p>
 </div>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/e959f9e2b2284d598c4136f972427f0b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Files in your computer are stored in folders. Folders can contain other folders or other files and this makes a hierarchy in your computer. If you have a Mac, you can use the Finder application to navigate these folders. If you have a Windows PC, you can use the File Explorer. For example, below, I have a screenshot of the Finder looking at the files in the folder I downloaded from this lesson.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/Hst9iQLxU1Yj7N3tvKPt85Tg"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/Hst9iQLxU1Yj7N3tvKPt85Tg" style="width: 758px;" /></a>
-<p>When you open a Python project in Ed or locally using something like VSCode, it opens the project to some folder that it will use as your workspace. On Ed, the workspace for this slide will be a directory with the contents shown above.</p>
+<p>When you open a Python project locally using something like VSCode, it opens the project to some folder that it will use as your workspace.</p>
 <p>Why is it important to know where your workspace is or what files are in it? You usually need to know that in order to specify where files are <strong>relative</strong> to that location. For example, in the terminal, if I type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">main.py</span></code> , how does Python know to use the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> for this lesson on not one of the files from the other lessons? It’s because files are specified by their <strong>path</strong> rather than their name. When we say <code class="docutils literal notranslate"><span class="pre">main.py</span></code> , we are referring to a file in the current directory named <code class="docutils literal notranslate"><span class="pre">main.py</span></code> . This path is relative to wherever our workspace is. This is probably a little confusing, so another example should hopefully clear it up.</p>
 <p>What if you wanted to print out the lyrics to Carly Rae Jepsen’s hit-class “Store” that is <em>store-d (</em> ha!) in a folder in this workspace? Try changing the code to <code class="docutils literal notranslate"><span class="pre">open('store.txt')</span></code> instead and run that. You should see that it crashes because it can’t find a file named <code class="docutils literal notranslate"><span class="pre">store.txt</span></code> in this workspace. To make this work, you have to specify a <strong>path</strong> to get to that file from this workspace. In this case, the format puts the list of folder names from here to there separated by <code class="docutils literal notranslate"><span class="pre">/</span></code> characters. So to properly open this file, you would use <code class="docutils literal notranslate"><span class="pre">open('crj/store.txt)'</span></code> to tell Python to look in the <code class="docutils literal notranslate"><span class="pre">crj</span></code> folder for the file.</p>
-<section id="absolute-paths-on-ed">
-<h2>Absolute Paths on Ed<a class="headerlink" href="#absolute-paths-on-ed" title="Permalink to this headline">¶</a></h2>
-<p>Since Ed is used by many students, it helps us to store a common set of data files outside of the lesson directories to save space (so we don’t have to have multiple copies of the files laying around). To do this, we put the files in a special location that you have to refer with a special path. An example of this from the last slide was using the path <code class="docutils literal notranslate"><span class="pre">'/course/lecture-readings/poem.txt'</span></code> . We call this an <strong>absolute path</strong> because it starts with a <code class="docutils literal notranslate"><span class="pre">/</span></code> . It’s absolute because we think of the path <code class="docutils literal notranslate"><span class="pre">'/'</span></code> as the top-level folder of the computer so we are specifying the path from the top (hence absolute because it’s not relative).</p>
-<p>You don’t have to actually understand how absolute paths work on computers, but you will commonly see us use files in this <code class="docutils literal notranslate"><span class="pre">/course</span></code> directory on Ed. Additionally, we will sometimes tell you that you need to use a special path for a homework assignment.</p>
+<section id="absolute-paths">
+<h2>Absolute Paths<a class="headerlink" href="#absolute-paths" title="Permalink to this headline">¶</a></h2>
+<p>You might also see a path that start with a <code class="docutils literal notranslate"><span class="pre">/</span></code>. We call this an <strong>absolute path</strong>. It’s absolute because we think of the path <code class="docutils literal notranslate"><span class="pre">'/'</span></code> as the top-level folder of the computer so we are specifying the path from the top (hence absolute because it’s not relative).</p>
 </section>
 <section id="take-away">
 <h2>Take-away<a class="headerlink" href="#take-away" title="Permalink to this headline">¶</a></h2>
 <p>You need to think about where your Python program is running from (the workspace) and what path you need to specify to get to the desired file from that workspace.</p>
-<div class="warning admonition">
-<p class="admonition-title">Warning</p>
-<p>This slide is coded as a practice problem in Ed’s system, but there is no code you have to write. However, this means
-<strong>you need to press Mark to complete this slide.</strong></p>
-</div>
 </section>
 </section>
 

@@ -96,8 +96,8 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/context-first-two-weeks-of-cse-163.html">
-       Context: First Two Weeks of CSE 163
+      <a class="reference internal" href="../lesson-2-python-basics/context-first-two-modules-of-cse-163.html">
+       Context: First Two Modules of CSE 163
       </a>
      </li>
      <li class="toctree-l3">
@@ -116,18 +116,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/for-loop.html">
-       For Loop
+      <a class="reference internal" href="../lesson-2-python-basics/for-loops.html">
+       For Loops
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-2-python-basics/conditionals.html">
        Conditionals
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-2-python-basics/conditionals-answered.html">
-       Conditionals Answered
       </a>
      </li>
      <li class="toctree-l3">
@@ -1649,6 +1644,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/ab6d2d5e55744fd6b100f1fc9c7d4e74?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>So we already saw how to index into a string to get a value, but what if you wanted to index into a string to get more than one character (e.g. get the first 10 characters of a string)? Python provides a very powerful syntax for accessing multiple characters in a string called <strong>slicing.</strong></p>
 <p>The syntax slicing looks very similar to simple indexing but lets you specify a start and a stop index separated by a colon <code class="docutils literal notranslate"><span class="pre">s[&lt;start&gt;:&lt;stop&gt;]</span></code> . The start index is inclusive and the stop is exclusive. For example, you could type the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
@@ -1656,7 +1652,7 @@
 </pre></div>
 </div>
 <p>The slice shown above means “all characters starting at index 2 and up to (not including) 7” (because stop is exclusive, just like with <code class="docutils literal notranslate"><span class="pre">range</span></code> ). If you take this with the picture below, it can clarify why the cell above prints <code class="docutils literal notranslate"><span class="pre">llo</span> <span class="pre">w</span></code> .</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd" style="width: 743px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd"><img alt="hello world string indexing" class="align-center" src="https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd" style="width: 743px;" /></a>
 <p>Below, we show some more examples. Feel free to try modifying this to test out your own examples! Notice, you can use more complex start/stop indices like an expression based on the length of the string.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
