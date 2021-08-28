@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/6e2820ead7b142359dc5d6f603de2101?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 An **object** (also sometimes called an **instance)** in Python is a way of encapsulating **state** (the data it represents) and **behavior** (the functions it can perform) in one distinct unit. This is horribly vague because it's quite a general notion (just like the word "object" in English is hard to describe).  
 
 We have used the term object a few times in this course to refer to something like a `pandas.DataFrame` or the value of `f` in `open('file.txt') as f` . These objects are things you can interact with within your programs by calling functions on them (i.e. calling one of their **behaviors** ) and the output of these functions is determined by the data inside the object (i.e. its **state** ). The following code cell creates a `pandas.DataFrame` object and then calls a function to show its state.  
