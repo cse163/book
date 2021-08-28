@@ -24,7 +24,6 @@ default-parameters
 missing-data
 practice-check-your-understanding
 data-visualization/DataViz
-principles-of-data-visualization
 pause-and-think
 practice-plotting-1
 practice-plotting-2
