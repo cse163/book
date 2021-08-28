@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/13c9ac9a1fef415f9cf9b1755b1e9362?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Whenever you write a function, you should provide some documentation for what it does and any information someone needs to know to use it. Reading code can be hard so we want to provide some instructions people can understand. Code without documentation requires anyone trying to use your code to try and recreate what you were thinking, which essentially ends up with them making guesses at what it does  
 
 

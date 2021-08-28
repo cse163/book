@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/a9b0a03d46324244bc0feae35720118a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 As a reminder, we defined a string as a sequence of characters, where each character has an index; we often refer to strings as being an indexed-sequence of characters for short.  
 
 A few slides back, we learned of some string functions (e.g. `upper` , `lower` , `split` ). Recall that we defined the `split` function to break up some string based on a delimiter (a special character separating values), but we did not really explain what the type of the value returned was.  

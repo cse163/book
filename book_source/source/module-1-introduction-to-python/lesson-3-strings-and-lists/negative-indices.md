@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/2c14882d5c6f4328961b933d58c5c7d9?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 One clever notion in Python is the idea of a "negative index" that allows you to index into a string starting at the end. To understand this, it helps to refer to the normal indices of a string.  
 
 Suppose we had the following string and slice:  
