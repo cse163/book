@@ -13,7 +13,7 @@ A `list` seems like it's more on the right track, but unfortunately, the indices
 
 The last data structure we are going to learn today is called a dictionary (in Python, written as `dict` ). A `dict` is a very powerful data structure since it acts, in some sense, as a more generalized `list` . Essentially a `dict` is much like a `list` , but allows you to store any type as the index while a `list` only allows numbers from `0` to `len - 1` as valid indices.  
 
-To create a `dict` in Python, you use the syntax in the following snippet. Note that `dict` supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, `dict` uses a different term for the index to reduce confusion with `list` s: we call the "index" of an entry in a `dict` its **key** . We describe a `dict` as a bunch of key/value pairs that are accessible via the key.  
+To create a `dict` in Python, you use the syntax in the following snippet. Note that `dict` supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, `dict` uses a different term for the index to reduce confusion with `list` s: we call the "index" of an entry in a `dict` its **key**. We describe a `dict` as a bunch of key/value pairs that are accessible via the key.  
 
 ```python
 d = {'a': 1, 'b': 17, 47: 'scurvy'}
@@ -105,9 +105,7 @@ To explain what this `if` -check is doing in English: If we haven't seen the key
 ```{admonition} Note
 :class: note
 
-**
-			A very common bug when you're first working with 
-			**
+A very common bug when you're first working with `dict`s is forgetting this type of pattern to handle the first time you see a key.
 
 
 ```
