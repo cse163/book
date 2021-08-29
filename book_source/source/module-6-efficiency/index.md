@@ -1,4 +1,4 @@
-# Module 6: Efficiency
+# <i class="fas fa-layer-group"></i> Module 6: Efficiency
 
 ```{toctree}
 :maxdepth: 3

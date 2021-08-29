@@ -1,4 +1,4 @@
-# Module 4: Libraries for Data Science
+# <i class="fas fa-layer-group"></i> Module 4: Libraries for Data Science
 
 ```{toctree}
 :maxdepth: 3

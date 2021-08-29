@@ -1,4 +1,4 @@
-# Module 5: Classes and Objects
+# <i class="fas fa-layer-group"></i> Module 5: Classes and Objects
 
 ```{toctree}
 :maxdepth: 3

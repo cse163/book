@@ -1,4 +1,4 @@
-# Module 2: Data Structures and Files
+# <i class="fas fa-layer-group"></i> Module 2: Data Structures and Files
 
 ```{toctree}
 :maxdepth: 3

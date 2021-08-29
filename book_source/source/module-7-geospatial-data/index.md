@@ -1,4 +1,4 @@
-# Module 7: Geospatial Data
+# <i class="fas fa-layer-group"></i> Module 7: Geospatial Data
 
 ```{toctree}
 :maxdepth: 3

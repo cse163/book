@@ -1,4 +1,4 @@
-# Module 3: Pandas
+# <i class="fas fa-layer-group"></i> Module 3: Pandas
 
 ```{toctree}
 :maxdepth: 3

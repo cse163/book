@@ -1,4 +1,4 @@
-# Module 8: Images
+# <i class="fas fa-layer-group"></i> Module 8: Images
 
 ```{toctree}
 :maxdepth: 3
