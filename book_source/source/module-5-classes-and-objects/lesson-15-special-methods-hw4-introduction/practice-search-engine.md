@@ -33,7 +33,7 @@ Recall that the search engine will be case-insensitive and remove punctuation.
 dogs
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
@@ -57,7 +57,7 @@ None
 
 **(Select all that apply)** Which files would appear for the query: `test`
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
@@ -87,7 +87,7 @@ greatest love
 
 The rule for multi-word queries is you should return all documents that have at least one of the query words in it. What are the documents returned by this query above?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 

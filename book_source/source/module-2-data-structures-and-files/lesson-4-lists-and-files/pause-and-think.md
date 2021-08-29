@@ -10,9 +10,7 @@ It helps to write these down while the lesson is fresh. That way, you can look b
 
 In your own words, write a few sentence summary on what you learned in this lesson today.
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -20,9 +18,6 @@ Write your answer down in your own space.
 
 What did you find challenging in this reading? Come up with a questions you might ask your peers or on the message board to help better understand that concept.
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
-

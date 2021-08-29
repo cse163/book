@@ -4,7 +4,7 @@
 
 Consider the task of trying to compute the sum of numbers between `1` and `n` . Which one of these implementations do you think is more likely to be the fastest one for a very large `n` ?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
@@ -39,7 +39,7 @@ Which of the following are reasons data scientists tend to prefer Python over ot
 
 Select all that apply
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 

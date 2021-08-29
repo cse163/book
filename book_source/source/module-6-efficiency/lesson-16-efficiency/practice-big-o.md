@@ -15,7 +15,7 @@ def method1(n):
     return value ** 2
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -59,7 +59,7 @@ def method(n):
     return j
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -102,7 +102,7 @@ def method(nums):
     return max_diff
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -135,7 +135,7 @@ def method(nums):
     return max(nums) * min(nums)
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -172,7 +172,7 @@ def method(nums):
     return t
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

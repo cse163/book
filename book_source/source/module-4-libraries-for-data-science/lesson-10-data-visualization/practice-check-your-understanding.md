@@ -18,7 +18,7 @@ Which of the following methods successfully filters this dataset as described?
 | NaN |   7 |   8 |
 |   9 |  10 |  11 |
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

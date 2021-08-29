@@ -18,7 +18,7 @@ x + y
 
 ## Question 0
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

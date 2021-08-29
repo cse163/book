@@ -10,7 +10,7 @@ Consider the example used in the Visual Introduction to Machine Learning we read
 
 **The elevation of the house.**
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -36,7 +36,7 @@ Consider the example used in the Visual Introduction to Machine Learning we read
 
 **The city the house is in (SF or NY).**
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -62,7 +62,7 @@ Consider the example used in the Visual Introduction to Machine Learning we read
 
 **Growing the tree by adding forks.**
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -88,7 +88,7 @@ Consider the example used in the Visual Introduction to Machine Learning we read
 
 **The final decision tree.**
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -121,7 +121,7 @@ Consider the task trying to take information about a patient and predicting thei
 
 Would this be best modeled by a classification or regression task?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -153,7 +153,7 @@ We commonly think of a model's **decision boundary** as being a drawing that sho
 :align: center
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

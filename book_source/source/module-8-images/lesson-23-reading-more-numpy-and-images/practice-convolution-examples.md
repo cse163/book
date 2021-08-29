@@ -10,7 +10,7 @@ What is the result of applying a convolution using this kernel on this image? Se
 :align: center
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -62,7 +62,7 @@ None of the above
 
 Suppose I had an image with shape `(6, 5)` and a kernel with shape `(2, 3)` . Using this sliding window algorithm to do a convolution, how many **rows** will the result have?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -70,6 +70,6 @@ Write your answer down in your own space.
 
 Suppose I had an image with shape `(6, 5)` and a kernel with shape `(2, 3)` . Using this sliding window algorithm to do a convolution, how many **columns** will the result have?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.

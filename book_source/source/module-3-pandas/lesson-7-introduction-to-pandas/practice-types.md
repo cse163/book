@@ -20,7 +20,7 @@ What is the type of the following expression? If we stored the result of this ex
 df['country']
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -56,7 +56,7 @@ What is the type of the following expression? If we stored the result of this ex
 df.loc[df['emissions'] > 100, ['emissions', 'city']]
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -92,7 +92,7 @@ What is the type of the following expression? If we stored the result of this ex
 df.loc[1, 'city':'country']
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -128,7 +128,7 @@ What is the type of the following expression? If we stored the result of this ex
 df.loc[3, 'emissions']
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

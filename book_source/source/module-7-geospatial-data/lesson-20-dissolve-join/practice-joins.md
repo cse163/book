@@ -31,7 +31,7 @@ result = movies.merge(directors, left_on='directed_by',
                       right_on='director_id')
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -44,7 +44,7 @@ result = directors.merge(movies, left_on='director_id',
                          right_on='directed_by', how='left')
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -57,7 +57,7 @@ result = movies.merge(directors, left_on='directed_by',
                       right_on='director_id', how='outer')
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -67,7 +67,7 @@ Suppose we wanted to compute the earliest movie directed by each director. Any d
 
 Which of the following code blocks helps us answer that question? **Select all that apply** .
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
@@ -148,7 +148,7 @@ For this problem, we will say any country in the country dataset that does not h
 
 Which of the following is the correct way to combine these datasets by their name? Assume the countries dataset is stored in a variable called `countries` and the carbon emissions data is in a variable called `carbon` and that we have run any relevant imports. **There is only one correct answer in the list below.** It is a useful exercise to make sure you can explain why the other answers are incorrect.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

@@ -10,9 +10,7 @@ Take a few moments to summarize (in your own words) what you learned in this les
 
 In your own words, summarize what you learned in this lesson.
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -20,9 +18,6 @@ Write your answer down in your own space.
 
 What questions do you have?
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
-

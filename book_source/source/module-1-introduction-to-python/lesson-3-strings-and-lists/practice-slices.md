@@ -12,7 +12,7 @@ Please write your answers **without** surrounding quotes. This means if the subs
 
 ```text
 have eaten
-````
+```
 
 Make sure you get the casing/spacing right!
 
@@ -24,11 +24,7 @@ What is the value of the following slice?
 s[3:10]
 ```
 
-
-
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -40,9 +36,7 @@ What is the value of the following slice?
 s[s.find('p'):]
 ```
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -54,9 +48,6 @@ What is the value of the following slice?
 s[:s.find('t'):3]
 ```
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
-

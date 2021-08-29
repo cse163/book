@@ -6,7 +6,7 @@ The following questions will ask you about indexes and tree indexes.
 
 Consider making an application that uses a large amount of data that has a **write-heavy workload** (this means it is more common for users to upload information to add data to the system rather than querying for information). True or false, you would expect that building a search tree index for your data will improve the performance of your system.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -16,7 +16,7 @@ In your own words, describe one benefit and one downside of using a tree index o
 
 _This question will be graded by hand for effort and accuracy._
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -24,7 +24,7 @@ Write your answer down in your own space.
 
 Order the following operation run-times from the fastest (top) to slowest (bottom).
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Reorder the following options. Write your answer down in your own space.
 
@@ -56,7 +56,7 @@ Consider the following sorted list of values shown in the image below. Suppose w
 
 Report your answer as a number of steps (e.g., `7` )
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -72,6 +72,6 @@ What is the sequence of checks we will make in order to determine that the query
 :align: center
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.

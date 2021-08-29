@@ -6,11 +6,7 @@ These questions are meant to be open-ended and there is no right answer. The int
 
 Did you find anything interesting, challenging, or thought-provoking in the reading "When to Not Use ML"? How does that add to your perspective of when to use ML?
 
-
-
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -22,9 +18,7 @@ Would you endorse using such a system? Why or why not? Justify what concerns you
 
 You don't need to answer every question that we posed on that slide, but you might find one or more of them useful in framing your thoughts.
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -36,9 +30,6 @@ Would you endorse using such a system? Why or why not? Justify what concerns you
 
 You don't need to answer every question that we posed on that slide, but you might find one or more of them useful in framing your thoughts.
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
-

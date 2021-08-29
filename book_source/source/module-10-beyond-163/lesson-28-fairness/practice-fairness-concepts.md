@@ -4,7 +4,7 @@
 
 Consider the example from the last lesson using cell-phone GPS data to predict whether or not a location has a pothole in it. Which one of the following situations is considered a **false negative.**
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -38,7 +38,7 @@ Using the same scenario as the last problem, consider we have the following stat
 
 What is the False Negative Rate of this model? Write your answer as a number between 0 and 1 rounded to two decimal places (e.g., `0.25` ).
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -72,7 +72,7 @@ where $|x|$ is the absolute value function, $Circle\ FNR$ is the false negative 
 
 Your task is to identify which point on this accuracy/fairness tradeoff corresponds to the threshold in the image above. Each point is labeled with a number in a picture. Pick which number is associated with the threshold shown above.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -138,7 +138,7 @@ Using the same plot of possible tradeoffs, between error and unfairness, select 
 :align: center
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
@@ -198,7 +198,7 @@ _<i class="far fa-square fa-fw"></i> Option 12_
 
 True or false: The Pareto Frontier tells you which point is the correct tradeoff between fairness and accuracy.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -208,7 +208,7 @@ Last time, we talked about the COMPAS model for predicting recidivism rates. One
 
 Which worldview would you be using to come to this conclusion about the model? Select the best option available.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

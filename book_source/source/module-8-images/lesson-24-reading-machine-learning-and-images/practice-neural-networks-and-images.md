@@ -4,7 +4,7 @@
 
 Suppose I wanted to use a neural network to take images as inputs and predict whether the image was a picture of a cat, dog, or [None](https://media.giphy.com/media/4YWu31EsM1ToJnAzqc/giphy.gif) . Suppose the input images are in RGB color and were 50x50 pixels. How many input neurons would there be in our network?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -12,7 +12,7 @@ Write your answer down in your own space.
 
 For the same network in the last problem, how many output neurons will there be?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -20,7 +20,7 @@ Write your answer down in your own space.
 
 Below we have mixed up a list of the **parameters** and **hyperparameters** of a neural network model. In this problem, please select all the values that are the model **parameters** (leaving the hyperparameters _unselected_ ).
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
@@ -58,7 +58,7 @@ What is the output if we use the input `(1, 0)` where `1` is the input value to 
 
 _Hint: Your output should be an integer._
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -79,6 +79,6 @@ model = MLPClassifier(hidden_layer_sizes=(3, 4, 3, 1))
 :align: center
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.

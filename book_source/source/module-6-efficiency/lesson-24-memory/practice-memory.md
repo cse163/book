@@ -4,7 +4,7 @@
 
 Rank the different types of memory from the slowest to fastest. This means the slowest memory should be on the top and the fastest on the bottom.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Reorder the following options. Write your answer down in your own space.
 
@@ -28,7 +28,7 @@ Register
 
 When creating objects in Python, what section of **main memory (RAM)** are they most likely to be created in?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -62,7 +62,7 @@ _Select all that apply_ .
 
 Your friend is working on a data analysis project and notices their program is running very slowly for their very large dataset (say 20 GBs large). What might you recommend as good strategies to help them develop their program?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 

@@ -15,7 +15,7 @@ Note that a `*` indicates a fuzzed value or part of a value that is a notation t
 | \*   | 20-30 | Female | 10\*     | None           |
 | \*   | 20-30 | Female | 10\*     | Cardiovascular |
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -23,7 +23,7 @@ Write your answer down in your own space.
 
 Suppose we had a series of $\varepsilon$-differntially private algorithms. Order them from the **strongest privacy guarantee** to the **smallest privacy guarantee** .
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Reorder the following options. Write your answer down in your own space.
 
@@ -47,7 +47,7 @@ _<i class="fas fa-list-ol fa-fw"></i> Option 3_
 
 Consider our discussion of a differential privacy mechanism for jittering published statistics with the Laplace Mechanism. Select all of the following statements that are generally true.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
@@ -81,6 +81,6 @@ Consider the randomized response differential privacy mechanism. We will use the
 
 Suppose after calling everyone in our sample, we reported that 9/20 of the respondents answered "Yes" when following the randomized response mechanism. What is our estimate of the fraction of the population that has "Yes" as their true answer (which they could have truthfully told us "Yes" 3/4 of the time, or told us a wrong answer 1/4 of the time). Enter your number as a probability (e.g., `0.33` precise to 2 decimal places).
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.

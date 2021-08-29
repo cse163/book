@@ -12,7 +12,7 @@ Consider the dataset shown in the following table. Assume this is stored in a `D
 
 How many **columns** will the result of `pd.get_dummies(df)` have? Enter result as an integer (e.g. `4` ).
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -28,7 +28,7 @@ Consider the dataset shown in the following table. Assume this is stored in a `D
 
 How many **rows** will the result of `pd.get_dummies(df)` have? Enter result as an integer (e.g. `4` ).
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -36,7 +36,7 @@ Write your answer down in your own space.
 
 Consider the general task of assessing performance of a machine learning model. Which of the following options best describes why we needed to introduce a test set to evaluate the future performance of the model?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -72,7 +72,7 @@ This question asks about the model complexity as we change this hyperparameter $
 
 As we increase $p$ what happens to the complexity of the model?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -98,7 +98,7 @@ If we use a polynomial with very high degree $p$, would we expect that the **tra
 
 Notice we are talking about **error** and not **accuracy.** Remember error is a measurement of how "wrong" the model is.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

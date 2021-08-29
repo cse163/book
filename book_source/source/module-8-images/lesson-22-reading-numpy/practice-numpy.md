@@ -21,7 +21,7 @@ np.arange(14)
 
 Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` . There should be no spaces in your answer.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -36,7 +36,7 @@ m = x / 2 + 1
 
 Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` .
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -51,7 +51,7 @@ m = x[1:, 2:4]
 
 Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` . There should be no spaces in your answer.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -61,7 +61,7 @@ Suppose we had a `numpy.array` named `x` with some sequence of values. For this 
 
 Which of the following options will help us select all the values in `x` that are greater than 10 and are not divisible by 3.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -107,7 +107,7 @@ You can tell that as there are more plots, trying to unpack each `Axes` to a var
 
 Suppose we wanted to draw on `ax7` in the picture above. Which access to `axs` would give us a reference to that `Axes` object?
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

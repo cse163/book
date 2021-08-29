@@ -9,7 +9,7 @@ words = ['I', 'saw', 'a', 'dog', 'today']
 new_words = [word[1] for word in words if len(word) >= 2]
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 

@@ -17,7 +17,7 @@ nums.add(21)
 
 ## Question 0
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
@@ -66,7 +66,7 @@ Now for the hash table you have selected above, what should the return value be 
 
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -79,7 +79,7 @@ Now for the hash table you have selected above, what should the return value be 
 
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -98,7 +98,7 @@ class Dog:
         return self._name == other._name
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
