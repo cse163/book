@@ -20,47 +20,33 @@ What is the type of the following expression? If we stored the result of this ex
 df['country']
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 `str`
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 `int`
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 `Series`
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 `list`
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 `DataFrame`
 
-
-
-*❓ Option 5*
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
 There is no type, this code causes an error.
-
-
 
 ## Question 1
 
@@ -70,47 +56,33 @@ What is the type of the following expression? If we stored the result of this ex
 df.loc[df['emissions'] > 100, ['emissions', 'city']]
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 `str`
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 `int`
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 `Series`
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 `list`
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 `DataFrame`
 
-
-
-*❓ Option 5*
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
 There is no type, this code causes an error.
-
-
 
 ## Question 2
 
@@ -120,47 +92,33 @@ What is the type of the following expression? If we stored the result of this ex
 df.loc[1, 'city':'country']
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 `str`
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 `int`
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 `Series`
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 `list`
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 `DataFrame`
 
-
-
-*❓ Option 5*
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
 There is no type, this code causes an error.
-
-
 
 ## Question 3
 
@@ -170,45 +128,30 @@ What is the type of the following expression? If we stored the result of this ex
 df.loc[3, 'emissions']
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 `str`
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 `int`
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 `Series`
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 `list`
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 `DataFrame`
 
-
-
-*❓ Option 5*
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
 There is no type, this code causes an error.
-
-
-

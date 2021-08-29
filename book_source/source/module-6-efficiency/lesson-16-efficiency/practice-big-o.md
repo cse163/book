@@ -15,47 +15,33 @@ def method1(n):
     return value ** 2
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 $\mathcal{O}(1)$
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 $\mathcal{O}(n)$
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 $\mathcal{O}(n + 9)$
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 $\mathcal{O}(9n)$
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 $\mathcal{O}(9n + 2)$
 
-
-
-*❓ Option 5*
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
 $\mathcal{O}(n^2)$
-
-
 
 ## Question 1
 
@@ -73,47 +59,33 @@ def method(n):
     return j
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 $\mathcal{O}(1)$
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 $\mathcal{O}(644)$
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 $\mathcal{O}(8402)$
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 $\mathcal{O}(n)$
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 $\mathcal{O}(n^2)$
 
-
-
-*❓ Option 5*
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
 $\mathcal{O}(n^3)$
-
-
 
 ## Question 2
 
@@ -130,45 +102,29 @@ def method(nums):
     return max_diff
 ```
 
-
-
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 $\mathcal{O}(1)$
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 $\mathcal{O}(n)$
 
-
-
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 $\mathcal{O}(2n)$
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 $\mathcal{O}(n^2)$
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 $\mathcal{O}(n^3)$
-
-
 
 ## Question 3
 
@@ -179,41 +135,29 @@ def method(nums):
     return max(nums) * min(nums)
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 $\mathcal{O}(1)$
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 $\mathcal{O}(n)$
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 $\mathcal{O}(2n)$
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 $\mathcal{O}(2n + 2)$
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 $\mathcal{O}(n^2)$
-
-
 
 ## Question 4
 
@@ -228,39 +172,26 @@ def method(nums):
     return t
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 $\mathcal{O}(1)$
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 $\mathcal{O}(n/2)$
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 $\mathcal{O}(n)$
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 $\mathcal{O}(n^2)$
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 $\mathcal{O}(n^2 / 2)$
-
-
-

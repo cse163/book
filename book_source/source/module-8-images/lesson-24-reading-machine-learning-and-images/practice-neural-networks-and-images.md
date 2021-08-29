@@ -1,14 +1,8 @@
 # <i class="far fa-edit fa-fw"></i> Practice: Neural Networks and Images
 
-
-
-
-
 ## Question 0
 
 Suppose I wanted to use a neural network to take images as inputs and predict whether the image was a picture of a cat, dog, or [None](https://media.giphy.com/media/4YWu31EsM1ToJnAzqc/giphy.gif) . Suppose the input images are in RGB color and were 50x50 pixels. How many input neurons would there be in our network?
-
-
 
 **📝 Your Task**
 
@@ -18,45 +12,33 @@ Write your answer down in your own space.
 
 For the same network in the last problem, how many output neurons will there be?
 
-
-
 **📝 Your Task**
 
 Write your answer down in your own space.
 
 ## Question 2
 
-Below we have mixed up a list of the **parameters** and **hyperparameters** of a neural network model. In this problem, please select all the values that are the model **parameters** (leaving the hyperparameters *unselected* ).
-
-
+Below we have mixed up a list of the **parameters** and **hyperparameters** of a neural network model. In this problem, please select all the values that are the model **parameters** (leaving the hyperparameters _unselected_ ).
 
 **📝 Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 Number of hidden layers
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Number of hidden nodes in each hidden layer
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 Weights between neurons
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 Bias for each neuron
-
-
 
 ## Question 3
 
@@ -74,9 +56,7 @@ $$\sigma(x) = \begin{cases} <br /> 0 & x \leq 0 \\ <br /> 1 & x > 0\\ <br /> \en
 
 What is the output if we use the input `(1, 0)` where `1` is the input value to the top neuron and `0` is the input value to the bottom neuron?
 
-*Hint: Your output should be an integer.*
-
-
+_Hint: Your output should be an integer._
 
 **📝 Your Task**
 
@@ -89,7 +69,7 @@ Consider the `sklearn` code to make a neural network
 ```text
 model = MLPClassifier(hidden_layer_sizes=(3, 4, 3, 1))
 
-````
+```
 
 **True or false** , this code specifies a network with the architecture shown in the image below.
 
@@ -99,9 +79,6 @@ model = MLPClassifier(hidden_layer_sizes=(3, 4, 3, 1))
 :align: center
 ```
 
-
-
 **📝 Your Task**
 
 Write your answer down in your own space.
-

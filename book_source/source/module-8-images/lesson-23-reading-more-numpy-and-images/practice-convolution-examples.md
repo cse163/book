@@ -1,7 +1,5 @@
 # <i class="far fa-edit fa-fw"></i> Practice: Convolution Examples
 
-
-
 ## Question 0
 
 What is the result of applying a convolution using this kernel on this image? Select the option the matches your answer.
@@ -12,13 +10,11 @@ What is the result of applying a convolution using this kernel on this image? Se
 :align: center
 ```
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 Option A
 
@@ -28,9 +24,7 @@ Option A
 :align: center
 ```
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Option B
 
@@ -40,9 +34,7 @@ Option B
 :align: center
 ```
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 Option C
 
@@ -52,9 +44,7 @@ Option C
 :align: center
 ```
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 Option D
 
@@ -64,19 +54,13 @@ Option D
 :align: center
 ```
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 None of the above
-
-
 
 ## Question 1
 
 Suppose I had an image with shape `(6, 5)` and a kernel with shape `(2, 3)` . Using this sliding window algorithm to do a convolution, how many **rows** will the result have?
-
-
 
 **📝 Your Task**
 
@@ -86,9 +70,6 @@ Write your answer down in your own space.
 
 Suppose I had an image with shape `(6, 5)` and a kernel with shape `(2, 3)` . Using this sliding window algorithm to do a convolution, how many **columns** will the result have?
 
-
-
 **📝 Your Task**
 
 Write your answer down in your own space.
-

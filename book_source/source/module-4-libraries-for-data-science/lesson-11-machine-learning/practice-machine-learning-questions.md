@@ -10,37 +10,25 @@ Consider the example used in the Visual Introduction to Machine Learning we read
 
 **The elevation of the house.**
 
-
-
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 Model
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Learning Algorithm
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 Feature
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 Label
-
-
 
 ## Question 1
 
@@ -48,35 +36,25 @@ Consider the example used in the Visual Introduction to Machine Learning we read
 
 **The city the house is in (SF or NY).**
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 Model
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Learning Algorithm
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 Feature
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 Label
-
-
 
 ## Question 2
 
@@ -84,35 +62,25 @@ Consider the example used in the Visual Introduction to Machine Learning we read
 
 **Growing the tree by adding forks.**
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 Model
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Learning Algorithm
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 Feature
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 Label
-
-
 
 ## Question 3
 
@@ -120,38 +88,27 @@ Consider the example used in the Visual Introduction to Machine Learning we read
 
 **The final decision tree.**
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 Model
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Learning Algorithm
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 Feature
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 Label
 
-
-
 ## Question 4
-
 
 ```{admonition} Warning
 :class: warning
@@ -164,29 +121,21 @@ Consider the task trying to take information about a patient and predicting thei
 
 Would this be best modeled by a classification or regression task?
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 Classification
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Regression
-
-
 
 ## Question 5
 
 Consider the following decision tree (remember, left means true and right means false). Instead of giving the features names, we use generic names `x[1]` and `x[2]` .
-
-
 
 ```{image} https://static.us.edusercontent.com/files/IF2hAThiY0zcKO9dx6gkJdge
 :alt: TODO
@@ -196,7 +145,7 @@ Consider the following decision tree (remember, left means true and right means 
 
 We commonly think of a model's **decision boundary** as being a drawing that shows how it separates all the points it predicts as one class from those that it predicts the other. Below we have shown a decision boundary separating the points classified as positive and those as negative.
 
-**Question:** True or False, the decision boundary shown below  corresponds to the decisions made by the tree shown above (i.e., the decisions shown in the graph for all possible inputs `(x[1], x[2])` are consistent with the decisions for the tree)?
+**Question:** True or False, the decision boundary shown below corresponds to the decisions made by the tree shown above (i.e., the decisions shown in the graph for all possible inputs `(x[1], x[2])` are consistent with the decisions for the tree)?
 
 ```{image} https://static.us.edusercontent.com/files/DFla3xy05AwgHGWm8l8YHREP
 :alt: TODO
@@ -204,23 +153,14 @@ We commonly think of a model's **decision boundary** as being a drawing that sho
 :align: center
 ```
 
-
-
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 True
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 False
-
-
-

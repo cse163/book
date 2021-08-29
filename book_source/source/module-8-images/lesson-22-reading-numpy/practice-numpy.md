@@ -1,6 +1,5 @@
 # <i class="far fa-edit fa-fw"></i> Practice: numpy
 
-
 ```{admonition} Warning
 :class: warning
 
@@ -22,8 +21,6 @@ np.arange(14)
 
 Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` . There should be no spaces in your answer.
 
-
-
 **📝 Your Task**
 
 Write your answer down in your own space.
@@ -38,8 +35,6 @@ m = x / 2 + 1
 ```
 
 Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` .
-
-
 
 **📝 Your Task**
 
@@ -56,8 +51,6 @@ m = x[1:, 2:4]
 
 Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` . There should be no spaces in your answer.
 
-
-
 **📝 Your Task**
 
 Write your answer down in your own space.
@@ -68,35 +61,25 @@ Suppose we had a `numpy.array` named `x` with some sequence of values. For this 
 
 Which of the following options will help us select all the values in `x` that are greater than 10 and are not divisible by 3.
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 `x[x > 10 and not x % 3 == 0]`
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 `x[(x > 10) and not x % 3 == 0]`
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 `x[x > 10 & ~x % 3 == 0]`
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 `x[(x > 10) & ~(x % 3 == 0)]`
-
-
 
 ## Question 4
 
@@ -106,7 +89,7 @@ For example, if we made a `subplots` using the following line, it would produce 
 
 ```text
 fig, axs = plt.subplots(3, 4)
-````
+```
 
 ```{image} https://static.us.edusercontent.com/files/4sJPr39zfQ9hSrsobUDRuc19
 :alt: TODO
@@ -118,75 +101,52 @@ Where we have labeled each `Axes` in the variable `axs` as if we had unpacked it
 
 ```text
 fig, [[ax1, ax2, ax3, ax4], [ax5, ax6, ax7, ax8], [ax9, ax10, ax11, ax12]] = plt.subplots(3, 4)
-````
+```
 
 You can tell that as there are more plots, trying to unpack each `Axes` to a variable from the returned `numpy.array` is unwieldy. Instead, for large plots, it's common to just store the result in a variable `axs` and index into it.
 
 Suppose we wanted to draw on `ax7` in the picture above. Which access to `axs` would give us a reference to that `Axes` object?
 
-
-
 **📝 Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 `axs[0, 0]`
 
-
-
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 `axs[0, 1]`
 
-
-
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 `axs[0, 2]`
 
-
-
-*❓ Option 3*
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 `axs[0, 3]`
 
-
-
-*❓ Option 4*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 `axs[0, 4]`
 
-
-
-*❓ Option 5*
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
 `axs[1, 0]`
 
-
-
-*❓ Option 6*
+_<i class="far fa-circle fa-fw"></i> Option 6_
 
 `axs[1, 1]`
 
-
-
-*❓ Option 7*
+_<i class="far fa-circle fa-fw"></i> Option 7_
 
 `axs[1, 2]`
 
-
-
-*❓ Option 8*
+_<i class="far fa-circle fa-fw"></i> Option 8_
 
 `axs[1, 3]`
 
-
-
-*❓ Option 9*
+_<i class="far fa-circle fa-fw"></i> Option 9_
 
 `axs[1, 4]`
-
-
-
