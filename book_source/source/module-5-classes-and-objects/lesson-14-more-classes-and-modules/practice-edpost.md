@@ -2,6 +2,13 @@
 
 {download}`Download starter code </module-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-edpost.zip>`
 
+```{admonition} Note
+:class: note
+
+The discussion board post in this problem is named `EdPost` because the CSE 163 at UW used EdStem as the discussion board for the course. 
+
+```
+
 Write a class called `EdPost` that represents a question on the message board. The `EdPost` class should have an initializer that takes an argument for each of the 3 fields your class should have.  
 
 -  The name of the post (a `str`) stored in a field `title`. This parameter should not have a default value.  
