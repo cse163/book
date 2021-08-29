@@ -22,7 +22,7 @@ At UW, the prequisites are either a Java programming class (CSE 142) or a Python
 
 If you took your first programming course in Java (at UW, this is CSE 142): This module (and part of next) will be learning almost all of the things you already learned in that course but in Python. It can be challenging and confusing at first, but we promise it gets better as you practice!
 
-```{tip} Tip
+```{tip}
 **Most importantly, try to relate what you're learning this week back to Java** . Almost all of these ideas are ones you've seen before (e.g. an `if` statement), but have a different _syntax_ to write them in Python.
 ```
 
