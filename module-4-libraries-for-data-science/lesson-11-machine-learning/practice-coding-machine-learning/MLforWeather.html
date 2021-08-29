@@ -593,11 +593,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-10-data-visualization/principles-of-data-visualization.html">
-       Principles of Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-10-data-visualization/pause-and-think.html">
        ⏸  Pause and 🧠 Think
       </a>
@@ -1645,8 +1640,21 @@
                 
   <section id="practice-coding-machine-learning">
 <h1>🚧 Practice: Coding Machine Learning<a class="headerlink" href="#practice-coding-machine-learning" title="Permalink to this headline">¶</a></h1>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/297eeb9c301907ec323e82d6b03c8a2d/weather.csv">weather.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
 <p>In this notebook, we will practice trying to predict the weather. We won’t try to predict it in the sense you are familiar with, where meteorologists try to predict what the weather will be a week out from now. Instead, we will do a simpler example where we look at various information about a day and try to predict the maximimum temperature that day.</p>
-<p>The data is stored in <code class="docutils literal notranslate"><span class="pre">weather.csv</span></code> (remember you should read it as <code class="docutils literal notranslate"><span class="pre">/home/weather.csv</span></code>) and has the following columns.</p>
+<p>The data is stored in <code class="docutils literal notranslate"><span class="pre">weather.csv</span></code> and has the following columns.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">STA</span></code>: A code representing what station the measurements were taken from</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">YR</span></code>: Which year this measurement was taken</p></li>
@@ -1660,22 +1668,20 @@
 <li><p>You will use a <code class="docutils literal notranslate"><span class="pre">DecisionTreeRegressor</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.tree</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code></p></li>
 <li><p>You will use the <code class="docutils literal notranslate"><span class="pre">mean_squared_error</span></code> function from the <code class="docutils literal notranslate"><span class="pre">sklearn.metrics</span></code> module instead of <code class="docutils literal notranslate"><span class="pre">accuracy_score</span></code>. It behaves similarly in the sense it takes the true labels and the predicted labels, but is different in that it returns the <strong>error</strong> of the predictions instead. Formally, this is returning the mean-squared error between your predictions and the true values (find the difference for each example, square them, and average them). A higher MSE means the model did worse, while an MSE of 0 means there were no errors!</p></li>
 </ul>
-<p>Unlike previous notebook practice problems, we only have one cell to test your code at the end. You shouldn’t modify that cell at all and you should use the cell(s) above to write your solutions. Remember to import the proper libraries!</p>
-<p>To pass our tests, you will need to use the following variable names for the parts of the problem (you may have other variables, but our tests won’t look at them):</p>
+<p>As a recommendation, you may use the following variable names for the parts of the problem:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> should store the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> of all the data stored in <code class="docutils literal notranslate"><span class="pre">/home/weather.csv</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> should store the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> of all the data stored in <code class="docutils literal notranslate"><span class="pre">weather.csv</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">features</span></code> should store the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> of just the features.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">labels</span></code> should store the <code class="docutils literal notranslate"><span class="pre">Series</span></code> of labels.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">model</span></code> should store the <code class="docutils literal notranslate"><span class="pre">DecisionTreeRegressor</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> should store the error of the trained <code class="docutils literal notranslate"><span class="pre">model</span></code> on the whole dataset.</p></li>
 </ul>
-<p>We don’t specify each step so that you refer back to your notes and the code process you saw from the notebook earlier in the lesson. Refer back to that for the steps to train the model (accounting for the differences we highlighted above).</p>
+<p>We don’t specify each step so that you refer back to your notes and the code process you saw from the notebook earlier in the lesson. Refer back to that for the steps to train the model (accounting for the differences we highlighted above). Remember to import all the necessary libraries!</p>
 <p>As a hint for correctness on this task, your model should get 0 error on this dataset. We will discuss in Lesson 12 why getting 0 error might be a sign of something is actually wrong with our model, but for this lesson, we will consider that correct!</p>
+<p><strong>For these problems, you should not use any loops!</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_variables) ###</span>
-
-<span class="c1"># Don&#39;t edit this cell!</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
 </div>
 </div>

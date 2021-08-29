@@ -593,11 +593,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="principles-of-data-visualization.html">
-       Principles of Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="pause-and-think.html">
        ⏸  Pause and 🧠 Think
       </a>
@@ -1626,19 +1621,19 @@
 <p><a class="reference download internal" download="" href="../../_downloads/2c79f98ea49f67709fb4a9addd9b39c3/practice-plotting-1.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
 <p>In this problem, we will work with the Iris Dataset that looks at various properties of various types of flowers in the iris family. The dataset has the columns</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sepal_width</span></code>     for the width of the flower’s sepal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sepal_length</span></code>     for the length of the flower’s sepal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">petal_width</span></code>     for the width of the flower’s petal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">petal_length</span></code>     for the length of the flower’s petal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">species</span></code>     for which species of iris it is (one of     <code class="docutils literal notranslate"><span class="pre">'setosa'</span></code>     ,     <code class="docutils literal notranslate"><span class="pre">'versicolor'</span></code>     , or     <code class="docutils literal notranslate"><span class="pre">'virginica'</span></code>     ).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sepal_width</span></code> for the width of the flower’s sepal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sepal_length</span></code> for the length of the flower’s sepal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">petal_width</span></code> for the width of the flower’s petal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">petal_length</span></code> for the length of the flower’s petal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">species</span></code> for which species of iris it is (one of <code class="docutils literal notranslate"><span class="pre">'setosa'</span></code>, <code class="docutils literal notranslate"><span class="pre">'versicolor'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'virginica'</span></code>).</p></li>
 </ul>
-<p>We have written most of the starter code below for you. All you need to do is to fill in some lines of code right after the comments marked <code class="docutils literal notranslate"><span class="pre">TODO</span></code> .</p>
+<p>We have written most of the starter code for you. All you need to do is to fill in some lines of code right after the comments marked <code class="docutils literal notranslate"><span class="pre">TODO</span></code> .</p>
 <p>First, make a <strong>scatter plot</strong> of the dataset stored in <code class="docutils literal notranslate"><span class="pre">df</span></code> with the petal width on the x-axis and the petal length on the y-axis. You should color the points according to their species. Recall to make a scatter plot, you use <code class="docutils literal notranslate"><span class="pre">sns.relplot</span></code> . You’ll want to use the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter to specify which column determines the color.</p>
 <p>Second, customize the plot using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to set the following properties</p>
 <ul class="simple">
-<li><p>The x-axis should be labeled     <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Width</span> <span class="pre">(cm)</span></code></p></li>
-<li><p>The y-axis should be labelled     <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Length</span> <span class="pre">(cm)</span></code></p></li>
-<li><p>The title of the graph should be     <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Width</span> <span class="pre">vs</span> <span class="pre">Length</span></code></p></li>
+<li><p>The x-axis should be labeled <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Width</span> <span class="pre">(cm)</span></code></p></li>
+<li><p>The y-axis should be labelled <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Length</span> <span class="pre">(cm)</span></code></p></li>
+<li><p>The title of the graph should be <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Width</span> <span class="pre">vs</span> <span class="pre">Length</span></code></p></li>
 </ul>
 <p>There is a new function shown at the end to save the plot as an image in a file. Once you run the program, a file <code class="docutils literal notranslate"><span class="pre">plot.png</span></code> will be created with the plot you can view (there will be a link at the bottom of the terminal when you run the program)!</p>
 <div class="warning admonition">
@@ -1646,7 +1641,7 @@
 <p>Do not customize the chart in any other way! Part of this test is actually comparing the images so if you add any difference, you might fail the tests!</p>
 </div>
 <p>Your final plot should look like this:</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/5yOCZCfwABOzzirLpwCGL57B"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/5yOCZCfwABOzzirLpwCGL57B" style="width: 607px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/5yOCZCfwABOzzirLpwCGL57B"><img alt="Petal Width vs Length output" class="align-center" src="https://static.us.edusercontent.com/files/5yOCZCfwABOzzirLpwCGL57B" style="width: 607px;" /></a>
 </section>
 
 

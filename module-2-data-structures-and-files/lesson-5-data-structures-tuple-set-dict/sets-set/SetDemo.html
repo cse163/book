@@ -593,11 +593,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-4-libraries-for-data-science/lesson-10-data-visualization/principles-of-data-visualization.html">
-       Principles of Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-4-libraries-for-data-science/lesson-10-data-visualization/pause-and-think.html">
        ⏸  Pause and 🧠 Think
       </a>
@@ -1640,12 +1635,7 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Sets (set)
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set">
    Set
   </a>
@@ -1663,6 +1653,7 @@
                 
   <section id="sets-set">
 <h1>Sets (set)<a class="headerlink" href="#sets-set" title="Permalink to this headline">¶</a></h1>
+<div style="position: relative; padding-bottom: 54.87804878048781%; height: 0;"><iframe src="https://www.loom.com/embed/8840d5821daa42a3a5a956b01d27f9d9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 <div class="admonition">
 <p class="admonition-title">Jupyter Info</p>
 <p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
@@ -1754,9 +1745,8 @@ Wall time: 8.57 s
 </pre></div>
 </div>
 <p>Since that requires looping over the whole list of unique words for each word in the file to see if this condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>! We’ll understand exactly how this causes a slow-down later.</p>
-</section>
 <section id="set">
-<h1>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h1>
+<h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
 <p>The problem here is trying to use a <code class="docutils literal notranslate"><span class="pre">list</span></code> to solve a task that it’s not well-designed for. <code class="docutils literal notranslate"><span class="pre">list</span></code>s have no notion of preventing duplicates, so this extra work we have to do to avoid duplicates in the <code class="docutils literal notranslate"><span class="pre">list</span></code> cause a huge slowdown.</p>
 <p>Instead, let’s see another data structure called a <code class="docutils literal notranslate"><span class="pre">set</span></code> that is designed with the idea of finding a set of unique values in mind. A <code class="docutils literal notranslate"><span class="pre">set</span></code> is like a <code class="docutils literal notranslate"><span class="pre">list</span></code> in the sense that it is a sequence of values, but differs in two major ways:</p>
 <ul class="simple">
@@ -1902,6 +1892,7 @@ Wall time: 26.2 ms
 </div>
 <p>Wow! All three files can be counted the unique words in less than ~100ms! Because we used a data structure that is all about storing unique values, we gained a huge speedup from just allowing it to do its thing.</p>
 <p>Later in the quarter, we will learn the “magic” that allows <code class="docutils literal notranslate"><span class="pre">set</span></code>s to be so fast at finding duplicates.</p>
+</section>
 </section>
 
 

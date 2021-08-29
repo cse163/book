@@ -595,11 +595,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-10-data-visualization/principles-of-data-visualization.html">
-       Principles of Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-10-data-visualization/pause-and-think.html">
        ⏸  Pause and 🧠 Think
       </a>
@@ -1666,20 +1661,18 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/cbaacf9d52ae4a8a85ee99da5e2fa0b4?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
-<p><strong>Word of Warning</strong></p>
+<p>Learning machine learning can be kind of challenging at first! There are whole courses dedicated to this topic! Our goal in CSE 163 is to provide you with some framework to think about machine learning so that you can be “conversational” in ML. You are not expected to be an expert in this topic after this reading!
+<br /></p>
 <br />
+<p>This lesson will be a bit different than the rest because it will contain lots of new vocabulary. We usually recommend that you are taking notes on these lessons (so you can synthesize your knowledge), but this one will be very important to take notes on the terms defined in
+<strong>bold</strong>
+. Annoyingly, we aren’t able to present mathematically precise definitions for these terms because that requires some mathematical formalism that requires taking one of those courses on ML to understand. However, you can still get an intuition for what the term means from the way we present it!
+<br /></p>
 <br />
-Learning machine learning can be kind of challenging at first! There are whole courses dedicated to this topic! Our goal in CSE 163 is to provide you with some framework to think about machine learning so that you can be "conversational" in ML. You are not expected to be an expert in this topic after this reading!
-<br />
-<br />
-This lesson will be a bit different than the rest because it will contain lots of new vocabulary. We usually recommend that you are taking notes on these lessons (so you can synthesize your knowledge), but this one will be very important to take notes on the terms defined in
-**bold**
-. Annoyingly, we aren't able to present mathematically precise definitions for these terms because that requires some mathematical formalism that requires taking one of those courses on ML to understand. However, you can still get an intuition for what the term means from the way we present it!
-<br />
-<br />
-One thing that is particularly difficult is that there are a lot of concepts/terms that interrelate. It's hard to tell a "linear" story that goes from point A to point B without hitting something we haven't heard before. We want to recognize that the structure of this lesson might be a bit confusing and it's totally expected that you go back to re-read stuff after reading on!
+<p>One thing that is particularly difficult is that there are a lot of concepts/terms that interrelate. It’s hard to tell a “linear” story that goes from point A to point B without hitting something we haven’t heard before. We want to recognize that the structure of this lesson might be a bit confusing and it’s totally expected that you go back to re-read stuff after reading on!</p>
 </div>
 <section id="twitter-text-data">
 <h2>Twitter: Text Data<a class="headerlink" href="#twitter-text-data" title="Permalink to this headline">¶</a></h2>
@@ -1721,12 +1714,12 @@ One thing that is particularly difficult is that there are a lot of concepts/ter
 <h2>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h2>
 <p><strong>Machine learning</strong> is a set of techniques and algorithms that allows the computer to learn by example to solve some task. There is an annoyingly abstract definition of machine learning shown below, but what it’s really saying is “uses experience (data) to improve itself”.</p>
 <blockquote>
-<div><p>A computer program is said to learn from experience <span class="math notranslate nohighlight">\(E\)</span> with respect to some class of tasks <span class="math notranslate nohighlight">\(T\)</span> and performance measure <span class="math notranslate nohighlight">\(P\)</span> if its performance at tasks in <span class="math notranslate nohighlight">\(T\)</span>, as measured by <span class="math notranslate nohighlight">\(P\)</span>, improves with experience <span class="math notranslate nohighlight">\(E\)</span>.
-In our example of classifying cats vs dogs in images, this would mean a fundamental change to the approach. Instead of writing the rules ourselves, machine learning lets us give the computer a ton of examples of cat images and a ton of examples of dog images, and letting it learn the rules itself from those examples. This is still pretty abstract, and we will see a concrete example of how to learn rules from data in a bit, but before that, we need a little bit more terminology for setup.</p>
+<div><p>A computer program is said to learn from experience <span class="math notranslate nohighlight">\(E\)</span> with respect to some class of tasks <span class="math notranslate nohighlight">\(T\)</span> and performance measure <span class="math notranslate nohighlight">\(P\)</span> if its performance at tasks in <span class="math notranslate nohighlight">\(T\)</span>, as measured by <span class="math notranslate nohighlight">\(P\)</span>, improves with experience <span class="math notranslate nohighlight">\(E\)</span>.</p>
 </div></blockquote>
+<p>In our example of classifying cats vs dogs in images, this would mean a fundamental change to the approach. Instead of writing the rules ourselves, machine learning lets us give the computer a ton of examples of cat images and a ton of examples of dog images, and letting it learn the rules itself from those examples. This is still pretty abstract, and we will see a concrete example of how to learn rules from data in a bit, but before that, we need a little bit more terminology for setup.</p>
 <p>You might have noticed from the last paragraph, that we said you need to give it examples of cat images and dog images, implying that you need to have a dataset of examples that you already know the answer to! We call this dataset of known examples a <strong>training set.</strong> In our context, each <strong>example</strong> is a single image and a label indicating whether the image contains a dog or a cat. The training set is a dataset that you will use to “train” the model so that it can learn the rules of differentiating between cats and dogs.</p>
 <p>A <strong>machine learning algorithm</strong> (commonly, just called a “learning algorithm”) takes this training set and outputs a <strong>model</strong> that it thinks will do the best at the task. A <strong>model</strong> is the “rules” to predict the value for any given example.</p>
-<p>For most setups in machine learning, this training set needs to have <strong>features</strong> and <strong>labels</strong> . The <strong>labels</strong> are the correct values for an example in the training set and the <strong>features</strong> are the description of the example itself. Notice this definition of features is awfully vague! It turns out one of the hardest parts of machine learning is coming up with a good set of features to describe your data that is useful for the learning algorithm to learn from!</p>
+<p>For most setups in machine learning, this training set needs to have <strong>features</strong> and <strong>labels</strong>. The <strong>labels</strong> are the correct values for an example in the training set and the <strong>features</strong> are the description of the example itself. Notice this definition of features is awfully vague! It turns out one of the hardest parts of machine learning is coming up with a good set of features to describe your data that is useful for the learning algorithm to learn from!</p>
 </section>
 <section id="features-matter">
 <h2>Features Matter<a class="headerlink" href="#features-matter" title="Permalink to this headline">¶</a></h2>
@@ -1768,13 +1761,13 @@ In our example of classifying cats vs dogs in images, this would mean a fundamen
 </section>
 <section id="recap-questions">
 <h2>Recap Questions<a class="headerlink" href="#recap-questions" title="Permalink to this headline">¶</a></h2>
-<p>Use these questions to help you test your understanding. These might be good things to talk about with your group in class!</p>
+<p>Use these questions to help you test your understanding.</p>
 <ul class="simple">
 <li><p>Why might we want to use machine learning for the image recognition task, but it might not be as necessary for the tweet-recognition task?</p></li>
 <li><p>What’s the relationship between a learning algorithm and a model?</p></li>
 <li><p>What is the difference between classification and regression?</p>
 <ul>
-<li><p>Think of the work the         <a class="reference external" href="http://www.healthdata.org/">None</a>         is doing in predicting the number of active cases of COVID-19. Is this a regression or a classification task?</p></li>
+<li><p>Think of the work the <a class="reference external" href="http://www.healthdata.org/">IMHE</a> is doing in predicting the number of active cases of COVID-19. Is this a regression or a classification task?</p></li>
 </ul>
 </li>
 </ul>

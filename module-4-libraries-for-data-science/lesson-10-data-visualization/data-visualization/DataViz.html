@@ -43,7 +43,7 @@
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Principles of Data Visualization" href="../principles-of-data-visualization.html" />
+    <link rel="next" title="⏸ Pause and 🧠 Think" href="../pause-and-think.html" />
     <link rel="prev" title="🚧 Practice: Check your understanding" href="../practice-check-your-understanding.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -590,11 +590,6 @@
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../principles-of-data-visualization.html">
-       Principles of Data Visualization
       </a>
      </li>
      <li class="toctree-l3">
@@ -1640,17 +1635,7 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Data Visualization
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Data Visualization
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#expectations">
    Expectations
   </a>
@@ -1668,9 +1653,22 @@
                 
   <section id="data-visualization">
 <h1>Data Visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">¶</a></h1>
-</section>
-<section id="id1">
-<h1>Data Visualization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/c96651521c6241c690c6e4f4e35a2cdd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<hr class="docutils" />
+<p>Link to slides: <a class="reference external" href="https://docs.google.com/presentation/d/1UaBuUSXQEMqzYpIB_sTf5TaSeq-MNG4ny_i2NOemmDo/edit#slide=id.g556781fa9e_4_0">link</a></p>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/af14f66a416eb602d3b73eec31860909/pokemon.csv">pokemon.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
 <p>In Lesson 10, we will discuss the guiding principles for why we want to visualize data and how we can make effective visualizations. In this notebook, we introduce the libraries <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to make visualizations.</p>
 <p>Before we begin, let’s put a word of caution about how to approach learning these libraries:</p>
 <blockquote>
@@ -1684,7 +1682,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/pokemon.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pokemon.csv&#39;</span><span class="p">)</span>
 
 <span class="n">data</span>  <span class="c1"># For display</span>
 </pre></div>
@@ -2050,9 +2048,8 @@
 <img alt="../../../_images/DataViz_16_1.png" src="../../../_images/DataViz_16_1.png" />
 </div>
 </div>
-</section>
 <section id="expectations">
-<h1>Expectations<a class="headerlink" href="#expectations" title="Permalink to this headline">¶</a></h1>
+<h2>Expectations<a class="headerlink" href="#expectations" title="Permalink to this headline">¶</a></h2>
 <p>For the most part, that’s all we are going to discuss in depth for data visualization at this time. We will revisit this topic later in the quarter to show how to make more complex plots (e.g., ones where you make two plots side-by-side).</p>
 <p>The rationale here is we actually want to use data visualization as an opportunity for you to learn the skill of looking at documentation to build your own working knowledge. This much better reflects the learning you will need to do in the real world, and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is such a great case-study for this because their documentation is incredible.</p>
 <p>You won’t have to dig super deep though, for the most part we show you that you only need to look at the documentation for the pages we listed above (shown below for convenience).</p>
@@ -2064,6 +2061,7 @@
 <li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.jointplot.html">Compare Two Variable</a></p></li>
 <li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.heatmap.html#seaborn.heatmap">Heatmap</a></p></li>
 </ul>
+</section>
 </section>
 
 
@@ -2086,10 +2084,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../principles-of-data-visualization.html" title="next page">
+        <a class="right-next" href="../pause-and-think.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Principles of Data Visualization</p>
+                <p class="prevnext-title">⏸  Pause and 🧠 Think</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

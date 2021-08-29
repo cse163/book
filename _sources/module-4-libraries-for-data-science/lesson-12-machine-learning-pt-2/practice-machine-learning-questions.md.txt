@@ -1,21 +1,5 @@
 # 🚧 Practice: Machine Learning Questions
 
-
-```{admonition} Warning
-:class: warning
-
-Remember to press submit on all problems!
-
-```
-
-
-```{admonition} Error
-:class: error
-
-We will not have time during our class session to give you time to work on this slide of quiz questions. We will ask that you solve these before class and read through the explanations that appear.
-
-```
-
 ## Question 0
 
 Consider the dataset shown in the following table. Assume this is stored in a `DataFrame` named `df` .  
@@ -56,7 +40,7 @@ Write your answer down in your own space.
 
 ## Question 2
 
-Consider the general task of assessing performance of a machine learning model. Which of the following options best describes why we needed to introduce a test set to evaluate the future performance of the model:?  
+Consider the general task of assessing performance of a machine learning model. Which of the following options best describes why we needed to introduce a test set to evaluate the future performance of the model?  
 
 
 
@@ -138,7 +122,7 @@ This question uses the same set up of polynomial regression from the last questi
 
 Select the option below that best describes the answer.  
 
-If we use a polynomial with very high degree $p$, would we expect that the **training ** is higher or lower than a model with low degree $p$ (e.g., linear regression)? In other words as $p$ increases in  degree, would we expect the training error to go up or down?  
+If we use a polynomial with very high degree $p$, would we expect that the **training error** is higher or lower than a model with low degree $p$ (e.g., linear regression)? In other words as $p$ increases in  degree, would we expect the training error to go up or down?  
 
 Notice we are talking about **error** and not **accuracy.** Remember error is a measurement of how "wrong" the model is.  
 

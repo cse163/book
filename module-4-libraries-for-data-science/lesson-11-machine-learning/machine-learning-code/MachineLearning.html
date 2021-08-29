@@ -593,11 +593,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-10-data-visualization/principles-of-data-visualization.html">
-       Principles of Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-10-data-visualization/pause-and-think.html">
        ⏸  Pause and 🧠 Think
       </a>
@@ -1640,27 +1635,22 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Machine Learning Code
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#machine-learning">
    Machine Learning
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preparing-data">
    Preparing Data
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizing-the-model">
    Visualizing The Model
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recap">
    Recap
   </a>
@@ -1678,15 +1668,28 @@
                 
   <section id="machine-learning-code">
 <h1>Machine Learning Code<a class="headerlink" href="#machine-learning-code" title="Permalink to this headline">¶</a></h1>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/90fe85ea2b074e9dbc48e3cb023b0c2d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/3c8da9133b70499063d1dc70db5f13b3/homes.csv">homes.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
 <p>Before we begin, let’s put a word of caution about how to approach learning these libraries:</p>
 <blockquote>
 <div><p>Trying to memorize all of these function calls and patterns is a ridiculous task. We will throw a lot of new functions at you very quickly and the intent is not for you to be able to memorize them all. The more important thing is to understand how to use them as examples and <strong>adapt</strong> those examples to the problem you are trying to solve.</p>
 <p>The most important thing is to understand the big ideas we highlight about the code we are showing!</p>
 </div></blockquote>
 <p>This means we won’t always be able to explain every bit of code. The purpose is to give you some examples that you can run for your own projects or homeworks, even if you don’t have the hundreds of pages of documentation memorized (because no one acually does that!).</p>
-</section>
 <section id="machine-learning">
-<h1>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h1>
+<h2>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h2>
 <p>So far, everything has been awfully abstract and high level. In this notebook, hopefully we can make things more concrete by tying the terms we introduced in the last slide to specific pieces of code to actually train a model. In the next slide, we will introduce the specifics of what this model is learning and how it learns!</p>
 <p>For this notebook, we will use a dataset about homes in either San Francisco or New York[1]. This dataset has a row for each house, and some various attributes of the house like which city it’s in, its elevation, and the year it was built.</p>
 <blockquote>
@@ -1697,7 +1700,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/homes.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;homes.csv&#39;</span><span class="p">)</span>
 
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -1810,7 +1813,7 @@
 </ol>
 </section>
 <section id="preparing-data">
-<h1>Preparing Data<a class="headerlink" href="#preparing-data" title="Permalink to this headline">¶</a></h1>
+<h2>Preparing Data<a class="headerlink" href="#preparing-data" title="Permalink to this headline">¶</a></h2>
 <p>So then the first step in training an ML model, is preparing the data so the model can use it.</p>
 <p>We start by separating the data into its features and its labels. Notice we are able to also use masking for the columns we want in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>! This is a succinct way to keep all the columns that aren’t the label we want to predict (<code class="docutils literal notranslate"><span class="pre">'city'</span></code>).</p>
 <div class="cell docutils container">
@@ -2059,7 +2062,7 @@ Actual     : [&#39;NY&#39; &#39;NY&#39; &#39;NY&#39; &#39;SF&#39; &#39;SF&#39; &
 <p>Unfortunately, it turns out that evaluating a model will be a little trickier than this and that we probably shouldn’t expect that this model will get every example it sees in the future correct. How to better assess the models we learn will be the focus of Lesson 12.</p>
 </section>
 <section id="visualizing-the-model">
-<h1>Visualizing The Model<a class="headerlink" href="#visualizing-the-model" title="Permalink to this headline">¶</a></h1>
+<h2>Visualizing The Model<a class="headerlink" href="#visualizing-the-model" title="Permalink to this headline">¶</a></h2>
 <p>Before we go on to the next slide that explains what this decision tree classifier is, we will quickly show that <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> provides a way of visualizing what this decision tree looks like!  The function <code class="docutils literal notranslate"><span class="pre">plot_tree</span></code> is not important to understand as it has to use a few advanced library features to get the image to display nicely. You can click on the image to enlarge it.</p>
 <p>The next slide talks about how this tree is learned and how you might interpret the output of this image.</p>
 <div class="cell docutils container">
@@ -2078,7 +2081,7 @@ Actual     : [&#39;NY&#39; &#39;NY&#39; &#39;NY&#39; &#39;SF&#39; &#39;SF&#39; &
             <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
             <span class="n">special_characters</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
     <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;tree.gv&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;/home/tree.gv.png&#39;</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;tree.gv.png&#39;</span><span class="p">))</span>
 
 
 <span class="n">plot_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
@@ -2091,7 +2094,7 @@ Actual     : [&#39;NY&#39; &#39;NY&#39; &#39;NY&#39; &#39;SF&#39; &#39;SF&#39; &
 </div>
 </section>
 <section id="recap">
-<h1>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h1>
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <p>We introduced a lot of new concepts and code fragments on this slide. For a quick recap, here are all the “important” bits to train an ML model for this task.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2103,7 +2106,7 @@ Actual     : [&#39;NY&#39; &#39;NY&#39; &#39;NY&#39; &#39;SF&#39; &#39;SF&#39; &
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
 
 <span class="c1"># Read in data</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/homes.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;homes.csv&#39;</span><span class="p">)</span>
 
 <span class="c1"># Separate data into features and labels</span>
 <span class="n">features</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
@@ -2127,6 +2130,7 @@ Actual     : [&#39;NY&#39; &#39;NY&#39; &#39;NY&#39; &#39;SF&#39; &#39;SF&#39; &
 </div>
 </div>
 </div>
+</section>
 </section>
 
 

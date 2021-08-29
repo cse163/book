@@ -595,11 +595,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-10-data-visualization/principles-of-data-visualization.html">
-       Principles of Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-10-data-visualization/pause-and-think.html">
        ⏸  Pause and 🧠 Think
       </a>
@@ -1642,32 +1637,27 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   The ML Pipeline: Categorical Data and Assessing Performance
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recap">
    Recap
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#categorical-features">
    Categorical Features
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#assessing-accuracy">
    Assessing Accuracy
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-do-trees-overfit">
    Why do Trees Overfit?
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#optional-visiualizing-the-bias-variance-tradeoff">
    Optional: Visiualizing the Bias Variance Tradeoff
   </a>
@@ -1685,9 +1675,22 @@
                 
   <section id="the-ml-pipeline-categorical-data-and-assessing-performance">
 <h1>The ML Pipeline: Categorical Data and Assessing Performance<a class="headerlink" href="#the-ml-pipeline-categorical-data-and-assessing-performance" title="Permalink to this headline">¶</a></h1>
-</section>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/0826909cef984cb8b8eb47149a775b5e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/afdf4c49dcca2bf0c184822f029f7a56/BankChurners.csv">BankChurners.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
 <section id="recap">
-<h1>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h1>
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <p>In the last lesson, we were introduced to the idea of machine learning. We saw how to write code to load in data, separate it into features and labels, train a model on that data, assess its accuracy. We commonly call these steps (or any modification of them) the <strong>machine learning pipeline</strong>. We think of it acting like a pipe, connecting data to the final model that can make predictions from it.</p>
 <p>In the last reading, we ended up seeing our model had 100% accuracy on the data which seemed great at first, but in this lesson, we will see it’s less than ideal. Before describing this in detail, let’s do a slight recap of what we saw last time but with a slightly different dataset.</p>
 <p>For this lesson, we will consider a dataset concerning customers of a particular credit card agency, and whether or not those customers decided to close their credit card (also called “churn”). We won’t go into the specifics of what all the columns mean, since they are mostly specific to financial records. The one term that is important is the label we are trying to predict in the <code class="docutils literal notranslate"><span class="pre">Attrition_Flag</span></code> column where <code class="docutils literal notranslate"><span class="pre">'Existing</span> <span class="pre">Customer'</span></code> means the customer has kept their account, while <code class="docutils literal notranslate"><span class="pre">'Attrited</span> <span class="pre">Customer'</span></code> is one that has closed their account.</p>
@@ -1696,7 +1699,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/BankChurners.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;BankChurners.csv&#39;</span><span class="p">)</span>
 
 <span class="n">data</span>
 </pre></div>
@@ -2049,7 +2052,7 @@
 <p>To fix this, we need to understand how to handle categorical features for machine learning.</p>
 </section>
 <section id="categorical-features">
-<h1>Categorical Features<a class="headerlink" href="#categorical-features" title="Permalink to this headline">¶</a></h1>
+<h2>Categorical Features<a class="headerlink" href="#categorical-features" title="Permalink to this headline">¶</a></h2>
 <p>For this section, let’s suppose we had a smaller dataset that only stored a column for <code class="docutils literal notranslate"><span class="pre">age</span></code> and another column for <code class="docutils literal notranslate"><span class="pre">gender</span></code>. We can see this sample dataset here.</p>
 <table border="1" class="dataframe">
   <thead>
@@ -2181,7 +2184,7 @@
 </div>
 </section>
 <section id="assessing-accuracy">
-<h1>Assessing Accuracy<a class="headerlink" href="#assessing-accuracy" title="Permalink to this headline">¶</a></h1>
+<h2>Assessing Accuracy<a class="headerlink" href="#assessing-accuracy" title="Permalink to this headline">¶</a></h2>
 <p>So now that we have transformed the data, we can go back to the original task of trying to assess how good the model we fit to the data is! In the cell below, we train the model and evaluate its accuracy on the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2273,7 +2276,7 @@ Test  Accuracy: 0.6967741935483871
 <p>With everything we have seen so far (except the stuff about categorical features), you can now go back to the <a class="reference external" href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/#classify-test-data">Introduction to Machine Learning</a> we read last time and read the “Reality Check” part and beyond. Go read it! Their visualizations hopefulyl make it clear why these splits near the bottom of the tree, are more likely to contain irrelevant details.</p>
 </section>
 <section id="why-do-trees-overfit">
-<h1>Why do Trees Overfit?<a class="headerlink" href="#why-do-trees-overfit" title="Permalink to this headline">¶</a></h1>
+<h2>Why do Trees Overfit?<a class="headerlink" href="#why-do-trees-overfit" title="Permalink to this headline">¶</a></h2>
 <p>Why does the tree overfit in this context and how can we prevent that? Overfitting happens for decision trees by default since we allow the tree to grow really tall!</p>
 <p>We aren’t able to use the code from the last lesson to actually visualize the tree we learned, because it’s actually quite large!</p>
 <p>If you think back to the R2D3 reading and how the decision tree is learned, they successively decide to split the data based on some feature and then build up the tree and separating the data as they go down. Notice, for example, that at the bottom of the tree, it is making decisions about splits for VERY few data points. This is because earlier forks split the data relatively evenly. This means that after enough splits when it is at the bottom of the tree, the learning algorithm is essentially making decisions on splits from basically just noise in the data. The fact that this tree is allowed to be as tall as it wants, lets it makes splits until it gets the training set 100% correct!</p>
@@ -2320,7 +2323,7 @@ Test  Accuracy: 0.7458064516129033
             <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
             <span class="n">special_characters</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
     <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;tree.gv&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;/home/tree.gv.png&#39;</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;tree.gv.png&#39;</span><span class="p">))</span>
 
 <span class="c1"># Import </span>
 <span class="n">plot_tree</span><span class="p">(</span><span class="n">short_model</span><span class="p">,</span> <span class="n">features_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">)</span>
@@ -2411,13 +2414,14 @@ Test  Accuracy: 0.7458064516129033
 </ul>
 </section>
 <section id="optional-visiualizing-the-bias-variance-tradeoff">
-<h1>Optional: Visiualizing the Bias Variance Tradeoff<a class="headerlink" href="#optional-visiualizing-the-bias-variance-tradeoff" title="Permalink to this headline">¶</a></h1>
+<h2>Optional: Visiualizing the Bias Variance Tradeoff<a class="headerlink" href="#optional-visiualizing-the-bias-variance-tradeoff" title="Permalink to this headline">¶</a></h2>
 <p>The authors of that article we read last time made a follow up post describing this tradeoff. You can read it from the link below (but doing so is not required). Do note one very important difference in terminology.</p>
 <blockquote>
 <div><p>In the article, they use the term <strong>parameter</strong> instead of <strong>hyperparameter</strong>. This is not their fault, they just use different terminology (everyone uses slightly different terms). When we come back to ML later in the quarter, we will be very particular with our usage of those two words so you should read their usage of the word “parameter” as our “hyperparameter”.</p>
 </div></blockquote>
 <p><a class="reference external" href="http://www.r2d3.us/visual-intro-to-machine-learning-part-2/">Link to article</a></p>
 <p><a class="reference external" href="http://scott.fortmann-roe.com/docs/BiasVariance.html">Here is another article</a> that explains this idea.</p>
+</section>
 </section>
 
 

@@ -1,13 +1,5 @@
 # 🚧 Practice: Machine Learning Questions
 
-
-```{admonition} Note
-:class: note
-
-This slide appears before the Attending Class/Pause and Think slides indicating we want you to try them before class. Don't worry about trying to get them all correct before class, we just want you to be familiar with what the problems are asking so that we can start the discussion in class working on these problems.
-
-```
-
 The first 4 problems are all part of the same problem (they have the same setup text). Across those 4 problems, you should use each choice at most once.  
 
 The remaining problems are unrelated to the first 4.  

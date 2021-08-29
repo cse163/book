@@ -1,31 +1,35 @@
 # Missing Data 
-
+```{reading-data}
+{static-data-download}`fmri.csv`
+```
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/7feef4e9a31d4252a39460a11d758f49?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-[None](https://github.com/Quartz/bad-data-guide) . It might be in a format that you will have trouble reading from or it might have errors in the data! One of the most common types of errors in datasets is **missing data** , where a row might have some of its column entries just missing!  
+---
+
+[Most data in the world is messy](https://github.com/Quartz/bad-data-guide). It might be in a format that you will have trouble reading from or it might have errors in the data! One of the most common types of errors in datasets is **missing data** , where a row might have some of its column entries just missing!  
 
 For example, we have a dataset of fMRI (brain scan) data that, like most real-life datasets, is a little messy. The dataset has the following columns:  
 
--  `subject`     : An identifier for the person being measured  
+-  `subject`: An identifier for the person being measured  
 
--  `timepoint`     : The time in the study  
+-  `timepoint`: The time in the study  
 
--  `event`     : What type of stimulus the subject was given  
+-  `event`: What type of stimulus the subject was given  
 
--  `region`     : Where the fMRI measurement was taken  
+-  `region`: Where the fMRI measurement was taken  
 
--  `signal`     : The measurement value  
+-  `signal`: The measurement value  
 
 
-If we tried to load it into a `DataFrame` , we would see the following.  
+If we tried to load it into a `DataFrame`, we would see the following.  
 
 ```python
 import pandas as pd
 
-df = pd.read_csv('/course/lecture-readings/fmri.csv')
+df = pd.read_csv('fmri.csv')
 print(df.tail())  # Prints the last rows
 ```
 
@@ -48,7 +52,7 @@ In Python, `NaN` operates by two rules:
 -  Any boolean comparison on     `NaN`     , evaluates to     `False`   
 
 
-We can access the value `NaN` most easily by using the library `numpy` (commonly imported as `np` ). We will learn more about `numpy` in Week 7!  
+We can access the value `NaN` most easily by using the library `numpy` (commonly imported as `np` ). We will learn more about `numpy` in Module 7!  
 
 ```python
 import numpy as np
@@ -60,7 +64,7 @@ print(1 == np.nan)       # False
 print(np.nan == np.nan)  # False
 ```
 
-That last line is pretty surprising since we compared `np.nan` to `np.nan` . Remember though, one of the rules of `NaN` is that every boolean comparison on `NaN` is `False` !  
+That last line is pretty surprising since we compared `np.nan` to `np.nan`. Remember though, one of the rules of `NaN` is that every boolean comparison on `NaN` is `False` !  
 
 How is `NaN` different than `None` ? `None` doesn't allow any numeric operations on it, it will cause an error!  
 
@@ -70,12 +74,12 @@ print(1 + None)
 
 ##  `NaN` in `pandas`   
 
-So now that we know what this magic-value `NaN` is in our dataset. Let's see how to handle it in `pandas` . Let's start by taking the average of the `'signal'` column (that contains `NaN` values).  
+So now that we know what this magic-value `NaN` is in our dataset. Let's see how to handle it in `pandas`. Let's start by taking the average of the `'signal'` column (that contains `NaN` values).  
 
 ```python
 import pandas as pd
 
-df = pd.read_csv('/course/lecture-readings/fmri.csv')
+df = pd.read_csv('fmri.csv')
 print(df['signal'].mean())
 ```
 
@@ -83,16 +87,16 @@ Luckily for us, `pandas` has some logic built into it to skip `NaN` values for m
 
 -  To detect if there are missing values:  
 
-    -  `isnull()`         returns a         `bool`          `Series`         , where         `True`         marks         `NaN`         values  
+    -  `isnull()` returns a `bool` `Series`, where `True` marks         `NaN` values.
 
-    -  `notnull()`         returns a         `bool`          `Series`         , where         `True`         marks non-         `NaN`         values.  
+    -  `notnull()` returns a `bool` `Series`, where `True` marks non-`NaN` values.  
 
 
--  To return a new     `DataFrame`     with     `NaN`     removed:  
+-  To return a new `DataFrame` with `NaN` removed:  
 
-    -  `dropna()`         removes all rows with missing data.  
+    -  `dropna()` removes all rows with missing data.  
 
-    -  `fillna(val)`         replaces missing data with the given value  
+    -  `fillna(val)` replaces missing data with the given value  
 
 
 
@@ -101,7 +105,7 @@ The following code block shows how these operations work
 ```python
 import pandas as pd
 
-df = pd.read_csv('/course/lecture-readings/fmri.csv')
+df = pd.read_csv('fmri.csv')
 
 # Returns all the rows in df where the signal is not NaN
 df[df['signal'].notnull()]
@@ -114,33 +118,15 @@ df['signal'] = df['signal'].fillna(0)
 print(df)
 ```
 
+```{admonition} Warning
+:class: warning
+
+Notice that the first two examples don't modify `df`. Why is that? Almost every operation on `pandas` returns a new `DataFrame` or `Series`! For example, `df.dropna()` returns a new `DataFrame` with the `NaN` rows missing. It's not until the last example, do we actually save the return value into
+`df` so the result stays.
+```
 
 ```{admonition} Warning
 :class: warning
 
-Notice that the first two examples
-**
-			don't modify 
-			**
-. Why is that? Almost every operation on
-`pandas`
-returns a new
-`DataFrame`
-or
-`Series`
-! For example,
-`df.dropna()`
-returns a new
-`DataFrame`
-with the
-`NaN`
-rows missing. It's not until the last example, do we actually save the return value into
-`df`
-so the result stays.
-
+On take-home assessment 3, we will ask for you to deal with missing data. Think very carefully about which data you want to remove and how you will remove it. A common bug students run into involves removing too many rows or too few rows that have missing data for the relevant columns. 
 ```
-
-##  Warning about Missing Data  
-
-On take-home assessment 3, we will ask for you to deal with missing data. Think very carefully about which data you want to remove and how you will remove it. A common bug students run into involves removing too many rows or too few rows that have missing data for the relevant columns.  
-

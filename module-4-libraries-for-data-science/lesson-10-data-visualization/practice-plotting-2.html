@@ -593,11 +593,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="principles-of-data-visualization.html">
-       Principles of Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="pause-and-think.html">
        ⏸  Pause and 🧠 Think
       </a>
@@ -1644,37 +1639,37 @@
 <p><a class="reference download internal" download="" href="../../_downloads/13af45b2ab4c4995d90849bdf1603c4f/practice-plotting-2.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
 <p>In this problem, we will work with the same iris dataset, but this time the dataset contains some missing values. As a reminder, the dataset has the columns</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sepal_width</span></code>     for the width of the flower’s sepal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sepal_length</span></code>     for the length of the flower’s sepal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">petal_width</span></code>     for the width of the flower’s petal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">petal_length</span></code>     for the length of the flower’s petal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">species</span></code>     for which species of iris it is (one of     <code class="docutils literal notranslate"><span class="pre">'setosa'</span></code>     ,     <code class="docutils literal notranslate"><span class="pre">'versicolor'</span></code>     , or     <code class="docutils literal notranslate"><span class="pre">'virginica'</span></code>     ).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sepal_width</span></code> for the width of the flower’s sepal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sepal_length</span></code> for the length of the flower’s sepal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">petal_width</span></code> for the width of the flower’s petal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">petal_length</span></code> for the length of the flower’s petal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">species</span></code> for which species of iris it is (one of <code class="docutils literal notranslate"><span class="pre">'setosa'</span></code>, <code class="docutils literal notranslate"><span class="pre">'versicolor'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'virginica'</span></code>).</p></li>
 </ul>
-<p>For this problem, we have provided no starter code so you will need to recreate it from the last problem! The dataset is stored in <code class="docutils literal notranslate"><span class="pre">iris_missing.csv</span></code> (remember, you will need to specify it as <code class="docutils literal notranslate"><span class="pre">/home/iris_missing.csv</span></code> on Ed).</p>
+<p>For this problem, we have provided no starter code so you will need to recreate it from the last problem! The dataset is stored in <code class="docutils literal notranslate"><span class="pre">iris_missing.csv</span></code>.</p>
 <p>First, make a <strong>regression plot</strong> of the dataset stored in <code class="docutils literal notranslate"><span class="pre">df</span></code> with the petal length on the x-axis and the sepal length on the y-axis. The color of the points and the line should be green (use code <code class="docutils literal notranslate"><span class="pre">'g'</span></code> )! Any rows with missing values should be given a value of 0. Look back at the lesson to identify which functions you can use to help you make this plot.</p>
 <p>Second, customize the plot using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to set the following properties</p>
 <ul class="simple">
-<li><p>The x-axis should be labeled     <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Length</span> <span class="pre">(cm)</span></code></p></li>
-<li><p>The y-axis should be labeled     <code class="docutils literal notranslate"><span class="pre">Sepal</span> <span class="pre">Length</span> <span class="pre">(cm)</span></code></p></li>
-<li><p>The title of the graph should be     <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Length</span> <span class="pre">vs</span> <span class="pre">Sepal</span> <span class="pre">Length</span></code></p></li>
+<li><p>The x-axis should be labeled <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Length</span> <span class="pre">(cm)</span></code></p></li>
+<li><p>The y-axis should be labeled <code class="docutils literal notranslate"><span class="pre">Sepal</span> <span class="pre">Length</span> <span class="pre">(cm)</span></code></p></li>
+<li><p>The title of the graph should be <code class="docutils literal notranslate"><span class="pre">Petal</span> <span class="pre">Length</span> <span class="pre">vs</span> <span class="pre">Sepal</span> <span class="pre">Length</span></code></p></li>
 </ul>
-<p>Save your image to <code class="docutils literal notranslate"><span class="pre">/home/plot.png</span></code> . Remember you will need to pass that extra parameter to make the layout tight.</p>
+<p>Save your image to <code class="docutils literal notranslate"><span class="pre">plot.png</span></code> . Remember you will need to pass that extra parameter to make the layout tight.</p>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Do not customize the chart in any other way! Part of this test is actually comparing the images so if you add any difference, you might fail the tests!</p>
 </div>
 <p>Your final plot should look like this:</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/yjzwwLKZdyUhdIPr2TknNVES"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/yjzwwLKZdyUhdIPr2TknNVES" style="width: 640px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/yjzwwLKZdyUhdIPr2TknNVES"><img alt="Petal Length vs Sepal Length output" class="align-center" src="https://static.us.edusercontent.com/files/yjzwwLKZdyUhdIPr2TknNVES" style="width: 640px;" /></a>
 <section id="seaborn-functions">
 <h2><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> functions<a class="headerlink" href="#seaborn-functions" title="Permalink to this headline">¶</a></h2>
 <p>For convenience, we will put the functions you’ll want to select from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> here.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.catplot.html">None</a></p></li>
-<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html">None</a></p></li>
-<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.relplot.html">None</a></p></li>
-<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.regplot.html">None</a></p></li>
-<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.jointplot.html">None</a></p></li>
-<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.heatmap.html#seaborn.heatmap">None</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.catplot.html">Bar/Violin Plot</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html">Plot a Distribution</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.relplot.html">Scatter/Line Plot</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.regplot.html">Linear Regression Plot</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.jointplot.html">Compare Two Variable</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.heatmap.html#seaborn.heatmap">Heatmap</a></p></li>
 </ul>
 </section>
 </section>

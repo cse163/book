@@ -593,11 +593,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../lesson-10-data-visualization/principles-of-data-visualization.html">
-       Principles of Data Visualization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../lesson-10-data-visualization/pause-and-think.html">
        ⏸  Pause and 🧠 Think
       </a>
@@ -1640,27 +1635,22 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   🚧 Practice: Coding Machine Learning
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-0-load-the-data">
    Problem 0: Load the Data
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-1-process-the-data">
    Problem 1: Process the Data
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-2-train-the-model">
    Problem 2: Train the Model
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-3-assess-the-model">
    Problem 3: Assess the Model
   </a>
@@ -1678,6 +1668,19 @@
                 
   <section id="practice-coding-machine-learning">
 <h1>🚧 Practice: Coding Machine Learning<a class="headerlink" href="#practice-coding-machine-learning" title="Permalink to this headline">¶</a></h1>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/484d8feac5c78a70db17a8e276eb63d2/mushrooms.csv">mushrooms.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
 <p>In this notebook, we will practice trying to predict whether or not a mushroom is edible based on its features using data in <code class="docutils literal notranslate"><span class="pre">mushrooms.csv</span></code>. This dataset has many columns which we will not attempt to understand, but you can look at them <a class="reference external" href="https://www.kaggle.com/uciml/mushroom-classification#mushrooms.csv">here</a> if you are interested. The columns of interest will be our target <code class="docutils literal notranslate"><span class="pre">class</span></code> which takes on values <code class="docutils literal notranslate"><span class="pre">e</span></code> for edible or <code class="docutils literal notranslate"><span class="pre">p</span></code> for poisonous. All the features we will use (explained below) are categorical. Some value are missing so we will need to handle that.</p>
 <p>For this task, we will use only a subset of the columns for prediction. You should use the columns <code class="docutils literal notranslate"><span class="pre">cap-shape</span></code>, <code class="docutils literal notranslate"><span class="pre">cap-surface</span></code>, <code class="docutils literal notranslate"><span class="pre">cap-color</span></code> as features and <code class="docutils literal notranslate"><span class="pre">class</span></code> as the target. All other columns should be ignored for this analysis.</p>
 <p>In this problem, you should follow the machine learning pipeline to do the following steps:</p>
@@ -1690,21 +1693,19 @@
 <li><p>Evaluate the models training and test accuracy.</p></li>
 </ul>
 <p>Remember to import any thing you need from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> or <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>!</p>
-</section>
 <section id="problem-0-load-the-data">
-<h1>Problem 0: Load the Data<a class="headerlink" href="#problem-0-load-the-data" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 0: Load the Data<a class="headerlink" href="#problem-0-load-the-data" title="Permalink to this headline">¶</a></h2>
 <p>Load in the dataset into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> named <code class="docutils literal notranslate"><span class="pre">data</span></code>. Don’t preprocess the data in any way for this problem.</p>
-<p>Remember you should read it as <code class="docutils literal notranslate"><span class="pre">/home/mushrooms.csv</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_load_data) ###</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="problem-1-process-the-data">
-<h1>Problem 1: Process the Data<a class="headerlink" href="#problem-1-process-the-data" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 1: Process the Data<a class="headerlink" href="#problem-1-process-the-data" title="Permalink to this headline">¶</a></h2>
 <p>Do the data processing parts of the ML pipeline. Namely, do the following steps:</p>
 <ul class="simple">
 <li><p>Drop all columns that are not relevant to the analysis.</p></li>
@@ -1715,35 +1716,36 @@
 <p>Save the variables for the train and test features into <code class="docutils literal notranslate"><span class="pre">features_train</span></code>, <code class="docutils literal notranslate"><span class="pre">features_test</span></code>, <code class="docutils literal notranslate"><span class="pre">labels_train</span></code>, <code class="docutils literal notranslate"><span class="pre">labels_test</span></code> as we did before.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_process_data) ###</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="problem-2-train-the-model">
-<h1>Problem 2: Train the Model<a class="headerlink" href="#problem-2-train-the-model" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 2: Train the Model<a class="headerlink" href="#problem-2-train-the-model" title="Permalink to this headline">¶</a></h2>
 <p>Write code to create a decision tree model and train it. Make sure you save it in a variable called <code class="docutils literal notranslate"><span class="pre">model</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_train) ###</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="problem-3-assess-the-model">
-<h1>Problem 3: Assess the Model<a class="headerlink" href="#problem-3-assess-the-model" title="Permalink to this headline">¶</a></h1>
+<h2>Problem 3: Assess the Model<a class="headerlink" href="#problem-3-assess-the-model" title="Permalink to this headline">¶</a></h2>
 <p>Write code to compute the training and test accuracy of the model in the cell below. Save the train accuracy in varaible called <code class="docutils literal notranslate"><span class="pre">train_acc</span></code> and the test accuracy in a variable called <code class="docutils literal notranslate"><span class="pre">test_acc</span></code>.</p>
 <p>For reference, each of your train and test accuracies should be around 70%.</p>
 <p><strong>Check your Understanding</strong>: If both the train and test accuracy are near 70%, would we say that the model is overfit? Why or why not?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### edTest(test_model_assessment) ###</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 
 
