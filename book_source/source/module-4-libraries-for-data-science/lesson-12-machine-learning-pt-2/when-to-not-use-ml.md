@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/bdf5663bbb434ab4bc3c98a40240a8c1?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 So in the past two lessons, we have introduced to you the awesome ability to learn from data to make predictions about the future. In Lesson 11 we introduced the concepts and the basics of how to train a model. In Lesson 12, we introduced how to handle some other types of data (e.g., categorical data) and outlining the common problem of model's overfitting and how to assess their performance. One of the points of discussions we have been putting off, but we are now a bit better equipped to tackle is: Should we even apply ML to a particular task?  
 
 So take for example the last slide where we were training a model on credit card data. Is that something we should endorse as Computer/Data Scientists in training, or should we be more hesitant to use a system like that? What does it mean to think critically about how an ML system is used?  
