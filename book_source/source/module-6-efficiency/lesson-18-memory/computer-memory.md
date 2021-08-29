@@ -1,18 +1,18 @@
 # Computer Memory
 
-
 ```{admonition} Tip
 :class: tip
 
+**TODO: replace this and other videos in lesson with new videos**
 Loom video can be found here:
 [None](https://www.loom.com/share/c09da260b36a456f84eebcc7bca44475)
 
 
 ```
 
-One of the resources your computer uses in addition to time is **memory.** In the abstract, memory is just any form of a way for your computer to "write down" information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM you want (e.g., my Windows Computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).  
+One of the resources your computer uses in addition to time is **memory**. In the abstract, memory is just any form of a way for your computer to "write down" information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM you want (e.g., my Windows Computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).  
 
-When talking about memory, we commonly are referring to the storage provided by your RAM; this is sometimes called flash memory or volatile memory. These names come from the fact that after you power your computer off, the memory stored there is lost! This is opposed to your disk storage (or persistent storage) which remains after shutdown. This is why if your computer crashes before you save, you lose your progress! While disk does have its benefits in the sense that it is persistent and can generally be larger in volume (notice that 500 GB of disk vs 16 GB of RAM), the big downside is it's *slow* ; more on this later.  
+When talking about memory, we commonly are referring to the storage provided by your RAM; this is sometimes called flash memory or volatile memory. These names come from the fact that after you power your computer off, the memory stored there is lost! This is opposed to your disk storage (or persistent storage) which remains after shutdown. This is why if your computer crashes before you save, you lose your progress! While disk does have its benefits in the sense that it is persistent and can generally be larger in volume (notice that 500 GB of disk vs 16 GB of RAM), the big downside is it's *slow*; more on this later.  
 
 ##  Computer Memory (RAM)  
 
@@ -30,7 +30,7 @@ The following image shows a common layout of the memory allocated to a program b
 
 
 ```{image} https://static.us.edusercontent.com/files/hdSccOqAQu0ag6gG1JNH4HZx
-:alt: TODO
+:alt: A diagram describing the memory layout of a program, with stack, dynamic data(heap), static data, literals, and instructures from top to bottom.
 :width: 743
 :align: center
 ```
@@ -41,7 +41,7 @@ Every time you construct a new object in Python (or any programming language for
 
 This can cause problems if your program runs for a long time and slowly builds up a ton of objects. You have probably run into this before if you use a browser like Google Chrome or Mozilla Firefox; if you leave too many tabs open for too long, they sometimes cause your computer to freeze up because they use up so much memory after making so many objects!  
 
-Consider the following snippet, that will make a `list` of `Dog` objects. It's designed purposefully to crash so if you run it, you will eventually get a memory error after a few seconds.  
+Consider the following snippet, that will make a `list` of `Dog` objects. It's designed purposefully to crash so if you run it, you will eventually get a memory error after some time.
 
 ```python
 class Dog:
@@ -60,9 +60,7 @@ while True:
         print('Currently have', len(dogs), 'dogs')
 ```
 
-Notice this program crashes with this message `signal 9 (SIGKILL - Killed)` . This is a special message from the operating system saying it killed our Python program since it was using too much memory!  
+A natural question is, who would ever make this many objects? You would! Your HW4 makes a TON of `Document` objects inside the `SearchEngine` (and those `Documents` have data structures that store values).
 
-A natural question is, who would ever make this many objects? You would! Your HW4 makes a TON of `Document` objects inside the `SearchEngine` (and those `Documents` have data structures that store values). Notice we only provided a file called `small-wiki` on Ed, because if you used the full Wikipedia dataset on Ed it would cause Ed to crash for the same reason!  
-
-One thing that most modern programming languages implement is a **garbage collector** . A garbage collector is a process that runs behind-the-scenes that cleans up old objects that are no longer being referenced. This means any objects you made as local variables in a method will eventually be cleaned up automatically after that function has ended.  
+One thing that most modern programming languages implement is a **garbage collector**. A garbage collector is a process that runs behind-the-scenes that cleans up old objects that are no longer being referenced. This means any objects you made as local variables in a method will eventually be cleaned up automatically after that function has ended.  
 
