@@ -1,43 +1,35 @@
-# 🚧 Practice: Expressions
+# 🚧 Practice: Quiz
 
-In this checkpoint, you will test your understanding how to evaluate expressions and to pay attention to their types.
+For many lessons, we will ask you to answer some conceptual questions about the concepts you just learned. You should attempt to answer these questions correctly to best help you with your learning.
+
+```{note}
+While this version of the book is very new, we don't currently have a way for you to automatically check answers to these conceptual questions. This will be a feature we will be working on soon. In the mean-time, check with your instructor to discuss how to solve these problems.
+```
 
 ## Question 0
 
-What is the output of the following code snippet?
-
-```python
-x = 2.4
-y = 1.2
-x = x / y
-y = 5
-
-print(x ** 2 <= y)
-```
-
-Make sure your output is well-formatted!
-
-- If your output is an `int` value like `3` , you should write:
-
-  - ```text
-     3
-
-    ```
-
-- If your output is a `float` value like `3.2` , you should write:
-
-  - ```text
-     3.2
-
-    ```
-
-- If your output is a `bool` value like `True` , you should write (capitalization matters!):
-
-  - ```text
-     True
-
-    ```
+What is the best shape? (Hint: The answer is hexagon)
 
 **📝 Your Task**
 
-Write your answer down in your own space.
+Select one option. Write your answer down in your own space.
+
+_❓ Option 0_
+
+Triangle
+
+_❓ Option 1_
+
+Square
+
+_❓ Option 2_
+
+Pentagon
+
+_❓ Option 3_
+
+Hexagon
+
+_❓ Option 4_
+
+Circle

@@ -1,52 +1,95 @@
-# 🚧 Practice: Countdown
+# 🚧 Practice: Coding Problem
 
-{download}`Download starter code </module-1-introduction-to-python/lesson-2-python-basics/practice-countdown.zip>`
+{download}`Download starter code </module-1-introduction-to-python/lesson-1-first-lesson/practice-coding.zip>`
 
-This problem is very similar to the last practice problem, but now we want you to write a function called `countdown` that takes a starting number of seconds and starts the countdown from there instead (still counting by 10s). The format of the output will be slightly different to accommodate this starting point.
+Some slides (like this one) will ask you to write code to answer them! This is an opportunity to apply what you have learned so far to produce a program that has the right output.
 
-If the sequence does not evenly end with a `0` (e.g. if the countdown starts from `15` ), then `0` will not be printed. This shown in the example calls below.
+## Get Starter Code
 
-The `countdown` function should take one `int` parameter for the starting point. You may assume the parameter is an `int`. If the parameter value is less than `0` , it should instead print `Start must be non-negative!` .
+To get the starter code and tests for this problem, click the download link above (or get the files from your instructor). Using the link above, it will download a `zip` file that you can unzip and open up in VS Code. Once you have opened the file in VS Code, you can start editing the files as requested below by this problem.
 
-Here are four example calls to the function and their output is shown after ( `print` statements included to space out output).
+## The Problem
 
-```python
-countdown(60)
-print()
-countdown(15)
-print()
-countdown(-4)
-print()
-countdown(0)
+This problem is not intended to be very complex since you will be getting used to setting up the software for this course. All you need to do for this problem is take the "Hello world!" program we introduced earlier and change it to print "Hello Seattle!" instead.
+
+There are multiple files in the starter code you downloaded. The only one you need to look at and edit is the one called `main.py`.
+
+## Running Tests
+
+With every practice problem, we have included testing code to help you verify if your solution is correct according to the specification of the problem. The testing code will print error messages for any behaviors that don't match the specification. You don't need to understand the testing code at all, but each practice problem includes the following:
+
+- A directory named `test` which contains all of our testing files.
+- A Python file named `run_tests.py` to help run the tests.
+
+To run the tests, you have two possible options. It doesn't matter which one you use, so use whichever you find most simple. The instructions below assume you have already opened up the folder with the starter code in VS Code or your editor of choice.
+
+```{admonition} Option 1: Run in VS Code Terminal
+
+Click on the `run_tests.py` in the VS Code file navigator to open the file (you don't need to read or understand the code inside). Right-click anywhere in the editor pane of VS Code and select {guilabel}`Run Python File in Terminal`. This will open the terminal window below the editor pane and will display the test output there.
+
+Once you have done this once, you can simply rerun the command shown in the terminal by pressing the up arrow on your keyboard to bring the command back. You can also just do the right-click option as described above.
+
+To read the test output, see below.
 ```
+
+```{admonition} Option 2: Run in VS Code Tests
+Click on the `run_tests.py` in the VS Code file navigator to open the file (you don't need to read or understand the code inside). Right-click anywhere in the editor pane of VS Code and select {guilabel}`Run Current Test File`. This will cause VS Code to give you some prompts to answer in pop-up dialogues.
+
+* It will prompt "No test framework configured (unittest, pytest or nosetest)". Click {guilabel}`Enable and configure a Test Framework`.
+* It will show a list of test frameworks near the top of the screen. **Select `unittest`** from the options shown.
+* It will show a list of directories near the top of the screen. **Select `test`** from the options shown.
+* It will show a list of patterns for the test file names. **Select `test_*.py`** from the options shown.
+
+VS Code might automatically open the testing tab. If it does not, click the icon on the far-left that looks like a beaker. This will show a list of tests run and whether or not they passed. If you have any errors, you will need to view the output log to inspect them. To do so, click the {guilabel}`Show Test Output` icon above the tests or go to the menu at the top and select {guilabel}`View > Output`.
+
+To read the test output, see below.
+```
+
+## Test Output
+
+The test output will be can be seen in the output window at the bottom. For example, if you run the tests without changing the starter code as we requested above, you should see the following output.
 
 ```text
-60 second countdown
-60
-50
-40
-30
-20
-10
-0
-Done!
+F.
+======================================================================
+FAIL: test_hello_world (test_hello_world.TestHelloWorld)
+#name(Testing: Hello world)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<path-to-your-starter-code-folder>test/test_hello_world.py", line 39, in test_hello_world
+    self.assertEqual(ans, val, error_message(ans, val))
+AssertionError: 'Hello Seattle!' != 'Hello world!'
+- Hello Seattle!
++ Hello world!
+ :
 
-15 second countdown
-15
-5
-Done!
+--------------------
+Expected:
+'Hello Seattle!'
 
-Start must be non-negative!
+Received:
+'Hello world!'
+--------------------
 
-0 second countdown
-0
-Done!
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+FAILED (failures=1)
 ```
 
-_Hint: The lines of numbers should all be produced by your for loop while the first and last lines will appear outside the loop (since they only happen once)._
+To read this:
 
-## Requirements
+- The first line of output shows a summary of tests. Seeing `F.` means there were two tests (one for each character). Seeing an `F` means one test had an error, while seeing a `.` means one test passed. As another example, if you saw `.F.FF...F` that means your solution failed 4 tests and passed 5 tests.
+  - Note, if you see an `E` in this output, that means the tests encountered an error. An error is different than a failure and it indicates there is a problem with the tests even running at all. Common problems for errors include running the tests incorrectly or from the wrong directory or having a syntax error in your Python program.
+- For each failed test, there is an error message describing the test name and a message showing a description of what the test expected and what you returned. You can see from the output above that our tests expected the solution to return `'Hello Seattle!'` but it received `'Hello world!'`.
 
-- Your solution should use a `for` loop and should not use a `while` loop.
+Once you change the starter code as described in this practice problem, you should pass the tests! When you pass, you'll see the following output.
 
-- Your program should use the main-method pattern (we provided the starter code) and should define a function named `countdown` (as described above) before the `main` method.
+```text
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+OK
+```
