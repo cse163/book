@@ -1,4 +1,4 @@
-# 🚧 Practice: Quiz
+# <i class="far fa-edit fa-fw"></i> Practice: Quiz
 
 For many lessons, we will ask you to answer some conceptual questions about the concepts you just learned. You should attempt to answer these questions correctly to best help you with your learning.
 
@@ -10,26 +10,26 @@ While this version of the book is very new, we don't currently have a way for yo
 
 What is the best shape? (Hint: The answer is hexagon)
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 Triangle
 
-_❓ Option 1_
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Square
 
-_❓ Option 2_
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 Pentagon
 
-_❓ Option 3_
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 Hexagon
 
-_❓ Option 4_
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 Circle

@@ -1,4 +1,4 @@
-# 🚧 Practice: Coding Problem
+# <i class="fas fa-laptop fa-fw"></i> Practice: Coding Problem
 
 {download}`Download starter code </module-1-introduction-to-python/lesson-1-first-lesson/practice-coding.zip>`
 

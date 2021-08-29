@@ -1,4 +1,4 @@
-# 📚 Lesson 1: Introduction to Intermediate Data Programming
+# <i class="fas fa-book fa-fw"></i> Lesson 1: Introduction to Intermediate Data Programming
 
 The intent of this lesson is to introduce the structure of what a lesson will look like for this book. Lesson 2 is really the
 first lesson of the book. This lesson is a preface to how the book will work.
