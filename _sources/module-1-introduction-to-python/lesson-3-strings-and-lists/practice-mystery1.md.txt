@@ -1,6 +1,6 @@
-# 🚧 Practice: mystery1
+# <i class="far fa-edit fa-fw"></i>Practice: mystery1
 
-What are the values of the elements in list `a1` after the following code executes?  
+What are the values of the elements in list `a1` after the following code executes?
 
 ```python
 def mystery1(a1, a2):
@@ -12,8 +12,7 @@ a2 = [1, 4, 9, 16, 25]
 mystery1(a1, a2)
 ```
 
-Each of the questions asks for the value at one index. Write your result as an int.  
-
+Each of the questions asks for the value at one index. Write your result as an int.
 
 ```{admonition} Note
 :class: note
@@ -24,19 +23,13 @@ This problem was borrowed from
 
 ```
 
- 
-
 ## Question 0
 
 ```python
 a1[0]
 ```
 
- 
-
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -46,11 +39,7 @@ Write your answer down in your own space.
 a1[1]
 ```
 
- 
-
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -60,11 +49,7 @@ Write your answer down in your own space.
 a1[2]
 ```
 
- 
-
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -74,11 +59,7 @@ Write your answer down in your own space.
 a1[3]
 ```
 
- 
-
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -88,11 +69,6 @@ Write your answer down in your own space.
 a1[4]
 ```
 
- 
-
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
-

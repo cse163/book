@@ -1,6 +1,6 @@
-# 🚧 Practice: Types
+# <i class="far fa-edit fa-fw"></i> Practice: Types
 
-Consider the emissions dataset from the earlier slide. We have put an image of the dataset below as a reminder.  
+Consider the emissions dataset from the earlier slide. We have put an image of the dataset below as a reminder.
 
 ```{image} https://static.us.edusercontent.com/files/rJ5l2H3MwTkBcJxIDhaYtapL
 :alt: TODO
@@ -8,207 +8,150 @@ Consider the emissions dataset from the earlier slide. We have put an image of t
 :align: center
 ```
 
-The following questions are all multiple-choice questions about queries on this dataset. Assume the dataset is stored in a variable named `df` .  
+The following questions are all multiple-choice questions about queries on this dataset. Assume the dataset is stored in a variable named `df` .
 
-Notice that in all of these questions, we are asking about the type of the value resulting from that expression, and **not** its `dtype` (the type of the values inside it).  
+Notice that in all of these questions, we are asking about the type of the value resulting from that expression, and **not** its `dtype` (the type of the values inside it).
 
 ## Question 0
 
-What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?  
+What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?
 
 ```python
 df['country']
 ```
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
-`str`  
+`str`
 
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
+`int`
 
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
-`int`  
+`Series`
 
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
+`list`
 
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
-`Series`  
+`DataFrame`
 
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
-
-*❓ Option 3*
-
-`list`  
-
-
-
-*❓ Option 4*
-
-`DataFrame`  
-
-
-
-*❓ Option 5*
-
-There is no type, this code causes an error.  
-
-
+There is no type, this code causes an error.
 
 ## Question 1
 
-What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?  
+What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?
 
 ```python
 df.loc[df['emissions'] > 100, ['emissions', 'city']]
 ```
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
-`str`  
+`str`
 
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
+`int`
 
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
-`int`  
+`Series`
 
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
+`list`
 
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
-`Series`  
+`DataFrame`
 
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
-
-*❓ Option 3*
-
-`list`  
-
-
-
-*❓ Option 4*
-
-`DataFrame`  
-
-
-
-*❓ Option 5*
-
-There is no type, this code causes an error.  
-
-
+There is no type, this code causes an error.
 
 ## Question 2
 
-What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?  
+What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?
 
 ```python
 df.loc[1, 'city':'country']
 ```
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
-`str`  
+`str`
 
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
+`int`
 
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
-`int`  
+`Series`
 
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
+`list`
 
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
-`Series`  
+`DataFrame`
 
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
-
-*❓ Option 3*
-
-`list`  
-
-
-
-*❓ Option 4*
-
-`DataFrame`  
-
-
-
-*❓ Option 5*
-
-There is no type, this code causes an error.  
-
-
+There is no type, this code causes an error.
 
 ## Question 3
 
-What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?  
+What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?
 
 ```python
 df.loc[3, 'emissions']
 ```
 
-
-
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
-`str`  
+`str`
 
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
+`int`
 
-*❓ Option 1*
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
-`int`  
+`Series`
 
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
+`list`
 
-*❓ Option 2*
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
-`Series`  
+`DataFrame`
 
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
-
-*❓ Option 3*
-
-`list`  
-
-
-
-*❓ Option 4*
-
-`DataFrame`  
-
-
-
-*❓ Option 5*
-
-There is no type, this code causes an error.  
-
-
-
+There is no type, this code causes an error.
