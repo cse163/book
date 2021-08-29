@@ -15,3 +15,9 @@
     max-width: 1400px !important;
   }
 }
+
+/* Fix icon spacing in prev/next buttons. Hack to get all FontAwesome icons */
+main.bd-content #main-content .prev-next-bottom .right-next i.fa-fw {
+  padding-right: 0.75rem;
+  padding-left: 0rem;
+}
