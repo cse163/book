@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Pickle &#8212; Intermediate Data Programming</title>
+    <title>Computer Memory &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -43,11 +43,13 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Practice: Memory" href="practice-memory.html" />
-    <link rel="prev" title="Memory Hiearchy" href="memory-hiearchy.html" />
+    <link rel="next" title="Memory Hiearchy" href="memory-hiearchy.html" />
+    <link rel="prev" title="Lesson 18: Memory" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -1168,16 +1170,13 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="index.html">
-     Lesson 24: Memory
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -1185,8 +1184,8 @@
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="computer-memory.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Computer Memory
       </a>
      </li>
@@ -1195,8 +1194,8 @@
        Memory Hiearchy
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="pickle.html">
        Pickle
       </a>
      </li>
@@ -1860,7 +1859,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-24-memory/pickle.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-18-memory/computer-memory.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1880,10 +1879,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-6-efficiency/lesson-24-memory/pickle.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-6-efficiency/lesson-18-memory/computer-memory.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-6-efficiency/lesson-24-memory/pickle.md"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-6-efficiency/lesson-18-memory/computer-memory.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1903,6 +1902,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computer-memory-ram">
+   Computer Memory (RAM)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-objects">
+   Creating Objects
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -1911,40 +1928,52 @@
         
               <div>
                 
-  <section id="pickle">
-<h1>Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h1>
+  <section id="computer-memory">
+<h1>Computer Memory<a class="headerlink" href="#computer-memory" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
-<p>Loom video can be found here:
-<a class="reference external" href="https://www.loom.com/share/e16bc40b4ab84837a9de6f21866b25ec">None</a></p>
+<p><strong>TODO: replace this and other videos in lesson with new videos</strong>
+Loom video can be found here:
+<a class="reference external" href="https://www.loom.com/share/c09da260b36a456f84eebcc7bca44475">None</a></p>
 </div>
-<p>Even though we talked about disk being slow, it’s convenient because it is persistent. This means after your computer shuts down, everything on disk will still be there after your restart. This can sometimes be very helpful for data analysis. For example, what if you trained a really great machine learning model and want to save that exact model for the future? This would not be possible if you just stored it in a Python variable, since if your computer restarted or the Python session ended, then <em>poof</em> , that model is gone!</p>
-<p>There is a convenient module called <code class="docutils literal notranslate"><span class="pre">pickle</span></code> that lets you save a Python object to a file so that you can read it in later! The following program makes a list of numbers, saves it to a file (and prints out that it was saved) before reading it in again! This is not the most convincing example in an Ed snippet since we run it all at once, but believe us that you can write the “reading” code from a pickle you made yesterday and it will work just fine!</p>
-<p>The one note we will make about <code class="docutils literal notranslate"><span class="pre">pickle</span></code> , is it requires us to use one other feature of reading/writing to files. The <code class="docutils literal notranslate"><span class="pre">open</span></code> call takes a second parameter called <code class="docutils literal notranslate"><span class="pre">mode</span></code> that tells Python how you want to use the file. By default, <code class="docutils literal notranslate"><span class="pre">mode</span></code> has value <code class="docutils literal notranslate"><span class="pre">'r'</span></code> , which means you want to read the file. If you want to write to the file, you need to use the mode <code class="docutils literal notranslate"><span class="pre">'w'</span></code> by making the call <code class="docutils literal notranslate"><span class="pre">open('file.txt',</span> <span class="pre">'w')</span></code> . Even more confusing, since <code class="docutils literal notranslate"><span class="pre">pickle</span></code> needs to write the data in a special binary format (i.e., not plain-text like a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> ), you need to pass in the modes <code class="docutils literal notranslate"><span class="pre">'rb'</span></code> for read binary and <code class="docutils literal notranslate"><span class="pre">'wb'</span></code> for write binary respectively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
+<p>One of the resources your computer uses in addition to time is <strong>memory</strong>. In the abstract, memory is just any form of a way for your computer to “write down” information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM you want (e.g., my Windows Computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).</p>
+<p>When talking about memory, we commonly are referring to the storage provided by your RAM; this is sometimes called flash memory or volatile memory. These names come from the fact that after you power your computer off, the memory stored there is lost! This is opposed to your disk storage (or persistent storage) which remains after shutdown. This is why if your computer crashes before you save, you lose your progress! While disk does have its benefits in the sense that it is persistent and can generally be larger in volume (notice that 500 GB of disk vs 16 GB of RAM), the big downside is it’s <em>slow</em>; more on this later.</p>
+<section id="computer-memory-ram">
+<h2>Computer Memory (RAM)<a class="headerlink" href="#computer-memory-ram" title="Permalink to this headline">¶</a></h2>
+<p>When we think of RAM from a programmer’s perspective, we really think of it as a giant array or list for us to write values to. So when we are talking about 16 GB of RAM, that’s one big array that lets us write 17,179,869,184  separate bytes (<span class="math notranslate nohighlight">\(16 \times 1024 \times 1024 \times 1024\)</span>) of data wherever we want;  a byte is a number that stores eight ones or zeros (a bit).</p>
+<p>Some programming languages, like that older one called C, let you access memory directly. More modern programming languages give you less access to do this since that comes with a whole host of security and correctness difficulties, but having some mental model of memory is sometimes helpful for understanding how your programs work.</p>
+<p>The following image shows a common layout of the memory allocated to a program by your operating system. There is no inherent restriction on how the RAM is partitioned for the program, but most programs generally separate areas of memory to store specifc things. While memorizing the names in the image below is not important, it’s generally good to realize that programs generally organize their memory usage in a systematic way.</p>
+<ul class="simple">
+<li><p>Data in the “Stack” is data like your local variables in your functions.</p></li>
+<li><p>Data in the “Heap” is for longer-lived data like objects (more on this later).</p></li>
+<li><p>“Instructions” is where the actual code lives while it’s being run by the computer.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/hdSccOqAQu0ag6gG1JNH4HZx"><img alt="A diagram describing the memory layout of a program, with stack, dynamic data(heap), static data, literals, and instructures from top to bottom." class="align-center" src="https://static.us.edusercontent.com/files/hdSccOqAQu0ag6gG1JNH4HZx" style="width: 743px;" /></a>
+</section>
+<section id="creating-objects">
+<h2>Creating Objects<a class="headerlink" href="#creating-objects" title="Permalink to this headline">¶</a></h2>
+<p>Every time you construct a new object in Python (or any programming language for that matter) it uses up a bit of your computer’s memory! This is because the object’s data needs to be stored somewhere and memory is the most convenient place to do that. They are generally created in the “Heap” portion of your memory.</p>
+<p>This can cause problems if your program runs for a long time and slowly builds up a ton of objects. You have probably run into this before if you use a browser like Google Chrome or Mozilla Firefox; if you leave too many tabs open for too long, they sometimes cause your computer to freeze up because they use up so much memory after making so many objects!</p>
+<p>Consider the following snippet, that will make a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">Dog</span></code> objects. It’s designed purposefully to crash so if you run it, you will eventually get a memory error after some time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        
 
-<span class="c1"># Create a list (can be any data structure, value, or ML model)</span>
-<span class="n">special_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">dogs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">dogs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Dog Number &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)))</span>
 
-<span class="c1"># Save a pickle of the value. Need to open file in write-binary mode (wb)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;good_values.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">special_values</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-    
-    
-<span class="c1"># Verifying it saved a file called good_model.pickle</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Files in Directory:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
-
-<span class="c1"># Read the values back in later (e.g., the next day) from the pickle file</span>
-<span class="c1"># Need to open file in read-binary mode (rb)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;good_values.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">new_special_values</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="c1"># Verify it stores the same values</span>
-<span class="k">print</span><span class="p">(</span><span class="n">new_special_values</span><span class="p">)</span>
+    <span class="c1"># Print out number of Dogs periodically</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">%</span> <span class="mi">100000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Currently have&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dogs</span><span class="p">),</span> <span class="s1">&#39;dogs&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>A natural question is, who would ever make this many objects? You would! Your HW4 makes a TON of <code class="docutils literal notranslate"><span class="pre">Document</span></code> objects inside the <code class="docutils literal notranslate"><span class="pre">SearchEngine</span></code> (and those <code class="docutils literal notranslate"><span class="pre">Documents</span></code> have data structures that store values).</p>
+<p>One thing that most modern programming languages implement is a <strong>garbage collector</strong>. A garbage collector is a process that runs behind-the-scenes that cleans up old objects that are no longer being referenced. This means any objects you made as local variables in a method will eventually be cleaned up automatically after that function has ended.</p>
+</section>
 </section>
 
 
@@ -1958,19 +1987,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="memory-hiearchy.html" title="previous page">
+        <a class="left-prev" href="index.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Memory Hiearchy</p>
+                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 18: Memory</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="practice-memory.html" title="next page">
+        <a class="right-next" href="memory-hiearchy.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="far fa-edit fa-fw"></i> Practice: Memory</p>
+                <p class="prevnext-title">Memory Hiearchy</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

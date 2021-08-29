@@ -1170,16 +1170,13 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lesson-24-memory/index.html">
-     Lesson 24: Memory
+    <a class="reference internal" href="../lesson-18-memory/index.html">
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -1188,29 +1185,29 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/computer-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/computer-memory.html">
        Computer Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/memory-hiearchy.html">
+      <a class="reference internal" href="../lesson-18-memory/memory-hiearchy.html">
        Memory Hiearchy
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pickle.html">
+      <a class="reference internal" href="../lesson-18-memory/pickle.html">
        Pickle
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/practice-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/practice-memory.html">
        <i class="far fa-edit fa-fw">
        </i>
        Practice: Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pause-and-think.html">
+      <a class="reference internal" href="../lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
@@ -1918,6 +1915,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/daed6d4d9565498e87d036c7864b82e4?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Last time we introduced the notion of efficiency, namely in terms of time taken to run the program. We saw that time was unreliable and that computer scientists instead discuss an algorithm’s efficiency in terms of its Big-O notation. Today, we will discuss some limitations of Big-O notation and highlight the importance of why it is used (since it is often misunderstood).</p>
 <p>For example, consider the following code snippet that shows three different methods for computing the maximum difference between any pair of values in a list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -1960,7 +1958,7 @@
 <ul>
 <li><p>It clearly describes how an algorithm will         <strong>scale</strong>         (e.g., if you double the input, it will take X time longer).</p></li>
 <li><p>The Big-O notation is independent of the programming language you are writing in or the computer you are writing the program on. When considering raw time taken by a program to run, these factors have a huge impact on the run-time of the program.</p></li>
-<li><p>Easy to figure out by just looking at the code (with practice 😊)</p></li>
+<li><p>Easy to figure out by just looking at the code (with practice 😊).</p></li>
 </ul>
 </li>
 <li><p><strong>Cons</strong></p>
@@ -1975,7 +1973,7 @@
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/bG0KLngTwRwJkcDM6erV1Nea"><img alt="Graph of matrix multiply runtime over time. The graph shows that the runtime has improved starting a O(n^3) in 1950 going down to about O(n^2.4) in 2010." class="align-center" src="https://static.us.edusercontent.com/files/bG0KLngTwRwJkcDM6erV1Nea" style="width: 350px;" /></a>
 <p>Although recent advancements in algorithm design have found algorithms to do matrix multiplication in time less than <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2.5})\)</span>, those algorithms are rarely used in practice! The reason is that the constants that <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2.5})\)</span> hides are so large, that the run-time still ends up being way slower than a simpler algorithm with a larger exponent. So while these algorithms are asymptotically faster (as <span class="math notranslate nohighlight">\(n\)</span> goes to infinity), in practice for sizes of <span class="math notranslate nohighlight">\(n\)</span> that can actually fit on a computer, sometimes an asymptotically slower algorithm is faster because there are lower constants.</p>
 <p>For a concrete example, consider how <span class="math notranslate nohighlight">\(2n^2 \leq100n\)</span> for all <span class="math notranslate nohighlight">\(0 \leq n \leq 50\)</span>. So while the <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> equation on the right-hand side is asymptotically faster than the <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> on the left, the constants it hides can make it slower for some smaller <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>In the next, slide, we will see another tool that can help us understand the performance of our programs.</p>
+<p>In the next slide, we will see another tool that can help us understand the performance of our programs.</p>
 </section>
 
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Memory Hiearchy &#8212; Intermediate Data Programming</title>
+    <title>Pickle &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -46,8 +46,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Pickle" href="pickle.html" />
-    <link rel="prev" title="Computer Memory" href="computer-memory.html" />
+    <link rel="next" title="Practice: Memory" href="practice-memory.html" />
+    <link rel="prev" title="Memory Hiearchy" href="memory-hiearchy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -1168,16 +1168,13 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="index.html">
-     Lesson 24: Memory
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -1190,13 +1187,13 @@
        Computer Memory
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="memory-hiearchy.html">
        Memory Hiearchy
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="pickle.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Pickle
       </a>
      </li>
@@ -1860,7 +1857,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-24-memory/memory-hiearchy.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-18-memory/pickle.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1880,10 +1877,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-6-efficiency/lesson-24-memory/memory-hiearchy.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-6-efficiency/lesson-18-memory/pickle.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-6-efficiency/lesson-24-memory/memory-hiearchy.md"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-6-efficiency/lesson-18-memory/pickle.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1903,19 +1900,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#applications-to-programming">
-   Applications to Programming
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -1924,36 +1908,40 @@
         
               <div>
                 
-  <section id="memory-hiearchy">
-<h1>Memory Hiearchy<a class="headerlink" href="#memory-hiearchy" title="Permalink to this headline">¶</a></h1>
+  <section id="pickle">
+<h1>Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>Loom video can be found here:
-<a class="reference external" href="https://www.loom.com/share/972dc6b78b064f87a5a5ab6e4a87d458">None</a></p>
+<a class="reference external" href="https://www.loom.com/share/e16bc40b4ab84837a9de6f21866b25ec">None</a></p>
 </div>
-<p>One thing that is important to know about memory is that there is a hierarchy of different types of memory that your computer uses that have various tradeoffs. We think about this as being a pyramid in the image shown below (your computer probably doesn’t have magnetic tape, that’s more old-school).</p>
-<p>At the top of the pyramid is a register, which is an extremely small memory location located right on the CPU chip to store small, frequently accessed values. There is a cache (in reality, multiple levels of caches) that site between your CPU and your main memory RAM to store frequently accessed pieces of memory. Caching is a general technique to store frequently accessed items so they can be accessed more quickly in the future. At the bottom, there is your hard disk (or more recently called Solid State Drives or SSDs).</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/DXacRUQrKM9ff9kUrdH4OTrI"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/DXacRUQrKM9ff9kUrdH4OTrI" style="width: 639px;" /></a>
-<p>As you go down the pyramid, the amount of memory variable generally increases. At the top registers provide on the order of 1 kilobyte of space while you can get up to terabytes of space on your hard disk or SSD. However, the increasing volume also comes at an increasing access time. This means it takes longer and longer for your computer to actually access the data as you go down the pyramid.</p>
-<p>There is a cute analogy to give you a sense of scale how much slower reading/writing to disk is in comparison to accessing a register. Since people generally confuse you with millennials, they assume you also enjoy avocado toast as much as we do. So think of fetching data being like the processing of fetching an avocado to make avocado toast.</p>
-<ul class="simple">
-<li><p>If your data is stored in a register, that’s like the avocado already being in your hand. There is almost no time to use the avocado to make avocado toast.</p></li>
-<li><p>If your data is stored in the cache, that’s like the avocado is stored in your produce bowl on the counter. You have to walk over to the part of your kitchen with your produce bowl, grab the avocado, and walk back to your station. That takes on the order of a few seconds.</p></li>
-<li><p>If your data is stored in main memory (RAM), that’s like needing to go to the store to buy an avocado! You have to get in your car or bike, go to the store, duck around people to maintain social distancing while buying the avocado before you can go back home. This takes on the order of 20 minutes.</p></li>
-<li><p>If your data is stored in disk, that’s like planting an avocado tree, waiting for it to grow and produce fruit, and then making avocado toast from that! This takes on the order of multiple months.</p>
-<ul>
-<li><p>The hard disk is a particularly extreme example. If you didn’t know, the name hard disk comes from the fact that         <a class="reference external" href="https://eclats-antivols.fr/32873-large_default/hard-disk-1tb-sata-hdd-western-digital-av-hard-drive-wd10purx.jpg">None</a>         almost like a record player. This means to access memory on disk, you have to wait for these mechanical parts to physically move to align correctly to read the data you want!</p></li>
-</ul>
-</li>
-</ul>
-<section id="applications-to-programming">
-<h2>Applications to Programming<a class="headerlink" href="#applications-to-programming" title="Permalink to this headline">¶</a></h2>
-<p>While the avocado analogy may be cute, it might not obvious why this is relevant to you as a data scientist if you aren’t working with writing programs at this low of a level. There are some pretty key takeaways from understanding this idea though.</p>
-<p>First, notice that we talked about the fact that there are registers and caches above main memory. This is to help you as a programmer without you having to think of optimizing memory access as long as you program “normally”. What do we mean by “normal”? Generally, this means trying to follow <strong>locality</strong> . The designers of this hardware realized that almost all programs obey what they call “temporal locality” or “spatial locality”. Temporal locality means if you access a value, it’s more likely you will access it again in the future. Spatial locality means that if you access a value at index <code class="docutils literal notranslate"><span class="pre">0</span></code> in a <code class="docutils literal notranslate"><span class="pre">list</span></code> , it’s more likely that you will access the value at index <code class="docutils literal notranslate"><span class="pre">1</span></code> next rather than index <code class="docutils literal notranslate"><span class="pre">74</span></code> . So this means when writing programs, try to avoid unnecessarily complicated logic that jumps around to different places in the dataset since these caching procedures generally try to speed up your program by assuming you will leverage these localities.</p>
-<p>Second, realizing that reading/writing to disk is very slow and should be avoided being done frequently. There are some points where you will need to read/write to disk which is unavoidable (i.e., to read your dataset for data analysis), but ideally, you should try to avoid doing this frequently.</p>
-<p>Third, is to keep this in mind when processing large datasets. Suppose I have a 50 GB CSV file for my final project and try to read it into Python using <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> . If you remember correctly, my computer only has 16 GB of RAM, so how would it possibly read this file and store it in main memory for Python to access (see memory model of the last slide)? Your operating system does a clever trick called <strong>paging</strong> if you run out of RAM. Paging is a process of writing memory from RAM to disk if you were going to run out of space. This is nice from a continuity perspective, your program doesn’t completely break your computer even though you exceeded the RAM capacity, but very tricky from a performance perspective. This now means any time you want to access a new chunk of the dataset, your computer will have to go to and from disk to grab a new page of data that can fit in RAM.</p>
-<p>The takeaway from the last point is that if you are working with large datasets, you might run into drastic slowdowns because of paging. As you are developing your code, it will help to develop with a small version of your dataset that will not cause these huge slowdowns. In some extreme cases, you might need to change your algorithm to work by reading the data only a small portion at a time to avoid paging in the first place.</p>
-</section>
+<p>Even though we talked about disk being slow, it’s convenient because it is persistent. This means after your computer shuts down, everything on disk will still be there after your restart. This can sometimes be very helpful for data analysis. For example, what if you trained a really great machine learning model and want to save that exact model for the future? This would not be possible if you just stored it in a Python variable, since if your computer restarted or the Python session ended, then <em>poof</em>, that model is gone!</p>
+<p>There is a convenient module called <code class="docutils literal notranslate"><span class="pre">pickle</span></code> that lets you save a Python object to a file so that you can read it in later! The following program makes a list of numbers, saves it to a file (and prints out that it was saved) before reading it in again! This is not the most convincing example in an Ed snippet since we run it all at once, but believe us that you can write the “reading” code from a pickle you made yesterday and it will work just fine!</p>
+<p>The one note we will make about <code class="docutils literal notranslate"><span class="pre">pickle</span></code> , is it requires us to use one other feature of reading/writing to files. The <code class="docutils literal notranslate"><span class="pre">open</span></code> call takes a second parameter called <code class="docutils literal notranslate"><span class="pre">mode</span></code> that tells Python how you want to use the file. By default, <code class="docutils literal notranslate"><span class="pre">mode</span></code> has value <code class="docutils literal notranslate"><span class="pre">'r'</span></code> , which means you want to read the file. If you want to write to the file, you need to use the mode <code class="docutils literal notranslate"><span class="pre">'w'</span></code> by making the call <code class="docutils literal notranslate"><span class="pre">open('file.txt',</span> <span class="pre">'w')</span></code> . Even more confusing, since <code class="docutils literal notranslate"><span class="pre">pickle</span></code> needs to write the data in a special binary format (i.e., not plain-text like a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> ), you need to pass in the modes <code class="docutils literal notranslate"><span class="pre">'rb'</span></code> for read binary and <code class="docutils literal notranslate"><span class="pre">'wb'</span></code> for write binary respectively.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># Create a list (can be any data structure, value, or ML model)</span>
+<span class="n">special_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Save a pickle of the value. Need to open file in write-binary mode (wb)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;good_values.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">special_values</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    
+    
+<span class="c1"># Verifying it saved a file called good_model.pickle</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Files in Directory:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+
+<span class="c1"># Read the values back in later (e.g., the next day) from the pickle file</span>
+<span class="c1"># Need to open file in read-binary mode (rb)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;good_values.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">new_special_values</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># Verify it stores the same values</span>
+<span class="k">print</span><span class="p">(</span><span class="n">new_special_values</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -1967,19 +1955,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="computer-memory.html" title="previous page">
+        <a class="left-prev" href="memory-hiearchy.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Computer Memory</p>
+                <p class="prevnext-title">Memory Hiearchy</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="pickle.html" title="next page">
+        <a class="right-next" href="practice-memory.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Pickle</p>
+                <p class="prevnext-title"><i class="far fa-edit fa-fw"></i> Practice: Memory</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

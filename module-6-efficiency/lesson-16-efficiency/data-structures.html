@@ -1170,16 +1170,13 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lesson-24-memory/index.html">
-     Lesson 24: Memory
+    <a class="reference internal" href="../lesson-18-memory/index.html">
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -1188,29 +1185,29 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/computer-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/computer-memory.html">
        Computer Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/memory-hiearchy.html">
+      <a class="reference internal" href="../lesson-18-memory/memory-hiearchy.html">
        Memory Hiearchy
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pickle.html">
+      <a class="reference internal" href="../lesson-18-memory/pickle.html">
        Pickle
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/practice-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/practice-memory.html">
        <i class="far fa-edit fa-fw">
        </i>
        Practice: Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pause-and-think.html">
+      <a class="reference internal" href="../lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
@@ -1941,6 +1938,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/005a2fbfe4f84e548189f6dfd9ce639a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>So we can see that understanding complexity is important so that you can easily analyze (after some practice) how your algorithm will scale. Another important application of this knowledge is to understand how efficient your code is when using data structures like <code class="docutils literal notranslate"><span class="pre">list</span></code> , <code class="docutils literal notranslate"><span class="pre">set</span></code> , and <code class="docutils literal notranslate"><span class="pre">dict</span></code> .</p>
 <section id="list">
 <h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
@@ -1960,7 +1958,7 @@
 </section>
 <section id="set-and-dictionary">
 <h2>Set and Dictionary<a class="headerlink" href="#set-and-dictionary" title="Permalink to this headline">¶</a></h2>
-<p>One of the magic things about <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> , is that almost all of the operations (e.g., adding values, removing values, seeing if something is in the <code class="docutils literal notranslate"><span class="pre">set</span></code> / <code class="docutils literal notranslate"><span class="pre">dict</span></code> ) are actually constant time (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>)! That means no matter how much data is stored in them, they can always answer questions like “is this value a key in this <code class="docutils literal notranslate"><span class="pre">dict</span></code> ” in constant time. To do this, they use this special trick called “hashing” that we will learn about in a few weeks.</p>
+<p>One of the magic things about <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> , is that almost all of the operations (e.g., adding values, removing values, seeing if something is in the <code class="docutils literal notranslate"><span class="pre">set</span></code> / <code class="docutils literal notranslate"><span class="pre">dict</span></code> ) are actually constant time (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>)! That means no matter how much data is stored in them, they can always answer questions like “is this value a key in this <code class="docutils literal notranslate"><span class="pre">dict</span></code> ” in constant time. To do this, they use this special trick called “hashing” that we will learn about in future modules.</p>
 </section>
 <section id="an-example">
 <h2>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>

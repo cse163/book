@@ -1168,16 +1168,13 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lesson-24-memory/index.html">
-     Lesson 24: Memory
+    <a class="reference internal" href="../lesson-18-memory/index.html">
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -1186,29 +1183,29 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/computer-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/computer-memory.html">
        Computer Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/memory-hiearchy.html">
+      <a class="reference internal" href="../lesson-18-memory/memory-hiearchy.html">
        Memory Hiearchy
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pickle.html">
+      <a class="reference internal" href="../lesson-18-memory/pickle.html">
        Pickle
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/practice-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/practice-memory.html">
        <i class="far fa-edit fa-fw">
        </i>
        Practice: Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pause-and-think.html">
+      <a class="reference internal" href="../lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
@@ -1929,6 +1926,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/90ee7401ddbb412a87347a5a333c7476?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Think back to our example of finding the maximum difference between elements in a list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="c1"># Find the max difference between any pair of nunber</span>
@@ -1960,14 +1958,12 @@
 <p>Even though we saw that <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> and <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> have the same Big-O runtime, which one do we think is faster? It turns out <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> is <strong>MUCH</strong> faster in practice.</p>
 <section id="profiler">
 <h2>Profiler<a class="headerlink" href="#profiler" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  	Note: Ed does not have the following tool installed, so we describe its output rather than actually running it for you! If you are interested in trying this out, you can install it from your terminal using 
-  	*  *on your computer if you are using Mac/Linux. For Windows, you will likely need to use the Anaconda Navigator to install it.*   
-</pre></div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Note: The default 163 environment does not have the following tool installed, so we describe its output rather than actually running it for you! If you are interested in trying this out, you can install it from your terminal using
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">line_profiler</span></code> on your computer if you are using Mac/Linux. For Windows, you will likely need to use the Anaconda Navigator to install it.</p>
 </div>
-</li>
-</ul>
-<p>An easier way to identify the relative runtime of programs is to use something called a <strong>profiler</strong> . A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.</p>
+<p>An easier way to identify the relative runtime of programs is to use something called a <strong>profiler</strong>. A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.</p>
 <p>A common profiler is the <code class="docutils literal notranslate"><span class="pre">line_profiler</span></code> package (also called <code class="docutils literal notranslate"><span class="pre">kernprof</span></code> ). <code class="docutils literal notranslate"><span class="pre">kernprof</span></code> is nice because it lets you annotate your functions with an <code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code> tag to have it profile your method. For example, the following snippet shows a file called <code class="docutils literal notranslate"><span class="pre">test.py</span></code> that defines these three functions with an <code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code> annotation above each function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: test.py</span>
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Computer Memory &#8212; Intermediate Data Programming</title>
+    <title>Memory Hiearchy &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -43,13 +43,11 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Memory Hiearchy" href="memory-hiearchy.html" />
-    <link rel="prev" title="Lesson 24: Memory" href="index.html" />
+    <link rel="next" title="Pickle" href="pickle.html" />
+    <link rel="prev" title="Computer Memory" href="computer-memory.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -1170,16 +1168,13 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="index.html">
-     Lesson 24: Memory
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -1187,13 +1182,13 @@
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="computer-memory.html">
        Computer Memory
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="memory-hiearchy.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Memory Hiearchy
       </a>
      </li>
@@ -1862,7 +1857,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-24-memory/computer-memory.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-18-memory/memory-hiearchy.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1882,10 +1877,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-6-efficiency/lesson-24-memory/computer-memory.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-6-efficiency/lesson-18-memory/memory-hiearchy.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-6-efficiency/lesson-24-memory/computer-memory.md"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-6-efficiency/lesson-18-memory/memory-hiearchy.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1911,13 +1906,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computer-memory-ram">
-   Computer Memory (RAM)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-objects">
-   Creating Objects
+  <a class="reference internal nav-link" href="#applications-to-programming">
+   Applications to Programming
   </a>
  </li>
 </ul>
@@ -1931,51 +1921,35 @@
         
               <div>
                 
-  <section id="computer-memory">
-<h1>Computer Memory<a class="headerlink" href="#computer-memory" title="Permalink to this headline">¶</a></h1>
+  <section id="memory-hiearchy">
+<h1>Memory Hiearchy<a class="headerlink" href="#memory-hiearchy" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>Loom video can be found here:
-<a class="reference external" href="https://www.loom.com/share/c09da260b36a456f84eebcc7bca44475">None</a></p>
+<a class="reference external" href="https://www.loom.com/share/972dc6b78b064f87a5a5ab6e4a87d458">None</a></p>
 </div>
-<p>One of the resources your computer uses in addition to time is <strong>memory.</strong> In the abstract, memory is just any form of a way for your computer to “write down” information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM you want (e.g., my Windows Computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).</p>
-<p>When talking about memory, we commonly are referring to the storage provided by your RAM; this is sometimes called flash memory or volatile memory. These names come from the fact that after you power your computer off, the memory stored there is lost! This is opposed to your disk storage (or persistent storage) which remains after shutdown. This is why if your computer crashes before you save, you lose your progress! While disk does have its benefits in the sense that it is persistent and can generally be larger in volume (notice that 500 GB of disk vs 16 GB of RAM), the big downside is it’s <em>slow</em> ; more on this later.</p>
-<section id="computer-memory-ram">
-<h2>Computer Memory (RAM)<a class="headerlink" href="#computer-memory-ram" title="Permalink to this headline">¶</a></h2>
-<p>When we think of RAM from a programmer’s perspective, we really think of it as a giant array or list for us to write values to. So when we are talking about 16 GB of RAM, that’s one big array that lets us write 17,179,869,184  separate bytes (<span class="math notranslate nohighlight">\(16 \times 1024 \times 1024 \times 1024\)</span>) of data wherever we want;  a byte is a number that stores eight ones or zeros (a bit).</p>
-<p>Some programming languages, like that older one called C, let you access memory directly. More modern programming languages give you less access to do this since that comes with a whole host of security and correctness difficulties, but having some mental model of memory is sometimes helpful for understanding how your programs work.</p>
-<p>The following image shows a common layout of the memory allocated to a program by your operating system. There is no inherent restriction on how the RAM is partitioned for the program, but most programs generally separate areas of memory to store specifc things. While memorizing the names in the image below is not important, it’s generally good to realize that programs generally organize their memory usage in a systematic way.</p>
+<p>One thing that is important to know about memory is that there is a hierarchy of different types of memory that your computer uses that have various tradeoffs. We think about this as being a pyramid in the image shown below (your computer probably doesn’t have magnetic tape, that’s more old-school).</p>
+<p>At the top of the pyramid is a register, which is an extremely small memory location located right on the CPU chip to store small, frequently accessed values. There is a cache (in reality, multiple levels of caches) that site between your CPU and your main memory RAM to store frequently accessed pieces of memory. Caching is a general technique to store frequently accessed items so they can be accessed more quickly in the future. At the bottom, there is your hard disk (or more recently called Solid State Drives or SSDs).</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/DXacRUQrKM9ff9kUrdH4OTrI"><img alt="A pyramid showing register, cache, main memory or RAM, hard disk, and magnetic tape from top to bottom, with access time and storage increasing for each level" class="align-center" src="https://static.us.edusercontent.com/files/DXacRUQrKM9ff9kUrdH4OTrI" style="width: 639px;" /></a>
+<p>As you go down the pyramid, the amount of memory variable generally increases. At the top registers provide on the order of 1 kilobyte of space while you can get up to terabytes of space on your hard disk or SSD. However, the increasing volume also comes at an increasing access time. This means it takes longer and longer for your computer to actually access the data as you go down the pyramid.</p>
+<p>There is a cute analogy to give you a sense of scale how much slower reading/writing to disk is in comparison to accessing a register. Since people generally confuse you with millennials, they assume you also enjoy avocado toast as much as we do. So think of fetching data being like the processing of fetching an avocado to make avocado toast.</p>
 <ul class="simple">
-<li><p>Data in the “Stack” is data like your local variables in your functions.</p></li>
-<li><p>Data in the “Heap” is for longer-lived data like objects (more on this later).</p></li>
-<li><p>“Instructions” is where the actual code lives while it’s being run by the computer.</p></li>
+<li><p>If your data is stored in a register, that’s like the avocado already being in your hand. There is almost no time to use the avocado to make avocado toast.</p></li>
+<li><p>If your data is stored in the cache, that’s like the avocado is stored in your produce bowl on the counter. You have to walk over to the part of your kitchen with your produce bowl, grab the avocado, and walk back to your station. That takes on the order of a few seconds.</p></li>
+<li><p>If your data is stored in main memory (RAM), that’s like needing to go to the store to buy an avocado! You have to get in your car or bike, go to the store, duck around people to maintain social distancing while buying the avocado before you can go back home. This takes on the order of 20 minutes.</p></li>
+<li><p>If your data is stored in disk, that’s like planting an avocado tree, waiting for it to grow and produce fruit, and then making avocado toast from that! This takes on the order of multiple months.</p>
+<ul>
+<li><p>The hard disk is a particularly extreme example. If you didn’t know, the name hard disk comes from the fact that <a class="reference external" href="https://eclats-antivols.fr/32873-large_default/hard-disk-1tb-sata-hdd-western-digital-av-hard-drive-wd10purx.jpg">it’s actually a physically spinning disk</a> almost like a record player. This means to access memory on disk, you have to wait for these mechanical parts to physically move to align correctly to read the data you want!</p></li>
 </ul>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/hdSccOqAQu0ag6gG1JNH4HZx"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/hdSccOqAQu0ag6gG1JNH4HZx" style="width: 743px;" /></a>
-</section>
-<section id="creating-objects">
-<h2>Creating Objects<a class="headerlink" href="#creating-objects" title="Permalink to this headline">¶</a></h2>
-<p>Every time you construct a new object in Python (or any programming language for that matter) it uses up a bit of your computer’s memory! This is because the object’s data needs to be stored somewhere and memory is the most convenient place to do that. They are generally created in the “Heap” portion of your memory.</p>
-<p>This can cause problems if your program runs for a long time and slowly builds up a ton of objects. You have probably run into this before if you use a browser like Google Chrome or Mozilla Firefox; if you leave too many tabs open for too long, they sometimes cause your computer to freeze up because they use up so much memory after making so many objects!</p>
-<p>Consider the following snippet, that will make a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">Dog</span></code> objects. It’s designed purposefully to crash so if you run it, you will eventually get a memory error after a few seconds.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
-        
-
-<span class="n">dogs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">dogs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Dog Number &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)))</span>
-
-    <span class="c1"># Print out number of Dogs periodically</span>
-    <span class="k">if</span> <span class="n">count</span> <span class="o">%</span> <span class="mi">100000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Currently have&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dogs</span><span class="p">),</span> <span class="s1">&#39;dogs&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Notice this program crashes with this message <code class="docutils literal notranslate"><span class="pre">signal</span> <span class="pre">9</span> <span class="pre">(SIGKILL</span> <span class="pre">-</span> <span class="pre">Killed)</span></code> . This is a special message from the operating system saying it killed our Python program since it was using too much memory!</p>
-<p>A natural question is, who would ever make this many objects? You would! Your HW4 makes a TON of <code class="docutils literal notranslate"><span class="pre">Document</span></code> objects inside the <code class="docutils literal notranslate"><span class="pre">SearchEngine</span></code> (and those <code class="docutils literal notranslate"><span class="pre">Documents</span></code> have data structures that store values). Notice we only provided a file called <code class="docutils literal notranslate"><span class="pre">small-wiki</span></code> on Ed, because if you used the full Wikipedia dataset on Ed it would cause Ed to crash for the same reason!</p>
-<p>One thing that most modern programming languages implement is a <strong>garbage collector</strong> . A garbage collector is a process that runs behind-the-scenes that cleans up old objects that are no longer being referenced. This means any objects you made as local variables in a method will eventually be cleaned up automatically after that function has ended.</p>
+</li>
+</ul>
+<section id="applications-to-programming">
+<h2>Applications to Programming<a class="headerlink" href="#applications-to-programming" title="Permalink to this headline">¶</a></h2>
+<p>While the avocado analogy may be cute, it might not obvious why this is relevant to you as a data scientist if you aren’t working with writing programs at this low of a level. There are some pretty key takeaways from understanding this idea though.</p>
+<p>First, notice that we talked about the fact that there are registers and caches above main memory. This is to help you as a programmer without you having to think of optimizing memory access as long as you program “normally”. What do we mean by “normal”? Generally, this means trying to follow <strong>locality</strong>. The designers of this hardware realized that almost all programs obey what they call “temporal locality” or “spatial locality”. Temporal locality means if you access a value, it’s more likely you will access it again in the future. Spatial locality means that if you access a value at index <code class="docutils literal notranslate"><span class="pre">0</span></code> in a <code class="docutils literal notranslate"><span class="pre">list</span></code>, it’s more likely that you will access the value at index <code class="docutils literal notranslate"><span class="pre">1</span></code> next rather than index <code class="docutils literal notranslate"><span class="pre">74</span></code>. So this means when writing programs, try to avoid unnecessarily complicated logic that jumps around to different places in the dataset since these caching procedures generally try to speed up your program by assuming you will leverage these localities.</p>
+<p>Second, realizing that reading/writing to disk is very slow and should be avoided being done frequently. There are some points where you will need to read/write to disk which is unavoidable (i.e., to read your dataset for data analysis), but ideally, you should try to avoid doing this frequently.</p>
+<p>Third, is to keep this in mind when processing large datasets. Suppose I have a 50 GB CSV file for my final project and try to read it into Python using <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>. If you remember correctly, my computer only has 16 GB of RAM, so how would it possibly read this file and store it in main memory for Python to access (see memory model of the last slide)? Your operating system does a clever trick called <strong>paging</strong> if you run out of RAM. Paging is a process of writing memory from RAM to disk if you were going to run out of space. This is nice from a continuity perspective, your program doesn’t completely break your computer even though you exceeded the RAM capacity, but very tricky from a performance perspective. This now means any time you want to access a new chunk of the dataset, your computer will have to go to and from disk to grab a new page of data that can fit in RAM.</p>
+<p>The takeaway from the last point is that if you are working with large datasets, you might run into drastic slowdowns because of paging. As you are developing your code, it will help to develop with a small version of your dataset that will not cause these huge slowdowns. In some extreme cases, you might need to change your algorithm to work by reading the data only a small portion at a time to avoid paging in the first place.</p>
 </section>
 </section>
 
@@ -1990,19 +1964,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
+        <a class="left-prev" href="computer-memory.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lesson 24: Memory</p>
+                <p class="prevnext-title">Computer Memory</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="memory-hiearchy.html" title="next page">
+        <a class="right-next" href="pickle.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Memory Hiearchy</p>
+                <p class="prevnext-title">Pickle</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

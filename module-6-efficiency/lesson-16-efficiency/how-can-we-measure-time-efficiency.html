@@ -1170,16 +1170,13 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lesson-24-memory/index.html">
-     Lesson 24: Memory
+    <a class="reference internal" href="../lesson-18-memory/index.html">
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -1188,29 +1185,29 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/computer-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/computer-memory.html">
        Computer Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/memory-hiearchy.html">
+      <a class="reference internal" href="../lesson-18-memory/memory-hiearchy.html">
        Memory Hiearchy
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pickle.html">
+      <a class="reference internal" href="../lesson-18-memory/pickle.html">
        Pickle
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/practice-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/practice-memory.html">
        <i class="far fa-edit fa-fw">
        </i>
        Practice: Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pause-and-think.html">
+      <a class="reference internal" href="../lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
@@ -1918,6 +1915,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/5c08694990584f8c9797976a60a760fd?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Consider the following two methods to compute the sum of the numbers from 1 to some input <code class="docutils literal notranslate"><span class="pre">n</span></code> .</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1932,7 +1930,7 @@
 <span class="k">print</span><span class="p">(</span><span class="n">sum2</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>The second one uses a clever formula discovered by Gauss that computes the sum of the numbers from 1 to n using the formula $<span class="math notranslate nohighlight">\(Sum(n) = \frac{n(n + 1)}{2}\)</span>$.</p>
+<p>The second one uses a clever formula discovered by Gauss that computes the sum of the numbers from 1 to n using the formula <span class="math notranslate nohighlight">\(Sum(n) = \frac{n(n + 1)}{2}\)</span>.</p>
 <p><strong>Which one is more efficient?</strong></p>
 <p>Most people probably have an intuition that the second seems better, but it’s hard to state exactly “why” that’s the case. Is it because it has fewer lines to code? While it’s definitely shorter, it’s also less easy to understand since it requires knowing this obscure formula from math.</p>
 <p>Remember, it’s important to state what resources we care about before deciding which is more efficient. As we said before, the most common resource to worry about is <strong>time</strong> (if we ever omit this, you should assume we are discussing time). To answer which one is more efficient, we might actually try to write code to time how long it takes them to finish.</p>

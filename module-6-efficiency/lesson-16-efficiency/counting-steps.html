@@ -1168,16 +1168,13 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lesson-24-memory/index.html">
-     Lesson 24: Memory
+    <a class="reference internal" href="../lesson-18-memory/index.html">
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -1186,29 +1183,29 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/computer-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/computer-memory.html">
        Computer Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/memory-hiearchy.html">
+      <a class="reference internal" href="../lesson-18-memory/memory-hiearchy.html">
        Memory Hiearchy
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pickle.html">
+      <a class="reference internal" href="../lesson-18-memory/pickle.html">
        Pickle
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/practice-memory.html">
+      <a class="reference internal" href="../lesson-18-memory/practice-memory.html">
        <i class="far fa-edit fa-fw">
        </i>
        Practice: Memory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-memory/pause-and-think.html">
+      <a class="reference internal" href="../lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
@@ -1916,8 +1913,9 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/ae9ee85dfe704826b74eaf3d413b5ee3?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Instead of trying to measure time, we will instead count “steps” the program takes. This is a very inexact approximation and will feel weird at first but is a very helpful exercise.</p>
-<p>To get an intuition for this, try clicking the “next” button through <a class="reference external" href="http://www.pythontutor.com/visualize.html#code=def%20sum1%28n%29%3A%0A%20%20%20%20total%20%3D%200%0A%20%20%20%20for%20i%20in%20range%28n%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20total%20%2B%3D%20i%0A%20%20%20%20return%20total%0A%20%20%20%20%0A%0Adef%20sum2%28n%29%3A%0A%20%20%20%20return%20n%20*%20%28n%20%2B%201%29%20//%202%0A%20%20%20%20%0A%0Aprint%28sum1%2810%29%29%0Aprint%28sum2%2810%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">None</a> with <code class="docutils literal notranslate"><span class="pre">sum1</span></code> and <code class="docutils literal notranslate"><span class="pre">sum2</span></code> . Which of the methods do you have to press “next” on more often? It seems like you have to press “next” twice for every iteration of the loop in <code class="docutils literal notranslate"><span class="pre">sum1</span></code> while for <code class="docutils literal notranslate"><span class="pre">sum2</span></code> , you can just press “next” twice overall (no matter how big <code class="docutils literal notranslate"><span class="pre">n</span></code> is).</p>
+<p>To get an intuition for this, try clicking the “next” button through <a class="reference external" href="http://www.pythontutor.com/visualize.html#code=def%20sum1%28n%29%3A%0A%20%20%20%20total%20%3D%200%0A%20%20%20%20for%20i%20in%20range%28n%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20total%20%2B%3D%20i%0A%20%20%20%20return%20total%0A%20%20%20%20%0A%0Adef%20sum2%28n%29%3A%0A%20%20%20%20return%20n%20*%20%28n%20%2B%201%29%20//%202%0A%20%20%20%20%0A%0Aprint%28sum1%2810%29%29%0Aprint%28sum2%2810%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">this PythonTutor example</a> with <code class="docutils literal notranslate"><span class="pre">sum1</span></code> and <code class="docutils literal notranslate"><span class="pre">sum2</span></code> . Which of the methods do you have to press “next” on more often? It seems like you have to press “next” twice for every iteration of the loop in <code class="docutils literal notranslate"><span class="pre">sum1</span></code> while for <code class="docutils literal notranslate"><span class="pre">sum2</span></code> , you can just press “next” twice overall (no matter how big <code class="docutils literal notranslate"><span class="pre">n</span></code> is).</p>
 <p>This idea of how many times you have to press “next” in a tool like PythonTutor is exactly the idea for how many “steps” it takes to run a function. We will use these simplified rules to determine the number of steps for a program:</p>
 <ul>
 <li><p>A “simple” line of code takes one step to run. Some common simple lines of code are:</p>
@@ -1931,15 +1929,12 @@
 <li><p>The number of steps for a sequence of lines is the sum of the steps for each line. By a sequence of lines, we mean something like the code block below (which would have a total of 2 steps)</p>
 <ul>
 <li><div class="highlight-text notranslate"><div class="highlight"><pre><span></span> x = 1
+ print(x)
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
-</ul>
-<p>print(x)
-````</p>
-<ul class="simple">
 <li><p>The number of steps to execute a loop will be the number of times that loop runs multiplied by the number of steps inside its body.</p></li>
 <li><p>The number of steps in a function is just the sum of all the steps of the code in its body. The number of steps for a function is the number of steps made whenever that function is called (e.g if a function has 100 steps in it and is called twice, that is 200 steps total).</p></li>
 </ul>

@@ -6,5 +6,5 @@
 
 lesson-16-efficiency/index
 lesson-17-profiling-and-program-speed/index
-lesson-24-memory/index
+lesson-18-memory/index
 ```

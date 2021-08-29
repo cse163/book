@@ -5,9 +5,11 @@
     <iframe src="https://www.loom.com/embed/ae9ee85dfe704826b74eaf3d413b5ee3?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Instead of trying to measure time, we will instead count "steps" the program takes. This is a very inexact approximation and will feel weird at first but is a very helpful exercise.  
 
-To get an intuition for this, try clicking the "next" button through [None](http://www.pythontutor.com/visualize.html#code=def%20sum1%28n%29%3A%0A%20%20%20%20total%20%3D%200%0A%20%20%20%20for%20i%20in%20range%28n%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20total%20%2B%3D%20i%0A%20%20%20%20return%20total%0A%20%20%20%20%0A%0Adef%20sum2%28n%29%3A%0A%20%20%20%20return%20n%20*%20%28n%20%2B%201%29%20//%202%0A%20%20%20%20%0A%0Aprint%28sum1%2810%29%29%0Aprint%28sum2%2810%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) with `sum1` and `sum2` . Which of the methods do you have to press "next" on more often? It seems like you have to press "next" twice for every iteration of the loop in `sum1` while for `sum2` , you can just press "next" twice overall (no matter how big `n` is).  
+To get an intuition for this, try clicking the "next" button through [this PythonTutor example](http://www.pythontutor.com/visualize.html#code=def%20sum1%28n%29%3A%0A%20%20%20%20total%20%3D%200%0A%20%20%20%20for%20i%20in%20range%28n%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20total%20%2B%3D%20i%0A%20%20%20%20return%20total%0A%20%20%20%20%0A%0Adef%20sum2%28n%29%3A%0A%20%20%20%20return%20n%20*%20%28n%20%2B%201%29%20//%202%0A%20%20%20%20%0A%0Aprint%28sum1%2810%29%29%0Aprint%28sum2%2810%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) with `sum1` and `sum2` . Which of the methods do you have to press "next" on more often? It seems like you have to press "next" twice for every iteration of the loop in `sum1` while for `sum2` , you can just press "next" twice overall (no matter how big `n` is).  
 
 This idea of how many times you have to press "next" in a tool like PythonTutor is exactly the idea for how many "steps" it takes to run a function. We will use these simplified rules to determine the number of steps for a program:  
 
@@ -26,7 +28,7 @@ This idea of how many times you have to press "next" in a tool like PythonTutor 
 
     -  ```text
         x = 1
-print(x)
+        print(x)
         ````
 
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Pause and Think &#8212; Intermediate Data Programming</title>
+    <title>Lesson 18: Memory &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -46,8 +46,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Module 7: Geospatial Data" href="../../module-7-geospatial-data/index.html" />
-    <link rel="prev" title="Practice: Memory" href="practice-memory.html" />
+    <link rel="next" title="Computer Memory" href="computer-memory.html" />
+    <link rel="prev" title="Pause and Think" href="../lesson-17-profiling-and-program-speed/pause-and-think.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -1168,23 +1168,20 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/class-today.html">
-       Class Today
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="index.html">
-     Lesson 24: Memory
+    <a class="current reference internal" href="#">
+     <i class="fas fa-book fa-fw">
+     </i>
+     Lesson 18: Memory
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="computer-memory.html">
        Computer Memory
@@ -1207,8 +1204,8 @@
        Practice: Memory
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
@@ -1860,7 +1857,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-24-memory/pause-and-think.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-18-memory/index.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1880,10 +1877,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-6-efficiency/lesson-24-memory/pause-and-think.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-6-efficiency/lesson-18-memory/index.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-6-efficiency/lesson-24-memory/pause-and-think.md"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-6-efficiency/lesson-18-memory/index.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1909,13 +1906,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-0">
-   Question 0
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-1">
-   Question 1
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
   </a>
  </li>
 </ul>
@@ -1929,22 +1926,29 @@
         
               <div>
                 
-  <section id="i-class-far-fa-pause-circle-fa-fw-i-pause-and-think">
-<h1><i class="far fa-pause-circle fa-fw"></i> Pause and Think<a class="headerlink" href="#i-class-far-fa-pause-circle-fa-fw-i-pause-and-think" title="Permalink to this headline">¶</a></h1>
-<p>At this point, you’ve finished the lesson content so all that’s left are the practice problems for the day! You are welcome to continue doing these on your own time, but we recommend coming to the live class session for this lesson and working on the problems with your peers. Working on a problem with someone else can really help solidify your understanding of the material! <strong>Remember that whether or not you decide to come to class, all slides (including the practice problems) are due at 23:59 PDT on the day of this lesson.</strong></p>
-<p>Before you go onto the practice problems though, we want you to think back on what you’ve seen so far. There are most likely some questions about what you’ve seen so far, and in the off-case there is not, there must be something related to this that you would like to learn more about. We recommend doing this before coming to the class session to work on the practice problems with your peers.</p>
-<p>Take a few moments to summarize (in your own words) what you learned in this less and write down a couple of questions you have about this lesson. <strong>This is graded on effort and that your answer looks like it is a serious attempt at reflecting on your learning.</strong></p>
-<section id="question-0">
-<h2>Question 0<a class="headerlink" href="#question-0" title="Permalink to this headline">¶</a></h2>
-<p>In your own words, summarize what you learned in this lesson.</p>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
-<p>Write your answer down in your own space.</p>
+  <section id="i-class-fas-fa-book-fa-fw-i-lesson-18-memory">
+<h1><i class="fas fa-book fa-fw"></i> Lesson 18: Memory<a class="headerlink" href="#i-class-fas-fa-book-fa-fw-i-lesson-18-memory" title="Permalink to this headline">¶</a></h1>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<p>In this lesson, you will learn the following concepts:</p>
+<ul class="simple">
+<li><p>How your computer stores data in memory</p></li>
+<li><p>The tradeoffs of different types of memory</p></li>
+<li><p>Pickle</p></li>
+</ul>
 </section>
-<section id="question-1">
-<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
-<p>What questions do you have?</p>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
-<p>Write your answer down in your own space.</p>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="computer-memory.html">Computer Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memory-hiearchy.html">Memory Hiearchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pickle.html">Pickle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice-memory.html"><i class="far fa-edit fa-fw"></i> Practice: Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pause-and-think.html"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</a></li>
+</ul>
+</div>
 </section>
 </section>
 
@@ -1959,19 +1963,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="practice-memory.html" title="previous page">
+        <a class="left-prev" href="../lesson-17-profiling-and-program-speed/pause-and-think.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="far fa-edit fa-fw"></i> Practice: Memory</p>
+                <p class="prevnext-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../../module-7-geospatial-data/index.html" title="next page">
+        <a class="right-next" href="computer-memory.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="fas fa-layer-group fa-fw"></i> Module 7: Geospatial Data</p>
+                <p class="prevnext-title">Computer Memory</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
