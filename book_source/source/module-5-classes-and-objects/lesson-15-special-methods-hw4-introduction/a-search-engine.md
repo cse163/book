@@ -9,6 +9,7 @@ The goal of a search engine is to take a search query and return the set of the 
 To make our search engine fast, we will want to pre-process the documents so we can quickly answer the question  
 
 > For a given word, what are all the documents that contain this word?
+
 To do this, we construct a data structure called an **inverted index** to help answer this question. An inverted index is just a dictionary, where the keys are the words found in the corpus and the value for a key is a list of all the documents that have that word in them.  
 
 For example, suppose our corpus had the three documents shown on the left of the picture below. The inverted index for this corpus is shown on the right in the image below. When processing the data, you will do some basic transformations to make everything lowercase and remove punctuation.  

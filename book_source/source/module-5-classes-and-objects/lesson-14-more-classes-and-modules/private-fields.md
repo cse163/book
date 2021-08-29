@@ -5,6 +5,7 @@
     <iframe src="https://www.loom.com/embed/de5c457d29854cad9093650e160fc9da?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
 
 ```{admonition} Tip
 :class: tip
@@ -88,6 +89,7 @@ What we want to do is to restrict the client so they can't access the fields and
 Some languages have ways of enforcing this notion of having a private field (one where a client can't access it from outside the class), but Python does not. Instead, Python has a convention that everyone follows:  
 
 > If a field name starts with an underscore (i.e. '_'), it is considered private and you shouldn't access it (to either read the value or modify it).
+
 Technically, this is not enforced by the language itself. This means someone *could* violate this rule and access the private field, but that doesn't mean they *should* . There is usually no public-facing documentation describing these private fields, so you would be making assumptions about how they work; this will almost surely cause your programs to have bugs. Additionally, the Python community takes respecting privacy very seriously so they might call the Python-police on you if they see you doing that.  
 
 To make our fields private, we would rewrite the class so that the field names were `self._owner` and `self._amount` like in the following code block.  

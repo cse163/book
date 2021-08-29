@@ -4,7 +4,7 @@
 
 This practice problem has two parts. The first modifies the `Dog` class we worked on in the lesson last time and the second writes a new class called `DogPack` that stores multiple `Dog` s.  
 
-All the files have been created in the workspace for you. You can navigate to the files with the tabs at the top or the "Toggle Tree View" at the top-left of the editor. To run the program run `python main.py` in the terminal.  
+All the files have been included in the provided starter code. To run the program run `python main.py` in the terminal.  
 
 ##  Problem 0: Modify `Dog`   
 
@@ -42,9 +42,7 @@ Scout: Woof
 Bella: Woof
 ```
 
-##  A Note on Testing  
-
-Remember that reading the Mark output can be tough! If you run into errors try running the program in the terminal (command: `python main.py` ).  
+##  A Note on Testing
 
 Even though we are asking you to make your fields private, we do a bad thing and access the private fields of your class. This is so we can test your implementation matches our specification. We make this decision for its pedagogical benefit, despite its poor style.  
 

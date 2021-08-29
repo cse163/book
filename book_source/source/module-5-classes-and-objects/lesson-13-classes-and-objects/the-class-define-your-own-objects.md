@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/e10d04adc79e4015a810538ee96e2c01?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 So we saw that objects exist in Python, but now we want to answer how you can define your own objects!  
 
 To do this, you need to write a **class** . A class is a "blueprint" for an object, so you can make many objects from that blueprint. The `pandas` developers defined a `DataFrame` class so that you can construct `DataFrame` objects to use (another common word for "object" is "instance").  

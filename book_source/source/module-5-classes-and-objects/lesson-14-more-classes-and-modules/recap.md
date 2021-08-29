@@ -27,8 +27,8 @@ In Lesson 12, we learned about **classes** and **objects** . Here's a quick reca
 
     ```python
     d1 = Dog('Chester')
-d2 = Dog('Scout')
-d3 = d1
+    d2 = Dog('Scout')
+    d3 = d1
     ```
 
 -  A     **memory model**     is a picture that helps us see which objects exist in our program and which variables reference which objects.     <br />   
@@ -45,11 +45,11 @@ d3 = d1
 
     ```python
     d1 = Dog('Chester')
-d2 = Dog('Scout')
-d3 = d1
-d1.bark()  # When running, self refers to Dog('Chester')
-d2.bark()  # When running, self refers to Dog('Scout')
-d3.bark()  # When running, self refers to Dog('Chester')
+    d2 = Dog('Scout')
+    d3 = d1
+    d1.bark()  # When running, self refers to Dog('Chester')
+    d2.bark()  # When running, self refers to Dog('Scout')
+    d3.bark()  # When running, self refers to Dog('Chester')
     ```
 
 

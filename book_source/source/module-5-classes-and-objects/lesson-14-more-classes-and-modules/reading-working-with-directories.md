@@ -6,11 +6,11 @@
 ```{admonition} Warning
 :class: warning
 
-This slide is mostly a reading, but is coded as a Practice Problem. You need to change one thing in the provided code to get it to pass the tests (but we tell you what this change is). Remember to press Mark to submit your code!
+This slide is mostly a reading, we have provided some starter code for you to follow along. You need to change one thing in the provided code to get it to pass the tests (but we tell you what this change is).
 
 ```
 
-Earlier in the quarter we introduced file processsing so that we could read file contents. For your next assignment, we are going to use files again but add one extra layer to understanding how files on your computer work.  
+In Module 2 we introduced file processsing so that we could read file contents. For your next take-home assessment, we are going to use files again but add one extra layer to understanding how files on your computer work.  
 
 Your computer stores files, but there is generally a hiearchy to them in the form of **directories** (also called folders). You can see an example of my `163` directory on my computer in the image below. A directory can store files or other directories (which, in turn, can store other files or other directories).  
 
@@ -38,9 +38,7 @@ at the beginning of the path
 `'people/carly_rae_jepsen.txt'`
 ! This is because the
 `people`
-directory is in this directory so we can use this relative path. On your homework we need to prepend the path with
-`/home`
-(with a slash) to specify an absolute path from the "top-level" of the computer.
+directory is in this directory so we can use this relative path.
 
 ```
 
@@ -60,5 +58,5 @@ print_file('people/' + file_name)
 
 ````
 
-Once you make this change, the program should be able to run and print the contents of the files! **Make sure to press Mark to submit your program!**   
+Once you make this change, the program should be able to run and print the contents of the files! 
 
