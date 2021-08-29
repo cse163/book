@@ -71,7 +71,7 @@ Which of the following code blocks helps us answer that question? **Select all t
 
 Select one or more options. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-square fa-fw"></i> Option 0_
 
 ```python
 merged = movies.merge(directors,
@@ -81,7 +81,7 @@ merged = movies.merge(directors,
 result = merged.groupby('director_id')['year'].min()
 ```
 
-_❓ Option 1_
+_<i class="far fa-square fa-fw"></i> Option 1_
 
 ```python
 merged = movies.merge(directors,
@@ -91,7 +91,7 @@ merged = movies.merge(directors,
 result = merged.groupby('director_id')['year'].min()
 ```
 
-_❓ Option 2_
+_<i class="far fa-square fa-fw"></i> Option 2_
 
 ```python
 merged = directors.merge(movies,
@@ -101,7 +101,7 @@ merged = directors.merge(movies,
 result = merged.groupby('director_id')['year'].min()
 ```
 
-_❓ Option 3_
+_<i class="far fa-square fa-fw"></i> Option 3_
 
 ```python
 merged = directors.merge(movies,
@@ -111,7 +111,7 @@ merged = directors.merge(movies,
 result = merged.groupby('director_id')['year'].min()
 ```
 
-_❓ Option 4_
+_<i class="far fa-square fa-fw"></i> Option 4_
 
 ```python
 merged = movies.merge(directors,

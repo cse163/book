@@ -142,55 +142,55 @@ Using the same plot of possible tradeoffs, between error and unfairness, select 
 
 Select one or more options. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-square fa-fw"></i> Option 0_
 
 1
 
-_❓ Option 1_
+_<i class="far fa-square fa-fw"></i> Option 1_
 
 2
 
-_❓ Option 2_
+_<i class="far fa-square fa-fw"></i> Option 2_
 
 3
 
-_❓ Option 3_
+_<i class="far fa-square fa-fw"></i> Option 3_
 
 4
 
-_❓ Option 4_
+_<i class="far fa-square fa-fw"></i> Option 4_
 
 5
 
-_❓ Option 5_
+_<i class="far fa-square fa-fw"></i> Option 5_
 
 6
 
-_❓ Option 6_
+_<i class="far fa-square fa-fw"></i> Option 6_
 
 7
 
-_❓ Option 7_
+_<i class="far fa-square fa-fw"></i> Option 7_
 
 8
 
-_❓ Option 8_
+_<i class="far fa-square fa-fw"></i> Option 8_
 
 9
 
-_❓ Option 9_
+_<i class="far fa-square fa-fw"></i> Option 9_
 
 10
 
-_❓ Option 10_
+_<i class="far fa-square fa-fw"></i> Option 10_
 
 11
 
-_❓ Option 11_
+_<i class="far fa-square fa-fw"></i> Option 11_
 
 12
 
-_❓ Option 12_
+_<i class="far fa-square fa-fw"></i> Option 12_
 
 13
 

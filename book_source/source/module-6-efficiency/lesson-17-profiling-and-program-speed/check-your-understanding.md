@@ -43,18 +43,18 @@ Select all that apply
 
 Select one or more options. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-square fa-fw"></i> Option 0_
 
 Python is generally a very fast language.
 
-_❓ Option 1_
+_<i class="far fa-square fa-fw"></i> Option 1_
 
 Python tends to be easier to write/read for data scientists.
 
-_❓ Option 2_
+_<i class="far fa-square fa-fw"></i> Option 2_
 
 Python can easily integrate with libraries that are written efficiently in C.
 
-_❓ Option 3_
+_<i class="far fa-square fa-fw"></i> Option 3_
 
 Python can solve problems that C or Java cannot.

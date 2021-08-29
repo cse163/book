@@ -66,18 +66,18 @@ Your friend is working on a data analysis project and notices their program is r
 
 Select one or more options. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-square fa-fw"></i> Option 0_
 
 Change their data processing to access all of the data in a random order rather than using a loop that goes from start to end.
 
-_❓ Option 1_
+_<i class="far fa-square fa-fw"></i> Option 1_
 
 While developing their code to see if it's correct, work with a smaller version of the data just to make sure the code can run to completion without error before running it on the whole dataset.
 
-_❓ Option 2_
+_<i class="far fa-square fa-fw"></i> Option 2_
 
 If their analysis is able to finish running, save the results using `pickle` so they can avoid doing the analysis again to recreate their results.
 
-_❓ Option 3_
+_<i class="far fa-square fa-fw"></i> Option 3_
 
 Look on the internet to see if you can write special code to force Python to store the _entire 20GB_ dataset in a register.
