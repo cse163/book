@@ -24,8 +24,8 @@ Every lesson has a list of concepts that are introduced. In this lesson, you wil
 :caption: Contents
 
 context-first-two-modules-of-cse-163
-hello-world
 dev-setup/index
+hello-world
 learning-strategies
 pause-and-think
 practice-quiz

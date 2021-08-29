@@ -2,10 +2,11 @@
 
 This page contains common instructions for downloading software to run and edit Python files.
 
-_Preface:_ Getting a development environment set up is easily one of the most frustrating things about being a programmer, so it's okay if this process doesn't go smoothly! If you run into troubles along the way, please make sure to post on the message board, come to office hours, or just Google around to see if you can solve the problem on your own!
+```{tip}
+_Preface:_ Getting a development environment set up is easily one of the most frustrating things about being a programmer, so it's okay if this process doesn't go smoothly! If you run into troubles along the way, that's totally expected. It is very common to Google (or DuckDuckGo) errors you run into while setting up an environment and try follow suggestions from other questions posted online to fix your solution. It could also help if you have a friend or instructor who is familar with how to set up developer tools.
+```
 
-```{warning} Warning
-
+```{warning}
 If you are using this book as part of a course, your instructor may have differing instructions for
 software setup and tools used, or they might even have provided software installed on computers.
 Please refer to any instructions your instructor has provided for software for your course.
