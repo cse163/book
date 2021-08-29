@@ -5,19 +5,21 @@
     <iframe src="https://www.loom.com/embed/6d28bc8a8e144f678d2050809c635a53?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Let's change examples for a second before going back to efficiently finding a user profile for Spacebook.  
 
 Pretend for a moment that we are nearing the end of November. Yesterday was Thanksgiving and Hunter decided to go Black Friday shopping to buy a new Supreme shirt. Say you get to the rack with the shirts and notice they are sorted by size like in the image below. Now our picture shows only 5 shirts, but imagine there are hundreds and hundreds of them (sorted by size), and we can't tell the size without looking at the tag on the shirt.  
 
 ```{image} https://static.us.edusercontent.com/files/EouGF8qXh04noUc34uA99dPh
-:alt: TODO
+:alt: Supreme shirts with of different sizes, in increasing order from left to right
 :width: 758
 :align: center
 ```
 
 Now Hunter knows he is a size 42 and his goal is to make it out of Black Friday alive by finding the shirt in his size as quickly as possible before the crowd stampedes. If Hunter knows his shirt size is 42, would the optimal strategy be to start at the smallest shirt size (1) and go shirt by shirt until he finds his size? Not if he is trying to survive!  
 
-You probably have a good heuristic to help you find your shirt more quickly than that: start in the middle! If you look at the shirt in the middle of the rack, say size 29, you know that Hunter's shirt size (42) will be after the mid-point since 42 is larger than 29. This enables you to eliminate half of the shirts to look at since there is no way that Hunter's shirt is before the shirt of size 29, assuming the shirts are sorted by size. You can repeat this process again by picking the mid-point of the remaining shirts. This algorithm of repeatedly going to the mid-point and going left or right from that is called **binary search** . The algorithm, written in pseudo-code looks like the following:  
+You probably have a good heuristic to help you find your shirt more quickly than that: start in the middle! If you look at the shirt in the middle of the rack, say size 29, you know that Hunter's shirt size (42) will be after the mid-point since 42 is larger than 29. This enables you to eliminate half of the shirts to look at since there is no way that Hunter's shirt is before the shirt of size 29, assuming the shirts are sorted by size. You can repeat this process again by picking the mid-point of the remaining shirts. This algorithm of repeatedly going to the mid-point and going left or right from that is called **binary search**. The algorithm, written in pseudo-code looks like the following:  
 
 ```text
 Input: List of shirts sorted by size and a target value to find
@@ -49,7 +51,7 @@ This means our algorithm runs approximately $\log(n)$ times and since it does co
 
 Pictorially, we can see this $\mathcal{O}(\log(n))$ algorithm runs MUCH faster than an $\mathcal{O}(n)$ algorithm in the following graph. The x-axis represents $n$ as it increases and the y-axis shows the approximate number of steps. The red line that grows linearly demonstrates an $\mathcal{O}(n)$ algorithm while the blue line that shows a slower growth is an example of a $\mathcal{O}(\log(n))$ function.  
 
-To get a sense of just how little $\mathcal{O}(\log(n))$ grows, consider making a list of values for all 332 million people in the U.S. The run-time for a binary search on this entire list would be approximately [None](https://www.wolframalpha.com/input/?i=log_2%28327+million%29) ! Maybe you might not think the U.S. is THAT big, but a binary search over all 1.4 billion people in China would only take about [None](https://www.wolframalpha.com/input/?i=log_2%281.4+billion%29) . This is *incredibly* efficient as $n$ grows!  
+To get a sense of just how little $\mathcal{O}(\log(n))$ grows, consider making a list of values for all 332 million people in the U.S. The run-time for a binary search on this entire list would be approximately [28 steps](https://www.wolframalpha.com/input/?i=log_2%28327+million%29) ! Maybe you might not think the U.S. is THAT big, but a binary search over all 1.4 billion people in China would only take about [30 steps](https://www.wolframalpha.com/input/?i=log_2%281.4+billion%29) . This is *incredibly* efficient as $n$ grows!  
 
 ```{image} https://static.us.edusercontent.com/files/w4skGU5XcDJmMi1cZXzxgkoq
 :alt: Graph showing the growth of y=x versus y=log(x). 
@@ -74,7 +76,7 @@ Binary search can sometimes be inefficient in practice since it avoids the princ
 One trick database people have come up with is to make a data structure called a **binary search tree** that encodes this search information that gets computed once and reused many times. A binary search tree is much like a decision tree from ML, where at each node in the tree it has you go left/right based on some condition. So for example, in our shirts example, we could construct a tree that records the choices you make during any possible binary search as in the picture below.  
 
 ```{image} https://static.us.edusercontent.com/files/L1acPpljKePoYxYCo2PGaIHB
-:alt: TODO
+:alt: Binary search tree for different sizes of Supreme shirts
 :width: 743
 :align: center
 ```
