@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/6ea3c9015df14605ad29976b9f92f603?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Now that we feel a little bit more comfortable counting steps, we can go back to trying to compare `sum1` and `sum2` . Recall these functions were defined as:  
 
 ```python
@@ -81,7 +83,7 @@ What is the run-time of this function in Big-O notation? Students will commonly 
 -  The second is that when you report a Big-O result, you should always drop constants in front of terms and lower-order terms. This formula for steps is wrong in the first place, but assuming it was correct, you would report $\mathcal{O}(n^2)$ after dropping the constants and lower-order terms.  
 
 
-Putting these together, this means the correct answer would be $\mathcal{O}(n)$! Try our step counting see that the formula for steps would be something like 18  
+Putting these together, this means the correct answer would be $\mathcal{O}(n)$!
 
 ##  Why is this useful?  
 

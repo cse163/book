@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/5c08694990584f8c9797976a60a760fd?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Consider the following two methods to compute the sum of the numbers from 1 to some input `n` .  
 
 ```python
@@ -21,7 +23,7 @@ print(sum1(10))
 print(sum2(10))
 ```
 
-The second one uses a clever formula discovered by Gauss that computes the sum of the numbers from 1 to n using the formula $$Sum(n) = \frac{n(n + 1)}{2}$$.  
+The second one uses a clever formula discovered by Gauss that computes the sum of the numbers from 1 to n using the formula $Sum(n) = \frac{n(n + 1)}{2}$.
 
 **Which one is more efficient?**   
 
