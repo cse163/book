@@ -1,26 +1,26 @@
-# 🚧 Practice: Fairness Concepts
+# <i class="far fa-edit fa-fw"></i>Practice: Fairness Concepts
 
 ## Question 0
 
 Consider the example from the last lesson using cell-phone GPS data to predict whether or not a location has a pothole in it. Which one of the following situations is considered a **false negative.**
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 The system predicts there is a pothole at a location, and there truly is a pothole there
 
-_❓ Option 1_
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 The system predicts there is a pothole at a location, but there is actually not a pothole there
 
-_❓ Option 2_
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 The system predicts there is _not_ a pothole at a location, but there truly is a pothole there
 
-_❓ Option 3_
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 The system predicts there is _not_ a pothole at a location, and there truly is _not_ a pothole there
 
@@ -38,7 +38,7 @@ Using the same scenario as the last problem, consider we have the following stat
 
 What is the False Negative Rate of this model? Write your answer as a number between 0 and 1 rounded to two decimal places (e.g., `0.25` ).
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -72,59 +72,59 @@ where $|x|$ is the absolute value function, $Circle\ FNR$ is the false negative 
 
 Your task is to identify which point on this accuracy/fairness tradeoff corresponds to the threshold in the image above. Each point is labeled with a number in a picture. Pick which number is associated with the threshold shown above.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 1
 
-_❓ Option 1_
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 2
 
-_❓ Option 2_
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 3
 
-_❓ Option 3_
+_<i class="far fa-circle fa-fw"></i> Option 3_
 
 4
 
-_❓ Option 4_
+_<i class="far fa-circle fa-fw"></i> Option 4_
 
 5
 
-_❓ Option 5_
+_<i class="far fa-circle fa-fw"></i> Option 5_
 
 6
 
-_❓ Option 6_
+_<i class="far fa-circle fa-fw"></i> Option 6_
 
 7
 
-_❓ Option 7_
+_<i class="far fa-circle fa-fw"></i> Option 7_
 
 8
 
-_❓ Option 8_
+_<i class="far fa-circle fa-fw"></i> Option 8_
 
 9
 
-_❓ Option 9_
+_<i class="far fa-circle fa-fw"></i> Option 9_
 
 10
 
-_❓ Option 10_
+_<i class="far fa-circle fa-fw"></i> Option 10_
 
 11
 
-_❓ Option 11_
+_<i class="far fa-circle fa-fw"></i> Option 11_
 
 12
 
-_❓ Option 12_
+_<i class="far fa-circle fa-fw"></i> Option 12_
 
 13
 
@@ -138,59 +138,59 @@ Using the same plot of possible tradeoffs, between error and unfairness, select 
 :align: center
 ```
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one or more options. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-square fa-fw"></i> Option 0_
 
 1
 
-_❓ Option 1_
+_<i class="far fa-square fa-fw"></i> Option 1_
 
 2
 
-_❓ Option 2_
+_<i class="far fa-square fa-fw"></i> Option 2_
 
 3
 
-_❓ Option 3_
+_<i class="far fa-square fa-fw"></i> Option 3_
 
 4
 
-_❓ Option 4_
+_<i class="far fa-square fa-fw"></i> Option 4_
 
 5
 
-_❓ Option 5_
+_<i class="far fa-square fa-fw"></i> Option 5_
 
 6
 
-_❓ Option 6_
+_<i class="far fa-square fa-fw"></i> Option 6_
 
 7
 
-_❓ Option 7_
+_<i class="far fa-square fa-fw"></i> Option 7_
 
 8
 
-_❓ Option 8_
+_<i class="far fa-square fa-fw"></i> Option 8_
 
 9
 
-_❓ Option 9_
+_<i class="far fa-square fa-fw"></i> Option 9_
 
 10
 
-_❓ Option 10_
+_<i class="far fa-square fa-fw"></i> Option 10_
 
 11
 
-_❓ Option 11_
+_<i class="far fa-square fa-fw"></i> Option 11_
 
 12
 
-_❓ Option 12_
+_<i class="far fa-square fa-fw"></i> Option 12_
 
 13
 
@@ -198,7 +198,7 @@ _❓ Option 12_
 
 True or false: The Pareto Frontier tells you which point is the correct tradeoff between fairness and accuracy.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Write your answer down in your own space.
 
@@ -208,18 +208,18 @@ Last time, we talked about the COMPAS model for predicting recidivism rates. One
 
 Which worldview would you be using to come to this conclusion about the model? Select the best option available.
 
-**📝 Your Task**
+**<i class="far fa-edit fa-fw"></i> Your Task**
 
 Select one option. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="far fa-circle fa-fw"></i> Option 0_
 
 What You See is What You Get (WYSIWYG)
 
-_❓ Option 1_
+_<i class="far fa-circle fa-fw"></i> Option 1_
 
 Structural Bias + We're All Equal (WAE)
 
-_❓ Option 2_
+_<i class="far fa-circle fa-fw"></i> Option 2_
 
 Not enough info to tell

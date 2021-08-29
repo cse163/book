@@ -86,7 +86,7 @@ class JupyterInfo(DataDownloadLinks):
         List of content lines to put before download links
         """
         return [
-            'Reminder, that on this site the Jupyter Notebooks are read-only and you can\'t interact with them. Click the <i class="fas fa-rocket"></i> button above to launch an interactive version of this notebook.',
+            'Reminder, that on this site the Jupyter Notebooks are read-only and you can\'t interact with them. Click the <i class="fas fa-rocket fa-fw"></i> button above to launch an interactive version of this notebook.',
             "",
             "* With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!",
             "* With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don't save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:",

@@ -1,18 +1,18 @@
-# 📚 Lesson 10: Data Visualization
+# <i class="fas fa-book fa-fw"></i> Lesson 10: Data Visualization
 
-##  Concepts  
+## Concepts
 
-In this lesson, you will learn the following concepts:  
+In this lesson, you will learn the following concepts:
 
--  Default parameters  
+- Default parameters
 
--  Missing Data  
+- Missing Data
 
--  How to use `seaborn` and `matplotlib` to create visualizations  
+- How to use `seaborn` and `matplotlib` to create visualizations
 
--  How to read code documentation  
+- How to read code documentation
 
--  Principles of data visualization  
+- Principles of data visualization
 
 ## Table of Contents
 

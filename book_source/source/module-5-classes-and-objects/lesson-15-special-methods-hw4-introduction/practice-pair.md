@@ -1,12 +1,12 @@
-# 🚧 Practice: Pair
+# <i class="fas fa-laptop fa-fw"></i> Practice: Pair
 
 {download}`Download starter code </module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.zip>`
 
-Write a class called `Pair` that stores two values and can be used just like a tuple containing two elements. The class you implement should produce the behavior shown in the code cell below. Define the class in `pair.py` .  
+Write a class called `Pair` that stores two values and can be used just like a tuple containing two elements. The class you implement should produce the behavior shown in the code cell below. Define the class in `pair.py` .
 
-You can assume the client will only access index 0 or 1 for a `Pair` .  
+You can assume the client will only access index 0 or 1 for a `Pair` .
 
-The `Pair` class should be immutable so that the client can't change its state. This means all fields should be private and if they try to modify a value in the pair,  like in the last line of the code cell below, it should print an error message and do nothing else. Notice that you will still need to define the method to allow the syntax for assignment, but the behavior just prints the error without changing the state of the object.  
+The `Pair` class should be immutable so that the client can't change its state. This means all fields should be private and if they try to modify a value in the pair, like in the last line of the code cell below, it should print an error message and do nothing else. Notice that you will still need to define the method to allow the syntax for assignment, but the behavior just prints the error without changing the state of the object.
 
 ```python
 p1 = Pair(1, 2)
@@ -29,15 +29,15 @@ True
 (1, 2)
 1
 Error: Pair is immutable!
-````
+```
 
-Here is the table of methods shown on the last slide:  
+Here is the table of methods shown on the last slide:
 
-| Syntax |    Method Call    |
-|--------|-------------------|
-|`x < y`|`x.__lt__(y)`|
-|`x == y`|`x.__eq__(y)`|
-|`x >= y`|`x.__ge__(y)`|
-|`print(x)`|`print(x.__repr__())`|
-|`x[i]`|`x.__getitem__(i)`|
-|`x[i] = v`|`x.__setitem__(i, v)`|
+| Syntax     | Method Call           |
+| ---------- | --------------------- |
+| `x < y`    | `x.__lt__(y)`         |
+| `x == y`   | `x.__eq__(y)`         |
+| `x >= y`   | `x.__ge__(y)`         |
+| `print(x)` | `print(x.__repr__())` |
+| `x[i]`     | `x.__getitem__(i)`    |
+| `x[i] = v` | `x.__setitem__(i, v)` |
