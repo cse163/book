@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/daed6d4d9565498e87d036c7864b82e4?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Last time we introduced the notion of efficiency, namely in terms of time taken to run the program. We saw that time was unreliable and that computer scientists instead discuss an algorithm's efficiency in terms of its Big-O notation. Today, we will discuss some limitations of Big-O notation and highlight the importance of why it is used (since it is often misunderstood).  
 
 For example, consider the following code snippet that shows three different methods for computing the maximum difference between any pair of values in a list.  
@@ -57,7 +59,7 @@ You have to be a bit careful when considering Big-O notation since it has some s
 
     -  The Big-O notation is independent of the programming language you are writing in or the computer you are writing the program on. When considering raw time taken by a program to run, these factors have a huge impact on the run-time of the program.  
 
-    -  Easy to figure out by just looking at the code (with practice 😊)  
+    -  Easy to figure out by just looking at the code (with practice 😊).  
 
 
 -  **Cons**   
@@ -82,5 +84,5 @@ Although recent advancements in algorithm design have found algorithms to do mat
 
 For a concrete example, consider how $2n^2 \leq100n$ for all $0 \leq n \leq 50$. So while the $\mathcal{O}(n)$ equation on the right-hand side is asymptotically faster than the $\mathcal{O}(n^2)$ on the left, the constants it hides can make it slower for some smaller $n$.  
 
-In the next, slide, we will see another tool that can help us understand the performance of our programs.  
+In the next slide, we will see another tool that can help us understand the performance of our programs.  
 

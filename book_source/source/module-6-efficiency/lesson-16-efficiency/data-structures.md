@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/005a2fbfe4f84e548189f6dfd9ce639a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 So we can see that understanding complexity is important so that you can easily analyze (after some practice) how your algorithm will scale. Another important application of this knowledge is to understand how efficient your code is when using data structures like `list` , `set` , and `dict` .  
 
 ##  List  
@@ -28,7 +30,7 @@ This means the run-time depends on where `x` is in the `list` ! It turns out tha
 
 ##  Set and Dictionary  
 
-One of the magic things about `set` and `dict` , is that almost all of the operations (e.g., adding values, removing values, seeing if something is in the `set` / `dict` ) are actually constant time ($\mathcal{O}(1)$)! That means no matter how much data is stored in them, they can always answer questions like "is this value a key in this `dict` " in constant time. To do this, they use this special trick called "hashing" that we will learn about in a few weeks.  
+One of the magic things about `set` and `dict` , is that almost all of the operations (e.g., adding values, removing values, seeing if something is in the `set` / `dict` ) are actually constant time ($\mathcal{O}(1)$)! That means no matter how much data is stored in them, they can always answer questions like "is this value a key in this `dict` " in constant time. To do this, they use this special trick called "hashing" that we will learn about in future modules.  
 
 ##  An Example  
 
