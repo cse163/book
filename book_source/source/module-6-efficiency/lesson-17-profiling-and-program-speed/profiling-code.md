@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/90ee7401ddbb412a87347a5a333c7476?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Think back to our example of finding the maximum difference between elements in a list.  
 
 ```python
@@ -39,11 +41,15 @@ Even though we saw that `max_diff2` and `max_diff3` have the same Big-O runtime,
 
 ##  Profiler  
 
-*
-			Note: Ed does not have the following tool installed, so we describe its output rather than actually running it for you! If you are interested in trying this out, you can install it from your terminal using 
-			*  *on your computer if you are using Mac/Linux. For Windows, you will likely need to use the Anaconda Navigator to install it.*   
+```{admonition} Note
+:class: note
 
-An easier way to identify the relative runtime of programs is to use something called a **profiler** . A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.  
+Note: The default 163 environment does not have the following tool installed, so we describe its output rather than actually running it for you! If you are interested in trying this out, you can install it from your terminal using 
+`conda install line_profiler` on your computer if you are using Mac/Linux. For Windows, you will likely need to use the Anaconda Navigator to install it.
+
+```
+
+An easier way to identify the relative runtime of programs is to use something called a **profiler**. A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.  
 
 A common profiler is the `line_profiler` package (also called `kernprof` ). `kernprof` is nice because it lets you annotate your functions with an `@profile` tag to have it profile your method. For example, the following snippet shows a file called `test.py` that defines these three functions with an `@profile` annotation above each function.  
 
