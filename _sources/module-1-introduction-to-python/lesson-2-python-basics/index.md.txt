@@ -2,7 +2,7 @@
 
 ## Concepts
 
-In this lesson, you will learn about the following Python constructs: <br />
+In this lesson, you will learn about the following Python constructs:
 
 - How to run your first Python program
 
@@ -12,7 +12,7 @@ In this lesson, you will learn about the following Python constructs: <br />
 
 - Control Structures (Loops and Conditionals)
 
-- Functions <br />
+- Functions
 
 ## Table of Contents
 
@@ -20,7 +20,6 @@ In this lesson, you will learn about the following Python constructs: <br />
 :maxdepth: 1
 :caption: Contents
 
-context-first-two-modules-of-cse-163
 python-basics
 types-and-booleans
 while-loops
