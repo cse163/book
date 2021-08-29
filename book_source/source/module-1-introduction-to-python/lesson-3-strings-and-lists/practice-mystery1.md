@@ -1,6 +1,6 @@
-# 🚧 Practice: mystery1
+# <i class="far fa-edit"></i>Practice: mystery1
 
-What are the values of the elements in list `a1` after the following code executes?  
+What are the values of the elements in list `a1` after the following code executes?
 
 ```python
 def mystery1(a1, a2):
@@ -12,7 +12,7 @@ a2 = [1, 4, 9, 16, 25]
 mystery1(a1, a2)
 ```
 
-Each of the questions asks for the value at one index. Write your result as an int.  
+Each of the questions asks for the value at one index. Write your result as an int.
 
 
 ```{admonition} Note
@@ -24,7 +24,7 @@ This problem was borrowed from
 
 ```
 
- 
+
 
 ## Question 0
 
@@ -32,7 +32,7 @@ This problem was borrowed from
 a1[0]
 ```
 
- 
+
 
 
 
@@ -46,7 +46,7 @@ Write your answer down in your own space.
 a1[1]
 ```
 
- 
+
 
 
 
@@ -60,7 +60,7 @@ Write your answer down in your own space.
 a1[2]
 ```
 
- 
+
 
 
 
@@ -74,7 +74,7 @@ Write your answer down in your own space.
 a1[3]
 ```
 
- 
+
 
 
 
@@ -88,7 +88,7 @@ Write your answer down in your own space.
 a1[4]
 ```
 
- 
+
 
 
 

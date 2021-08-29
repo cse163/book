@@ -1,15 +1,15 @@
-# 🚧 Practice: Check your understanding
+# <i class="far fa-edit"></i> Practice: Check your understanding
 
-*Make sure you read all instructions on this page* .  
+*Make sure you read all instructions on this page* .
 
-The following questions are here to help you test your understanding of the past reading so far!  
+The following questions are here to help you test your understanding of the past reading so far!
 
 
 ## Question 0
 
-Suppose I had this small dataset (shown below) in a variable called `df`. We want to only filter `df` so that we have all the data but the rows where `'C'` is `NaN`.  
+Suppose I had this small dataset (shown below) in a variable called `df`. We want to only filter `df` so that we have all the data but the rows where `'C'` is `NaN`.
 
-Which of the following methods successfully filters this dataset as described?  
+Which of the following methods successfully filters this dataset as described?
 
 
 | A | B | C |

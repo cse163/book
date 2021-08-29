@@ -1,4 +1,4 @@
-# 🚧 Practice: Fairness Concepts
+# <i class="far fa-edit"></i>Practice: Fairness Concepts
 
 ## Question 0
 

@@ -1,8 +1,8 @@
-# 🚧 Check your Understanding
+# <i class="far fa-edit"></i> Check your Understanding
 
 ## Question 0
 
-Consider the task of trying to compute the sum of numbers between `1` and `n` . Which one of these implementations do you think is more likely to be the fastest one for a very large `n` ?  
+Consider the task of trying to compute the sum of numbers between `1` and `n` . Which one of these implementations do you think is more likely to be the fastest one for a very large `n` ?
 
 
 
@@ -14,13 +14,13 @@ Select one or more options. Write your answer down in your own space.
 
 ```python
 def cumulative_sum(n):
-    total = 0 
+    total = 0
     for i in range(n + 1):
         total += i
     return total
 ```
 
- 
+
 
 
 
@@ -31,7 +31,7 @@ def cumulative_sum(n):
     return n * (n + 1) / 2
 ```
 
- 
+
 
 
 
@@ -47,9 +47,9 @@ def cumulative_sum(n):
 
 ## Question 1
 
-Which of the following are reasons data scientists tend to prefer Python over other programming languages like C or Java.  
+Which of the following are reasons data scientists tend to prefer Python over other programming languages like C or Java.
 
-Select all that apply  
+Select all that apply
 
 
 
@@ -59,25 +59,25 @@ Select one or more options. Write your answer down in your own space.
 
 *❓ Option 0*
 
-Python is generally a very fast language.  
+Python is generally a very fast language.
 
 
 
 *❓ Option 1*
 
-Python tends to be easier to write/read for data scientists.  
+Python tends to be easier to write/read for data scientists.
 
 
 
 *❓ Option 2*
 
-Python can easily integrate with libraries that are written efficiently in C.  
+Python can easily integrate with libraries that are written efficiently in C.
 
 
 
 *❓ Option 3*
 
-Python can solve problems that C or Java cannot.  
+Python can solve problems that C or Java cannot.
 
 
 

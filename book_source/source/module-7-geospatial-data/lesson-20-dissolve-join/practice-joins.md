@@ -1,8 +1,8 @@
-# 🚧 Practice: Joins
+# <i class="far fa-edit"></i> Practice: Joins
 
-Suppose we were working with the following two datasets shown below. For each question, report the number of rows in the resulting `DataFrame` (remember, that the number of rows does not include the column header).  
+Suppose we were working with the following two datasets shown below. For each question, report the number of rows in the resulting `DataFrame` (remember, that the number of rows does not include the column header).
 
-##  `movies`   
+##  `movies`
 
 
 |     movie_name     |year|movie_id|directed_by|
@@ -13,7 +13,7 @@ Suppose we were working with the following two datasets shown below. For each qu
 |Frozen              |2013|      34|         18|
 |Moonrise Kingdom    |2012|      37|         16|
 
-##  `directors`   
+##  `directors`
 
 
 |  director_name  |director_id|
@@ -26,7 +26,7 @@ Suppose we were working with the following two datasets shown below. For each qu
 
 ## Question 0
 
-How many data rows are there in `result` ?  
+How many data rows are there in `result` ?
 
 ```python
 result = movies.merge(directors, left_on='directed_by',
@@ -41,10 +41,10 @@ Write your answer down in your own space.
 
 ## Question 1
 
-How many data rows are there in `result` ?  
+How many data rows are there in `result` ?
 
 ```python
-result = directors.merge(movies, left_on='director_id', 
+result = directors.merge(movies, left_on='director_id',
                          right_on='directed_by', how='left')
 ```
 
@@ -56,14 +56,14 @@ Write your answer down in your own space.
 
 ## Question 2
 
-How many data rows are there in `result` ?  
+How many data rows are there in `result` ?
 
 ```python
-result = movies.merge(directors, left_on='directed_by', 
+result = movies.merge(directors, left_on='directed_by',
                       right_on='director_id', how='outer')
 ```
 
- 
+
 
 
 
@@ -73,9 +73,9 @@ Write your answer down in your own space.
 
 ## Question 3
 
-Suppose we wanted to compute the earliest movie directed by each director. Any director who has directed no movies should have `NaN` as a result.  
+Suppose we wanted to compute the earliest movie directed by each director. Any director who has directed no movies should have `NaN` as a result.
 
-Which of the following code blocks helps us answer that question? **Select all that apply** .  
+Which of the following code blocks helps us answer that question? **Select all that apply** .
 
 
 
@@ -86,23 +86,23 @@ Select one or more options. Write your answer down in your own space.
 *❓ Option 0*
 
 ```python
-merged = movies.merge(directors, 
-                      left_on='directed_by', 
-                      right_on='director_id', 
+merged = movies.merge(directors,
+                      left_on='directed_by',
+                      right_on='director_id',
                       how='right')
 result = merged.groupby('director_id')['year'].min()
 ```
 
- 
+
 
 
 
 *❓ Option 1*
 
 ```python
-merged = movies.merge(directors, 
-                      left_on='directed_by', 
-                      right_on='director_id', 
+merged = movies.merge(directors,
+                      left_on='directed_by',
+                      right_on='director_id',
                       how='left')
 result = merged.groupby('director_id')['year'].min()
 ```
@@ -112,8 +112,8 @@ result = merged.groupby('director_id')['year'].min()
 *❓ Option 2*
 
 ```python
-merged = directors.merge(movies,  
-                         left_on='director_id', 
+merged = directors.merge(movies,
+                         left_on='director_id',
                          right_on='directed_by',
                          how='right')
 result = merged.groupby('director_id')['year'].min()
@@ -124,35 +124,35 @@ result = merged.groupby('director_id')['year'].min()
 *❓ Option 3*
 
 ```python
-merged = directors.merge(movies,  
-                         left_on='director_id', 
+merged = directors.merge(movies,
+                         left_on='director_id',
                          right_on='directed_by',
                          how='left')
 result = merged.groupby('director_id')['year'].min()
 ```
 
- 
+
 
 
 
 *❓ Option 4*
 
 ```python
-merged = movies.merge(directors, 
-                      left_on='directed_by', 
+merged = movies.merge(directors,
+                      left_on='directed_by',
                       right_on='director_id')
 result = merged.groupby('director_id')['year'].min()
 ```
 
- 
+
 
 
 
 ## Question 4
 
-Consider the following two datasets.  
+Consider the following two datasets.
 
--  The first is our countries dataset. Each row has the name, continent, and geometry of a country (there are other columns, but we don't need to think about them for this problem).  
+-  The first is our countries dataset. Each row has the name, continent, and geometry of a country (there are other columns, but we don't need to think about them for this problem).
 
 
     |    NAME     |  CONTINENT  |    geometry     |
@@ -162,7 +162,7 @@ Consider the following two datasets.
 |...          |...          |...              |
 
 
--  The second is a carbon emissions dataset. The dataset has two columns, the name of the country and the amount of carbon emissions produced by that country last year.  
+-  The second is a carbon emissions dataset. The dataset has two columns, the name of the country and the amount of carbon emissions produced by that country last year.
 
 
     |   Country   |Carbon|
@@ -172,11 +172,11 @@ Consider the following two datasets.
 |...          |...   |
 
 
-Suppose we wanted to make a plot of the average carbon emissions **by continent** . Before we do any aggregation to make this map to group countries together by continent, we need to join these datasets so that we can later answer for each continent, what is the average carbon emissions there.  
+Suppose we wanted to make a plot of the average carbon emissions **by continent** . Before we do any aggregation to make this map to group countries together by continent, we need to join these datasets so that we can later answer for each continent, what is the average carbon emissions there.
 
-For this problem, we will say any country in the country dataset that does not have an associated row in the carbon emissions dataset should have 0 carbon emissions.  
+For this problem, we will say any country in the country dataset that does not have an associated row in the carbon emissions dataset should have 0 carbon emissions.
 
-Which of the following is the correct way to combine these datasets by their name? Assume the countries dataset is stored in a variable called `countries` and the carbon emissions data is in a variable called `carbon` and that we have run any relevant imports. **There is only one correct answer in the list below.** It is a useful exercise to make sure you can explain why the other answers are incorrect.  
+Which of the following is the correct way to combine these datasets by their name? Assume the countries dataset is stored in a variable called `countries` and the carbon emissions data is in a variable called `carbon` and that we have run any relevant imports. **There is only one correct answer in the list below.** It is a useful exercise to make sure you can explain why the other answers are incorrect.
 
 
 
@@ -187,7 +187,7 @@ Select one option. Write your answer down in your own space.
 *❓ Option 0*
 
 ```python
-countries.merge(carbon, 
+countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='inner')
 ```
@@ -197,7 +197,7 @@ countries.merge(carbon,
 *❓ Option 1*
 
 ```python
-countries.merge(carbon, 
+countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='left')
 ```
@@ -207,7 +207,7 @@ countries.merge(carbon,
 *❓ Option 2*
 
 ```python
-countries.merge(carbon, 
+countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='right')
 ```
@@ -217,7 +217,7 @@ countries.merge(carbon,
 *❓ Option 3*
 
 ```python
-gpd.sjoin(countries, carbon, 
+gpd.sjoin(countries, carbon,
           op='intersects', how='inner')
 ```
 
@@ -226,7 +226,7 @@ gpd.sjoin(countries, carbon,
 *❓ Option 4*
 
 ```python
-gpd.sjoin(countries, carbon, 
+gpd.sjoin(countries, carbon,
           op='intersects', how='left')
 ```
 
@@ -235,7 +235,7 @@ gpd.sjoin(countries, carbon,
 *❓ Option 5*
 
 ```python
-gpd.sjoin(countries, carbon, 
+gpd.sjoin(countries, carbon,
           op='intersects', how='right')
 ```
 
