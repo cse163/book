@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i>Practice: Expressions
+# <i class="far fa-edit fa-fw"></i>Practice: Expressions
 
 In this checkpoint, you will test your understanding how to evaluate expressions and to pay attention to their types.
 

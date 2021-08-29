@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Wrap-up and Assignment
+# <i class="far fa-edit fa-fw"></i> Wrap-up and Assignment
 
 
 ```{admonition} Warning

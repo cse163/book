@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Reading List Comprehensions
+# <i class="far fa-edit fa-fw"></i> Practice: Reading List Comprehensions
 
 
 

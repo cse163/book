@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Count Unique Words
+# <i class="fas fa-laptop fa-fw"></i> Practice: Count Unique Words
 
 {download}`Download starter code </module-2-data-structures-and-files/lesson-4-lists-and-files/practice-count-unique-words.zip>`
 

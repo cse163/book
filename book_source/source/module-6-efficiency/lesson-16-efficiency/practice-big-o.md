@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Big-O
+# <i class="far fa-edit fa-fw"></i> Practice: Big-O
 
 For the following problems, select which Big-O complexity best describes the run-time of the program. The complexities should be in terms of their input size $n$ (described for each problem).
 

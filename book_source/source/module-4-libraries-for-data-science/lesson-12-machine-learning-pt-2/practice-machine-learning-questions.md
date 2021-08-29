@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Machine Learning Questions
+# <i class="far fa-edit fa-fw"></i> Practice: Machine Learning Questions
 
 ## Question 0
 

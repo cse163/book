@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Largest Earthquake
+# <i class="fas fa-laptop fa-fw"></i> Practice: Largest Earthquake
 
 {download}`Download starter code </module-2-data-structures-and-files/lesson-6-csv-data/practice-largest-earthquake.zip>`
 

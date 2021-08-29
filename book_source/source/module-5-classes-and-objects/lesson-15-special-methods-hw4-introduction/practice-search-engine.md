@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Search Engine
+# <i class="far fa-edit fa-fw"></i> Practice: Search Engine
 
 Consider the corpus with the following documents (file name shown above text of file)
 

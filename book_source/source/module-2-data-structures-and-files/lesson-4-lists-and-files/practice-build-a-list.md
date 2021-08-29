@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Build a List
+# <i class="fas fa-laptop fa-fw"></i> Practice: Build a List
 
 {download}`Download starter code </module-2-data-structures-and-files/lesson-4-lists-and-files/practice-build-a-list.zip>`
 

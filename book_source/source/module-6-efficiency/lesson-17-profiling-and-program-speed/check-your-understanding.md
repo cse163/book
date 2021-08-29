@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Check your Understanding
+# <i class="far fa-edit fa-fw"></i> Check your Understanding
 
 ## Question 0
 

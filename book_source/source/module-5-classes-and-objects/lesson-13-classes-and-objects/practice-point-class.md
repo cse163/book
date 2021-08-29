@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Point class
+# <i class="fas fa-laptop fa-fw"></i> Practice: Point class
 
 {download}`Download starter code </module-5-classes-and-objects/lesson-13-classes-and-objects/practice-point-class.zip>`
 

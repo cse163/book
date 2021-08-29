@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 14: More Classes and Modules
+# <i class="fas fa-book fa-fw"></i> Lesson 14: More Classes and Modules
 
 ## Concepts
 

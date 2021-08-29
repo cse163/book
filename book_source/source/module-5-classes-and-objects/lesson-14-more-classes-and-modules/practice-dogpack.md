@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: DogPack
+# <i class="fas fa-laptop fa-fw"></i> Practice: DogPack
 
 {download}`Download starter code </module-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-dogpack.zip>`
 

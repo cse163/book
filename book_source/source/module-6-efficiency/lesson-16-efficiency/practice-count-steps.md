@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Count Steps
+# <i class="far fa-edit fa-fw"></i> Practice: Count Steps
 
 For each of the following code block, count the number of steps using the rules we have shown in the previous slide.
 

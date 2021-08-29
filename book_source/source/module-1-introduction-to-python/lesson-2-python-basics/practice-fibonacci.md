@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Fibonacci
+# <i class="fas fa-laptop fa-fw"></i> Practice: Fibonacci
 
 {download}`Download starter code </module-1-introduction-to-python/lesson-2-python-basics/practice-fibonacci.zip>`
 

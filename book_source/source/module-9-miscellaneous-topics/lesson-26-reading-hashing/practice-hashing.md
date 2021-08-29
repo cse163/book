@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Hashing
+# <i class="far fa-edit fa-fw"></i> Practice: Hashing
 
 **If we do the insertions in the order of the code snippet below, what is the resulting hash table?** Assume the following:
 

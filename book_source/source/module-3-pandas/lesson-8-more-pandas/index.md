@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 8: More Pandas
+# <i class="fas fa-book fa-fw"></i> Lesson 8: More Pandas
 
 ## Concepts
 

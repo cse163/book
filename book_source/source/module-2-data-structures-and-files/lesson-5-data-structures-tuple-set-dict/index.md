@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 5: Data Structures - Tuple, Set, Dict
+# <i class="fas fa-book fa-fw"></i> Lesson 5: Data Structures - Tuple, Set, Dict
 
 ## Concepts
 

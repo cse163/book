@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Small and Rich
+# <i class="fas fa-laptop fa-fw"></i> Practice: Small and Rich
 
 {download}`Download starter code </module-7-geospatial-data/lesson-18-geospatial-data-misc-python/practice-small-and-rich.zip>`
 

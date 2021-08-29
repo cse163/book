@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Filter Long Lines
+# <i class="fas fa-laptop fa-fw"></i> Practice: Filter Long Lines
 
 {download}`Download starter code </module-2-data-structures-and-files/lesson-4-lists-and-files/practice-filter-long-lines.zip>`
 

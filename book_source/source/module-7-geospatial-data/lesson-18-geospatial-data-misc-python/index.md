@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 18: Geospatial Data + Misc Python
+# <i class="fas fa-book fa-fw"></i> Lesson 18: Geospatial Data + Misc Python
 
 ## Concepts
 

@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Pair
+# <i class="fas fa-laptop fa-fw"></i> Practice: Pair
 
 {download}`Download starter code </module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.zip>`
 

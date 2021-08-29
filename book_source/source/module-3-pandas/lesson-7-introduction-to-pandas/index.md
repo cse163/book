@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 7: Introduction to Pandas
+# <i class="fas fa-book fa-fw"></i> Lesson 7: Introduction to Pandas
 
 ## Context for Module
 

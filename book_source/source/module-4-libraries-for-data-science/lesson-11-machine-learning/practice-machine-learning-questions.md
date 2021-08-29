@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Machine Learning Questions
+# <i class="far fa-edit fa-fw"></i> Practice: Machine Learning Questions
 
 The first 4 problems are all part of the same problem (they have the same setup text). Across those 4 problems, you should use each choice at most once.
 

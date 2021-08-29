@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 15: Special Methods + HW4 Introduction
+# <i class="fas fa-book fa-fw"></i> Lesson 15: Special Methods + HW4 Introduction
 
 ## Concepts
 

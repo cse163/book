@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Neural Networks and Images
+# <i class="far fa-edit fa-fw"></i> Practice: Neural Networks and Images
 
 
 

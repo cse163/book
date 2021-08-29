@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 2: Python Basics
+# <i class="fas fa-book fa-fw"></i> Lesson 2: Python Basics
 
 ## Concepts
 

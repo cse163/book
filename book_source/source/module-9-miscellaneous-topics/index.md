@@ -1,4 +1,4 @@
-# <i class="fas fa-layer-group"></i> Module 9: Miscellaneous Topics
+# <i class="fas fa-layer-group fa-fw"></i> Module 9: Miscellaneous Topics
 
 ```{toctree}
 :maxdepth: 3

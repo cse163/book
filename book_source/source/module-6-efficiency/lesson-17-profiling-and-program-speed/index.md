@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 17: Profiling and Program Speed
+# <i class="fas fa-book fa-fw"></i> Lesson 17: Profiling and Program Speed
 
 ## Concepts
 

@@ -1,4 +1,4 @@
-# <i class="far fa-pause-circle"></i> Pause and Think
+# <i class="far fa-pause-circle fa-fw"></i> Pause and Think
 
 At this point, you've finished all of the new lesson content. All that's left is completing the practice problems for the day!
 

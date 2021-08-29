@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Convolution Examples
+# <i class="far fa-edit fa-fw"></i> Practice: Convolution Examples
 
 
 

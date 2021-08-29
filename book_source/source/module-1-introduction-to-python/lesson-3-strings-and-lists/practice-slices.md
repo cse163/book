@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Slices
+# <i class="far fa-edit fa-fw"></i> Practice: Slices
 
 For all the following questions, assume we are using the string
 

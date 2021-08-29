@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Duckie Hat 🦆🎩
+# <i class="fas fa-laptop fa-fw"></i> Practice: Duckie Hat 🦆🎩
 
 {download}`Download starter code </module-8-images/lesson-22-reading-numpy/practice-duckie-hat.zip>`
 

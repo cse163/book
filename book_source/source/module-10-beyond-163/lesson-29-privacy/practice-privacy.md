@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Privacy
+# <i class="far fa-edit fa-fw"></i> Practice: Privacy
 
 
 

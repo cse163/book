@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Collapse
+# <i class="fas fa-laptop fa-fw"></i> Practice: Collapse
 
 {download}`Download starter code </module-8-images/lesson-23-reading-more-numpy-and-images/practice-collapse.zip>`
 

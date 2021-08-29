@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: count_votes
+# <i class="fas fa-laptop fa-fw"></i> Practice: count_votes
 
 {download}`Download starter code </module-1-introduction-to-python/lesson-3-strings-and-lists/practice-count_votes.zip>`
 

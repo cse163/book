@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 20: Dissolve + Join
+# <i class="fas fa-book fa-fw"></i> Lesson 20: Dissolve + Join
 
 ## Concepts
 

@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i>  Lesson 21: Indexes / Trees 🌳
+# <i class="fas fa-book fa-fw"></i>  Lesson 21: Indexes / Trees 🌳
 
 ## Concepts
 

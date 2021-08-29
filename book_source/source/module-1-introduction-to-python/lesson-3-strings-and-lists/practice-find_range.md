@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: find_range
+# <i class="fas fa-laptop fa-fw"></i> Practice: find_range
 
 {download}`Download starter code </module-1-introduction-to-python/lesson-3-strings-and-lists/practice-find_range.zip>`
 

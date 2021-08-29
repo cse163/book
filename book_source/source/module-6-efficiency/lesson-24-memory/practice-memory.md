@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Memory
+# <i class="far fa-edit fa-fw"></i> Practice: Memory
 
 
 

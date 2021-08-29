@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 6: CSV Data
+# <i class="fas fa-book fa-fw"></i> Lesson 6: CSV Data
 
 ## Concepts
 

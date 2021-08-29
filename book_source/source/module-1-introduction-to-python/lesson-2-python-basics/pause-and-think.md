@@ -1,4 +1,4 @@
-# <i class="far fa-pause-circle"></i> Pause and Think
+# <i class="far fa-pause-circle fa-fw"></i> Pause and Think
 
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">

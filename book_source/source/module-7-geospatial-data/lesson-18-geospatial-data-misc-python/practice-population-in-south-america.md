@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Population in South America
+# <i class="fas fa-laptop fa-fw"></i> Practice: Population in South America
 
 {download}`Download starter code </module-7-geospatial-data/lesson-18-geospatial-data-misc-python/practice-population-in-south-america.zip>`
 

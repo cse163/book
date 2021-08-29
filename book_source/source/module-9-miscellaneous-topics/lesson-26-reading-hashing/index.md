@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 26 Reading: Hashing
+# <i class="fas fa-book fa-fw"></i> Lesson 26 Reading: Hashing
 
 ## This is the last lesson worth points this quarter!
 

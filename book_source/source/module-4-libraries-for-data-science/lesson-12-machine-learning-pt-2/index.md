@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 12: Machine Learning pt. 2
+# <i class="fas fa-book fa-fw"></i> Lesson 12: Machine Learning pt. 2
 
 ## Concepts
 

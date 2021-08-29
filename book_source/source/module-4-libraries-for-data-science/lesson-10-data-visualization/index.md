@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 10: Data Visualization
+# <i class="fas fa-book fa-fw"></i> Lesson 10: Data Visualization
 
 ## Concepts
 

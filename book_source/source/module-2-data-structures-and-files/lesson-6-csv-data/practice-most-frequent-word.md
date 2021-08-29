@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Most Frequent Word
+# <i class="fas fa-laptop fa-fw"></i> Practice: Most Frequent Word
 
 {download}`Download starter code </module-2-data-structures-and-files/lesson-6-csv-data/practice-most-frequent-word.zip>`
 

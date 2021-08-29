@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Check your understanding
+# <i class="far fa-edit fa-fw"></i> Practice: Check your understanding
 
 *Make sure you read all instructions on this page* .
 

@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Shakiness by Location
+# <i class="fas fa-laptop fa-fw"></i> Practice: Shakiness by Location
 
 {download}`Download starter code </module-2-data-structures-and-files/lesson-6-csv-data/practice-shakiness-by-location.zip>`
 

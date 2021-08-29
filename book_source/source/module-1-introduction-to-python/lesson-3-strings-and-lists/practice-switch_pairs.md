@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: switch_pairs
+# <i class="fas fa-laptop fa-fw"></i> Practice: switch_pairs
 
 {download}`Download starter code </module-1-introduction-to-python/lesson-3-strings-and-lists/practice-switch_pairs.zip>`
 

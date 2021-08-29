@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 3: Strings and Lists
+# <i class="fas fa-book fa-fw"></i> Lesson 3: Strings and Lists
 
 ## Concepts
 

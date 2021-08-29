@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Broadcasting
+# <i class="far fa-edit fa-fw"></i> Practice: Broadcasting
 
 What is the result of the following operation? For reference, we have shown the rules of broadcasting below.
 

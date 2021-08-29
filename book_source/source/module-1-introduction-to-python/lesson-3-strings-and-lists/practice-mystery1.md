@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i>Practice: mystery1
+# <i class="far fa-edit fa-fw"></i>Practice: mystery1
 
 What are the values of the elements in list `a1` after the following code executes?
 

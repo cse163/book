@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 4: Lists and Files
+# <i class="fas fa-book fa-fw"></i> Lesson 4: Lists and Files
 
 ## Concepts
 

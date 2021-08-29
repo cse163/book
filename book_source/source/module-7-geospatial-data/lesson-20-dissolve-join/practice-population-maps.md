@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Population Maps
+# <i class="fas fa-laptop fa-fw"></i> Practice: Population Maps
 
 {download}`Download starter code </module-7-geospatial-data/lesson-20-dissolve-join/practice-population-maps.zip>`
 

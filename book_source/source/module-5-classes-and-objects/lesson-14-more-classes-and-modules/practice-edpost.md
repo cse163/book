@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: EdPost
+# <i class="fas fa-laptop fa-fw"></i> Practice: EdPost
 
 {download}`Download starter code </module-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-edpost.zip>`
 

@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Joins
+# <i class="far fa-edit fa-fw"></i> Practice: Joins
 
 Suppose we were working with the following two datasets shown below. For each question, report the number of rows in the resulting `DataFrame` (remember, that the number of rows does not include the column header).
 

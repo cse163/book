@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 24 Reading: Machine Learning and Images
+# <i class="fas fa-book fa-fw"></i> Lesson 24 Reading: Machine Learning and Images
 
 ## Concepts
 

@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Minute Countdown
+# <i class="fas fa-laptop fa-fw"></i> Practice: Minute Countdown
 
 {download}`Download starter code </module-1-introduction-to-python/lesson-2-python-basics/practice-minute-countdown.zip>`
 

@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Build a List Comprehension
+# <i class="fas fa-laptop fa-fw"></i> Practice: Build a List Comprehension
 
 {download}`Download starter code </module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-build-a-list-comprehension.zip>`
 

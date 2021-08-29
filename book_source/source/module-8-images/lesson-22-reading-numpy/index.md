@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 22 Reading: Numpy
+# <i class="fas fa-book fa-fw"></i> Lesson 22 Reading: Numpy
 
 ## Concepts
 

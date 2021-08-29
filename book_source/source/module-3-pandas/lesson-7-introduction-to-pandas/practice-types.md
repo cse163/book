@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Types
+# <i class="far fa-edit fa-fw"></i> Practice: Types
 
 Consider the emissions dataset from the earlier slide. We have put an image of the dataset below as a reminder.
 

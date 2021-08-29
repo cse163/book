@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Reflecting on When to Not Use ML
+# <i class="far fa-edit fa-fw"></i> Practice: Reflecting on When to Not Use ML
 
 These questions are meant to be open-ended and there is no right answer. The intent here is to get you thinking about the "When to Not Use ML" slide and writing out your thoughts. Full credit will be awarded for answers that show an honest effort put into them.
 

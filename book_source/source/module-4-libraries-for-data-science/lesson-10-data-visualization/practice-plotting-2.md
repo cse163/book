@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Plotting 2
+# <i class="fas fa-laptop fa-fw"></i> Practice: Plotting 2
 
 {download}`Download starter code </module-4-libraries-for-data-science/lesson-10-data-visualization/practice-plotting-2.zip>`
 

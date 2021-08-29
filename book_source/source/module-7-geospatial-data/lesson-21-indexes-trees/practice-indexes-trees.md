@@ -1,4 +1,4 @@
-# <i class="far fa-edit"></i> Practice: Indexes / Trees
+# <i class="far fa-edit fa-fw"></i> Practice: Indexes / Trees
 
 
 The following questions will ask you about indexes and tree indexes.

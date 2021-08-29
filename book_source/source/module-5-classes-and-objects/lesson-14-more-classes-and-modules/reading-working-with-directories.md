@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Reading: Working with Directories
+# <i class="fas fa-laptop fa-fw"></i> Reading: Working with Directories
 
 {download}`Download starter code </module-5-classes-and-objects/lesson-14-more-classes-and-modules/reading-working-with-directories.zip>`
 

@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: MySet
+# <i class="fas fa-laptop fa-fw"></i> Practice: MySet
 
 {download}`Download starter code </module-9-miscellaneous-topics/lesson-26-reading-hashing/practice-myset.zip>`
 

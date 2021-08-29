@@ -1,4 +1,4 @@
-# <i class="fas fa-laptop"></i> Practice: Count Words
+# <i class="fas fa-laptop fa-fw"></i> Practice: Count Words
 
 {download}`Download starter code </module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-count-words.zip>`
 

@@ -1,4 +1,4 @@
-# <i class="fas fa-book"></i> Lesson 13: Classes and Objects
+# <i class="fas fa-book fa-fw"></i> Lesson 13: Classes and Objects
 
 ## Concepts
 
