@@ -1,15 +1,14 @@
-# 📚 Lesson 6: CSV Data
+# <i class="fas fa-book"></i> Lesson 6: CSV Data
 
-##  Concepts  
+## Concepts
 
-In this lesson, you will learn about the following:  
+In this lesson, you will learn about the following:
 
--  More advanced features of the `dict` type.  
+- More advanced features of the `dict` type.
 
--  The comma-separated value (CSV) file format.  
+- The comma-separated value (CSV) file format.
 
--  How to represent this data in Python to aid computation.  
-
+- How to represent this data in Python to aid computation.
 
 ## Table of Contents
 

@@ -1,14 +1,14 @@
-# 📚 Lesson 4: Lists and Files
+# <i class="fas fa-book"></i> Lesson 4: Lists and Files
 
-##  Concepts  
+## Concepts
 
-In this lesson, you will learn about the following Python constructs:  
+In this lesson, you will learn about the following Python constructs:
 
--  File Processing  
+- File Processing
 
--  More advanced usages of lists  
+- More advanced usages of lists
 
--  A little bit more about how Python works by looking at multiple ways of interacting with it  
+- A little bit more about how Python works by looking at multiple ways of interacting with it
 
 ## Table of Contents
 

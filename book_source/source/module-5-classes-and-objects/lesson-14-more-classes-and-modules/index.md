@@ -1,18 +1,18 @@
-# 📚 Lesson 14: More Classes and Modules
+# <i class="fas fa-book"></i> Lesson 14: More Classes and Modules
 
-##  Concepts  
+## Concepts
 
-In this lesson, you will learn the following concepts:  
+In this lesson, you will learn the following concepts:
 
--  Private fields  
+- Private fields
 
--  A warning about default parameters and references  
+- A warning about default parameters and references
 
--  Working with directories  
+- Working with directories
 
--  Lambdas  
+- Lambdas
 
--  More practice with classes!
+- More practice with classes!
 
 ## Table of Contents
 

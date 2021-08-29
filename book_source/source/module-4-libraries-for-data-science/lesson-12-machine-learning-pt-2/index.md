@@ -1,16 +1,16 @@
-# 📚 Lesson 12: Machine Learning pt. 2
+# <i class="fas fa-book"></i> Lesson 12: Machine Learning pt. 2
 
-##  Concepts  
+## Concepts
 
-In this lesson, you will learn the following concepts:  
+In this lesson, you will learn the following concepts:
 
--  How to handle categorical data  
+- How to handle categorical data
 
--  How to assess the quality of a model  
+- How to assess the quality of a model
 
--  The concept of overfitting  
+- The concept of overfitting
 
--  Controlling model complexity with hyperparameters  
+- Controlling model complexity with hyperparameters
 
 ## Table of Contents
 

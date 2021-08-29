@@ -1,4 +1,4 @@
-# 📚 Lesson 9: Time Series
+# <i class="fas fa-book"></i> Lesson 9: Time Series
 
 ```{note}
 

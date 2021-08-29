@@ -1,17 +1,16 @@
-# 📚 Lesson 13: Classes and Objects
+# <i class="fas fa-book"></i> Lesson 13: Classes and Objects
 
-##  Concepts  
+## Concepts
 
 In this lesson, you will learn the following concepts:
 
--  Objects and their states and behaviors
+- Objects and their states and behaviors
 
--  References in Python
+- References in Python
 
--  How to define a class
+- How to define a class
 
--  How to instantiate objects of that class
-
+- How to instantiate objects of that class
 
 ## Table of Contents
 

@@ -1,12 +1,12 @@
-# 📚 Lesson 11: Machine Learning 
+# <i class="fas fa-book"></i> Lesson 11: Machine Learning
 
-##  Concepts  
+## Concepts
 
-In this lesson, you will learn the following concepts:  
+In this lesson, you will learn the following concepts:
 
--  Some core ideas from machine learning  
+- Some core ideas from machine learning
 
--  How to write code to train a machine learning model  
+- How to write code to train a machine learning model
 
 ## Table of Contents
 

@@ -1,16 +1,16 @@
-# 📚 Lesson 3: Strings and Lists
+# <i class="fas fa-book"></i> Lesson 3: Strings and Lists
 
-##  Concepts  
+## Concepts
 
-In this lesson, you will learn about the following Python constructs:  
+In this lesson, you will learn about the following Python constructs:
 
--  Strings  
+- Strings
 
--  Lists  
+- Lists
 
--  None  
+- None
 
--  How to document your code
+- How to document your code
 
 ## Table of Contents
 

@@ -1,21 +1,18 @@
-# 📚 Lesson 2: Python Basics
+# <i class="fas fa-book"></i> Lesson 2: Python Basics
 
-##  Concepts
+## Concepts
 
-In this lesson, you will learn about the following Python constructs: <br />   
+In this lesson, you will learn about the following Python constructs: <br />
 
--  How to run your first Python program  
+- How to run your first Python program
 
--  Variables and Expressions  
+- Variables and Expressions
 
--  Types and Booleans  
+- Types and Booleans
 
--  Control Structures (Loops and Conditionals)  
+- Control Structures (Loops and Conditionals)
 
--  Functions     <br />   
-
-
-
+- Functions <br />
 
 ## Table of Contents
 

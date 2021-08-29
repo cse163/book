@@ -1,4 +1,4 @@
-# 📚 Lesson 27 Reading: Ethics in Data Science
+# <i class="fas fa-book"></i> Lesson 27 Reading: Ethics in Data Science
 
 We will discuss ethics in data science. Since this is not a philosophy class, we are not quite able to discuss frameworks of ethics or define a bunch of terms (although they are essential, they aren't our expertise). Instead, we will focus on studying ways data science can go wrong as a series of case studies. These case studies aren't comprehensive of all ways data science can go wrong, but can hopefully act as reference points or reminders when exploring your applications.
 

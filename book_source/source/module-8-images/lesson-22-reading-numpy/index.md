@@ -1,38 +1,32 @@
-# 📚 Lesson 22 Reading: Numpy 
+# <i class="fas fa-book"></i> Lesson 22 Reading: Numpy
 
-##  Concepts  
+## Concepts
 
-In this lesson, you will learn the following concepts:  
+In this lesson, you will learn the following concepts:
 
--  Numpy Arrays  
+- Numpy Arrays
 
-    -  Indexing  
+  - Indexing
 
-    -  Arithmetic  
+  - Arithmetic
 
-    -  Broadcasting  
+  - Broadcasting
 
+- Images
 
--  Images  
+## Ed Lessons
 
+As a reminder, our suggested way of doing this lesson follows these steps:
 
-##  Ed Lessons  
+- Do the reading on your own time before our class session for today's lesson. Also, respond to the "Pause and Think" question.
 
-As a reminder, our suggested way of doing this lesson follows these steps:  
+- Call into the class-session prepared to work in groups on the practice problems. It will help to have your notes (and answers from Pause and Think) ready so you can hit the ground running with your group.
 
--  Do the reading on your own time before our class session for today's lesson. Also, respond to the "Pause and Think" question.  
+  - We will periodically summarize high-level ideas of the practice problems in the class session.
 
--  Call into the class-session prepared to work in groups on the practice problems. It will help to have your notes (and answers from Pause and Think) ready so you can hit the ground running with your group.  
+  - TAs will "walk-around" Zoom breakouts so you can ask them any questions!
 
-    -  We will periodically summarize high-level ideas of the practice problems in the class session.  
-
-    -  TAs will "walk-around" Zoom breakouts so you can ask them any questions!  
-
-
--  Finish up any of the practice problems afterward!  
-
-
-
+- Finish up any of the practice problems afterward!
 
 ## Table of Contents
 
