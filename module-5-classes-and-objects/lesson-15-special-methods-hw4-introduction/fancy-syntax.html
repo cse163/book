@@ -1621,6 +1621,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/5aafdcb9496e4fd28a06f4f069dbd0d2?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>It turns out that most of the common syntax in Python is really just “special methods” that can be defined in your class. Below is a list of common features you might define when writing your own classes.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1629,23 +1630,23 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>x &lt; y</p></td>
-<td><p>x.<strong>lt</strong>(y)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__lt__(y)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>x == y</p></td>
-<td><p>x.<strong>eq</strong>(y)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__eq__(y)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>x &gt;= y</p></td>
-<td><p>x.<strong>ge</strong>(y)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__ge__(y)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>print(x)</p></td>
-<td><p>print(x.<strong>repr</strong>())</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">print(x)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">print(x.__repr__())</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>x[i]</p></td>
-<td><p>x.<strong>getitem</strong>(i)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x[i]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__getitem__(i)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>x[i] = v</p></td>
-<td><p>x.<strong>setitem</strong>(i, v)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x[i]</span> <span class="pre">=</span> <span class="pre">v</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__setitem__(i,</span> <span class="pre">v)</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1702,35 +1703,12 @@
 </div>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
-<p>It turns out that because we implement
-<code class="docutils literal notranslate"><span class="pre">__lt__</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">__eq__</span></code>
-there is no need to implement any other comparison operators (
-<code class="docutils literal notranslate"><span class="pre">__le__</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">__gt__</span></code>
-,
-<code class="docutils literal notranslate"><span class="pre">__ge__</span></code>
-). This is why when we wrote
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code>
-it can figure it out just from
-<code class="docutils literal notranslate"><span class="pre">__lt__</span></code>
-! For example,
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code>
-can be implemented as
-<code class="docutils literal notranslate"><span class="pre">y.__lt__(x)</span></code>
-and
-<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">y</span></code>
-could be implemented as
-<code class="docutils literal notranslate"><span class="pre">x.__lt__(y)</span> <span class="pre">or</span> <span class="pre">x.__eq_(y)</span></code>
-!
+<p>It turns out that because we implement <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> and <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>
+there is no need to implement any other comparison operators ( <code class="docutils literal notranslate"><span class="pre">__le__</span></code> , <code class="docutils literal notranslate"><span class="pre">__gt__</span></code>, <code class="docutils literal notranslate"><span class="pre">__ge__</span></code>). This is why when we wrote <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code> it can figure it out just from <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>! For example, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code> can be implemented as <code class="docutils literal notranslate"><span class="pre">y.__lt__(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">y</span></code> could be implemented as <code class="docutils literal notranslate"><span class="pre">x.__lt__(y)</span> <span class="pre">or</span> <span class="pre">x.__eq_(y)</span></code>!
 <br /></p>
 <br />
-You could have chosen another operator besides
-`__lt__`
-, but basically if you implement any less than / greater than operator and equals, you get all of the others for free!
-<br />
+<p>You could have chosen another operator besides <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>, but basically if you implement any less than/greater than operator and equals, you get all of the others for free!
+<br /></p>
 </div>
 </section>
 

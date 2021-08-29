@@ -2,13 +2,20 @@
 
 {download}`Download starter code </module-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-edpost.zip>`
 
+```{admonition} Note
+:class: note
+
+The discussion board post in this problem is named `EdPost` because the CSE 163 at UW used EdStem as the discussion board for the course. 
+
+```
+
 Write a class called `EdPost` that represents a question on the message board. The `EdPost` class should have an initializer that takes an argument for each of the 3 fields your class should have.  
 
--  The name of the post (a     `str`     ) stored in a field     `title`     . This parameter should not have a default value.  
+-  The name of the post (a `str`) stored in a field `title`. This parameter should not have a default value.  
 
--  The topic of the post (a     `str`     ) stored in a field     `tag`     . This field should have the default value     `General`     .  
+-  The topic of the post (a `str`) stored in a field `tag`. This field should have the default value `General`.  
 
--  The comments on the post (a     `list`     ) stored in a field     `comments`     . The field should have the default value of an empty     `list`     .  
+-  The comments on the post (a `list`) stored in a field `comments`. The field should have the default value of an empty `list`.  
 
 
 **Your fields should have the names described above but should be made private.**   
@@ -67,20 +74,12 @@ Comments:
 ````
 
 
-```{admonition} Warning
-:class: warning
+```{admonition} Tip
+:class: tip
 
 Many students previously reported difficulty getting the formatting right for this
 `display`
-output. Here are two hints:
-<br />
-
-<br />
-1) Recall that reading the output of the Mark interface can be tricky. Try running the main program in the terminal to see the output.
-<br />
-2) Pay careful attention to the amount of whitespace you are using. It might help to replace spaces with another symbol (e.g.,
-`~`
-) so you can visually inspect the number of spaces you are using.
+output. Here is a hint: pay careful attention to the amount of whitespace you are using. It might help to replace spaces with another symbol (e.g., `~`) so you can visually inspect the number of spaces you are using.
 
 ```
 

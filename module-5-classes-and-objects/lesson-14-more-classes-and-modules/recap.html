@@ -1639,30 +1639,26 @@
 <li><p>The     <strong>behavior</strong>     of an object is defined by the methods written in its     <em>class.</em>     The     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class has the method     <code class="docutils literal notranslate"><span class="pre">bark</span></code>     .</p></li>
 <li><p>Variables store     <strong>references</strong>     to objects rather than the objects themselves. This means the following program has 2     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     objects and 3     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     references.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Chester&#39;</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Scout&#39;</span><span class="p">)</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="n">d1</span>
 </pre></div>
 </div>
 </li>
-</ul>
-<p>d2 = Dog(‘Scout’)
-d3 = d1
-```</p>
-<ul>
 <li><p>A     <strong>memory model</strong>     is a picture that helps us see which objects exist in our program and which variables reference which objects.     <br /></p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/klq5hkNl8mnQsfjtNrk2bwxq"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/klq5hkNl8mnQsfjtNrk2bwxq" style="width: 360px;" /></a>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code>     is a special method used when creating an instance of the object. It determines which parameters need to be passed when you create a new instance.</p></li>
 <li><p>Every method defined in a class needs to take a parameter     <code class="docutils literal notranslate"><span class="pre">self</span></code>     so the method can access the fields/methods of the instance the method is being called on.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Chester&#39;</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Scout&#39;</span><span class="p">)</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="n">d1</span>
+<span class="n">d1</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># When running, self refers to Dog(&#39;Chester&#39;)</span>
+<span class="n">d2</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># When running, self refers to Dog(&#39;Scout&#39;)</span>
+<span class="n">d3</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># When running, self refers to Dog(&#39;Chester&#39;)</span>
 </pre></div>
 </div>
 </li>
 </ul>
-<p>d2 = Dog(‘Scout’)
-d3 = d1
-d1.bark()  # When running, self refers to Dog(‘Chester’)
-d2.bark()  # When running, self refers to Dog(‘Scout’)
-d3.bark()  # When running, self refers to Dog(‘Chester’)
-```</p>
 </section>
 
 

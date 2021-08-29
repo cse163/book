@@ -1621,6 +1621,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/de5c457d29854cad9093650e160fc9da?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>Recall: a Python file is also called a
@@ -1690,9 +1691,9 @@
 <p>What we want to do is to restrict the client so they can’t access the fields and instead have to go through the methods to deposit/withdraw money. To do this, we need to make the fields <strong>private</strong> so the client can’t access them.</p>
 <p>Some languages have ways of enforcing this notion of having a private field (one where a client can’t access it from outside the class), but Python does not. Instead, Python has a convention that everyone follows:</p>
 <blockquote>
-<div><p>If a field name starts with an underscore (i.e. ‘_’), it is considered private and you shouldn’t access it (to either read the value or modify it).
-Technically, this is not enforced by the language itself. This means someone <em>could</em> violate this rule and access the private field, but that doesn’t mean they <em>should</em> . There is usually no public-facing documentation describing these private fields, so you would be making assumptions about how they work; this will almost surely cause your programs to have bugs. Additionally, the Python community takes respecting privacy very seriously so they might call the Python-police on you if they see you doing that.</p>
+<div><p>If a field name starts with an underscore (i.e. ‘_’), it is considered private and you shouldn’t access it (to either read the value or modify it).</p>
 </div></blockquote>
+<p>Technically, this is not enforced by the language itself. This means someone <em>could</em> violate this rule and access the private field, but that doesn’t mean they <em>should</em> . There is usually no public-facing documentation describing these private fields, so you would be making assumptions about how they work; this will almost surely cause your programs to have bugs. Additionally, the Python community takes respecting privacy very seriously so they might call the Python-police on you if they see you doing that.</p>
 <p>To make our fields private, we would rewrite the class so that the field names were <code class="docutils literal notranslate"><span class="pre">self._owner</span></code> and <code class="docutils literal notranslate"><span class="pre">self._amount</span></code> like in the following code block.</p>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>

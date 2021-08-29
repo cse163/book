@@ -1619,10 +1619,6 @@
   <section id="practice-pair">
 <h1>🚧 Practice: Pair<a class="headerlink" href="#practice-pair" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference download internal" download="" href="../../_downloads/97ff0184647e6f68e2e42046327b5f87/practice-pair.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
-<div class="note admonition">
-<p class="admonition-title">Note</p>
-<p>Like we said earlier, we are putting all the questions before the pause and think today, since we won’t be having a structured class on Friday. You are welcome to do this now, or come to class and work with groups!</p>
-</div>
 <p>Write a class called <code class="docutils literal notranslate"><span class="pre">Pair</span></code> that stores two values and can be used just like a tuple containing two elements. The class you implement should produce the behavior shown in the code cell below. Define the class in <code class="docutils literal notranslate"><span class="pre">pair.py</span></code> .</p>
 <p>You can assume the client will only access index 0 or 1 for a <code class="docutils literal notranslate"><span class="pre">Pair</span></code> .</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Pair</span></code> class should be immutable so that the client can’t change its state. This means all fields should be private and if they try to modify a value in the pair,  like in the last line of the code cell below, it should print an error message and do nothing else. Notice that you will still need to define the method to allow the syntax for assignment, but the behavior just prints the error without changing the state of the object.</p>
@@ -1655,23 +1651,23 @@ Error: Pair is immutable!
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>x &lt; y</p></td>
-<td><p>x.<strong>lt</strong>(y)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__lt__(y)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>x == y</p></td>
-<td><p>x.<strong>eq</strong>(y)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__eq__(y)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>x &gt;= y</p></td>
-<td><p>x.<strong>ge</strong>(y)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__ge__(y)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>print(x)</p></td>
-<td><p>print(x.<strong>repr</strong>())</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">print(x)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">print(x.__repr__())</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>x[i]</p></td>
-<td><p>x.<strong>getitem</strong>(i)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x[i]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__getitem__(i)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>x[i] = v</p></td>
-<td><p>x.<strong>setitem</strong>(i, v)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x[i]</span> <span class="pre">=</span> <span class="pre">v</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x.__setitem__(i,</span> <span class="pre">v)</span></code></p></td>
 </tr>
 </tbody>
 </table>

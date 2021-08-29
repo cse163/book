@@ -5,6 +5,7 @@
     <iframe src="https://www.loom.com/embed/020818cc801841cb97393a741104047b?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
 
 ```{admonition} Note
 :class: note
@@ -12,20 +13,13 @@
 A note about the format of this reading: This reading involves using multiple Python files. If a code block has a comment at the top saying
 <br />
 
-<br />
-
 `# File: hello_world.py`
-
 <br />
 
-<br />
 We are indicating that you should read the contents of that code block being in the file with the indicated name.
-<br />
-
-
 ```
 
-Recall from the first day of class, we saw that there were two ways of writing a "Hello world" program  
+Recall from the first lesson, we saw that there were two ways of writing a "Hello world" program  
 
 ```python
 # File: hello_world.py
