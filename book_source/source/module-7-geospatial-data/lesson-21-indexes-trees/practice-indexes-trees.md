@@ -1,15 +1,10 @@
 # <i class="far fa-edit fa-fw"></i> Practice: Indexes / Trees
 
-
 The following questions will ask you about indexes and tree indexes.
 
 ## Question 0
 
 Consider making an application that uses a large amount of data that has a **write-heavy workload** (this means it is more common for users to upload information to add data to the system rather than querying for information). True or false, you would expect that building a search tree index for your data will improve the performance of your system.
-
-
-
-
 
 **📝 Your Task**
 
@@ -19,9 +14,7 @@ Write your answer down in your own space.
 
 In your own words, describe one benefit and one downside of using a tree index on top of a dataset. Be specific and give an example.
 
-*This question will be graded by hand for effort and accuracy.*
-
-
+_This question will be graded by hand for effort and accuracy._
 
 **📝 Your Task**
 
@@ -31,25 +24,23 @@ Write your answer down in your own space.
 
 Order the following operation run-times from the fastest (top) to slowest (bottom).
 
-
-
 **📝 Your Task**
 
 Reorder the following options. Write your answer down in your own space.
 
-*❓ Option 0*
+_<i class="fas fa-list-ol fa-fw"></i> Option 0_
 
 Dict Lookup: O(1)
 
-*❓ Option 1*
+_<i class="fas fa-list-ol fa-fw"></i> Option 1_
 
 KD-Tree Building: O(knlog(n))
 
-*❓ Option 2*
+_<i class="fas fa-list-ol fa-fw"></i> Option 2_
 
 Linear Search: O(n)
 
-*❓ Option 3*
+_<i class="fas fa-list-ol fa-fw"></i> Option 3_
 
 Tree Lookup: O(log(n))
 
@@ -64,8 +55,6 @@ Consider the following sorted list of values shown in the image below. Suppose w
 ```
 
 Report your answer as a number of steps (e.g., `7` )
-
-
 
 **📝 Your Task**
 
@@ -83,13 +72,6 @@ What is the sequence of checks we will make in order to determine that the query
 :align: center
 ```
 
-
-
-
-
-
-
 **📝 Your Task**
 
 Write your answer down in your own space.
-

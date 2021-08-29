@@ -8,19 +8,19 @@ Rank the different types of memory from the slowest to fastest. This means the s
 
 Reorder the following options. Write your answer down in your own space.
 
-_❓ Option 0_
+_<i class="fas fa-list-ol fa-fw"></i> Option 0_
 
 Cache
 
-_❓ Option 1_
+_<i class="fas fa-list-ol fa-fw"></i> Option 1_
 
 Disk
 
-_❓ Option 2_
+_<i class="fas fa-list-ol fa-fw"></i> Option 2_
 
 Main Memory (RAM)
 
-_❓ Option 3_
+_<i class="fas fa-list-ol fa-fw"></i> Option 3_
 
 Register
 
