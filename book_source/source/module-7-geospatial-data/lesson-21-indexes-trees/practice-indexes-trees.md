@@ -28,19 +28,19 @@ Order the following operation run-times from the fastest (top) to slowest (botto
 
 Reorder the following options. Write your answer down in your own space.
 
-_<i class="fas fa-list-ol fa-fw"></i> Option 0_
+_<i class="fas fa-sort fa-fw"></i> Option 0_
 
 Dict Lookup: O(1)
 
-_<i class="fas fa-list-ol fa-fw"></i> Option 1_
+_<i class="fas fa-sort fa-fw"></i> Option 1_
 
 KD-Tree Building: O(knlog(n))
 
-_<i class="fas fa-list-ol fa-fw"></i> Option 2_
+_<i class="fas fa-sort fa-fw"></i> Option 2_
 
 Linear Search: O(n)
 
-_<i class="fas fa-list-ol fa-fw"></i> Option 3_
+_<i class="fas fa-sort fa-fw"></i> Option 3_
 
 Tree Lookup: O(log(n))
 

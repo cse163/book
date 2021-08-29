@@ -27,19 +27,19 @@ Suppose we had a series of $\varepsilon$-differntially private algorithms. Order
 
 Reorder the following options. Write your answer down in your own space.
 
-_<i class="fas fa-list-ol fa-fw"></i> Option 0_
+_<i class="fas fa-sort fa-fw"></i> Option 0_
 
 10-differentially private
 
-_<i class="fas fa-list-ol fa-fw"></i> Option 1_
+_<i class="fas fa-sort fa-fw"></i> Option 1_
 
 0-differentially private
 
-_<i class="fas fa-list-ol fa-fw"></i> Option 2_
+_<i class="fas fa-sort fa-fw"></i> Option 2_
 
 1-differentially private
 
-_<i class="fas fa-list-ol fa-fw"></i> Option 3_
+_<i class="fas fa-sort fa-fw"></i> Option 3_
 
 0.5-differentially private
 
