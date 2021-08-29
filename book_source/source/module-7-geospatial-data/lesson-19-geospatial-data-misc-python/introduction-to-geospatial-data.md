@@ -1,16 +1,21 @@
 # Introduction to Geospatial Data
 
+```{reading-data}
+{static-data-download}`geo_data.zip`
+```
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/10868442f5ff4b85b65788af88780c9c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+
+---
 
 A lot of data we work with is associated with someone or someplace in the real world. **Geospatial** data is data that contains information about a place in the world.  
 
 Below is an example plot that shows information about opioid overdoses on top of a map of Minnesota. We don't have access to the data itself, but we can see something special in this plot: each data point is associated with an area on the map that is shaded depending on its data values. Geospatial information records the areas and shapes of an object to facilitate analysis and visualization.  
 
 ```{image} https://static.us.edusercontent.com/files/TspGBZsK4hClAyse74W8kJhL
-:alt: TODO
+:alt: Opioid overdoses data visualization on top of a map of Minnesota
 :width: 758
 :align: center
 ```
@@ -26,7 +31,7 @@ In the code cell below, we show how to load in one of these geospatial datasets 
 ```python
 import geopandas as gpd
 
-df = gpd.read_file('/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp')
+df = gpd.read_file('geo_data/ne_110m_admin_0_countries.shp')
 
 # Print out the columns
 print('===== Columns ======')
@@ -44,7 +49,7 @@ The type of the value `df` in the cell above is a `GeoDataFrame` . It behaves ex
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
-df = gpd.read_file('/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp')
+df = gpd.read_file('geo_data/ne_110m_admin_0_countries.shp')
 
 df.plot()
 plt.savefig('world.png')
@@ -56,7 +61,7 @@ You can get fancier have it color each country by its population using the `colu
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
-df = gpd.read_file('/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp')
+df = gpd.read_file('geo_data/ne_110m_admin_0_countries.shp')
 
 # POP_EST is the name of the colummn containing population information
 # legend=True makes the legend appear
@@ -72,7 +77,7 @@ Each row in the data corresponds to one country. The dataset has a special colum
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
-df = gpd.read_file('/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp')
+df = gpd.read_file('geo_data/ne_110m_admin_0_countries.shp')
 
 print(df['geometry'])
 ```
@@ -80,7 +85,7 @@ print(df['geometry'])
 You don't need to memorize the different types of geometries, but it helps to be familiar with what can be represented in this column. The picture below shows different types of geometries. Most countries are represented by a `Polygon` or a `MultiPolygon` (e.g. if they have multiple bodies of land) while you would likely not find any `LineString` countries in this dataset.  
 
 ```{image} https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC
-:alt: TODO
+:alt: different types of geometries supported by geopandas, including Point, MultiPoint, LineString, MultiLineString, LinearRing, MultiPolygon, Polygon, and GeometryCollection.
 :width: 743
 :align: center
 ```
