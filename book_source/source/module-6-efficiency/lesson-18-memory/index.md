@@ -1,4 +1,4 @@
-# Lesson 18: Memory 
+# <i class="fas fa-book fa-fw"></i> Lesson 18: Memory 
 
  
 
