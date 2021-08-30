@@ -24,7 +24,7 @@ Select one option. Write your answer down in your own space.
 _<i class="far fa-circle fa-fw"></i> Option 0_
 
 ```{image} https://static.us.edusercontent.com/files/3a5kYw9Yk85cRF0WuWG2KgCB
-:alt: TODO
+:alt: A separate-hash table with a list of 11 followed by 21 at index 1 and a list of 43 at index 3.
 :width: 510
 :align: center
 ```
@@ -32,7 +32,7 @@ _<i class="far fa-circle fa-fw"></i> Option 0_
 _<i class="far fa-circle fa-fw"></i> Option 1_
 
 ```{image} https://static.us.edusercontent.com/files/pyVYySMVbfDvflbWmQd3L6O6
-:alt: TODO
+:alt: A separate-hash table with a list of 21 followed by 11 at index 1 and a list of 43 at index 3.
 :width: 510
 :align: center
 ```
@@ -40,7 +40,7 @@ _<i class="far fa-circle fa-fw"></i> Option 1_
 _<i class="far fa-circle fa-fw"></i> Option 2_
 
 ```{image} https://static.us.edusercontent.com/files/0Ba7drq1zhDn8HBLsyuxyLjA
-:alt: TODO
+:alt: A separate-hash table with a list of 21 at index 1 and a list of 43 followed by 11 at index 3.
 :width: 510
 :align: center
 ```
@@ -48,7 +48,8 @@ _<i class="far fa-circle fa-fw"></i> Option 2_
 _<i class="far fa-circle fa-fw"></i> Option 3_
 
 ```{image} https://static.us.edusercontent.com/files/Bg32Vizr20bwGCvTAd3D5rqc
-:alt: TODO
+:alt: A separate-hash table with a list of 21 at index 1 and a list of 11 followed by 43 at index 3.
+:width: 510
 :width: 510
 :align: center
 ```
