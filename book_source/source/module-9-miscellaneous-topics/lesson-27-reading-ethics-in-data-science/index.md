@@ -29,7 +29,7 @@ There are no recordings of Hunter for this lesson, to give you more time to proc
 :maxdepth: 1
 :caption: Contents
 
-case-study-0-gaydar
+case-study-0-predicting-crime
 case-study-1-rides-of-glory
 case-study-2-compas
 case-study-3-potholes-in-baltimore
