@@ -111,8 +111,7 @@ For example, you will be making a plot like the following on your next take-home
 
 ```{image} https://static.us.edusercontent.com/files/azWntPY0ftQPaBXP5doNIEkU
 :alt: Low food access output from take-home assessment 5, displaying four different types of low access in a two by two grid
-:width: 743
-:align: center
+:class: full-width
 ```
 
 ##  Subplots Examples  

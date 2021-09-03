@@ -2,7 +2,9 @@
 
 Suppose we were working with the following two datasets shown below. For each question, report the number of rows in the resulting `DataFrame` (remember, that the number of rows does not include the column header).
 
-## `movies`
+````{div} table-section
+```{div} table-div
+`movies`
 
 | movie_name           | year | movie_id | directed_by |
 | -------------------- | ---: | -------: | ----------: |
@@ -11,8 +13,10 @@ Suppose we were working with the following two datasets shown below. For each qu
 | Parasite             | 2019 |      103 |          14 |
 | Frozen               | 2013 |       34 |          18 |
 | Moonrise Kingdom     | 2012 |       37 |          16 |
+```
 
-## `directors`
+```{div} table-div
+`directors`
 
 | director_name     | director_id |
 | ----------------- | ----------: |
@@ -21,6 +25,8 @@ Suppose we were working with the following two datasets shown below. For each qu
 | Wes Anderson      |          16 |
 | Quentin Tarantino |          21 |
 | Kathryn Bigelow   |          27 |
+```
+````
 
 ## Question 0
 

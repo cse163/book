@@ -11,15 +11,19 @@ We're going to take a quick step away from geospatial data for the next flew sli
 
 Let's go back to the world of CSV data that we would process with `pandas` . Suppose I had two different `DataFrame` shown below. The left one `tas` stores information about the TAs and `grading` on the right stores information about students and which TA will be grading them ( `ta_id` and `grader_id` will match if that TA is grading that student). Our final goal will be trying to find the number of students each TA will grade.  
 
-## `tas`
+````{div} table-section
+```{div} table-div
+`tas`
 
 | ta_name | ta_id |
 | ------- | ----: |
 | Ryan    | 1     |
 | James   | 2     |
 | Nicole  | 3     |
+```
 
-## `grading`
+```{div} table-div
+`grading`
 
 | grader_id | student_name |
 | --------- | -----------: |
@@ -27,6 +31,8 @@ Let's go back to the world of CSV data that we would process with `pandas` . Sup
 | 3         | Paul         |
 | 1         | Wen          |
 | 3         | Andrew       |
+```
+````
 
 You might wonder why I would represent data in this way such that they are in separate tables. This is a very common situation when you have data coming from many sources! You might have gotten two datasets from completely different sources, but you know there is an identifier column that relates information in one table to that of another.
 
@@ -79,15 +85,18 @@ Notice that the output contains all pairs of rows that match up on `ta_id` and `
 
 You might be wondering, what would happen to rows that don't "line up". What if there was a TA who didn't have anyone they were grading or a student had a `grader_id` for a grader that doesn't exist in the other table? Suppose we had the following dataset instead. We removed James from the left table and changed Wen to be graded by Nicole on the right.  
 
-
-## `tas`
+````{div} table-section
+```{div} table-div
+`tas`
 
 | ta_name | ta_id |
 | ------- | ----: |
 | Ryan    | 1     |
 | Nicole  | 3     |
+```
 
-## `grading`
+```{div} table-div
+`grading`
 
 | grader_id | student_name |
 | --------- | -----------: |
@@ -95,7 +104,8 @@ You might be wondering, what would happen to rows that don't "line up". What if 
 | 3         | Paul         |
 | 3         | Wen          |
 | 3         | Andrew       |
-
+```
+````
 
 Let's see what happens when we run `merge` on these datasets.  
 
