@@ -8,7 +8,7 @@ This repository stores the source files for the public-facing resources for our 
 
 ## Note on Repo Structure
 
-Much of this book was originally written in a learning tool used in our course called EdStem. EdStem allows for interactivity with code in both the readings and practice problems, which this public version is not able to provide. Since the repo that stores the original EdStem files also contains assignment solutions, we assume the directory of raw EdStem files lives outside of this repo in order to generate a new version of the site. The `generate_pages.py` script is really only necessary for our initial translation, and won't be likely used again. We leave it though for reference.
+Much of this book was originally written in a learning tool used in our course called EdStem. EdStem allows for interactivity with code in both the readings and practice problems, which this public version is not able to provide. Since the repo that stores the original EdStem files also contains assignment solutions, we assume the directory of raw EdStem files lives outside of this repo in order to generate a new version of the site. The `scripts/generate_pages.py` script is really only necessary for our initial translation, and won't be likely used again. We leave it though for reference.
 
 ## Feedback or Spot a Bug?
 
@@ -49,7 +49,7 @@ The practice problem starter code and tests live in `book_source/coding_problems
 **If you changed starter code or tests for the practice problems, you will need to do this step first, otherwise skip to the next step** The code in `book_source/coding_problems` needs to be copied to appropriate `.zip` file in the book source. To do this, run the following Python script.
 
 ```bash
-python generate_pages.py
+python scripts/generate_pages.py
 ```
 
 #### Step 2) Build HTML output
