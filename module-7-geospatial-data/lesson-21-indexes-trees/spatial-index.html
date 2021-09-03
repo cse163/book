@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
@@ -1231,10 +1231,10 @@
   </label>
   <ul class="current">
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/index.html">
+    <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/index.html">
      <i class="fas fa-book fa-fw">
      </i>
-     Lesson 18: Geospatial Data + Misc Python
+     Lesson 19: Geospatial Data + Misc Python
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
     <label for="toctree-checkbox-26">
@@ -1243,41 +1243,41 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/introduction-to-geospatial-data.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/introduction-to-geospatial-data.html">
        Introduction to Geospatial Data
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/zip.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/zip.html">
        Zip
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/matplotlib-plotting.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/matplotlib-plotting.html">
        Matplotlib Plotting
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html">
        Hurricane Florence
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/pause-and-think.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/practice-population-in-south-america.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/practice-population-in-south-america.html">
        <i class="fas fa-laptop fa-fw">
        </i>
        Practice: Population in South America
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/practice-small-and-rich.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/practice-small-and-rich.html">
        <i class="fas fa-laptop fa-fw">
        </i>
        Practice: Small and Rich
@@ -1934,20 +1934,21 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/25cfbaf327ea4288b7bba27f31303330?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Now that we have a cursory idea of how to use a tree index to help us find data in a large collection more efficiently, we can now explore how the same principle can be applied to geospatial data.</p>
 <p>For this slide, we will focus on just one particular problem in geospatial processing: assume we have a collection of <code class="docutils literal notranslate"><span class="pre">Point</span></code> s and we want to find if there is a <code class="docutils literal notranslate"><span class="pre">Point</span></code> in this collection with some given <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> coordinates. There are definitely other questions you might be interested in answering efficiently involving geospatial data, but they generally rely on the same principle although their details tend to be more complex. Having a solid understanding of this example with <code class="docutils literal notranslate"><span class="pre">Point</span></code> s will take you a long way in terms of how to access geospatial data quickly.</p>
 <p>For example, assume we had a geospatial dataset that shows the location of Fish &amp; Chips restaurants in the U.K shown in the image below. Each row of the dataset would correspond to one restaurant and would have information like its name, star ratings, and would have a geometry column for the exact <code class="docutils literal notranslate"><span class="pre">Point</span></code> location of the restaurant. While we could plot this to get a map like the picture shown below, the geometry column is really a <code class="docutils literal notranslate"><span class="pre">GeoSeries</span></code> of these <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects, where each <code class="docutils literal notranslate"><span class="pre">Point</span></code> represents an <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> pair of longitude and latitude.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/N3qYMR3H1Tx5uqabRzgFJWRm"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/N3qYMR3H1Tx5uqabRzgFJWRm" style="width: 354px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/N3qYMR3H1Tx5uqabRzgFJWRm"><img alt="location of Fish &amp; Chips restaurants in the U.K, with each restaurant represented as a dot on the plot" class="align-center" src="https://static.us.edusercontent.com/files/N3qYMR3H1Tx5uqabRzgFJWRm" style="width: 354px;" /></a>
 <p>The question we are interested in answering is: Is there a Fish &amp; Chips place at the coordinates <code class="docutils literal notranslate"><span class="pre">(50.809325,</span> <span class="pre">-1.368300)</span></code> ? Now we could pretty easily do this if we just search through the whole geometry column trying to find a <code class="docutils literal notranslate"><span class="pre">Point</span></code> that matches. However, we are interested in seeing if there is a way to find such a <code class="docutils literal notranslate"><span class="pre">Point</span></code> without requiring an <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> query.</p>
 <p>It turns out we can do a very similar trick as the binary search tree to help us more efficiently find a <code class="docutils literal notranslate"><span class="pre">Point</span></code> with the given coordinates. This will end up being slightly more complex because there are now 2-dimensions to work with (latitude and longitude), but in spirit, the idea is the same.</p>
 <p>Instead of trying to search through every single <code class="docutils literal notranslate"><span class="pre">Point</span></code> , let’s try to “divide the country in half” to reduce the number of <code class="docutils literal notranslate"><span class="pre">Point</span></code> s we have to search through. The image below shows an example line that divides the <code class="docutils literal notranslate"><span class="pre">Point</span></code> s into roughly two equal-sized groups.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/FITccEoTdhin5fWsbdEcnzqH"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/FITccEoTdhin5fWsbdEcnzqH" style="width: 743px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/FITccEoTdhin5fWsbdEcnzqH"><img alt="location of Fish &amp; Chips restaurants in the U.K, with each restaurant represented as a dot on the plot. A horizontal line splits the plot in half with approximately equal number of points on either side" class="align-center" src="https://static.us.edusercontent.com/files/FITccEoTdhin5fWsbdEcnzqH" style="width: 743px;" /></a>
 <p>Now, this is helpful, because if we are looking for a particular <code class="docutils literal notranslate"><span class="pre">Point</span></code> , we just have to ask if it lies above/below that line and we can narrow our search down to half as many points that fall into that group. However, you might be able to tell that this doesn’t help us in terms of the complexity of the search! Searching through <span class="math notranslate nohighlight">\(n/2\)</span> items is still an <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> algorithm!</p>
 <p>The trick here is to repeatedly divide the groups in half just like we did with the binary search tree! For example, the image below shows what would happen after you split the groups once more and then one more time after that. Technically, you would continue this splitting process, normally switching directions each time, until there was just one <code class="docutils literal notranslate"><span class="pre">Point</span></code> in each region.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/04hKq6mbIshWTBBR2kbzdAtE"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/04hKq6mbIshWTBBR2kbzdAtE" style="width: 742.9999999999999px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/04hKq6mbIshWTBBR2kbzdAtE"><img alt="Splitting locations of Fish &amp; Chips restaurants in the U.K into groups using spatial index with 2nd and 3rd division." class="align-center" src="https://static.us.edusercontent.com/files/04hKq6mbIshWTBBR2kbzdAtE" style="width: 742.9999999999999px;" /></a>
 <p>While the idea of splitting the points in half repeatedly might make sense at a very high-level, it’s probably not clear how we would represent these splits so that we could use them later. Trees will come to save the day again! We will represent each of these splits in the data as a split in a tree. This will be very similar to our binary search tree, but the nodes will say something like “latitude &lt; 50” to record which dimension to go up/down/left/right based on.</p>
 <p>The picture below shows a smaller example of points that have been divided up and the tree that records these splits. The points are labeled <code class="docutils literal notranslate"><span class="pre">a</span></code> - <code class="docutils literal notranslate"><span class="pre">g</span></code> and the splits are labeled with numbers.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/k3Rre7ihYwjamhJzT1F0Ahet"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/k3Rre7ihYwjamhJzT1F0Ahet" style="width: 724px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/k3Rre7ihYwjamhJzT1F0Ahet"><img alt="A binary search tree on the left corresponds to spatial splits on the right" class="align-center" src="https://static.us.edusercontent.com/files/k3Rre7ihYwjamhJzT1F0Ahet" style="width: 724px;" /></a>
 <p>So say we are searching for the point with the same coordinates as <code class="docutils literal notranslate"><span class="pre">g</span></code> (i.e., we know its <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> coordinates, but we do not know which point corresponds to those coordinates).</p>
 <ul class="simple">
 <li><p>We start with the top-level split labeled     <code class="docutils literal notranslate"><span class="pre">1</span></code>     which corresponds to the vertical line labeled     <code class="docutils literal notranslate"><span class="pre">1</span></code>     in the image on the right. Since the x-coordinate of our query is to the right of the line     <code class="docutils literal notranslate"><span class="pre">1</span></code>     , we go to the right in the tree to the node labeled     <code class="docutils literal notranslate"><span class="pre">3</span></code>     .</p></li>
@@ -1962,7 +1963,7 @@
 <p>In general, whenever you add an index on top of your data to make certain queries faster, it comes at a cost (there is no free lunch!). KD-Trees, like most indexes, suffer from the following drawbacks:</p>
 <ul class="simple">
 <li><p>Construction Time: It is non-trivial to build up this tree in the first place. We didn’t describe the algorithm to build up the tree, but it involves sorting the data multiple times in different ways. Without going into the details, to build a KD-Tree with points that are <span class="math notranslate nohighlight">\(k\)</span>-dimensional (where, in our example, <span class="math notranslate nohighlight">\(k\)</span> was 2), requires <span class="math notranslate nohighlight">\(\mathcal{O}(kn\log(n))\)</span> time and <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> space. This is a non-trivial startup cost to build one of these, so it’s only worth it if it will save you time in a system that makes frequent queries.</p></li>
-<li><p>Update Time: One of the biggest assumptions we have been making about our search trees is that they are     <strong>balanced.</strong>     This means that on both sides of a split, there is the same number of data points (i.e., each split actually splits the data in half). This is relatively doable to achieve if you write a correct algorithm to build the tree but it is     <em>much</em>     harder to ensure if you are trying to update an existing tree. Say if you have new Fish &amp; Chip restaurants coming in, it is pretty difficult to update the tree to make sure it stays balanced after the update.     <br />      <br />     It’s a bit harder to quantify the cost of updating an existing tree, but just consider the alternative of updating a simple list of     <code class="docutils literal notranslate"><span class="pre">Point</span></code>     s without an index! If a new     <code class="docutils literal notranslate"><span class="pre">Point</span></code>     came in and you didn’t have to worry about updating an index to help you find that     <code class="docutils literal notranslate"><span class="pre">Point</span></code>     , you could just do something simple like append it to the end. Having an index does speed up search times, but now causes a larger burden for updates. This means people designing data systems need to carefully consider the use case of their system and if an index will help them.</p></li>
+<li><p>Update Time: One of the biggest assumptions we have been making about our search trees is that they are     <strong>balanced</strong>.     This means that on both sides of a split, there is the same number of data points (i.e., each split actually splits the data in half). This is relatively doable to achieve if you write a correct algorithm to build the tree but it is     <em>much</em>     harder to ensure if you are trying to update an existing tree. Say if you have new Fish &amp; Chip restaurants coming in, it is pretty difficult to update the tree to make sure it stays balanced after the update.     <br />      <br />     It’s a bit harder to quantify the cost of updating an existing tree, but just consider the alternative of updating a simple list of     <code class="docutils literal notranslate"><span class="pre">Point</span></code>     s without an index! If a new     <code class="docutils literal notranslate"><span class="pre">Point</span></code>     came in and you didn’t have to worry about updating an index to help you find that     <code class="docutils literal notranslate"><span class="pre">Point</span></code>     , you could just do something simple like append it to the end. Having an index does speed up search times, but now causes a larger burden for updates. This means people designing data systems need to carefully consider the use case of their system and if an index will help them.</p></li>
 </ul>
 </section>
 <section id="take-away">
@@ -1971,7 +1972,7 @@
 <div class="note admonition">
 <p class="admonition-title">Note</p>
 <p>Interested in learning more? There is a great writeup on how to do this with GIS data
-<a class="reference external" href="https://automating-gis-processes.github.io/site/notebooks/L3/spatial_index.html">None</a>
+<a class="reference external" href="https://automating-gis-processes.github.io/site/notebooks/L3/spatial_index.html">here</a>
 . Note that his reading talks about “R-trees” while we talked about “KD-trees”. R-trees are very similar, but are made by making a series of rectangeles (also called bounding boxes), while our KD-trees were made by a series of dividing lines. Very similar in intent, but just slightly different details on execution.</p>
 </div>
 </section>

@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
@@ -1231,10 +1231,10 @@
   </label>
   <ul class="current">
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/index.html">
+    <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/index.html">
      <i class="fas fa-book fa-fw">
      </i>
-     Lesson 18: Geospatial Data + Misc Python
+     Lesson 19: Geospatial Data + Misc Python
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
     <label for="toctree-checkbox-26">
@@ -1243,41 +1243,41 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/introduction-to-geospatial-data.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/introduction-to-geospatial-data.html">
        Introduction to Geospatial Data
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/zip.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/zip.html">
        Zip
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/matplotlib-plotting.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/matplotlib-plotting.html">
        Matplotlib Plotting
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html">
        Hurricane Florence
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/pause-and-think.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/practice-population-in-south-america.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/practice-population-in-south-america.html">
        <i class="fas fa-laptop fa-fw">
        </i>
        Practice: Population in South America
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/practice-small-and-rich.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/practice-small-and-rich.html">
        <i class="fas fa-laptop fa-fw">
        </i>
        Practice: Small and Rich
@@ -1934,11 +1934,12 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/6d28bc8a8e144f678d2050809c635a53?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Let’s change examples for a second before going back to efficiently finding a user profile for Spacebook.</p>
 <p>Pretend for a moment that we are nearing the end of November. Yesterday was Thanksgiving and Hunter decided to go Black Friday shopping to buy a new Supreme shirt. Say you get to the rack with the shirts and notice they are sorted by size like in the image below. Now our picture shows only 5 shirts, but imagine there are hundreds and hundreds of them (sorted by size), and we can’t tell the size without looking at the tag on the shirt.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/EouGF8qXh04noUc34uA99dPh"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/EouGF8qXh04noUc34uA99dPh" style="width: 758px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/EouGF8qXh04noUc34uA99dPh"><img alt="Supreme shirts with of different sizes, in increasing order from left to right" class="align-center" src="https://static.us.edusercontent.com/files/EouGF8qXh04noUc34uA99dPh" style="width: 758px;" /></a>
 <p>Now Hunter knows he is a size 42 and his goal is to make it out of Black Friday alive by finding the shirt in his size as quickly as possible before the crowd stampedes. If Hunter knows his shirt size is 42, would the optimal strategy be to start at the smallest shirt size (1) and go shirt by shirt until he finds his size? Not if he is trying to survive!</p>
-<p>You probably have a good heuristic to help you find your shirt more quickly than that: start in the middle! If you look at the shirt in the middle of the rack, say size 29, you know that Hunter’s shirt size (42) will be after the mid-point since 42 is larger than 29. This enables you to eliminate half of the shirts to look at since there is no way that Hunter’s shirt is before the shirt of size 29, assuming the shirts are sorted by size. You can repeat this process again by picking the mid-point of the remaining shirts. This algorithm of repeatedly going to the mid-point and going left or right from that is called <strong>binary search</strong> . The algorithm, written in pseudo-code looks like the following:</p>
+<p>You probably have a good heuristic to help you find your shirt more quickly than that: start in the middle! If you look at the shirt in the middle of the rack, say size 29, you know that Hunter’s shirt size (42) will be after the mid-point since 42 is larger than 29. This enables you to eliminate half of the shirts to look at since there is no way that Hunter’s shirt is before the shirt of size 29, assuming the shirts are sorted by size. You can repeat this process again by picking the mid-point of the remaining shirts. This algorithm of repeatedly going to the mid-point and going left or right from that is called <strong>binary search</strong>. The algorithm, written in pseudo-code looks like the following:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Input: List of shirts sorted by size and a target value to find
 
 while there are more than 1 shirt remaining:
@@ -1962,7 +1963,7 @@ If we made it outside this loop and still haven&#39;t found the shirt,
 <p>It’s probably not obvious how to tell how many times we can divide a number by 2. It helps to use a bit of algebra to solve this. Call the number of times we can divide <span class="math notranslate nohighlight">\(n\)</span> by 2 <span class="math notranslate nohighlight">\(k\)</span>. This means we need to find a <span class="math notranslate nohighlight">\(k\)</span> such that <span class="math notranslate nohighlight">\(n / 2^k = 1\)</span>. If we multiply both sides of this equation by <span class="math notranslate nohighlight">\(2^k\)</span>, we get <span class="math notranslate nohighlight">\(n = 2^k\)</span>. Now this might be something you might remember how to solve from a math class! If you take the <span class="math notranslate nohighlight">\(\log_2\)</span> of both sides, you can see that <span class="math notranslate nohighlight">\(k = \log_2(n)\)</span>. This is exactly our answer!</p>
 <p>This means our algorithm runs approximately <span class="math notranslate nohighlight">\(\log(n)\)</span> times and since it does constant work each time, our total run-time will be <span class="math notranslate nohighlight">\(\mathcal{O}(\log(n))\)</span>. It turns out we drop the base of the logarithm since it just affects the results by a constant factor, but computer scientists generally assume <span class="math notranslate nohighlight">\(\log\)</span> refers to <span class="math notranslate nohighlight">\(\log_2\)</span> when describing run-times.</p>
 <p>Pictorially, we can see this <span class="math notranslate nohighlight">\(\mathcal{O}(\log(n))\)</span> algorithm runs MUCH faster than an <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> algorithm in the following graph. The x-axis represents <span class="math notranslate nohighlight">\(n\)</span> as it increases and the y-axis shows the approximate number of steps. The red line that grows linearly demonstrates an <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> algorithm while the blue line that shows a slower growth is an example of a <span class="math notranslate nohighlight">\(\mathcal{O}(\log(n))\)</span> function.</p>
-<p>To get a sense of just how little <span class="math notranslate nohighlight">\(\mathcal{O}(\log(n))\)</span> grows, consider making a list of values for all 332 million people in the U.S. The run-time for a binary search on this entire list would be approximately <a class="reference external" href="https://www.wolframalpha.com/input/?i=log_2%28327+million%29">None</a> ! Maybe you might not think the U.S. is THAT big, but a binary search over all 1.4 billion people in China would only take about <a class="reference external" href="https://www.wolframalpha.com/input/?i=log_2%281.4+billion%29">None</a> . This is <em>incredibly</em> efficient as <span class="math notranslate nohighlight">\(n\)</span> grows!</p>
+<p>To get a sense of just how little <span class="math notranslate nohighlight">\(\mathcal{O}(\log(n))\)</span> grows, consider making a list of values for all 332 million people in the U.S. The run-time for a binary search on this entire list would be approximately <a class="reference external" href="https://www.wolframalpha.com/input/?i=log_2%28327+million%29">28 steps</a> ! Maybe you might not think the U.S. is THAT big, but a binary search over all 1.4 billion people in China would only take about <a class="reference external" href="https://www.wolframalpha.com/input/?i=log_2%281.4+billion%29">30 steps</a> . This is <em>incredibly</em> efficient as <span class="math notranslate nohighlight">\(n\)</span> grows!</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/w4skGU5XcDJmMi1cZXzxgkoq"><img alt="Graph showing the growth of y=x versus y=log(x)." class="align-center" src="https://static.us.edusercontent.com/files/w4skGU5XcDJmMi1cZXzxgkoq" style="width: 743px;" /></a>
 </section>
 <section id="binary-search-trees">
@@ -1974,7 +1975,7 @@ If we made it outside this loop and still haven&#39;t found the shirt,
 </div>
 <p>Binary search can sometimes be inefficient in practice since it avoids the principle of locality! It jumps around the list and rarely accesses adjacent elements! This means if data has to be constantly read from disk, even though it is asymptotically more efficient, it can be much slower in practice since it can require many disk reads!</p>
 <p>One trick database people have come up with is to make a data structure called a <strong>binary search tree</strong> that encodes this search information that gets computed once and reused many times. A binary search tree is much like a decision tree from ML, where at each node in the tree it has you go left/right based on some condition. So for example, in our shirts example, we could construct a tree that records the choices you make during any possible binary search as in the picture below.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/L1acPpljKePoYxYCo2PGaIHB"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/L1acPpljKePoYxYCo2PGaIHB" style="width: 743px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/L1acPpljKePoYxYCo2PGaIHB"><img alt="Binary search tree for different sizes of Supreme shirts" class="align-center" src="https://static.us.edusercontent.com/files/L1acPpljKePoYxYCo2PGaIHB" style="width: 743px;" /></a>
 <p>This doesn’t involve anything complicated like machine learning to find this tree, it just requires a bit of pre-computing to find the sequence of mid-points for any search. While this does require a bit of work to compute, the idea is that if we compute this tree ahead of time, it can speed up queries later on because they can efficiently traverse down this structure while minimizing the number of times they go to disk to actually look at values in the data.</p>
 <p>While it does take a bit of pre-processing to build up the right tree, the binary search tree enjoys the same complexity as binary search. That means if there are <span class="math notranslate nohighlight">\(n\)</span> items to search over, a correctly constructed binary search tree will have a search time of <span class="math notranslate nohighlight">\(\mathcal{O}(\log(n))\)</span> since it will be created in this halving-algorithm.</p>
 <p>One of the nice things about this tree structure is it allows you to easily answer <strong>range queries.</strong> Say if you’re looking for all the shirts between sizes 1 and 42, you can follow the low-end and high-end paths down the tree to find everything in between!</p>

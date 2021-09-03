@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to Geospatial Data &#8212; Intermediate Data Programming</title>
+    <title>Practice: Small and Rich &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
@@ -47,8 +47,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Zip" href="zip.html" />
-    <link rel="prev" title="Lesson 18: Geospatial Data + Misc Python" href="index.html" />
+    <link rel="next" title="Lesson 20: Dissolve + Join" href="../lesson-20-dissolve-join/index.html" />
+    <link rel="prev" title="Practice: Population in South America" href="practice-population-in-south-america.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -1232,7 +1232,7 @@
     <a class="reference internal" href="index.html">
      <i class="fas fa-book fa-fw">
      </i>
-     Lesson 18: Geospatial Data + Misc Python
+     Lesson 19: Geospatial Data + Misc Python
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
     <label for="toctree-checkbox-26">
@@ -1240,8 +1240,8 @@
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="introduction-to-geospatial-data.html">
        Introduction to Geospatial Data
       </a>
      </li>
@@ -1274,8 +1274,8 @@
        Practice: Population in South America
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="practice-small-and-rich.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        <i class="fas fa-laptop fa-fw">
        </i>
        Practice: Small and Rich
@@ -1858,7 +1858,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/introduction-to-geospatial-data.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/practice-small-and-rich.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1878,10 +1878,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-7-geospatial-data/lesson-18-geospatial-data-misc-python/introduction-to-geospatial-data.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-7-geospatial-data/lesson-19-geospatial-data-misc-python/practice-small-and-rich.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/introduction-to-geospatial-data.md"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/practice-small-and-rich.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1901,29 +1901,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-geopandas">
-   Introduction to
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     geopandas
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#geometry">
-   Geometry
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -1932,70 +1909,20 @@
         
               <div>
                 
-  <section id="introduction-to-geospatial-data">
-<h1>Introduction to Geospatial Data<a class="headerlink" href="#introduction-to-geospatial-data" title="Permalink to this headline">¶</a></h1>
-<div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/embed/10868442f5ff4b85b65788af88780c9c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div>
-<p>A lot of data we work with is associated with someone or someplace in the real world. <strong>Geospatial</strong> data is data that contains information about a place in the world.</p>
-<p>Below is an example plot that shows information about opioid overdoses on top of a map of Minnesota. We don’t have access to the data itself, but we can see something special in this plot: each data point is associated with an area on the map that is shaded depending on its data values. Geospatial information records the areas and shapes of an object to facilitate analysis and visualization.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/TspGBZsK4hClAyse74W8kJhL"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/TspGBZsK4hClAyse74W8kJhL" style="width: 758px;" /></a>
-<section id="introduction-to-geopandas">
-<h2>Introduction to <code class="docutils literal notranslate"><span class="pre">geopandas</span></code><a class="headerlink" href="#introduction-to-geopandas" title="Permalink to this headline">¶</a></h2>
-<p>A very common format for geospatial data is just a plain CSV that we could parse with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . However, they usually also contain a special column to indicate the location in the world that row corresponds to. A very simple representation uses latitude and longitude for each row, but geospatial data can store a very rich set of geospatial features in general.</p>
-<p>In order to process this special column format to encode geospatial information, we have to use a new library called <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> . Don’t worry, everything you know from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> carries over here with some added on features!</p>
-<p>In the code cell below, we show how to load in one of these geospatial datasets with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> . The dataset contains information about various countries of the world and information like their population and GDP. The file we will use a is a shapefile ( <code class="docutils literal notranslate"><span class="pre">.shp</span></code> ). The file format itself is actually pretty complex so we will only look at the data after parsing it in <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> rather than looking at the file directly.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
-
-<span class="c1"># Print out the columns</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;===== Columns ======&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-<span class="k">print</span><span class="p">()</span>
-
-<span class="c1"># Print out one row of data</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;===== First row =====&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>The type of the value <code class="docutils literal notranslate"><span class="pre">df</span></code> in the cell above is a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . It behaves exactly like a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> but knows how to do some extra geospatial processing. There is also a <code class="docutils literal notranslate"><span class="pre">GeoSeries</span></code> type unsurprisingly. To start seeing the power of <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> , you can see what happens if you ask the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to plot itself.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;world.png&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>You can get fancier have it color each country by its population using the <code class="docutils literal notranslate"><span class="pre">column</span></code> parameter, like in the snippet below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
-
-<span class="c1"># POP_EST is the name of the colummn containing population information</span>
-<span class="c1"># legend=True makes the legend appear</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;POP_EST&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;world_population.png&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="geometry">
-<h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
-<p>Each row in the data corresponds to one country. The dataset has a special column called <code class="docutils literal notranslate"><span class="pre">'geometry'</span></code> that stores the shape of each country with a <strong>geometry</strong> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>You don’t need to memorize the different types of geometries, but it helps to be familiar with what can be represented in this column. The picture below shows different types of geometries. Most countries are represented by a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> or a <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code> (e.g. if they have multiple bodies of land) while you would likely not find any <code class="docutils literal notranslate"><span class="pre">LineString</span></code> countries in this dataset.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC" style="width: 743px;" /></a>
-</section>
+  <section id="i-class-fas-fa-laptop-fa-fw-i-practice-small-and-rich">
+<h1><i class="fas fa-laptop fa-fw"></i> Practice: Small and Rich<a class="headerlink" href="#i-class-fas-fa-laptop-fa-fw-i-practice-small-and-rich" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference download internal" download="" href="../../_downloads/98cb696e43ff3a50cdaf5618edb23938/practice-small-and-rich.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
+<p>Write a program in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> that reads in the world dataset shown in an earlier slide and makes a plot of the world highlighting the countries that are “small and rich”. A country is rich if it’s GDP (from the column <code class="docutils literal notranslate"><span class="pre">GDP_MD_EST</span></code> ) is at least 500,000. A country is small if its population (from the column is <code class="docutils literal notranslate"><span class="pre">POP_EST</span></code> ) is at most 80,000,000. The plot should show the GDP as the color of each country. Unlike the last problem, you should also plot the entire world map on the same plot but in a light gray (passing in <code class="docutils literal notranslate"><span class="pre">color='#EEEEEE'</span></code> ) so it’s clearer where these small and rich countries are. The plot should have a legend explaining the colors. Save the plot to a file called <code class="docutils literal notranslate"><span class="pre">small_and_rich.png</span></code> .</p>
+<p>Some notes on your implementation:</p>
+<ul class="simple">
+<li><p>Recall that a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> is just like a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> so you can filter down to just the rows for countries that meet our definition.</p></li>
+<li><p>When creating the figure, please pass in <code class="docutils literal notranslate"><span class="pre">figsize=(15,</span> <span class="pre">7)</span></code> to make the result large enough to be legible.</p></li>
+<li><p><em>Hint: You’ll need to think carefully about how to plot the whole world and the desired countries on the same plot!</em></p></li>
+<li><p>The data can be found at <code class="docutils literal notranslate"><span class="pre">geo_data/ne_110m_admin_0_countries.shp</span></code>.</p></li>
+<li><p>You should save the result to <code class="docutils literal notranslate"><span class="pre">small_and_rich.png</span></code>.</p></li>
+<li><p>Your program should use the main-method pattern and should not use any global variables. Your final result should look like this:</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/wezrYXRLPP02r7h6uwBxaD5i"><img alt="Expected output of small_and_rich.png" class="align-center" src="https://static.us.edusercontent.com/files/wezrYXRLPP02r7h6uwBxaD5i" style="width: 747px;" /></a>
 </section>
 
 
@@ -2009,19 +1936,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
+        <a class="left-prev" href="practice-population-in-south-america.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 18: Geospatial Data + Misc Python</p>
+                <p class="prevnext-title"><i class="fas fa-laptop fa-fw"></i> Practice: Population in South America</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="zip.html" title="next page">
+        <a class="right-next" href="../lesson-20-dissolve-join/index.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Zip</p>
+                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 20: Dissolve + Join</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

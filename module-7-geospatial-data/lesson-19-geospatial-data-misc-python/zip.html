@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Pause and Think &#8212; Intermediate Data Programming</title>
+    <title>Zip &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
@@ -47,8 +47,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Practice: Population in South America" href="practice-population-in-south-america.html" />
-    <link rel="prev" title="Hurricane Florence" href="hurricane-florence/HurricanFlorence.html" />
+    <link rel="next" title="Matplotlib Plotting" href="matplotlib-plotting.html" />
+    <link rel="prev" title="Introduction to Geospatial Data" href="introduction-to-geospatial-data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -1232,7 +1232,7 @@
     <a class="reference internal" href="index.html">
      <i class="fas fa-book fa-fw">
      </i>
-     Lesson 18: Geospatial Data + Misc Python
+     Lesson 19: Geospatial Data + Misc Python
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
     <label for="toctree-checkbox-26">
@@ -1245,8 +1245,8 @@
        Introduction to Geospatial Data
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="zip.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Zip
       </a>
      </li>
@@ -1260,8 +1260,8 @@
        Hurricane Florence
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
@@ -1858,7 +1858,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/pause-and-think.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/zip.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1878,10 +1878,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-7-geospatial-data/lesson-18-geospatial-data-misc-python/pause-and-think.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-7-geospatial-data/lesson-19-geospatial-data-misc-python/zip.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/pause-and-think.md"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/zip.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1907,13 +1907,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-0">
-   Question 0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-1">
-   Question 1
+  <a class="reference internal nav-link" href="#warning">
+   Warning
   </a>
  </li>
 </ul>
@@ -1927,23 +1922,41 @@
         
               <div>
                 
-  <section id="i-class-far-fa-pause-circle-fa-fw-i-pause-and-think">
-<h1><i class="far fa-pause-circle fa-fw"></i> Pause and Think<a class="headerlink" href="#i-class-far-fa-pause-circle-fa-fw-i-pause-and-think" title="Permalink to this headline">¶</a></h1>
-<p>At this point, you’ve finished all of the new lesson content. All that’s left is completing the practice problems for the day!</p>
-<p>Before you go onto the practice problems though, we want you to think back on what you’ve seen so far and reflect on it. There are most likely some questions about what you’ve seen so far, and in the off-case there is not, there must be something related to this that you would like to learn more about.</p>
-<p>It helps to write these down while the lesson is fresh. That way, you can look back to your response and ask your peers you are working with during the class session! These answers are manually graded on completion and effort after the lesson is due, since there is no “right answer” to what questions you have!</p>
-<p>You are welcome to continue doing the practice problems on your own time, but we recommend coming to the live class session for this lesson and working on the problems with your peers. Working on a problem with someone else can really help solidify your understanding of the material! You can bounce ideas off of each other, ask clarifying questions from the course staff.</p>
-<section id="question-0">
-<h2>Question 0<a class="headerlink" href="#question-0" title="Permalink to this headline">¶</a></h2>
-<p>In your own words, write a few sentence summary on what you learned in this lesson today.</p>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
-<p>Write your answer down in your own space.</p>
-</section>
-<section id="question-1">
-<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
-<p>What did you find challenging in this reading? Come up with a questions you might ask your peers or on the message board to help better understand that concept.</p>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
-<p>Write your answer down in your own space.</p>
+  <section id="zip">
+<h1>Zip<a class="headerlink" href="#zip" title="Permalink to this headline">¶</a></h1>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;">
+    <iframe src="https://www.loom.com/embed/ff2cbac74ed743bbafe62257da8601d1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+<hr class="docutils" />
+<p>In our next example, we will need to use a very useful function in Python called <code class="docutils literal notranslate"><span class="pre">zip</span></code> . It takes two lists and “zips” them up so you can iterate over pairs of elements from both lists. This is much clearer with an example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The result of a <code class="docutils literal notranslate"><span class="pre">zip</span></code> is pairs of values from each list! The first values from both lists, then the second values, then the third, and so on. This can be clearer by looking at this picture showing the result of <code class="docutils literal notranslate"><span class="pre">zip</span></code></p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/h3Jlor1N0B1k8kobm1o9vClc"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/h3Jlor1N0B1k8kobm1o9vClc" style="width: 666px;" /></a>
+<section id="warning">
+<h2>Warning<a class="headerlink" href="#warning" title="Permalink to this headline">¶</a></h2>
+<p>It turns out the return type of <code class="docutils literal notranslate"><span class="pre">zip</span></code> is not actually a <code class="docutils literal notranslate"><span class="pre">list</span></code> of these pairs! Try printing out the result of <code class="docutils literal notranslate"><span class="pre">zip</span></code> .</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It returns a special <code class="docutils literal notranslate"><span class="pre">zip</span></code> object (also called <code class="docutils literal notranslate"><span class="pre">zip</span></code> ) instead of a <code class="docutils literal notranslate"><span class="pre">list</span></code> ! The <code class="docutils literal notranslate"><span class="pre">zip</span></code> object is what we call a <strong>generator</strong>. It’s like a <code class="docutils literal notranslate"><span class="pre">list</span></code> in the sense that it is a sequence of values you can iterate over in a loop, but it’s different because you can’t actually index into it! Try editing the last block to <code class="docutils literal notranslate"><span class="pre">print(z[1])</span></code> to see that this fails.</p>
+<p>The reason <code class="docutils literal notranslate"><span class="pre">zip</span></code> does not return a <code class="docutils literal notranslate"><span class="pre">list</span></code> is that the operation is <strong>lazy</strong>. It doesn’t want to compute the entire sequence of values right away and, instead, waits to compute the pairs as needed. This is exactly like the <code class="docutils literal notranslate"><span class="pre">range</span></code> function! It does not produce a <code class="docutils literal notranslate"><span class="pre">list</span></code> of numbers, but instead is a generator of them.</p>
+<p>A common trick if you want to get all the pairs into a list would be to just convert it to a <code class="docutils literal notranslate"><span class="pre">list</span></code> manually like in the block below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -1958,19 +1971,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="hurricane-florence/HurricanFlorence.html" title="previous page">
+        <a class="left-prev" href="introduction-to-geospatial-data.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Hurricane Florence</p>
+                <p class="prevnext-title">Introduction to Geospatial Data</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="practice-population-in-south-america.html" title="next page">
+        <a class="right-next" href="matplotlib-plotting.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="fas fa-laptop fa-fw"></i> Practice: Population in South America</p>
+                <p class="prevnext-title">Matplotlib Plotting</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

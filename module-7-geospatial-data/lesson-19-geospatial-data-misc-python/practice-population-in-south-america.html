@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Matplotlib Plotting &#8212; Intermediate Data Programming</title>
+    <title>Practice: Population in South America &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
@@ -47,8 +47,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Hurricane Florence" href="hurricane-florence/HurricanFlorence.html" />
-    <link rel="prev" title="Zip" href="zip.html" />
+    <link rel="next" title="Practice: Small and Rich" href="practice-small-and-rich.html" />
+    <link rel="prev" title="Pause and Think" href="pause-and-think.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -1232,7 +1232,7 @@
     <a class="reference internal" href="index.html">
      <i class="fas fa-book fa-fw">
      </i>
-     Lesson 18: Geospatial Data + Misc Python
+     Lesson 19: Geospatial Data + Misc Python
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
     <label for="toctree-checkbox-26">
@@ -1250,8 +1250,8 @@
        Zip
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="matplotlib-plotting.html">
        Matplotlib Plotting
       </a>
      </li>
@@ -1267,8 +1267,8 @@
        Pause and Think
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="practice-population-in-south-america.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        <i class="fas fa-laptop fa-fw">
        </i>
        Practice: Population in South America
@@ -1858,7 +1858,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/matplotlib-plotting.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/practice-population-in-south-america.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1878,10 +1878,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-7-geospatial-data/lesson-18-geospatial-data-misc-python/matplotlib-plotting.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-7-geospatial-data/lesson-19-geospatial-data-misc-python/practice-population-in-south-america.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/matplotlib-plotting.md"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/practice-population-in-south-america.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1901,24 +1901,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subplots">
-   Subplots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subplots-examples">
-   Subplots Examples
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -1927,154 +1909,18 @@
         
               <div>
                 
-  <section id="matplotlib-plotting">
-<h1>Matplotlib Plotting<a class="headerlink" href="#matplotlib-plotting" title="Permalink to this headline">¶</a></h1>
-<div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/embed/00731b3ee509429f814b5acf818897bf" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div>
-<p>We have already seen how to make plots using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to make simple data visualizations and using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to customize the titles and axes. This week, we are going to explore <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> a little more in-depth so we can understand how to make even more rich visualizations.</p>
-<p>Before, when we were using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> , whenever we were plotting we were plotting on a global <strong>figure</strong> behind the scenes. Some of you might have experienced bugs on HW3 where you used different functions than we instructed. These bugs stem from how different functions interact with this figure. Just like <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> , <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has a way to make simple plots that, by default, also plot on a global figure. Take the following toy-example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This only produced one plot because the second one overwrote the first one on this global figure! If we want to plot these on the same figure, we would need something a little more complex.</p>
-<p>A <strong>figure</strong> is a <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> term for a canvas to store the drawings. A <strong>figure</strong> may have one or more <strong>axes</strong> and each <strong>axes</strong> can have multiple plots drawn on them.  You can make very interesting visualizations by putting multiple <strong>axes</strong> on a single <strong>figure</strong> . Instead of using the default-global figure from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> , we have a way to create our own using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> . The code looks like the following.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="c1"># Make a figure with one axis</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Use the special param `ax` to tell pandas which axis to draw on</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-
-<span class="c1"># Ask the figure to save itself</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Notice that the code is mostly the same, but now we explicitly tell <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to plot on the axis we created. The <code class="docutils literal notranslate"><span class="pre">ax</span></code> parameter for <code class="docutils literal notranslate"><span class="pre">plot</span></code> instructs the plotter to use that particular axis to draw on.</p>
-<section id="subplots">
-<h2>Subplots<a class="headerlink" href="#subplots" title="Permalink to this headline">¶</a></h2>
-<p>From what we have seen so far, it’s not very clear why we need to distinguish between a figure and axis. It becomes more clear when you want multiple axes on a single figure. You should think of the figure being the whole window that you can plot in and each axis as being a single set of x/y axes. If you wanted two plots side-by-side, you would have one figure and two axes.</p>
-<p>For example, to plot the same graphs as above side-by-side, we could write code like the following.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="c1"># Make a figure with one axis</span>
-<span class="n">fig</span><span class="p">,</span> <span class="p">[</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># Use the special param `ax` to tell pandas which axis to draw on</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
-
-<span class="c1"># Ask the figure to save itself</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">subplots</span></code> call returns a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and a list of <code class="docutils literal notranslate"><span class="pre">Axes</span></code> objects. In this case, we asked for a subplot with 2 <code class="docutils literal notranslate"><span class="pre">Axes</span></code> objects, so it returned them as a list. We had each call to <code class="docutils literal notranslate"><span class="pre">plot</span></code> use a different <code class="docutils literal notranslate"><span class="pre">Axes</span></code> to draw on. The <code class="docutils literal notranslate"><span class="pre">Figure</span></code> still holds both of the <code class="docutils literal notranslate"><span class="pre">Axes</span></code> , so to save the figure we will ask the <code class="docutils literal notranslate"><span class="pre">Figure</span></code> to do that.</p>
-<p><code class="docutils literal notranslate"><span class="pre">subplots</span></code> is actually really generic in the sense that you can make as many axes as you want! <code class="docutils literal notranslate"><span class="pre">subplots</span></code> takes two optional parameters <code class="docutils literal notranslate"><span class="pre">nrows</span></code> and <code class="docutils literal notranslate"><span class="pre">ncols</span></code> to specify how many rows and columns of axes you want. The returned list of <code class="docutils literal notranslate"><span class="pre">Axes</span></code> will be a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">lists</span></code> if you ask for multiple rows and multiple columns.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">axs</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Num rows&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axs</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Num cols&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</pre></div>
-</div>
-<p>If you wanted to visualize this return value, it would look something like this:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[
-  [ax1, ax2]
-  [ax3, ax4]
-  [ax5, ax6]
-]
-</pre></div>
-</div>
-<p>This is an example of a <strong>2d-array</strong> (or a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">list</span></code> s). This is actually using a library we will dive deeper into next week called <code class="docutils literal notranslate"><span class="pre">numpy</span></code> . This <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array allows you to access a specific row/column with the bracket notation. For example <code class="docutils literal notranslate"><span class="pre">axs[0,</span> <span class="pre">0]</span></code> is the top left axes ( <code class="docutils literal notranslate"><span class="pre">ax1</span></code> in the output above). In general, the syntax is <code class="docutils literal notranslate"><span class="pre">axs[row,</span> <span class="pre">col]</span></code> where row 0, column 0 is the top left and the rows increase going down and columns increase going right; for example, <code class="docutils literal notranslate"><span class="pre">axs[2,</span> <span class="pre">1]</span></code> would be <code class="docutils literal notranslate"><span class="pre">ax6</span></code> in the output above.</p>
-<p>For example, you will be making a plot like the following on your next take-home assignment.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/azWntPY0ftQPaBXP5doNIEkU"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/azWntPY0ftQPaBXP5doNIEkU" style="width: 743px;" /></a>
-</section>
-<section id="subplots-examples">
-<h2>Subplots Examples<a class="headerlink" href="#subplots-examples" title="Permalink to this headline">¶</a></h2>
-<p>There are generally two ways of working with axes return of <code class="docutils literal notranslate"><span class="pre">subplots</span></code> , index into it or unpack it. For example, the following snippet shows how to make two small plots using both styles. Not</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Make the data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="c1"># Option 1: Index into the structure</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;option1.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># Option 2: Unpack the axes</span>
-<span class="n">fig</span><span class="p">,</span> <span class="p">[</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;option2.png&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Usually either suffices, but if you start getting more than 4 or so plots, the second option becomes unwieldy. Below, we show a similar example but with a 2x2 plot.</p>
-<p>Before you press run, think about what the final plot should look like; when we plot <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> , it is a line with a positive slope ( <code class="docutils literal notranslate"><span class="pre">/</span></code> ) and when we plot <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code> , it is a line with a negative slope ( <code class="docutils literal notranslate"><span class="pre">\</span></code> ).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Make the data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="c1"># Option 1: Index into the structure</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># Top-left</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># Top-right</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># Bottom-left</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># Bottom-right</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;option1.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># Option 2: Unpack the axes</span>
-<span class="n">fig</span><span class="p">,</span> <span class="p">[[</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">],</span> <span class="p">[</span><span class="n">ax3</span><span class="p">,</span> <span class="n">ax4</span><span class="p">]]</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>  <span class="c1"># Top-left</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>  <span class="c1"># Top-right</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>  <span class="c1"># Bottom-left</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax4</span><span class="p">)</span>  <span class="c1"># Bottom-right</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;option2.png&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
+  <section id="i-class-fas-fa-laptop-fa-fw-i-practice-population-in-south-america">
+<h1><i class="fas fa-laptop fa-fw"></i> Practice: Population in South America<a class="headerlink" href="#i-class-fas-fa-laptop-fa-fw-i-practice-population-in-south-america" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference download internal" download="" href="../../_downloads/c4a9b3db31f166df3173137c502319eb/practice-population-in-south-america.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
+<p>Write a program in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> that reads in the world dataset shown in an earlier slide and makes a plot of just the countries in South America colored by their population (using the column <code class="docutils literal notranslate"><span class="pre">'POP_EST'</span></code> ). The plot should have a legend explaining the colors. Save the plot to a file called <code class="docutils literal notranslate"><span class="pre">south_america.png</span></code> .</p>
+<p>Some notes on your implementation:</p>
+<ul class="simple">
+<li><p>Recall that a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> is just like a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> so you can filter down to just the rows for countries in South America (where the <code class="docutils literal notranslate"><span class="pre">'CONTINENT'</span></code> column has value <code class="docutils literal notranslate"><span class="pre">'South</span> <span class="pre">America'</span></code>).</p></li>
+<li><p>The data can be found at <code class="docutils literal notranslate"><span class="pre">geo_data/ne_110m_admin_0_countries.shp</span></code>.</p></li>
+<li><p>You should save the result to <code class="docutils literal notranslate"><span class="pre">south_america.png</span></code>.</p></li>
+<li><p>Your program should use the main-method pattern and should not use any global variables. Your final result should look like this:</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/PKowEUUsYe0myAmuOsXjTXQL"><img alt="Expected output of south_america.png" class="align-center" src="https://static.us.edusercontent.com/files/PKowEUUsYe0myAmuOsXjTXQL" style="width: 640px;" /></a>
 </section>
 
 
@@ -2088,19 +1934,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="zip.html" title="previous page">
+        <a class="left-prev" href="pause-and-think.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Zip</p>
+                <p class="prevnext-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="hurricane-florence/HurricanFlorence.html" title="next page">
+        <a class="right-next" href="practice-small-and-rich.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Hurricane Florence</p>
+                <p class="prevnext-title"><i class="fas fa-laptop fa-fw"></i> Practice: Small and Rich</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

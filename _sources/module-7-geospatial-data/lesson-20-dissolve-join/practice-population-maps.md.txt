@@ -14,12 +14,10 @@ The final result should look like the one below.
 
 ### Implementation Details
 
-- Read the data in from the file `/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp`
+- Read the data in from the file `geo_data/ne_110m_admin_0_countries.shp`
 
 - Each plot on each axis should have a legend.
 
 - Recall to save a figure, you can call `savefig` on a `Figure` object. You should save the visualization to a file named `populations.png` .
 
 - Your program should use the main-method pattern and should not define any global variables.
-
-- Instead of the "Run" button, we now have a "Check" button to help you verify the output of your program. You still need to press Mark to submit.

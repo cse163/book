@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
@@ -1232,7 +1232,7 @@
     <a class="reference internal" href="../index.html">
      <i class="fas fa-book fa-fw">
      </i>
-     Lesson 18: Geospatial Data + Misc Python
+     Lesson 19: Geospatial Data + Misc Python
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
     <label for="toctree-checkbox-26">
@@ -1858,7 +1858,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -1878,10 +1878,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-7-geospatial-data/lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-7-geospatial-data/lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.ipynb"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1901,7 +1901,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cse163/book/main?urlpath=lab/tree/book_source/source/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cse163/book/main?urlpath=lab/tree/book_source/source/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -1909,7 +1909,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com//github/cse163/book/blob/main/book_source/source/module-7-geospatial-data/lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com//github/cse163/book/blob/main/book_source/source/module-7-geospatial-data/lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -1928,22 +1928,17 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Hurricane Florence
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#overlay-hurricane-florence">
    Overlay - Hurricane Florence
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-the-hurricane">
    Plot the Hurricane
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recap">
    Recap
   </a>
@@ -1961,9 +1956,23 @@
                 
   <section id="hurricane-florence">
 <h1>Hurricane Florence<a class="headerlink" href="#hurricane-florence" title="Permalink to this headline">¶</a></h1>
-</section>
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/d2de79cb757c47b7a3387924db9bbd30" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div class="admonition">
+<p class="admonition-title">Jupyter Info</p>
+<p>Reminder, that on this site the Jupyter Notebooks are read-only and you can’t interact with them. Click the <i class="fas fa-rocket fa-fw"></i> button above to launch an interactive version of this notebook.</p>
+<ul class="simple">
+<li><p>With Binder, you get a temporary Jupyter Notebook website that opens with this notebook. Any code you write will be lost when you close the tab. Make sure to download the notebook so you can save it for later!</p></li>
+<li><p>With Colab, it will open Google Colaboratory. You can save the notebook there to your Google Drive. If you don’t save to your Drive, any code you write will be lost when you close the tab. You can find the data files for this notebook below:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/1b6926042f11e61004d4163e2572de86/gz_2010_us_040_00_5m.json">gz_2010_us_040_00_5m.json</a></p></li>
+<li><p><a class="reference download internal" download="" href="../../../_downloads/6fe2d923ea18698753649fe5919dd4a8/stormhistory.csv">stormhistory.csv</a></p></li>
+</ul>
+</li>
+</ul>
+<p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
+</div>
 <section id="overlay-hurricane-florence">
-<h1>Overlay - Hurricane Florence<a class="headerlink" href="#overlay-hurricane-florence" title="Permalink to this headline">¶</a></h1>
+<h2>Overlay - Hurricane Florence<a class="headerlink" href="#overlay-hurricane-florence" title="Permalink to this headline">¶</a></h2>
 <p>The power of geospatial data is it allows you to combine many different types of data as long as you can “line up” how they occur in the real world. For example, the <code class="docutils literal notranslate"><span class="pre">country</span></code> dataset below holds the geometry for various states in the United States. The second dataset stored in the <code class="docutils literal notranslate"><span class="pre">florence</span></code> variable is a plain <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that stores information about the the hurricane at various points in time.</p>
 <p>In this example, we will plot the data on top of each other to compare them. As a preview to a future lesson, we will next take this a step further to also highlight which states were hit by hurricane Florence.</p>
 <p>We start with our imports for this notebook and then loading in the two datasets.</p>
@@ -2381,7 +2390,7 @@
 <p>And now it prints out the path of the hurricane! Remember, understanding the details of the transformation from lat/long columns to a single column is not import. <strong>What is important to understand is you need to make a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> if you want to leverage geospatial displays/processing.</strong></p>
 </section>
 <section id="plot-the-hurricane">
-<h1>Plot the Hurricane<a class="headerlink" href="#plot-the-hurricane" title="Permalink to this headline">¶</a></h1>
+<h2>Plot the Hurricane<a class="headerlink" href="#plot-the-hurricane" title="Permalink to this headline">¶</a></h2>
 <p>So now that we have our <code class="docutils literal notranslate"><span class="pre">country</span></code> data and <code class="docutils literal notranslate"><span class="pre">florence</span></code> data, let’s try plotting them together to see where the hurricane hit the U.S. We pass in an extra parameters to the <code class="docutils literal notranslate"><span class="pre">florence</span></code> plot to make the dots black and a bit smaller.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2420,12 +2429,13 @@
 <p>Next time, we will pick up with this example and do something more complex that involves highlighting which intersect with the hurricane’s path!</p>
 </section>
 <section id="recap">
-<h1>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h1>
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code> lets you make plots that captuer geospatial information.</p></li>
 <li><p>If you want to plot multiple plots on the same axes, you need to explicitly make a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and <code class="docutils literal notranslate"><span class="pre">Axes</span></code> and pass the axes in.</p></li>
 <li><p>(Less important) Unless your data comes in a geospatial format, converting them to one can be pretty tedious.</p></li>
 </ul>
+</section>
 </section>
 
 

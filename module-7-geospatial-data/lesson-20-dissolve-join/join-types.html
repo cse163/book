@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
@@ -1229,10 +1229,10 @@
   </label>
   <ul class="current">
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/index.html">
+    <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/index.html">
      <i class="fas fa-book fa-fw">
      </i>
-     Lesson 18: Geospatial Data + Misc Python
+     Lesson 19: Geospatial Data + Misc Python
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
     <label for="toctree-checkbox-26">
@@ -1241,41 +1241,41 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/introduction-to-geospatial-data.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/introduction-to-geospatial-data.html">
        Introduction to Geospatial Data
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/zip.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/zip.html">
        Zip
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/matplotlib-plotting.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/matplotlib-plotting.html">
        Matplotlib Plotting
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence.html">
        Hurricane Florence
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/pause-and-think.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/practice-population-in-south-america.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/practice-population-in-south-america.html">
        <i class="fas fa-laptop fa-fw">
        </i>
        Practice: Population in South America
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-geospatial-data-misc-python/practice-small-and-rich.html">
+      <a class="reference internal" href="../lesson-19-geospatial-data-misc-python/practice-small-and-rich.html">
        <i class="fas fa-laptop fa-fw">
        </i>
        Practice: Small and Rich
@@ -1914,8 +1914,9 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/dbfef11ad462496984ff19cfa2ccb233?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>To handle rows that don’t line up, we actually think of there being multiple types of joins. The join I described earlier is called an <strong>inner-join.</strong> An inner-join only shows rows that have values that appear in both tables.</p>
-<p>Before listing the other joins, we note that we commonly refer to a “left” table and a “right” table in the join process. For the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> call, this is determined by <code class="docutils literal notranslate"> &#160;&#160; </code> . The <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter determines which type of join to use in the list below. There is no inherent difference between what goes on the left vs the right, it’s just determined by which dataset you indicate as the left.</p>
+<p>Before listing the other joins, we note that we commonly refer to a “left” table and a “right” table in the join process. For the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> call, this is determined by <code class="docutils literal notranslate"><span class="pre">left.merge(right,</span> <span class="pre">left_on=col,</span> <span class="pre">right_on=col,</span> <span class="pre">how=type)</span></code>. The <code class="docutils literal notranslate"><span class="pre">how</span></code> parameter determines which type of join to use in the list below. There is no inherent difference between what goes on the left vs the right, it’s just determined by which dataset you indicate as the left.</p>
 <p>There are four common types of joins:</p>
 <ul class="simple">
 <li><p>An     <strong>inner-join</strong>     (default): Keeps values from each table as long as there is at least one match in the other table.</p></li>
@@ -1954,7 +1955,7 @@
 <span class="k">print</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You should try experimenting with this since one of the practice problems for today will get you practicing doing the outputs of these joins!</p>
+<p>You should try experimenting with this since one of the practice problems for this lesson will get you practicing doing the outputs of these joins!</p>
 </section>
 
 
