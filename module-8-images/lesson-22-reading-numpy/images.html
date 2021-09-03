@@ -1485,11 +1485,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-23-reading-more-numpy-and-images/vectorization/Untitled.html">
-       Vectorization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-23-reading-more-numpy-and-images/convolutions.html">
        Convolutions
       </a>
@@ -1550,13 +1545,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/neural-networks-code.html">
-       Neural Networks Code
+      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/neural-networks-code/Neural_Networks.html">
+       Neural Networks Code: Digit Recognition
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/optional-scikit-image.html">
-       Optional: Scikit-Image
+      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/optional-scikit-image/ScikitImage.html">
+       Unsupervised Learning
       </a>
      </li>
      <li class="toctree-l3">
@@ -1939,9 +1934,17 @@
                 
   <section id="images">
 <h1>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h1>
+<div class="admonition">
+<p class="admonition-title">Data</p>
+<p>You can download the dataset used in this reading here:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/e31ba8b6b38620297916a88894b32bdb/duck.jpg">duck.jpg</a></p></li>
+</ul>
+</div>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/4cc717605a614427af8f4842fa200154" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>One of the applications of <code class="docutils literal notranslate"><span class="pre">numpy</span></code> we discussed earlier was representing image data. We will discuss analyzing images and manipulating them for the rest of the week. While we will show some code, the more important bit for today is just the conceptual understanding of how we will represent an image in Python.</p>
 <section id="grayscale-images">
 <h2>Grayscale Images<a class="headerlink" href="#grayscale-images" title="Permalink to this headline">¶</a></h2>
@@ -1950,7 +1953,7 @@
 <p>From the computer’s perspective, we think of images as just a big grid of values called <strong>pixels</strong> . This mirrors how your screen actually displays images! It is a bunch of these pixels that can show a color based on a specified value. For a grayscale image, each pixel needs to know how white or how black it should display.</p>
 <p>Conventionally, we represent each pixel as a number between 0 and 255. 0 is the darkest value possible (black) while 255 is the lightest value possible (white). This means a grayscale image is really just a big 2D array of numbers between 0 and 255!</p>
 <p>You could imagine a low-resolution image (one with very few pixels) would look something like this</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/Oa1CYhhty89Z0H7oBrG1bXbA"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/Oa1CYhhty89Z0H7oBrG1bXbA" style="width: 298px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/Oa1CYhhty89Z0H7oBrG1bXbA"><img alt="low resolution picture with 16 pixels of different shades of gray." class="align-center" src="https://static.us.edusercontent.com/files/Oa1CYhhty89Z0H7oBrG1bXbA" style="width: 298px;" /></a>
 <p>In <code class="docutils literal notranslate"><span class="pre">numpy</span></code> , we would represent this with a 2D array with values that look something like the following.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[[0, 100, 175, 120],
  [180, 61, 83, 130],
@@ -1995,12 +1998,12 @@
 <section id="color-images">
 <h2>Color Images<a class="headerlink" href="#color-images" title="Permalink to this headline">¶</a></h2>
 <p>Let’s brighten up the world a bit and switch to color images. A color image is commonly represented in a format called RGB. RGB stands for “Red, Blue, Green”. An RGB image is really just 3 “grayscale” images stacked on top of each other, but each sub-image corresponds to a particular color channel.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/TLxAi1Al9GVLbs0UdcDUOtgi"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/TLxAi1Al9GVLbs0UdcDUOtgi" style="width: 713px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/TLxAi1Al9GVLbs0UdcDUOtgi"><img alt="Colored cat image constructed with a red, green, and blue layer" class="align-center" src="https://static.us.edusercontent.com/files/TLxAi1Al9GVLbs0UdcDUOtgi" style="width: 713px;" /></a>
 <p>So each pixel in an image is really 3 numbers to tell it how much red, blue, and green respectively to output. Your brain does all the real work of combining how much red/blue/green corresponds to a more complex color like the orange/brown color that the cat is.</p>
-<p>In turn, a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array will just have to represent all 3 colors for each pixel. Each pixel will store 3 values between 0 and 255; a low value means that color channel is more off (black) while a high value means that color channel is more on (red, blue, or green respectively). Since each pixel needs to know 3 numbers, we will represent this as a 3D <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> !</p>
+<p>In turn, a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array will just have to represent all 3 colors for each pixel. Each pixel will store 3 values between 0 and 255; a low value means that color channel is more off (black) while a high value means that color channel is more on (red, blue, or green respectively). Since each pixel needs to know 3 numbers, we will represent this as a 3D <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>!</p>
 <p>Notice, none of our discussion about <code class="docutils literal notranslate"><span class="pre">numpy</span></code> actually limits it to 1D or 2D arrays. We can actually have arbitrarily many dimensions! A color image in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> will commonly be represented as a 3D array with shape <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width,</span> <span class="pre">3)</span></code> . The last dimension has shape 3 because there will be one dimension for each color channel at that pixel location. Visually this makes it  kind of like a cube that has “depth” 3 (in the z direction).</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/byPNZvmbUeMRLOhhm6uo8rS6"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/byPNZvmbUeMRLOhhm6uo8rS6" style="width: 269px;" /></a>
-<p>To index into a color image, you now need to specify 3 values. For example <code class="docutils literal notranslate"><span class="pre">img[row,</span> <span class="pre">col,</span> <span class="pre">channel]</span></code></p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/byPNZvmbUeMRLOhhm6uo8rS6"><img alt="Graphical representation of a 5 by 4 by 3 NumPy Array" class="align-center" src="https://static.us.edusercontent.com/files/byPNZvmbUeMRLOhhm6uo8rS6" style="width: 269px;" /></a>
+<p>To index into a color image, you now need to specify 3 values. For example, <code class="docutils literal notranslate"><span class="pre">img[row,</span> <span class="pre">col,</span> <span class="pre">channel]</span></code>.</p>
 </section>
 <section id="color-image-code">
 <h2>Color Image Code<a class="headerlink" href="#color-image-code" title="Permalink to this headline">¶</a></h2>
@@ -2010,7 +2013,7 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="c1"># Read in the image</span>
-<span class="n">duck</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/duck.jpg&#39;</span><span class="p">)</span>
+<span class="n">duck</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;duck.jpg&#39;</span><span class="p">)</span>
 
 <span class="c1"># Print some values</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Shape&#39;</span><span class="p">,</span> <span class="n">duck</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -2029,7 +2032,7 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="c1"># Read in the image</span>
-<span class="n">duck</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/course/lecture-readings/duck.jpg&#39;</span><span class="p">)</span>
+<span class="n">duck</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;duck.jpg&#39;</span><span class="p">)</span>
 
 <span class="c1"># Remove red from a row of pixels</span>
 <span class="n">duck</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>

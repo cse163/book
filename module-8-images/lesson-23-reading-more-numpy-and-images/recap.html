@@ -1485,11 +1485,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="vectorization/Untitled.html">
-       Vectorization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="convolutions.html">
        Convolutions
       </a>
@@ -1550,13 +1545,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/neural-networks-code.html">
-       Neural Networks Code
+      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/neural-networks-code/Neural_Networks.html">
+       Neural Networks Code: Digit Recognition
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/optional-scikit-image.html">
-       Optional: Scikit-Image
+      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/optional-scikit-image/ScikitImage.html">
+       Unsupervised Learning
       </a>
      </li>
      <li class="toctree-l3">
@@ -1933,8 +1928,8 @@
                 
   <section id="recap">
 <h1>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h1>
-<p>Last time, we introduced the idea of working with images with a new library called <code class="docutils literal notranslate"><span class="pre">numpy</span></code> . We learned lots of things about the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library like how to create, index into, and do arithmetic/logical operations with arrays. The code snippet below shows a quick recap of all these features that we discussed.</p>
-<p>While there can be a lot of syntax, the nice thing is a lot of it is fairly similar to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> (since <code class="docutils literal notranslate"><span class="pre">pandas</span></code> was built on top of <code class="docutils literal notranslate"><span class="pre">numpy</span></code> ). It helps to relate what you are learning now to what you learned before. Additionally, the <em>key concepts</em> are the most important to come back to always. Whenever I write code that uses <code class="docutils literal notranslate"><span class="pre">numpy</span></code> , I always have to ask myself “What is the shape of the data I have right now?” and “How do I access or transform the data I have to the data I want?”. I almost always need a pencil and paper by my side for me to draw out a sketch of the data I have and what I want to do with it.</p>
+<p>Last time, we introduced the idea of working with images with a new library called <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. We learned lots of things about the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library like how to create, index into, and do arithmetic/logical operations with arrays. The code snippet below shows a quick recap of all these features that we discussed.</p>
+<p>While there can be a lot of syntax, the nice thing is a lot of it is fairly similar to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> (since <code class="docutils literal notranslate"><span class="pre">pandas</span></code> was built on top of <code class="docutils literal notranslate"><span class="pre">numpy</span></code> ). It helps to relate what you are learning now to what you learned before. Additionally, the <em>key concepts</em> are the most important to come back to always. Whenever I write code that uses <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, I always have to ask myself “What is the shape of the data I have right now?” and “How do I access or transform the data I have to the data I want?”. I almost always need a pencil and paper by my side for me to draw out a sketch of the data I have and what I want to do with it.</p>
 <section id="numpy">
 <h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -1967,8 +1962,8 @@
 <h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
 <p>We learned that images are most easily represented in Python as <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays. The shape of the arrays are common:</p>
 <ul class="simple">
-<li><p>2-dimensional for grayscale images. The shape of the image will be     <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width)</span></code>     .</p></li>
-<li><p>3-dimensional for color images. The shape of the image will be     <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width,</span> <span class="pre">3)</span></code>     where the inner-most dimension has shape 3 for each color channel RGB.</p></li>
+<li><p>2-dimensional for grayscale images. The shape of the image will be <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width)</span></code>.</p></li>
+<li><p>3-dimensional for color images. The shape of the image will be <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width,</span> <span class="pre">3)</span></code> where the inner-most dimension has shape 3 for each color channel RGB.</p></li>
 </ul>
 <p>In terms of code for working with images we’ve seen so far, all of it (besides the code to plot/save output) is simply just using the indexing or array modifications we saw above! So again, our advice of thinking carefully about the shape of the data you have and how to index into or transform it is always the most important thing.</p>
 </section>

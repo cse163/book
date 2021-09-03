@@ -1485,11 +1485,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-23-reading-more-numpy-and-images/vectorization/Untitled.html">
-       Vectorization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-23-reading-more-numpy-and-images/convolutions.html">
        Convolutions
       </a>
@@ -1550,13 +1545,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="neural-networks-code.html">
-       Neural Networks Code
+      <a class="reference internal" href="neural-networks-code/Neural_Networks.html">
+       Neural Networks Code: Digit Recognition
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="optional-scikit-image.html">
-       Optional: Scikit-Image
+      <a class="reference internal" href="optional-scikit-image/ScikitImage.html">
+       Unsupervised Learning
       </a>
      </li>
      <li class="toctree-l3">
@@ -1929,16 +1924,16 @@
 <p>As you might be able to tell though, it is not clear at all how we could begin to write code to take pixels from an image and compute these high-level features! So instead, we will rethink our approach to let the machine learning algorithm try to learn how to predict the label from the image itself!</p>
 <p>There are two very common practices when working with image data for machine learning:</p>
 <ul class="simple">
-<li><p>”     <strong>Vectorize</strong>     ” the image so it is usable by standard machine learning approaches (explained below).</p></li>
-<li><p>Use a very powerful model class called     <strong>neural networks</strong>     to learn high-level concepts from low-level features like pixels (discussed in the next slide).</p></li>
+<li><p>“<strong>Vectorize</strong>” the image so it is usable by standard machine learning approaches (explained below).</p></li>
+<li><p>Use a very powerful model class called <strong>neural networks</strong> to learn high-level concepts from low-level features like pixels (discussed in the next slide).</p></li>
 </ul>
 <section id="vectorizing-images">
 <h2>Vectorizing Images<a class="headerlink" href="#vectorizing-images" title="Permalink to this headline">¶</a></h2>
 <p>The idea here is to “unroll” the image so instead of having 2-dimensions, it only has 1. Pictorially for a very small example image, this looks like the image below.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/eFfUjOrUcEN3ZRAUJSQAzgpL"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/eFfUjOrUcEN3ZRAUJSQAzgpL" style="width: 743px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/eFfUjOrUcEN3ZRAUJSQAzgpL"><img alt="3 by 3 raw image on the left with the values 10, 20, 30 on the first row, 40, 50, 60 on the second, and 70, 80, 90 on the third. Unrolled image on the right with 10 cells from top to bottom with values 10, 20, ..., all the way to 90." class="align-center" src="https://static.us.edusercontent.com/files/eFfUjOrUcEN3ZRAUJSQAzgpL" style="width: 743px;" /></a>
 <p>Most machine learning models are generic enough to take any series of features (commonly called a vector from mathematics) and learn a model from them. By unrolling the image, we now have created a feature for every pixel in the image! If you are working with color images, you would unroll the color channels into this long vector too!</p>
-<p>You can imagine this will be complicated because there are lots of pixels in even moderately sized images! In our <code class="docutils literal notranslate"><span class="pre">dog.jpg</span></code> example from Lecture 22, there are almost 500,000 pixel values in the image if you count each color channel separately! That is way more features than we ever used for a model in class!</p>
-<p>This will then be a very complex and difficult learning task since there are so many features to work with. This is why we commonly use the second strategy listed above, which is using <strong>neural networks.</strong> This is explained on the next slide.</p>
+<p>You can imagine this will be complicated because there are lots of pixels in even moderately sized images! In our <code class="docutils literal notranslate"><span class="pre">dog.jpg</span></code> example from Lesson 22, there are almost 500,000 pixel values in the image if you count each color channel separately! That is way more features than we ever used for a model in class!</p>
+<p>This will then be a very complex and difficult learning task since there are so many features to work with. This is why we commonly use the second strategy listed above, which is using <strong>neural networks</strong>. This is explained on the next slide.</p>
 </section>
 </section>
 

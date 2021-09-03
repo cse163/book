@@ -1487,11 +1487,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-23-reading-more-numpy-and-images/vectorization/Untitled.html">
-       Vectorization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-23-reading-more-numpy-and-images/convolutions.html">
        Convolutions
       </a>
@@ -1552,13 +1547,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="neural-networks-code.html">
-       Neural Networks Code
+      <a class="reference internal" href="neural-networks-code/Neural_Networks.html">
+       Neural Networks Code: Digit Recognition
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="optional-scikit-image.html">
-       Optional: Scikit-Image
+      <a class="reference internal" href="optional-scikit-image/ScikitImage.html">
+       Unsupervised Learning
       </a>
      </li>
      <li class="toctree-l3">
@@ -1948,7 +1943,7 @@
 <h1><i class="far fa-edit fa-fw"></i> Practice: Neural Networks and Images<a class="headerlink" href="#i-class-far-fa-edit-fa-fw-i-practice-neural-networks-and-images" title="Permalink to this headline">¶</a></h1>
 <section id="question-0">
 <h2>Question 0<a class="headerlink" href="#question-0" title="Permalink to this headline">¶</a></h2>
-<p>Suppose I wanted to use a neural network to take images as inputs and predict whether the image was a picture of a cat, dog, or <a class="reference external" href="https://media.giphy.com/media/4YWu31EsM1ToJnAzqc/giphy.gif">None</a> . Suppose the input images are in RGB color and were 50x50 pixels. How many input neurons would there be in our network?</p>
+<p>Suppose I wanted to use a neural network to take images as inputs and predict whether the image was a picture of a cat, dog, or <a class="reference external" href="https://media.giphy.com/media/4YWu31EsM1ToJnAzqc/giphy.gif">axolotl</a>. Suppose the input images are in RGB color and were 50x50 pixels. How many input neurons would there be in our network?</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
 </section>
@@ -1960,25 +1955,25 @@
 </section>
 <section id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
-<p>Below we have mixed up a list of the <strong>parameters</strong> and <strong>hyperparameters</strong> of a neural network model. In this problem, please select all the values that are the model <strong>parameters</strong> (leaving the hyperparameters <em>unselected</em> ).</p>
+<p>Below we have mixed up a list of the <strong>parameters</strong> and <strong>hyperparameters</strong> of a neural network model. In this problem, please select all the values that are the model <strong>parameters</strong>.</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Select one or more options. Write your answer down in your own space.</p>
-<p><em><i class="far fa-circle fa-fw"></i> Option 0</em></p>
+<p><em><i class="far fa-square fa-fw"></i> Option 0</em></p>
 <p>Number of hidden layers</p>
-<p><em><i class="far fa-circle fa-fw"></i> Option 1</em></p>
+<p><em><i class="far fa-square fa-fw"></i> Option 1</em></p>
 <p>Number of hidden nodes in each hidden layer</p>
-<p><em><i class="far fa-circle fa-fw"></i> Option 2</em></p>
+<p><em><i class="far fa-square fa-fw"></i> Option 2</em></p>
 <p>Weights between neurons</p>
-<p><em><i class="far fa-circle fa-fw"></i> Option 3</em></p>
+<p><em><i class="far fa-square fa-fw"></i> Option 3</em></p>
 <p>Bias for each neuron</p>
 </section>
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
 <p>Consider the following network with the structure and weights used below (colors only for emphasis). The weights for each connection are shown above the connection and the bias is shown inside the neuron. By convention, a bias of 10 means 10 is subtracted from the weighted sum of inputs before being passed to the “squishification” function (e.g., will fire positively if the weighted sum exceeds 10).</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/Kd786GuC8sNauSwZzfnpO6JO"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/Kd786GuC8sNauSwZzfnpO6JO" style="width: 687px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/Kd786GuC8sNauSwZzfnpO6JO"><img alt="A network with two input nodes, two middle nodes with the bias 1 and 2 respectively, and an output node with a bias of 0. The first input node has two outgoing edges connecting to each of the middle nodes. The edge connecting to the node with bias 1 has weight 2, and the edge connecting to the node with bias 2 has weight 1. The second input node also has two outgoing edges to each of the middle nodes with weight 2 connecting to the node with bias 1 and weight 3 connecting to the node with bias 2. Both of the middle nodes have one outgoing edge connecting to the output node with weight 0, and both of them have weight 1." class="align-center" src="https://static.us.edusercontent.com/files/Kd786GuC8sNauSwZzfnpO6JO" style="width: 687px;" /></a>
 <p>For simplicity, we will use a different “squishification function”. Instead of the Sigmoid, we will use the “Step” function <span class="math notranslate nohighlight">\(\sigma(x)\)</span> defined below. All it does is clamp the output to 0 if the weighted sum (including bias) is less than or equal to 0 and the output is 1 if it is positive. The output neuron uses this same function.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\sigma(x) = \begin{cases} &lt;br /&gt; 0 &amp; x \leq 0 \\ &lt;br /&gt; 1 &amp; x &gt; 0\\ &lt;br /&gt; \end{cases}\end{split}\]</div>
+\[\begin{split}\sigma(x) = \begin{cases} 0 &amp; x \leq 0 \\ 1 &amp; x &gt; 0\\\end{cases}\end{split}\]</div>
 <p>What is the output if we use the input <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0)</span></code> where <code class="docutils literal notranslate"><span class="pre">1</span></code> is the input value to the top neuron and <code class="docutils literal notranslate"><span class="pre">0</span></code> is the input value to the bottom neuron?</p>
 <p><em>Hint: Your output should be an integer.</em></p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
@@ -1991,7 +1986,7 @@
 </pre></div>
 </div>
 <p><strong>True or false</strong> , this code specifies a network with the architecture shown in the image below.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/p4aQn7nnk0h3DqYetAKV4blO"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/p4aQn7nnk0h3DqYetAKV4blO" style="width: 691px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/p4aQn7nnk0h3DqYetAKV4blO"><img alt="A fully connected neural network with 4 layers. The first input layer has 3 nodes, the second layer has 4 nodes, the third has 3 nodes, the fourth output layer has 1 node." class="align-center" src="https://static.us.edusercontent.com/files/p4aQn7nnk0h3DqYetAKV4blO" style="width: 691px;" /></a>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
 </section>

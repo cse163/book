@@ -1485,11 +1485,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-23-reading-more-numpy-and-images/vectorization/Untitled.html">
-       Vectorization
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-23-reading-more-numpy-and-images/convolutions.html">
        Convolutions
       </a>
@@ -1550,13 +1545,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/neural-networks-code.html">
-       Neural Networks Code
+      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/neural-networks-code/Neural_Networks.html">
+       Neural Networks Code: Digit Recognition
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/optional-scikit-image.html">
-       Optional: Scikit-Image
+      <a class="reference internal" href="../lesson-24-reading-machine-learning-and-images/optional-scikit-image/ScikitImage.html">
+       Unsupervised Learning
       </a>
      </li>
      <li class="toctree-l3">
@@ -1944,19 +1939,15 @@
                 
   <section id="i-class-far-fa-edit-fa-fw-i-practice-numpy">
 <h1><i class="far fa-edit fa-fw"></i> Practice: numpy<a class="headerlink" href="#i-class-far-fa-edit-fa-fw-i-practice-numpy" title="Permalink to this headline">¶</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warning</p>
-<p>This quiz was originally bugged by only allowing you one submission and then showing the answer after. We have enabled multiple attempts and the answer will be shown after you submit. You will still need to mark to correct answer to be counted as completed, but please make an effort to try before blindly clicking one to see the right answer.</p>
-</div>
-<p>The following questions will give you a chance to practice the new information and syntax you just saw about <code class="docutils literal notranslate"><span class="pre">numpy</span></code> . You should try to do these all by hand using your understanding of the material, and you should try to avoid plugging these into your computer.</p>
-<p>Recall that learning a new library can be a daunting task since there is just so much information! You have a lot of experience learning libraries, so hopefully, this time is easier since you can rely on your past experience with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> .</p>
+<p>The following questions will give you a chance to practice the new information and syntax you just saw about <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. You should try to do these all by hand using your understanding of the material, and you should try to avoid plugging these into your computer.</p>
+<p>Recall that learning a new library can be a daunting task since there is just so much information! You have a lot of experience learning libraries, so hopefully, this time is easier since you can rely on your past experience with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <section id="question-0">
 <h2>Question 0<a class="headerlink" href="#question-0" title="Permalink to this headline">¶</a></h2>
-<p>What is the shape of the following <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> ?</p>
+<p>What is the shape of the following <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Including the formatting of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> , but do not include spaces. For example, if it is a tuple of length 1 write something like <code class="docutils literal notranslate"><span class="pre">(4,)</span></code> and if it is a tuple of length 2, write something like <code class="docutils literal notranslate"><span class="pre">(1,2)</span></code> . There should be no spaces in your answer.</p>
+<p>Including the formatting of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> , but do not include spaces. For example, if it is a tuple of length 1 write something like <code class="docutils literal notranslate"><span class="pre">(4,)</span></code> and if it is a tuple of length 2, write something like <code class="docutils literal notranslate"><span class="pre">(1,2)</span></code>. There should be no spaces in your answer.</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
 </section>
@@ -1967,7 +1958,7 @@
 <span class="n">m</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>Including the formatting of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> , but do not include spaces. For example, if it is a tuple of length 1 write something like <code class="docutils literal notranslate"><span class="pre">(4,)</span></code> and if it is a tuple of length 2, write something like <code class="docutils literal notranslate"><span class="pre">(1,2)</span></code> .</p>
+<p>Including the formatting of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> , but do not include spaces. For example, if it is a tuple of length 1 write something like <code class="docutils literal notranslate"><span class="pre">(4,)</span></code> and if it is a tuple of length 2, write something like <code class="docutils literal notranslate"><span class="pre">(1,2)</span></code>.</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
 </section>
@@ -1978,14 +1969,14 @@
 <span class="n">m</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Including the formatting of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> , but do not include spaces. For example, if it is a tuple of length 1 write something like <code class="docutils literal notranslate"><span class="pre">(4,)</span></code> and if it is a tuple of length 2, write something like <code class="docutils literal notranslate"><span class="pre">(1,2)</span></code> . There should be no spaces in your answer.</p>
+<p>Including the formatting of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> , but do not include spaces. For example, if it is a tuple of length 1 write something like <code class="docutils literal notranslate"><span class="pre">(4,)</span></code> and if it is a tuple of length 2, write something like <code class="docutils literal notranslate"><span class="pre">(1,2)</span></code>. There should be no spaces in your answer.</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
 </section>
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we had a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> named <code class="docutils literal notranslate"><span class="pre">x</span></code> with some sequence of values. For this problem, assume we are not allowed to use the <code class="docutils literal notranslate"><span class="pre">!=</span></code> comparison (even though that’s a totally valid approach).</p>
-<p>Which of the following options will help us select all the values in <code class="docutils literal notranslate"><span class="pre">x</span></code> that are greater than 10 and are not divisible by 3.</p>
+<p>Which of the following options will help us select all the values in <code class="docutils literal notranslate"><span class="pre">x</span></code> that are greater than 10 and are not divisible by 3?</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Select one option. Write your answer down in your own space.</p>
 <p><em><i class="far fa-circle fa-fw"></i> Option 0</em></p>
@@ -1999,12 +1990,12 @@
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have learned about <code class="docutils literal notranslate"><span class="pre">numpy</span></code> , we can now explore the return value from <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> . The return for the <code class="docutils literal notranslate"><span class="pre">Axes</span></code> is really a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> of the given shape where each value is an <code class="docutils literal notranslate"><span class="pre">Axes</span></code> object!</p>
+<p>Now that we have learned about <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, we can now explore the return value from <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code>. The return for the <code class="docutils literal notranslate"><span class="pre">Axes</span></code> is really a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> of the given shape where each value is an <code class="docutils literal notranslate"><span class="pre">Axes</span></code> object!</p>
 <p>For example, if we made a <code class="docutils literal notranslate"><span class="pre">subplots</span></code> using the following line, it would produce the figure below.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>fig, axs = plt.subplots(3, 4)
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/4sJPr39zfQ9hSrsobUDRuc19"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/4sJPr39zfQ9hSrsobUDRuc19" style="width: 691px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/4sJPr39zfQ9hSrsobUDRuc19"><img alt="A grid of axes objects with 3 rows and 4 columns, with the first row of axes being named ax1, ax2, ax3, ax4, and the remaining rows named accordingly in sequence." class="align-center" src="https://static.us.edusercontent.com/files/4sJPr39zfQ9hSrsobUDRuc19" style="width: 691px;" /></a>
 <p>Where we have labeled each <code class="docutils literal notranslate"><span class="pre">Axes</span></code> in the variable <code class="docutils literal notranslate"><span class="pre">axs</span></code> as if we had unpacked it into the individual variables</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>fig, [[ax1, ax2, ax3, ax4], [ax5, ax6, ax7, ax8], [ax9, ax10, ax11, ax12]] = plt.subplots(3, 4)
 </pre></div>
