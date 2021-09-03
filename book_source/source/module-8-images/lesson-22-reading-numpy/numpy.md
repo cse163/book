@@ -5,15 +5,17 @@
     <iframe src="https://www.loom.com/embed/ad8f8164d3924e8d86eb6b8e0a009885" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
-The first three slides will go by a little fast because you should be mostly familiar with these ideas for `numpy` since they closely match the semantics of `pandas` . The last two reading slides will most likely be the more complex topics of this reading.  
+---
 
-Like always, you get better at things with practice and we will continue to get practice with `numpy` !  
+The first three slides will go by a little fast because you should be mostly familiar with these ideas for `numpy` since they closely match the semantics of `pandas`. The last two reading slides will most likely be the more complex topics of this reading.  
+
+Like always, you get better at things with practice and we will continue to get practice with `numpy`!  
 
 ##  Overview  
 
-`numpy` is one of the most popular Python libraries that is used for numerical processing. We have used `numpy` (imported as `np` ) a few times before, but this week we will really dive into how to use it.  
+`numpy` is one of the most popular Python libraries that is used for numerical processing. We have used `numpy` (imported as `np`) a few times before, but this week we will really dive into how to use it.  
 
-`numpy` 's primary data structure is the `numpy.array` . An array will store a sequence of values **of the same type** . You can think of a `numpy.array` as being something a lot like a `pandas.Series` , but the index is always integer values like a `list` . The syntax to create one of these `numpy.array` s looks like the following.  
+`numpy`'s primary data structure is the `numpy.array`. An array will store a sequence of values **of the same type** . You can think of a `numpy.array` as being something a lot like a `pandas.Series`, but the index is always integer values like a `list`. The syntax to create one of these `numpy.array` s looks like the following.  
 
 ```python
 import numpy as np
@@ -35,12 +37,12 @@ Some example applications include:
 
 -  Representing images (each pixel stores a value indicating color)  
 
-    -  More complex representation where we make an         `numpy.array`         of         `numpy.array`         s.  
+    -  More complex representation where we make an `numpy.array` of `numpy.array`s.  
 
 
 
 ```{image} https://static.us.edusercontent.com/files/5yqR3Z3mkqzYtYSuGzv30lej
-:alt: TODO
+:alt: Representing a black and white picture of a cute puppy using a 2-D numpy array.
 :width: 743
 :align: center
 ```
@@ -49,14 +51,14 @@ Some example applications include:
 
 
 ```{image} https://static.us.edusercontent.com/files/hbAOHuHkTlpSkjtKfHKAZSjN
-:alt: TODO
+:alt: Representing sound waves using an 1-D numpy array.
 :width: 743
 :align: center
 ```
 
-##  Creating `numpy.array` s  
+##  Creating `numpy.array`s  
 
-We showed you how to create `numpy.array` s, but there are a few more helpful ones that are used commonly to make an array of any size.  
+We showed you how to create `numpy.array`s, but there are a few more helpful ones that are used commonly to make an array of any size.  
 
 ```python
 import numpy as np
@@ -73,4 +75,3 @@ print(x)
 x = np.ones(5)
 print(x)
 ```
-

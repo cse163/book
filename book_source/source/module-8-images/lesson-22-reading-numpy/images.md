@@ -1,9 +1,14 @@
 # Images
 
+```{reading-data}
+{static-data-download}`duck.jpg`
+```
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/4cc717605a614427af8f4842fa200154" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+
+---
 
 One of the applications of `numpy` we discussed earlier was representing image data. We will discuss analyzing images and manipulating them for the rest of the week. While we will show some code, the more important bit for today is just the conceptual understanding of how we will represent an image in Python.  
 
@@ -24,7 +29,7 @@ Conventionally, we represent each pixel as a number between 0 and 255. 0 is the 
 You could imagine a low-resolution image (one with very few pixels) would look something like this  
 
 ```{image} https://static.us.edusercontent.com/files/Oa1CYhhty89Z0H7oBrG1bXbA
-:alt: TODO
+:alt: low resolution picture with 16 pixels of different shades of gray.
 :width: 298
 :align: center
 ```
@@ -83,24 +88,24 @@ plt.savefig('pic2.png')
 Let's brighten up the world a bit and switch to color images. A color image is commonly represented in a format called RGB. RGB stands for "Red, Blue, Green". An RGB image is really just 3 "grayscale" images stacked on top of each other, but each sub-image corresponds to a particular color channel.  
 
 ```{image} https://static.us.edusercontent.com/files/TLxAi1Al9GVLbs0UdcDUOtgi
-:alt: TODO
+:alt: Colored cat image constructed with a red, green, and blue layer
 :width: 713
 :align: center
 ```
 
 So each pixel in an image is really 3 numbers to tell it how much red, blue, and green respectively to output. Your brain does all the real work of combining how much red/blue/green corresponds to a more complex color like the orange/brown color that the cat is.  
 
-In turn, a `numpy` array will just have to represent all 3 colors for each pixel. Each pixel will store 3 values between 0 and 255; a low value means that color channel is more off (black) while a high value means that color channel is more on (red, blue, or green respectively). Since each pixel needs to know 3 numbers, we will represent this as a 3D `numpy.array` !  
+In turn, a `numpy` array will just have to represent all 3 colors for each pixel. Each pixel will store 3 values between 0 and 255; a low value means that color channel is more off (black) while a high value means that color channel is more on (red, blue, or green respectively). Since each pixel needs to know 3 numbers, we will represent this as a 3D `numpy.array`!  
 
 Notice, none of our discussion about `numpy` actually limits it to 1D or 2D arrays. We can actually have arbitrarily many dimensions! A color image in `numpy` will commonly be represented as a 3D array with shape `(height, width, 3)` . The last dimension has shape 3 because there will be one dimension for each color channel at that pixel location. Visually this makes it  kind of like a cube that has "depth" 3 (in the z direction).  
 
 ```{image} https://static.us.edusercontent.com/files/byPNZvmbUeMRLOhhm6uo8rS6
-:alt: TODO
+:alt: Graphical representation of a 5 by 4 by 3 NumPy Array
 :width: 269
 :align: center
 ```
 
-To index into a color image, you now need to specify 3 values. For example `img[row, col, channel]`   
+To index into a color image, you now need to specify 3 values. For example, `img[row, col, channel]`.
 
 ##  Color Image Code  
 
@@ -112,7 +117,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read in the image
-duck = imageio.imread('/course/lecture-readings/duck.jpg')
+duck = imageio.imread('duck.jpg')
 
 # Print some values
 print('Shape', duck.shape)
@@ -133,7 +138,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read in the image
-duck = imageio.imread('/course/lecture-readings/duck.jpg')
+duck = imageio.imread('duck.jpg')
 
 # Remove red from a row of pixels
 duck[100:150, :, 0] = 0
