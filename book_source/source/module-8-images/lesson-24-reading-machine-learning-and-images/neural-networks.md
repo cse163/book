@@ -34,14 +34,14 @@ In their video, 3Blue1Brown uses grayscale images with pixel values between 0.0 
 
 -  The specific formula for the "squishing function" called the Sigmoid. All you really need to know is the general idea that it squishes the input to output between 0 and 1.  
 
--  13:30 - 15:00 talks a bit about representing this process using matrices and vectors which is more complex than we care about. You should still watch the part after that since it shows a quick application of     `numpy`     and gives some more high-level motivation!  
+-  13:30 - 15:00 talks a bit about representing this process using matrices and vectors which is more complex than we care about. You should still watch the part after that since it shows a quick application of `numpy` and gives some more high-level motivation!  
 
 
 There is a whole series of videos that you are welcome to watch if you're interested, but we will only focus on the first one.  
 
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/aircAruvnKk" title="YouTube video player" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
  

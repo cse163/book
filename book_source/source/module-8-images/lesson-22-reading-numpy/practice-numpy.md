@@ -1,25 +1,18 @@
 # <i class="far fa-edit fa-fw"></i> Practice: numpy
 
-```{admonition} Warning
-:class: warning
+The following questions will give you a chance to practice the new information and syntax you just saw about `numpy`. You should try to do these all by hand using your understanding of the material, and you should try to avoid plugging these into your computer.
 
-This quiz was originally bugged by only allowing you one submission and then showing the answer after. We have enabled multiple attempts and the answer will be shown after you submit. You will still need to mark to correct answer to be counted as completed, but please make an effort to try before blindly clicking one to see the right answer.
-
-```
-
-The following questions will give you a chance to practice the new information and syntax you just saw about `numpy` . You should try to do these all by hand using your understanding of the material, and you should try to avoid plugging these into your computer.
-
-Recall that learning a new library can be a daunting task since there is just so much information! You have a lot of experience learning libraries, so hopefully, this time is easier since you can rely on your past experience with `pandas` .
+Recall that learning a new library can be a daunting task since there is just so much information! You have a lot of experience learning libraries, so hopefully, this time is easier since you can rely on your past experience with `pandas`.
 
 ## Question 0
 
-What is the shape of the following `numpy.array` ?
+What is the shape of the following `numpy.array`?
 
 ```python
 np.arange(14)
 ```
 
-Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` . There should be no spaces in your answer.
+Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)`. There should be no spaces in your answer.
 
 **<i class="far fa-edit fa-fw"></i> Your Task**
 
@@ -34,7 +27,7 @@ x = np.arange(20).reshape((4, 5))
 m = x / 2 + 1
 ```
 
-Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` .
+Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)`.
 
 **<i class="far fa-edit fa-fw"></i> Your Task**
 
@@ -49,7 +42,7 @@ x = np.arange(20).reshape((4, 5))
 m = x[1:, 2:4]
 ```
 
-Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)` . There should be no spaces in your answer.
+Including the formatting of the `tuple` , but do not include spaces. For example, if it is a tuple of length 1 write something like `(4,)` and if it is a tuple of length 2, write something like `(1,2)`. There should be no spaces in your answer.
 
 **<i class="far fa-edit fa-fw"></i> Your Task**
 
@@ -59,7 +52,7 @@ Write your answer down in your own space.
 
 Suppose we had a `numpy.array` named `x` with some sequence of values. For this problem, assume we are not allowed to use the `!=` comparison (even though that's a totally valid approach).
 
-Which of the following options will help us select all the values in `x` that are greater than 10 and are not divisible by 3.
+Which of the following options will help us select all the values in `x` that are greater than 10 and are not divisible by 3?
 
 **<i class="far fa-edit fa-fw"></i> Your Task**
 
@@ -83,7 +76,7 @@ _<i class="far fa-circle fa-fw"></i> Option 3_
 
 ## Question 4
 
-Now that we have learned about `numpy` , we can now explore the return value from `plt.subplots` . The return for the `Axes` is really a `numpy.array` of the given shape where each value is an `Axes` object!
+Now that we have learned about `numpy`, we can now explore the return value from `plt.subplots`. The return for the `Axes` is really a `numpy.array` of the given shape where each value is an `Axes` object!
 
 For example, if we made a `subplots` using the following line, it would produce the figure below.
 
@@ -92,7 +85,7 @@ fig, axs = plt.subplots(3, 4)
 ```
 
 ```{image} https://static.us.edusercontent.com/files/4sJPr39zfQ9hSrsobUDRuc19
-:alt: TODO
+:alt: A grid of axes objects with 3 rows and 4 columns, with the first row of axes being named ax1, ax2, ax3, ax4, and the remaining rows named accordingly in sequence.
 :width: 691
 :align: center
 ```

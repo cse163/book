@@ -8,9 +8,9 @@ As you might be able to tell though, it is not clear at all how we could begin t
 
 There are two very common practices when working with image data for machine learning:  
 
--  "     **Vectorize**     " the image so it is usable by standard machine learning approaches (explained below).  
+-  "**Vectorize**" the image so it is usable by standard machine learning approaches (explained below).  
 
--  Use a very powerful model class called     **neural networks**     to learn high-level concepts from low-level features like pixels (discussed in the next slide).  
+-  Use a very powerful model class called **neural networks** to learn high-level concepts from low-level features like pixels (discussed in the next slide).  
 
 
 ##  Vectorizing Images  
@@ -18,14 +18,14 @@ There are two very common practices when working with image data for machine lea
 The idea here is to "unroll" the image so instead of having 2-dimensions, it only has 1. Pictorially for a very small example image, this looks like the image below.  
 
 ```{image} https://static.us.edusercontent.com/files/eFfUjOrUcEN3ZRAUJSQAzgpL
-:alt: TODO
+:alt: 3 by 3 raw image on the left with the values 10, 20, 30 on the first row, 40, 50, 60 on the second, and 70, 80, 90 on the third. Unrolled image on the right with 10 cells from top to bottom with values 10, 20, ..., all the way to 90.
 :width: 743
 :align: center
 ```
 
 Most machine learning models are generic enough to take any series of features (commonly called a vector from mathematics) and learn a model from them. By unrolling the image, we now have created a feature for every pixel in the image! If you are working with color images, you would unroll the color channels into this long vector too!  
 
-You can imagine this will be complicated because there are lots of pixels in even moderately sized images! In our `dog.jpg` example from Lecture 22, there are almost 500,000 pixel values in the image if you count each color channel separately! That is way more features than we ever used for a model in class!  
+You can imagine this will be complicated because there are lots of pixels in even moderately sized images! In our `dog.jpg` example from Lesson 22, there are almost 500,000 pixel values in the image if you count each color channel separately! That is way more features than we ever used for a model in class!  
 
-This will then be a very complex and difficult learning task since there are so many features to work with. This is why we commonly use the second strategy listed above, which is using **neural networks.** This is explained on the next slide.  
+This will then be a very complex and difficult learning task since there are so many features to work with. This is why we commonly use the second strategy listed above, which is using **neural networks**. This is explained on the next slide.  
 
