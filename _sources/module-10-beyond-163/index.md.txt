@@ -6,4 +6,5 @@
 
 lesson-28-fairness/index
 lesson-29-privacy/index
+lesson-30-wrap-up/index
 ```
