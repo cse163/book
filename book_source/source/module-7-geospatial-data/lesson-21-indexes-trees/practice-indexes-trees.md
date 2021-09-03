@@ -64,7 +64,7 @@ Write your answer down in your own space.
 
 Consider the KD-tree for a spatial index we saw in the lesson reading shown again in the picture below. Consider if we were to search for the query point that is the star shown in the image (you can click on it to see a larger version).
 
-What is the sequence of checks we will make in order to determine that the query point is not in the dataset? Like the last problem, this is the nodes you will take down the tree including comparing the final datapoints you land at. For this problem, we want you to write down the **path** , not the just the number of checks. For example, if we were searching for the point with the same coordinates as `g` , the path would be `1,3,6,g` . You should write your answer in this format with commas in between the node labels (no spaces).
+What is the sequence of checks we will make in order to determine that the query point is not in the dataset? Like the last problem, this is the nodes you will take down the tree including comparing the final datapoints you land at. For this problem, we want you to write down the **path**, not the just the number of checks. For example, if we were searching for the point with the same coordinates as `g`, the path would be `1,3,6,g`. You should write your answer in this format with commas in between the node labels (no spaces).
 
 ```{image} https://static.us.edusercontent.com/files/NguPgC5OZdpeR8u3fElqRMyT
 :alt: TODO

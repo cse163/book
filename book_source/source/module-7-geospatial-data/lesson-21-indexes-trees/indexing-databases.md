@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/f1a3d4af3f6b4f75b369902cce641b8e?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 Suppose you work at Spacebook (a cheap knock-off of Facebook and MySpace) and you are working on the team that manages Spacebook profiles. Suppose your team has a Python class to define a single Spacebook user, shown in the snippet below, and stores instances of this class in a list.  
 
 ```python
@@ -33,7 +35,7 @@ users = [
 ]
 ```
 
-Now suppose Jasmine goes to her Spacebook profile ( `https://www.spacebook.com/profile.php?id=42` [don't go to this link, it's spam]). The Spacebook service needs to find the appropriate object for the given user ID so it can display their information.  
+Now suppose Jasmine goes to her Spacebook profile (`https://www.spacebook.com/profile.php?id=42` [don't go to this link, it's spam]). The Spacebook service needs to find the appropriate object for the given user ID so it can display their information.  
 
 The key question is: How can we find the `SBUser` object for Jasmine without needing to search through all of the Python objects in this list to find the object with matching user ID? If we had to loop over the whole list, then loading a user profile would be an $\mathcal{O}(n)$ operation where $n$ is the number of Spacebook users. Now, this probably doesn't seem like a big deal with our measly 5 users, but we plan to beat our competitor Facebook one day so it would be nice if we don't have to loop through all 1.7 billion users we plan to have one day.  
 

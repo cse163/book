@@ -2,7 +2,9 @@
 
 Suppose we were working with the following two datasets shown below. For each question, report the number of rows in the resulting `DataFrame` (remember, that the number of rows does not include the column header).
 
-## `movies`
+````{div} table-section
+```{div} table-div
+`movies`
 
 | movie_name           | year | movie_id | directed_by |
 | -------------------- | ---: | -------: | ----------: |
@@ -11,8 +13,10 @@ Suppose we were working with the following two datasets shown below. For each qu
 | Parasite             | 2019 |      103 |          14 |
 | Frozen               | 2013 |       34 |          18 |
 | Moonrise Kingdom     | 2012 |       37 |          16 |
+```
 
-## `directors`
+```{div} table-div
+`directors`
 
 | director_name     | director_id |
 | ----------------- | ----------: |
@@ -21,6 +25,8 @@ Suppose we were working with the following two datasets shown below. For each qu
 | Wes Anderson      |          16 |
 | Quentin Tarantino |          21 |
 | Kathryn Bigelow   |          27 |
+```
+````
 
 ## Question 0
 
@@ -65,7 +71,7 @@ Write your answer down in your own space.
 
 Suppose we wanted to compute the earliest movie directed by each director. Any director who has directed no movies should have `NaN` as a result.
 
-Which of the following code blocks helps us answer that question? **Select all that apply** .
+Which of the following code blocks helps us answer that question? **Select all that apply**.
 
 **<i class="far fa-edit fa-fw"></i> Your Task**
 
@@ -126,23 +132,21 @@ Consider the following two datasets.
 
 - The first is our countries dataset. Each row has the name, continent, and geometry of a country (there are other columns, but we don't need to think about them for this problem).
 
-      |    NAME     |  CONTINENT  |    geometry     |
-
+  |    NAME     |  CONTINENT  |    geometry     |
   |-------------|-------------|-----------------|
   |United States|North America|MultiPolgyon(...)|
-  |Ethiopia |Africa |Polygon(...) |
-  |... |... |... |
+  |Ethiopia     |Africa       |Polygon(...)     |
+  |...          |...          |...              |
 
 - The second is a carbon emissions dataset. The dataset has two columns, the name of the country and the amount of carbon emissions produced by that country last year.
 
-      |   Country   |Carbon|
-
+  |   Country   |Carbon|
   |-------------|------|
   |United States| 16.50|
-  |Ethiopia | 0.12|
-  |... |... |
+  |Ethiopia     | 0.12 |
+  |...          |...   |
 
-Suppose we wanted to make a plot of the average carbon emissions **by continent** . Before we do any aggregation to make this map to group countries together by continent, we need to join these datasets so that we can later answer for each continent, what is the average carbon emissions there.
+Suppose we wanted to make a plot of the average carbon emissions **by continent**. Before we do any aggregation to make this map to group countries together by continent, we need to join these datasets so that we can later answer for each continent, what is the average carbon emissions there.
 
 For this problem, we will say any country in the country dataset that does not have an associated row in the carbon emissions dataset should have 0 carbon emissions.
 

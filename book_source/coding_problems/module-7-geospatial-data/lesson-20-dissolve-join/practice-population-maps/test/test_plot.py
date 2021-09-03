@@ -12,7 +12,7 @@ DATA_FILE = "geo_data/ne_110m_admin_0_countries.shp"
 class Test(unittest.TestCase):
     def setUp(self):
         if os.path.exists("populations.png"):
-            os.remove("population .png")
+            os.remove("populations.png")
 
     @patch("matplotlib.pyplot.savefig")
     @patch("geopandas.read_file")

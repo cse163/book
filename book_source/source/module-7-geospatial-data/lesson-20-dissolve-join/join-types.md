@@ -5,10 +5,11 @@
     <iframe src="https://www.loom.com/embed/dbfef11ad462496984ff19cfa2ccb233?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 To handle rows that don't line up, we actually think of there being multiple types of joins. The join I described earlier is called an **inner-join.** An inner-join only shows rows that have values that appear in both tables.  
 
-Before listing the other joins, we note that we commonly refer to a "left" table and a "right" table in the join process. For the `pandas` call, this is determined by `
-			` . The `how` parameter determines which type of join to use in the list below. There is no inherent difference between what goes on the left vs the right, it's just determined by which dataset you indicate as the left.  
+Before listing the other joins, we note that we commonly refer to a "left" table and a "right" table in the join process. For the `pandas` call, this is determined by `left.merge(right, left_on=col, right_on=col, how=type)`. The `how` parameter determines which type of join to use in the list below. There is no inherent difference between what goes on the left vs the right, it's just determined by which dataset you indicate as the left.  
 
 There are four common types of joins:  
 
@@ -54,5 +55,5 @@ print('merged')
 print(merged)
 ```
 
-You should try experimenting with this since one of the practice problems for today will get you practicing doing the outputs of these joins!  
+You should try experimenting with this since one of the practice problems for this lesson will get you practicing doing the outputs of these joins!  
 

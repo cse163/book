@@ -1,9 +1,14 @@
 # Dissolve
 
+```{reading-data}
+{static-data-download}`geo_data.zip`
+```
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/f59c69e387da4953832d2efe0001eef0?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+
+---
 
 Consider our world dataset from last time. Recall we use `geopandas` to process and plot datasets that contain information about the location of an event. As a reminder, the following snippet shows a preview of the data and a plot of the world's GDP.  
 
@@ -12,7 +17,7 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 
 # Load data
-df = gpd.read_file('/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp')
+df = gpd.read_file('geo_data/ne_110m_admin_0_countries.shp')
 
 # Preview data
 print(df.columns)
@@ -37,7 +42,7 @@ Below, we run a full example that dissolves by the continent to show the total p
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
-df = gpd.read_file('/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp')
+df = gpd.read_file('geo_data/ne_110m_admin_0_countries.shp')
 
 # Filter down to just the columns of interest
 populations = df[['POP_EST', 'CONTINENT', 'geometry']]
@@ -57,7 +62,7 @@ Don't believe us when we say that you can't use `groupby` here? Try it out in th
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
-df = gpd.read_file('/course/lecture-readings/geo_data/ne_110m_admin_0_countries.shp')
+df = gpd.read_file('geo_data/ne_110m_admin_0_countries.shp')
 populations = df.groupby('CONTINENT')['POP_EST'].sum()
 
 populations.plot()

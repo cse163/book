@@ -5,6 +5,8 @@
     <iframe src="https://www.loom.com/embed/00731b3ee509429f814b5acf818897bf" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+---
+
 We have already seen how to make plots using `seaborn` to make simple data visualizations and using `matplotlib` to customize the titles and axes. This week, we are going to explore `matplotlib` a little more in-depth so we can understand how to make even more rich visualizations.  
 
 Before, when we were using `seaborn` , whenever we were plotting we were plotting on a global **figure** behind the scenes. Some of you might have experienced bugs on HW3 where you used different functions than we instructed. These bugs stem from how different functions interact with this figure. Just like `seaborn` , `pandas` has a way to make simple plots that, by default, also plot on a global figure. Take the following toy-example:  
@@ -27,7 +29,7 @@ plt.savefig('plot.png')
 
 This only produced one plot because the second one overwrote the first one on this global figure! If we want to plot these on the same figure, we would need something a little more complex.  
 
-A **figure** is a `matplotlib` term for a canvas to store the drawings. A **figure** may have one or more **axes** and each **axes** can have multiple plots drawn on them.  You can make very interesting visualizations by putting multiple **axes** on a single **figure** . Instead of using the default-global figure from `seaborn` , we have a way to create our own using `matplotlib` . The code looks like the following.  
+A **figure** is a `matplotlib` term for a canvas to store the drawings. A **figure** may have one or more **axes** and each **axes** can have multiple plots drawn on them.  You can make very interesting visualizations by putting multiple **axes** on a single **figure**. Instead of using the default-global figure from `seaborn`, we have a way to create our own using `matplotlib`. The code looks like the following.  
 
 ```python
 import matplotlib.pyplot as plt
@@ -108,14 +110,13 @@ This is an example of a **2d-array** (or a `list` of `list` s). This is actually
 For example, you will be making a plot like the following on your next take-home assignment.  
 
 ```{image} https://static.us.edusercontent.com/files/azWntPY0ftQPaBXP5doNIEkU
-:alt: TODO
-:width: 743
-:align: center
+:alt: Low food access output from take-home assessment 5, displaying four different types of low access in a two by two grid
+:class: full-width
 ```
 
 ##  Subplots Examples  
 
-There are generally two ways of working with axes return of `subplots` , index into it or unpack it. For example, the following snippet shows how to make two small plots using both styles. Not  
+There are generally two ways of working with axes return of `subplots` , index into it or unpack it. For example, the following snippet shows how to make two small plots using both styles.  
 
 ```python
 import matplotlib.pyplot as plt
@@ -143,7 +144,7 @@ fig.savefig('option2.png')
 
 Usually either suffices, but if you start getting more than 4 or so plots, the second option becomes unwieldy. Below, we show a similar example but with a 2x2 plot.  
 
-Before you press run, think about what the final plot should look like; when we plot `a` and `b` , it is a line with a positive slope ( `/` ) and when we plot `a` and `c` , it is a line with a negative slope ( `\` ).  
+Before you run the code snippet below, think about what the final plot should look like; when we plot `a` and `b` , it is a line with a positive slope ( `/` ) and when we plot `a` and `c` , it is a line with a negative slope ( `\` ).  
 
 ```python
 import matplotlib.pyplot as plt
