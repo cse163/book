@@ -30,7 +30,7 @@ There are no recordings of Hunter for this lesson, to give you more time to proc
 :caption: Contents
 
 case-study-0-predicting-crime
-case-study-1-rides-of-glory
+case-study-1-tracking-for-safety
 case-study-2-compas
 case-study-3-potholes-in-baltimore
 case-study-4-facial-recognition
