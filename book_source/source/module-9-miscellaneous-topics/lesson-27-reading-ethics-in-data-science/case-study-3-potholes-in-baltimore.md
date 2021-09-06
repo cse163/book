@@ -1,4 +1,4 @@
-# TODO Case Study 3: Potholes in Baltimore
+# Case Study 3: Potholes in Baltimore
 
 The city of Baltimore has problems with potholes (holes in the street that are not fun to drive over). Part of the city's responsibilities is to fix these potholes to make roads safer. There has always been a system in place for people to report these potholes, but the process was slow. The city invested in building a smartphone app to automatically report potholes and reduce the time it takes to fix potholes. The idea was to use someone's phone GPS and accelerometer to report the pothole's location as someone drives over it. Then it's a data science problem at that point to take this incoming data and predict where the potholes are.
 

@@ -6,7 +6,7 @@ Read this [article](https://www.nytimes.com/2018/02/09/technology/facial-recogni
 
 ### Recap
 
-The data we use to train our model affects the results of our model. This can lead to discriminatory practices. If our model under-represents or over-represents different groups that can bias our results. Thus, it is important to evaluate the diversity in your dataset and evaluate our results on a diverse dataset and to keep in mind what we are using this model for.
+The data we use to train our model affects the results of our model. It's possible for our model to be biased towards/against certain groups, simply from having a group under/over represented in our dataset. Thus, it is important to evaluate the diversity in your dataset and evaluate our results on a diverse dataset and to keep in mind what we are using this model for.
 
 ### Further reading:
 
