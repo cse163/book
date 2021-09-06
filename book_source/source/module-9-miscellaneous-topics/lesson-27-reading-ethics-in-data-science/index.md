@@ -19,7 +19,7 @@ This reading is a bit longer, but the goal here is to have a wider breadth of ex
 ```{admonition} Note
 :class: note
 
-There are no recordings of Hunter for this lesson, to give you more time to process what you are reading since it can be a
+There are no recordings of Hunter for this lesson, to give you more time to process and form your own thoughts on the material you are reading. Some of the things we will read in this lesson can be pretty personal, so we want you to process that at a pace you find comfortable.
 
 ```
 
