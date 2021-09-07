@@ -1,12 +1,10 @@
 # <i class="far fa-pause-circle fa-fw"></i> Pause and Think
 
-At this point, you've finished all of the new lesson content. All that's left is completing the practice problems for the day!
+At this point, you've finished all of the new lesson content! All that's left is completing the practice problems for the day!
 
-Before you go onto the practice problems though, we want you to think back on what you've seen so far and reflect on it. There are most likely some questions about what you've seen so far, and in the off-case there is not, there must be something related to this that you would like to learn more about.
+Before you go onto the practice problems though, we want you to think back on what you've seen so far and reflect on it. There are most likely some questions about what you've seen so far, and in the off-case there is not, there must be something related to this that you would like to learn more about. It helps to write these down while the lesson is fresh. That way, you can look back to your response or ask any of your peers you might be working with.
 
-It helps to write these down while the lesson is fresh. That way, you can look back to your response and ask your peers you are working with during the class session! These answers are manually graded on completion and effort after the lesson is due, since there is no "right answer" to what questions you have!
-
-You are welcome to continue doing the practice problems on your own time, but we recommend coming to the live class session for this lesson and working on the problems with your peers. Working on a problem with someone else can really help solidify your understanding of the material! You can bounce ideas off of each other, ask clarifying questions from the course staff.
+You are welcome to continue doing the practice problems on your own time, but we recommend working on them collaboratively with a group. Working on a problem with someone else can really help solidify your understanding of the material! You can bounce ideas off of each other and ask/answer each others' questions.
 
 ## Question 0
 
