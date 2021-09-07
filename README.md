@@ -1,4 +1,5 @@
 # CSE 163: Intermediate Data Programming (Public)
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://cse163.github.io/book/)
 
 Author: [Hunter Schafer](https://homes.cs.washington.edu/~hschafer/)
 
