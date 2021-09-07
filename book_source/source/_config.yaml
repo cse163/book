@@ -4,3 +4,6 @@ html:
   comments:
     utterances:
       repo: "cse163/book"
+      issue-term: "pathname"
+      label: "💬 Comments"
+      theme: "preferred-color-scheme"
