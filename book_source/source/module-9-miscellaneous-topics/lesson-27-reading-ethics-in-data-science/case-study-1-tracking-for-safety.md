@@ -2,7 +2,7 @@
 
 ## Task
 
-Read both of the readings below. Reading 1 is article and Reading 2 are some tweets about the use of phone apps to track the potential spread of COVID-19. Then read the section below for [](content:module9:lesson27:case-study-1:things-to-consider). For context, this article was written relatively early during the pandemic (April 4, 2020) when quarantining was fairly ubiquitious and we didn't have a vaccine available yet to protect people at risk.
+Read both of the readings below. Reading 1 is article and Reading 2 are some tweets about the use of phone apps to track the potential spread of COVID-19. Then read the section below for {ref}`content:module9:lesson27:case-study-1:things-to-consider`. For context, this article was written relatively early during the pandemic (April 4, 2020) when quarantining was fairly ubiquitous and we didn't have a vaccine available yet to protect people at risk.
 
 **Reading 1**
 
@@ -14,7 +14,7 @@ Tectronix, one of the companies involved with making this map, posted the follow
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Want to see the true potential impact of ignoring social distancing? Through a partnership with <a href="https://twitter.com/xmodesocial?ref_src=twsrc%5Etfw">@xmodesocial</a>, we analyzed secondary locations of anonymized mobile devices that were active at a single Ft. Lauderdale beach during spring break. This is where they went across the US: <a href="https://t.co/3A3ePn9Vin">pic.twitter.com/3A3ePn9Vin</a></p>&mdash; Tectonix (@TectonixGEO) <a data-dnt="true" href="https://twitter.com/TectonixGEO/status/1242628347034767361?ref_src=twsrc%5Etfw">March 25, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-When another user poited out a concern about a potential violation of the user's privacy (tweet since deleted), Textronix [replied](https://mobile.twitter.com/TectonixGEO/status/1243004792932368385).
+When another user pointed out a concern about a potential violation of the user's privacy (tweet since deleted), Textronix [replied](https://mobile.twitter.com/TectonixGEO/status/1243004792932368385).
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Understand the concern, but every point of data we used here is completely anonymized and collected with user consent! We realize the implications of data collection at this scale, but used responsibly with privacy in mind, it can have massive positive effect!</p>&mdash; Tectonix (@TectonixGEO) <a data-dnt="true" href="https://twitter.com/TectonixGEO/status/1243004792932368385?ref_src=twsrc%5Etfw">March 26, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -26,7 +26,7 @@ This case study sets up an interesting tension between utility (i.e. public safe
 
 Now, Tectronix claims (see tweet above) that there is no privacy concerns here since they collected the data with users' consent and kept the data anonymous. While we assume this is true, there are still a couple potential gray-areas here.
 
-1. **Anonymous data sometimes isn't**: In the [next module](/module-10-beyond-163/lesson-29-privacy/index), we'll discuss the challenges of keeping anonymous data truly anonymous. You'll find that it's surprisingly easy, given enough information, to narrow down a large dataset with anonymous data, down to a single individual that you are looking for. In that lesson, we will talk about some techniques to ensure anonymity, but the key point is that it's challenging and rarely sufficient to just remove the users' name from the data. You can also see an example linked in [](content:module9:lesson27:case-study-1:further-resources) below on how the New York Times could identify individuals from a large, anonymous dataset.
+1. **Anonymous data sometimes isn't**: In the [next module](/module-10-beyond-163/lesson-29-privacy/index), we'll discuss the challenges of keeping anonymous data truly anonymous. You'll find that it's surprisingly easy, given enough information, to narrow down a large dataset with anonymous data, down to a single individual that you are looking for. In that lesson, we will talk about some techniques to ensure anonymity, but the key point is that it's challenging and rarely sufficient to just remove the users' name from the data. You can also see an example linked in {ref}`content:module9:lesson27:case-study-1:further-resources` below on how the New York Times could identify individuals from a large, anonymous dataset.
 2. **What did the users consent to?** While the users might have consented to the collection of their data, the details of that consent are fairly important for us to consider whether using their data in this way is appropriate.
 
    <br />
@@ -35,7 +35,7 @@ Now, Tectronix claims (see tweet above) that there is no privacy concerns here s
 
    <br />
 
-   There is an additional question here of exactly what the scope of consent user's agree to. An example (mentioned in the New York Times article linked below): If a user downloads a weather app, and consents that the company use their location data to improve their ability to provide a better service for the customer, is it allowed for that weather app to sell location data to advertisers? Some might claim that the advertising brings in money, that lets the developers of the app improve the software they use. But others might claim that the user was really giving a much narrower consent that might make it an _ethical_ issue for companies to use that data in scopes where consent was not provided.
+   There is an additional question here of exactly what the scope of consent users agree to. An example (mentioned in the New York Times article linked below): If a user downloads a weather app, and consents that the company use their location data to improve their ability to provide a better service for the customer, is it allowed for that weather app to sell location data to advertisers? Some might claim that the advertising brings in money, that lets the developers of the app improve the software they use. But others might claim that the user was really giving a much narrower consent that might make it an _ethical_ issue for companies to use that data in scopes where consent was not provided.
 
 (content:module9:lesson27:case-study-1:further-resources)=
 
