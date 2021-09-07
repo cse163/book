@@ -1,2 +1,5 @@
 execute:
-  execute_notebooks         : "off"
+  execute_notebooks: "off"
+html:
+  comments:
+    hypothesis: true
