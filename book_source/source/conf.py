@@ -91,3 +91,13 @@ html_theme_options = {
     "extra_footer": 'Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!',
 }
 
+
+# -- Configuring Comments -------------------------------------------------
+comments_config = {
+    "utterances": {
+        "repo": "cse163/book",
+        "issue-term": "pathname",
+        "label": "💬 Comments",
+        "theme": "preferred-color-scheme",
+    }
+}
