@@ -51,9 +51,8 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Collisions" href="collisions.html" />
     <link rel="prev" title="Data Structure Time Complexity" href="data-structure-time-complexity.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+<meta name="twitter:dnt" content="on">
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -1683,13 +1682,13 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-0-gaydar.html">
-       Case Study 0: “Gaydar”
+      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-0-predicting-crime.html">
+       Case Study 0: Predicting Criminality
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-1-rides-of-glory.html">
-       Case Study 1: “Rides of Glory”
+      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-1-tracking-for-safety.html">
+       Case Study 1: Tracking for Safety
       </a>
      </li>
      <li class="toctree-l3">
@@ -1968,19 +1967,12 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/23e3681131f24f77ad70f256ecf7fbb0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>The secret is that <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> use a trick called <strong>hashing</strong> to make everything constant time (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time). Our class will focus on <code class="docutils literal notranslate"><span class="pre">set</span></code> , but almost everything is analogous for <code class="docutils literal notranslate"><span class="pre">dict</span></code> .</p>
 <p>We will explain what hashing is shortly, but the reason it is fast relies on the fact that a <code class="docutils literal notranslate"><span class="pre">list</span></code> allows instant access for some, known, integer index (e.g. <code class="docutils literal notranslate"><span class="pre">l[14]</span></code> ).</p>
 <div class="note admonition">
-<p class="admonition-title">Note</p>
-<p><strong>Big Idea:</strong>
-Create a large
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-to store the values. We call this list a
-<strong>hash table</strong>
-. Each value should get a special spot in the
-<code class="docutils literal notranslate"><span class="pre">list</span></code>
-so we know exactly where the index is for a given value, allowing instant access to it. The method of determining an index from a value is called a
-<strong>hash function.</strong></p>
+<p class="admonition-title">Big Idea</p>
+<p>Create a large <code class="docutils literal notranslate"><span class="pre">list</span></code> to store the values. We call this list a <strong>hash table</strong>. Each value should get a special spot in the <code class="docutils literal notranslate"><span class="pre">list</span></code> so we know exactly where the index is for a given value, allowing instant access to it. The method of determining an index from a value is called a <strong>hash function.</strong></p>
 </div>
 <p>Hash functions are a generic idea of being able to transform a value of any type into an index of the hash table. In the example we show below, we use the values being integers as well but later we will show how to define other hash functions for different types.</p>
 <section id="an-example-set-of-int">
@@ -2000,24 +1992,24 @@ so we know exactly where the index is for a given value, allowing instant access
 </pre></div>
 </div>
 <p>From the big idea above, we start by making a large <code class="docutils literal notranslate"><span class="pre">list</span></code> called a <strong>hash table</strong> that has many places to store values. We make the table start with size 10 and since there are no values in it yet, it corresponds to the empty set.</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/fCU2l2bZQGZpjECIWDPT7hUK"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/fCU2l2bZQGZpjECIWDPT7hUK" style="width: 743px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/fCU2l2bZQGZpjECIWDPT7hUK"><img alt="A pictorial representation of the array [None, None, None, None, None, None, None, None, None, None]" class="align-center" src="https://static.us.edusercontent.com/files/fCU2l2bZQGZpjECIWDPT7hUK" style="width: 743px;" /></a>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nums.add(11)
 </pre></div>
 </div>
 <p>For this problem, we will tell you the function we will use to get the index a particular value will be stored at, called the <strong>hash function,</strong> is <code class="docutils literal notranslate"><span class="pre">h(v)</span> <span class="pre">=</span> <span class="pre">v</span> <span class="pre">%</span> <span class="pre">10</span></code> . What this means is that for any given value <code class="docutils literal notranslate"><span class="pre">v</span></code> , its index in the hash table will be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">%</span> <span class="pre">10</span></code> . (You might already see a potential problem with this approach. Don’t worry, we promise that this will work with some later modifications).</p>
 <p>Since we are adding the number <code class="docutils literal notranslate"><span class="pre">11</span></code> , its hash value will be <code class="docutils literal notranslate"><span class="pre">1</span></code> (because <code class="docutils literal notranslate"><span class="pre">11</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">==</span> <span class="pre">1</span></code> ). We will store the value <code class="docutils literal notranslate"><span class="pre">11</span></code> in index <code class="docutils literal notranslate"><span class="pre">1</span></code> .</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/NKAXurhkfvkPfdmNRKYS3d1G"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/NKAXurhkfvkPfdmNRKYS3d1G" style="width: 743px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/NKAXurhkfvkPfdmNRKYS3d1G"><img alt="A pictorial representation of the array [None, 11, None, None, None, None, None, None, None, None]" class="align-center" src="https://static.us.edusercontent.com/files/NKAXurhkfvkPfdmNRKYS3d1G" style="width: 743px;" /></a>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nums.add(49)
 </pre></div>
 </div>
 <p>Like before, we compute the hash value for <code class="docutils literal notranslate"><span class="pre">49</span></code> and get <code class="docutils literal notranslate"><span class="pre">9</span></code> . Therefore, we store the value <code class="docutils literal notranslate"><span class="pre">49</span></code> in index <code class="docutils literal notranslate"><span class="pre">9</span></code> .</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/C12rOvbyYRFCkN4n3V5OQbdu"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/C12rOvbyYRFCkN4n3V5OQbdu" style="width: 743px;" /></a>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/C12rOvbyYRFCkN4n3V5OQbdu"><img alt="A pictorial representation of the array [None, 11, None, None, None, None, None, None, None, 49]" class="align-center" src="https://static.us.edusercontent.com/files/C12rOvbyYRFCkN4n3V5OQbdu" style="width: 743px;" /></a>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nums.add(24)
 </pre></div>
 </div>
 <p>Like before, we compute the hash value for <code class="docutils literal notranslate"><span class="pre">24</span></code> and get <code class="docutils literal notranslate"><span class="pre">4</span></code> . Therefore, we store the value <code class="docutils literal notranslate"><span class="pre">24</span></code> in index <code class="docutils literal notranslate"><span class="pre">4</span></code> .</p>
-<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/a5SMfDjIJy4dlSsP89l9xeU8"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/a5SMfDjIJy4dlSsP89l9xeU8" style="width: 743px;" /></a>
-<p>So far, we haven’t given much intuition as to why this actually helps us answer membership-queries efficiently.  Let’s look at the next line of code that needs to look up a value to make the value of this structure clearer.</p>
+<a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/a5SMfDjIJy4dlSsP89l9xeU8"><img alt="A pictorial representation of the array [None, 11, None, None, 24, None, None, None, None, 49]" class="align-center" src="https://static.us.edusercontent.com/files/a5SMfDjIJy4dlSsP89l9xeU8" style="width: 743px;" /></a>
+<p>So far, we haven’t given much intuition as to why this actually helps us answer membership-queries efficiently. Let’s look at the next line of code that needs to look up a value to make the value of this structure clearer.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>print(49 in nums)
 </pre></div>
 </div>
@@ -2033,8 +2025,8 @@ so we know exactly where the index is for a given value, allowing instant access
 <p>This is exactly how a <code class="docutils literal notranslate"><span class="pre">set</span></code> answers the contains query in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time! All it does is use a large hash-table and use a hash function to define which index a particular value belongs to.</p>
 <p>There are still some questions we have to answer though to make this really work. We will get to how to solve these questions in the following slides.</p>
 <ul class="simple">
-<li><p>What happens if I tried to add the number     <code class="docutils literal notranslate"><span class="pre">19</span></code>     to the     <code class="docutils literal notranslate"><span class="pre">set</span></code>     above? This would cause confusion since the value     <code class="docutils literal notranslate"><span class="pre">49</span></code>     is already in index     <code class="docutils literal notranslate"><span class="pre">9</span></code>     . This is called a     <strong>collision.</strong>     We will have to come up with some way of doing     <strong>collision resolution.</strong></p></li>
-<li><p>How do we write hash functions for other data other than     <code class="docutils literal notranslate"><span class="pre">int</span></code>     s? What if the values were     <code class="docutils literal notranslate"><span class="pre">str</span></code>     instead?</p></li>
+<li><p>What happens if I tried to add the number <code class="docutils literal notranslate"><span class="pre">19</span></code> to the <code class="docutils literal notranslate"><span class="pre">set</span></code> above? This would cause confusion since the value <code class="docutils literal notranslate"><span class="pre">49</span></code> is already in index <code class="docutils literal notranslate"><span class="pre">9</span></code> . This is called a <strong>collision.</strong> We will have to come up with some way of doing <strong>collision resolution.</strong></p></li>
+<li><p>How do we write hash functions for other data other than <code class="docutils literal notranslate"><span class="pre">int</span></code> s? What if the values were <code class="docutils literal notranslate"><span class="pre">str</span></code> instead?</p></li>
 </ul>
 </section>
 </section>

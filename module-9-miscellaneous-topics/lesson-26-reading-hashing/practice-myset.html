@@ -51,9 +51,8 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lesson 27 Reading: Ethics in Data Science" href="../lesson-27-reading-ethics-in-data-science/index.html" />
     <link rel="prev" title="Practice: Hashing" href="practice-hashing.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+<meta name="twitter:dnt" content="on">
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -1683,13 +1682,13 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-0-gaydar.html">
-       Case Study 0: “Gaydar”
+      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-0-predicting-crime.html">
+       Case Study 0: Predicting Criminality
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-1-rides-of-glory.html">
-       Case Study 1: “Rides of Glory”
+      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-1-tracking-for-safety.html">
+       Case Study 1: Tracking for Safety
       </a>
      </li>
      <li class="toctree-l3">
@@ -1970,35 +1969,35 @@
 <p><a class="reference download internal" download="" href="../../_downloads/d60e06f51343979a4d473ab580a05b47/practice-myset.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
 <section id="part-1-myset">
 <h2>Part 1: <code class="docutils literal notranslate"><span class="pre">MySet</span></code><a class="headerlink" href="#part-1-myset" title="Permalink to this headline">¶</a></h2>
-<p>In the file <code class="docutils literal notranslate"><span class="pre">my_set.py</span></code> , write a class named <code class="docutils literal notranslate"><span class="pre">MySet</span></code> that implements something like the <code class="docutils literal notranslate"><span class="pre">set</span></code> implemented with a hash table that we have been describing in this reading. <code class="docutils literal notranslate"><span class="pre">MySet</span></code> will be simpler than the full hash table we described in the reading and will be more similar to the first version described in the <a class="reference external" href="https://edstem.org/us/courses/3016/lessons/7903/slides/38827">None</a> .</p>
+<p>In the file <code class="docutils literal notranslate"><span class="pre">my_set.py</span></code> , write a class named <code class="docutils literal notranslate"><span class="pre">MySet</span></code> that implements something like the <code class="docutils literal notranslate"><span class="pre">set</span></code> implemented with a hash table that we have been describing in this reading. <code class="docutils literal notranslate"><span class="pre">MySet</span></code> will be simpler than the full hash table we described in the reading and will be more similar to the first version described in <a class="reference internal" href="hashing.html"><span class="doc std std-doc">Hashing</span></a> .</p>
 <p>Namely, the <code class="docutils literal notranslate"><span class="pre">MySet</span></code> should have the following behaviors:</p>
 <ul class="simple">
-<li><p>The     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     class should only store non-negative     <code class="docutils literal notranslate"><span class="pre">int</span></code>     values in its hash table.</p></li>
-<li><p><strong>You may assume the input values don’t collide in the hash table.</strong>     This means you do not need to implement separate chaining. Recall that a collision is when two different values end up at the same index.</p></li>
-<li><p>Your hash table should be fixed-size and you shouldn’t ever rehash. Make your hash table be size 10 and store it as a field with type     <code class="docutils literal notranslate"><span class="pre">list</span></code>     .</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">MySet</span></code> class should only store non-negative <code class="docutils literal notranslate"><span class="pre">int</span></code> values in its hash table.</p></li>
+<li><p><strong>You may assume the input values don’t collide in the hash table.</strong> This means you do not need to implement separate chaining. Recall that a collision is when two different values end up at the same index.</p></li>
+<li><p>Your hash table should be fixed-size and you shouldn’t ever rehash. Make your hash table be size 10 and store it as a field with type <code class="docutils literal notranslate"><span class="pre">list</span></code> .</p></li>
 </ul>
 <p>Since we are in the simplified setting where the values are just <code class="docutils literal notranslate"><span class="pre">int</span></code> s, you do not need to use the built-in <code class="docutils literal notranslate"><span class="pre">hash</span></code> function to get an index for a particular value. Instead, you should just use the function <code class="docutils literal notranslate"><span class="pre">h(v)</span> <span class="pre">=</span> <span class="pre">v</span> <span class="pre">%</span> <span class="pre">10</span></code> to determine the index.</p>
 <p>Your <code class="docutils literal notranslate"><span class="pre">MySet</span></code> should implement the following methods. Some of them are special methods so we can use nicer syntax in Part 2.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">__init__(self)</span></code>     that sets up any initial state you need for the other functions.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__(self)</span></code> that sets up any initial state you need for the other functions.</p>
 <ul>
-<li><p><em>Hint</em>         : Recall you can make a list of a certain length by using the syntax         <code class="docutils literal notranslate"><span class="pre">[1]</span> <span class="pre">*</span> <span class="pre">n</span></code>         which will make a list of         <code class="docutils literal notranslate"><span class="pre">n</span></code>         1s.</p></li>
+<li><p><em>Hint</em> : Recall you can make a list of a certain length by using the syntax <code class="docutils literal notranslate"><span class="pre">[1]</span> <span class="pre">*</span> <span class="pre">n</span></code> which will make a list of <code class="docutils literal notranslate"><span class="pre">n</span></code> 1s.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add(self,</span> <span class="pre">v)</span></code>     that adds a given value to this     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     .</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">add(self,</span> <span class="pre">v)</span></code> that adds a given value to this <code class="docutils literal notranslate"><span class="pre">MySet</span></code> .</p>
 <ul>
-<li><p><em>Hint</em>         : Make sure you think about the case if we         <code class="docutils literal notranslate"><span class="pre">add</span></code>         the same value twice!</p></li>
-<li><p>Notice that this does not have underscores before/after the name. We are not trying to define the behavior for one of the pre-defined “special functions” (like         <code class="docutils literal notranslate"><span class="pre">__init__</span></code>         ), instead, we are defining a new function called         <code class="docutils literal notranslate"><span class="pre">add</span></code>         .</p></li>
+<li><p><em>Hint</em> : Make sure you think about the case if we <code class="docutils literal notranslate"><span class="pre">add</span></code> the same value twice!</p></li>
+<li><p>Notice that this does not have underscores before/after the name. We are not trying to define the behavior for one of the pre-defined “special functions” (like <code class="docutils literal notranslate"><span class="pre">__init__</span></code> ), instead, we are defining a new function called <code class="docutils literal notranslate"><span class="pre">add</span></code> .</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__contains__(self,</span> <span class="pre">v)</span></code>     returns     <code class="docutils literal notranslate"><span class="pre">True</span></code>     or     <code class="docutils literal notranslate"><span class="pre">False</span></code>     depending on whether or not the given value is in this     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     .</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">__contains__(self,</span> <span class="pre">v)</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> depending on whether or not the given value is in this <code class="docutils literal notranslate"><span class="pre">MySet</span></code> .</p>
 <ul>
-<li><p>This allows the client to use the syntax         <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">in</span> <span class="pre">ms</span></code>         where         <code class="docutils literal notranslate"><span class="pre">ms</span> <span class="pre">=</span> <span class="pre">MySet()</span></code>         .</p></li>
+<li><p>This allows the client to use the syntax <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">in</span> <span class="pre">ms</span></code> where <code class="docutils literal notranslate"><span class="pre">ms</span> <span class="pre">=</span> <span class="pre">MySet()</span></code> .</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code>     returns the number of elements in this     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     .</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code> returns the number of elements in this <code class="docutils literal notranslate"><span class="pre">MySet</span></code> .</p>
 <ul>
-<li><p>This allows the client to use the syntax         <code class="docutils literal notranslate"><span class="pre">len(ms)</span></code>         where         <code class="docutils literal notranslate"><span class="pre">ms</span> <span class="pre">=</span> <span class="pre">MySet()</span></code>         .</p></li>
+<li><p>This allows the client to use the syntax <code class="docutils literal notranslate"><span class="pre">len(ms)</span></code> where <code class="docutils literal notranslate"><span class="pre">ms</span> <span class="pre">=</span> <span class="pre">MySet()</span></code> .</p></li>
 </ul>
 </li>
 </ul>
@@ -2006,23 +2005,23 @@
 <ul class="simple">
 <li><p>You should implement these functions so that they all have complexity <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>. For this checkpoint, this means your program should not have any loops!</p></li>
 <li><p>All fields should be private.</p></li>
-<li><p>You should not use the     <code class="docutils literal notranslate"><span class="pre">set</span></code>     class in any way in your implementation. You should implement     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     using a     <code class="docutils literal notranslate"><span class="pre">list</span></code>     as your hash table.</p></li>
+<li><p>You should not use the <code class="docutils literal notranslate"><span class="pre">set</span></code> class in any way in your implementation. You should implement <code class="docutils literal notranslate"><span class="pre">MySet</span></code> using a <code class="docutils literal notranslate"><span class="pre">list</span></code> as your hash table.</p></li>
 </ul>
 </section>
 <section id="part-2-my-set-client-py">
 <h2>Part 2: <code class="docutils literal notranslate"><span class="pre">my_set_client.py</span></code><a class="headerlink" href="#part-2-my-set-client-py" title="Permalink to this headline">¶</a></h2>
 <p>In the file <code class="docutils literal notranslate"><span class="pre">my_set_client.py</span></code> , write a client of <code class="docutils literal notranslate"><span class="pre">MySet</span></code> that does the following things:</p>
 <ul class="simple">
-<li><p>Imports the     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     class.</p></li>
-<li><p>Constructs a     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     instance and adds the numbers     <code class="docutils literal notranslate"><span class="pre">14</span></code>     ,     <code class="docutils literal notranslate"><span class="pre">2</span></code>     , and     <code class="docutils literal notranslate"><span class="pre">17</span></code>     and     <code class="docutils literal notranslate"><span class="pre">2</span></code>     .</p></li>
-<li><p>Prints the result of querying the     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     if it contains the value     <code class="docutils literal notranslate"><span class="pre">2</span></code>     .</p></li>
-<li><p>Prints the result of querying the     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     if it contains the value     <code class="docutils literal notranslate"><span class="pre">4</span></code>     .</p></li>
-<li><p>Prints the     <code class="docutils literal notranslate"><span class="pre">len</span></code>     of the     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     .</p></li>
+<li><p>Imports the <code class="docutils literal notranslate"><span class="pre">MySet</span></code> class.</p></li>
+<li><p>Constructs a <code class="docutils literal notranslate"><span class="pre">MySet</span></code> instance and adds the numbers <code class="docutils literal notranslate"><span class="pre">14</span></code> , <code class="docutils literal notranslate"><span class="pre">2</span></code> , and <code class="docutils literal notranslate"><span class="pre">17</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> .</p></li>
+<li><p>Prints the result of querying the <code class="docutils literal notranslate"><span class="pre">MySet</span></code> if it contains the value <code class="docutils literal notranslate"><span class="pre">2</span></code> .</p></li>
+<li><p>Prints the result of querying the <code class="docutils literal notranslate"><span class="pre">MySet</span></code> if it contains the value <code class="docutils literal notranslate"><span class="pre">4</span></code> .</p></li>
+<li><p>Prints the <code class="docutils literal notranslate"><span class="pre">len</span></code> of the <code class="docutils literal notranslate"><span class="pre">MySet</span></code> .</p></li>
 </ul>
 <p><strong>Requirements</strong></p>
 <ul class="simple">
 <li><p>Your program should use the main-method pattern.</p></li>
-<li><p>You should not explicitly call any of the special methods on the     <code class="docutils literal notranslate"><span class="pre">MySet</span></code>     from your program. This means instead of using     <code class="docutils literal notranslate"><span class="pre">ms.__len__()</span></code>     , you should use     <code class="docutils literal notranslate"><span class="pre">len(ms)</span></code>     .</p></li>
+<li><p>You should not explicitly call any of the special methods on the <code class="docutils literal notranslate"><span class="pre">MySet</span></code> from your program. This means instead of using <code class="docutils literal notranslate"><span class="pre">ms.__len__()</span></code> , you should use <code class="docutils literal notranslate"><span class="pre">len(ms)</span></code> .</p></li>
 </ul>
 </section>
 <section id="a-note-about-naming-convention">

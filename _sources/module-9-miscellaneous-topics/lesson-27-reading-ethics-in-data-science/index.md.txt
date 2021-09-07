@@ -2,15 +2,15 @@
 
 We will discuss ethics in data science. Since this is not a philosophy class, we are not quite able to discuss frameworks of ethics or define a bunch of terms (although they are essential, they aren't our expertise). Instead, we will focus on studying ways data science can go wrong as a series of case studies. These case studies aren't comprehensive of all ways data science can go wrong, but can hopefully act as reference points or reminders when exploring your applications.
 
-In this reading, we will talk about 5 applications of data science.
+In this reading, we will talk about 5 applications of data science to real-world problems:
 
-- A "gaydar" that predicts sexual orientation from a picture of someone's face
+- An AI tool that looks at a picture of someone's face to predict if they are likely to commit a crime in the future
 
-- Uber's "Rides of Glory" blog post
+- Two companies making a map showing how people traveled during the pandemic
 
 - Using machine learning to help with prison sentencing
 
-- Automatically detecting potholes in a city.
+- Automatically detecting potholes in a city
 
 - Facial Recognition
 
@@ -19,7 +19,7 @@ This reading is a bit longer, but the goal here is to have a wider breadth of ex
 ```{admonition} Note
 :class: note
 
-There are no recordings of Hunter for this lesson, to give you more time to process what you are reading since it can be a
+There are no recordings of Hunter for this lesson, to give you more time to process and form your own thoughts on the material you are reading. Some of the things we will read in this lesson can be pretty personal, so we want you to process that at a pace you find comfortable.
 
 ```
 
@@ -29,8 +29,8 @@ There are no recordings of Hunter for this lesson, to give you more time to proc
 :maxdepth: 1
 :caption: Contents
 
-case-study-0-gaydar
-case-study-1-rides-of-glory
+case-study-0-predicting-crime
+case-study-1-tracking-for-safety
 case-study-2-compas
 case-study-3-potholes-in-baltimore
 case-study-4-facial-recognition

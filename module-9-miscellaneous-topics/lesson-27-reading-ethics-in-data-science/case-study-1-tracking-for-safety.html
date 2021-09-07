@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Case Study 1: “Rides of Glory” &#8212; Intermediate Data Programming</title>
+    <title>Case Study 1: Tracking for Safety &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -48,10 +48,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Case Study 2: COMPAS" href="case-study-2-compas.html" />
-    <link rel="prev" title="Case Study 0: “Gaydar”" href="case-study-0-gaydar.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+    <link rel="prev" title="Case Study 0: Predicting Criminality" href="case-study-0-predicting-crime.html" />
+<meta name="twitter:dnt" content="on">
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -1681,13 +1680,13 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="case-study-0-gaydar.html">
-       Case Study 0: “Gaydar”
+      <a class="reference internal" href="case-study-0-predicting-crime.html">
+       Case Study 0: Predicting Criminality
       </a>
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Case Study 1: “Rides of Glory”
+       Case Study 1: Tracking for Safety
       </a>
      </li>
      <li class="toctree-l3">
@@ -1879,7 +1878,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-rides-of-glory.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-tracking-for-safety.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1899,10 +1898,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-rides-of-glory.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-tracking-for-safety.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-rides-of-glory.md"><button
+        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-tracking-for-safety.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -1928,8 +1927,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-science-principles">
-   Data Science Principles
+  <a class="reference internal nav-link" href="#task">
+   Task
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#things-to-consider">
+   Things to Consider
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1948,34 +1952,38 @@
         
               <div>
                 
-  <section id="case-study-1-rides-of-glory">
-<h1>Case Study 1: “Rides of Glory”<a class="headerlink" href="#case-study-1-rides-of-glory" title="Permalink to this headline">¶</a></h1>
-<p>In 2012 Uber (a ride-sharing company) wrote an engineering blog post outlining an analysis that one of their data scientists performed for fun titled “Rides of Glory.” They looked user’s data for requesting rides on the app, along with the time the user ordered them to make maps of locations in San Francisco where “hookups” were more common. Many people reacted negatively to this blog post and argued that it was inappropriate for Uber to analyze this. Uber has since deleted the post. We want to tackle the following question: Was it unethical for Uber to do (and publish) an analysis like this?</p>
-<p>We should emphasize the point that the blog post didn’t leak any personal identifying information. Uber never revealed individually that person A hooked up with person B since all the data was presented in aggregate (X people in this area of the city). This situation wasn’t a privacy violation in that respect since no one knew who’s data was used.</p>
-<p>However, this does bring up an essential question of consent. When users use applications, they usually consent to share some of their data with the application writer in that terms of service no one reads. You could argue that the user agreed to give up their data, so they have no right to complain about Uber using it in this type of analysis. However, it’s not clear to users that they consent to any possible use of their data for all time. Generally, people expect that companies respect the data that they provide and that companies use that data for the service they provided the information for (or used to improve the service overall).</p>
-<p>Apple does a pretty good job of thinking about user consent. In fact, in all the interviews I’ve done in my life, Apple is the only one that has asked me questions about how developers should use user data in a way that follows what they consented Apple to use it for. For example, a user might permit to share their location data with Apple to help improve the Apple Maps service. Since the consent they gave was narrow to that one application, it would be inappropriate to use that data to enhance say the Messaging app. So Apple doesn’t just do something with user data because they think they can, they think about respecting the user as a guiding principle. This doesn’t mean Apple is a perfect company (they are no way are), but it is one of their strengths.</p>
-<p>When writing an application or doing data analysis, it helps at least to ask the following questions as a quick check so that you don’t make the same mistake that Uber made:</p>
-<ul class="simple">
-<li><p>What consent was given by the user when the data was collected?</p></li>
-<li><p>Would the user want their data to be private or used in your application in that way? Would they be happy to know you used it in this way?</p></li>
-</ul>
-<section id="data-science-principles">
-<h2>Data Science Principles<a class="headerlink" href="#data-science-principles" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Keep user data anonymized and secure.</p></li>
-<li><p>Know where the data came from and what permission we have to use it.</p></li>
-</ul>
+  <section id="case-study-1-tracking-for-safety">
+<h1>Case Study 1: Tracking for Safety<a class="headerlink" href="#case-study-1-tracking-for-safety" title="Permalink to this headline">¶</a></h1>
+<section id="task">
+<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<p>Read both of the readings below. Reading 1 is article and Reading 2 are some tweets about the use of phone apps to track the potential spread of COVID-19. Then read the section below for <a class="reference internal" href="#content-module9-lesson27-case-study-1-things-to-consider"><span class="std std-ref">Things to Consider</span></a>. For context, this article was written relatively early during the pandemic (April 4, 2020) when quarantining was fairly ubiquitous and we didn’t have a vaccine available yet to protect people at risk.</p>
+<p><strong>Reading 1</strong></p>
+<p><a class="reference external" href="https://www.cnn.com/2020/04/04/tech/location-tracking-florida-coronavirus/index.html">Read this article</a></p>
+<p><strong>Reading 2</strong></p>
+<p>Tectronix, one of the companies involved with making this map, posted the following <a class="reference external" href="https://twitter.com/tectonixgeo/status/1242628347034767361?lang=en">tweet</a> about it on Twitter:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Want to see the true potential impact of ignoring social distancing? Through a partnership with <a href="https://twitter.com/xmodesocial?ref_src=twsrc%5Etfw">@xmodesocial</a>, we analyzed secondary locations of anonymized mobile devices that were active at a single Ft. Lauderdale beach during spring break. This is where they went across the US: <a href="https://t.co/3A3ePn9Vin">pic.twitter.com/3A3ePn9Vin</a></p>&mdash; Tectonix (@TectonixGEO) <a data-dnt="true" href="https://twitter.com/TectonixGEO/status/1242628347034767361?ref_src=twsrc%5Etfw">March 25, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>When another user pointed out a concern about a potential violation of the user’s privacy (tweet since deleted), Textronix <a class="reference external" href="https://mobile.twitter.com/TectonixGEO/status/1243004792932368385">replied</a>.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Understand the concern, but every point of data we used here is completely anonymized and collected with user consent! We realize the implications of data collection at this scale, but used responsibly with privacy in mind, it can have massive positive effect!</p>&mdash; Tectonix (@TectonixGEO) <a data-dnt="true" href="https://twitter.com/TectonixGEO/status/1243004792932368385?ref_src=twsrc%5Etfw">March 26, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="things-to-consider">
+<span id="content-module9-lesson27-case-study-1-things-to-consider"></span><h2>Things to Consider<a class="headerlink" href="#things-to-consider" title="Permalink to this headline">¶</a></h2>
+<p>This case study sets up an interesting tension between utility (i.e. public safety) and user’s privacy. On one hand, we want to have accurate information to inform policy-makers on the general behaviors of people so they can make better informed policy decisions. But in some cases, this utility can come at the cost of someone’s personal privacy.</p>
+<p>Now, Tectronix claims (see tweet above) that there is no privacy concerns here since they collected the data with users’ consent and kept the data anonymous. While we assume this is true, there are still a couple potential gray-areas here.</p>
+<ol>
+<li><p><strong>Anonymous data sometimes isn’t</strong>: In the <a class="reference internal" href="../../module-10-beyond-163/lesson-29-privacy/index.html"><span class="doc std std-doc">next module</span></a>, we’ll discuss the challenges of keeping anonymous data truly anonymous. You’ll find that it’s surprisingly easy, given enough information, to narrow down a large dataset with anonymous data, down to a single individual that you are looking for. In that lesson, we will talk about some techniques to ensure anonymity, but the key point is that it’s challenging and rarely sufficient to just remove the users’ name from the data. You can also see an example linked in <a class="reference internal" href="#content-module9-lesson27-case-study-1-further-resources"><span class="std std-ref">Further Resources</span></a> below on how the New York Times could identify individuals from a large, anonymous dataset.</p></li>
+<li><p><strong>What did the users consent to?</strong> While the users might have consented to the collection of their data, the details of that consent are fairly important for us to consider whether using their data in this way is appropriate.</p>
+<br />
+<p>Many of us have probably had the experience of downloading the new app, and clicking through the “Terms of Conditions” as fast as we can just so we can get to the good stuff. This usually means by clicking the “I agree” button, you are (usually) consenting to the company using your data in a very generous manner without many restrictions. While we aren’t lawyers, we assume many uses of data, including publishing anonymous maps like this, do not pose any <em>legal</em> complications. So if it’s legal, does that make it totally fine? Many privacy experts agree that legality is not enough, since our current laws might not accurately reflect the impact and importance of data. In fact, the European Union recently overhauled their data privacy laws with the introduction of <a class="reference external" href="https://gdpr-info.eu/">GDPR</a>; a move that vastly increased user’s privacy rights that companies with European customers must abide by.</p>
+<br />
+<p>There is an additional question here of exactly what the scope of consent users agree to. An example (mentioned in the New York Times article linked below): If a user downloads a weather app, and consents that the company use their location data to improve their ability to provide a better service for the customer, is it allowed for that weather app to sell location data to advertisers? Some might claim that the advertising brings in money, that lets the developers of the app improve the software they use. But others might claim that the user was really giving a much narrower consent that might make it an <em>ethical</em> issue for companies to use that data in scopes where consent was not provided.</p>
+</li>
+</ol>
 </section>
 <section id="further-resources">
-<h2>Further Resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h2>
+<span id="content-module9-lesson27-case-study-1-further-resources"></span><h2>Further Resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Read the     <a class="reference external" href="https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205">None</a></p>
-<ul>
-<li><p>k-anonymity</p></li>
-<li><p>Differential privacy</p></li>
-</ul>
-</li>
-<li><p>Look into Security, a  sub-field of Computer Science</p></li>
+<li><p>Read <a class="reference external" href="https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html">this New York Times piece</a> on the use of “anonymous” location data to identify particular individuals and learn about their regular habits.</p></li>
+<li><p>See <a class="reference internal" href="../../module-10-beyond-163/lesson-29-privacy/index.html"><span class="doc std std-doc"> Lesson 29: Privacy</span></a> for more information on concepts of privacy.</p></li>
 </ul>
 </section>
 </section>
@@ -1991,11 +1999,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="case-study-0-gaydar.html" title="previous page">
+        <a class="left-prev" href="case-study-0-predicting-crime.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Case Study 0: “Gaydar”</p>
+                <p class="prevnext-title">Case Study 0: Predicting Criminality</p>
             </div>
         </a>
     </div>

@@ -51,9 +51,8 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Hashing in Practice" href="hashing-in-practice.html" />
     <link rel="prev" title="Collisions" href="collisions.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+<meta name="twitter:dnt" content="on">
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -1683,13 +1682,13 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-0-gaydar.html">
-       Case Study 0: “Gaydar”
+      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-0-predicting-crime.html">
+       Case Study 0: Predicting Criminality
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-1-rides-of-glory.html">
-       Case Study 1: “Rides of Glory”
+      <a class="reference internal" href="../lesson-27-reading-ethics-in-data-science/case-study-1-tracking-for-safety.html">
+       Case Study 1: Tracking for Safety
       </a>
      </li>
      <li class="toctree-l3">
@@ -1977,6 +1976,7 @@
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/a55d32cc2e0947249fc4455c6ec6b375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Our last step to making a fully functional hash table is to define how we can hash values other than integers. For example, what if we wanted to make a <code class="docutils literal notranslate"><span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">str</span></code> ? How could we possibly figure out which index a <code class="docutils literal notranslate"><span class="pre">str</span></code> goes into based on its value?</p>
 <p>A <strong>hash function</strong> is a function we define to do just that. A hash function is a function that takes a value of some type, and converts it into a number for hashing. So from the hash table’s perspective, it just calls <code class="docutils literal notranslate"><span class="pre">hash</span></code> on its input and uses the return value to determine which index the input belongs in!</p>
 <p>A hash function needs to satisfy the following properties:</p>
@@ -1990,7 +1990,7 @@
 </ul>
 <p>This is all pretty abstract right now and it will hopefully make more sense when we describe some example hash functions for <code class="docutils literal notranslate"><span class="pre">str</span></code> s. Before that, we should highlight two additional properties that we will want of a hash function to be considered a “good” hash function to be used in practice.</p>
 <ul class="simple">
-<li><p>First, you want your hash function to spread out the values as much as possible. In the extreme case, consider the hash function     <code class="docutils literal notranslate"><span class="pre">h(v)</span> <span class="pre">=</span> <span class="pre">0</span></code>     . This is a valid hash function according to our properties above but is a terrible hash function to use in practice. Why? It sends all the values to the same index of the hash table which defeats the purpose of using hashing in the first place!</p></li>
+<li><p>First, you want your hash function to spread out the values as much as possible. In the extreme case, consider the hash function <code class="docutils literal notranslate"><span class="pre">h(v)</span> <span class="pre">=</span> <span class="pre">0</span></code> . This is a valid hash function according to our properties above but is a terrible hash function to use in practice. Why? It sends all the values to the same index of the hash table which defeats the purpose of using hashing in the first place!</p></li>
 <li><p>Second, you want to make it difficult for someone to predict what the hash function will output for a given input. This is to prevent malicious users from trying to create collisions by figuring out values that end up with the same hash. If we make the hash function complex enough, it protects us from someone trying to misuse the hash table. You don’t want the hash function to actually be random (since that would make “consistency” hard), but you want it to look random so it’s harder for someone to predict.</p></li>
 </ul>
 <section id="str-example">
@@ -2014,7 +2014,7 @@
 <p>So then a more clever hash function could take each <code class="docutils literal notranslate"><span class="pre">str</span></code> and turn it into the sum of the ASCII values of its characters. In the snippet below, we show some example computations for the same strings as before.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>   <span class="c1"># 104 (h) + 105 (i) = 209</span>
-<span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>  <span class="c1"># 97 (d) + 111 (o) + 103 (g) = 314 </span>
+<span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>  <span class="c1"># 97 (d) + 111 (o) + 103 (g) = 314</span>
 </pre></div>
 </div>
 <p>This is approach is definitely better than the first attempt! It will use a much wider range of outputs since it includes more information about the string. Unfortunately, it turns out to not be very difficult to cause collisions. Can you figure out two strings that will collide with each other?</p>
