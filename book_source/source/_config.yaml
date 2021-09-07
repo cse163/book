@@ -2,4 +2,5 @@ execute:
   execute_notebooks: "off"
 html:
   comments:
-    hypothesis: true
+    utterances:
+      repo: "cse163/book"
