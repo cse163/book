@@ -42,6 +42,40 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "cse163/book");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "preferred-color-scheme");
+    script.setAttribute("label", "💬 Comments");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
@@ -1971,8 +2005,8 @@
 <p>That’s it! If you just type this in a Python program and run it, it will say “Hello world!” to you!</p>
 <p>For comparison, here is how you write “Hello world” in some other popular programming languages that have some more complex syntax. Skimming these, you might begin to see what we mean by Python generally being considered to be more human-readable since it doesn’t require a lot of extra syntax these other languages do. Note: we</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e84714d8-fe22-41a4-b893-bc350e22fdb7" name="4d3493d4-5dcc-442c-8330-a7ba4a1d6c63" type="radio">
-</input><label class="tabbed-label" for="e84714d8-fe22-41a4-b893-bc350e22fdb7">
+<input checked="checked" id="45ad6035-f935-411e-b05a-fb90206bbb74" name="f75ef10e-82b3-4550-97e8-bfaade296be9" type="radio">
+</input><label class="tabbed-label" for="45ad6035-f935-411e-b05a-fb90206bbb74">
 Java</label><div class="tabbed-content docutils">
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -1982,8 +2016,8 @@ Java</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="3c906cb9-176b-4356-8e67-424fdf2bef90" name="4d3493d4-5dcc-442c-8330-a7ba4a1d6c63" type="radio">
-</input><label class="tabbed-label" for="3c906cb9-176b-4356-8e67-424fdf2bef90">
+<input id="010a79bd-84e4-4528-90b6-daef024ee3ea" name="f75ef10e-82b3-4550-97e8-bfaade296be9" type="radio">
+</input><label class="tabbed-label" for="010a79bd-84e4-4528-90b6-daef024ee3ea">
 C</label><div class="tabbed-content docutils">
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
@@ -1994,8 +2028,8 @@ C</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="411a44cd-b5f6-4921-b16b-75741ad18d54" name="4d3493d4-5dcc-442c-8330-a7ba4a1d6c63" type="radio">
-</input><label class="tabbed-label" for="411a44cd-b5f6-4921-b16b-75741ad18d54">
+<input id="38419ea8-009a-4a12-8155-b5227b0f9334" name="f75ef10e-82b3-4550-97e8-bfaade296be9" type="radio">
+</input><label class="tabbed-label" for="38419ea8-009a-4a12-8155-b5227b0f9334">
 C++</label><div class="tabbed-content docutils">
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
@@ -2007,8 +2041,8 @@ C++</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4a458127-b1da-4f98-a089-3b91e847e8ab" name="4d3493d4-5dcc-442c-8330-a7ba4a1d6c63" type="radio">
-</input><label class="tabbed-label" for="4a458127-b1da-4f98-a089-3b91e847e8ab">
+<input id="7a9d7b59-6275-41d0-afcc-3daf08365e6a" name="f75ef10e-82b3-4550-97e8-bfaade296be9" type="radio">
+</input><label class="tabbed-label" for="7a9d7b59-6275-41d0-afcc-3daf08365e6a">
 Go</label><div class="tabbed-content docutils">
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
 
