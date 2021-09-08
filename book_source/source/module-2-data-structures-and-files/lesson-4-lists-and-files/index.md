@@ -12,17 +12,6 @@ In this lesson, you will learn about the following Python constructs:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-file-processing
-advanced-lists
-file-paths
-python-modes
-jupyter-notebooks/DemoNotebook
-practice-build-a-list
-pause-and-think
-practice-filter-long-lines
-practice-count-unique-words
 ```

@@ -10,14 +10,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-introduction
-machine-learning-code/MachineLearning
-understanding-decision-trees
-practice-machine-learning-questions
-pause-and-think
-practice-coding-machine-learning/MLforWeather
 ```

@@ -14,13 +14,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-objects-and-references
-the-class-define-your-own-objects
-pause-and-think
-practice-point-class
-practice-student-class
 ```

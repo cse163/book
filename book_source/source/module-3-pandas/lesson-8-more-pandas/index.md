@@ -26,15 +26,6 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-recap-pandas
-groupby/GroupByExample
-apply/ApplyExample
-keyword-arguments
-sorting-and-top-k
-pause-and-think
-practice-more-pandas/PandasPractice
 ```

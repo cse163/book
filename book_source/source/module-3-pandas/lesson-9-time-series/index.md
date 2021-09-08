@@ -34,12 +34,6 @@ As a reminder, our suggested way of doing this lesson follows these steps:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-time-series
-time-series-2/TimeSeries
-pause-and-think
-practice-time-series/TimeSeriesPractice
 ```

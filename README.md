@@ -1,4 +1,5 @@
 # CSE 163: Intermediate Data Programming (Public)
+
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://cse163.github.io/book/)
 
 Author: [Hunter Schafer](https://homes.cs.washington.edu/~hschafer/)
@@ -51,6 +52,9 @@ The practice problem starter code and tests live in `book_source/coding_problems
 
 ```bash
 python scripts/generate_pages.py
+
+# Or
+make zips
 ```
 
 #### Step 2) Build HTML output
@@ -59,19 +63,18 @@ Build the new book HTML by running:
 
 ```
 # From the top-most directory
-make --directory book_source html
+jupyter-book build book_source/source
 
-# Or, from the book_source directory
+# Or with the make command
 make html
 ```
 
-This will rebuild the whole book into the `book_source/build` directory, which might take some time depending on the change.
+This will rebuild the whole book into the `book_source/source/_build` directory, which might take some time depending on the change.
 
 ### Committing and pushing changes
 
 Stage any changes to the `book_source` and push. We **do not** stage any changes to build files. Whenever we push to `main`,
 GitHub Actions will build the site again and deploy it to the `gh-pages` branch.
-
 
 **Special note aboute deploying:**
 

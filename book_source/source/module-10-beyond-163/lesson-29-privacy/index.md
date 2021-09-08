@@ -31,16 +31,6 @@ This lesson is heavily inspired by The Ethical Algorithm by Michael Kearns and A
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-is-your-data-anonymous
-privacy-in-practice-the-census
-differential-privacy
-jittering-laplace-mechanism
-randomized-response
-recap-and-next-steps-for-differential-privacy
-pause-and-think
-practice-privacy
 ```

@@ -14,17 +14,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-main-method-pattern
-equality-and-identity
-defining-equality
-fancy-syntax
-practice-pair
-a-search-engine
-hw4-introduction
-practice-search-engine
-pause-and-think
 ```

@@ -14,17 +14,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-data-structure-time-complexity
-hashing
-collisions
-hash-functions
-hashing-in-practice
-optional-count-min-sketch
-pause-and-think
-practice-hashing
-practice-myset
 ```

@@ -23,13 +23,6 @@ This lesson is heavily inspired by The Ethical Algorithm by Michael Kearns and A
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-defining-fairness
-tradeoff-between-accuracy-and-fairness
-worldview-limitations-of-fairness
-pause-and-think
-practice-fairness-concepts
 ```

@@ -12,15 +12,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-dissolve
-joins
-join-types
-hurricane-florence/HurricanFlorence
-pause-and-think
-practice-population-maps
-practice-joins
 ```

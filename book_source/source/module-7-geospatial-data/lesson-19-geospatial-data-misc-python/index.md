@@ -12,15 +12,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-introduction-to-geospatial-data
-zip
-matplotlib-plotting
-hurricane-florence/HurricanFlorence
-pause-and-think
-practice-population-in-south-america
-practice-small-and-rich
 ```

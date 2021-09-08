@@ -12,15 +12,6 @@ In this lesson, you will learn about the following:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-dictionary-methods
-practice-most-frequent-word
-comma-separated-values-csv
-processing-a-csv
-pause-and-think
-practice-largest-earthquake
-practice-shakiness-by-location
 ```

@@ -106,19 +106,4 @@ You may also find the [course website](https://courses.cs.washington.edu/courses
 
 **Note:** This book was originally written in a system we use internally EdStem. While EdStem has many fantastic features for student practice, it is unable to be accessed publicly which is why we made this website! While public access is really important, it does mean this current version of the book has some limitations. Namely, the quiz questions aren't interactive and can't reveal solutions. We hope to iterate on this experience and make it more interactive, but more complex behaviors take time. Since this website is so new, there might be leftover mentions to EdStem or any other UW specific things. If you find anything in the book that doesn't seem to make sense, please [file an issue on GitHub](https://github.com/cse163/book/issues) letting us know where the issue is, and we will fix it as soon as we can!
 
-## Table of Contents
-
-```{toctree}
-:maxdepth: 2
-
-module-1-introduction-to-python/index
-module-2-data-structures-and-files/index
-module-3-pandas/index
-module-4-libraries-for-data-science/index
-module-5-classes-and-objects/index
-module-6-efficiency/index
-module-7-geospatial-data/index
-module-8-images/index
-module-9-miscellaneous-topics/index
-module-10-beyond-163/index
-```
+Once you are ready to read, you can navigate the book using the sidebar on the left!

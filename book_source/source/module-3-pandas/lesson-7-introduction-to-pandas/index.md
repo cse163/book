@@ -24,15 +24,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-imports
-pandas
-practicereading-pandas-tutorial/PandasTutorial
-pandas-recap
-pause-and-think
-practice-types
-practice-earthquakes/Earthquakes
 ```

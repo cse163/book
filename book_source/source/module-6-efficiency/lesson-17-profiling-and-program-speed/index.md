@@ -12,13 +12,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-revisiting-time-efficiency
-profiling-code
-slow-python
-check-your-understanding
-pause-and-think
 ```

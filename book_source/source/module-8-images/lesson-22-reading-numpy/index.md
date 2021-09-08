@@ -16,17 +16,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-numpy
-multiple-dimensions
-arithmetic-and-logical-operators
-practice-numpy
-broadcasting
-images
-pause-and-think
-practice-broadcasting
-practice-duckie-hat
 ```

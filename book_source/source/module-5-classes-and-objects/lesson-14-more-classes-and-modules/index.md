@@ -16,16 +16,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-recap
-private-fields
-warning-default-parameters
-reading-working-with-directories
-lambdas
-pause-and-think
-practice-dogpack
-practice-edpost
 ```

@@ -12,13 +12,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-indexing-databases
-binary-search-tree
-spatial-index
-pause-and-think
-practice-indexes-trees
 ```

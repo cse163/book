@@ -16,19 +16,6 @@ In this lesson, you will learn about the following Python constructs:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-python-basics
-types-and-booleans
-while-loops
-for-loops
-conditionals
-functions
-pause-and-think
-practice-expressions
-practice-minute-countdown
-practice-countdown
-practice-fibonacci
 ```

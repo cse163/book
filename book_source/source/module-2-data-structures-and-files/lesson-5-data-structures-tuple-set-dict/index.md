@@ -16,18 +16,6 @@ In this lesson, you will learn about the following Python constructs:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-recap-lists
-list-comprehensions
-practice-reading-list-comprehensions
-practice-build-a-list-comprehension
-tuple
-sets-set/SetDemo
-dictionaries-dict
-pause-and-think
-practice-area-codes
-practice-count-words
 ```

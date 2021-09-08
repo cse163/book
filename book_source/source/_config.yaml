@@ -1,6 +1,0 @@
-execute:
-  execute_notebooks: "off"
-html:
-  comments:
-    utterances:
-      repo: "cse163/book"

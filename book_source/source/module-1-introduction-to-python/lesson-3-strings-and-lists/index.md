@@ -14,21 +14,6 @@ In this lesson, you will learn about the following Python constructs:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-strings
-string-functions
-slicing-strings
-negative-indices
-lists
-documentation-matters
-none
-pause-and-think
-practice-slices
-practice-mystery1
-practice-switch_pairs
-practice-find_range
-practice-count_votes
 ```

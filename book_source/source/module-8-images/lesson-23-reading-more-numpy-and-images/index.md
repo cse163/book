@@ -10,15 +10,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-recap
-numpy-functions
-convolutions
-why-convolutions
-pause-and-think
-practice-convolution-examples
-practice-collapse
 ```

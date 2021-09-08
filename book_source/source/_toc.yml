@@ -1,0 +1,288 @@
+format: jb-book
+root: index
+chapters:
+  - file: module-1-introduction-to-python/index
+    sections:
+      - file: module-1-introduction-to-python/lesson-1-first-lesson/index
+        sections:
+          - file: module-1-introduction-to-python/lesson-1-first-lesson/context-first-two-modules-of-cse-163
+          - file: module-1-introduction-to-python/lesson-1-first-lesson/dev-setup/index
+          - file: module-1-introduction-to-python/lesson-1-first-lesson/hello-world
+          - file: module-1-introduction-to-python/lesson-1-first-lesson/learning-strategies
+          - file: module-1-introduction-to-python/lesson-1-first-lesson/pause-and-think
+          - file: module-1-introduction-to-python/lesson-1-first-lesson/practice-quiz
+          - file: module-1-introduction-to-python/lesson-1-first-lesson/practice-coding
+      - file: module-1-introduction-to-python/lesson-2-python-basics/index
+        sections:
+          - file: module-1-introduction-to-python/lesson-2-python-basics/python-basics
+          - file: module-1-introduction-to-python/lesson-2-python-basics/types-and-booleans
+          - file: module-1-introduction-to-python/lesson-2-python-basics/while-loops
+          - file: module-1-introduction-to-python/lesson-2-python-basics/for-loops
+          - file: module-1-introduction-to-python/lesson-2-python-basics/conditionals
+          - file: module-1-introduction-to-python/lesson-2-python-basics/functions
+          - file: module-1-introduction-to-python/lesson-2-python-basics/pause-and-think
+          - file: module-1-introduction-to-python/lesson-2-python-basics/practice-expressions
+          - file: module-1-introduction-to-python/lesson-2-python-basics/practice-minute-countdown
+          - file: module-1-introduction-to-python/lesson-2-python-basics/practice-countdown
+          - file: module-1-introduction-to-python/lesson-2-python-basics/practice-fibonacci
+      - file: module-1-introduction-to-python/lesson-3-strings-and-lists/index
+        sections:
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/strings
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/string-functions
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/slicing-strings
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/negative-indices
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/lists
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/documentation-matters
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/none
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/pause-and-think
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/practice-slices
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/practice-mystery1
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/practice-switch_pairs
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/practice-find_range
+          - file: module-1-introduction-to-python/lesson-3-strings-and-lists/practice-count_votes
+  - file: module-2-data-structures-and-files/index
+    sections:
+      - file: module-2-data-structures-and-files/lesson-4-lists-and-files/index
+        sections:
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/file-processing
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/advanced-lists
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/file-paths
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/python-modes
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/jupyter-notebooks/DemoNotebook
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/practice-build-a-list
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/pause-and-think
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/practice-filter-long-lines
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/practice-count-unique-words
+      - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/index
+        sections:
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/recap-lists
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/list-comprehensions
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-reading-list-comprehensions
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-build-a-list-comprehension
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/tuple
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/sets-set/SetDemo
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/dictionaries-dict
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/pause-and-think
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-area-codes
+          - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-count-words
+      - file: module-2-data-structures-and-files/lesson-6-csv-data/index
+        sections:
+          - file: module-2-data-structures-and-files/lesson-6-csv-data/dictionary-methods
+          - file: module-2-data-structures-and-files/lesson-6-csv-data/practice-most-frequent-word
+          - file: module-2-data-structures-and-files/lesson-6-csv-data/comma-separated-values-csv
+          - file: module-2-data-structures-and-files/lesson-6-csv-data/processing-a-csv
+          - file: module-2-data-structures-and-files/lesson-6-csv-data/pause-and-think
+          - file: module-2-data-structures-and-files/lesson-6-csv-data/practice-largest-earthquake
+          - file: module-2-data-structures-and-files/lesson-6-csv-data/practice-shakiness-by-location
+  - file: module-3-pandas/index
+    sections:
+      - file: module-3-pandas/lesson-7-introduction-to-pandas/index
+        sections:
+          - file: module-3-pandas/lesson-7-introduction-to-pandas/imports
+          - file: module-3-pandas/lesson-7-introduction-to-pandas/pandas
+          - file: module-3-pandas/lesson-7-introduction-to-pandas/practicereading-pandas-tutorial/PandasTutorial
+          - file: module-3-pandas/lesson-7-introduction-to-pandas/pandas-recap
+          - file: module-3-pandas/lesson-7-introduction-to-pandas/pause-and-think
+          - file: module-3-pandas/lesson-7-introduction-to-pandas/practice-types
+          - file: module-3-pandas/lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes
+      - file: module-3-pandas/lesson-8-more-pandas/index
+        sections:
+          - file: module-3-pandas/lesson-8-more-pandas/recap-pandas
+          - file: module-3-pandas/lesson-8-more-pandas/groupby/GroupByExample
+          - file: module-3-pandas/lesson-8-more-pandas/apply/ApplyExample
+          - file: module-3-pandas/lesson-8-more-pandas/keyword-arguments
+          - file: module-3-pandas/lesson-8-more-pandas/sorting-and-top-k
+          - file: module-3-pandas/lesson-8-more-pandas/pause-and-think
+          - file: module-3-pandas/lesson-8-more-pandas/practice-more-pandas/PandasPractice
+      - file: module-3-pandas/lesson-9-time-series/index
+        sections:
+          - file: module-3-pandas/lesson-9-time-series/time-series
+          - file: module-3-pandas/lesson-9-time-series/time-series-2/TimeSeries
+          - file: module-3-pandas/lesson-9-time-series/pause-and-think
+          - file: module-3-pandas/lesson-9-time-series/practice-time-series/TimeSeriesPractice
+  - file: module-4-libraries-for-data-science/index
+    sections:
+      - file: module-4-libraries-for-data-science/lesson-10-data-visualization/index
+        sections:
+          - file: module-4-libraries-for-data-science/lesson-10-data-visualization/default-parameters
+          - file: module-4-libraries-for-data-science/lesson-10-data-visualization/missing-data
+          - file: module-4-libraries-for-data-science/lesson-10-data-visualization/practice-check-your-understanding
+          - file: module-4-libraries-for-data-science/lesson-10-data-visualization/data-visualization/DataViz
+          - file: module-4-libraries-for-data-science/lesson-10-data-visualization/pause-and-think
+          - file: module-4-libraries-for-data-science/lesson-10-data-visualization/practice-plotting-1
+          - file: module-4-libraries-for-data-science/lesson-10-data-visualization/practice-plotting-2
+      - file: module-4-libraries-for-data-science/lesson-11-machine-learning/index
+        sections:
+          - file: module-4-libraries-for-data-science/lesson-11-machine-learning/introduction
+          - file: module-4-libraries-for-data-science/lesson-11-machine-learning/machine-learning-code/MachineLearning
+          - file: module-4-libraries-for-data-science/lesson-11-machine-learning/understanding-decision-trees
+          - file: module-4-libraries-for-data-science/lesson-11-machine-learning/practice-machine-learning-questions
+          - file: module-4-libraries-for-data-science/lesson-11-machine-learning/pause-and-think
+          - file: module-4-libraries-for-data-science/lesson-11-machine-learning/practice-coding-machine-learning/MLforWeather
+      - file: module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/index
+        sections:
+          - file: module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/recap-terms
+          - file: module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/the-ml-pipeline-categorical-data-and-assessing-performance/MachineLearning
+          - file: module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/practice-machine-learning-questions
+          - file: module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/when-to-not-use-ml
+          - file: module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/pause-and-think
+          - file: module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/practice-coding-machine-learning/MLforMushrooms
+          - file: module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/practice-reflecting-on-when-to-not-use-ml
+  - file: module-5-classes-and-objects/index
+    sections:
+      - file: module-5-classes-and-objects/lesson-13-classes-and-objects/index
+        sections:
+          - file: module-5-classes-and-objects/lesson-13-classes-and-objects/objects-and-references
+          - file: module-5-classes-and-objects/lesson-13-classes-and-objects/the-class-define-your-own-objects
+          - file: module-5-classes-and-objects/lesson-13-classes-and-objects/pause-and-think
+          - file: module-5-classes-and-objects/lesson-13-classes-and-objects/practice-point-class
+          - file: module-5-classes-and-objects/lesson-13-classes-and-objects/practice-student-class
+      - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/index
+        sections:
+          - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/recap
+          - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/private-fields
+          - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/warning-default-parameters
+          - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/reading-working-with-directories
+          - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/lambdas
+          - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/pause-and-think
+          - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-dogpack
+          - file: module-5-classes-and-objects/lesson-14-more-classes-and-modules/practice-edpost
+      - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/index
+        sections:
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/main-method-pattern
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/equality-and-identity
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/defining-equality
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/fancy-syntax
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/hw4-introduction
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine
+          - file: module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair
+  - file: module-6-efficiency/index
+    sections:
+      - file: module-6-efficiency/lesson-16-efficiency/index
+        sections:
+          - file: module-6-efficiency/lesson-16-efficiency/what-does-efficiency-mean
+          - file: module-6-efficiency/lesson-16-efficiency/how-can-we-measure-time-efficiency
+          - file: module-6-efficiency/lesson-16-efficiency/counting-steps
+          - file: module-6-efficiency/lesson-16-efficiency/practice-count-steps
+          - file: module-6-efficiency/lesson-16-efficiency/big-o
+          - file: module-6-efficiency/lesson-16-efficiency/data-structures
+          - file: module-6-efficiency/lesson-16-efficiency/pause-and-think
+          - file: module-6-efficiency/lesson-16-efficiency/practice-big-o
+      - file: module-6-efficiency/lesson-17-profiling-and-program-speed/index
+        sections:
+          - file: module-6-efficiency/lesson-17-profiling-and-program-speed/revisiting-time-efficiency
+          - file: module-6-efficiency/lesson-17-profiling-and-program-speed/profiling-code
+          - file: module-6-efficiency/lesson-17-profiling-and-program-speed/slow-python
+          - file: module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think
+          - file: module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding
+      - file: module-6-efficiency/lesson-18-memory/index
+        sections:
+          - file: module-6-efficiency/lesson-18-memory/computer-memory
+          - file: module-6-efficiency/lesson-18-memory/memory-hiearchy
+          - file: module-6-efficiency/lesson-18-memory/pickle
+          - file: module-6-efficiency/lesson-18-memory/pause-and-think
+          - file: module-6-efficiency/lesson-18-memory/practice-memory
+  - file: module-7-geospatial-data/index
+    sections:
+      - file: module-7-geospatial-data/lesson-19-geospatial-data-misc-python/index
+        sections:
+          - file: module-7-geospatial-data/lesson-19-geospatial-data-misc-python/introduction-to-geospatial-data
+          - file: module-7-geospatial-data/lesson-19-geospatial-data-misc-python/zip
+          - file: module-7-geospatial-data/lesson-19-geospatial-data-misc-python/matplotlib-plotting
+          - file: module-7-geospatial-data/lesson-19-geospatial-data-misc-python/hurricane-florence/HurricanFlorence
+          - file: module-7-geospatial-data/lesson-19-geospatial-data-misc-python/pause-and-think
+          - file: module-7-geospatial-data/lesson-19-geospatial-data-misc-python/practice-population-in-south-america
+          - file: module-7-geospatial-data/lesson-19-geospatial-data-misc-python/practice-small-and-rich
+      - file: module-7-geospatial-data/lesson-20-dissolve-join/index
+        sections:
+          - file: module-7-geospatial-data/lesson-20-dissolve-join/dissolve
+          - file: module-7-geospatial-data/lesson-20-dissolve-join/joins
+          - file: module-7-geospatial-data/lesson-20-dissolve-join/join-types
+          - file: module-7-geospatial-data/lesson-20-dissolve-join/hurricane-florence/HurricanFlorence
+          - file: module-7-geospatial-data/lesson-20-dissolve-join/pause-and-think
+          - file: module-7-geospatial-data/lesson-20-dissolve-join/practice-population-maps
+          - file: module-7-geospatial-data/lesson-20-dissolve-join/practice-joins
+      - file: module-7-geospatial-data/lesson-21-indexes-trees/index
+        sections:
+          - file: module-7-geospatial-data/lesson-21-indexes-trees/indexing-databases
+          - file: module-7-geospatial-data/lesson-21-indexes-trees/binary-search-tree
+          - file: module-7-geospatial-data/lesson-21-indexes-trees/spatial-index
+          - file: module-7-geospatial-data/lesson-21-indexes-trees/pause-and-think
+          - file: module-7-geospatial-data/lesson-21-indexes-trees/practice-indexes-trees
+  - file: module-8-images/index
+    sections:
+      - file: module-8-images/lesson-22-reading-numpy/index
+        sections:
+          - file: module-8-images/lesson-22-reading-numpy/numpy
+          - file: module-8-images/lesson-22-reading-numpy/multiple-dimensions
+          - file: module-8-images/lesson-22-reading-numpy/arithmetic-and-logical-operators
+          - file: module-8-images/lesson-22-reading-numpy/practice-numpy
+          - file: module-8-images/lesson-22-reading-numpy/broadcasting
+          - file: module-8-images/lesson-22-reading-numpy/images
+          - file: module-8-images/lesson-22-reading-numpy/pause-and-think
+          - file: module-8-images/lesson-22-reading-numpy/practice-broadcasting
+          - file: module-8-images/lesson-22-reading-numpy/practice-duckie-hat
+      - file: module-8-images/lesson-23-reading-more-numpy-and-images/index
+        sections:
+          - file: module-8-images/lesson-23-reading-more-numpy-and-images/recap
+          - file: module-8-images/lesson-23-reading-more-numpy-and-images/numpy-functions
+          - file: module-8-images/lesson-23-reading-more-numpy-and-images/convolutions
+          - file: module-8-images/lesson-23-reading-more-numpy-and-images/why-convolutions
+          - file: module-8-images/lesson-23-reading-more-numpy-and-images/pause-and-think
+          - file: module-8-images/lesson-23-reading-more-numpy-and-images/practice-convolution-examples
+          - file: module-8-images/lesson-23-reading-more-numpy-and-images/practice-collapse
+      - file: module-8-images/lesson-24-reading-machine-learning-and-images/index
+        sections:
+          - file: module-8-images/lesson-24-reading-machine-learning-and-images/recap-of-machine-learning
+          - file: module-8-images/lesson-24-reading-machine-learning-and-images/machine-learning-and-images
+          - file: module-8-images/lesson-24-reading-machine-learning-and-images/neural-networks
+          - file: module-8-images/lesson-24-reading-machine-learning-and-images/neural-networks-code/Neural_Networks
+          - file: module-8-images/lesson-24-reading-machine-learning-and-images/optional-scikit-image/ScikitImage
+          - file: module-8-images/lesson-24-reading-machine-learning-and-images/pause-and-think
+          - file: module-8-images/lesson-24-reading-machine-learning-and-images/practice-neural-networks-and-images
+  - file: module-9-miscellaneous-topics/index
+    sections:
+      - file: module-9-miscellaneous-topics/lesson-25-reading-web-scraping/index
+        sections:
+          - file: module-9-miscellaneous-topics/lesson-25-reading-web-scraping/web-scraping/WebScraping
+      - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/index
+        sections:
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/data-structure-time-complexity
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/hashing
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/collisions
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/hash-functions
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/hashing-in-practice
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/optional-count-min-sketch
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/pause-and-think
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/practice-hashing
+          - file: module-9-miscellaneous-topics/lesson-26-reading-hashing/practice-myset
+      - file: module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/index
+        sections:
+          - file: module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-0-predicting-crime
+          - file: module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-1-tracking-for-safety
+          - file: module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-2-compas
+          - file: module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-3-potholes-in-baltimore
+          - file: module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/case-study-4-facial-recognition
+          - file: module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/wrap-up-and-assignment
+  - file: module-10-beyond-163/index
+    sections:
+      - file: module-10-beyond-163/lesson-28-fairness/index
+        sections:
+          - file: module-10-beyond-163/lesson-28-fairness/defining-fairness
+          - file: module-10-beyond-163/lesson-28-fairness/tradeoff-between-accuracy-and-fairness
+          - file: module-10-beyond-163/lesson-28-fairness/worldview-limitations-of-fairness
+          - file: module-10-beyond-163/lesson-28-fairness/pause-and-think
+          - file: module-10-beyond-163/lesson-28-fairness/practice-fairness-concepts
+      - file: module-10-beyond-163/lesson-29-privacy/index
+        sections:
+          - file: module-10-beyond-163/lesson-29-privacy/is-your-data-anonymous
+          - file: module-10-beyond-163/lesson-29-privacy/privacy-in-practice-the-census
+          - file: module-10-beyond-163/lesson-29-privacy/differential-privacy
+          - file: module-10-beyond-163/lesson-29-privacy/jittering-laplace-mechanism
+          - file: module-10-beyond-163/lesson-29-privacy/randomized-response
+          - file: module-10-beyond-163/lesson-29-privacy/recap-and-next-steps-for-differential-privacy
+          - file: module-10-beyond-163/lesson-29-privacy/pause-and-think
+          - file: module-10-beyond-163/lesson-29-privacy/practice-privacy
+      - file: module-10-beyond-163/lesson-30-wrap-up/index

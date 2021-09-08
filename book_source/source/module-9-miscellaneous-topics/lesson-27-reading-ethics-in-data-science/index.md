@@ -25,14 +25,6 @@ There are no recordings of Hunter for this lesson, to give you more time to proc
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-case-study-0-predicting-crime
-case-study-1-tracking-for-safety
-case-study-2-compas
-case-study-3-potholes-in-baltimore
-case-study-4-facial-recognition
-wrap-up-and-assignment
 ```

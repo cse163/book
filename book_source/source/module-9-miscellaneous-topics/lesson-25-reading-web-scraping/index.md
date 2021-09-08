@@ -14,8 +14,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
-web-scraping/WebScraping
+```{tableofcontents}
+
 ```

@@ -16,15 +16,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-default-parameters
-missing-data
-practice-check-your-understanding
-data-visualization/DataViz
-pause-and-think
-practice-plotting-1
-practice-plotting-2
 ```

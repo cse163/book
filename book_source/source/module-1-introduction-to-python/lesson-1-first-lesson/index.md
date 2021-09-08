@@ -19,15 +19,6 @@ Every lesson has a list of concepts that are introduced. In this lesson, you wil
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-context-first-two-modules-of-cse-163
-dev-setup/index
-hello-world
-learning-strategies
-pause-and-think
-practice-quiz
-practice-coding
 ```

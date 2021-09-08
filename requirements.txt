@@ -1,8 +1,3 @@
-myst-nb==0.12.3
+jupyter-book==0.11.3
 pandas==1.3.2
 pytablewriter==0.62.0
-Sphinx==3.5.4
-sphinx-book-theme==0.1.3
-sphinx-comments==0.0.3
-sphinx-copybutton==0.4.0
-sphinx-panels==0.6.0

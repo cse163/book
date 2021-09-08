@@ -12,15 +12,6 @@ In this lesson, you will learn the following concepts:
 
 ## Table of Contents
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+```{tableofcontents}
 
-recap-of-machine-learning
-machine-learning-and-images
-neural-networks
-neural-networks-code/Neural_Networks
-optional-scikit-image/ScikitImage
-pause-and-think
-practice-neural-networks-and-images
 ```
