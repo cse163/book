@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to the Intermediate Data Programming book! &#8212; Intermediate Data Programming</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,12 +77,20 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Module 1: Introduction to Python" href="module-1-introduction-to-python/index.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -107,10 +114,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1054,13 +1068,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1071,6 +1078,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1078,10 +1092,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1188,17 +1202,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1231,17 +1245,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1876,7 +1890,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1911,7 +1925,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -2001,11 +2015,6 @@ commentsRunWhenDOMLoaded(addUtterances);
    How this book works
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#table-of-contents">
-   Table of Contents
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -2017,23 +2026,23 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="welcome-to-the-intermediate-data-programming-book">
+  <div class="section" id="welcome-to-the-intermediate-data-programming-book">
 <h1>Welcome to the Intermediate Data Programming book!<a class="headerlink" href="#welcome-to-the-intermediate-data-programming-book" title="Permalink to this headline">¶</a></h1>
 <p>Welcome! 🎉</p>
 <p>This website contains the materials for University of Washington’s <a class="reference external" href="https://courses.cs.washington.edu/courses/cse163/">CSE 163: Intermediate Data Programming</a>. This website is the interactive textbook for the class, including all the lesson readings, videos, and practice problems. While this book
 is designed for a particular class, we hope that by providing the materials in a publicly-accessible format, you will find it useful in your data
 programming journey.</p>
-<section id="what-is-intermediate-data-programming">
+<div class="section" id="what-is-intermediate-data-programming">
 <h2>What is Intermediate Data Programming?<a class="headerlink" href="#what-is-intermediate-data-programming" title="Permalink to this headline">¶</a></h2>
 <p>The world has become data-driven. Domain scientists and industry increasingly rely on data analysis to drive innovation and discovery; this reliance on data is not only restricted to science or business, but also is crucial to those in government, public policy, and those wanting to be informed citizens. As the size of data continues to grow, everyone will need to use powerful tools to work with that data.</p>
 <p>This course teaches intermediate data programming. This course assumes some level of programming experience that you would receive in a first programming course. However, it does not assume that you already know Python. If you know how to program in another language, this course will be a great introduction
 to learning Python and data programming.</p>
 <p>We broadly define the term <strong>data programming</strong> as “the programming required to be an effective data scientist”. We say broadly here because we aren’t meaning to make a precise, academic definition of the concept or the terms used in our definition. Generally, we think of data science classes thinking about statistical and algorithmic concepts applied to a domain or context. Our course focuses on “data programming”, which means we focus more on the algorithmic side of things and the programming required to even get your data into some data science tool you might use. We introduce them to some common methods data scientist uses to analyze data (data visualization, machine learning, etc) but the focus is on the programming that supports using those methods.</p>
-</section>
-<section id="course-level-learning-goals">
+</div>
+<div class="section" id="course-level-learning-goals">
 <h2>Course Level Learning Goals<a class="headerlink" href="#course-level-learning-goals" title="Permalink to this headline">¶</a></h2>
 <p>There are five high-level learning goals in this course. Below, we outline a high-level list of topics covered in this course by each of this learning goals.</p>
-<section id="programming">
+<div class="section" id="programming">
 <h3>1) Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h3>
 <p><strong>Modules:</strong> 1, 2, 5</p>
 <p>More advanced programming concepts than a first programming course including how to write bigger programs with multiple classes and modules.</p>
@@ -2045,8 +2054,8 @@ to learning Python and data programming.</p>
 <li><p>Modules and Packages in Python</p></li>
 <li><p>Anonymous functions (lambdas) and some ideas of functional programming</p></li>
 </ul>
-</section>
-<section id="data">
+</div>
+<div class="section" id="data">
 <h3>2) Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
 <p><strong>Modules:</strong> 2, 3, 5, 7, 8</p>
 <p>How to work with different types of data: tabular, text, images, geo-spatial.</p>
@@ -2058,8 +2067,8 @@ to learning Python and data programming.</p>
 <li><p>Images</p></li>
 <li><p>If schedule allows: Time series and web data</p></li>
 </ul>
-</section>
-<section id="data-science-tools">
+</div>
+<div class="section" id="data-science-tools">
 <h3>3) Data Science Tools<a class="headerlink" href="#data-science-tools" title="Permalink to this headline">¶</a></h3>
 <p><strong>Modules:</strong> 3, 4, 7, 8</p>
 <p>Ecosystem of data science tools including Jupyter Notebook and various data science libraries including scikit image, scikit learn, and Pandas data frames.</p>
@@ -2079,8 +2088,8 @@ to learning Python and data programming.</p>
 </ul>
 </li>
 </ul>
-</section>
-<section id="computer-science">
+</div>
+<div class="section" id="computer-science">
 <h3>4) Computer Science<a class="headerlink" href="#computer-science" title="Permalink to this headline">¶</a></h3>
 <p><strong>Modules:</strong> 6, 7, 9</p>
 <p>Basic concepts related to code complexity, efficiency of different types of data structures, and memory management.</p>
@@ -2094,8 +2103,8 @@ to learning Python and data programming.</p>
 <li><p>Spatial Indices</p></li>
 <li><p>Why Python is slow (and why that’s okay)</p></li>
 </ul>
-</section>
-<section id="data-and-society">
+</div>
+<div class="section" id="data-and-society">
 <h3>5) Data and Society<a class="headerlink" href="#data-and-society" title="Permalink to this headline">¶</a></h3>
 <p><strong>Modules:</strong> 3, 9, 10</p>
 <p>Thinking more broadly about the impact of data science in society and the role we, as programmers, have in making software that process data that is just and fair.</p>
@@ -2107,84 +2116,39 @@ to learning Python and data programming.</p>
 <li><p>Algorithmic fairness</p></li>
 <li><p>Privacy</p></li>
 </ul>
-</section>
-</section>
-<section id="how-this-book-works">
+</div>
+</div>
+<div class="section" id="how-this-book-works">
 <h2>How this book works<a class="headerlink" href="#how-this-book-works" title="Permalink to this headline">¶</a></h2>
 <p>This book is broken up into a Modules (1-10), and each module contains 2 or 3 Lessons. At UW, each Module maps to about one week of class, with students completing one Lesson each day. Each Lesson contains a series of readings and some practice problems in the form of quiz questions or programming problems. We also have a reflective component to ask you to write down what you learned in each lesson to summarize your learning. There are also videos that go along with each lesson that have Hunter talking over the reading slide. The videos don’t contain any other information than the reading slides do, so there is no need to watch them. Note that these videos are specific to the UW course (the tools we use and discussing homeworks), but you may still find them useful.</p>
 <p>We recommend doing the practice problems for each lesson before moving on to the next. Learning is an active process! Doing the problems makes you actively participate in your learning, and can give you feedback on whether you understand the concepts enough to apply them to new situations. The coding problems come with an unit tests that will let you know whether or not your solution exhibits the correct behavior.</p>
 <p>You may also find the <a class="reference external" href="https://courses.cs.washington.edu/courses/cse163/21wi/index.html">course website</a> for the course useful to find extra resources.</p>
 <p><strong>Note:</strong> This book was originally written in a system we use internally EdStem. While EdStem has many fantastic features for student practice, it is unable to be accessed publicly which is why we made this website! While public access is really important, it does mean this current version of the book has some limitations. Namely, the quiz questions aren’t interactive and can’t reveal solutions. We hope to iterate on this experience and make it more interactive, but more complex behaviors take time. Since this website is so new, there might be leftover mentions to EdStem or any other UW specific things. If you find anything in the book that doesn’t seem to make sense, please <a class="reference external" href="https://github.com/cse163/book/issues">file an issue on GitHub</a> letting us know where the issue is, and we will fix it as soon as we can!</p>
-</section>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="module-1-introduction-to-python/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 1: Introduction to Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-1-introduction-to-python/lesson-1-first-lesson/index.html"><i class="fas fa-book fa-fw"></i> Lesson 1: Introduction to Intermediate Data Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-1-introduction-to-python/lesson-2-python-basics/index.html"><i class="fas fa-book fa-fw"></i> Lesson 2: Python Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-1-introduction-to-python/lesson-3-strings-and-lists/index.html"><i class="fas fa-book fa-fw"></i> Lesson 3: Strings and Lists</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-2-data-structures-and-files/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 2: Data Structures and Files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-2-data-structures-and-files/lesson-4-lists-and-files/index.html"><i class="fas fa-book fa-fw"></i> Lesson 4: Lists and Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/index.html"><i class="fas fa-book fa-fw"></i> Lesson 5: Data Structures - Tuple, Set, Dict</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-2-data-structures-and-files/lesson-6-csv-data/index.html"><i class="fas fa-book fa-fw"></i> Lesson 6: CSV Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-3-pandas/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 3: Pandas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-3-pandas/lesson-7-introduction-to-pandas/index.html"><i class="fas fa-book fa-fw"></i> Lesson 7: Introduction to Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-3-pandas/lesson-8-more-pandas/index.html"><i class="fas fa-book fa-fw"></i> Lesson 8: More Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-3-pandas/lesson-9-time-series/index.html"><i class="fas fa-book fa-fw"></i> Lesson 9: Time Series</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-4-libraries-for-data-science/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 4: Libraries for Data Science</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-4-libraries-for-data-science/lesson-10-data-visualization/index.html"><i class="fas fa-book fa-fw"></i> Lesson 10: Data Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-4-libraries-for-data-science/lesson-11-machine-learning/index.html"><i class="fas fa-book fa-fw"></i> Lesson 11: Machine Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-4-libraries-for-data-science/lesson-12-machine-learning-pt-2/index.html"><i class="fas fa-book fa-fw"></i> Lesson 12: Machine Learning pt. 2</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-5-classes-and-objects/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 5: Classes and Objects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-5-classes-and-objects/lesson-13-classes-and-objects/index.html"><i class="fas fa-book fa-fw"></i> Lesson 13: Classes and Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-5-classes-and-objects/lesson-14-more-classes-and-modules/index.html"><i class="fas fa-book fa-fw"></i> Lesson 14: More Classes and Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/index.html"><i class="fas fa-book fa-fw"></i> Lesson 15: Special Methods + HW4 Introduction</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-6-efficiency/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 6: Efficiency</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-6-efficiency/lesson-16-efficiency/index.html"><i class="fas fa-book fa-fw"></i> Lesson 16: Efficiency</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-6-efficiency/lesson-17-profiling-and-program-speed/index.html"><i class="fas fa-book fa-fw"></i> Lesson 17: Profiling and Program Speed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-6-efficiency/lesson-18-memory/index.html"><i class="fas fa-book fa-fw"></i> Lesson 18: Memory</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-7-geospatial-data/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 7: Geospatial Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-7-geospatial-data/lesson-19-geospatial-data-misc-python/index.html"><i class="fas fa-book fa-fw"></i> Lesson 19: Geospatial Data + Misc Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-7-geospatial-data/lesson-20-dissolve-join/index.html"><i class="fas fa-book fa-fw"></i> Lesson 20: Dissolve + Join</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-7-geospatial-data/lesson-21-indexes-trees/index.html"><i class="fas fa-book fa-fw"></i>  Lesson 21: Indexes / Trees 🌳</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-8-images/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 8: Images</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-8-images/lesson-22-reading-numpy/index.html"><i class="fas fa-book fa-fw"></i> Lesson 22 Reading: Numpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-8-images/lesson-23-reading-more-numpy-and-images/index.html"><i class="fas fa-book fa-fw"></i> Lesson 23 Reading: More Numpy and Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-8-images/lesson-24-reading-machine-learning-and-images/index.html"><i class="fas fa-book fa-fw"></i> Lesson 24 Reading: Machine Learning and Images</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-9-miscellaneous-topics/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 9: Miscellaneous Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-9-miscellaneous-topics/lesson-25-reading-web-scraping/index.html"><i class="fas fa-book fa-fw"></i> Lesson 25 Reading: Web Scraping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-9-miscellaneous-topics/lesson-26-reading-hashing/index.html"><i class="fas fa-book fa-fw"></i> Lesson 26 Reading: Hashing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-9-miscellaneous-topics/lesson-27-reading-ethics-in-data-science/index.html"><i class="fas fa-book fa-fw"></i> Lesson 27 Reading: Ethics in Data Science</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module-10-beyond-163/index.html"><i class="fas fa-layer-group fa-fw"></i> Module 10: Beyond 163</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module-10-beyond-163/lesson-28-fairness/index.html"><i class="fas fa-book fa-fw"></i> Lesson 28: Fairness</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-10-beyond-163/lesson-29-privacy/index.html"><i class="fas fa-book fa-fw"></i> Lesson 29: Privacy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module-10-beyond-163/lesson-30-wrap-up/index.html"><i class="fas fa-book fa-fw"></i> Lesson 30: Wrap Up and Next Steps!</a></li>
-</ul>
-</li>
-</ul>
+<p>Once you are ready to read, you can navigate the book using the sidebar on the left!</p>
 </div>
-</section>
-</section>
+<div class="toctree-wrapper compound">
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2213,7 +2177,9 @@ to learning Python and data programming.</p>
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

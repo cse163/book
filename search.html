@@ -25,12 +25,12 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -85,8 +85,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="search" title="Search" href="#" />
   <script src="searchindex.js" defer></script>
   
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -111,10 +112,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="#" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1058,13 +1066,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1075,6 +1076,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1082,10 +1090,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1192,17 +1200,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1235,17 +1243,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1880,7 +1888,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1987,7 +1995,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

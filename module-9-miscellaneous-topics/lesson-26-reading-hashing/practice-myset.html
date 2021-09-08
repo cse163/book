@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice: MySet &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -80,13 +79,21 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lesson 27 Reading: Ethics in Data Science" href="../lesson-27-reading-ethics-in-data-science/index.html" />
     <link rel="prev" title="Practice: Hashing" href="practice-hashing.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -110,10 +117,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1057,13 +1071,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1074,6 +1081,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1081,10 +1095,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1191,17 +1205,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1234,17 +1248,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1879,7 +1893,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1914,7 +1928,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-9-miscellaneous-topics/lesson-26-reading-hashing/practice-myset.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-9-miscellaneous-topics/lesson-26-reading-hashing/practice-myset.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1998,10 +2012,10 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="i-class-fas-fa-laptop-fa-fw-i-practice-myset">
+  <div class="section" id="i-class-fas-fa-laptop-fa-fw-i-practice-myset">
 <h1><i class="fas fa-laptop fa-fw"></i> Practice: MySet<a class="headerlink" href="#i-class-fas-fa-laptop-fa-fw-i-practice-myset" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference download internal" download="" href="../../_downloads/d60e06f51343979a4d473ab580a05b47/practice-myset.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
-<section id="part-1-myset">
+<div class="section" id="part-1-myset">
 <h2>Part 1: <code class="docutils literal notranslate"><span class="pre">MySet</span></code><a class="headerlink" href="#part-1-myset" title="Permalink to this headline">¶</a></h2>
 <p>In the file <code class="docutils literal notranslate"><span class="pre">my_set.py</span></code> , write a class named <code class="docutils literal notranslate"><span class="pre">MySet</span></code> that implements something like the <code class="docutils literal notranslate"><span class="pre">set</span></code> implemented with a hash table that we have been describing in this reading. <code class="docutils literal notranslate"><span class="pre">MySet</span></code> will be simpler than the full hash table we described in the reading and will be more similar to the first version described in <a class="reference internal" href="hashing.html"><span class="doc std std-doc">Hashing</span></a> .</p>
 <p>Namely, the <code class="docutils literal notranslate"><span class="pre">MySet</span></code> should have the following behaviors:</p>
@@ -2041,8 +2055,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>All fields should be private.</p></li>
 <li><p>You should not use the <code class="docutils literal notranslate"><span class="pre">set</span></code> class in any way in your implementation. You should implement <code class="docutils literal notranslate"><span class="pre">MySet</span></code> using a <code class="docutils literal notranslate"><span class="pre">list</span></code> as your hash table.</p></li>
 </ul>
-</section>
-<section id="part-2-my-set-client-py">
+</div>
+<div class="section" id="part-2-my-set-client-py">
 <h2>Part 2: <code class="docutils literal notranslate"><span class="pre">my_set_client.py</span></code><a class="headerlink" href="#part-2-my-set-client-py" title="Permalink to this headline">¶</a></h2>
 <p>In the file <code class="docutils literal notranslate"><span class="pre">my_set_client.py</span></code> , write a client of <code class="docutils literal notranslate"><span class="pre">MySet</span></code> that does the following things:</p>
 <ul class="simple">
@@ -2057,13 +2071,32 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Your program should use the main-method pattern.</p></li>
 <li><p>You should not explicitly call any of the special methods on the <code class="docutils literal notranslate"><span class="pre">MySet</span></code> from your program. This means instead of using <code class="docutils literal notranslate"><span class="pre">ms.__len__()</span></code> , you should use <code class="docutils literal notranslate"><span class="pre">len(ms)</span></code> .</p></li>
 </ul>
-</section>
-<section id="a-note-about-naming-convention">
+</div>
+<div class="section" id="a-note-about-naming-convention">
 <h2>A Note About Naming Convention<a class="headerlink" href="#a-note-about-naming-convention" title="Permalink to this headline">¶</a></h2>
 <p>Python uses <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> for almost everything. All your functions, variables, fields, and even file names should use <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> . The one major exception is class names which should be <code class="docutils literal notranslate"><span class="pre">CapitalCase</span></code> (where the first letter of each word is capitalized). This is why we will call the class <code class="docutils literal notranslate"><span class="pre">MySet</span></code> but the file name will be <code class="docutils literal notranslate"><span class="pre">my_set.py</span></code> .</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-9-miscellaneous-topics/lesson-26-reading-hashing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2101,7 +2134,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

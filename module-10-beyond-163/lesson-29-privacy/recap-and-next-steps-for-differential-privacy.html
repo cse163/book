@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recap and Next Steps for Differential Privacy &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -80,13 +79,21 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Pause and Think" href="pause-and-think.html" />
     <link rel="prev" title="Randomized Response" href="randomized-response.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -110,10 +117,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1057,13 +1071,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1074,6 +1081,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1081,10 +1095,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1191,17 +1205,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1234,17 +1248,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1879,7 +1893,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1914,7 +1928,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-10-beyond-163/lesson-29-privacy/recap-and-next-steps-for-differential-privacy.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-10-beyond-163/lesson-29-privacy/recap-and-next-steps-for-differential-privacy.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1988,14 +2002,14 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="recap-and-next-steps-for-differential-privacy">
+  <div class="section" id="recap-and-next-steps-for-differential-privacy">
 <h1>Recap and Next Steps for Differential Privacy<a class="headerlink" href="#recap-and-next-steps-for-differential-privacy" title="Permalink to this headline">¶</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/78e30ed8485a4f2698629d65523124c4?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 <hr class="docutils" />
 <p>So we have seen a lot in this lesson! They are all terms that we think you should know and are likely ones you will hear more prominently in your work as people working with data as you move into the future! We start this last slide of the reading by recapping some of the terms we introduced in this lesson and the most important takeaways, highlighting an important reason differential privacy is used in practice, and showing some current and next steps for differential privacy.</p>
-<section id="recap">
+<div class="section" id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>We started this lesson by introducing the notion of <strong>k-anonymity</strong> which is the requirement that any published dataset must ensure that any combination of insensitive features (e.g., sex, date of birth, zip code) narrows down the data to at least <span class="math notranslate nohighlight">\(k\)</span> people. In other words, you should never be able to uniquely identify anyone from a dataset but are limited to narrowing down to at least <span class="math notranslate nohighlight">\(k\)</span> people.</p>
@@ -2007,8 +2021,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>We showed the first differentially private mechanism called <strong>jittering</strong> or the <strong>Laplace Mechanism</strong> which is the process of adding random noise to published statistics to make it harder to work backward and find if an individual’s data was used in the data. There were specifics of how the noise has to follow a specific distribution known as the Laplace Distribution, but we only cared about the relationship between the noise and guarantees of privacy.</p></li>
 <li><p>We then looked at the case when we don’t trust the party gathering data and a mechanism called <strong>randomized response</strong> that can ensure differential privacy without trust. The respondents of a (potentially embarrassing) poll flip a coin that dictates how they respond. This allows us to analyze general trends about the population, but lose the ability to say with certainty if an individual told the truth or a lie.</p></li>
 </ul>
-</section>
-<section id="why-differential-privacy">
+</div>
+<div class="section" id="why-differential-privacy">
 <h2>Why Differential Privacy?<a class="headerlink" href="#why-differential-privacy" title="Permalink to this headline">¶</a></h2>
 <p>While we saw that differential privacy doesn’t solve every privacy problem, it does make some strong guarantees as long as you use mechanisms that we know are differentially private (e.g., jittering with Laplace or random response). There are other, more complicated mechanisms that achieve differential privacy, but the mechanisms exist so we can use them.</p>
 <p>One of the most important reasons differential privacy is used is how it handles <strong>composability</strong> . When we talked about k-anonymity, we said we throw out all privacy guarantees once we talk about combining two separate datasets (even if they are both k-anonymous individually). This is important for something like the US Census where they might publish multiple statistics and we would want to make sure that the composition of many individual privacy guarantees doesn’t break down privacy guarantees.</p>
@@ -2018,8 +2032,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Many small statistics with small <span class="math notranslate nohighlight">\(\varepsilon\)</span> guarantees. Remember small <span class="math notranslate nohighlight">\(\varepsilon\)</span>-differential privacy has a high guarantee of privacy, but may not be very accurate.</p></li>
 <li><p>A few statistics with larger <span class="math notranslate nohighlight">\(\varepsilon\)</span> guarantees. This allows them to be more accurate, but at the cost of less privacy per statistic requires allowing to publish fewer of them.</p></li>
 </ul>
-</section>
-<section id="optional-next-and-current-steps-for-differential-privacy">
+</div>
+<div class="section" id="optional-next-and-current-steps-for-differential-privacy">
 <h2>Optional: Next and Current Steps for Differential Privacy<a class="headerlink" href="#optional-next-and-current-steps-for-differential-privacy" title="Permalink to this headline">¶</a></h2>
 <p>We hope you found something interesting here in our discussion of differential privacy. We expect this is only a term you will hear more frequently moving into the future so it’s good you get a chance to see it now. Before you go, we wanted to provide a completely optional section on where differential privacy is used now and where it might go in the future.</p>
 <ul class="simple">
@@ -2030,9 +2044,28 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Communication with people about how differential privacy is used and what it means will be an increasingly important point of practice for computer scientists and data scientists alike in the future.</p></li>
 </ul>
 <p>If you want to learn more about the theory of differential privacy, Cynthia Dwork and Aaron Roth wrote a book on that is a formal introduction to differential privacy: https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-10-beyond-163/lesson-29-privacy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2070,7 +2103,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

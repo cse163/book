@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Python Basics &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -80,13 +79,21 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Types and Booleans" href="types-and-booleans.html" />
     <link rel="prev" title="Lesson 2: Python Basics" href="index.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -110,10 +117,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1057,13 +1071,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1074,6 +1081,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1081,10 +1095,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1191,17 +1205,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1234,17 +1248,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1879,7 +1893,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1914,7 +1928,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-1-introduction-to-python/lesson-2-python-basics/python-basics.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-1-introduction-to-python/lesson-2-python-basics/python-basics.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1998,7 +2012,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="python-basics">
+  <div class="section" id="python-basics">
 <h1>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this headline">¶</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/fdf9802363e74c8db885031d985be706?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
@@ -2009,7 +2023,7 @@ While you cannot run the code blocks in the readings, we encourage you to copy a
 paste them to a Python editor as you are reading to see their output. You can also
 edit the code to see what would happen if you tried to change the code in some way!
 Go out and explore a bit! 😊</p>
-<section id="print-statements">
+<div class="section" id="print-statements">
 <h2>Print Statements<a class="headerlink" href="#print-statements" title="Permalink to this headline">¶</a></h2>
 <p>We saw that the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement in Python is very simple</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
@@ -2019,8 +2033,8 @@ Go out and explore a bit! 😊</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="python-program-main-method-pattern">
+</div>
+<div class="section" id="python-program-main-method-pattern">
 <h2>Python Program + Main Method Pattern<a class="headerlink" href="#python-program-main-method-pattern" title="Permalink to this headline">¶</a></h2>
 <p>A Python program is a series of statements that get executed from top to bottom. Right now the only statement we know is the print statement. But we will learn others!</p>
 <p>In CSE 163, we will ask you to put a little bit of starter code in every program you write. We call this the <strong>main-method pattern</strong>. We can’t really motivate why you need to use this quite yet; you’ll have to trust us that it is the right thing to do. We introduce this pattern now to get you in the practice of writing from the onset of your Python journey. We will come back in future weeks and actually dive into what this pattern does and why it’s necessary.</p>
@@ -2054,8 +2068,8 @@ the main-method pattern in these readings’ snippets. The intent here is to kee
 <br />
 <p><strong>For your take-home assessments, you will always need to use the main-method pattern for the files you write.</strong></p>
 </div>
-</section>
-<section id="variables">
+</div>
+<div class="section" id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
 <p>Variables store values. Each Python value is composed of a value and its type. Unlike Java, Python doesn’t require you to define the type of a variable. Additionally, throughout the lifetime of the program running, the variable can be made to hold a new value of a different type using an <strong>assignment statement</strong> .</p>
 <p>The following snippet creates a variable named <code class="docutils literal notranslate"><span class="pre">x</span></code> that stores the value <code class="docutils literal notranslate"><span class="pre">3</span></code> of type <code class="docutils literal notranslate"><span class="pre">int</span></code> (for integer) and a variable named <code class="docutils literal notranslate"><span class="pre">y</span></code> that stores the value <code class="docutils literal notranslate"><span class="pre">4.2</span></code> of type <code class="docutils literal notranslate"><span class="pre">float</span></code> (for floating-point number). One line 3, it then re-assigned <code class="docutils literal notranslate"><span class="pre">x</span></code> to store the value <code class="docutils literal notranslate"><span class="pre">3.7</span></code> of type <code class="docutils literal notranslate"><span class="pre">float</span></code> . This is why the program prints <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3.7</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">4.2</span></code> .</p>
@@ -2100,8 +2114,8 @@ knows it is a
 <code class="docutils literal notranslate"><span class="pre">float</span></code>
 ).</p>
 </div>
-</section>
-<section id="expressions">
+</div>
+<div class="section" id="expressions">
 <h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h2>
 <p>Python supports many operations for built-in types. Specifically, here are the operations defined for numeric types like <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> .</p>
 <ul class="simple">
@@ -2118,13 +2132,32 @@ knows it is a
 <span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 </div>
-</section>
-<section id="recap">
+</div>
+<div class="section" id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <p>We saw a lot of things, but hopefully, most of them are pretty familiar to what you’ve seen before (except the main-method pattern which is weird and takes a little while to get used to).</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-1-introduction-to-python/lesson-2-python-basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2162,7 +2195,9 @@ knows it is a
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

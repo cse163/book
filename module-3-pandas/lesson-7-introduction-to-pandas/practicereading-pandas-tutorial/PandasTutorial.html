@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice/Reading: Pandas Tutorial &#8212; Intermediate Data Programming</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,13 +77,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Pandas Recap" href="../pandas-recap.html" />
     <link rel="prev" title="Pandas" href="../pandas.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -108,10 +115,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1055,13 +1069,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1072,6 +1079,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1079,10 +1093,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1189,17 +1203,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1232,17 +1246,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1877,7 +1891,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1912,7 +1926,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/module-3-pandas/lesson-7-introduction-to-pandas/practicereading-pandas-tutorial/PandasTutorial.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/module-3-pandas/lesson-7-introduction-to-pandas/practicereading-pandas-tutorial/PandasTutorial.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -2081,7 +2095,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="i-class-fas-fa-laptop-i-practice-reading-pandas-tutorial">
+  <div class="section" id="i-class-fas-fa-laptop-i-practice-reading-pandas-tutorial">
 <h1><i class="fas fa-laptop"></i> Practice/Reading: Pandas Tutorial<a class="headerlink" href="#i-class-fas-fa-laptop-i-practice-reading-pandas-tutorial" title="Permalink to this headline">¶</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/1caa054531c24d39bb31bd44b646ba92" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
@@ -2163,7 +2177,7 @@ an interactive version of this notebook.</p>
 <p>Notice that this shows the CSV in a tabular format! What is <code class="docutils literal notranslate"><span class="pre">df</span></code>? It’s a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> object called a <strong><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></strong> which stores a table of values, much like an Excel table.</p>
 <p>Notice on the top row, it shows the name of the columns (<code class="docutils literal notranslate"><span class="pre">Name</span></code> and <code class="docutils literal notranslate"><span class="pre">Salary</span></code>) and on the left-most side, it shows an index for each row (<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">2</span></code>).</p>
 <p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s are powerful because they provide lots of ways to access and perform computations on your data without you having to write much code!</p>
-<section id="accessing-a-column">
+<div class="section" id="accessing-a-column">
 <h2>Accessing a Column<a class="headerlink" href="#accessing-a-column" title="Permalink to this headline">¶</a></h2>
 <p>For example, you can get all of the TAs’ names with the following call.</p>
 <div class="cell docutils container">
@@ -2183,7 +2197,7 @@ Name: Name, dtype: object
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">df['Name']</span></code> returns another <code class="docutils literal notranslate"><span class="pre">pandas</span></code> object called a <strong><code class="docutils literal notranslate"><span class="pre">Series</span></code></strong> that represents a single column or row of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. A <code class="docutils literal notranslate"><span class="pre">Series</span></code> is very similar to a <code class="docutils literal notranslate"><span class="pre">list</span></code> from Python, but has many extra features that we will explore later.</p>
 <p>Students sometimes get a little confused because this looks like <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> and it is trying to access a key named <code class="docutils literal notranslate"><span class="pre">Name</span></code>. This is not the case! One of the reasons Python is so powerful is it lets people who program libraries “hook into” the syntax of the language to make their own custom meaning of the <code class="docutils literal notranslate"><span class="pre">[]</span></code> syntax! <code class="docutils literal notranslate"><span class="pre">df</span></code> in this cell is really this special object defined by <code class="docutils literal notranslate"><span class="pre">pandas</span></code> called a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
-<section id="problem-0">
+<div class="section" id="problem-0">
 <h3>Problem 0<a class="headerlink" href="#problem-0" title="Permalink to this headline">¶</a></h3>
 <p>In the cell below, write the code to access the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column of the data and store it in a variable named <code class="docutils literal notranslate"><span class="pre">ans0</span></code>! <strong>For testing purposes, your variable name has to exactly be <code class="docutils literal notranslate"><span class="pre">ans0</span></code>.</strong></p>
 <div class="cell docutils container">
@@ -2219,8 +2233,8 @@ Name: Name, dtype: object
 </div>
 </div>
 </div>
-</section>
-<section id="reminder-types-matter">
+</div>
+<div class="section" id="reminder-types-matter">
 <h3>Reminder: Types matter<a class="headerlink" href="#reminder-types-matter" title="Permalink to this headline">¶</a></h3>
 <p>When first learning <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, it’s easy to mix up <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
 <ul class="simple">
@@ -2228,8 +2242,8 @@ Name: Name, dtype: object
 <li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code> is 1-dimensional (it only has “one direction” like a single row or a single column).</p></li>
 </ul>
 <p>When you access a single column (or as we will see later, a single row) of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, it returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
-</section>
-<section id="problem-1">
+</div>
+<div class="section" id="problem-1">
 <h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h3>
 <p>For this problem, you should compute the “range” of TA salaries (<code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">maximum</span> <span class="pre">value</span> <span class="pre">-</span> <span class="pre">the</span> <span class="pre">minimum</span> <span class="pre">value</span></code>). <strong>For testing purposes, save the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans1</span></code>.</strong></p>
 <p><em>Hint: You might need to make two separate calls to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to compute this since you need both the min and the max.</em></p>
@@ -2240,9 +2254,9 @@ Name: Name, dtype: object
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="element-wise-operations">
+</div>
+</div>
+<div class="section" id="element-wise-operations">
 <h2>Element-wise Operations<a class="headerlink" href="#element-wise-operations" title="Permalink to this headline">¶</a></h2>
 <p>For the rest of this slide, let’s consider a slightly more complex dataset that has a few more columns. This dataset tracks the emissions for cities around the world (but only has a few rows).</p>
 <div class="cell docutils container">
@@ -2372,7 +2386,7 @@ dtype: int64
 </div>
 </div>
 <p>Notice, this returns a new <code class="docutils literal notranslate"><span class="pre">Series</span></code> that represents the sum of those two columns. The first value in the <code class="docutils literal notranslate"><span class="pre">Series</span></code> is the sum of the first values in the two that were added, the second is the sum of the second two, etc. It does not modify any of the columns of the dataset (you will need to do an assignment to change a value).</p>
-<section id="problem-2">
+<div class="section" id="problem-2">
 <h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h3>
 <p>In the cell below, find the maximum “emissions per capita” (emissions divided by population). Start by computing this value for each city and then find the maximum value of that <code class="docutils literal notranslate"><span class="pre">Series</span></code> (using one of the <code class="docutils literal notranslate"><span class="pre">Series</span></code> methods shown above). <strong>For testing purposes, save the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans2</span></code>.</strong></p>
 <p><em>Hint: You can save a <code class="docutils literal notranslate"><span class="pre">Series</span></code> in a variable! It’s just like any other Python value!</em></p>
@@ -2420,9 +2434,9 @@ Name: emissions, dtype: bool
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="filtering-data">
+</div>
+</div>
+<div class="section" id="filtering-data">
 <h2>Filtering Data<a class="headerlink" href="#filtering-data" title="Permalink to this headline">¶</a></h2>
 <p>You might have wondered why being able to compare a <code class="docutils literal notranslate"><span class="pre">Series</span></code> to some value is something we deemed “useful” since it doesn’t seem like it does anything helpful. The power comes from using this <code class="docutils literal notranslate"><span class="pre">bool</span></code> <code class="docutils literal notranslate"><span class="pre">Series</span></code> to <strong>filter</strong> the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to the rows you want.</p>
 <p>For example, what if I wanted to print the names of the cities that have an emissions of 200 or more? I can use this <code class="docutils literal notranslate"><span class="pre">bool</span></code> <code class="docutils literal notranslate"><span class="pre">Series</span></code> to filter which rows I want! The syntax looks like the following cell.</p>
@@ -2466,7 +2480,7 @@ Name: city, dtype: object
 </div>
 </div>
 </div>
-<section id="filtering-on-multiple-conditions">
+<div class="section" id="filtering-on-multiple-conditions">
 <h3>Filtering on Multiple Conditions<a class="headerlink" href="#filtering-on-multiple-conditions" title="Permalink to this headline">¶</a></h3>
 <p>You can combine masks using logical operators to make complex queries. There are three logical operators for masks (like <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code> but with different symbols).</p>
 <ul class="simple">
@@ -2597,8 +2611,8 @@ Name: city, dtype: object
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="problem-3">
+</div>
+<div class="section" id="problem-3">
 <h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h3>
 <p>In the cell below, write code to select all rows from the dataset that are in France and have a population greater than 50. <strong>For testing purposes, save the result in a variable called <code class="docutils literal notranslate"><span class="pre">ans3</span></code></strong></p>
 <div class="cell docutils container">
@@ -2608,9 +2622,9 @@ Name: city, dtype: object
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="location">
+</div>
+</div>
+<div class="section" id="location">
 <h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
 <p>We’ve shown you how to select specific columns or select specific rows based on a mask. In some sense, it’s a little confusiong that <code class="docutils literal notranslate"><span class="pre">df[val]</span></code> can be used to grab columns or rows depending on what is passed. This is because this syntax we have shown below, is really just special cases of a more generic syntax that lets you specific some location in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provides this shorthand for convencience in some cases, but this more general syntax below works in many more!</p>
 <p>In its most general form, the <code class="docutils literal notranslate"><span class="pre">loc</span></code> property lets you specify a <strong>row indexer</strong> and a <strong>column indexer</strong> to specify which rows/columns you want. The syntax looks like the following (where things in <code class="docutils literal notranslate"><span class="pre">&lt;...&gt;</span></code> are placeholders)</p>
@@ -2663,7 +2677,7 @@ Name: 0, dtype: object
 </div>
 </div>
 <p>You might be wondering: I’ve used the word “indexer” a few times but haven’t defined what that means! By indexer, I mean some value to indicate which rows/columns you want. So far, I have shown how to specify a single value as an indexer, but there are actually many options to chose from! You can always mix-and-match these and use different ones for the rows/cols.</p>
-<section id="list-of-indices-and-slices">
+<div class="section" id="list-of-indices-and-slices">
 <h3>List of indices and slices<a class="headerlink" href="#list-of-indices-and-slices" title="Permalink to this headline">¶</a></h3>
 <p>For example, you can use a list of values as an indexer to select many rows or many columns:</p>
 <div class="cell docutils container">
@@ -2781,8 +2795,8 @@ Name: 0, dtype: object
 </div>
 <p>The way to read this <code class="docutils literal notranslate"><span class="pre">loc</span></code> access is “all the rows starting at index 1 and to index 3 (both inclusive) and all the columns starting at city and going to emissions (both inclusive)”.</p>
 <p>How does it define the “range of strings”? It uses the order of the columns in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
-</section>
-<section id="mask">
+</div>
+<div class="section" id="mask">
 <h3>Mask<a class="headerlink" href="#mask" title="Permalink to this headline">¶</a></h3>
 <p>You can also use a <code class="docutils literal notranslate"><span class="pre">bool</span></code> Series as an indexer to grab all the rows or columns that are marked <code class="docutils literal notranslate"><span class="pre">True</span></code>. This is similar to masking we saw before, but can now put the mask as a possible indexer.</p>
 <div class="cell docutils container">
@@ -2845,8 +2859,8 @@ Name: 0, dtype: object
 </div></div></div>
 </div>
 <p>Notice in the last cell, I left out the column indexer and it gave me all the column (that is the default for the column indexer).</p>
-</section>
-<section id="for-everything">
+</div>
+<div class="section" id="for-everything">
 <h3><code class="docutils literal notranslate"><span class="pre">:</span></code> for everything<a class="headerlink" href="#for-everything" title="Permalink to this headline">¶</a></h3>
 <p>Instead of relying on defaults, you can explicitly ask for “all of the columns” using the special range <code class="docutils literal notranslate"><span class="pre">:</span></code>. This is a common syntax for many numerical processing libraries so <code class="docutils literal notranslate"><span class="pre">pandas</span></code> adopts it too. It looks like the following</p>
 <div class="cell docutils container">
@@ -2925,8 +2939,8 @@ Name: city, dtype: object
 </div>
 </div>
 <p>A tip to help you read these in your head is to read <code class="docutils literal notranslate"><span class="pre">:</span></code> by itself as “all”.</p>
-</section>
-<section id="recap-indexers">
+</div>
+<div class="section" id="recap-indexers">
 <h3>Recap Indexers<a class="headerlink" href="#recap-indexers" title="Permalink to this headline">¶</a></h3>
 <p>So we saw the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> property here is kind of like a universal way of asking your data. You can specify a row indexer and a column indexer to select your data. We saw the following things used as indexers:</p>
 <ul class="simple">
@@ -2935,8 +2949,8 @@ Name: city, dtype: object
 <li><p>A mask</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:</span></code> to select all values</p></li>
 </ul>
-</section>
-<section id="return-values">
+</div>
+<div class="section" id="return-values">
 <h3>Return Values<a class="headerlink" href="#return-values" title="Permalink to this headline">¶</a></h3>
 <p>One thing that is also complex about <code class="docutils literal notranslate"><span class="pre">.loc</span></code> is the type of the value returns depends on the types of the indexers. Recall that a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a 2-dimensional strucutre (rows and columns) while a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a single <code class="docutils literal notranslate"><span class="pre">row</span></code> or single <code class="docutils literal notranslate"><span class="pre">column</span></code>.</p>
 <p>To tell what the return type of a <code class="docutils literal notranslate"><span class="pre">.loc</span></code> call is, you need to look for the “single value” type of indexer.</p>
@@ -2945,10 +2959,29 @@ Name: city, dtype: object
 <li><p>If only one of the row and colum indexers is a single value (meaning the other is multiple values), returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p></li>
 <li><p>If neither of the row and column indexers are single values (meaning both are multiple values), returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-3-pandas/lesson-7-introduction-to-pandas/practicereading-pandas-tutorial"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2986,7 +3019,9 @@ Name: city, dtype: object
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

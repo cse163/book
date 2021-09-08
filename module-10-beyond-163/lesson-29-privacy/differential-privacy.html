@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Differential Privacy &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -80,13 +79,21 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Jittering (Laplace Mechanism)" href="jittering-laplace-mechanism.html" />
     <link rel="prev" title="Privacy in Practice: The Census" href="privacy-in-practice-the-census.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -110,10 +117,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1057,13 +1071,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1074,6 +1081,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1081,10 +1095,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1191,17 +1205,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1234,17 +1248,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1879,7 +1893,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1914,7 +1928,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-10-beyond-163/lesson-29-privacy/differential-privacy.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-10-beyond-163/lesson-29-privacy/differential-privacy.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1988,14 +2002,14 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="differential-privacy">
+  <div class="section" id="differential-privacy">
 <h1>Differential Privacy<a class="headerlink" href="#differential-privacy" title="Permalink to this headline">¶</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/e3d9e4b466904c319bb0b0aea05eb821?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 <hr class="docutils" />
 <p>In the last slide, we saw a video about the 2020 US Census and privacy guarantees they make using this tool called <strong>differential privacy</strong> . Let’s dive in a little into what this term means and one specific technique to achieve it.</p>
-<section id="what-is-privacy">
+<div class="section" id="what-is-privacy">
 <h2>What is Privacy<a class="headerlink" href="#what-is-privacy" title="Permalink to this headline">¶</a></h2>
 <p>Before arriving at an understanding of differential privacy, we should first outline what privacy means in the first place. What does it mean for a system to ensure the privacy of an individual? A slightly ambitious definition might say that a data analysis protects the privacy of the individuals whose data it uses with the following definition: <strong>There should be no risks at all for the people whose data is involved in the analysis.</strong></p>
 <p>In other words, this lofty goal says you can never come under harm (however we choose to define harm) by having your data present in the analysis. If we meet that definition, then we would say our analysis protects the privacy of the individuals in the analysis.</p>
@@ -2008,8 +2022,8 @@ In this scenario, in which Roger comes to harm as the direct result of a data an
 So just from this example, it seems very difficult to actually ensure the protection of privacy. Using our idea of privacy above, the researchers could never run this study and say it respects privacy since it's learning a true, but negative correlation about the world. However, this might make us think our original definition of privacy might be a little too strict. In this scenario, it wasn't the case that Roger's participation in the study changed the outcome. He was just one data point out of many and the underlying trend discovered was something true about the world, not something dependent on Roger specifically.
 </div></blockquote>
 <p>This concept of Roger’s individual participation not actually mattering in big-picture outcome is actually the key inspiration for how we can come up with a definition of privacy that is feasible to satisfy. This definition of privacy is called <strong>differential privacy.</strong></p>
-</section>
-<section id="id1">
+</div>
+<div class="section" id="id1">
 <h2>Differential Privacy<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>At a very high level, differential privacy says the results of a study shouldn’t rely too much on the participation of a single individual. To conceptualize what this means, we think about two “parallel universes”, one where Roger participates in the study and one where he does not. If the results of the study are similar with and without Roger’s participation, we would say that Roger’s privacy is not violated.</p>
 <p>To understand this process pictorially, see the image below. The A in the labels can correspond to Roger in our example. So we consider the world with Roger’s data and the world without and we want to make sure that in order to respect his privacy, the results of these two analyses should be similar.</p>
@@ -2029,17 +2043,36 @@ So just from this example, it seems very difficult to actually ensure the protec
 </div>
 <p>Note, this definition only applies to changing the database by one person. The analysis is differentially private if it applies to every person in the dataset (no matter how typical or atypical their data is), but the definition is only about removing one person at a time to make sure there aren’t differences in the result. There are extended notions of differential privacy that apply to groups of peoples, but the formulations are slightly more complex.</p>
 <p>In the next two slides, we will see two concrete ways that you can achieve this notion of differential privacy.</p>
-</section>
-<section id="limits-of-differential-privacy">
+</div>
+<div class="section" id="limits-of-differential-privacy">
 <h2>Limits of Differential Privacy<a class="headerlink" href="#limits-of-differential-privacy" title="Permalink to this headline">¶</a></h2>
 <p>While differential privacy is quite strong, it is not able to guarantee the “no harm” goal that we originally tried to set up. That goal of “no harm” is too strict to feasibly meet (see our thought experiment with studying smoking and lung cancer). What differential privacy does guarantee in this scenario is that Roger’s participation or lack thereof do not impact the ultimate results of the study. It turns out this is equivalent to the condition that you can’t tell if Roger’s data was used in the result of the study. So differential privacy can protect anyone from knowing if Rodger participated in the study, but it can’t prevent the learning of some general truth about the world (smoking is linked to cancer).</p>
 <p>We also pointed out that differential privacy is with respect to the potential removal of a single person. It says nothing about the privacy of groups of people. There are many differentially private systems used in industry to this day, from Google to Apple to Strava (fitness tracking). Many systems they use can guarantee differential privacy which means you can’t know if some individual was present in the data or not. However, this can still lead to some complications when considering groups.</p>
 <p>So take Strava, a fitness tracking app, for example. One type of analysis they do is looking at heat maps of the world to find popular running locations. The system they use to analyze data is differentially private, so it’s not possible to get information about a single person’s route. It turns out that analyses like this work well in large US cities where many people have Strava devices, but things get more complicated if you look at data coming from poorer or war-torn regions like Syria or Afghanistan (many people in these areas don’t have Fitbits or use Strava).</p>
 <p>One exception to that though, is that US military personnel do operate in those regions and are more likely to use such a device (in fact, it’s actually encouraged by the US military). So looking at the Strava data, you can see (in aggregate) running paths like in Afghanistan’s Helmand Province actually correspond to military bases, not all of which are supposed to be known publicly!</p>
 <p>This is not a fault of differential privacy! Differential privacy (as we have defined it) is all about protecting the information of an individual in an analysis. The system is working as intended since you wouldn’t be able to look at their analysis and find information about a particular soldier in the data. But differential privacy makes no claims about how people behave in groups and doesn’t have a notion of group privacy built-in. There are extensions to differential privacy to allow for protecting groups of people, but the simple approaches people use so far work for very small groups of people, not entire platoons of soldiers.</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-10-beyond-163/lesson-29-privacy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2077,7 +2110,9 @@ So just from this example, it seems very difficult to actually ensure the protec
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

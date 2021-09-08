@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice: Student class &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,13 +77,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lesson 14: More Classes and Modules" href="../lesson-14-more-classes-and-modules/index.html" />
     <link rel="prev" title="Practice: Point class" href="practice-point-class.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -108,10 +115,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1055,13 +1069,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1072,6 +1079,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1079,10 +1093,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1189,17 +1203,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1232,17 +1246,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1877,7 +1891,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1912,7 +1926,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-5-classes-and-objects/lesson-13-classes-and-objects/practice-student-class.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-5-classes-and-objects/lesson-13-classes-and-objects/practice-student-class.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1988,11 +2002,11 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="i-class-fas-fa-laptop-fa-fw-i-practice-student-class">
+  <div class="section" id="i-class-fas-fa-laptop-fa-fw-i-practice-student-class">
 <h1><i class="fas fa-laptop fa-fw"></i> Practice: Student class<a class="headerlink" href="#i-class-fas-fa-laptop-fa-fw-i-practice-student-class" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference download internal" download="" href="../../_downloads/786e9d678ca6cc734e13930ec4aed9b2/practice-student-class.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">starter</span> <span class="pre">code</span></code></a></p>
 <p>This problem has 2 parts. The first involves writing a class named <code class="docutils literal notranslate"><span class="pre">Student</span></code> and the second involves writing a client program that uses that class.</p>
-<section id="part-0-student-class">
+<div class="section" id="part-0-student-class">
 <h2>Part 0: Student Class<a class="headerlink" href="#part-0-student-class" title="Permalink to this headline">¶</a></h2>
 <p>Define a class <code class="docutils literal notranslate"><span class="pre">Student</span></code> that represents a student at UW in the file <code class="docutils literal notranslate"><span class="pre">student.py</span></code> .</p>
 <p>In general you will have to determine which fields your class should have, but for the purpose of testing this practice problem, we will tell you the names and the values they should store.</p>
@@ -2009,7 +2023,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>A method called <code class="docutils literal notranslate"><span class="pre">get_credits_for</span></code> that takes a class name and returns the number of credits this student is taking for that class. If the student is not taking the given class, this method should return <code class="docutils literal notranslate"><span class="pre">None</span></code> .</p></li>
 <li><p>A method named <code class="docutils literal notranslate"><span class="pre">get_classes</span></code> that returns a list of the classes the student is taking.</p></li>
 </ul>
-<section id="student-initializer">
+<div class="section" id="student-initializer">
 <h3>Student Initializer<a class="headerlink" href="#student-initializer" title="Permalink to this headline">¶</a></h3>
 <p>The initializer for the student should take the parameters described above which includes a file name. Suppose for example that the file <code class="docutils literal notranslate"><span class="pre">nicole.txt</span></code> stored the contents shown below. You can extract the student’s name as the name of the file without the file type at the end. Her file says that Nicole is taking CSE 163 for 4 credits, PHIL 100 for 4 credits, and CSE 390HA for 1 credit.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CSE163 4
@@ -2022,9 +2036,9 @@ CSE390HA 1
 </pre></div>
 </div>
 <p>To implement this, you will need to recall back to how to read a file in Python so that you can build up this <code class="docutils literal notranslate"><span class="pre">dict</span></code> . Your algorithm for this should split each line and use casting to turn the second value into an <code class="docutils literal notranslate"><span class="pre">int</span></code> . You may assume the file will be in this expected format and does not have multiple lines for the same class, but you should not assume anything about the number of lines in the file (it may be empty). If the file is empty, then the <code class="docutils literal notranslate"><span class="pre">classes</span></code> will be an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code> .</p>
-</section>
-</section>
-<section id="part-1-client">
+</div>
+</div>
+<div class="section" id="part-1-client">
 <h2>Part 1: Client<a class="headerlink" href="#part-1-client" title="Permalink to this headline">¶</a></h2>
 <p>In the file <code class="docutils literal notranslate"><span class="pre">main.py</span></code> , write a runnable program to create some <code class="docutils literal notranslate"><span class="pre">Student</span></code> objects and print some of their state. Your program should use the main method pattern and all of the steps below can be in the main method.</p>
 <ul class="simple">
@@ -2037,9 +2051,28 @@ arlo 1231231 4
 </pre></div>
 </div>
 <p>Remember, you will need to import the <code class="docutils literal notranslate"><span class="pre">Student</span></code> class from <code class="docutils literal notranslate"><span class="pre">student.py</span></code> .</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-5-classes-and-objects/lesson-13-classes-and-objects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2077,7 +2110,9 @@ arlo 1231231 4
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

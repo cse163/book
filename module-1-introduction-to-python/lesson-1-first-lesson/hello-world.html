@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello World! &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,13 +77,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Learning Strategies" href="learning-strategies.html" />
     <link rel="prev" title="Software Setup" href="dev-setup/index.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -108,10 +115,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1055,13 +1069,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1072,6 +1079,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1079,10 +1093,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1189,17 +1203,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1232,17 +1246,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1877,7 +1891,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1912,7 +1926,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-1-introduction-to-python/lesson-1-first-lesson/hello-world.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-1-introduction-to-python/lesson-1-first-lesson/hello-world.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1986,17 +2000,17 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="hello-world">
+  <div class="section" id="hello-world">
 <h1>Hello World!<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
 <p>In this lesson, we won’t learn much Python programming. We’ll focus on a deeper introduction to Python starting in Lesson 2. In this lesson, we just want to teach enough such that you can get used to how to run a Python program to follow along with the Python readings.</p>
-<section id="why-python">
+<div class="section" id="why-python">
 <h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">¶</a></h2>
 <p>Python is one of the most popular languages in the world (<a class="reference external" href="https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-programming-scripting-and-markup-languages">StackOverflow</a>), and is one of the most frequently used programming languages by data scientists. In fact, many speculate that Python’s explosive growth in popularity in recent years stems from increased interest in the field of data science.</p>
 <p>Why do many data scientists use Python? There are two key reasons:</p>
 <p><strong>Simple Syntax</strong>: Python is designed to be very human-readable. Sometimes, writing a Python program feels a lot like writing an English description of how to solve problem. Other languages (e.g., Java), contain a lot of syntactical constructs (i.e., curly brackets) that often make less natural to read. This is not to say that Python is “easier to learn”! Learning programming can be complex, and students of programming generally struggle with concepts of computing (e.g, “what is the idea of a loop”) more so than the syntax of computing (e.g., “how to write a loop in Java”). But many data scientists (who might come from non-programming backgrounds) often cite Python’s easy-to-approach syntax as a draw to the language for them. See our Hello World program below to get a sense for this.</p>
 <p><strong>Libraries for Data Science</strong>: Python has tools built in it to make it relatively simple to download and use code written by others. Many developers have spent countless hours developing useful pieces of code others can use for data analysis. While the software setup on the last slide might have ran into some hiccups based on how your computer is set up, it is still overall pretty simple in the grand scheme of things: we’ve taught large Java programming classes and would never dream of trying to set up downloading libraries other programmers have wrote for Java. So the ecosystem of libraries built for data science applications in Python further makes Python an attractive language for data scientists. If they can rely on these libraries to do much of the tedious work, they can focus on their analysis. We will learn many of the most popular libraries for data science in this course!</p>
-</section>
-<section id="id1">
+</div>
+<div class="section" id="id1">
 <h2>Hello World<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Conventionally in any first programming course, you learn how to make a computer print out the the text “Hello world!” So let’s do that in Python!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
@@ -2005,8 +2019,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>That’s it! If you just type this in a Python program and run it, it will say “Hello world!” to you!</p>
 <p>For comparison, here is how you write “Hello world” in some other popular programming languages that have some more complex syntax. Skimming these, you might begin to see what we mean by Python generally being considered to be more human-readable since it doesn’t require a lot of extra syntax these other languages do. Note: we</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="45ad6035-f935-411e-b05a-fb90206bbb74" name="f75ef10e-82b3-4550-97e8-bfaade296be9" type="radio">
-</input><label class="tabbed-label" for="45ad6035-f935-411e-b05a-fb90206bbb74">
+<input checked="checked" id="685cac98-abc8-41e7-ab31-d93d02a86746" name="26824047-75f4-4647-be7b-0b486440891b" type="radio">
+</input><label class="tabbed-label" for="685cac98-abc8-41e7-ab31-d93d02a86746">
 Java</label><div class="tabbed-content docutils">
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -2016,8 +2030,8 @@ Java</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="010a79bd-84e4-4528-90b6-daef024ee3ea" name="f75ef10e-82b3-4550-97e8-bfaade296be9" type="radio">
-</input><label class="tabbed-label" for="010a79bd-84e4-4528-90b6-daef024ee3ea">
+<input id="f6aad7cb-4025-4f08-98a1-23f83287f3dc" name="26824047-75f4-4647-be7b-0b486440891b" type="radio">
+</input><label class="tabbed-label" for="f6aad7cb-4025-4f08-98a1-23f83287f3dc">
 C</label><div class="tabbed-content docutils">
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
@@ -2028,8 +2042,8 @@ C</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="38419ea8-009a-4a12-8155-b5227b0f9334" name="f75ef10e-82b3-4550-97e8-bfaade296be9" type="radio">
-</input><label class="tabbed-label" for="38419ea8-009a-4a12-8155-b5227b0f9334">
+<input id="316b42aa-c541-46b3-8880-9d1955dad09a" name="26824047-75f4-4647-be7b-0b486440891b" type="radio">
+</input><label class="tabbed-label" for="316b42aa-c541-46b3-8880-9d1955dad09a">
 C++</label><div class="tabbed-content docutils">
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
@@ -2041,8 +2055,8 @@ C++</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="7a9d7b59-6275-41d0-afcc-3daf08365e6a" name="f75ef10e-82b3-4550-97e8-bfaade296be9" type="radio">
-</input><label class="tabbed-label" for="7a9d7b59-6275-41d0-afcc-3daf08365e6a">
+<input id="9511261c-1e35-4e5b-acba-59d19abd02ff" name="26824047-75f4-4647-be7b-0b486440891b" type="radio">
+</input><label class="tabbed-label" for="9511261c-1e35-4e5b-acba-59d19abd02ff">
 Go</label><div class="tabbed-content docutils">
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
 
@@ -2056,8 +2070,8 @@ Go</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-</section>
-<section id="explore-on-your-own">
+</div>
+<div class="section" id="explore-on-your-own">
 <h2>Explore on Your Own!<a class="headerlink" href="#explore-on-your-own" title="Permalink to this headline">¶</a></h2>
 <p>Consider our “Hello world!” program from above.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
@@ -2065,9 +2079,28 @@ Go</label><div class="tabbed-content docutils">
 </div>
 <p>Notice that if you hover your mouse over the code above, there is a clipboard icon to copy the code. This is a great way for you to easily copy our code and try it on your own! Now that you’ve completed the <a class="reference internal" href="dev-setup/index.html"><span class="doc std std-doc">Software Setup</span></a>, you can make a new Python file (extension: <code class="docutils literal notranslate"><span class="pre">.py</span></code>) in VS Code or whatever editor you use and paste a code snippet there to try it out! Try changing the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement to say something else!</p>
 <p>While it might not seem very exciting with our single <code class="docutils literal notranslate"><span class="pre">print</span></code> statement, you will find getting into the practice of running the code you read about to be extremely helpful for learning. You can also gain a huge amount of understanding by trying out your own changes to a new code syntax you’ve learned to explore how it might work in other situations. We recommend that you always have VS Code up with these readings so you can try out the Python snippets as we show them.</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-1-introduction-to-python/lesson-1-first-lesson"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2105,7 +2138,9 @@ Go</label><div class="tabbed-content docutils">
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

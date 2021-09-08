@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice: Indexes / Trees &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,13 +77,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Module 8: Images" href="../../module-8-images/index.html" />
     <link rel="prev" title="Pause and Think" href="pause-and-think.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -108,10 +115,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1055,13 +1069,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1072,6 +1079,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1079,10 +1093,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1189,17 +1203,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1232,17 +1246,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1877,7 +1891,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1912,7 +1926,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-7-geospatial-data/lesson-21-indexes-trees/practice-indexes-trees.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-7-geospatial-data/lesson-21-indexes-trees/practice-indexes-trees.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1996,23 +2010,23 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="i-class-far-fa-edit-fa-fw-i-practice-indexes-trees">
+  <div class="section" id="i-class-far-fa-edit-fa-fw-i-practice-indexes-trees">
 <h1><i class="far fa-edit fa-fw"></i> Practice: Indexes / Trees<a class="headerlink" href="#i-class-far-fa-edit-fa-fw-i-practice-indexes-trees" title="Permalink to this headline">¶</a></h1>
 <p>The following questions will ask you about indexes and tree indexes.</p>
-<section id="question-0">
+<div class="section" id="question-0">
 <h2>Question 0<a class="headerlink" href="#question-0" title="Permalink to this headline">¶</a></h2>
 <p>Consider making an application that uses a large amount of data that has a <strong>write-heavy workload</strong> (this means it is more common for users to upload information to add data to the system rather than querying for information). True or false, you would expect that building a search tree index for your data will improve the performance of your system.</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
-</section>
-<section id="question-1">
+</div>
+<div class="section" id="question-1">
 <h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
 <p>In your own words, describe one benefit and one downside of using a tree index on top of a dataset. Be specific and give an example.</p>
 <p><em>This question will be graded by hand for effort and accuracy.</em></p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
-</section>
-<section id="question-2">
+</div>
+<div class="section" id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
 <p>Order the following operation run-times from the fastest (top) to slowest (bottom).</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
@@ -2025,25 +2039,44 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Linear Search: O(n)</p>
 <p><em><i class="fas fa-sort fa-fw"></i> Option 3</em></p>
 <p>Tree Lookup: O(log(n))</p>
-</section>
-<section id="question-3">
+</div>
+<div class="section" id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
 <p>Consider the following sorted list of values shown in the image below. Suppose we have built a binary search tree index on this data and want to figure out how many steps to see if the value <strong>21</strong> is present in the dataset. We will count a single step as counting a node in the tree index for <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> or comparing the final value in the list for if it equals the query value; this means you will count the number of nodes in the tree you visit plus one extra step for checking the value you find in the list.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/bpcQtiocxqyAPO7jxlCAyiBd"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/bpcQtiocxqyAPO7jxlCAyiBd" style="width: 691px;" /></a>
 <p>Report your answer as a number of steps (e.g., <code class="docutils literal notranslate"><span class="pre">7</span></code> )</p>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
-</section>
-<section id="question-4">
+</div>
+<div class="section" id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
 <p>Consider the KD-tree for a spatial index we saw in the lesson reading shown again in the picture below. Consider if we were to search for the query point that is the star shown in the image (you can click on it to see a larger version).</p>
 <p>What is the sequence of checks we will make in order to determine that the query point is not in the dataset? Like the last problem, this is the nodes you will take down the tree including comparing the final datapoints you land at. For this problem, we want you to write down the <strong>path</strong>, not the just the number of checks. For example, if we were searching for the point with the same coordinates as <code class="docutils literal notranslate"><span class="pre">g</span></code>, the path would be <code class="docutils literal notranslate"><span class="pre">1,3,6,g</span></code>. You should write your answer in this format with commas in between the node labels (no spaces).</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/NguPgC5OZdpeR8u3fElqRMyT"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/NguPgC5OZdpeR8u3fElqRMyT" style="width: 691px;" /></a>
 <p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Write your answer down in your own space.</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-7-geospatial-data/lesson-21-indexes-trees"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2081,7 +2114,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

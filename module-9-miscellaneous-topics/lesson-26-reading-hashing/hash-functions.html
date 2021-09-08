@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hash Functions &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -80,13 +79,21 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Hashing in Practice" href="hashing-in-practice.html" />
     <link rel="prev" title="Collisions" href="collisions.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -110,10 +117,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1057,13 +1071,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1074,6 +1081,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1081,10 +1095,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1191,17 +1205,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1234,17 +1248,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1879,7 +1893,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1914,7 +1928,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-9-miscellaneous-topics/lesson-26-reading-hashing/hash-functions.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-9-miscellaneous-topics/lesson-26-reading-hashing/hash-functions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -2005,7 +2019,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="hash-functions">
+  <div class="section" id="hash-functions">
 <h1>Hash Functions<a class="headerlink" href="#hash-functions" title="Permalink to this headline">¶</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/a55d32cc2e0947249fc4455c6ec6b375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
@@ -2027,10 +2041,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>First, you want your hash function to spread out the values as much as possible. In the extreme case, consider the hash function <code class="docutils literal notranslate"><span class="pre">h(v)</span> <span class="pre">=</span> <span class="pre">0</span></code> . This is a valid hash function according to our properties above but is a terrible hash function to use in practice. Why? It sends all the values to the same index of the hash table which defeats the purpose of using hashing in the first place!</p></li>
 <li><p>Second, you want to make it difficult for someone to predict what the hash function will output for a given input. This is to prevent malicious users from trying to create collisions by figuring out values that end up with the same hash. If we make the hash function complex enough, it protects us from someone trying to misuse the hash table. You don’t want the hash function to actually be random (since that would make “consistency” hard), but you want it to look random so it’s harder for someone to predict.</p></li>
 </ul>
-<section id="str-example">
+<div class="section" id="str-example">
 <h2><code class="docutils literal notranslate"><span class="pre">str</span></code> Example<a class="headerlink" href="#str-example" title="Permalink to this headline">¶</a></h2>
 <p>Let’s consider some various implementation of <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> for the <code class="docutils literal notranslate"><span class="pre">str</span></code> class to see how to come up with a hash function that is both works and is good. Remember that a hash function needs to convert an object of some type to an <code class="docutils literal notranslate"><span class="pre">int</span></code> .</p>
-<section id="attempt-1-length-of-str">
+<div class="section" id="attempt-1-length-of-str">
 <h3>Attempt 1: Length of <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#attempt-1-length-of-str" title="Permalink to this headline">¶</a></h3>
 <p>The simplest hash function you could probably think of to take a <code class="docutils literal notranslate"><span class="pre">str</span></code> and output its <code class="docutils literal notranslate"><span class="pre">len</span></code> . If you used this hash function with this implementation, you would see the following behavior.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
@@ -2040,8 +2054,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>This function definitely works since it follows our first two properties. Unfortunately, it doesn’t quite follow the properties of a good hash function. First, not all string lengths are equally likely, so it won’t utilize the whole range of possible integers (most words have fewer than 20 characters). Secondly, it’s very easy for someone to come up with strings that collide. Just pick two strings of the same length!</p>
 <p>Valient first effort, but let’s try something else.</p>
-</section>
-<section id="attempt-2-ascii-values">
+</div>
+<div class="section" id="attempt-2-ascii-values">
 <h3>Attempt 2: ASCII values<a class="headerlink" href="#attempt-2-ascii-values" title="Permalink to this headline">¶</a></h3>
 <p>As we’ve discussed before, a computer is only able to understand binary (1s and 0s). This means, at the end of the day, almost any piece of data on your computer needs to be represented as a number so it can easily be translated to binary; text data is no exception.</p>
 <p>Your computer uses an encoding to represent each character in some text as a number. A common encoding is called ASCII (the American Standard Code for Information Interchange). In ASCII, the letter <code class="docutils literal notranslate"><span class="pre">'a'</span></code> is represented as the number 97, <code class="docutils literal notranslate"><span class="pre">'b'</span></code> is 98, <code class="docutils literal notranslate"><span class="pre">'c'</span></code> is 99, etc. Every character in the English language (including symbols like <code class="docutils literal notranslate"><span class="pre">.</span></code> , <code class="docutils literal notranslate"><span class="pre">:</span></code> , <code class="docutils literal notranslate"><span class="pre">!</span></code> ) get a number associated for them.</p>
@@ -2053,17 +2067,36 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>This is approach is definitely better than the first attempt! It will use a much wider range of outputs since it includes more information about the string. Unfortunately, it turns out to not be very difficult to cause collisions. Can you figure out two strings that will collide with each other?</p>
 <p>You might notice that <em>anagrams</em> , or words that are made up of the same letters in different orders, will end up colliding using this approach. For example , <code class="docutils literal notranslate"><span class="pre">'dog'</span></code> and <code class="docutils literal notranslate"><span class="pre">'god'</span></code> have the same sum of ASCII values.</p>
-</section>
-<section id="attempt-3-better-sum-of-ascii-values">
+</div>
+<div class="section" id="attempt-3-better-sum-of-ascii-values">
 <h3>Attempt 3: Better Sum of ASCII Values<a class="headerlink" href="#attempt-3-better-sum-of-ascii-values" title="Permalink to this headline">¶</a></h3>
 <p>Instead of just doing a straight-sum of the ASCII values, most programming languages use a slightly more advanced approach to using their hash functions. They generally use a formula like the one shown below. The specifics details of the formula aren’t important. What is important is to understand that it tries to improve upon Attempt 2 by including the position of the character in the sum. It does this by multiplying each character’s value by a number raised to a power based on the character’s index.</p>
 <div class="math notranslate nohighlight">
 \[hash(s) = \sum_{i=0}^{n-1}s[i]\cdot 31^{n-i-1}\]</div>
 <p>The more important idea here is that trying to include every piece of information possible about your object is best since it causes a better spread of values.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-9-miscellaneous-topics/lesson-26-reading-hashing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2101,7 +2134,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

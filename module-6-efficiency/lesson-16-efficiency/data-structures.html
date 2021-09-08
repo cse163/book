@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Structures &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -80,13 +79,21 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Pause and Think" href="pause-and-think.html" />
     <link rel="prev" title="Big-O" href="big-o.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -110,10 +117,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1057,13 +1071,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1074,6 +1081,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1081,10 +1095,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1191,17 +1205,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1234,17 +1248,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1879,7 +1893,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1914,7 +1928,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-16-efficiency/data-structures.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-6-efficiency/lesson-16-efficiency/data-structures.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1988,14 +2002,14 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="data-structures">
+  <div class="section" id="data-structures">
 <h1>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/005a2fbfe4f84e548189f6dfd9ce639a?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 <hr class="docutils" />
 <p>So we can see that understanding complexity is important so that you can easily analyze (after some practice) how your algorithm will scale. Another important application of this knowledge is to understand how efficient your code is when using data structures like <code class="docutils literal notranslate"><span class="pre">list</span></code> , <code class="docutils literal notranslate"><span class="pre">set</span></code> , and <code class="docutils literal notranslate"><span class="pre">dict</span></code> .</p>
-<section id="list">
+<div class="section" id="list">
 <h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
 <p>For example, consider a <code class="docutils literal notranslate"><span class="pre">list</span></code> with <span class="math notranslate nohighlight">\(n\)</span> elements in it. It is useful to know that if you <code class="docutils literal notranslate"><span class="pre">append</span></code> a value to the <code class="docutils literal notranslate"><span class="pre">list</span></code> , this will take <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time; this means it’s always a constant-time operation no matter how many elements are in it. Not all operations take the same amount of time though.</p>
 <p>For example, to run <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">l</span></code> where <code class="docutils literal notranslate"><span class="pre">l</span></code> is a <code class="docutils literal notranslate"><span class="pre">list</span></code> , how much time would that take? You might notice it depends on if <code class="docutils literal notranslate"><span class="pre">x</span></code> is in <code class="docutils literal notranslate"><span class="pre">l</span></code> and if it is, where in <code class="docutils literal notranslate"><span class="pre">l</span></code> it is found. Internally, <code class="docutils literal notranslate"><span class="pre">in</span></code> is implemented like the following code snippet.</p>
@@ -2010,12 +2024,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 <p>This means the run-time depends on where <code class="docutils literal notranslate"><span class="pre">x</span></code> is in the <code class="docutils literal notranslate"><span class="pre">list</span></code> ! It turns out that computer scientists tend to think about the worst-case, so when they describe the Big-O of an operation, we usually assume we are talking about the worst possible case (where <code class="docutils literal notranslate"><span class="pre">x</span></code> is not in the <code class="docutils literal notranslate"><span class="pre">list</span></code> or is near the end). This means we describe the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator for <code class="docutils literal notranslate"><span class="pre">list</span></code> s as a <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> operation, where the worst case it will have to search through approximately <span class="math notranslate nohighlight">\(n\)</span> things.</p>
-</section>
-<section id="set-and-dictionary">
+</div>
+<div class="section" id="set-and-dictionary">
 <h2>Set and Dictionary<a class="headerlink" href="#set-and-dictionary" title="Permalink to this headline">¶</a></h2>
 <p>One of the magic things about <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> , is that almost all of the operations (e.g., adding values, removing values, seeing if something is in the <code class="docutils literal notranslate"><span class="pre">set</span></code> / <code class="docutils literal notranslate"><span class="pre">dict</span></code> ) are actually constant time (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>)! That means no matter how much data is stored in them, they can always answer questions like “is this value a key in this <code class="docutils literal notranslate"><span class="pre">dict</span></code> ” in constant time. To do this, they use this special trick called “hashing” that we will learn about in future modules.</p>
-</section>
-<section id="an-example">
+</div>
+<div class="section" id="an-example">
 <h2>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
 <p>To understand why knowing these differences in performance, think back to the example we used when we introduced <code class="docutils literal notranslate"><span class="pre">set</span></code> s. Recall that we had a file and wanted to count the number of unique words in the file. We came up with two implementations that were nearly identical, except one used a <code class="docutils literal notranslate"><span class="pre">list</span></code> and the other used a <code class="docutils literal notranslate"><span class="pre">set</span></code> . These implementations are shown in the cell below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_unique_list</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
@@ -2038,9 +2052,28 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 <p>We mentioned it was really that <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> part of the <code class="docutils literal notranslate"><span class="pre">list</span></code> version that was slowing it down. This is precisely because <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> for <code class="docutils literal notranslate"><span class="pre">list</span></code> is an <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> operation while for <code class="docutils literal notranslate"><span class="pre">set</span></code> , it is <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>! The analysis ends up being a little bit more complex since the size of the list is changing throughout the program (as you add unique words), but with a little work you can show that the <code class="docutils literal notranslate"><span class="pre">list</span></code> version of this program  takes <span class="math notranslate nohighlight">\(O(n^2)\)</span> time where <span class="math notranslate nohighlight">\(n\)</span> is the number of words in the file while the <code class="docutils literal notranslate"><span class="pre">set</span></code> version only takes <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> time.</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-6-efficiency/lesson-16-efficiency"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2078,7 +2111,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

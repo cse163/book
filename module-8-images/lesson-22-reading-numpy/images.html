@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Images &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,13 +77,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Pause and Think" href="pause-and-think.html" />
     <link rel="prev" title="Broadcasting" href="broadcasting.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -108,10 +115,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1055,13 +1069,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1072,6 +1079,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1079,10 +1093,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1189,17 +1203,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1232,17 +1246,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1877,7 +1891,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1912,7 +1926,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-8-images/lesson-22-reading-numpy/images.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-8-images/lesson-22-reading-numpy/images.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1991,7 +2005,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="images">
+  <div class="section" id="images">
 <h1>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h1>
 <div class="admonition">
 <p class="admonition-title">Data</p>
@@ -2005,7 +2019,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <hr class="docutils" />
 <p>One of the applications of <code class="docutils literal notranslate"><span class="pre">numpy</span></code> we discussed earlier was representing image data. We will discuss analyzing images and manipulating them for the rest of the week. While we will show some code, the more important bit for today is just the conceptual understanding of how we will represent an image in Python.</p>
-<section id="grayscale-images">
+<div class="section" id="grayscale-images">
 <h2>Grayscale Images<a class="headerlink" href="#grayscale-images" title="Permalink to this headline">¶</a></h2>
 <p>To start, let’s consider black-white images, which are commonly called grayscale images. Here is a picture of a grayscale dog.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/2RQnyxXq5iUnDa6sf2jkueIx"><img alt="Grayscale dog" class="align-center" src="https://static.us.edusercontent.com/files/2RQnyxXq5iUnDa6sf2jkueIx" style="width: 347px;" /></a>
@@ -2025,8 +2039,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p class="admonition-title">Note</p>
 <p>At first glance, 255 might seem like an arbitrary number. So where does it come from? It turns out that 255 is the biggest integer that can be stored in a single byte of information. For grayscale images, we typically use one byte to store each pixel in the image. That means saving a grayscale image with ~1000 pixels would take up ~1 kilobyte (i.e. ~1000 bytes) of memory on your computer.</p>
 </div>
-</section>
-<section id="grayscale-image-code">
+</div>
+<div class="section" id="grayscale-image-code">
 <h2>Grayscale Image Code<a class="headerlink" href="#grayscale-image-code" title="Permalink to this headline">¶</a></h2>
 <p>We are going to use a library called <code class="docutils literal notranslate"><span class="pre">imageio</span></code> to help read in an image to a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. The following snippet reads in an image, prints some values about it, and then uses a slightly new <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> feature to plot an image from a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. We have to pass in a colormap <code class="docutils literal notranslate"><span class="pre">cmap</span></code> to tell <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to plot the values as grayscale since by default, it uses that yellow/purple color scheme (if you take out the parameter, you can see what it does when you run it!).</p>
 <p>The last example in the snippet modifies the array (using slice syntax). Before you open <code class="docutils literal notranslate"><span class="pre">pic2.png</span></code> , what do you think the image will look like?</p>
@@ -2053,8 +2067,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pic2.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="color-images">
+</div>
+<div class="section" id="color-images">
 <h2>Color Images<a class="headerlink" href="#color-images" title="Permalink to this headline">¶</a></h2>
 <p>Let’s brighten up the world a bit and switch to color images. A color image is commonly represented in a format called RGB. RGB stands for “Red, Blue, Green”. An RGB image is really just 3 “grayscale” images stacked on top of each other, but each sub-image corresponds to a particular color channel.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/TLxAi1Al9GVLbs0UdcDUOtgi"><img alt="Colored cat image constructed with a red, green, and blue layer" class="align-center" src="https://static.us.edusercontent.com/files/TLxAi1Al9GVLbs0UdcDUOtgi" style="width: 713px;" /></a>
@@ -2063,8 +2077,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Notice, none of our discussion about <code class="docutils literal notranslate"><span class="pre">numpy</span></code> actually limits it to 1D or 2D arrays. We can actually have arbitrarily many dimensions! A color image in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> will commonly be represented as a 3D array with shape <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width,</span> <span class="pre">3)</span></code> . The last dimension has shape 3 because there will be one dimension for each color channel at that pixel location. Visually this makes it  kind of like a cube that has “depth” 3 (in the z direction).</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/byPNZvmbUeMRLOhhm6uo8rS6"><img alt="Graphical representation of a 5 by 4 by 3 NumPy Array" class="align-center" src="https://static.us.edusercontent.com/files/byPNZvmbUeMRLOhhm6uo8rS6" style="width: 269px;" /></a>
 <p>To index into a color image, you now need to specify 3 values. For example, <code class="docutils literal notranslate"><span class="pre">img[row,</span> <span class="pre">col,</span> <span class="pre">channel]</span></code>.</p>
-</section>
-<section id="color-image-code">
+</div>
+<div class="section" id="color-image-code">
 <h2>Color Image Code<a class="headerlink" href="#color-image-code" title="Permalink to this headline">¶</a></h2>
 <p>We start with a simple example as we did with grayscale. Notice in this example, the shape printed has 3 dimensions and the third one has shape 3 (for the 3 color channels). As a note, we do not need to specify a <code class="docutils literal notranslate"><span class="pre">cmap</span></code> since <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> does the right thing for 3D <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s by default.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
@@ -2107,9 +2121,28 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pic1.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-8-images/lesson-22-reading-numpy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2147,7 +2180,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

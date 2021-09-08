@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imports &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,13 +77,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Pandas" href="pandas.html" />
     <link rel="prev" title="Lesson 7: Introduction to Pandas" href="index.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -108,10 +115,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1055,13 +1069,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1072,6 +1079,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1079,10 +1093,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1189,17 +1203,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1232,17 +1246,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1877,7 +1891,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1912,7 +1926,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-3-pandas/lesson-7-introduction-to-pandas/imports.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-3-pandas/lesson-7-introduction-to-pandas/imports.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -2024,7 +2038,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="imports">
+  <div class="section" id="imports">
 <h1>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/a47eaf00be10430c844fb210b33e91c7?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
@@ -2054,7 +2068,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 <p>Our goal is to call <code class="docutils literal notranslate"><span class="pre">fun2</span></code> inside another module, <code class="docutils literal notranslate"><span class="pre">module_b</span></code> . To do this, we need to import the module to use its functions.</p>
-<section id="option-1-import-module-a">
+<div class="section" id="option-1-import-module-a">
 <h2>Option 1) <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_a</span></code><a class="headerlink" href="#option-1-import-module-a" title="Permalink to this headline">¶</a></h2>
 <p>The simplest syntax simply uses the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement to import a module. The following snippet shows a short program that uses <code class="docutils literal notranslate"><span class="pre">fun2</span></code> defined in <code class="docutils literal notranslate"><span class="pre">module_a</span></code> .</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
@@ -2096,7 +2110,7 @@ Ending a&#39;s fun2
 </div>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">module_a</span></code> ‘s <code class="docutils literal notranslate"><span class="pre">fun2</span></code> behaves exactly the same as it was defined, even though we defined our own <code class="docutils literal notranslate"><span class="pre">fun1</span></code> and <code class="docutils literal notranslate"><span class="pre">fun2</span></code> in <code class="docutils literal notranslate"><span class="pre">module_b</span></code> (the scopes are different).</p>
 </div>
-<section id="option-1-5-import-module-a-as-m">
+<div class="section" id="option-1-5-import-module-a-as-m">
 <h3>Option 1.5) <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_a</span> <span class="pre">as</span> <span class="pre">m</span></code><a class="headerlink" href="#option-1-5-import-module-a-as-m" title="Permalink to this headline">¶</a></h3>
 <p>This syntax has the exact same semantics as the one before, but it lets you define a shorthand name for the module. In this case, we essentially renamed <code class="docutils literal notranslate"><span class="pre">module_a</span></code> to <code class="docutils literal notranslate"><span class="pre">m</span></code> in our module so in our code, we can just say <code class="docutils literal notranslate"><span class="pre">m.f2()</span></code> . Semantically, these are really the same ways to import a module, but this one has an extra step to “rename” it.</p>
 <p>Here, we show the complete <code class="docutils literal notranslate"><span class="pre">module_b</span></code> that uses the syntax. The output and behavior of the program are exactly the same.</p>
@@ -2123,9 +2137,9 @@ Ending a&#39;s fun2
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="option-2-from-module-a-import-fun2">
+</div>
+</div>
+<div class="section" id="option-2-from-module-a-import-fun2">
 <h2>Option 2) <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_a</span> <span class="pre">import</span> <span class="pre">fun2</span></code><a class="headerlink" href="#option-2-from-module-a-import-fun2" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, it is very tedious to import a whole module and prefix every function call with <code class="docutils literal notranslate"><span class="pre">module_name.function_name</span></code> . Python provides another syntax that lets you import a specific function from another module. When you say <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_a</span> <span class="pre">import</span> <span class="pre">fun2</span></code> you are importing just the function <code class="docutils literal notranslate"><span class="pre">fun2</span></code> from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> . When this syntax is used, Python just adds <code class="docutils literal notranslate"><span class="pre">fun2</span></code> to your current scope. This means you don’t need to call it with <code class="docutils literal notranslate"><span class="pre">module_a.f2()</span></code> , you can just say <code class="docutils literal notranslate"><span class="pre">f2()</span></code> .</p>
 <p>The following snippet shows how to use this syntax.</p>
@@ -2143,9 +2157,28 @@ Ending a&#39;s fun2
 </div>
 <p>This syntax is nice when you know exactly which function you want from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> and you now you will call it often.</p>
 <p>You might wonder what would happen if I defined a <code class="docutils literal notranslate"><span class="pre">fun2</span></code> in <code class="docutils literal notranslate"><span class="pre">module_b.py</span></code> (since we removed that from the previous examples). How would Python know which <code class="docutils literal notranslate"><span class="pre">fun2</span></code> to call if there was one that came from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> and one from <code class="docutils literal notranslate"><span class="pre">module_b</span></code> and both are in the same scope? It turns out, if you define two functions with the same name, it will always use the one most recently defined. This is because by defining a function, you essentially are storing it in a variable with that function name. If you redefine, it will just update which function is stored at that variable name (just like updating a plain-old variable). That means if we defined a <code class="docutils literal notranslate"><span class="pre">fun2</span></code> after importing it from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> using this syntax, we would essentially lose the value we imported.</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-3-pandas/lesson-7-introduction-to-pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2183,7 +2216,9 @@ Ending a&#39;s fun2
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

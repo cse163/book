@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 30: Wrap Up and Next Steps! &#8212; Intermediate Data Programming</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,12 +77,20 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="Practice: Privacy" href="../lesson-29-privacy/practice-privacy.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -107,10 +114,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1054,13 +1068,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1071,6 +1078,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1078,10 +1092,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1188,17 +1202,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1231,17 +1245,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1876,7 +1890,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1911,7 +1925,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-10-beyond-163/lesson-30-wrap-up/index.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/module-10-beyond-163/lesson-30-wrap-up/index.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -2053,7 +2067,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="i-class-fas-fa-book-fa-fw-i-lesson-30-wrap-up-and-next-steps">
+  <div class="section" id="i-class-fas-fa-book-fa-fw-i-lesson-30-wrap-up-and-next-steps">
 <h1><i class="fas fa-book fa-fw"></i> Lesson 30: Wrap Up and Next Steps!<a class="headerlink" href="#i-class-fas-fa-book-fa-fw-i-lesson-30-wrap-up-and-next-steps" title="Permalink to this headline">¶</a></h1>
 <p>You did it! You made it all the way through the course! 🎉</p>
 <p>We hoped you learned some valuable skills and some interesting ideas in the time you spent with us! We want to wrap up this course with this last lesson with two main objectives:</p>
@@ -2061,7 +2075,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Take a look back at the course as a whole. With the additional perspective of hindsight, we might have a better appreciation for how the course concepts relate to each other.</p></li>
 <li><p>Take a look at some potential next steps in your journey!</p></li>
 </ul>
-<section id="victory-lap">
+<div class="section" id="victory-lap">
 <h2>Victory Lap<a class="headerlink" href="#victory-lap" title="Permalink to this headline">¶</a></h2>
 <p>In the introduction to the book, we told you there were 5 main learning goals in the course. They were:</p>
 <ol class="simple">
@@ -2072,7 +2086,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><strong>Data and Society</strong> - Thinking more broadly about the impact of data science in society and the role we, as programmers, have in making software that process data that is just and fair.</p></li>
 </ol>
 <p>When you first read these, they probably were pretty abstract and didn’t have much meaning for you. Now that we look back, you should hopefully be able to appreciate what each of these learning areas means to you as a data programmer.</p>
-<section id="programming">
+<div class="section" id="programming">
 <h3>1) Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h3>
 <p>We learned some pretty complex programming skills in this course! From writing code that reads from a file all the way to building a search engine from scratch! The experience of solving these challenging programming problems will help you solve novel challenges you face in the future.</p>
 <p><strong>Topics:</strong></p>
@@ -2083,8 +2097,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Modules and Packages in Python</p></li>
 <li><p>Anonymous functions (lambdas) and some ideas of functional programming</p></li>
 </ul>
-</section>
-<section id="data">
+</div>
+<div class="section" id="data">
 <h3>2) Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
 <p>Writing programs that interact and analyze data is one of the most important programming skills you can learn. You experienced working with many types of data that you will commonly run into in the future. While we can’t possibly cover every single data type or format you will face, seeing how to process these types can provide solid reference points to tackle new data types as they arrive.</p>
 <ul class="simple">
@@ -2094,8 +2108,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Images</p></li>
 <li><p>If schedule allows: Time series and web data</p></li>
 </ul>
-</section>
-<section id="data-science-tools">
+</div>
+<div class="section" id="data-science-tools">
 <h3>3) Data Science Tools<a class="headerlink" href="#data-science-tools" title="Permalink to this headline">¶</a></h3>
 <p>You learned how to use many pre-written tools to help you process and analyze data. These tools are just the tip of the iceberg of a data science ecosystem. Using these as a basis, you can now go learn any tool that might be more specialized for your work (we have a few recommendations below!).</p>
 <ul class="simple">
@@ -2113,8 +2127,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 </li>
 </ul>
-</section>
-<section id="computer-science">
+</div>
+<div class="section" id="computer-science">
 <h3>4) Computer Science<a class="headerlink" href="#computer-science" title="Permalink to this headline">¶</a></h3>
 <p>As this is a computer science course, we also wanted to introduce fundamental concepts in computer science to help you understand how to write programs that can process large amounts of data <em>efficiently</em>. Having an understanding of the theory and techniques to efficiently process data is an incredibly valuable skill when it comes to the world of ever-growing datasets.</p>
 <ul class="simple">
@@ -2126,8 +2140,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Spatial Indices</p></li>
 <li><p>Why Python is slow (and why that’s okay)</p></li>
 </ul>
-</section>
-<section id="data-and-society">
+</div>
+<div class="section" id="data-and-society">
 <h3>5) Data and Society<a class="headerlink" href="#data-and-society" title="Permalink to this headline">¶</a></h3>
 <p>It’s often the case that programming courses are taught “in a vacuum” where the choices made by a programmer are often not critically reflected on. However, the choices of programmers can have huge ramifications in the society their programs operate in, and we if we aren’t careful about our choices, can cause great harm to people. So throughout many of our data science topics, we also discussed ramifications and prompted for questions to reflect on our choices.</p>
 <p>Our discussion in this course is nowhere near comprehensive, and it likely never will be. The situations you’ll have in your future are too varied for a single course to cover everything you could possibly run into. But hopefully we provided a starting point for you to reflect on your work and realize the importance of building tools that help everyone.</p>
@@ -2138,14 +2152,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Algorithmic fairness</p></li>
 <li><p>Privacy</p></li>
 </ul>
-</section>
-</section>
-<section id="next-steps">
+</div>
+</div>
+<div class="section" id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>So now that you are wrapping up with the course, we can look towards what might come next. Before we do list out some further resources, we want to point out that any list we come up with can never completely cover all your options. <strong>You should follow any path you are interested in even if it isn’t listed here!</strong> We can only list a small-handful of resources. Something being omitted from this list, by no means should indicate that we don’t think that path is valid or important.</p>
-<section id="online-learning-resources">
+<div class="section" id="online-learning-resources">
 <h3>Online Learning Resources<a class="headerlink" href="#online-learning-resources" title="Permalink to this headline">¶</a></h3>
-<section id="uw-courses">
+<div class="section" id="uw-courses">
 <h4>UW Courses<a class="headerlink" href="#uw-courses" title="Permalink to this headline">¶</a></h4>
 <p>The University of Washington has <a class="reference external" href="https://escience.washington.edu/data-science-courses-at-the-university-of-washington/">many courses</a> related to data science and its applications.</p>
 <p>The courses Hunter knows best are in the <a class="reference external" href="http://cs.uw.edu/">Paul G. Allen School of Computer Science &amp; Engineering</a> so, he highlights a few courses that are good follow-ons to CSE 163. Many CSE courses have open-access lecture slides and/or projects which you can follow along with.</p>
@@ -2155,8 +2169,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><a class="reference external" href="https://courses.cs.washington.edu/courses/cse416/">CSE/STAT 416: Introduction to Machine Learning</a></p></li>
 <li><p><a class="reference external" href="https://www.cs.washington.edu/education/courses/">Other CSE Courses</a></p></li>
 </ul>
-</section>
-<section id="other-resources">
+</div>
+<div class="section" id="other-resources">
 <h4>Other Resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>UC Berkeley’s <a class="reference external" href="http://data8.org/">Data 8</a> and <a class="reference external" href="https://ds100.org/">Data 100</a> have some overlap with CSE 163, but go much further in some topics.</p></li>
@@ -2165,12 +2179,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><a class="reference external" href="https://realpython.com/">Real Python</a> has many written tutorials on many topics related to Python and data science.</p></li>
 <li><p><a class="reference external" href="https://towardsdatascience.com/">Towards Data Science</a> is a popular blog on Medium that has many interesting blog posts. Note that this blog is contributed to by community members, so the quality of the articles vary.</p></li>
 </ul>
-</section>
-</section>
-<section id="projects">
+</div>
+</div>
+<div class="section" id="projects">
 <h3>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h3>
 <p>One great way to deepen your learning is to work on personal or group projects. Like we mentioned earlier, we can’t possibly list out every idea for a project here, but we try to provide some concrete suggestions.</p>
-<section id="learn-a-new-library">
+<div class="section" id="learn-a-new-library">
 <h4>Learn a New Library<a class="headerlink" href="#learn-a-new-library" title="Permalink to this headline">¶</a></h4>
 <p>We learned many Python libraries for processing data in this course, but this is just the tip of the iceberg! There are <a class="reference external" href="https://pypi.org/">far too many libraries</a> others have written that you can use in your own projects! We highlight some other popular libraries that we did not cover this quarter, but again, there are many more other there that you might find interesting or useful!</p>
 <ul class="simple">
@@ -2179,8 +2193,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Machine Learning: <a class="reference external" href="https://pytorch.org/">PyTorch</a>, <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>, or <a class="reference external" href="https://keras.io/">Keras</a></p></li>
 <li><p>Images: <a class="reference external" href="https://opencv.org/">OpenCV</a></p></li>
 </ul>
-</section>
-<section id="learn-a-new-language">
+</div>
+<div class="section" id="learn-a-new-language">
 <h4>Learn a New Language<a class="headerlink" href="#learn-a-new-language" title="Permalink to this headline">¶</a></h4>
 <p>Python is a very prominent language for data science, but it’s not the only useful language to know! Here are some other programming languages commonly used by data scientists:</p>
 <ul class="simple">
@@ -2189,20 +2203,39 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><a class="reference external" href="https://scala-lang.org/">Scala</a> is compatible with Java and its libraries, has much nicer syntax than Java.</p></li>
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript">Javascript</a> is the language of the world-wide web. We saw a bit about how the web works with HTML, and this will make it go much further. Also very common to use Javascript in data visualizations you share with people on the web!</p></li>
 </ul>
-</section>
-<section id="contribute-to-open-source-projects">
+</div>
+<div class="section" id="contribute-to-open-source-projects">
 <h4>Contribute to Open-Source Projects<a class="headerlink" href="#contribute-to-open-source-projects" title="Permalink to this headline">¶</a></h4>
 <p>Almost all of the libraries we learned this quarter (or linked above) are <a class="reference external" href="https://opensource.com/resources/what-open-source">open-source software</a>. This means that all of the code for the libraries is freely available online, and in most cases, are under active development by community members! This means you can probably contribute to them too!</p>
 <p>Most of these libraries have projects on <a class="reference external" href="https://github.com/">GitHub</a>, which is where you can find, read, and contribute to these projects (example: <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas</a>). Every community has their own rules and processes for contributing so make sure to read their guidelines, but you can find a general description for how to contibute <a class="reference external" href="https://opensource.com/resources/what-open-source">here</a>.</p>
-</section>
-</section>
-</section>
-<section id="fin">
+</div>
+</div>
+</div>
+<div class="section" id="fin">
 <h2>Fin<a class="headerlink" href="#fin" title="Permalink to this headline">¶</a></h2>
 <p>Thanks so much for engaging with our course materials, and we wish you the best of luck in the future!</p>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-10-beyond-163/lesson-30-wrap-up"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2231,7 +2264,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>

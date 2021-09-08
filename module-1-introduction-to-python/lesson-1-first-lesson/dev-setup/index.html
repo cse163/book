@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Software Setup &#8212; Intermediate Data Programming</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
@@ -26,12 +25,12 @@
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -78,13 +77,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Hello World!" href="../hello-world.html" />
     <link rel="prev" title="Context: First Two Modules of CSE 163" href="../context-first-two-modules-of-cse-163.html" />
-<meta name="twitter:dnt" content="on">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -108,10 +115,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome to the Intermediate Data Programming book!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1055,13 +1069,6 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
-       <i class="fas fa-laptop fa-fw">
-       </i>
-       Practice: Pair
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/a-search-engine.html">
        A Search Engine
       </a>
@@ -1072,6 +1079,13 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
+       <i class="far fa-pause-circle fa-fw">
+       </i>
+       Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-search-engine.html">
        <i class="far fa-edit fa-fw">
        </i>
@@ -1079,10 +1093,10 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/pause-and-think.html">
-       <i class="far fa-pause-circle fa-fw">
+      <a class="reference internal" href="../../../module-5-classes-and-objects/lesson-15-special-methods-hw4-introduction/practice-pair.html">
+       <i class="fas fa-laptop fa-fw">
        </i>
-       Pause and Think
+       Practice: Pair
       </a>
      </li>
     </ul>
@@ -1189,17 +1203,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Check your Understanding
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-17-profiling-and-program-speed/check-your-understanding.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Check your Understanding
       </a>
      </li>
     </ul>
@@ -1232,17 +1246,17 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../module-6-efficiency/lesson-18-memory/practice-memory.html">
-       <i class="far fa-edit fa-fw">
-       </i>
-       Practice: Memory
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../../../module-6-efficiency/lesson-18-memory/pause-and-think.html">
        <i class="far fa-pause-circle fa-fw">
        </i>
        Pause and Think
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../module-6-efficiency/lesson-18-memory/practice-memory.html">
+       <i class="far fa-edit fa-fw">
+       </i>
+       Practice: Memory
       </a>
      </li>
     </ul>
@@ -1877,7 +1891,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -1912,7 +1926,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/module-1-introduction-to-python/lesson-1-first-lesson/dev-setup/index.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/module-1-introduction-to-python/lesson-1-first-lesson/dev-setup/index.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -2025,7 +2039,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section id="software-setup">
+  <div class="section" id="software-setup">
 <h1>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h1>
 <p>This page contains common instructions for downloading software to run and edit Python files.</p>
 <div class="admonition tip">
@@ -2038,9 +2052,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 software setup and tools used, or they might even have provided software installed on computers.
 Please refer to any instructions your instructor has provided for software for your course.</p>
 </div>
-<section id="instructions">
+<div class="section" id="instructions">
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
-<section id="step-1-install-anaconda">
+<div class="section" id="step-1-install-anaconda">
 <h3>Step 1 - Install Anaconda<a class="headerlink" href="#step-1-install-anaconda" title="Permalink to this headline">¶</a></h3>
 <div class="dropdown admonition">
 <p class="admonition-title">If you already have Anaconda 3 installed with a version of Python <strong>before</strong> 3.8</p>
@@ -2054,27 +2068,27 @@ conda install python=3.8
 <p>Go to <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda’s website</a> and install <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.8</span></code> for whichever operating system you own.</p>
 <p>Once installed, you should open the Anaconda Navigator application and you will see a screen like:</p>
 <p><img alt="Anaconda screen" src="../../../_images/software1.png" /></p>
-</section>
-<section id="step-2-create-environment-and-install-python-packages">
+</div>
+<div class="section" id="step-2-create-environment-and-install-python-packages">
 <h3>Step 2 - Create Environment and Install Python Packages<a class="headerlink" href="#step-2-create-environment-and-install-python-packages" title="Permalink to this headline">¶</a></h3>
 <p>Download the <a class="reference download internal" download="" href="../../../_downloads/75d32e1e0b063803dc03ea50bfa0d380/environment.yaml"><code class="xref download docutils literal notranslate"><span class="pre">environment.yaml</span></code></a> (right-click and “Save Link As”) somewhere on your computer. This file specifies all of the requisite Python packages and their versions. The location of this file does not matter as long as you remember where you saved it.</p>
 <p>Navigate to the Environments section on the left, and click the Import button at the bottom. Click on the folder icon, navigate to and select the <code class="docutils literal notranslate"><span class="pre">environment.yaml</span></code> file you downloaded earlier. In the prompt after selecting the environment specification, you should name the environment <code class="docutils literal notranslate"><span class="pre">cse163</span></code>. Once you have done this and created the environment, it will install all of the necessary packages.</p>
 <p><img alt="Anaconda importing" src="../../../_images/software2.png" /></p>
 <p>After all the packages have been installed, you should see an environment called <code class="docutils literal notranslate"><span class="pre">cse163</span></code> and if you select it, will have many packages installed. Clicking on the environment should show you something that looks like a list of Python packages:</p>
 <p><img alt="Anaconda environment" src="../../../_images/software3.png" /></p>
-</section>
-<section id="step-3-install-visual-studio-code">
+</div>
+<div class="section" id="step-3-install-visual-studio-code">
 <h3>Step 3 - Install Visual Studio Code<a class="headerlink" href="#step-3-install-visual-studio-code" title="Permalink to this headline">¶</a></h3>
 <p>Go to <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code’s website</a> and install the IDE for whichever operating system you own.</p>
 <p>Once installed, you should open the Visual Studio Code application and should see a screen like below. You should click the Python link circled in red to install the VSCode Python plugins <img alt="VSCode screen" src="../../../_images/software4.png" /></p>
-</section>
-<section id="step-4-set-up-vscode-for-python-development">
+</div>
+<div class="section" id="step-4-set-up-vscode-for-python-development">
 <h3>Step 4 - Set Up VSCode for Python Development<a class="headerlink" href="#step-4-set-up-vscode-for-python-development" title="Permalink to this headline">¶</a></h3>
 <p>Download <a class="reference download internal" download="" href="../../../_downloads/f14d1fe6a31f1167ca89dead4a041b64/test.zip"><code class="xref download docutils literal notranslate"><span class="pre">test.zip</span></code></a> to whichever directory you plan to use to store homework assignments and unzip it so you have a <code class="docutils literal notranslate"><span class="pre">test</span></code> directory in your working directory. If you click the “Open Folder” button on the welcome page of the VSCode application and select the <code class="docutils literal notranslate"><span class="pre">test</span></code> directory, you should then see the following editor if you click on the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> on the left. It is entirely expected that you might see some errors when you first open the file!</p>
 <p><img alt="VSCode showing main.py" src="../../../_images/software5.png" /></p>
 <p>The first import shows up as red since VSCode is most likely not using the <code class="docutils literal notranslate"><span class="pre">cse163</span></code> Anaconda environment we just set up. In the blue bar at the bottom in the above image, you should see which version of Python VSCode is currently using. Click on it and a prompt should appear for you to select, and you should find the one relating to the <code class="docutils literal notranslate"><span class="pre">cse163</span></code> Anaconda environment (should be something like <code class="docutils literal notranslate"><span class="pre">anaconda/envs/cse163/bin/python</span></code>, but may be different based on your operating system) which is circled in red in the diagram below. Once you selected the <code class="docutils literal notranslate"><span class="pre">cse163</span></code> environment, you should no longer get a warning about not being able to import <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> if there was one earlier.</p>
 <p><img alt="VSCode showing Python version" src="../../../_images/software6.png" /></p>
-<section id="if-you-are-using-windows">
+<div class="section" id="if-you-are-using-windows">
 <h4>If you are using Windows<a class="headerlink" href="#if-you-are-using-windows" title="Permalink to this headline">¶</a></h4>
 <p>If you have Windows 10, VSCode will use PowerShell as the default program when you try to run a Python program, but unfortunately this does not work with Anaconda. To fix this, open up <strong>Preferences</strong>, search for “Shell” and change the value of <strong>Terminal &gt; Integrated &gt; Shell: Windows</strong> to <code class="docutils literal notranslate"><span class="pre">C:\Windows\System32\cmd.exe</span></code> (or wherever the program for Command Prompt exists on your machine).
 It seems like some newer versions of VS Code don’t let you set this property directly, but rather require you to edit this thing called <code class="docutils literal notranslate"><span class="pre">settings.json</span></code>. If you follow the instructions above and only see an option to edit this file, do so and make it so it has the following contents:</p>
@@ -2084,9 +2098,9 @@ It seems like some newer versions of VS Code don’t let you set this property d
 </pre></div>
 </div>
 <p>Notice that this is the same path as above, with but with the back-slashes doubled to make it a valid escape-sequence.</p>
-</section>
-</section>
-<section id="step-5-set-up-linter-flake8">
+</div>
+</div>
+<div class="section" id="step-5-set-up-linter-flake8">
 <h3>Step 5 - Set Up Linter: <code class="docutils literal notranslate"><span class="pre">flake8</span></code><a class="headerlink" href="#step-5-set-up-linter-flake8" title="Permalink to this headline">¶</a></h3>
 <p>During this process, you may have also gotten a pop-up about selecting a linter (a program that checks your program for style errors). You should use <code class="docutils literal notranslate"><span class="pre">flake8</span></code> as a linter for this class. If you missed the pop-up, that’s okay just follow these steps:</p>
 <ul class="simple">
@@ -2095,8 +2109,8 @@ It seems like some newer versions of VS Code don’t let you set this property d
 <li><p>You might also need to enable the linter by typing <code class="docutils literal notranslate"><span class="pre">&gt;Python:</span> <span class="pre">Enable</span> <span class="pre">Linter</span></code> and selecting <code class="docutils literal notranslate"><span class="pre">on</span></code></p></li>
 </ul>
 <p>It’s intended that there are linter errors in the provided code so you can see that it is working. Don’t fix these yet.</p>
-</section>
-<section id="step-6-verify-everything-works">
+</div>
+<div class="section" id="step-6-verify-everything-works">
 <h3>Step 6 - Verify Everything Works<a class="headerlink" href="#step-6-verify-everything-works" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>With <code class="docutils literal notranslate"><span class="pre">main.py</span></code> open, right click in the main editor window and select “Run Python File in Terminal”. This will open up a window at the bottom and after a second, should print out</p>
@@ -2109,9 +2123,9 @@ Foo runs
 <li><p>There should be multiple style warnings from <code class="docutils literal notranslate"><span class="pre">flake8</span></code> (seen with the error count at the bottom, or the red squiggly lines in the editor) from the fact that we used semi-colons to end lines 18 and 19 and had imports that were unused. For this exercise, you should leave the unused imports in the code but you should delete those semi-colons and save the file to rerun <code class="docutils literal notranslate"><span class="pre">flake8</span></code> and verify those errors should go away.</p></li>
 </ul>
 <p>Once you have done this, you now have a Python environment that runs the code we will need for this class as well as runs a linter to verify your solution follows good style. If either of these two steps above don’t work, please post on the message board, come to office hours, or try to Google around to see if you can get it working on your own!</p>
-</section>
-</section>
-<section id="frequently-asked-questions-faq">
+</div>
+</div>
+<div class="section" id="frequently-asked-questions-faq">
 <h2>Frequently Asked Questions (FAQ)<a class="headerlink" href="#frequently-asked-questions-faq" title="Permalink to this headline">¶</a></h2>
 <div class="dropdown admonition">
 <p class="admonition-title">Q: I can’t run anything in the terminal in VSCode, what do I do?</p>
@@ -2130,9 +2144,28 @@ Foo runs
 <p>Both of these commands should spit out a path to a file. For Windows, it will look something like <code class="docutils literal notranslate"><span class="pre">C:\Users\hschafer\Anaconda3\envs\cse163\Scritps\flake8.exe</span></code> and for Mac/Linux it will look something like <code class="docutils literal notranslate"><span class="pre">/Users/Hunter/anaconda3/envs/cse163/bin/flake8</span></code>. This output is the proper path to the <code class="docutils literal notranslate"><span class="pre">flake8</span></code> program. <strong>Copy this path since we will need it in a minute</strong>.</p>
 <p>Open up the Preferences of VSCode and search for “flake8”. There is a setting called <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">&gt;</span> <span class="pre">Linting:</span> <span class="pre">**Flake8Path**</span></code> that probably has the value <code class="docutils literal notranslate"><span class="pre">flake8</span></code> currently. Delete that value and paste the output path from the last command here. Once you save, it should hopefully work now!</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module-1-introduction-to-python/lesson-1-first-lesson/dev-setup"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -2170,7 +2203,9 @@ Foo runs
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, Hunter Schafer.<br/>
+          By Hunter Schafer<br/>
+        
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
           </div>
