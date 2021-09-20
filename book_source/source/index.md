@@ -1,4 +1,4 @@
-# Welcome to the Intermediate Data Programming book!
+# <i class="fas fa-hand-sparkles fa-fw"></i> Welcome and Introduction
 
 Welcome! 🎉
 
