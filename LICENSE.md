@@ -2,17 +2,17 @@ Copyright (c) 2021 Hunter Schafer
 
 ---------------------------------- Commentary ----------------------------------
 
-The license for this repo is much like the license for [Crafting Interpreters](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE). 
+The license for this repo is much like the license for [Crafting Interpreters](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE).
 
-Most of the content of this repo is text and video that I created, so feels 
-a bit more "me" than just any code in the book. So like Crafting Interpreters, 
-we will use two licenses, one for the "text" of the book and the other for the 
+Most of the content of this repo is text and video that I created, so feels
+a bit more "me" than just any code in the book. So like Crafting Interpreters,
+we will use two licenses, one for the "text" of the book and the other for the
 surrounding code.
 
 ---------------------------------- License(s) ----------------------------------
 
 Each file in this repository falls under one of two licenses. Files whose
-extension is ".html", ".scss", ".css" use this Creative Commons license:
+extension is ".html", ".md" use this Creative Commons license:
 
     Attribution-NonCommercial-NoDerivatives 4.0
     International (CC BY-NC-ND 4.0)
@@ -37,4 +37,4 @@ All other files, including (but not limited to) ".py" use the MIT license:
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-    IN THE SOFTWARE.   
+    IN THE SOFTWARE.
