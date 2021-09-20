@@ -24,6 +24,8 @@ html:
   use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
+  # Kind of a hack, but I have to hardcode the GitHub URL to get this to work :(
+  extra_navbar: '<a href="https://cse163.github.io/book/acknowledgements.html">Acknowledgements</a><br/>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>'
   extra_footer: 'Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!'
 
   comments:
