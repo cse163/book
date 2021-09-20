@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -121,6 +121,10 @@ commentsRunWhenDOMLoaded(addUtterances);
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
@@ -798,6 +802,11 @@ commentsRunWhenDOMLoaded(addUtterances);
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-4-libraries-for-data-science/lesson-10-data-visualization/data-visualization/DataViz.html">
        Data Visualization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-4-libraries-for-data-science/lesson-10-data-visualization/principles-of-data-visualization.html">
+       Principles of Data Visualization
       </a>
      </li>
      <li class="toctree-l3">
@@ -2012,17 +2021,15 @@ commentsRunWhenDOMLoaded(addUtterances);
                 
   <div class="section" id="computer-memory">
 <h1>Computer Memory<a class="headerlink" href="#computer-memory" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Tip</p>
-<p><strong>TODO: replace this and other videos in lesson with new videos</strong>
-Loom video can be found here:
-<a class="reference external" href="https://www.loom.com/share/c09da260b36a456f84eebcc7bca44475">None</a></p>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;">
+    <iframe src="https://www.loom.com/embed/db9e0b7b8af5451ea8296f6dd6440469?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>One of the resources your computer uses in addition to time is <strong>memory</strong>. In the abstract, memory is just any form of a way for your computer to “write down” information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM you want (e.g., my Windows Computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).</p>
 <p>When talking about memory, we commonly are referring to the storage provided by your RAM; this is sometimes called flash memory or volatile memory. These names come from the fact that after you power your computer off, the memory stored there is lost! This is opposed to your disk storage (or persistent storage) which remains after shutdown. This is why if your computer crashes before you save, you lose your progress! While disk does have its benefits in the sense that it is persistent and can generally be larger in volume (notice that 500 GB of disk vs 16 GB of RAM), the big downside is it’s <em>slow</em>; more on this later.</p>
 <div class="section" id="computer-memory-ram">
 <h2>Computer Memory (RAM)<a class="headerlink" href="#computer-memory-ram" title="Permalink to this headline">¶</a></h2>
-<p>When we think of RAM from a programmer’s perspective, we really think of it as a giant array or list for us to write values to. So when we are talking about 16 GB of RAM, that’s one big array that lets us write 17,179,869,184  separate bytes (<span class="math notranslate nohighlight">\(16 \times 1024 \times 1024 \times 1024\)</span>) of data wherever we want;  a byte is a number that stores eight ones or zeros (a bit).</p>
+<p>When we think of RAM from a programmer’s perspective, we really think of it as a giant array or list for us to write values to. So when we are talking about 16 GB of RAM, that’s one big array that lets us write 17,179,869,184 separate bytes (<span class="math notranslate nohighlight">\(16 \times 1024 \times 1024 \times 1024\)</span>) of data wherever we want; a byte is a number that stores eight ones or zeros (a bit).</p>
 <p>Some programming languages, like that older one called C, let you access memory directly. More modern programming languages give you less access to do this since that comes with a whole host of security and correctness difficulties, but having some mental model of memory is sometimes helpful for understanding how your programs work.</p>
 <p>The following image shows a common layout of the memory allocated to a program by your operating system. There is no inherent restriction on how the RAM is partitioned for the program, but most programs generally separate areas of memory to store specifc things. While memorizing the names in the image below is not important, it’s generally good to realize that programs generally organize their memory usage in a systematic way.</p>
 <ul class="simple">
@@ -2040,7 +2047,7 @@ Loom video can be found here:
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
-        
+
 
 <span class="n">dogs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2110,7 +2117,7 @@ Loom video can be found here:
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

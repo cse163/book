@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -121,6 +121,10 @@ commentsRunWhenDOMLoaded(addUtterances);
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
@@ -798,6 +802,11 @@ commentsRunWhenDOMLoaded(addUtterances);
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-4-libraries-for-data-science/lesson-10-data-visualization/data-visualization/DataViz.html">
        Data Visualization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-4-libraries-for-data-science/lesson-10-data-visualization/principles-of-data-visualization.html">
+       Principles of Data Visualization
       </a>
      </li>
      <li class="toctree-l3">
@@ -2024,7 +2033,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <div class="section" id="numpy">
 <h1>numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
-    <iframe src="https://www.loom.com/embed/ad8f8164d3924e8d86eb6b8e0a009885" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.loom.com/embed/b61cd3e801cd48f59b58d0c145ab97ab" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 <hr class="docutils" />
 <p>The first three slides will go by a little fast because you should be mostly familiar with these ideas for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> since they closely match the semantics of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. The last two reading slides will most likely be the more complex topics of this reading.</p>
@@ -2071,7 +2080,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 
 <span class="c1"># arange works like range to make a array of number from start (inclusive)</span>
 <span class="c1"># to stop (exclusive)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Makes an array storing all 1s of the given length</span>
@@ -2134,7 +2143,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

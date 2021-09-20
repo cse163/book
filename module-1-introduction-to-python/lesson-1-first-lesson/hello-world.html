@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -119,6 +119,10 @@ commentsRunWhenDOMLoaded(addUtterances);
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
@@ -796,6 +800,11 @@ commentsRunWhenDOMLoaded(addUtterances);
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-4-libraries-for-data-science/lesson-10-data-visualization/data-visualization/DataViz.html">
        Data Visualization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-4-libraries-for-data-science/lesson-10-data-visualization/principles-of-data-visualization.html">
+       Principles of Data Visualization
       </a>
      </li>
      <li class="toctree-l3">
@@ -2032,8 +2041,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>That’s it! If you just type this in a Python program and run it, it will say “Hello world!” to you!</p>
 <p>For comparison, here is how you write “Hello world” in some other popular programming languages that have some more complex syntax. Skimming these, you might begin to see what we mean by Python generally being considered to be more human-readable since it doesn’t require a lot of extra syntax these other languages do. Note: we</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="f653a6ba-aa7f-4cb5-afa9-2758d81f222b" name="20d8b3e3-1e82-40ed-82ed-b5e896ab11bc" type="radio">
-</input><label class="tabbed-label" for="f653a6ba-aa7f-4cb5-afa9-2758d81f222b">
+<input checked="checked" id="d80d07e7-abe7-417a-9a92-33eb85891add" name="60a7531d-835a-4cf7-b6fd-e2c63f1609c2" type="radio">
+</input><label class="tabbed-label" for="d80d07e7-abe7-417a-9a92-33eb85891add">
 Java</label><div class="tabbed-content docutils">
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -2043,8 +2052,8 @@ Java</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="bff4967d-fd88-472c-9b58-cbdde1ba8cbd" name="20d8b3e3-1e82-40ed-82ed-b5e896ab11bc" type="radio">
-</input><label class="tabbed-label" for="bff4967d-fd88-472c-9b58-cbdde1ba8cbd">
+<input id="240d8f27-dc8d-42f4-8368-ae580871ab11" name="60a7531d-835a-4cf7-b6fd-e2c63f1609c2" type="radio">
+</input><label class="tabbed-label" for="240d8f27-dc8d-42f4-8368-ae580871ab11">
 C</label><div class="tabbed-content docutils">
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
@@ -2055,8 +2064,8 @@ C</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="1c1ccdd5-e8fd-4dfe-a014-cf6bb6674c0e" name="20d8b3e3-1e82-40ed-82ed-b5e896ab11bc" type="radio">
-</input><label class="tabbed-label" for="1c1ccdd5-e8fd-4dfe-a014-cf6bb6674c0e">
+<input id="8aac40b4-94f7-453b-80df-c021a5b5b8af" name="60a7531d-835a-4cf7-b6fd-e2c63f1609c2" type="radio">
+</input><label class="tabbed-label" for="8aac40b4-94f7-453b-80df-c021a5b5b8af">
 C++</label><div class="tabbed-content docutils">
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
@@ -2068,8 +2077,8 @@ C++</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="08cd1736-401c-49e6-92de-06a7312d1585" name="20d8b3e3-1e82-40ed-82ed-b5e896ab11bc" type="radio">
-</input><label class="tabbed-label" for="08cd1736-401c-49e6-92de-06a7312d1585">
+<input id="d2eb245b-a629-425a-baf8-0ed94757235d" name="60a7531d-835a-4cf7-b6fd-e2c63f1609c2" type="radio">
+</input><label class="tabbed-label" for="d2eb245b-a629-425a-baf8-0ed94757235d">
 Go</label><div class="tabbed-content docutils">
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
 
@@ -2147,7 +2156,7 @@ Go</label><div class="tabbed-content docutils">
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

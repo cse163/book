@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -119,6 +119,10 @@ commentsRunWhenDOMLoaded(addUtterances);
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
@@ -796,6 +800,11 @@ commentsRunWhenDOMLoaded(addUtterances);
      <li class="toctree-l3">
       <a class="reference internal" href="../../module-4-libraries-for-data-science/lesson-10-data-visualization/data-visualization/DataViz.html">
        Data Visualization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../module-4-libraries-for-data-science/lesson-10-data-visualization/principles-of-data-visualization.html">
+       Principles of Data Visualization
       </a>
      </li>
      <li class="toctree-l3">
@@ -1992,11 +2001,10 @@ commentsRunWhenDOMLoaded(addUtterances);
                 
   <div class="section" id="pickle">
 <h1>Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Tip</p>
-<p>Loom video can be found here:
-<a class="reference external" href="https://www.loom.com/share/e16bc40b4ab84837a9de6f21866b25ec">None</a></p>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;">
+    <iframe src="https://www.loom.com/embed/3ed5915b2afc4cfabeb8b66f34a8c4f9?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+<hr class="docutils" />
 <p>Even though we talked about disk being slow, it’s convenient because it is persistent. This means after your computer shuts down, everything on disk will still be there after your restart. This can sometimes be very helpful for data analysis. For example, what if you trained a really great machine learning model and want to save that exact model for the future? This would not be possible if you just stored it in a Python variable, since if your computer restarted or the Python session ended, then <em>poof</em>, that model is gone!</p>
 <p>There is a convenient module called <code class="docutils literal notranslate"><span class="pre">pickle</span></code> that lets you save a Python object to a file so that you can read it in later! The following program makes a list of numbers, saves it to a file (and prints out that it was saved) before reading it in again! This is not the most convincing example in an Ed snippet since we run it all at once, but believe us that you can write the “reading” code from a pickle you made yesterday and it will work just fine!</p>
 <p>The one note we will make about <code class="docutils literal notranslate"><span class="pre">pickle</span></code> , is it requires us to use one other feature of reading/writing to files. The <code class="docutils literal notranslate"><span class="pre">open</span></code> call takes a second parameter called <code class="docutils literal notranslate"><span class="pre">mode</span></code> that tells Python how you want to use the file. By default, <code class="docutils literal notranslate"><span class="pre">mode</span></code> has value <code class="docutils literal notranslate"><span class="pre">'r'</span></code> , which means you want to read the file. If you want to write to the file, you need to use the mode <code class="docutils literal notranslate"><span class="pre">'w'</span></code> by making the call <code class="docutils literal notranslate"><span class="pre">open('file.txt',</span> <span class="pre">'w')</span></code> . Even more confusing, since <code class="docutils literal notranslate"><span class="pre">pickle</span></code> needs to write the data in a special binary format (i.e., not plain-text like a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> ), you need to pass in the modes <code class="docutils literal notranslate"><span class="pre">'rb'</span></code> for read binary and <code class="docutils literal notranslate"><span class="pre">'wb'</span></code> for write binary respectively.</p>
@@ -2009,8 +2017,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="c1"># Save a pickle of the value. Need to open file in write-binary mode (wb)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;good_values.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">special_values</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-    
-    
+
+
 <span class="c1"># Verifying it saved a file called good_model.pickle</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Files in Directory:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
 
@@ -2078,7 +2086,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
