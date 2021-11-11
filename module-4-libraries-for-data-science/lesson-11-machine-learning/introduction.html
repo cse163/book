@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -2070,7 +2070,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <span class="n">dogs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">tweet</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">cats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
-        
+
 <span class="c1"># Normally people would write</span>
 <span class="c1">#   if &#39;dog&#39; in tweet:</span>
 <span class="c1"># But we want to be clear for example how this works for strings</span>
@@ -2126,18 +2126,24 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h2>A Little More Terminology<a class="headerlink" href="#a-little-more-terminology" title="Permalink to this headline">¶</a></h2>
 <p>We have been focusing a lot on this example of cats vs dogs, but machine learning can solve many types of tasks! Machine learning tasks generally fall into the following categories depending on what type of value you are trying to predict.</p>
 <ul class="simple">
-<li><p><strong>Regression -</strong>     When the labels are real numbers (e.g., a price). In this case, we think of a model trying to act as a “line of best-fit” to accurately predict the labels given some features.</p></li>
-<li><p><strong>Classification -</strong>     When the labels are categorical (e.g., cat vs dog). In this case, we think of the model trying to act as a “separator” between the examples to classify the examples on one side vs the other.</p></li>
+<li><p><strong>Regression -</strong> When the labels are real numbers (e.g., a price). In this case, we think of a model trying to act as a “line of best-fit” to accurately predict the labels given some features.</p></li>
+<li><p><strong>Classification -</strong> When the labels are categorical (e.g., cat vs dog). In this case, we think of the model trying to act as a “separator” between the examples to classify the examples on one side vs the other.</p></li>
 </ul>
-<p>A lot of the time, people rush to apply ML to a task without sitting down and defining what they are trying to solve and how. Before you begin any ML task, ask yourself:</p>
+<p>A lot of the time, people rush to apply ML to a task without sitting down and defining what they are trying to solve and how. Before you begin any ML task, you should ask yourself two overall questions:</p>
 <ul class="simple">
-<li><p>Do you have a good set of labeled data to train on?</p>
+<li><p><strong>What is your data?</strong></p>
 <ul>
+<li><p>Do you have a good set of labeled data to train on?</p></li>
 <li><p>What features will you use for each sample?</p></li>
 <li><p>What are the labels that you will try to be learning from?</p></li>
 </ul>
 </li>
-<li><p>Is this a regression task or a classification task? What model will you apply for that particular task?</p></li>
+<li><p><strong>What are you trying to model?</strong></p>
+<ul>
+<li><p>Is this a regression task or a classification task?</p></li>
+<li><p>What model will you apply for that particular task?</p></li>
+</ul>
+</li>
 </ul>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>

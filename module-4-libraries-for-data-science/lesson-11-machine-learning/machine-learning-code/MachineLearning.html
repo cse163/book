@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -2080,7 +2080,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <blockquote>
 <div><p><em>[1]  This data was provided by <a class="reference external" href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">R2D3</a> and has been slightly modified to fit our course. Please see <a class="reference external" href="https://github.com/jadeyee/r2d3-part-1-data/blob/master/part_1_data.csv">the original source</a> for licensing information.</em></p>
 </div></blockquote>
-<p>Now, let’s load in this dataset and train a machine learning model to predict the species from the features!</p>
+<p>Now, let’s load in this dataset and train a machine learning model to predict the city from the features!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2183,13 +2183,13 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>To train a machine learning model, we will use the popular library scikit-learn (<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>). <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> has functions to train and evaluate machine learning models. You’ll see that like <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, you won’t end up writing a ton of code to train a model which makes <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> very convenient to use!</p>
 <p>In the last slide, we introduced two questions we have to ask ourselves when applying an ML task.</p>
 <ol class="simple">
-<li><p>Do you have a good set of labeled data to train on? What are the features? What are the labels?</p>
+<li><p><strong>What is your data?</strong> Do you have a good set of labeled data to train on? What are the features? What are the labels?</p>
 <ul class="simple">
 <li><p><strong>Features</strong>: All of the columns that describe the house (all but <code class="docutils literal notranslate"><span class="pre">city</span></code>).</p></li>
 <li><p><strong>Labels</strong>: We want to predict which city a house is in from the features, so <code class="docutils literal notranslate"><span class="pre">city</span></code> is the column that describes that.</p></li>
 </ul>
 </li>
-<li><p>Is this a regression task or a classification task? What model will you apply for that particular task?</p>
+<li><p><strong>What are you trying to model?</strong> Is this a regression task or a classification task? What model will you apply for that particular task?</p>
 <ul class="simple">
 <li><p>This is a <strong>classification</strong> task since we are predicting SF or NY.</p></li>
 <li><p>We haven’t described possible models yet, so we skip this part of the question for now.</p></li>
