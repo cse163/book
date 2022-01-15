@@ -10,7 +10,7 @@ We mentioned before that when defining that a hash function needs to be "consist
 
 We briefly showed this in the last slide, but to get the hash for a Python object you can call the built-in `hash` function like in the snippet below.
 
-```python
+```{snippet}
 print(hash('hello world'))
 print(hash(4.275))
 ```
@@ -27,7 +27,7 @@ So whenever you implement a class, it's important to make sure `__eq__` and `__h
 
 An example of a class that does this well is shown in the following snippet.
 
-```python
+```{snippet}
 class Example:
     def __init__(self, a, b, c):
         self._a = a

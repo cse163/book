@@ -1,8 +1,8 @@
 # Recap: Lists
 
-Recall in the last two lessons, we have used `lists` to represent an indexed-sequence of values. A list can store values of any type. The snippet below shows a quick recap of all the syntax we have introduced for lists (not included: the list of `list` methods).  
+Recall in the last two lessons, we have used `lists` to represent an indexed-sequence of values. A list can store values of any type. The snippet below shows a quick recap of all the syntax we have introduced for lists (not included: the list of `list` methods).
 
-```python
+```{snippet}
 # Create a list
 l = [1, 2, 'hello']
 
@@ -25,7 +25,7 @@ print(l)
 # Two ways to loop over a list
 for i in range(len(l)):
     print(l[i])
-    
+
 for val in l:
     print(val)
 
@@ -40,5 +40,4 @@ for i in range(start, stop):
 print(result)
 ```
 
-A `list` is an example of a **data structure.** A data structure is some programming construct that stores data. We will learn about 3 other data structures in this lesson. Each one makes different "choices" about how it stores the data and how you access it. It will always help to think of a `list` as a starting point, and identify how these other structures are similar/different to the `list` .  
-
+A `list` is an example of a **data structure.** A data structure is some programming construct that stores data. We will learn about 3 other data structures in this lesson. Each one makes different "choices" about how it stores the data and how you access it. It will always help to think of a `list` as a starting point, and identify how these other structures are similar/different to the `list` .

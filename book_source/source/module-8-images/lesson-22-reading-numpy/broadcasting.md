@@ -26,7 +26,7 @@ The process of broadcasting doesn't actually modify `x` or `y` , but rather crea
 
 Consider the code snippet. We print out the resulting shape and then explain using the rules of broadcasting why this is the case.
 
-```python
+```{snippet}
 import numpy as np
 
 m = np.ones((2, 3))  # Shape: (2, 3)

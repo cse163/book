@@ -4,7 +4,7 @@ See, that was a ton of syntax! Don't worry though, you'll get plenty of practice
 
 On this page, we have a "cheat-sheet" version of everything on the last slide. You'll likely find it to be a good reference! However, we still recommend trying to turn this into something of your own making to help solidify the concepts and help you build up a stronger mental model!
 
-```python
+```{snippet}
 import pandas as pd
 
 # Read a file

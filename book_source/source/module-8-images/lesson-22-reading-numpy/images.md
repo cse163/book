@@ -58,7 +58,7 @@ We are going to use a library called `imageio` to help read in an image to a `nu
 
 The last example in the snippet modifies the array (using slice syntax). Before you open `pic2.png` , what do you think the image will look like?
 
-```python
+```{snippet}
 import imageio
 import matplotlib.pyplot as plt
 import numpy as np
@@ -110,7 +110,7 @@ To index into a color image, you now need to specify 3 values. For example, `img
 
 We start with a simple example as we did with grayscale. Notice in this example, the shape printed has 3 dimensions and the third one has shape 3 (for the 3 color channels). As a note, we do not need to specify a `cmap` since `matplotlib` does the right thing for 3D `numpy.array` s by default.
 
-```python
+```{snippet}
 import imageio
 import matplotlib.pyplot as plt
 import numpy as np
@@ -131,7 +131,7 @@ plt.savefig('pic1.png')
 
 Now let's do something slightly more complex where we modify the colors in the image. Notice in the last example we had to specify three values to index into the image. The same applies here. As we modify each section, we are setting one of the R, G, or B values respectively.
 
-```python
+```{snippet}
 import imageio
 import matplotlib.pyplot as plt
 import numpy as np

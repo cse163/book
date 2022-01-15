@@ -16,7 +16,7 @@ def snippet_iframe_height(code):
     #   lines = 2, height = 200px
     #   lines = 4, height = 250 px
     #   height = 150px + 25 * lines
-    return str(150 + 25 * len(code)) + "px"
+    return str(155 + 22 * len(code)) + "px"
 
 
 def create_trace_files_param(code):

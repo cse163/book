@@ -16,7 +16,7 @@ Notice that in all of these questions, we are asking about the type of the value
 
 What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?
 
-```python
+```{snippet}
 df['country']
 ```
 
@@ -52,7 +52,7 @@ There is no type, this code causes an error.
 
 What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?
 
-```python
+```{snippet}
 df.loc[df['emissions'] > 100, ['emissions', 'city']]
 ```
 
@@ -88,7 +88,7 @@ There is no type, this code causes an error.
 
 What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?
 
-```python
+```{snippet}
 df.loc[1, 'city':'country']
 ```
 
@@ -124,7 +124,7 @@ There is no type, this code causes an error.
 
 What is the type of the following expression? If we stored the result of this expression in a variable, what is its type?
 
-```python
+```{snippet}
 df.loc[3, 'emissions']
 ```
 

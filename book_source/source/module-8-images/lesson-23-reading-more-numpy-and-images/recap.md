@@ -1,12 +1,12 @@
 # Recap
 
-Last time, we introduced the idea of working with images with a new library called `numpy`. We learned lots of things about the `numpy` library like how to create, index into, and do arithmetic/logical operations with arrays. The code snippet below shows a quick recap of all these features that we discussed.  
+Last time, we introduced the idea of working with images with a new library called `numpy`. We learned lots of things about the `numpy` library like how to create, index into, and do arithmetic/logical operations with arrays. The code snippet below shows a quick recap of all these features that we discussed.
 
-While there can be a lot of syntax, the nice thing is a lot of it is fairly similar to `pandas` (since `pandas` was built on top of `numpy` ). It helps to relate what you are learning now to what you learned before. Additionally, the *key concepts* are the most important to come back to always. Whenever I write code that uses `numpy`, I always have to ask myself "What is the shape of the data I have right now?" and "How do I access or transform the data I have to the data I want?". I almost always need a pencil and paper by my side for me to draw out a sketch of the data I have and what I want to do with it.  
+While there can be a lot of syntax, the nice thing is a lot of it is fairly similar to `pandas` (since `pandas` was built on top of `numpy` ). It helps to relate what you are learning now to what you learned before. Additionally, the _key concepts_ are the most important to come back to always. Whenever I write code that uses `numpy`, I always have to ask myself "What is the shape of the data I have right now?" and "How do I access or transform the data I have to the data I want?". I almost always need a pencil and paper by my side for me to draw out a sketch of the data I have and what I want to do with it.
 
-##  `numpy`   
+## `numpy`
 
-```python
+```{snippet}
 import numpy as np
 
 # Create numpy arrays
@@ -32,16 +32,12 @@ print(x + x)
 print(x + y)  # Uses broadcasting!
 ```
 
-##  Images  
+## Images
 
-We learned that images are most easily represented in Python as `numpy` arrays. The shape of the arrays are common:  
+We learned that images are most easily represented in Python as `numpy` arrays. The shape of the arrays are common:
 
--  2-dimensional for grayscale images. The shape of the image will be `(height, width)`.  
+- 2-dimensional for grayscale images. The shape of the image will be `(height, width)`.
 
--  3-dimensional for color images. The shape of the image will be `(height, width, 3)` where the inner-most dimension has shape 3 for each color channel RGB.  
+- 3-dimensional for color images. The shape of the image will be `(height, width, 3)` where the inner-most dimension has shape 3 for each color channel RGB.
 
-
-In terms of code for working with images we've seen so far, all of it (besides the code to plot/save output) is simply just using the indexing or array modifications we saw above! So again, our advice of thinking carefully about the shape of the data you have and how to index into or transform it is always the most important thing.  
-
- 
-
+In terms of code for working with images we've seen so far, all of it (besides the code to plot/save output) is simply just using the indexing or array modifications we saw above! So again, our advice of thinking carefully about the shape of the data you have and how to index into or transform it is always the most important thing.

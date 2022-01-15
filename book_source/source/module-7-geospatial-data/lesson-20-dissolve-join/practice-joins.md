@@ -32,7 +32,7 @@ Suppose we were working with the following two datasets shown below. For each qu
 
 How many data rows are there in `result` ?
 
-```python
+```{snippet}
 result = movies.merge(directors, left_on='directed_by',
                       right_on='director_id')
 ```
@@ -45,7 +45,7 @@ Write your answer down in your own space.
 
 How many data rows are there in `result` ?
 
-```python
+```{snippet}
 result = directors.merge(movies, left_on='director_id',
                          right_on='directed_by', how='left')
 ```
@@ -58,7 +58,7 @@ Write your answer down in your own space.
 
 How many data rows are there in `result` ?
 
-```python
+```{snippet}
 result = movies.merge(directors, left_on='directed_by',
                       right_on='director_id', how='outer')
 ```
@@ -79,7 +79,7 @@ Select one or more options. Write your answer down in your own space.
 
 _<i class="far fa-square fa-fw"></i> Option 0_
 
-```python
+```{snippet}
 merged = movies.merge(directors,
                       left_on='directed_by',
                       right_on='director_id',
@@ -89,7 +89,7 @@ result = merged.groupby('director_id')['year'].min()
 
 _<i class="far fa-square fa-fw"></i> Option 1_
 
-```python
+```{snippet}
 merged = movies.merge(directors,
                       left_on='directed_by',
                       right_on='director_id',
@@ -99,7 +99,7 @@ result = merged.groupby('director_id')['year'].min()
 
 _<i class="far fa-square fa-fw"></i> Option 2_
 
-```python
+```{snippet}
 merged = directors.merge(movies,
                          left_on='director_id',
                          right_on='directed_by',
@@ -109,7 +109,7 @@ result = merged.groupby('director_id')['year'].min()
 
 _<i class="far fa-square fa-fw"></i> Option 3_
 
-```python
+```{snippet}
 merged = directors.merge(movies,
                          left_on='director_id',
                          right_on='directed_by',
@@ -119,7 +119,7 @@ result = merged.groupby('director_id')['year'].min()
 
 _<i class="far fa-square fa-fw"></i> Option 4_
 
-```python
+```{snippet}
 merged = movies.merge(directors,
                       left_on='directed_by',
                       right_on='director_id')
@@ -132,19 +132,19 @@ Consider the following two datasets.
 
 - The first is our countries dataset. Each row has the name, continent, and geometry of a country (there are other columns, but we don't need to think about them for this problem).
 
-  |    NAME     |  CONTINENT  |    geometry     |
-  |-------------|-------------|-----------------|
-  |United States|North America|MultiPolgyon(...)|
-  |Ethiopia     |Africa       |Polygon(...)     |
-  |...          |...          |...              |
+  | NAME          | CONTINENT     | geometry          |
+  | ------------- | ------------- | ----------------- |
+  | United States | North America | MultiPolgyon(...) |
+  | Ethiopia      | Africa        | Polygon(...)      |
+  | ...           | ...           | ...               |
 
 - The second is a carbon emissions dataset. The dataset has two columns, the name of the country and the amount of carbon emissions produced by that country last year.
 
-  |   Country   |Carbon|
-  |-------------|------|
-  |United States| 16.50|
-  |Ethiopia     | 0.12 |
-  |...          |...   |
+  | Country       | Carbon |
+  | ------------- | ------ |
+  | United States | 16.50  |
+  | Ethiopia      | 0.12   |
+  | ...           | ...    |
 
 Suppose we wanted to make a plot of the average carbon emissions **by continent**. Before we do any aggregation to make this map to group countries together by continent, we need to join these datasets so that we can later answer for each continent, what is the average carbon emissions there.
 
@@ -158,7 +158,7 @@ Select one option. Write your answer down in your own space.
 
 _<i class="far fa-circle fa-fw"></i> Option 0_
 
-```python
+```{snippet}
 countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='inner')
@@ -166,7 +166,7 @@ countries.merge(carbon,
 
 _<i class="far fa-circle fa-fw"></i> Option 1_
 
-```python
+```{snippet}
 countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='left')
@@ -174,7 +174,7 @@ countries.merge(carbon,
 
 _<i class="far fa-circle fa-fw"></i> Option 2_
 
-```python
+```{snippet}
 countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='right')
@@ -182,21 +182,21 @@ countries.merge(carbon,
 
 _<i class="far fa-circle fa-fw"></i> Option 3_
 
-```python
+```{snippet}
 gpd.sjoin(countries, carbon,
           op='intersects', how='inner')
 ```
 
 _<i class="far fa-circle fa-fw"></i> Option 4_
 
-```python
+```{snippet}
 gpd.sjoin(countries, carbon,
           op='intersects', how='left')
 ```
 
 _<i class="far fa-circle fa-fw"></i> Option 5_
 
-```python
+```{snippet}
 gpd.sjoin(countries, carbon,
           op='intersects', how='right')
 ```
