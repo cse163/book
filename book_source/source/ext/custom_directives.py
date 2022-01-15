@@ -1,9 +1,52 @@
+import base64
+import json
 from logging import debug
+from trace import Trace
 
 from docutils import nodes
-from docutils.parsers.rst import Directive
+from docutils.parsers.rst import Directive, directives
 from sphinx.addnodes import download_reference
 from sphinx.util.docutils import SphinxDirective
+
+IFRAME_CODE = """<iframe width="100%" height="{height}" src="https://www.learnwithtrace.com/playground/code?embed=true&files={params}&language=PYTHON&hideReadonlyFiles=true"></iframe>"""
+
+
+def snippet_iframe_height(code):
+    # All of these are guesses based on how it looks on a few examples
+    #   lines = 2, height = 200px
+    #   lines = 4, height = 250 px
+    #   height = 150px + 25 * lines
+    return str(150 + 25 * len(code)) + "px"
+
+
+def create_trace_files_param(code):
+    payload = {
+        "version": 0,
+        "files": [
+            {
+                "version": 0,
+                "filename": "main.py",
+                "directory": "src",
+                "contents": code,
+                "editable": True,
+            }
+        ],
+    }
+    return base64.urlsafe_b64encode(json.dumps(payload).encode()).decode()
+
+
+class TraceSnippet(SphinxDirective):
+    has_content = True
+
+    def run(self):
+
+        code = "\n".join(self.content)
+        options = {
+            "params": create_trace_files_param(code),
+            "height": snippet_iframe_height(self.content),
+        }
+
+        return [nodes.raw("", IFRAME_CODE.format(**options), format="html")]
 
 
 class DataDownloadLinks(SphinxDirective):
@@ -119,6 +162,7 @@ def download(prefix):
 def setup(app):
     app.add_directive("jupyter-info", JupyterInfo)
     app.add_directive("reading-data", ReadingDataDownload)
+    app.add_directive("snippet", TraceSnippet)
     app.add_role("rel-data-download", download("./"))
     app.add_role("static-data-download", download("/_static/data/"))
 
