@@ -2,6 +2,7 @@ import base64
 import json
 from logging import debug
 from trace import Trace
+import urllib.parse
 
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
@@ -32,7 +33,7 @@ def create_trace_files_param(code):
             }
         ],
     }
-    return base64.urlsafe_b64encode(json.dumps(payload).encode()).decode()
+    return urllib.parse.quote(base64.standard_b64encode(json.dumps(payload).encode()).decode())
 
 
 class TraceSnippet(SphinxDirective):
