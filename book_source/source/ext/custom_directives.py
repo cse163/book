@@ -9,7 +9,17 @@ from docutils.parsers.rst import Directive, directives
 from sphinx.addnodes import download_reference
 from sphinx.util.docutils import SphinxDirective
 
-IFRAME_CODE = """<iframe width="100%" height="{height}" src="https://www.learnwithtrace.com/playground/code?embed=true&files={params}&language=PYTHON&hideReadonlyFiles=true"></iframe>"""
+IFRAME_CODE = """\
+    <div class="trace-snippet-container" style="height: {height};">
+        <iframe
+            class="trace-snippet"
+            height="100%"
+            width="100%"
+            src="https://www.learnwithtrace.com/playground/code?embed=true&files={params}&language=PYTHON&hideReadonlyFiles=true">
+            allow="clipboard-write"
+        </iframe>
+    </div>
+"""
 
 
 def snippet_iframe_height(code):
