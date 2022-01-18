@@ -1,33 +1,17 @@
 import base64
+import itertools
 import json
-from logging import debug
-from trace import Trace
+import os
 import urllib.parse
 
 from docutils import nodes
-from docutils.parsers.rst import Directive, directives
 from sphinx.addnodes import download_reference
 from sphinx.util.docutils import SphinxDirective
 
-IFRAME_CODE = """\
-    <div class="trace-snippet-container" style="height: {height};">
-        <iframe
-            class="trace-snippet"
-            height="100%"
-            width="100%"
-            src="https://www.learnwithtrace.com/playground/code?embed=true&files={params}&language=PYTHON&hideReadonlyFiles=true">
-            allow="clipboard-write"
-        </iframe>
-    </div>
-"""
-
-
-def snippet_iframe_height(code):
-    # All of these are guesses based on how it looks on a few examples
-    #   lines = 2, height = 200px
-    #   lines = 4, height = 250 px
-    #   height = 150px + 25 * lines
-    return str(155 + 22 * len(code)) + "px"
+# Run this outside the class definition once
+dir_path = os.path.dirname(os.path.realpath(__file__))
+with open(os.path.join(dir_path, "snippet-template.html")) as f:
+    TEMPLATE = f.read()
 
 
 def create_trace_files_param(code):
@@ -43,7 +27,9 @@ def create_trace_files_param(code):
             }
         ],
     }
-    return urllib.parse.quote(base64.standard_b64encode(json.dumps(payload).encode()).decode())
+    return urllib.parse.quote(
+        base64.standard_b64encode(json.dumps(payload).encode()).decode()
+    )
 
 
 class TraceSnippet(SphinxDirective):
@@ -52,12 +38,9 @@ class TraceSnippet(SphinxDirective):
     def run(self):
 
         code = "\n".join(self.content)
-        options = {
-            "params": create_trace_files_param(code),
-            "height": snippet_iframe_height(self.content),
-        }
+        options = {"params": create_trace_files_param(code), "code": code}
 
-        return [nodes.raw("", IFRAME_CODE.format(**options), format="html")]
+        return [nodes.raw("", TEMPLATE.format(**options), format="html")]
 
 
 class DataDownloadLinks(SphinxDirective):
