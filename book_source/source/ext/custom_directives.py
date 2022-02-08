@@ -5,6 +5,9 @@ import os
 import urllib.parse
 
 from docutils import nodes
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
 from sphinx.addnodes import download_reference
 from sphinx.util.docutils import SphinxDirective
 
@@ -38,6 +41,7 @@ class TraceSnippet(SphinxDirective):
     def run(self):
 
         code = "\n".join(self.content)
+        code = highlight(code, PythonLexer(), HtmlFormatter())
         options = {"params": create_trace_files_param(code), "code": code}
 
         return [nodes.raw("", TEMPLATE.format(**options), format="html")]
