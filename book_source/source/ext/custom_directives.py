@@ -40,9 +40,12 @@ class TraceSnippet(SphinxDirective):
 
     def run(self):
 
-        code = "\n".join(self.content)
-        code = highlight(code, PythonLexer(), HtmlFormatter())
-        options = {"params": create_trace_files_param(code), "code": code}
+        raw_code = "\n".join(self.content)
+        highlighted_code = highlight(raw_code, PythonLexer(), HtmlFormatter())
+        options = {
+            "params": create_trace_files_param(raw_code),
+            "code": highlighted_code,
+        }
 
         return [nodes.raw("", TEMPLATE.format(**options), format="html")]
 
