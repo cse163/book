@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice: Big-O &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -93,8 +96,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Pause and Think" href="pause-and-think.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1957,7 +1966,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1993,7 +2002,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2033,7 +2042,50 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><i class="far fa-edit fa-fw"></i> Practice: Big-O</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-0">
+   Question 0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1">
+   Question 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   Question 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3">
+   Question 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4">
+   Question 4
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="i-class-far-fa-edit-fa-fw-i-practice-big-o">
@@ -2042,15 +2094,20 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="question-0">
 <h2>Question 0<a class="headerlink" href="#question-0" title="Permalink to this headline">¶</a></h2>
 <p>For this problem, let <span class="math notranslate nohighlight">\(n\)</span> be the input value <code class="docutils literal notranslate"><span class="pre">n</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1ldGhvZDEobik6XG4gICAgdmFsdWUgPSAwXG4gICAgZm9yIGkgaW4gcmFuZ2Uobik6XG4gICAgICAgIGZvciBqIGluIHJhbmdlKDkpOlxuICAgICAgICAgICAgdmFsdWUgKz0gNyAqIGkgKyBqXG4gICAgcmV0dXJuIHZhbHVlICoqIDIiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
             <span class="n">value</span> <span class="o">+=</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span>
     <span class="k">return</span> <span class="n">value</span> <span class="o">**</span> <span class="mi">2</span>
 </pre></div>
-</div>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
+
+        </div>
+    </div>
+</div><p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Select one option. Write your answer down in your own space.</p>
 <p><em><i class="far fa-circle fa-fw"></i> Option 0</em></p>
 <p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p>
@@ -2068,7 +2125,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="question-1">
 <h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
 <p>For this problem, let <span class="math notranslate nohighlight">\(n\)</span> be the input value <code class="docutils literal notranslate"><span class="pre">n</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1ldGhvZChuKTpcbiAgICB0ID0gMFxuICAgIGZvciBpIGluIHJhbmdlKDMpOlxuICAgICAgICBmb3IgaiBpbiByYW5nZSgxNCk6XG4gICAgICAgICAgICB0ICs9IG5cblxuICAgICAgICBmb3IgaiBpbiByYW5nZSgyMDApOlxuICAgICAgICAgICAgdCArPSBqXG4gICAgcmV0dXJuIGoiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">14</span><span class="p">):</span>
@@ -2078,8 +2138,10 @@ commentsRunWhenDOMLoaded(addUtterances);
             <span class="n">t</span> <span class="o">+=</span> <span class="n">j</span>
     <span class="k">return</span> <span class="n">j</span>
 </pre></div>
-</div>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
+
+        </div>
+    </div>
+</div><p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Select one option. Write your answer down in your own space.</p>
 <p><em><i class="far fa-circle fa-fw"></i> Option 0</em></p>
 <p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p>
@@ -2097,7 +2159,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
 <p>For this problem, let <span class="math notranslate nohighlight">\(n\)</span> be the length of the given list of numbers <code class="docutils literal notranslate"><span class="pre">nums</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1ldGhvZChudW1zKTpcbiAgICBtYXhfZGlmZiA9IE5vbmVcbiAgICBmb3IgbjEgaW4gbnVtczpcbiAgICAgICAgZm9yIG4yIGluIG51bXM6XG4gICAgICAgICAgICBkaWZmID0gbjEgLSBuMlxuICAgICAgICAgICAgaWYgbWF4X2RpZmYgaXMgTm9uZSBvciBkaWZmID4gbWF4X2RpZmY6XG4gICAgICAgICAgICAgICAgZGlmZiA9IG1heF9kaWZmXG4gICAgcmV0dXJuIG1heF9kaWZmIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="n">max_diff</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="k">for</span> <span class="n">n1</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">n2</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
@@ -2106,8 +2171,10 @@ commentsRunWhenDOMLoaded(addUtterances);
                 <span class="n">diff</span> <span class="o">=</span> <span class="n">max_diff</span>
     <span class="k">return</span> <span class="n">max_diff</span>
 </pre></div>
-</div>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
+
+        </div>
+    </div>
+</div><p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Select one option. Write your answer down in your own space.</p>
 <p><em><i class="far fa-circle fa-fw"></i> Option 0</em></p>
 <p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p>
@@ -2123,11 +2190,16 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
 <p>For this problem, let <span class="math notranslate nohighlight">\(n\)</span> be the length of the given list of numbers <code class="docutils literal notranslate"><span class="pre">nums</span></code> . For this problem, you will need to assume that the <code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code> functions will be implemented by having to search the whole list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1ldGhvZChudW1zKTpcbiAgICByZXR1cm4gbWF4KG51bXMpICogbWluKG51bXMpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">*</span> <span class="nb">min</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-</div>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
+
+        </div>
+    </div>
+</div><p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Select one option. Write your answer down in your own space.</p>
 <p><em><i class="far fa-circle fa-fw"></i> Option 0</em></p>
 <p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p>
@@ -2143,15 +2215,20 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
 <p>For this problem, let <span class="math notranslate nohighlight">\(n\)</span> be the length of the given list of numbers <code class="docutils literal notranslate"><span class="pre">nums</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1ldGhvZChudW1zKTpcbiAgICB4ID0gbGVuKG51bXMpXG4gICAgdCA9IDBcbiAgICBmb3IgaSBpbiByYW5nZSh4ICogeCAvIDIpOlxuICAgICAgICB0ICs9IGlcbiAgICByZXR1cm4gdCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span><span class="p">):</span>
         <span class="n">t</span> <span class="o">+=</span> <span class="n">i</span>
     <span class="k">return</span> <span class="n">t</span>
 </pre></div>
-</div>
-<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
+
+        </div>
+    </div>
+</div><p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Select one option. Write your answer down in your own space.</p>
 <p><em><i class="far fa-circle fa-fw"></i> Option 0</em></p>
 <p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p>
@@ -2188,57 +2265,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="pause-and-think.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="pause-and-think.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../lesson-17-profiling-and-program-speed/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><i class="fas fa-book fa-fw"></i> Lesson 17: Profiling and Program Speed</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="../lesson-17-profiling-and-program-speed/index.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 17: Profiling and Program Speed</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

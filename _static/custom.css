@@ -34,3 +34,11 @@ main.bd-content #main-content .prev-next-bottom .right-next i.fa-fw {
 .flex {
   display: flex;
 }
+
+.trace-snippet-container {
+  margin-bottom: 1.15rem;
+}
+
+.trace-snippet {
+  border: none;
+}

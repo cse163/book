@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Images &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Broadcasting" href="broadcasting.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2026,7 +2035,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Images</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grayscale-images">
+   Grayscale Images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grayscale-image-code">
+   Grayscale Image Code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#color-images">
+   Color Images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#color-image-code">
+   Color Image Code
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="images">
@@ -2068,7 +2115,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h2>Grayscale Image Code<a class="headerlink" href="#grayscale-image-code" title="Permalink to this headline">¶</a></h2>
 <p>We are going to use a library called <code class="docutils literal notranslate"><span class="pre">imageio</span></code> to help read in an image to a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. The following snippet reads in an image, prints some values about it, and then uses a slightly new <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> feature to plot an image from a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. We have to pass in a colormap <code class="docutils literal notranslate"><span class="pre">cmap</span></code> to tell <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to plot the values as grayscale since by default, it uses that yellow/purple color scheme (if you take out the parameter, you can see what it does when you run it!).</p>
 <p>The last example in the snippet modifies the array (using slice syntax). Before you open <code class="docutils literal notranslate"><span class="pre">pic2.png</span></code> , what do you think the image will look like?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGltYWdlaW9cbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmltcG9ydCBudW1weSBhcyBucFxuXG4jIFJlYWQgaW4gdGhlIGltYWdlXG5wZW5ndWluID0gaW1hZ2Vpby5pbXJlYWQoJy9jb3Vyc2UvbGVjdHVyZS1yZWFkaW5ncy9wZW5ndWluLmpwZycpXG5cbiMgUHJpbnQgc29tZSB2YWx1ZXNcbnByaW50KCdTaGFwZScsIHBlbmd1aW4uc2hhcGUpXG5wcmludCgnVG9wLWxlZnQgcGl4ZWwnLCBwZW5ndWluWzAsIDBdKVxuXG4jIFBsb3QgaW1hZ2UgYW5kIHNhdmUgaXQgdG8gYSBmaWxlIChoYXZlIHRvIHNwZWNpZnkgdG8gcGxvdCBhcyBncmF5c2NhbGUpXG5wbHQuaW1zaG93KHBlbmd1aW4sIGNtYXA9cGx0LmNtLmdyYXkpXG5wbHQuc2F2ZWZpZygncGljMS5wbmcnKVxuXG4jIE1vZGlmeSB0aGUgbnVtcHkgYXJyYXkgYW5kIHNhdmUgdGhhdFxucGVuZ3VpblszNTA6NDAwLCA6XSA9IDEwMFxuXG4jIFBsb3QgaW1hZ2UgYW5kIHNhdmUgaXQgdG8gYSBmaWxlIChoYXZlIHRvIHNwZWNpZnkgdG8gcGxvdCBhcyBncmF5c2NhbGUpXG5wbHQuaW1zaG93KHBlbmd1aW4sIGNtYXA9cGx0LmNtLmdyYXkpXG5wbHQuc2F2ZWZpZygncGljMi5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
@@ -2090,8 +2140,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">penguin</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pic2.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 <div class="section" id="color-images">
 <h2>Color Images<a class="headerlink" href="#color-images" title="Permalink to this headline">¶</a></h2>
 <p>Let’s brighten up the world a bit and switch to color images. A color image is commonly represented in a format called RGB. RGB stands for “Red, Blue, Green”. An RGB image is really just 3 “grayscale” images stacked on top of each other, but each sub-image corresponds to a particular color channel.</p>
@@ -2105,7 +2157,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="color-image-code">
 <h2>Color Image Code<a class="headerlink" href="#color-image-code" title="Permalink to this headline">¶</a></h2>
 <p>We start with a simple example as we did with grayscale. Notice in this example, the shape printed has 3 dimensions and the third one has shape 3 (for the 3 color channels). As a note, we do not need to specify a <code class="docutils literal notranslate"><span class="pre">cmap</span></code> since <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> does the right thing for 3D <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s by default.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGltYWdlaW9cbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmltcG9ydCBudW1weSBhcyBucFxuXG4jIFJlYWQgaW4gdGhlIGltYWdlXG5kdWNrID0gaW1hZ2Vpby5pbXJlYWQoJ2R1Y2suanBnJylcblxuIyBQcmludCBzb21lIHZhbHVlc1xucHJpbnQoJ1NoYXBlJywgZHVjay5zaGFwZSlcbnByaW50KCdUb3AtbGVmdCBwaXhlbDogUmVkID0nLCBkdWNrWzAsIDAsIDBdKVxucHJpbnQoJ1RvcC1sZWZ0IHBpeGVsOiBHcmVuID0nLCBkdWNrWzAsIDAsIDFdKVxucHJpbnQoJ1RvcC1sZWZ0IHBpeGVsOiBCbHVlID0nLCBkdWNrWzAsIDAsIDJdKVxuXG4jIFBsb3QgaW1hZ2UgYW5kIHNhdmUgaXQgdG8gYSBmaWxlXG5wbHQuaW1zaG93KGR1Y2spXG5wbHQuc2F2ZWZpZygncGljMS5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
@@ -2122,9 +2177,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">duck</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pic1.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>Now let’s do something slightly more complex where we modify the colors in the image. Notice in the last example we had to specify three values to index into the image. The same applies here. As we modify each section, we are setting one of the R, G, or B values respectively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+
+        </div>
+    </div>
+</div><p>Now let’s do something slightly more complex where we modify the colors in the image. Notice in the last example we had to specify three values to index into the image. The same applies here. As we modify each section, we are setting one of the R, G, or B values respectively.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGltYWdlaW9cbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmltcG9ydCBudW1weSBhcyBucFxuXG4jIFJlYWQgaW4gdGhlIGltYWdlXG5kdWNrID0gaW1hZ2Vpby5pbXJlYWQoJ2R1Y2suanBnJylcblxuIyBSZW1vdmUgcmVkIGZyb20gYSByb3cgb2YgcGl4ZWxzXG5kdWNrWzEwMDoxNTAsIDosIDBdID0gMFxuXG4jIFJlbW92ZSBncmVlbiBmcm9tIGEgcm93IG9mIHBpeGVsc1xuZHVja1syMDA6MjUwLCA6LCAxXSA9IDBcblxuIyBNYWtlIGEgd2hpdGUgY29sdW1uIGJ5IHNldHRpbmcgYWxsIGNvbG9yIGNoYW5uZWxzIHRvIDBcbmR1Y2tbOiwgMTc1OjIwMCwgOl0gPSAyNTVcblxuIyBQbG90IGltYWdlIGFuZCBzYXZlIGl0IHRvIGEgZmlsZVxucGx0Lmltc2hvdyhkdWNrKVxucGx0LnNhdmVmaWcoJ3BpYzEucG5nJykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
@@ -2144,8 +2204,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">duck</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pic1.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -2170,57 +2232,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="broadcasting.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Broadcasting</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="broadcasting.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Broadcasting</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pause-and-think.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="pause-and-think.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

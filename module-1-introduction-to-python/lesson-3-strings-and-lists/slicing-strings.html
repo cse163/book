@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slicing Strings &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="String Functions" href="string-functions.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2016,7 +2025,35 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Slicing Strings</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-size">
+   Step Size
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="slicing-strings">
@@ -2027,39 +2064,64 @@ commentsRunWhenDOMLoaded(addUtterances);
 <hr class="docutils" />
 <p>So we already saw how to index into a string to get a value, but what if you wanted to index into a string to get more than one character (e.g. get the first 10 characters of a string)? Python provides a very powerful syntax for accessing multiple characters in a string called <strong>slicing.</strong></p>
 <p>The syntax slicing looks very similar to simple indexing but lets you specify a start and a stop index separated by a colon <code class="docutils literal notranslate"><span class="pre">s[&lt;start&gt;:&lt;stop&gt;]</span></code> . The start index is inclusive and the stop is exclusive. For example, you could type the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzI6N10pIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>The slice shown above means “all characters starting at index 2 and up to (not including) 7” (because stop is exclusive, just like with <code class="docutils literal notranslate"><span class="pre">range</span></code> ). If you take this with the picture below, it can clarify why the cell above prints <code class="docutils literal notranslate"><span class="pre">llo</span> <span class="pre">w</span></code> .</p>
+
+        </div>
+    </div>
+</div><p>The slice shown above means “all characters starting at index 2 and up to (not including) 7” (because stop is exclusive, just like with <code class="docutils literal notranslate"><span class="pre">range</span></code> ). If you take this with the picture below, it can clarify why the cell above prints <code class="docutils literal notranslate"><span class="pre">llo</span> <span class="pre">w</span></code> .</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd"><img alt="hello world string indexing" class="align-center" src="https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd" style="width: 743px;" /></a>
 <p>Below, we show some more examples. Feel free to try modifying this to test out your own examples! Notice, you can use more complex start/stop indices like an expression based on the length of the string.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzI6NV0pXG5wcmludChzWzA6bGVuKHMpXSlcbnByaW50KHNbMTpsZW4ocyktM10pIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>It’s very common that you either want to start from the beginning of the string or go to the end in a slice. Python provides a short-hand syntax to infer the start/stop point of a slice by omitting the start/stop value by omitting them before/after a <code class="docutils literal notranslate"><span class="pre">:</span></code> .</p>
+
+        </div>
+    </div>
+</div><p>It’s very common that you either want to start from the beginning of the string or go to the end in a slice. Python provides a short-hand syntax to infer the start/stop point of a slice by omitting the start/stop value by omitting them before/after a <code class="docutils literal notranslate"><span class="pre">:</span></code> .</p>
 <p>For example, if you were to write the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzozXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>Python infers that the start should be 0 since the start was omitted in the <code class="docutils literal notranslate"><span class="pre">start:stop</span></code> slice.</p>
+
+        </div>
+    </div>
+</div><p>Python infers that the start should be 0 since the start was omitted in the <code class="docutils literal notranslate"><span class="pre">start:stop</span></code> slice.</p>
 <p>Additionally, you can omit the stop point and it will go to the end</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzM6XSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
 </pre></div>
-</div>
-<div class="section" id="step-size">
+
+        </div>
+    </div>
+</div><div class="section" id="step-size">
 <h2>Step Size<a class="headerlink" href="#step-size" title="Permalink to this headline">¶</a></h2>
 <p>The last thing that comes up with specifying slices is the fact that you can also specify a <strong>step size</strong> for a slice. For example, you might want <em>every other</em> character between 2 (inclusive) and 8 (exclusive). To do this, you can write the following</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzI6ODoyXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>Notice this behaves exactly the same as the <code class="docutils literal notranslate"><span class="pre">range</span></code> function! Your intuition there for how the step size works applies here.</p>
+
+        </div>
+    </div>
+</div><p>Notice this behaves exactly the same as the <code class="docutils literal notranslate"><span class="pre">range</span></code> function! Your intuition there for how the step size works applies here.</p>
 </div>
 <div class="section" id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
@@ -2093,57 +2155,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="string-functions.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">String Functions</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="string-functions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">String Functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="negative-indices.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Negative Indices</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="negative-indices.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Negative Indices</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

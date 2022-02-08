@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hurricane Florence &#8212; Intermediate Data Programming</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Join Types" href="../join-types.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -2013,7 +2022,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2038,7 +2047,35 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hurricane Florence</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overlay-hurricane-florence">
+   Overlay - Hurricane Florence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joining-geospatial-data">
+   Joining Geospatial Data
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="hurricane-florence">
@@ -2140,10 +2177,15 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>So if our goal is to highlight the states that were hit by hurricane Florence, we will need some way to “line up” the two datasets so we know which rows in the US dataset correspond to rows in the Florence dataset if they overlap.</p>
 <p>Given what we learned in this lesson, this might give you an idea that we want to use a join somehow to do this, and that intuition is exactly right! Whenever you have this task of trying to “line up” two datasets, the join is usually the tool for the job. What type of join will we want to use? Well let’s just start by finding the states that do intersect, so we will want to use some type of inner-join so that we can find rows from both tables that overlap.</p>
 <p>Using that intution, you would think that we need to call the <code class="docutils literal notranslate"><span class="pre">merge</span></code> function like we saw prevously. You might try to write something like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">florence</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;geometry&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;coordinates&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY291bnRyeS5tZXJnZShmbG9yZW5jZSwgbGVmdF9vbj0nZ2VvbWV0cnknLCByaWdodF9vbj0nY29vcmRpbmF0ZXMnLCBob3c9J2lubmVyJykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">country</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">florence</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;geometry&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;coordinates&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>However, this won’t work! The reason is a subtle fact from how <code class="docutils literal notranslate"><span class="pre">merge</span></code> works. Remember, <code class="docutils literal notranslate"><span class="pre">merge</span></code> will join two rows together if the value in <code class="docutils literal notranslate"><span class="pre">left_on</span></code> from the left dataset <strong>equals</strong> the value of <code class="docutils literal notranslate"><span class="pre">right_on</span></code> in the right dataset. Notice, this would mean that the geometry from the US (a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> or <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code>) would somehow have to be equal to a <code class="docutils literal notranslate"><span class="pre">Point</span></code>! This is just not possible since they represent completely different shapes.</p>
+
+        </div>
+    </div>
+</div><p>However, this won’t work! The reason is a subtle fact from how <code class="docutils literal notranslate"><span class="pre">merge</span></code> works. Remember, <code class="docutils literal notranslate"><span class="pre">merge</span></code> will join two rows together if the value in <code class="docutils literal notranslate"><span class="pre">left_on</span></code> from the left dataset <strong>equals</strong> the value of <code class="docutils literal notranslate"><span class="pre">right_on</span></code> in the right dataset. Notice, this would mean that the geometry from the US (a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> or <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code>) would somehow have to be equal to a <code class="docutils literal notranslate"><span class="pre">Point</span></code>! This is just not possible since they represent completely different shapes.</p>
 <p>Instead, we need to have some kind of special semantics for joining data based on geometries. In this context, we don’t want to join two rows if they have the exact same geometry, but rather if they <strong>intersect</strong> (or overlap) somehow. This idea of having more complex semantics for how to join rows based on geospatial information is exactly why <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> as a special type of join called a “spatial join”, or <code class="docutils literal notranslate"><span class="pre">sjoin</span></code> for short.</p>
 <p>The semantics for doing a spacial join or very similar to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>’ <code class="docutils literal notranslate"><span class="pre">merge</span></code>, with two key differences:</p>
 <ul class="simple">
@@ -2370,57 +2412,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../join-types.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Join Types</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../join-types.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Join Types</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../pause-and-think.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="../pause-and-think.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slow Python &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -93,8 +96,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Profiling Code" href="profiling-code.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1957,7 +1966,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1993,7 +2002,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2044,7 +2053,61 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Slow Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computer-language">
+   Computer Language
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compiled-and-statically-typed">
+   Compiled and Statically Typed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreted-and-dynamically-typed">
+   Interpreted and Dynamically Typed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparing-models">
+   Comparing Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-the-difference-in-max-diff-times">
+   Why the Difference in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     max_diff
+    </span>
+   </code>
+   times?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-use-python">
+   Why Use Python
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="slow-python">
@@ -2081,12 +2144,17 @@ Assign &lt;int&gt; the result to c
 <h2>Interpreted and Dynamically Typed<a class="headerlink" href="#interpreted-and-dynamically-typed" title="Permalink to this headline">¶</a></h2>
 <p>Python brings a whole new set of challenges to this translation because the variables can store any type of data. Additionally, it’s common for this translation to computer language to happen in an <strong>interpreter</strong> that runs at the same time the program is running. By default when you just use the provided <code class="docutils literal notranslate"><span class="pre">python</span></code> command, it is interpreting your code.</p>
 <p>Consider the equivalent Python program.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiYSA9IDFcbmIgPSAyXG5jID0gYSArIGIiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></div>
-</div>
-<p>This roughly maps to the machine instructions:</p>
+
+        </div>
+    </div>
+</div><p>This roughly maps to the machine instructions:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. Assign 1 to a
   1a. Set a-&gt;PyObject_HEAD-&gt;typecode to integer
   1b. Set a-&gt;val = 1
@@ -2113,7 +2181,10 @@ Assign &lt;int&gt; the result to c
 <p>So if even a simple program that just makes variables can have so many machine-instructions, you might be able to imagine how much more complex (and slower) things get once you start adding in concepts like looping (e.g., on each iteration of the loop you have to double-check the type of the loop variable each time you access it).</p>
 <p>So part of the reason Python tends to be slower is that these extra steps to check types just lead to more instructions to run than an equivalent C program. The other big slow down comes from the fact that we commonly use a Python interpreter, which is also doing this translation to machine code on the fly as you run the program. Both of these factors in combination can lead to some <strong>significant</strong> slowdowns in real programs.</p>
 <p>For example, consider the programs below in C and Python to manually compute <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">n</span></code> using loops. You wouldn’t actually write this code in practice, but it’s a nice way to show why looping in Python is slow. You’ll find the Python code runs MUCH slower than the C version (assuming the Python version doesn’t time out).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">10000</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibSA9IDEwMDAwXG5uID0gMjUwMDBcblxucHJvZHVjdCA9IDBcbmZvciBpIGluIHJhbmdlKG0pOlxuICAgIGZvciBqIGluIHJhbmdlKG4pOlxuICAgICAgICBwcm9kdWN0ICs9IDFcblxucHJpbnQoJ1Byb2R1Y3QgaXM6JywgcHJvZHVjdCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">25000</span>
 
 <span class="n">product</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2123,8 +2194,10 @@ Assign &lt;int&gt; the result to c
 
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Product is:&#39;</span><span class="p">,</span> <span class="n">product</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+        </div>
+    </div>
+</div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
@@ -2158,7 +2231,7 @@ Assign &lt;int&gt; the result to c
 <ul class="simple">
 <li><p>It is way easier to program than languages like C. Even though its is fast to run, trying to write a correct program in C is a pain in the *#!$&#64;!</p>
 <ul>
-<li><p>This is important because developer time is also a valuable resource! Sometimes it’s best to be able to write something quick and easy for other people to read (in Python).  This lets you iterate on ideas and experiment with prototypes rather than pre-maturely trying to optimize by writing a program in a difficult to use language like C.</p></li>
+<li><p>This is important because developer time is also a valuable resource! Sometimes it’s best to be able to write something quick and easy for other people to read (in Python). This lets you iterate on ideas and experiment with prototypes rather than pre-maturely trying to optimize by writing a program in a difficult to use language like C.</p></li>
 </ul>
 </li>
 <li><p>Python provides incredible support for pre-compiled libraries to leverage the best of both worlds. For example, consider <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Most of the library is actually written in C! By letting them figure out how to write the gross, efficient code, we can leverage it with the nice Python syntax while still gaining speed benefits. This is why we made you avoid loops with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> in HW2 and HW3. Writing a loop for something that can be done with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> itself is WAY slower.</p></li>
@@ -2202,57 +2275,45 @@ Assign &lt;int&gt; the result to c
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="profiling-code.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Profiling Code</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="profiling-code.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Profiling Code</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pause-and-think.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="pause-and-think.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

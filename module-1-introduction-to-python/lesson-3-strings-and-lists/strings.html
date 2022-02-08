@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Strings &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Lesson 3: Strings and Lists" href="index.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2021,7 +2030,40 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Strings</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-concatenation">
+   String Concatenation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-indexing">
+   String Indexing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looping-over-a-string">
+   Looping over a String
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="strings">
@@ -2032,14 +2074,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 <hr class="docutils" />
 <p>You should have seen strings in your previous programming course. As a reminder, a string is a common data type in programming languages to represent text. In Python, the name of the type <code class="docutils literal notranslate"><span class="pre">str</span></code> represents a string (we use String and <code class="docutils literal notranslate"><span class="pre">str</span></code> interchangeably in this text for readability, but Python always refers to them as <code class="docutils literal notranslate"><span class="pre">str</span></code> ).</p>
 <p>In Python, you define a <code class="docutils literal notranslate"><span class="pre">str</span></code> by putting texts in quotes as shown in the following snippet. You can use either a <code class="docutils literal notranslate"><span class="pre">'</span></code> or a <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> , they are the same (but the opening one has to match the closing one).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiczEgPSAnaGVsbG8gd29ybGQnXG5zMiA9IFwiQ1NFIDE2MyBpcyBmdW4hXCJcblxucHJpbnQoczEpXG5wcmludChzMikiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;CSE 163 is fun!&quot;</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="note admonition">
+
+        </div>
+    </div>
+</div><div class="note admonition">
 <p class="admonition-title">Note</p>
 <p>Which quotation mark you use is a matter of personal preference. Generally it’s best to just pick one and be consistent throughout your program as much as possible.
 <br /></p>
@@ -2057,73 +2104,113 @@ since Python would read the apostrophe as the closing of the string. So if you w
 <div class="section" id="string-concatenation">
 <h2>String Concatenation<a class="headerlink" href="#string-concatenation" title="Permalink to this headline">¶</a></h2>
 <p>Strings provide lots of ways of accessing and transforming the text data to do almost anything you want! One of the most common things you want to do with strings is to combine them. In the following snippet, we use <strong>string concatenation</strong> to add on one string to the end of another</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiczEgPSAnaGVsbG8gd29ybGQnXG5zMiA9IFwiQ1NFIDE2MyBpcyBmdW4hXCJcblxucHJpbnQoczEgKyBzMikiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;CSE 163 is fun!&quot;</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator in this context will work with two values of type <code class="docutils literal notranslate"><span class="pre">str</span></code> to create a new <code class="docutils literal notranslate"><span class="pre">str</span></code> that has the characters from the first followed by the second. Importantly, this does not modify either of <code class="docutils literal notranslate"><span class="pre">s1</span></code> or <code class="docutils literal notranslate"><span class="pre">s2</span></code> , but rather creates a new string that has the same characters as both of them. In fact, strings are what we call <strong>immutable</strong>, meaning that you can’t change the characters of a particular string at all!</p>
+
+        </div>
+    </div>
+</div><p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator in this context will work with two values of type <code class="docutils literal notranslate"><span class="pre">str</span></code> to create a new <code class="docutils literal notranslate"><span class="pre">str</span></code> that has the characters from the first followed by the second. Importantly, this does not modify either of <code class="docutils literal notranslate"><span class="pre">s1</span></code> or <code class="docutils literal notranslate"><span class="pre">s2</span></code> , but rather creates a new string that has the same characters as both of them. In fact, strings are what we call <strong>immutable</strong>, meaning that you can’t change the characters of a particular string at all!</p>
 <p>Take a second and think about what the following code snippet should be based on this description of string concatenation before copying and running the code snippet in your own editor… Okay! Go ahead and run it! Did it do what you expected?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCdcbm4gPSAxNjNcbnByaW50KHMgKyBuKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">163</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>It crashed! What happened?!?!</p>
+
+        </div>
+    </div>
+</div><p>It crashed! What happened?!?!</p>
 <p>If you previously had known Java, you probably expected it to do what Java does in this situation and turn the <code class="docutils literal notranslate"><span class="pre">163</span></code> (which is of type <code class="docutils literal notranslate"><span class="pre">int</span></code> ) into a <code class="docutils literal notranslate"><span class="pre">str</span></code> and then do <code class="docutils literal notranslate"><span class="pre">str</span></code> concatenation. Python instead says that string concatenation is only defined between two values that are both of type <code class="docutils literal notranslate"><span class="pre">str</span></code> . It doesn’t want to do any of this magic conversion between types for you.</p>
 <p>To fix this, you have to explicitly turn the value <code class="docutils literal notranslate"><span class="pre">163</span></code> into a <code class="docutils literal notranslate"><span class="pre">str</span></code> ! You could easily just change the code to wrap the value <code class="docutils literal notranslate"><span class="pre">163</span></code> in quotes so it is <code class="docutils literal notranslate"><span class="pre">'163'</span></code> , but that only works under a very narrow set of circumstances. Instead, we will use casting (from <a class="reference internal" href="../lesson-2-python-basics/types-and-booleans.html"><span class="doc std std-doc">Lesson 2</span></a> ) to convert the number into a <code class="docutils literal notranslate"><span class="pre">str</span></code> since this is a strategy that works in many situations!</p>
 <p>The fixed code snippet would look like the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCdcbm4gPSAxNjNcbnByaW50KHMgKyBzdHIobikpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">163</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 <div class="section" id="string-indexing">
 <h2>String Indexing<a class="headerlink" href="#string-indexing" title="Permalink to this headline">¶</a></h2>
 <p>When we think of strings, we commonly think of them as a sequence of characters, where each character has an <strong>index</strong> in the string. For example, the string <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">world'</span></code> should really be thought of as a sequence of characters in the image shown below. Each character has its own spot in the sequence, and the spots are ordered starting at index 0 going up to the end of the string.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/aBbZgPzwwhJOQ5ZP73ZtqsFn"><img alt="hello world string indexing" class="align-center" src="https://static.us.edusercontent.com/files/aBbZgPzwwhJOQ5ZP73ZtqsFn" style="width: 743px;" /></a>
 <p>Python lets you access a character at a specific index by using this <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation to index into the <code class="docutils literal notranslate"><span class="pre">str</span></code> itself. Consider the following code snippet ( <em>think about what it will print before you press run).</em></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCdcbnByaW50KHNbMF0pXG5wcmludChzWzJdKVxucHJpbnQoc1sxMF0pIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>Each of these goes into the string, and grabs and returns the character at the particular index.</p>
+
+        </div>
+    </div>
+</div><p>Each of these goes into the string, and grabs and returns the character at the particular index.</p>
 <p>Trying to get the last character is a very common operation, so it would be annoying to have to count by hand how many characters you need to go till the end. Thankfully, Python provides a way to find the number of characters, called the <strong>length</strong>, of the string. If you have a <code class="docutils literal notranslate"><span class="pre">str</span></code> named <code class="docutils literal notranslate"><span class="pre">s</span></code> , then using the built-in function <code class="docutils literal notranslate"><span class="pre">len</span></code> tells you the number of characters in it.</p>
 <p>Let’s try to grab that last character using the <code class="docutils literal notranslate"><span class="pre">len</span></code> function in the following snippet</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCdcbnByaW50KCdMZW5ndGggb2Ygc3RyaW5nOicsIGxlbihzKSlcbnByaW50KCdMYXN0IGNoYXJhY3RlcjonLCBzW2xlbihzKV0pIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Length of string:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Last character:&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)])</span>
 </pre></div>
-</div>
-<p>The crash this time was because we went “out of bounds” of the string. What went wrong? Well if you look at the first line of output, it actually succeeded in printing out the length. For this string, the length is <code class="docutils literal notranslate"><span class="pre">11</span></code> . So we then tried to access <code class="docutils literal notranslate"><span class="pre">s[len(s)]</span></code> which is the same as <code class="docutils literal notranslate"><span class="pre">s[11]</span></code> . See the problem here?</p>
+
+        </div>
+    </div>
+</div><p>The crash this time was because we went “out of bounds” of the string. What went wrong? Well if you look at the first line of output, it actually succeeded in printing out the length. For this string, the length is <code class="docutils literal notranslate"><span class="pre">11</span></code> . So we then tried to access <code class="docutils literal notranslate"><span class="pre">s[len(s)]</span></code> which is the same as <code class="docutils literal notranslate"><span class="pre">s[11]</span></code> . See the problem here?</p>
 <p>The last valid index of this string is 10. Even though there are 11 characters, the valid indices go from 0 to 10. This is precisely because the first index of the string starts at 0. To fix this, we need to ask for one-index earlier in our code.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCdcbnByaW50KCdMZW5ndGggb2Ygc3RyaW5nOicsIGxlbihzKSlcbnByaW50KCdMYXN0IGNoYXJhY3RlcjonLCBzW2xlbihzKSAtIDFdKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Length of string:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Last character:&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 <div class="section" id="looping-over-a-string">
 <h2>Looping over a String<a class="headerlink" href="#looping-over-a-string" title="Permalink to this headline">¶</a></h2>
 <p>Suppose that I needed to print the characters of a string out, one on each line. We can still use all the programming constructs we’ve seen in the past to help us solve problems!</p>
 <p>One idea to solve this is to use a for loop that loops over all the possible indices. The loop would need to start at 0 (inclusive) to the length of the string (exclusive).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCdcbmZvciBpIGluIHJhbmdlKGxlbihzKSk6XG4gICAgcHJpbnQoc1tpXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>This works perfectly well, but Python provides a much clearer way to loop over a sequence of values like a <code class="docutils literal notranslate"><span class="pre">str</span></code> . To understand how this works, we first have to think hard about the for loop above works.</p>
-<p>How does the for loop know to start <code class="docutils literal notranslate"><span class="pre">i</span></code> at <code class="docutils literal notranslate"><span class="pre">0</span></code> , then <code class="docutils literal notranslate"><span class="pre">1</span></code> , then <code class="docutils literal notranslate"><span class="pre">2</span></code> , then all the way to <code class="docutils literal notranslate"><span class="pre">len(s)</span> <span class="pre">-</span> <span class="pre">1</span></code> ? This is how the <code class="docutils literal notranslate"><span class="pre">range</span></code> function is defined based on the parameter. A for loop simply iterates over the sequence you tell it to. The trick here is that we have to think carefully about how to call the <code class="docutils literal notranslate"><span class="pre">range</span></code> function, so that the sequence of values it returns represent valid indices in our <code class="docutils literal notranslate"><span class="pre">str</span></code> . <br />  <br /> So if a for loop can loop over a sequence of indices returned the case, would it also be possible to just loop over the <code class="docutils literal notranslate"><span class="pre">str</span></code> directly? Earlier, we defined a <code class="docutils literal notranslate"><span class="pre">str</span></code> as a sequence of characters, so it seems like it should be a candidate to be looped over. That intuition is exactly right! The following snippet shows how to do this!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+
+        </div>
+    </div>
+</div><p>This works perfectly well, but Python provides a much clearer way to loop over a sequence of values like a <code class="docutils literal notranslate"><span class="pre">str</span></code> . To understand how this works, we first have to think hard about the for loop above works.</p>
+<p>How does the for loop know to start <code class="docutils literal notranslate"><span class="pre">i</span></code> at <code class="docutils literal notranslate"><span class="pre">0</span></code> , then <code class="docutils literal notranslate"><span class="pre">1</span></code> , then <code class="docutils literal notranslate"><span class="pre">2</span></code> , then all the way to <code class="docutils literal notranslate"><span class="pre">len(s)</span> <span class="pre">-</span> <span class="pre">1</span></code> ? This is how the <code class="docutils literal notranslate"><span class="pre">range</span></code> function is defined based on the parameter. A for loop simply iterates over the sequence you tell it to. The trick here is that we have to think carefully about how to call the <code class="docutils literal notranslate"><span class="pre">range</span></code> function, so that the sequence of values it returns represent valid indices in our <code class="docutils literal notranslate"><span class="pre">str</span></code> . <br /> <br /> So if a for loop can loop over a sequence of indices returned the case, would it also be possible to just loop over the <code class="docutils literal notranslate"><span class="pre">str</span></code> directly? Earlier, we defined a <code class="docutils literal notranslate"><span class="pre">str</span></code> as a sequence of characters, so it seems like it should be a candidate to be looped over. That intuition is exactly right! The following snippet shows how to do this!</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCdcbmZvciBjIGluIHM6XG4gICAgcHJpbnQoYykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>The first value in this sequence is <code class="docutils literal notranslate"><span class="pre">'h'</span></code>, then <code class="docutils literal notranslate"><span class="pre">'e'</span></code>, etc., which is the exact same sequence of values the loop variable <code class="docutils literal notranslate"><span class="pre">c</span></code> will take on over the iterations of the loop!</p>
+
+        </div>
+    </div>
+</div><p>The first value in this sequence is <code class="docutils literal notranslate"><span class="pre">'h'</span></code>, then <code class="docutils literal notranslate"><span class="pre">'e'</span></code>, etc., which is the exact same sequence of values the loop variable <code class="docutils literal notranslate"><span class="pre">c</span></code> will take on over the iterations of the loop!</p>
 </div>
 </div>
 
@@ -2149,57 +2236,45 @@ since Python would read the apostrophe as the closing of the string. So if you w
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 3: Strings and Lists</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="fas fa-book fa-fw"></i> Lesson 3: Strings and Lists</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="string-functions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">String Functions</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="string-functions.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">String Functions</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fancy Syntax &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Defining Equality" href="defining-equality.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,14 +2000,24 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fancy Syntax</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="fancy-syntax">
@@ -2036,28 +2055,31 @@ commentsRunWhenDOMLoaded(addUtterances);
 </tbody>
 </table>
 <p>For example, here is a toy class that implements all of these methods to prove that they get called when you use the syntax shown above.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgU29tZUNsYXNzOlxuICAgIGRlZiBfX2x0X18oc2VsZiwgb3RoZXIpOlxuICAgICAgICBwcmludCgnQ2FsbGluZyBfX2x0X18nKVxuICAgICAgICByZXR1cm4gRmFsc2VcblxuICAgIGRlZiBfX2VxX18oc2VsZiwgb3RoZXIpOlxuICAgICAgICBwcmludCgnQ2FsbGluZyBfX2VxX18nKVxuICAgICAgICByZXR1cm4gRmFsc2VcblxuICAgIGRlZiBfX3JlcHJfXyhzZWxmKTpcbiAgICAgICAgcHJpbnQoJ0NhbGxpbmcgX19yZXByX18nKVxuICAgICAgICByZXR1cm4gJ1NvbWVTdHJpbmcnXG5cbiAgICBkZWYgX19nZXRpdGVtX18oc2VsZiwgaSk6XG4gICAgICAgIHByaW50KGYnQ2FsbGluZyBfX2dldGl0ZW1fXyB3aXRoIHtpfScpXG4gICAgICAgIHJldHVybiAtMVxuXG4gICAgZGVmIF9fc2V0aXRlbV9fKHNlbGYsIGksIHYpOlxuICAgICAgICBwcmludChmJ0NhbGxpbmcgX19zZXRpdGVtX18gd2l0aCB7aX0gYW5kIHt2fScpXG4gICAgICAgIHJldHVybiAtMVxuXG5cbnggPSBTb21lQ2xhc3MoKVxueSA9IFNvbWVDbGFzcygpXG5cbnByaW50KCdMZXNzIFRoYW4nKVxucHJpbnQoeCA8IHkpXG5wcmludCgpXG5cbnByaW50KCdHcmVhdGVyIFRoYW4nKVxucHJpbnQoeCA%2BIHkpXG5wcmludCgpXG5cbnByaW50KCdFcXVhbCcpXG5wcmludCh4ID09IHkpXG5wcmludCgpXG5cbnByaW50KCdOb3QgZXF1YWwnKVxucHJpbnQoeCAhPSB5KVxucHJpbnQoKVxuXG5wcmludCgnUHJpbnQnKVxucHJpbnQoeClcbnByaW50KClcblxucHJpbnQoJ0JyYWNrZXQgTm90YXRpb24nKVxucHJpbnQoeFswXSlcbnhbMTRdID0gNCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Calling __lt__&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">False</span>
-    
+
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Calling __eq__&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">False</span>
-    
+
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Calling __repr__&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="s1">&#39;SomeString&#39;</span>
-    
+
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Calling __getitem__ with {i}&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-        
+
     <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Calling __setitem__ with {i} and {v}&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-    
-    
+
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">SomeClass</span><span class="p">()</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">SomeClass</span><span class="p">()</span>
 
@@ -2085,8 +2107,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">x</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
 </pre></div>
-</div>
-<div class="note admonition">
+
+        </div>
+    </div>
+</div><div class="note admonition">
 <p class="admonition-title">Note</p>
 <p>It turns out that because we implement <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> and <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>
 there is no need to implement any other comparison operators ( <code class="docutils literal notranslate"><span class="pre">__le__</span></code> , <code class="docutils literal notranslate"><span class="pre">__gt__</span></code>, <code class="docutils literal notranslate"><span class="pre">__ge__</span></code>). This is why when we wrote <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code> it can figure it out just from <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>! For example, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code> can be implemented as <code class="docutils literal notranslate"><span class="pre">y.__lt__(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">y</span></code> could be implemented as <code class="docutils literal notranslate"><span class="pre">x.__lt__(y)</span> <span class="pre">or</span> <span class="pre">x.__eq_(y)</span></code>!
@@ -2119,57 +2143,45 @@ there is no need to implement any other comparison operators ( <code class="docu
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="defining-equality.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Defining Equality</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="defining-equality.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Defining Equality</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="a-search-engine.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">A Search Engine</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="a-search-engine.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">A Search Engine</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

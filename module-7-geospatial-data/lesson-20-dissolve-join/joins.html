@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joins &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Dissolve" href="dissolve.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,14 +2000,24 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Joins</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="joins">
@@ -2066,7 +2085,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>To explain in English, the process of joining them on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> finds all pairs of rows from each table, and keeps them if they match on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code>.</p>
 <p>Now this pseudo-code isn’t going to actually look like what we will write for <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Joining is such a common operation with data that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provides a function to do so that looks like the following (there is a bit of setup to create the datasets):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG4jIE1ha2UgdGhlIHRhcyBEYXRhRnJhbWVcbnRhcyA9IHBkLkRhdGFGcmFtZShbXG4gICAgeyd0YV9uYW1lJzogJ1J5YW4nLCAgICd0YV9pZCc6IDF9LFxuICAgIHsndGFfbmFtZSc6ICdKYW1lcycsICAndGFfaWQnOiAyfSxcbiAgICB7J3RhX25hbWUnOiAnTmljb2xlJywgJ3RhX2lkJzogM30sXG5dKVxucHJpbnQoJ3RhcycpXG5wcmludCh0YXMpXG5wcmludCgpXG5cbiMgTWFrZSB0aGUgZ3JhZGluZyBEYXRhRnJhbWVcbmdyYWRpbmcgPSBwZC5EYXRhRnJhbWUoW1xuICAgIHsnZ3JhZGVyX2lkJzogMiwgJ3N0dWRlbnRfbmFtZSc6ICdGbG9yYSd9LFxuICAgIHsnZ3JhZGVyX2lkJzogMywgJ3N0dWRlbnRfbmFtZSc6ICdQYXVsJ30sXG4gICAgeydncmFkZXJfaWQnOiAxLCAnc3R1ZGVudF9uYW1lJzogJ1dlbid9LFxuICAgIHsnZ3JhZGVyX2lkJzogMywgJ3N0dWRlbnRfbmFtZSc6ICdBbmRyZXcnfSxcblxuXSlcbnByaW50KCdncmFkaW5nJylcbnByaW50KGdyYWRpbmcpXG5wcmludCgpXG5cbiMgSm9pbiB0aGUgZGF0YXNldHMgYnkgdGFfaWQgYW5kIGdyYWRlcl9pZFxubWVyZ2VkID0gdGFzLm1lcmdlKGdyYWRpbmcsIGxlZnRfb249J3RhX2lkJywgcmlnaHRfb249J2dyYWRlcl9pZCcpXG5wcmludCgnbWVyZ2VkJylcbnByaW50KG1lcmdlZCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the tas DataFrame</span>
 <span class="n">tas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
@@ -2095,8 +2117,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;merged&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>Notice that the output contains all pairs of rows that match up on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code>! There are now two rows for <code class="docutils literal notranslate"><span class="pre">Nicole</span></code> because there were two rows in the original <code class="docutils literal notranslate"><span class="pre">grading</span></code> table that had her ID. At this point <code class="docutils literal notranslate"><span class="pre">merged</span></code> is a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the four columns shown in the output above. To compute how many students each TA was grading, we could easily solve this with a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> on this new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> !</p>
+
+        </div>
+    </div>
+</div><p>Notice that the output contains all pairs of rows that match up on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code>! There are now two rows for <code class="docutils literal notranslate"><span class="pre">Nicole</span></code> because there were two rows in the original <code class="docutils literal notranslate"><span class="pre">grading</span></code> table that had her ID. At this point <code class="docutils literal notranslate"><span class="pre">merged</span></code> is a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the four columns shown in the output above. To compute how many students each TA was grading, we could easily solve this with a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> on this new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> !</p>
 <p>You might be wondering, what would happen to rows that don’t “line up”. What if there was a TA who didn’t have anyone they were grading or a student had a <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> for a grader that doesn’t exist in the other table? Suppose we had the following dataset instead. We removed James from the left table and changed Wen to be graded by Nicole on the right.</p>
 <div class="table-section docutils">
 <div class="table-div docutils">
@@ -2143,7 +2167,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <p>Let’s see what happens when we run <code class="docutils literal notranslate"><span class="pre">merge</span></code> on these datasets.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG4jIE1ha2UgdGhlIHRhcyBEYXRhRnJhbWVcbnRhcyA9IHBkLkRhdGFGcmFtZShbXG4gICAgeyd0YV9uYW1lJzogJ1J5YW4nLCAgICd0YV9pZCc6IDF9LFxuICAgIHsndGFfbmFtZSc6ICdOaWNvbGUnLCAndGFfaWQnOiAzfSxcbl0pXG5wcmludCgndGFzJylcbnByaW50KHRhcylcbnByaW50KClcblxuIyBNYWtlIHRoZSBncmFkaW5nIERhdGFGcmFtZVxuZ3JhZGluZyA9IHBkLkRhdGFGcmFtZShbXG4gICAgeydncmFkZXJfaWQnOiAyLCAnc3R1ZGVudF9uYW1lJzogJ0Zsb3JhJ30sXG4gICAgeydncmFkZXJfaWQnOiAzLCAnc3R1ZGVudF9uYW1lJzogJ1BhdWwnfSxcbiAgICB7J2dyYWRlcl9pZCc6IDMsICdzdHVkZW50X25hbWUnOiAnV2VuJ30sXG4gICAgeydncmFkZXJfaWQnOiAzLCAnc3R1ZGVudF9uYW1lJzogJ0FuZHJldyd9LFxuXG5dKVxucHJpbnQoJ2dyYWRpbmcnKVxucHJpbnQoZ3JhZGluZylcbnByaW50KClcblxuIyBKb2luIHRoZSBkYXRhc2V0cyBieSB0YV9pZCBhbmQgZ3JhZGVyX2lkXG5tZXJnZWQgPSB0YXMubWVyZ2UoZ3JhZGluZywgbGVmdF9vbj0ndGFfaWQnLCByaWdodF9vbj0nZ3JhZGVyX2lkJylcbnByaW50KCdtZXJnZWQnKVxucHJpbnQobWVyZ2VkKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the tas DataFrame</span>
 <span class="n">tas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
@@ -2171,8 +2198,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;merged&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>Nicole is the only TA represented in this result! The rows that have IDs that did not “line up” with any other row got tossed out. This makes sense in the context of the pseudo-code we showed above since they didn’t have any matches. The topic of what to do with rows with missing values is very interesting and is the topic of the next slide.</p>
+
+        </div>
+    </div>
+</div><p>Nicole is the only TA represented in this result! The rows that have IDs that did not “line up” with any other row got tossed out. This makes sense in the context of the pseudo-code we showed above since they didn’t have any matches. The topic of what to do with rows with missing values is very interesting and is the topic of the next slide.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -2197,57 +2226,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="dissolve.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Dissolve</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="dissolve.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Dissolve</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="join-types.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Join Types</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="join-types.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Join Types</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

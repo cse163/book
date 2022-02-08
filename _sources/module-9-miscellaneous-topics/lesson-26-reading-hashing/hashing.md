@@ -22,7 +22,7 @@ Hash functions are a generic idea of being able to transform a value of any type
 
 Suppose I wanted to make a `set` of `int` s like in the code cell below. Our goal is to figure out how this structure is interpreted internally such that it can add and check membership of values in $\mathcal{O}(1)$ time. After the code cell, we illustrate how we use this big idea from above to implement this `set` . Below, we show a line of code in the gray code-block and then explain how it affects the hash table idea discussed above.
 
-```python
+```{snippet}
 nums = set()
 nums.add(11)
 nums.add(49)

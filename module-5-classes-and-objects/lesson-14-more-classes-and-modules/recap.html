@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recap &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Lesson 14: More Classes and Modules" href="index.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,58 +2000,88 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Recap</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="recap">
 <h1>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h1>
 <p>In Lesson 12, we learned about <strong>classes</strong> and <strong>objects</strong> . Here’s a quick recap of the terminology that we learned since it will be important to know these terms.</p>
 <ul>
-<li><p>A     <strong>class</strong>     is a blueprint that can be used to construct     <em>instances</em>     of that blueprint. A class defines the     <em>state</em>     of the     <em>object</em>     and what     <em>behaviors</em>     it has. For example, we defined the     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+<li><p>A <strong>class</strong> is a blueprint that can be used to construct <em>instances</em> of that blueprint. A class defines the <em>state</em> of the <em>object</em> and what <em>behaviors</em> it has. For example, we defined the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class as follows:</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgRG9nOlxuZGVmIF9faW5pdF9fKHNlbGYsIG5hbWUpOlxuICAgIHNlbGYubmFtZSA9IG5hbWVcblxuZGVmIGJhcmsoc2VsZik6XG4gICAgcHJpbnQoc2VsZi5uYW1lICsgJzogV29vZicpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
 <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
 <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;: Woof&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</li>
-<li><p>An     <strong>object</strong>     (or     <strong>instance</strong>     ) is an instantiation of a     <em>class</em>     that has its own set of fields. You can create an instance of the     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class by using the following syntax.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Fido&#39;</span><span class="p">)</span>
+
+        </div>
+    </div>
+</div></li>
+<li><p>An <strong>object</strong> (or <strong>instance</strong> ) is an instantiation of a <em>class</em> that has its own set of fields. You can create an instance of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class by using the following syntax.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZCA9IERvZygnRmlkbycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Fido&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</li>
-<li><p>The     <strong>state</strong>     of the object is represented by its     <strong>fields.</strong>     A field is essentially a variable owned by that object that is around for that object’s lifetime. The     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class has the field     <code class="docutils literal notranslate"><span class="pre">name</span></code>     .</p></li>
-<li><p>The     <strong>behavior</strong>     of an object is defined by the methods written in its     <em>class.</em>     The     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     class has the method     <code class="docutils literal notranslate"><span class="pre">bark</span></code>     .</p></li>
-<li><p>Variables store     <strong>references</strong>     to objects rather than the objects themselves. This means the following program has 2     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     objects and 3     <code class="docutils literal notranslate"><span class="pre">Dog</span></code>     references.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Chester&#39;</span><span class="p">)</span>
+
+        </div>
+    </div>
+</div></li>
+<li><p>The <strong>state</strong> of the object is represented by its <strong>fields.</strong> A field is essentially a variable owned by that object that is around for that object’s lifetime. The <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class has the field <code class="docutils literal notranslate"><span class="pre">name</span></code> .</p></li>
+<li><p>The <strong>behavior</strong> of an object is defined by the methods written in its <em>class.</em> The <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class has the method <code class="docutils literal notranslate"><span class="pre">bark</span></code> .</p></li>
+<li><p>Variables store <strong>references</strong> to objects rather than the objects themselves. This means the following program has 2 <code class="docutils literal notranslate"><span class="pre">Dog</span></code> objects and 3 <code class="docutils literal notranslate"><span class="pre">Dog</span></code> references.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZDEgPSBEb2coJ0NoZXN0ZXInKVxuZDIgPSBEb2coJ1Njb3V0JylcbmQzID0gZDEiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Chester&#39;</span><span class="p">)</span>
 <span class="n">d2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Scout&#39;</span><span class="p">)</span>
 <span class="n">d3</span> <span class="o">=</span> <span class="n">d1</span>
 </pre></div>
-</div>
-</li>
-<li><p>A     <strong>memory model</strong>     is a picture that helps us see which objects exist in our program and which variables reference which objects.     <br /></p>
+
+        </div>
+    </div>
+</div></li>
+<li><p>A <strong>memory model</strong> is a picture that helps us see which objects exist in our program and which variables reference which objects. <br /></p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/klq5hkNl8mnQsfjtNrk2bwxq"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/klq5hkNl8mnQsfjtNrk2bwxq" style="width: 360px;" /></a>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code>     is a special method used when creating an instance of the object. It determines which parameters need to be passed when you create a new instance.</p></li>
-<li><p>Every method defined in a class needs to take a parameter     <code class="docutils literal notranslate"><span class="pre">self</span></code>     so the method can access the fields/methods of the instance the method is being called on.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Chester&#39;</span><span class="p">)</span>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> is a special method used when creating an instance of the object. It determines which parameters need to be passed when you create a new instance.</p></li>
+<li><p>Every method defined in a class needs to take a parameter <code class="docutils literal notranslate"><span class="pre">self</span></code> so the method can access the fields/methods of the instance the method is being called on.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZDEgPSBEb2coJ0NoZXN0ZXInKVxuZDIgPSBEb2coJ1Njb3V0JylcbmQzID0gZDFcbmQxLmJhcmsoKSAgIyBXaGVuIHJ1bm5pbmcsIHNlbGYgcmVmZXJzIHRvIERvZygnQ2hlc3RlcicpXG5kMi5iYXJrKCkgICMgV2hlbiBydW5uaW5nLCBzZWxmIHJlZmVycyB0byBEb2coJ1Njb3V0JylcbmQzLmJhcmsoKSAgIyBXaGVuIHJ1bm5pbmcsIHNlbGYgcmVmZXJzIHRvIERvZygnQ2hlc3RlcicpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Chester&#39;</span><span class="p">)</span>
 <span class="n">d2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Scout&#39;</span><span class="p">)</span>
 <span class="n">d3</span> <span class="o">=</span> <span class="n">d1</span>
 <span class="n">d1</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># When running, self refers to Dog(&#39;Chester&#39;)</span>
 <span class="n">d2</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># When running, self refers to Dog(&#39;Scout&#39;)</span>
 <span class="n">d3</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># When running, self refers to Dog(&#39;Chester&#39;)</span>
 </pre></div>
-</div>
-</li>
+
+        </div>
+    </div>
+</div></li>
 </ul>
 </div>
 
@@ -2068,57 +2107,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 14: More Classes and Modules</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="fas fa-book fa-fw"></i> Lesson 14: More Classes and Modules</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="private-fields.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Private Fields</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="private-fields.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Private Fields</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

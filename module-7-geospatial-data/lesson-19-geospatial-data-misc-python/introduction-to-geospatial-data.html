@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction to Geospatial Data &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Lesson 19: Geospatial Data + Misc Python" href="index.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2021,7 +2030,40 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Geospatial Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-geopandas">
+   Introduction to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     geopandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometry">
+   Geometry
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="introduction-to-geospatial-data">
@@ -2045,7 +2087,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>A very common format for geospatial data is just a plain CSV that we could parse with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . However, they usually also contain a special column to indicate the location in the world that row corresponds to. A very simple representation uses latitude and longitude for each row, but geospatial data can store a very rich set of geospatial features in general.</p>
 <p>In order to process this special column format to encode geospatial information, we have to use a new library called <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> . Don’t worry, everything you know from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> carries over here with some added on features!</p>
 <p>In the code cell below, we show how to load in one of these geospatial datasets with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> . The dataset contains information about various countries of the world and information like their population and GDP. The file we will use a is a shapefile ( <code class="docutils literal notranslate"><span class="pre">.shp</span></code> ). The file format itself is actually pretty complex so we will only look at the data after parsing it in <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> rather than looking at the file directly.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbiMgUHJpbnQgb3V0IHRoZSBjb2x1bW5zXG5wcmludCgnPT09PT0gQ29sdW1ucyA9PT09PT0nKVxucHJpbnQoZGYuY29sdW1ucylcbnByaW50KClcblxuIyBQcmludCBvdXQgb25lIHJvdyBvZiBkYXRhXG5wcmludCgnPT09PT0gRmlyc3Qgcm93ID09PT09JylcbnByaW50KGRmLmxvY1swXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
 
@@ -2058,9 +2103,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;===== First row =====&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>The type of the value <code class="docutils literal notranslate"><span class="pre">df</span></code> in the cell above is a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . It behaves exactly like a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> but knows how to do some extra geospatial processing. There is also a <code class="docutils literal notranslate"><span class="pre">GeoSeries</span></code> type unsurprisingly. To start seeing the power of <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> , you can see what happens if you ask the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to plot itself.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+
+        </div>
+    </div>
+</div><p>The type of the value <code class="docutils literal notranslate"><span class="pre">df</span></code> in the cell above is a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . It behaves exactly like a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> but knows how to do some extra geospatial processing. There is also a <code class="docutils literal notranslate"><span class="pre">GeoSeries</span></code> type unsurprisingly. To start seeing the power of <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> , you can see what happens if you ask the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to plot itself.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbmRmLnBsb3QoKVxucGx0LnNhdmVmaWcoJ3dvcmxkLnBuZycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
@@ -2068,9 +2118,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;world.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>You can get fancier have it color each country by its population using the <code class="docutils literal notranslate"><span class="pre">column</span></code> parameter, like in the snippet below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+
+        </div>
+    </div>
+</div><p>You can get fancier have it color each country by its population using the <code class="docutils literal notranslate"><span class="pre">column</span></code> parameter, like in the snippet below.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbiMgUE9QX0VTVCBpcyB0aGUgbmFtZSBvZiB0aGUgY29sdW1tbiBjb250YWluaW5nIHBvcHVsYXRpb24gaW5mb3JtYXRpb25cbiMgbGVnZW5kPVRydWUgbWFrZXMgdGhlIGxlZ2VuZCBhcHBlYXJcbmRmLnBsb3QoY29sdW1uPSdQT1BfRVNUJywgbGVnZW5kPVRydWUpXG5wbHQuc2F2ZWZpZygnd29ybGRfcG9wdWxhdGlvbi5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
@@ -2080,20 +2135,27 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;POP_EST&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;world_population.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 <div class="section" id="geometry">
 <h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
 <p>Each row in the data corresponds to one country. The dataset has a special column called <code class="docutils literal notranslate"><span class="pre">'geometry'</span></code> that stores the shape of each country with a <strong>geometry</strong> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbnByaW50KGRmWydnZW9tZXRyeSddKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>You don’t need to memorize the different types of geometries, but it helps to be familiar with what can be represented in this column. The picture below shows different types of geometries. Most countries are represented by a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> or a <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code> (e.g. if they have multiple bodies of land) while you would likely not find any <code class="docutils literal notranslate"><span class="pre">LineString</span></code> countries in this dataset.</p>
+
+        </div>
+    </div>
+</div><p>You don’t need to memorize the different types of geometries, but it helps to be familiar with what can be represented in this column. The picture below shows different types of geometries. Most countries are represented by a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> or a <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code> (e.g. if they have multiple bodies of land) while you would likely not find any <code class="docutils literal notranslate"><span class="pre">LineString</span></code> countries in this dataset.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC"><img alt="different types of geometries supported by geopandas, including Point, MultiPoint, LineString, MultiLineString, LinearRing, MultiPolygon, Polygon, and GeometryCollection." class="align-center" src="https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC" style="width: 743px;" /></a>
 </div>
 </div>
@@ -2120,57 +2182,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 19: Geospatial Data + Misc Python</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="fas fa-book fa-fw"></i> Lesson 19: Geospatial Data + Misc Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="zip.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Zip</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="zip.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Zip</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

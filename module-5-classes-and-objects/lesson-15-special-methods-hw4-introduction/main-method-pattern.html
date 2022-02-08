@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Method Pattern &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Lesson 15: Special Methods + HW4 Introduction" href="index.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2021,7 +2030,40 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Main Method Pattern</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-tutorial-on-importing">
+   A Tutorial on Importing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-does-the-main-method-pattern-help">
+   How does the main-method pattern help?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#take-away">
+   Take-away
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="main-method-pattern">
@@ -2039,42 +2081,65 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>We are indicating that you should read the contents of that code block being in the file with the indicated name.</p>
 </div>
 <p>Recall from the first lesson, we saw that there were two ways of writing a “Hello world” program</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: hello_world.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBGaWxlOiBoZWxsb193b3JsZC5weVxuXG5wcmludCgnSGVsbG8gd29ybGQnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># File: hello_world.py</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: hello_world.py</span>
+
+        </div>
+    </div>
+</div><div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBGaWxlOiBoZWxsb193b3JsZC5weVxuXG5kZWYgbWFpbigpOlxuICAgIHByaW50KCdIZWxsbyB3b3JsZCcpXG5cblxuaWYgX19uYW1lX18gPT0gJ19fbWFpbl9fJzpcbiAgICBtYWluKCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># File: hello_world.py</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
-    
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-</div>
-<p>We showed that regardless of which one you used if you ran <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello_world.py</span></code> it would print out <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">world</span></code> . It is helpful to remember what happens when you run a Python program. Whenever you <em>run</em> a Python program, it starts at the top of the file and executes each line until it reaches the bottom.</p>
+
+        </div>
+    </div>
+</div><p>We showed that regardless of which one you used if you ran <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello_world.py</span></code> it would print out <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">world</span></code> . It is helpful to remember what happens when you run a Python program. Whenever you <em>run</em> a Python program, it starts at the top of the file and executes each line until it reaches the bottom.</p>
 <p>You probably then wondered: Why did we need all this extra stuff if these two programs do the exact same thing? At the time we couldn’t give a good answer, but now we are able to justify why these are different and why you should always use the second one.</p>
 <p>The case where these two approaches differ is when your program uses <code class="docutils literal notranslate"><span class="pre">import</span></code> statements.</p>
 <div class="section" id="a-tutorial-on-importing">
 <h2>A Tutorial on Importing<a class="headerlink" href="#a-tutorial-on-importing" title="Permalink to this headline">¶</a></h2>
 <p>Suppose I have the following three files that did not use the main-method pattern.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: module_a.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBGaWxlOiBtb2R1bGVfYS5weVxuXG5kZWYgZnVuY3Rpb25fYSgpOlxuICAgIHByaW50KCdIZWxsbyBmcm9tIEZ1bmN0aW9uIEEnKVxuXG5wcmludCgnSSBsb3ZlIEZpbGUgQScpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># File: module_a.py</span>
 
 <span class="k">def</span> <span class="nf">function_a</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello from Function A&#39;</span><span class="p">)</span>
-    
+
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;I love File A&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: module_b.py</span>
+
+        </div>
+    </div>
+</div><div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBGaWxlOiBtb2R1bGVfYi5weVxuXG5kZWYgZnVuY3Rpb25fYigpOlxuICAgIHByaW50KCdIZWxsbyBmcm9tIEZ1bmN0aW9uIEInKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># File: module_b.py</span>
 
 <span class="k">def</span> <span class="nf">function_b</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello from Function B&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: module_c.py</span>
+
+        </div>
+    </div>
+</div><div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBGaWxlOiBtb2R1bGVfYy5weVxuXG5pbXBvcnQgbW9kdWxlX2FcbmltcG9ydCBtb2R1bGVfYlxuXG5wcmludChcIkxldCdzIGNhbGwgc29tZSBmdW5jdGlvbnNcIilcbm1vZHVsZV9iLmZ1bmN0aW9uX2IoKVxubW9kdWxlX2EuZnVuY3Rpb25fYSgpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># File: module_c.py</span>
 
 <span class="kn">import</span> <span class="nn">module_a</span>
 <span class="kn">import</span> <span class="nn">module_b</span>
@@ -2083,8 +2148,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">module_b</span><span class="o">.</span><span class="n">function_b</span><span class="p">()</span>
 <span class="n">module_a</span><span class="o">.</span><span class="n">function_a</span><span class="p">()</span>
 </pre></div>
-</div>
-<p>What would you expect to be the output of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">module_c.py</span></code> ? Since we print and call two functions, you would probably expect the following.</p>
+
+        </div>
+    </div>
+</div><p>What would you expect to be the output of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">module_c.py</span></code> ? Since we print and call two functions, you would probably expect the following.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Let&#39;s call some functions
 Hello from Function B
 Hello from Function A
@@ -2104,25 +2171,33 @@ Hello from Function A
 <h2>How does the main-method pattern help?<a class="headerlink" href="#how-does-the-main-method-pattern-help" title="Permalink to this headline">¶</a></h2>
 <p>The main-method pattern prevents some of the code in a file from being run on import!</p>
 <p>Let’s go back and explain the components of the “Hello world” program to understand how this happens. Below, we have annotated the “Hello world” program with comments explaining its components.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: hello_world.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBGaWxlOiBoZWxsb193b3JsZC5weVxuXG4jIFRoaXMgZGVmaW5lcyBhIGZ1bmN0aW9uIGNhbGxlZCBtYWluIChub3RoaW5nIHNwZWNpYWwgaGVyZSlcbmRlZiBtYWluKCk6XG4gICAgcHJpbnQoJ0hlbGxvIHdvcmxkJylcblxuIyBUaGlzIGlmLXN0YXRlbWVudCBvbmx5IHJ1bnMgdGhpcyBmaWxlIGlzIGJlaW5nIHJ1biB2aWE6IHB5dGhvbiBoZWxsb193b3JsZC5weVxuaWYgX19uYW1lX18gPT0gJ19fbWFpbl9fJzpcbiAgICAjIElmIHRoaXMgY29uZGl0aW9uIGlzIHRydWUsIHRoZW4gY2FsbCB0aGUgbWFpbiBtZXRob2QgKG5vdGhpbmcgc3BlY2lhbCBoZXJlKVxuICAgIG1haW4oKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># File: hello_world.py</span>
 
 <span class="c1"># This defines a function called main (nothing special here)</span>
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
-    
+
 <span class="c1"># This if-statement only runs this file is being run via: python hello_world.py</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="c1"># If this condition is true, then call the main method (nothing special here)</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-</div>
-<p>So in reality, the only “special” part of the main-method pattern is the if-statement <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> . Python uses the special variable <code class="docutils literal notranslate"><span class="pre">__name__</span></code> to give you information about how your file is being used. All we do in the main-method pattern is only call <code class="docutils literal notranslate"><span class="pre">main()</span></code> if we know this file is being run rather than imported.</p>
+
+        </div>
+    </div>
+</div><p>So in reality, the only “special” part of the main-method pattern is the if-statement <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> . Python uses the special variable <code class="docutils literal notranslate"><span class="pre">__name__</span></code> to give you information about how your file is being used. All we do in the main-method pattern is only call <code class="docutils literal notranslate"><span class="pre">main()</span></code> if we know this file is being run rather than imported.</p>
 <ul class="simple">
-<li><p>If you are running the module from the command-line (e.g.     <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello_world.py</span></code>     ),     <code class="docutils literal notranslate"><span class="pre">__name__</span></code>     will have the value     <code class="docutils literal notranslate"><span class="pre">'__main__'</span></code>     . This is why our check verifies if     <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code>     before calling the     <code class="docutils literal notranslate"><span class="pre">main</span></code>     method.</p></li>
-<li><p>If you are importing the module from another Python file (e.g.     <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">hello_world</span></code>     ),     <code class="docutils literal notranslate"><span class="pre">__name__</span></code>     will have the value     <code class="docutils literal notranslate"><span class="pre">'hello_world'</span></code>     (the module that’s being imported).</p></li>
+<li><p>If you are running the module from the command-line (e.g. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello_world.py</span></code> ), <code class="docutils literal notranslate"><span class="pre">__name__</span></code> will have the value <code class="docutils literal notranslate"><span class="pre">'__main__'</span></code> . This is why our check verifies if <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> before calling the <code class="docutils literal notranslate"><span class="pre">main</span></code> method.</p></li>
+<li><p>If you are importing the module from another Python file (e.g. <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">hello_world</span></code> ), <code class="docutils literal notranslate"><span class="pre">__name__</span></code> will have the value <code class="docutils literal notranslate"><span class="pre">'hello_world'</span></code> (the module that’s being imported).</p></li>
 </ul>
 <p>You could imagine making a toy module that just prints out whether it is being run as a program or imported:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: toy_module.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBGaWxlOiB0b3lfbW9kdWxlLnB5XG5cbmlmIF9fbmFtZV9fID09ICdfX21haW5fXyc6XG4gICAgcHJpbnQoJ1J1bm5uaW5nIHByb2dyYW0nKVxuZWxpZiBfX25hbWVfXyA9PSAndG95X21vZHVsZSc6XG4gICAgcHJpbnQoJ0JlaW5nIGltcG9ydGVkJylcbmVsc2U6XG4gICAgcHJpbnQoJ05vdCBwb3NzaWJsZSEnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># File: toy_module.py</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Runnning program&#39;</span><span class="p">)</span>
@@ -2131,8 +2206,10 @@ Hello from Function A
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Not possible!&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 <div class="section" id="take-away">
 <h2>Take-away<a class="headerlink" href="#take-away" title="Permalink to this headline">¶</a></h2>
 <p>The main-method pattern is important and used very commonly in Python to prevent unintended side-effects from importing a module. Your module should only have function definitions, and if you do want the ability to run it, you should use the main-method pattern. There is almost never a case where you want non-function definition lines of code (e.g. <code class="docutils literal notranslate"><span class="pre">print</span></code> statements or reading a file) outside of the main-method pattern.</p>
@@ -2161,57 +2238,45 @@ Hello from Function A
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 15: Special Methods + HW4 Introduction</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="fas fa-book fa-fw"></i> Lesson 15: Special Methods + HW4 Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="equality-and-identity.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Equality and Identity</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="equality-and-identity.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Equality and Identity</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

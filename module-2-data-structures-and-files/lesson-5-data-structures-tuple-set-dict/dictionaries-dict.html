@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dictionaries (dict) &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Sets (set)" href="sets-set/SetDemo.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2021,7 +2030,40 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dictionaries (dict)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-dict">
+   Introduction to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="dictionaries-dict">
@@ -2036,7 +2078,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h2>Introduction to <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#introduction-to-dict" title="Permalink to this headline">¶</a></h2>
 <p>The last data structure we are going to learn today is called a dictionary (in Python, written as <code class="docutils literal notranslate"><span class="pre">dict</span></code> ). A <code class="docutils literal notranslate"><span class="pre">dict</span></code> is a very powerful data structure since it acts, in some sense, as a more generalized <code class="docutils literal notranslate"><span class="pre">list</span></code> . Essentially a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is much like a <code class="docutils literal notranslate"><span class="pre">list</span></code> , but allows you to store any type as the index while a <code class="docutils literal notranslate"><span class="pre">list</span></code> only allows numbers from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">len</span> <span class="pre">-</span> <span class="pre">1</span></code> as valid indices.</p>
 <p>To create a <code class="docutils literal notranslate"><span class="pre">dict</span></code> in Python, you use the syntax in the following snippet. Note that <code class="docutils literal notranslate"><span class="pre">dict</span></code> supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, <code class="docutils literal notranslate"><span class="pre">dict</span></code> uses a different term for the index to reduce confusion with <code class="docutils literal notranslate"><span class="pre">list</span></code> s: we call the “index” of an entry in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> its <strong>key</strong>. We describe a <code class="docutils literal notranslate"><span class="pre">dict</span></code> as a bunch of key/value pairs that are accessible via the key.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">47</span><span class="p">:</span> <span class="s1">&#39;scurvy&#39;</span><span class="p">}</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZCA9IHsnYSc6IDEsICdiJzogMTcsIDQ3OiAnc2N1cnZ5J31cbnByaW50KGQpXG4jIFRoaXMgbWFrZXMgYSBkaWN0aW9uYXJ5IHdpdGggdGhlIGZvbGxvd2luZyBrZXlzL3ZhbHVlczpcbiMgICBUaGUga2V5ICdhJyBpcyBhc3NvY2lhdGVkIHRvIHRoZSB2YWx1ZSAxXG4jICAgVGhlIGtleSAnYicgaXMgYXNzb2NpYXRlZCB0byB0aGUgdmFsdWUgMTdcbiMgICBUaGUga2V5ICA0NyBpcyBhc3NvY2lhdGVkIHRvIHRoZSB2YWx1ZSAnc2N1cnZ5J1xuXG4jIFlvdSBjYW4gZ2V0L3NldCB0aGUgdmFsdWUgZm9yIGEga2V5IHVzaW5nIHRoZSBzcXVhcmUtYnJhY2tldCBub3RhdGlvblxucHJpbnQoZFsnYiddKVxuXG5kWydkb2dzJ10gPSAnY3V0ZSdcbnByaW50KGQpXG5cbiMgSWYgYSBrZXkgYWxyZWFkeSBleGlzdHMgaW4gdGhlIGRpY3QsIGl0IHdpbGwgYmUgb3ZlcndyaXR0ZW4gaWYgeW91IHNldCBpdFxuZFsnZG9ncyddID0gJ3ZlcnkgYWRvcmFibGUnXG5wcmludChkKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">47</span><span class="p">:</span> <span class="s1">&#39;scurvy&#39;</span><span class="p">}</span>
 <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="c1"># This makes a dictionary with the following keys/values:</span>
 <span class="c1">#   The key &#39;a&#39; is associated to the value 1</span>
@@ -2053,39 +2098,56 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dogs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;very adorable&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>The nice thing is you have a pretty solid understanding of how to use a <code class="docutils literal notranslate"><span class="pre">dict</span></code> already because you know how to use <code class="docutils literal notranslate"><span class="pre">list</span></code> s! The semantics of accessing/setting a value associated to a key are very similar to accessing/setting a value associated to an index in a <code class="docutils literal notranslate"><span class="pre">list</span></code> .</p>
+
+        </div>
+    </div>
+</div><p>The nice thing is you have a pretty solid understanding of how to use a <code class="docutils literal notranslate"><span class="pre">dict</span></code> already because you know how to use <code class="docutils literal notranslate"><span class="pre">list</span></code> s! The semantics of accessing/setting a value associated to a key are very similar to accessing/setting a value associated to an index in a <code class="docutils literal notranslate"><span class="pre">list</span></code> .</p>
 <p>If you try to look up a key that is not in the <code class="docutils literal notranslate"><span class="pre">dict</span></code> , you will run into a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> , as shown in the following snippet. As a note, we also show how to make an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code> with the syntax <code class="docutils literal notranslate"><span class="pre">{}</span></code> (just like an empty <code class="docutils literal notranslate"><span class="pre">list</span></code> is <code class="docutils literal notranslate"><span class="pre">[]</span></code> ).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZCA9IHt9XG5kWydkb2dzJ10gPSAndmVyeSBjdXRlJ1xucHJpbnQoZFsnY2F0cyddKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dogs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;very cute&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;cats&#39;</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>To prevent this error, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword to see if a key is in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> before trying to access it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+
+        </div>
+    </div>
+</div><p>To prevent this error, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword to see if a key is in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> before trying to access it.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZCA9IHt9XG5kWydkb2dzJ10gPSAndmVyeSBjdXRlJ1xuaWYgJ2NhdHMnIGluIGQ6XG4gICAgcHJpbnQoZFsnY2F0cyddKVxuZWxzZTpcbiAgICBwcmludCgnTm8gY2F0cyEnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dogs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;very cute&#39;</span>
 <span class="k">if</span> <span class="s1">&#39;cats&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;cats&#39;</span><span class="p">])</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;No cats!&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Imagine we had a list of strings, and we wanted to find sum of the word lengths that start with each letter. For example, with the list <code class="docutils literal notranslate"><span class="pre">['cats',</span> <span class="pre">'dogs',</span> <span class="pre">'deers']</span></code> we would report the sum of the lengths of strings that start with <code class="docutils literal notranslate"><span class="pre">'c'</span></code> is 4 while the sum of the lengths of strings that start with <code class="docutils literal notranslate"><span class="pre">d</span></code> is 9. We will write a function called <code class="docutils literal notranslate"><span class="pre">count_lengths</span></code> to solve this problem. The function should take a <code class="docutils literal notranslate"><span class="pre">list</span></code> of words (all <code class="docutils literal notranslate"><span class="pre">str</span></code> ) and we can assume none of the <code class="docutils literal notranslate"><span class="pre">str</span></code> are the empty string.</p>
 <p>This seems like the task of a <code class="docutils literal notranslate"><span class="pre">dict</span></code> where the keys are the first letters of the words, and the values are the sum of the lengths. Let’s try to write a function to use the things we have seen so far to do this!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_lengths</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGNvdW50X2xlbmd0aHMod29yZHMpOlxuICAgIGNvdW50cyA9IHt9XG4gICAgZm9yIHdvcmQgaW4gd29yZHM6XG4gICAgICAgIGZpcnN0X2xldHRlciA9IHdvcmRbMF1cbiAgICAgICAgY291bnRzW2ZpcnN0X2xldHRlcl0gPSBjb3VudHNbZmlyc3RfbGV0dGVyXSArIGxlbih3b3JkKVxuICAgIHJldHVybiBjb3VudHNcblxucHJpbnQoY291bnRfbGVuZ3RocyhbJ2NhdHMnLCAnZG9ncycsICdkZWVycyddKSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_lengths</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
     <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
         <span class="n">first_letter</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">counts</span><span class="p">[</span><span class="n">first_letter</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">first_letter</span><span class="p">]</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">counts</span>
-        
+
 <span class="k">print</span><span class="p">(</span><span class="n">count_lengths</span><span class="p">([</span><span class="s1">&#39;cats&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">,</span> <span class="s1">&#39;deers&#39;</span><span class="p">]))</span>
 </pre></div>
-</div>
-<p>We ran into an error! What happened?</p>
+
+        </div>
+    </div>
+</div><p>We ran into an error! What happened?</p>
 <p>It turns out we crashed on the first word in the list <code class="docutils literal notranslate"><span class="pre">'cats'</span></code> . We get the first letter <code class="docutils literal notranslate"><span class="pre">'c'</span></code> and we try to get the value in the dictionary associated to the key <code class="docutils literal notranslate"><span class="pre">'c'</span></code> when we evaluate <code class="docutils literal notranslate"><span class="pre">counts[first_letter]</span> <span class="pre">+</span> <span class="pre">len(word)</span></code> . Remember though, if a key is not present, we get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> which is exactly what happened in this snippet.</p>
 <p>To fix this, we need to introduce a common pattern when working with <code class="docutils literal notranslate"><span class="pre">dict</span></code> s. If you are ever adding values to a <code class="docutils literal notranslate"><span class="pre">dict</span></code> , you commonly need to think about the cases:</p>
 <ul class="simple">
@@ -2093,7 +2155,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>We have seen the key before</p></li>
 </ul>
 <p>Depending on which case you are in, you need to write different code to handle the fact that the key is not present in the <code class="docutils literal notranslate"><span class="pre">dict</span></code> in the first case. We can easily fix this by introducing a check that uses <code class="docutils literal notranslate"><span class="pre">in</span></code> , but the pattern does look a bit odd at first. All of the added code is inside the loop, and is there to avoid getting this <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_lengths</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGNvdW50X2xlbmd0aHMod29yZHMpOlxuICAgIGNvdW50cyA9IHt9XG4gICAgZm9yIHdvcmQgaW4gd29yZHM6XG4gICAgICAgIGZpcnN0X2xldHRlciA9IHdvcmRbMF1cbiAgICAgICAgaWYgZmlyc3RfbGV0dGVyIGluIGNvdW50czpcbiAgICAgICAgICAgIGNvdW50c1tmaXJzdF9sZXR0ZXJdID0gY291bnRzW2ZpcnN0X2xldHRlcl0gKyBsZW4od29yZClcbiAgICAgICAgZWxzZTpcbiAgICAgICAgICAgIGNvdW50c1tmaXJzdF9sZXR0ZXJdID0gbGVuKHdvcmQpXG4gICAgcmV0dXJuIGNvdW50c1xuXG5wcmludChjb3VudF9sZW5ndGhzKFsnY2F0cycsICdkb2dzJywgJ2RlZXJzJ10pKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_lengths</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
     <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
         <span class="n">first_letter</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -2102,11 +2167,13 @@ commentsRunWhenDOMLoaded(addUtterances);
         <span class="k">else</span><span class="p">:</span>
             <span class="n">counts</span><span class="p">[</span><span class="n">first_letter</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">counts</span>
-        
+
 <span class="k">print</span><span class="p">(</span><span class="n">count_lengths</span><span class="p">([</span><span class="s1">&#39;cats&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">,</span> <span class="s1">&#39;deers&#39;</span><span class="p">]))</span>
 </pre></div>
-</div>
-<p>To explain what this <code class="docutils literal notranslate"><span class="pre">if</span></code> -check is doing in English: If we haven’t seen the key before, we can just go ahead and set it to the length of the current word. If we have seen it before, we take the current sum for this key and add on the length of the current word.</p>
+
+        </div>
+    </div>
+</div><p>To explain what this <code class="docutils literal notranslate"><span class="pre">if</span></code> -check is doing in English: If we haven’t seen the key before, we can just go ahead and set it to the length of the current word. If we have seen it before, we take the current sum for this key and add on the length of the current word.</p>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
 <p>A very common bug when you’re first working with <code class="docutils literal notranslate"><span class="pre">dict</span></code>s is forgetting this type of pattern to handle the first time you see a key.</p>
@@ -2136,57 +2203,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="sets-set/SetDemo.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Sets (set)</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="sets-set/SetDemo.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Sets (set)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pause-and-think.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="pause-and-think.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

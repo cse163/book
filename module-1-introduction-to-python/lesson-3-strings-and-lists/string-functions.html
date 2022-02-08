@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>String Functions &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Strings" href="strings.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2015,7 +2024,34 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>String Functions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#len">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     len
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="string-functions">
@@ -2027,18 +2063,28 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Each string is an <strong>object</strong>. We will talk more about objects in detail in Week 5, but the basic idea is that each string is its own, independent unit that has some <strong>state</strong> and some <strong>behaviors.</strong> The <strong>state</strong> of a string is its characters and their ordering. The <strong>behaviors</strong> of the string are the functions we are allowed to call on them to access or transform the data. You don’t need to worry too much about this state/behavior terminology right now as we will emphasize it in Module 5.</p>
 <p>We have seen a simple function already that allows us to index into the string so it can return the character at that index. You can imagine this indexing as just one special function provided to us by the string (although the syntax looks different than the general notion we will show below).</p>
 <p>For example, there is also an <code class="docutils literal notranslate"><span class="pre">find</span></code> function that you can call on a string <code class="docutils literal notranslate"><span class="pre">s1</span></code> , that returns the index of a given string <code class="docutils literal notranslate"><span class="pre">s2</span></code> inside <code class="docutils literal notranslate"><span class="pre">s1</span></code>. For example, you could write the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;I really like dogs&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAic291cmNlID0gJ0kgcmVhbGx5IGxpa2UgZG9ncydcbnRhcmdldCA9ICdsbCdcbnByaW50KHNvdXJjZS5maW5kKHRhcmdldCkpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;I really like dogs&#39;</span>
 <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;ll&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
 </pre></div>
-</div>
-<p>In this case, it prints 5 because the first occurrence of the substring <code class="docutils literal notranslate"><span class="pre">'ll'</span></code> in <code class="docutils literal notranslate"><span class="pre">source</span></code> appears at index 5. Notice that we call a function on the string <code class="docutils literal notranslate"><span class="pre">source</span></code> by saying <code class="docutils literal notranslate"><span class="pre">source.&lt;function_name&gt;(...)</span></code> where <code class="docutils literal notranslate"><span class="pre">...</span></code> is the parameters we need to pass to that function. If we were to call <code class="docutils literal notranslate"><span class="pre">target.find(source)</span></code> it would be looking for <code class="docutils literal notranslate"><span class="pre">source</span></code> inside <code class="docutils literal notranslate"><span class="pre">target</span></code> and would instead return -1 (as defined in the documentation for <code class="docutils literal notranslate"><span class="pre">find</span></code> ). You can try this in the snippet below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;I really like dogs&#39;</span>
+
+        </div>
+    </div>
+</div><p>In this case, it prints 5 because the first occurrence of the substring <code class="docutils literal notranslate"><span class="pre">'ll'</span></code> in <code class="docutils literal notranslate"><span class="pre">source</span></code> appears at index 5. Notice that we call a function on the string <code class="docutils literal notranslate"><span class="pre">source</span></code> by saying <code class="docutils literal notranslate"><span class="pre">source.&lt;function_name&gt;(...)</span></code> where <code class="docutils literal notranslate"><span class="pre">...</span></code> is the parameters we need to pass to that function. If we were to call <code class="docutils literal notranslate"><span class="pre">target.find(source)</span></code> it would be looking for <code class="docutils literal notranslate"><span class="pre">source</span></code> inside <code class="docutils literal notranslate"><span class="pre">target</span></code> and would instead return -1 (as defined in the documentation for <code class="docutils literal notranslate"><span class="pre">find</span></code> ). You can try this in the snippet below.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAic291cmNlID0gJ0kgcmVhbGx5IGxpa2UgZG9ncydcbnRhcmdldCA9ICdsbCdcbnByaW50KHRhcmdldC5maW5kKHNvdXJjZSkpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;I really like dogs&#39;</span>
 <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;ll&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">source</span><span class="p">))</span>
 </pre></div>
-</div>
-<p>Here is a shortlist of useful functions for <code class="docutils literal notranslate"><span class="pre">str</span></code> in Python.</p>
+
+        </div>
+    </div>
+</div><p>Here is a shortlist of useful functions for <code class="docutils literal notranslate"><span class="pre">str</span></code> in Python.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Function</p></th>
@@ -2080,7 +2126,10 @@ strings rather than modifying the original string
 </div>
 <p>The last two functions are the most complex, so we will do a short example to clarify their use.</p>
 <p>Suppose we had a string that contained a series of values separated by the <code class="docutils literal notranslate"><span class="pre">,</span></code> character, but we want to print the string out in all upper-case letters separated by <code class="docutils literal notranslate"><span class="pre">|</span></code> characters. We put print statements in between to make the sequence of transformations clearer and to provide comments explaining the step.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;hunter,madrona,alex,sylvia&#39;</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9ICdodW50ZXIsbWFkcm9uYSxhbGV4LHN5bHZpYSdcbnByaW50KCdPcmlnaW5hbCAgIDonLCBkYXRhKVxuXG4jIFJldHVybnMgYSBuZXcgc3RyaW5nIHRoYXQgaXMgdGhlIHVwcGVyLWNhc2UgdmVyc2lvbiBvZiBkYXRhXG4jIFN0b3JlIHRoYXQgbmV3IHZhbHVlIGluIHRoZSBkYXRhIHZhcmlhYmxlXG5kYXRhID0gZGF0YS51cHBlcigpXG5wcmludCgnQWZ0ZXIgdXBwZXI6JywgZGF0YSlcblxuIyBTcGxpdCB0aGUgZGF0YSB1cCBieSBhICcsJy4gUmV0dXJucyBhIGxpc3Qgb2YgcGFydHMuXG4jIFdlIHdpbGwgZGVzY3JpYmUgbGlzdHMgbGF0ZXIgaW4gdGhpcyByZWFkaW5nLlxucGFydHMgPSBkYXRhLnNwbGl0KCcsJylcbnByaW50KCdBZnRlciBzcGxpdDonLCBwYXJ0cylcblxuIyBQdXQgdGhvc2UgcGFydHMgYmFjayB0b2dldGhlciBzZXBhcmF0ZWQgYnkgYSAnfCdcbmRhdGEgPSAnfCcuam9pbihwYXJ0cylcbnByaW50KCdBZnRlciAgam9pbjonLCBkYXRhKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;hunter,madrona,alex,sylvia&#39;</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Original   :&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># Returns a new string that is the upper-case version of data</span>
@@ -2097,8 +2146,10 @@ strings rather than modifying the original string
 <span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;After  join:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>To understand fully how this solution works (i.e. “what is the type of the value returned by split”), we have to wait for a few slides and talk about this other type called <code class="docutils literal notranslate"><span class="pre">list</span></code> .</p>
+
+        </div>
+    </div>
+</div><p>To understand fully how this solution works (i.e. “what is the type of the value returned by split”), we have to wait for a few slides and talk about this other type called <code class="docutils literal notranslate"><span class="pre">list</span></code> .</p>
 <div class="section" id="len">
 <h2><code class="docutils literal notranslate"><span class="pre">len</span></code><a class="headerlink" href="#len" title="Permalink to this headline">¶</a></h2>
 <p>Notice that in the table above we did not show you how to find the length of a string. Recall from the last slide, the syntax for this is <code class="docutils literal notranslate"><span class="pre">len(s)</span></code> . We did not add it to the function list because <code class="docutils literal notranslate"><span class="pre">len</span></code> is not a function defined on a <code class="docutils literal notranslate"><span class="pre">str</span></code> object, but rather a built-in function to Python. We’ll see later that <code class="docutils literal notranslate"><span class="pre">len</span></code> works on basically any type that represents a sequence of values. This is a bit weird that there are these different syntaxes for calling these functions, but you’ll get used to it with practice and making lots of mistakes!</p>
@@ -2127,57 +2178,45 @@ strings rather than modifying the original string
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="strings.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Strings</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="strings.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Strings</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="slicing-strings.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Slicing Strings</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="slicing-strings.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Slicing Strings</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

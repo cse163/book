@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hash Functions &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -93,8 +96,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Collisions" href="collisions.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1957,7 +1966,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1993,7 +2002,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2040,7 +2049,57 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hash Functions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-example">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   Example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attempt-1-length-of-str">
+     Attempt 1: Length of
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attempt-2-ascii-values">
+     Attempt 2: ASCII values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attempt-3-better-sum-of-ascii-values">
+     Attempt 3: Better Sum of ASCII Values
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="hash-functions">
@@ -2071,12 +2130,17 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="attempt-1-length-of-str">
 <h3>Attempt 1: Length of <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#attempt-1-length-of-str" title="Permalink to this headline">¶</a></h3>
 <p>The simplest hash function you could probably think of to take a <code class="docutils literal notranslate"><span class="pre">str</span></code> and output its <code class="docutils literal notranslate"><span class="pre">len</span></code> . If you used this hash function with this implementation, you would see the following behavior.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaGFzaCgnJykgICAgICMgMFxuaGFzaCgnaGknKSAgICMgMlxuaGFzaCgnYWJjJykgICMgMyIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>   <span class="c1"># 2</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>  <span class="c1"># 3</span>
 </pre></div>
-</div>
-<p>This function definitely works since it follows our first two properties. Unfortunately, it doesn’t quite follow the properties of a good hash function. First, not all string lengths are equally likely, so it won’t utilize the whole range of possible integers (most words have fewer than 20 characters). Secondly, it’s very easy for someone to come up with strings that collide. Just pick two strings of the same length!</p>
+
+        </div>
+    </div>
+</div><p>This function definitely works since it follows our first two properties. Unfortunately, it doesn’t quite follow the properties of a good hash function. First, not all string lengths are equally likely, so it won’t utilize the whole range of possible integers (most words have fewer than 20 characters). Secondly, it’s very easy for someone to come up with strings that collide. Just pick two strings of the same length!</p>
 <p>Valient first effort, but let’s try something else.</p>
 </div>
 <div class="section" id="attempt-2-ascii-values">
@@ -2084,12 +2148,17 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>As we’ve discussed before, a computer is only able to understand binary (1s and 0s). This means, at the end of the day, almost any piece of data on your computer needs to be represented as a number so it can easily be translated to binary; text data is no exception.</p>
 <p>Your computer uses an encoding to represent each character in some text as a number. A common encoding is called ASCII (the American Standard Code for Information Interchange). In ASCII, the letter <code class="docutils literal notranslate"><span class="pre">'a'</span></code> is represented as the number 97, <code class="docutils literal notranslate"><span class="pre">'b'</span></code> is 98, <code class="docutils literal notranslate"><span class="pre">'c'</span></code> is 99, etc. Every character in the English language (including symbols like <code class="docutils literal notranslate"><span class="pre">.</span></code> , <code class="docutils literal notranslate"><span class="pre">:</span></code> , <code class="docutils literal notranslate"><span class="pre">!</span></code> ) get a number associated for them.</p>
 <p>So then a more clever hash function could take each <code class="docutils literal notranslate"><span class="pre">str</span></code> and turn it into the sum of the ASCII values of its characters. In the snippet below, we show some example computations for the same strings as before.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaGFzaCgnJykgICAgICMgMFxuaGFzaCgnaGknKSAgICMgMTA0IChoKSArIDEwNSAoaSkgPSAyMDlcbmhhc2goJ2RvZycpICAjIDk3IChkKSArIDExMSAobykgKyAxMDMgKGcpID0gMzE0IiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>   <span class="c1"># 104 (h) + 105 (i) = 209</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>  <span class="c1"># 97 (d) + 111 (o) + 103 (g) = 314</span>
 </pre></div>
-</div>
-<p>This is approach is definitely better than the first attempt! It will use a much wider range of outputs since it includes more information about the string. Unfortunately, it turns out to not be very difficult to cause collisions. Can you figure out two strings that will collide with each other?</p>
+
+        </div>
+    </div>
+</div><p>This is approach is definitely better than the first attempt! It will use a much wider range of outputs since it includes more information about the string. Unfortunately, it turns out to not be very difficult to cause collisions. Can you figure out two strings that will collide with each other?</p>
 <p>You might notice that <em>anagrams</em> , or words that are made up of the same letters in different orders, will end up colliding using this approach. For example , <code class="docutils literal notranslate"><span class="pre">'dog'</span></code> and <code class="docutils literal notranslate"><span class="pre">'god'</span></code> have the same sum of ASCII values.</p>
 </div>
 <div class="section" id="attempt-3-better-sum-of-ascii-values">
@@ -2124,57 +2193,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="collisions.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Collisions</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="collisions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Collisions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="hashing-in-practice.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hashing in Practice</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="hashing-in-practice.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Hashing in Practice</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

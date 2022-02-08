@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imports &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Lesson 7: Introduction to Pandas" href="index.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2059,7 +2068,78 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Imports</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#option-1-import-module-a">
+   Option 1)
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     import
+    </span>
+    <span class="pre">
+     module_a
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-1-5-import-module-a-as-m">
+     Option 1.5)
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       import
+      </span>
+      <span class="pre">
+       module_a
+      </span>
+      <span class="pre">
+       as
+      </span>
+      <span class="pre">
+       m
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#option-2-from-module-a-import-fun2">
+   Option 2)
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from
+    </span>
+    <span class="pre">
+     module_a
+    </span>
+    <span class="pre">
+     import
+    </span>
+    <span class="pre">
+     fun2
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="imports">
@@ -2079,7 +2159,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>We use importing to get values or functions defined inside one module so they can be used in another module. You have already been using this on your homework! We defined a module <code class="docutils literal notranslate"><span class="pre">cse163_utils</span></code> and in order to use the function <code class="docutils literal notranslate"><span class="pre">assert_equals</span></code> defined in that module, you had to import it.</p>
 <p>There are 2 main (and a half, sort of) ways to import in Python that we will explore in this slide. For the following examples, assume we have defined the module <code class="docutils literal notranslate"><span class="pre">module_a</span></code> with the file <code class="docutils literal notranslate"><span class="pre">module_a.py</span></code> as shown below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of: module_a.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBDb250ZW50cyBvZjogbW9kdWxlX2EucHlcbmRlZiBmdW4xKCk6XG4gICAgcHJpbnQoXCJDYWxsaW5nIGEncyBmdW4xXCIpXG4gICAgcHJpbnQoXCJFbmRpbmcgYSdzIGZ1bjFcIilcblxuXG5kZWYgZnVuMigpOlxuICAgIHByaW50KFwiQ2FsbGluZyBhJ3MgZnVuMlwiKVxuICAgIGZ1bjEoKVxuICAgIHByaW50KFwiRW5kaW5nIGEncyBmdW4yXCIpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># Contents of: module_a.py</span>
 <span class="k">def</span> <span class="nf">fun1</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Calling a&#39;s fun1&quot;</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ending a&#39;s fun1&quot;</span><span class="p">)</span>
@@ -2090,12 +2173,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     <span class="n">fun1</span><span class="p">()</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ending a&#39;s fun2&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>Our goal is to call <code class="docutils literal notranslate"><span class="pre">fun2</span></code> inside another module, <code class="docutils literal notranslate"><span class="pre">module_b</span></code> . To do this, we need to import the module to use its functions.</p>
+
+        </div>
+    </div>
+</div><p>Our goal is to call <code class="docutils literal notranslate"><span class="pre">fun2</span></code> inside another module, <code class="docutils literal notranslate"><span class="pre">module_b</span></code> . To do this, we need to import the module to use its functions.</p>
 <div class="section" id="option-1-import-module-a">
 <h2>Option 1) <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_a</span></code><a class="headerlink" href="#option-1-import-module-a" title="Permalink to this headline">¶</a></h2>
 <p>The simplest syntax simply uses the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement to import a module. The following snippet shows a short program that uses <code class="docutils literal notranslate"><span class="pre">fun2</span></code> defined in <code class="docutils literal notranslate"><span class="pre">module_a</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBDb250ZW50cyBvZjogbW9kdWxlX2IucHlcbmltcG9ydCBtb2R1bGVfYVxuXG5cbmRlZiBmdW4xKCk6XG4gICAgcHJpbnQoXCJDYWxsaW5nIGIncyBmdW4xXCIpXG4gICAgcHJpbnQoXCJFbmRpbmcgYidzIGZ1bjFcIilcblxuXG5kZWYgZnVuMigpOlxuICAgIHByaW50KFwiQ2FsbGluZyBiJ3MgZnVuMlwiKVxuICAgIHByaW50KFwiRW5kaW5nIGIncyBmdW4yXCIpXG5cblxuZGVmIG1haW4oKTpcbiAgICBmdW4yKClcbiAgICBtb2R1bGVfYS5mdW4yKClcblxuXG5pZiBfX25hbWVfXyA9PSAnX19tYWluX18nOlxuICAgIG1haW4oKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
 <span class="kn">import</span> <span class="nn">module_a</span>
 
 
@@ -2117,8 +2205,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-</div>
-<p>When you import a module, you are importing the whole thing (including all values defined inside of it). In some sense, when you <code class="docutils literal notranslate"><span class="pre">import</span></code> a module, you are running all of the code defined in that module.</p>
+
+        </div>
+    </div>
+</div><p>When you import a module, you are importing the whole thing (including all values defined inside of it). In some sense, when you <code class="docutils literal notranslate"><span class="pre">import</span></code> a module, you are running all of the code defined in that module.</p>
 <p>However, to keep things manageable for you, Python keeps all these values defined in <code class="docutils literal notranslate"><span class="pre">module_a</span></code> in a different scope (sometimes called a “namespace”). This helps prevent confusion if <code class="docutils literal notranslate"><span class="pre">module_b</span></code> also defines a function with the same name, as we did in this example. That means to call <code class="docutils literal notranslate"><span class="pre">fun2</span></code> from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> , you have to write <code class="docutils literal notranslate"><span class="pre">module_a.fun2()</span></code> to make it clear you want the one from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> .</p>
 <p>To double-check your understanding: <strong>What is the output of running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">module_b.py</span></code></strong> as defined above? Take a second to make a prediction
 before expanding the answer below.</p>
@@ -2138,7 +2228,10 @@ Ending a&#39;s fun2
 <h3>Option 1.5) <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_a</span> <span class="pre">as</span> <span class="pre">m</span></code><a class="headerlink" href="#option-1-5-import-module-a-as-m" title="Permalink to this headline">¶</a></h3>
 <p>This syntax has the exact same semantics as the one before, but it lets you define a shorthand name for the module. In this case, we essentially renamed <code class="docutils literal notranslate"><span class="pre">module_a</span></code> to <code class="docutils literal notranslate"><span class="pre">m</span></code> in our module so in our code, we can just say <code class="docutils literal notranslate"><span class="pre">m.f2()</span></code> . Semantically, these are really the same ways to import a module, but this one has an extra step to “rename” it.</p>
 <p>Here, we show the complete <code class="docutils literal notranslate"><span class="pre">module_b</span></code> that uses the syntax. The output and behavior of the program are exactly the same.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBDb250ZW50cyBvZjogbW9kdWxlX2IucHlcbmltcG9ydCBtb2R1bGVfYSBhcyBtXG5cblxuZGVmIGZ1bjEoKTpcbiAgICBwcmludChcIkNhbGxpbmcgYidzIGZ1bjFcIilcbiAgICBwcmludChcIkVuZGluZyBiJ3MgZnVuMVwiKVxuXG5cbmRlZiBmdW4yKCk6XG4gICAgcHJpbnQoXCJDYWxsaW5nIGIncyBmdW4yXCIpXG4gICAgcHJpbnQoXCJFbmRpbmcgYidzIGZ1bjJcIilcblxuXG5kZWYgbWFpbigpOlxuICAgIGZ1bjIoKVxuICAgIG0uZnVuMigpICAjIE5vdGljZSBtIGluc3RlYWQgb2YgbW9kdWxlX2FcblxuXG5pZiBfX25hbWVfXyA9PSAnX19tYWluX18nOlxuICAgIG1haW4oKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
 <span class="kn">import</span> <span class="nn">module_a</span> <span class="kn">as</span> <span class="nn">m</span>
 
 
@@ -2160,14 +2253,19 @@ Ending a&#39;s fun2
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 </div>
 <div class="section" id="option-2-from-module-a-import-fun2">
 <h2>Option 2) <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_a</span> <span class="pre">import</span> <span class="pre">fun2</span></code><a class="headerlink" href="#option-2-from-module-a-import-fun2" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, it is very tedious to import a whole module and prefix every function call with <code class="docutils literal notranslate"><span class="pre">module_name.function_name</span></code> . Python provides another syntax that lets you import a specific function from another module. When you say <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_a</span> <span class="pre">import</span> <span class="pre">fun2</span></code> you are importing just the function <code class="docutils literal notranslate"><span class="pre">fun2</span></code> from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> . When this syntax is used, Python just adds <code class="docutils literal notranslate"><span class="pre">fun2</span></code> to your current scope. This means you don’t need to call it with <code class="docutils literal notranslate"><span class="pre">module_a.f2()</span></code> , you can just say <code class="docutils literal notranslate"><span class="pre">f2()</span></code> .</p>
 <p>The following snippet shows how to use this syntax.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBDb250ZW50cyBvZjogbW9kdWxlX2IucHlcbmZyb20gbW9kdWxlX2EgaW1wb3J0IGZ1bjJcblxuXG5kZWYgbWFpbigpOlxuICAgIGZ1bjIoKSAjIENhbGxpbmcgbW9kdWxlX2EncyBmdW4yXG5cblxuaWYgX19uYW1lX18gPT0gJ19fbWFpbl9fJzpcbiAgICBtYWluKCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># Contents of: module_b.py</span>
 <span class="kn">from</span> <span class="nn">module_a</span> <span class="kn">import</span> <span class="n">fun2</span>
 
 
@@ -2178,8 +2276,10 @@ Ending a&#39;s fun2
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-</div>
-<p>This syntax is nice when you know exactly which function you want from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> and you now you will call it often.</p>
+
+        </div>
+    </div>
+</div><p>This syntax is nice when you know exactly which function you want from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> and you now you will call it often.</p>
 <p>You might wonder what would happen if I defined a <code class="docutils literal notranslate"><span class="pre">fun2</span></code> in <code class="docutils literal notranslate"><span class="pre">module_b.py</span></code> (since we removed that from the previous examples). How would Python know which <code class="docutils literal notranslate"><span class="pre">fun2</span></code> to call if there was one that came from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> and one from <code class="docutils literal notranslate"><span class="pre">module_b</span></code> and both are in the same scope? It turns out, if you define two functions with the same name, it will always use the one most recently defined. This is because by defining a function, you essentially are storing it in a variable with that function name. If you redefine, it will just update which function is stored at that variable name (just like updating a plain-old variable). That means if we defined a <code class="docutils literal notranslate"><span class="pre">fun2</span></code> after importing it from <code class="docutils literal notranslate"><span class="pre">module_a</span></code> using this syntax, we would essentially lose the value we imported.</p>
 </div>
 </div>
@@ -2206,57 +2306,45 @@ Ending a&#39;s fun2
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 7: Introduction to Pandas</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="fas fa-book fa-fw"></i> Lesson 7: Introduction to Pandas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pandas</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="pandas.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Pandas</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

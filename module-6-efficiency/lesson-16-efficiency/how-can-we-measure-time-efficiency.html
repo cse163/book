@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How Can We Measure Time Efficiency? &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -93,8 +96,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="What Does Efficiency Mean?" href="what-does-efficiency-mean.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1957,7 +1966,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1993,14 +2002,24 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>How Can We Measure Time Efficiency?</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="how-can-we-measure-time-efficiency">
@@ -2010,7 +2029,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <hr class="docutils" />
 <p>Consider the following two methods to compute the sum of the numbers from 1 to some input <code class="docutils literal notranslate"><span class="pre">n</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIHN1bTEobik6XG4gICAgdG90YWwgPSAwXG4gICAgZm9yIGkgaW4gcmFuZ2UobiArIDEpOlxuICAgICAgICB0b3RhbCArPSBpXG4gICAgcmV0dXJuIHRvdGFsXG5cbmRlZiBzdW0yKG4pOlxuICAgIHJldHVybiBuICogKG4gKyAxKSAvLyAyXG5cbnByaW50KHN1bTEoMTApKVxucHJpbnQoc3VtMigxMCkpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
@@ -2022,13 +2044,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">print</span><span class="p">(</span><span class="n">sum1</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">sum2</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
-</div>
-<p>The second one uses a clever formula discovered by Gauss that computes the sum of the numbers from 1 to n using the formula <span class="math notranslate nohighlight">\(Sum(n) = \frac{n(n + 1)}{2}\)</span>.</p>
+
+        </div>
+    </div>
+</div><p>The second one uses a clever formula discovered by Gauss that computes the sum of the numbers from 1 to n using the formula <span class="math notranslate nohighlight">\(Sum(n) = \frac{n(n + 1)}{2}\)</span>.</p>
 <p><strong>Which one is more efficient?</strong></p>
 <p>Most people probably have an intuition that the second seems better, but it’s hard to state exactly “why” that’s the case. Is it because it has fewer lines to code? While it’s definitely shorter, it’s also less easy to understand since it requires knowing this obscure formula from math.</p>
 <p>Remember, it’s important to state what resources we care about before deciding which is more efficient. As we said before, the most common resource to worry about is <strong>time</strong> (if we ever omit this, you should assume we are discussing time). To answer which one is more efficient, we might actually try to write code to time how long it takes them to finish.</p>
 <p>The details of the snippet below are not important, but we could try timing each implementation by using the <code class="docutils literal notranslate"><span class="pre">time</span></code> package that is built into Python. <code class="docutils literal notranslate"><span class="pre">time</span></code> has a method called <code class="docutils literal notranslate"><span class="pre">time</span></code> that reports the number of seconds since the “epoch” (midnight on Jan 1, 1970 in UTC time). We can then figure out how much time each method call takes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHRpbWVcblxuXG5kZWYgc3VtMShuKTpcbiAgICB0b3RhbCA9IDBcbiAgICBmb3IgaSBpbiByYW5nZShuICsgMSk6XG4gICAgICAgIHRvdGFsICs9IGlcbiAgICByZXR1cm4gdG90YWxcblxuXG5kZWYgc3VtMihuKTpcbiAgICByZXR1cm4gbiAqIChuICsgMSkgLy8gMlxuXG5cbnQwID0gdGltZS50aW1lKClcbnN1bTEoMTApXG50MSA9IHRpbWUudGltZSgpXG5zdW0yKDEwKVxudDIgPSB0aW1lLnRpbWUoKVxuXG5cbiMgVXNpbmcgdGhpcyBmYW5jeSBwcmludCBzeW50YXggd2UgaW50cm9kdWNlZCBsYXN0IHRpbWUhXG5wcmludChmJ3N1bTEgdG9vayB7dDEgLSB0MH0gc2Vjb25kcycpXG5wcmludChmJ3N1bTIgdG9vayB7dDIgLSB0MX0gc2Vjb25kcycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 
 <span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -2053,15 +2080,20 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;sum1 took {t1 - t0} seconds&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;sum2 took {t2 - t1} seconds&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>The first thing to notice is if you run this code block multiple times, we get different time results! The reason for this is that timing has a lot of uncertainty built into it. One of the biggest sources of uncertainty comes from a trick your computer is playing on you: it makes you think it’s able to run many programs (Chrome, Spotify, your OS itself) at once when in reality it is quickly switching between them and running them in sequence. This comes from the fact that your computer can really only “run” one thing at a time for each processor it has (this is an oversimplification, but it works well enough). The result of this fact means that measuring time will be inexact because it depends on how frequently your computer switches away from the Python program to work on something more important!</p>
+
+        </div>
+    </div>
+</div><p>The first thing to notice is if you run this code block multiple times, we get different time results! The reason for this is that timing has a lot of uncertainty built into it. One of the biggest sources of uncertainty comes from a trick your computer is playing on you: it makes you think it’s able to run many programs (Chrome, Spotify, your OS itself) at once when in reality it is quickly switching between them and running them in sequence. This comes from the fact that your computer can really only “run” one thing at a time for each processor it has (this is an oversimplification, but it works well enough). The result of this fact means that measuring time will be inexact because it depends on how frequently your computer switches away from the Python program to work on something more important!</p>
 <p>In this lesson, we will introduce a different notion of measuring the run-time of a program that doesn’t involve relying on the inaccuracies of timing itself.</p>
-<p>However, timing can still give us a general idea of how fast one program is versus another (we can be more confident if we run multiple times and see the same trend). It looks like <code class="docutils literal notranslate"><span class="pre">sum1</span></code> is just a little slower than <code class="docutils literal notranslate"><span class="pre">sum2</span></code> in most runs of the code cell above.  Let’s see how the times compare as we increase <code class="docutils literal notranslate"><span class="pre">n</span></code> so that we can identify how these algorithms scale. In the snippet below, we run this comparison multiple times and used some slightly more advanced plotting code to help us visualize the difference (you can click on the pop-up of the image after it runs).</p>
+<p>However, timing can still give us a general idea of how fast one program is versus another (we can be more confident if we run multiple times and see the same trend). It looks like <code class="docutils literal notranslate"><span class="pre">sum1</span></code> is just a little slower than <code class="docutils literal notranslate"><span class="pre">sum2</span></code> in most runs of the code cell above. Let’s see how the times compare as we increase <code class="docutils literal notranslate"><span class="pre">n</span></code> so that we can identify how these algorithms scale. In the snippet below, we run this comparison multiple times and used some slightly more advanced plotting code to help us visualize the difference (you can click on the pop-up of the image after it runs).</p>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Note that understanding the code in this cell is not really relevant to this reading!</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHRpbWVcblxuaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuXG5cbmRlZiBzdW0xKG4pOlxuICAgIHRvdGFsID0gMFxuICAgIGZvciBpIGluIHJhbmdlKG4gKyAxKTpcbiAgICAgICAgdG90YWwgKz0gaVxuICAgIHJldHVybiB0b3RhbFxuXG5cbmRlZiBzdW0yKG4pOlxuICAgIHJldHVybiBuICogKG4gKyAxKSAvLyAyXG5cblxuU1RPUF9QT0lOVCA9IDIwMDAwMDAwMFxuXG5ucyA9IFtdXG5zdW0xX3RpbWVzID0gW11cbnN1bTJfdGltZXMgPSBbXVxubiA9IDFcbndoaWxlIG4gPCBTVE9QX1BPSU5UOlxuICAgICMgVGltZSBib3RoIG1ldGhvZHNcbiAgICB0MCA9IHRpbWUudGltZSgpXG4gICAgc3VtMShuKVxuICAgIHQxID0gdGltZS50aW1lKClcbiAgICBzdW0yKG4pXG4gICAgdDIgPSB0aW1lLnRpbWUoKVxuXG4gICAgIyBDb21wdXRlIHRpbWUgdG8gcnVuIGFuZCBwcmludCBpbmZvcm1hdGlvblxuICAgIHN1bTFfdGltZSA9IHQxIC0gdDBcbiAgICBzdW0yX3RpbWUgPSB0MiAtIHQxXG4gICAgcHJpbnQoZidzdW0xKHtufSkgdG9vayB7c3VtMV90aW1lfSBzZWNvbmRzJylcbiAgICBwcmludChmJ3N1bTIoe259KSB0b29rIHtzdW0yX3RpbWV9IHNlY29uZHMnKVxuICAgIHByaW50KClcblxuICAgICMgQWRkIHRvIGxpc3RzIHRvIGtlZXAgdHJhY2sgb2YgdGltZXNcbiAgICBucy5hcHBlbmQobilcbiAgICBzdW0xX3RpbWVzLmFwcGVuZChzdW0xX3RpbWUpXG4gICAgc3VtMl90aW1lcy5hcHBlbmQoc3VtMl90aW1lKVxuXG4gICAgIyBVcGRhdGUgblxuICAgIG4gKj0gNFxuXG5cbiMgUGxvdCB0aGUgdGltZXMgKHVzZXMgc29tZSBhZHZhbmNlZCBwbG90dGluZyBmZWF0dXJlcylcbmZpZywgYXggPSBwbHQuc3VicGxvdHMoMSlcbmF4LnBsb3QobnMsIHN1bTFfdGltZXMsIGxhYmVsPSdzdW0xJylcbmF4LnBsb3QobnMsIHN1bTJfdGltZXMsIGxhYmVsPSdzdW0yJylcbmF4LnNldF95bGFiZWwoJ1RpbWUgKHNlY29uZHMpJylcbmF4LnNldF94bGFiZWwoJ24nKVxuYXguc2V0X3RpdGxlKCdDb21wYXJpbmcgcnVuLXRpbWUgb2Ygc3VtMSBhbmQgc3VtMicpXG5heC5sZWdlbmQoKVxuZmlnLnNhdmVmaWcoJ3N1bTEtdnMtc3VtMi5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
@@ -2090,19 +2122,19 @@ commentsRunWhenDOMLoaded(addUtterances);
     <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">sum2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    
+
     <span class="c1"># Compute time to run and print information</span>
     <span class="n">sum1_time</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span>
     <span class="n">sum2_time</span> <span class="o">=</span> <span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span>
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;sum1({n}) took {sum1_time} seconds&#39;</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;sum2({n}) took {sum2_time} seconds&#39;</span><span class="p">)</span>
     <span class="k">print</span><span class="p">()</span>
-    
+
     <span class="c1"># Add to lists to keep track of times</span>
     <span class="n">ns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">sum1_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum1_time</span><span class="p">)</span>
     <span class="n">sum2_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum2_time</span><span class="p">)</span>
-    
+
     <span class="c1"># Update n</span>
     <span class="n">n</span> <span class="o">*=</span> <span class="mi">4</span>
 
@@ -2117,8 +2149,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;sum1-vs-sum2.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>Notice that <code class="docutils literal notranslate"><span class="pre">sum2</span></code> almost always takes the same amount of time to run in comparison to <code class="docutils literal notranslate"><span class="pre">sum1</span></code> , which takes time proportional to <code class="docutils literal notranslate"><span class="pre">n</span></code> ! Another way to say this is that if we double the input size <code class="docutils literal notranslate"><span class="pre">n</span></code> , it seems like <code class="docutils literal notranslate"><span class="pre">sum1</span></code> takes twice as long to run while <code class="docutils literal notranslate"><span class="pre">sum2</span></code> takes about the same time.</p>
+
+        </div>
+    </div>
+</div><p>Notice that <code class="docutils literal notranslate"><span class="pre">sum2</span></code> almost always takes the same amount of time to run in comparison to <code class="docutils literal notranslate"><span class="pre">sum1</span></code> , which takes time proportional to <code class="docutils literal notranslate"><span class="pre">n</span></code> ! Another way to say this is that if we double the input size <code class="docutils literal notranslate"><span class="pre">n</span></code> , it seems like <code class="docutils literal notranslate"><span class="pre">sum1</span></code> takes twice as long to run while <code class="docutils literal notranslate"><span class="pre">sum2</span></code> takes about the same time.</p>
 <p>This gives us more certainty that <code class="docutils literal notranslate"><span class="pre">sum2</span></code> seems more efficient, in terms of time, than <code class="docutils literal notranslate"><span class="pre">sum1</span></code> since we have empirically have seen that it scales very well. However, it would be nice if we could have some way of describing how one algorithm scales when compared to another without having to rely on something as unreliable like time (or requiring us to write so much code to measure the time).</p>
 </div>
 
@@ -2144,57 +2178,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="what-does-efficiency-mean.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">What Does Efficiency Mean?</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="what-does-efficiency-mean.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">What Does Efficiency Mean?</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="counting-steps.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Counting Steps</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="counting-steps.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Counting Steps</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -20,7 +20,7 @@ The `Point` class should have fields for the `x` and `y` coordinates and should 
 
 For example, your class should have the following behavior (return value shown in comments). This is essentially the same as `main.py` (which you don't need to edit).
 
-```python
+```{snippet}
 p = Point(1, 2)
 p.get_x()    # 1
 p.set_y(4)

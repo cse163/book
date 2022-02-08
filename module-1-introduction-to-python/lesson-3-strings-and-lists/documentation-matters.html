@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Documentation Matters &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Lists" href="lists.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,14 +2000,24 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Documentation Matters</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="documentation-matters">
@@ -2013,22 +2032,35 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>When I’m trying to understand code without documentation, it often feels like I’m like a way-less-capable version of Amy Adam’s character in the movie
 <a class="reference external" href="https://www.imdb.com/title/tt2543164/">Arrival</a>. Don’t write code where I have to feel like that. Write documentation in English (or whichever language you and your team work in) so people know how to use the code you write!</p>
 </div>
-<p>You can always use the <code class="docutils literal notranslate"><span class="pre">#</span></code> to leave a note in your code, but we are specifically going to talk about a special notion in Python called a <strong>doc-string</strong> that lets you add special documentation for a function. To do this, you use this special triple-quote string (i.e. <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">documentation</span> <span class="pre">&quot;&quot;&quot;</span></code> )  as the first lines of the function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<p>You can always use the <code class="docutils literal notranslate"><span class="pre">#</span></code> to leave a note in your code, but we are specifically going to talk about a special notion in Python called a <strong>doc-string</strong> that lets you add special documentation for a function. To do this, you use this special triple-quote string (i.e. <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">documentation</span> <span class="pre">&quot;&quot;&quot;</span></code> ) as the first lines of the function.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1lYW4oYSwgYik6XG4gICAgXCJcIlwiXG4gICAgUmV0dXJucyB0aGUgYXZlcmFnZSBvZiBhIGFuZCBiXG4gICAgXCJcIlwiXG4gICAgcmV0dXJuIChhICsgYikgLyAyIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the average of a and b</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
-</div>
-<p>Everything that goes inside these triple-quotes now becomes the documentation for a function.</p>
+
+        </div>
+    </div>
+</div><p>Everything that goes inside these triple-quotes now becomes the documentation for a function.</p>
 <p>Why does it help to specify this special doc-string? Well Python has built-in tools to help you view the doc-strings for any function!</p>
 <p>Python provides a <code class="docutils literal notranslate"><span class="pre">help</span></code> function that lets you see the documentation for any function! For long documentation, it brings up a special viewer where you can move up/down with the keys <code class="docutils literal notranslate"><span class="pre">j</span></code> / <code class="docutils literal notranslate"><span class="pre">k</span></code> and you can quit with the key <code class="docutils literal notranslate"><span class="pre">q</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="k">print</span><span class="p">)</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaGVscChwcmludCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="k">print</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>To see how this works with code you write, suppose I wrote the function with the following doc-string and asked for help on it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_good_comment</span><span class="p">():</span>
+
+        </div>
+    </div>
+</div><p>To see how this works with code you write, suppose I wrote the function with the following doc-string and asked for help on it.</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGZ1bmN0aW9uX3dpdGhfZ29vZF9jb21tZW50KCk6XG4gICAgXCJcIlwiXG4gICAgVGhpcyBmdW5jdGlvbiBkb2VzIHNvbWUgcmVhbGx5IGNvb2wgc3R1ZmZcbiAgICBcIlwiXCJcbiAgICBwcmludCgnQUJDJylcblxuaGVscChmdW5jdGlvbl93aXRoX2dvb2RfY29tbWVudCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_good_comment</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function does some really cool stuff</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2036,16 +2068,23 @@ commentsRunWhenDOMLoaded(addUtterances);
 
 <span class="n">help</span><span class="p">(</span><span class="n">function_with_good_comment</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>What if instead of using the triple-quote docstring, I just put everything after a <code class="docutils literal notranslate"><span class="pre">#</span></code> comment since I’m more comfortable with that</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_bad_comment</span><span class="p">():</span>
+
+        </div>
+    </div>
+</div><p>What if instead of using the triple-quote docstring, I just put everything after a <code class="docutils literal notranslate"><span class="pre">#</span></code> comment since I’m more comfortable with that</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGZ1bmN0aW9uX3dpdGhfYmFkX2NvbW1lbnQoKTpcbiAgICAjIFRoaXMgZnVuY3Rpb24gZG9lcyBzb21lIHJlYWxseSBjb29sIHN0dWZmLCBidXQgd2l0aCBhIGJhZCBjb21tZW50XG4gICAgcHJpbnQoJ0FCQycpXG5cbmhlbHAoZnVuY3Rpb25fd2l0aF9iYWRfY29tbWVudCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_bad_comment</span><span class="p">():</span>
     <span class="c1"># This function does some really cool stuff, but with a bad comment</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;ABC&#39;</span><span class="p">)</span>
 
 <span class="n">help</span><span class="p">(</span><span class="n">function_with_bad_comment</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>Unfortunately,  it doesn’t show anything! This is why using the doc-string format is so important!</p>
+
+        </div>
+    </div>
+</div><p>Unfortunately, it doesn’t show anything! This is why using the doc-string format is so important!</p>
 <p><strong>We will ask that every function you write has one of these doc-string comments describing what it does!</strong></p>
 </div>
 
@@ -2071,57 +2110,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="lists.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lists</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="lists.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lists</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="none.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">None</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="none.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">None</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

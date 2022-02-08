@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Private Fields &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Recap" href="recap.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,14 +2000,24 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Private Fields</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="private-fields">
@@ -2016,15 +2035,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>A few things to notice:</p>
 <ul class="simple">
 <li><p>You can (and should) add a doc-string to the class itself! This will describe what the class is used for. You put it as the first thing after the class header.</p></li>
-<li><p>The naming convention for classes is     <code class="docutils literal notranslate"><span class="pre">CapitalCase</span></code>     rather than     <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>     . The naming convention for variables, fields, and method names is still     <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>     .</p></li>
+<li><p>The naming convention for classes is <code class="docutils literal notranslate"><span class="pre">CapitalCase</span></code> rather than <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> . The naming convention for variables, fields, and method names is still <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> .</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Written in bank_account.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBXcml0dGVuIGluIGJhbmtfYWNjb3VudC5weVxuXG5jbGFzcyBCYW5rQWNjb3VudDpcbiAgICBcIlwiXCJcbiAgICBBIGNsYXNzIHRoYXQgcmVwcmVzZW50cyBhIGJhbmsgYWNjb3VudCBvd25lZCBieSBhIHNpbmdsZSBwZXJzb24uXG4gICAgXCJcIlwiXG5cbiAgICBkZWYgX19pbml0X18oc2VsZiwgb3duZXIsIGluaXRpYWxfZGVwb3NpdCk6XG4gICAgICAgIFwiXCJcIlxuICAgICAgICBDb25zdHJ1Y3RzIGEgQmFua0FjY291bnQgc3RhcnRpbmcgd2l0aCB0aGUgaW5pdGlhbF9kZXBvc2l0IGZvciB0aGVcbiAgICAgICAgZ2l2ZW4gb3duZXJcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIHNlbGYub3duZXIgPSBvd25lclxuICAgICAgICBzZWxmLmFtb3VudCA9IGluaXRpYWxfZGVwb3NpdFxuXG4gICAgZGVmIGRlcG9zaXQoc2VsZiwgYW1vdW50KTpcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIEFkZHMgdGhlIGdpdmVuIGFtb3VudCB0byB0aGlzIEJhbmtBY2NvdW50LlxuICAgICAgICBSZXR1cm5zIHRoZSBuZXcgYW1vdW50XG4gICAgICAgIFwiXCJcIlxuICAgICAgICBzZWxmLmFtb3VudCArPSBhbW91bnRcbiAgICAgICAgcmV0dXJuIHNlbGYuYW1vdW50XG5cbiAgICBkZWYgd2l0aGRyYXcoc2VsZiwgYW1vdW50KTpcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIFdpdGhkcmF3cyB0aGUgZ2l2ZW4gYW1vdW50IGZyb20gdGhpcyBiYW5rIGFjY291bnQsIHJldHVybmluZ1xuICAgICAgICB0aGUgcmVtYWluaW5nIGJhbGFuY2UuIElmIHRoZXJlIGFyZSBub3Qgc3VmZmljaWVudCBmdW5kcyBmb3JcbiAgICAgICAgdGhpcyB3aXRoZHJhd2FsLCBkb2VzIG5vdCBkbyB0aGUgdHJhbnNhY3Rpb24gYW5kIHJldHVybnMgTm9uZS5cbiAgICAgICAgXCJcIlwiXG4gICAgICAgIGlmIHNlbGYuYW1vdW50IDwgYW1vdW50OlxuICAgICAgICAgICAgcmV0dXJuIE5vbmVcbiAgICAgICAgZWxzZTpcbiAgICAgICAgICAgIHNlbGYuYW1vdW50IC09IGFtb3VudFxuICAgICAgICAgICAgcmV0dXJuIHNlbGYuYW1vdW50XG5cbiAgICBkZWYgdG9fc3RyaW5nKHNlbGYpOlxuICAgICAgICBcIlwiXCJcbiAgICAgICAgUmV0dXJucyBhIHN0cmluZyByZXByZXNlbnRhdGlvbiBvZiB0aGlzIEJhbmtBY2NvdW50LCBpbiB0aGUgZm9ybWF0OlxuICAgICAgICAgICBcIkJhbmsgQWNjb3VudCBmb3Ige293bmVyfToge2Ftb3VudH1cIlxuICAgICAgICBcIlwiXCJcbiAgICAgICAgcmV0dXJuICdCYW5rIEFjY291bnQgZm9yICcgKyBzZWxmLm93bmVyICsgJzogJyArIHN0cihzZWxmLmFtb3VudCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># Written in bank_account.py</span>
 
 <span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class that represents a bank account owned by a single person.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">initial_deposit</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructs a BankAccount starting with the initial_deposit for the</span>
@@ -2032,19 +2054,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">amount</span> <span class="o">=</span> <span class="n">initial_deposit</span>
-        
+
     <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Adds the given amount to this BankAccount. </span>
+<span class="sd">        Adds the given amount to this BankAccount.</span>
 <span class="sd">        Returns the new amount</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">amount</span> <span class="o">+=</span> <span class="n">amount</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">amount</span>
-        
+
     <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Withdraws the given amount from this bank account, returning </span>
-<span class="sd">        the remaining balance. If there are not sufficient funds for </span>
+<span class="sd">        Withdraws the given amount from this bank account, returning</span>
+<span class="sd">        the remaining balance. If there are not sufficient funds for</span>
 <span class="sd">        this withdrawal, does not do the transaction and returns None.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">amount</span> <span class="o">&lt;</span> <span class="n">amount</span><span class="p">:</span>
@@ -2052,7 +2074,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">amount</span> <span class="o">-=</span> <span class="n">amount</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">amount</span>
-        
+
     <span class="k">def</span> <span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a string representation of this BankAccount, in the format:</span>
@@ -2060,19 +2082,26 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s1">&#39;Bank Account for &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">amount</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>This seems great and we can make sure that someone’s balance never goes negative. However, the client can still write something like this to break our <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> .</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bank</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s1">&#39;Nicole&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+        </div>
+    </div>
+</div><p>This seems great and we can make sure that someone’s balance never goes negative. However, the client can still write something like this to break our <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> .</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiYmFuayA9IEJhbmtBY2NvdW50KCdOaWNvbGUnLCAyMClcbmJhbmsud2l0aGRyYXcoNDAwKSAjIFJldHVybnMgTm9uZSBiZWNhdXNlIEkgZG9uJ3QgaGF2ZSBlbm91Z2ggbW9uZXlcbmJhbmsuYW1vdW50ID0gMjAwMDAwMDAwXG5iYW5rLndpdGhkcmF3KDQwMClcblxuIyBNYXliZSBmZWVsaW5nIG1vcmUgbWFsaWNpb3VzXG5iYW5rLmFtb3VudCA9IFwiSSBkb24ndCBuZWVkIGFueSBtb25leSFcIlxuYmFuay53aXRoZHJhdygyMCkgICMgQ3Jhc2hlcyBiZWNhdXNlIGl0IGNvbXBhcmVzIGEgc3RyIHRvIGFuIGludCEiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">bank</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s1">&#39;Nicole&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">bank</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span> <span class="c1"># Returns None because I don&#39;t have enough money</span>
-<span class="n">bank</span><span class="o">.</span><span class="n">amount</span> <span class="o">=</span> <span class="mi">200000000</span> 
-<span class="n">bank</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span> 
+<span class="n">bank</span><span class="o">.</span><span class="n">amount</span> <span class="o">=</span> <span class="mi">200000000</span>
+<span class="n">bank</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
 
 <span class="c1"># Maybe feeling more malicious</span>
 <span class="n">bank</span><span class="o">.</span><span class="n">amount</span> <span class="o">=</span> <span class="s2">&quot;I don&#39;t need any money!&quot;</span>
 <span class="n">bank</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># Crashes because it compares a str to an int!</span>
 </pre></div>
-</div>
-<p>What happened here? As a client (outside the object), we accessed its <code class="docutils literal notranslate"><span class="pre">amount</span></code> field and changed it to a value we wanted. Python allows you to access the fields of an object, just like you can access its methods (by using the <code class="docutils literal notranslate"><span class="pre">.</span></code> syntax). This is not ideal since now the client can arbitrarily violate any things we wanted to assume about our state (e.g. the <code class="docutils literal notranslate"><span class="pre">amount</span></code> is a non-negative <code class="docutils literal notranslate"><span class="pre">int</span></code> ).</p>
+
+        </div>
+    </div>
+</div><p>What happened here? As a client (outside the object), we accessed its <code class="docutils literal notranslate"><span class="pre">amount</span></code> field and changed it to a value we wanted. Python allows you to access the fields of an object, just like you can access its methods (by using the <code class="docutils literal notranslate"><span class="pre">.</span></code> syntax). This is not ideal since now the client can arbitrarily violate any things we wanted to assume about our state (e.g. the <code class="docutils literal notranslate"><span class="pre">amount</span></code> is a non-negative <code class="docutils literal notranslate"><span class="pre">int</span></code> ).</p>
 <p>What we want to do is to restrict the client so they can’t access the fields and instead have to go through the methods to deposit/withdraw money. To do this, we need to make the fields <strong>private</strong> so the client can’t access them.</p>
 <p>Some languages have ways of enforcing this notion of having a private field (one where a client can’t access it from outside the class), but Python does not. Instead, Python has a convention that everyone follows:</p>
 <blockquote>
@@ -2088,13 +2117,16 @@ commentsRunWhenDOMLoaded(addUtterances);
 <code class="docutils literal notranslate"><span class="pre">_amount</span></code>
 to indicate that it is private.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Written in bank_account.py</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBXcml0dGVuIGluIGJhbmtfYWNjb3VudC5weVxuXG5jbGFzcyBCYW5rQWNjb3VudDpcbiAgICBcIlwiXCJcbiAgICBBIGNsYXNzIHRoYXQgcmVwcmVzZW50cyBhIGJhbmsgYWNjb3VudCBvd25lZCBieSBhIHNpbmdsZSBwZXJzb24uXG4gICAgXCJcIlwiXG5cbiAgICBkZWYgX19pbml0X18oc2VsZiwgb3duZXIsIGluaXRpYWxfZGVwb3NpdCk6XG4gICAgICAgIFwiXCJcIlxuICAgICAgICBDb25zdHJ1Y3RzIGEgQmFua0FjY291bnQgc3RhcnRpbmcgd2l0aCB0aGUgaW5pdGlhbF9kZXBvc2l0IGZvciB0aGVcbiAgICAgICAgZ2l2ZW4gb3duZXJcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIHNlbGYuX293bmVyID0gb3duZXJcbiAgICAgICAgc2VsZi5fYW1vdW50ID0gaW5pdGlhbF9kZXBvc2l0XG5cbiAgICBkZWYgZGVwb3NpdChzZWxmLCBhbW91bnQpOlxuICAgICAgICBcIlwiXCJcbiAgICAgICAgQWRkcyB0aGUgZ2l2ZW4gYW1vdW50IHRvIHRoaXMgQmFua0FjY291bnQuXG4gICAgICAgIFJldHVybnMgdGhlIG5ldyBhbW91bnRcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIHNlbGYuX2Ftb3VudCArPSBhbW91bnRcbiAgICAgICAgcmV0dXJuIHNlbGYuX2Ftb3VudFxuXG4gICAgZGVmIHdpdGhkcmF3KHNlbGYsIGFtb3VudCk6XG4gICAgICAgIFwiXCJcIlxuICAgICAgICBXaXRoZHJhd3MgdGhlIGdpdmVuIGFtb3VudCBmcm9tIHRoaXMgYmFuayBhY2NvdW50LCByZXR1cm5pbmdcbiAgICAgICAgdGhlIHJlbWFpbmluZyBiYWxhbmNlLiBJZiB0aGVyZSBhcmUgbm90IHN1ZmZpY2llbnQgZnVuZHMgZm9yXG4gICAgICAgIHRoaXMgd2l0aGRyYXdhbCwgZG9lcyBub3QgZG8gdGhlIHRyYW5zYWN0aW9uIGFuZCByZXR1cm5zIE5vbmUuXG4gICAgICAgIFwiXCJcIlxuICAgICAgICBpZiBzZWxmLl9hbW91bnQgPCBhbW91bnQ6XG4gICAgICAgICAgICByZXR1cm4gTm9uZVxuICAgICAgICBlbHNlOlxuICAgICAgICAgICAgc2VsZi5fYW1vdW50IC09IGFtb3VudFxuICAgICAgICAgICAgcmV0dXJuIHNlbGYuX2Ftb3VudFxuXG4gICAgZGVmIHRvX3N0cmluZyhzZWxmKTpcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIFJldHVybnMgYSBzdHJpbmcgcmVwcmVzZW50YXRpb24gb2YgdGhpcyBCYW5rQWNjb3VudCwgaW4gdGhlIGZvcm1hdDpcbiAgICAgICAgICAgXCJCYW5rIEFjY291bnQgZm9yIHtvd25lcn06IHthbW91bnR9XCJcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIHJldHVybiAnQmFuayBBY2NvdW50IGZvciAnICsgc2VsZi5fb3duZXIgKyAnOiAnICsgc3RyKHNlbGYuX2Ftb3VudCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># Written in bank_account.py</span>
 
 <span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class that represents a bank account owned by a single person.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">initial_deposit</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructs a BankAccount starting with the initial_deposit for the</span>
@@ -2102,19 +2134,19 @@ to indicate that it is private.</p>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_owner</span> <span class="o">=</span> <span class="n">owner</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_amount</span> <span class="o">=</span> <span class="n">initial_deposit</span>
-        
+
     <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Adds the given amount to this BankAccount. </span>
+<span class="sd">        Adds the given amount to this BankAccount.</span>
 <span class="sd">        Returns the new amount</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_amount</span> <span class="o">+=</span> <span class="n">amount</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_amount</span>
-        
+
     <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Withdraws the given amount from this bank account, returning </span>
-<span class="sd">        the remaining balance. If there are not sufficient funds for </span>
+<span class="sd">        Withdraws the given amount from this bank account, returning</span>
+<span class="sd">        the remaining balance. If there are not sufficient funds for</span>
 <span class="sd">        this withdrawal, does not do the transaction and returns None.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_amount</span> <span class="o">&lt;</span> <span class="n">amount</span><span class="p">:</span>
@@ -2122,7 +2154,7 @@ to indicate that it is private.</p>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_amount</span> <span class="o">-=</span> <span class="n">amount</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_amount</span>
-        
+
     <span class="k">def</span> <span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a string representation of this BankAccount, in the format:</span>
@@ -2130,8 +2162,10 @@ to indicate that it is private.</p>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s1">&#39;Bank Account for &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_owner</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_amount</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -2155,57 +2189,45 @@ to indicate that it is private.</p>
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="recap.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Recap</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="recap.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Recap</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="warning-default-parameters.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Warning: Default Parameters</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="warning-default-parameters.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Warning: Default Parameters</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

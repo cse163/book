@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dissolve &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Lesson 20: Dissolve + Join" href="index.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2011,7 +2020,30 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dissolve</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gdp-by-continent">
+   GDP by Continent
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="dissolve">
@@ -2028,7 +2060,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <hr class="docutils" />
 <p>Consider our world dataset from last time. Recall we use <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> to process and plot datasets that contain information about the location of an event. As a reminder, the following snippet shows a preview of the data and a plot of the world’s GDP.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuIyBMb2FkIGRhdGFcbmRmID0gZ3BkLnJlYWRfZmlsZSgnZ2VvX2RhdGEvbmVfMTEwbV9hZG1pbl8wX2NvdW50cmllcy5zaHAnKVxuXG4jIFByZXZpZXcgZGF0YVxucHJpbnQoZGYuY29sdW1ucylcbnByaW50KGRmLmhlYWQoKSlcblxuIyBQbG90IGRhdGFcbmRmLnBsb3QoY29sdW1uPSdHRFBfTURfRVNUJywgbGVnZW5kPVRydWUpXG5wbHQuc2F2ZWZpZygnd29ybGRfZ2RwLnBuZycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="c1"># Load data</span>
@@ -2042,14 +2077,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;GDP_MD_EST&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;world_gdp.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="section" id="gdp-by-continent">
+
+        </div>
+    </div>
+</div><div class="section" id="gdp-by-continent">
 <h2>GDP by Continent<a class="headerlink" href="#gdp-by-continent" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we wanted to compute the total population for each continent. Since our dataset is tabular, you might suspect that since we are trying to compute a value “for each” group, that we would want to use a group-by! This is exactly the right idea! Remember, a group-by operation is one where we want to put each row into a group (e.g., the continent the country belongs to) and compute an aggregate for each group (e.g., the sum of the population). It turns out while <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> s do have a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> function, it is not going to behave as we want it to!</p>
 <p>The big problem for <code class="docutils literal notranslate"><span class="pre">groupby</span></code> here is that it comes from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and is not geospatial aware. What this means is that if we were to use a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> here, it would not know how to handle the geometry column of the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> ! This means there is not a well-defined answer for what the resulting geometry for the continent should be.</p>
 <p>However, don’t worry! <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> provides another function called <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> that behaves <strong>exactly</strong> like <code class="docutils literal notranslate"><span class="pre">groupby</span></code> , but has added logic to combine all the geometries for the group into one. This means you can still compute aggregates like <code class="docutils literal notranslate"><span class="pre">sum</span></code> , <code class="docutils literal notranslate"><span class="pre">min</span></code> , <code class="docutils literal notranslate"><span class="pre">max</span></code> , <code class="docutils literal notranslate"><span class="pre">mean</span></code> for the columns of interest. Additionally, it will combine the <code class="docutils literal notranslate"><span class="pre">geometry</span></code> column in a special way to make one <code class="docutils literal notranslate"><span class="pre">geometry</span></code> for the group. The default (and most common) thing to do is to just take the overlap of all the geometries for that group.</p>
 <p>Below, we run a full example that dissolves by the continent to show the total population in each continent, and then below explain the syntax. When you run the snippet, you should see an output that looks like we would expect: where each continent is its own color that looks like to have a value that is the sum of all the countries in that continent.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbiMgRmlsdGVyIGRvd24gdG8ganVzdCB0aGUgY29sdW1ucyBvZiBpbnRlcmVzdFxucG9wdWxhdGlvbnMgPSBkZltbJ1BPUF9FU1QnLCAnQ09OVElORU5UJywgJ2dlb21ldHJ5J11dXG4jIFJ1biB0aGUgZGlzc29sdmUgKGdyb3VwYnkpIG9wZXJhdGlvblxucG9wdWxhdGlvbnMgPSBwb3B1bGF0aW9ucy5kaXNzb2x2ZShieT0nQ09OVElORU5UJywgYWdnZnVuYz0nc3VtJylcblxuIyBUaGVuIHBsb3QgdGhlIHJlc3VsdFxucG9wdWxhdGlvbnMucGxvdChjb2x1bW49J1BPUF9FU1QnLCBsZWdlbmQ9VHJ1ZSlcbnBsdC5zYXZlZmlnKCdwbG90LnBuZycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
@@ -2063,10 +2103,15 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">populations</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;POP_EST&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>Notice this <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> call has a lot of the same components as a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> , but the syntax looks quite different. Instead of saying <code class="docutils literal notranslate"><span class="pre">df.groupby('col1')['col2'].sum()</span></code> , you say <code class="docutils literal notranslate"><span class="pre">df.dissolve(by='col1',</span> <span class="pre">aggfunc='sum')</span></code> . The <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> operation is applied to ALL columns of the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . As a result, it is common that you will need to filter down to just the columns of interest before doing a dissolve. In our example with <code class="docutils literal notranslate"><span class="pre">col1</span></code> and <code class="docutils literal notranslate"><span class="pre">col2</span></code> , you would need to filter <code class="docutils literal notranslate"><span class="pre">df</span></code> down to <code class="docutils literal notranslate"><span class="pre">['col1',</span> <span class="pre">'col2',</span> <span class="pre">'geometry']</span></code> since the the <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> only happens on those columns.</p>
+
+        </div>
+    </div>
+</div><p>Notice this <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> call has a lot of the same components as a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> , but the syntax looks quite different. Instead of saying <code class="docutils literal notranslate"><span class="pre">df.groupby('col1')['col2'].sum()</span></code> , you say <code class="docutils literal notranslate"><span class="pre">df.dissolve(by='col1',</span> <span class="pre">aggfunc='sum')</span></code> . The <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> operation is applied to ALL columns of the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . As a result, it is common that you will need to filter down to just the columns of interest before doing a dissolve. In our example with <code class="docutils literal notranslate"><span class="pre">col1</span></code> and <code class="docutils literal notranslate"><span class="pre">col2</span></code> , you would need to filter <code class="docutils literal notranslate"><span class="pre">df</span></code> down to <code class="docutils literal notranslate"><span class="pre">['col1',</span> <span class="pre">'col2',</span> <span class="pre">'geometry']</span></code> since the the <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> only happens on those columns.</p>
 <p>Don’t believe us when we say that you can’t use <code class="docutils literal notranslate"><span class="pre">groupby</span></code> here? Try it out in the following snippet and see what the resulting plot looks like! The problem comes from the fact that our <code class="docutils literal notranslate"><span class="pre">groupby</span></code> call throws away the geometry column, making this a non-geospatial dataset; it would not be easy to modify this to account for the geometry in the way that <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> is designed to do!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5wb3B1bGF0aW9ucyA9IGRmLmdyb3VwYnkoJ0NPTlRJTkVOVCcpWydQT1BfRVNUJ10uc3VtKClcblxucG9wdWxhdGlvbnMucGxvdCgpXG5wbHQuc2F2ZWZpZygnd3JvbmdfZmlndXJlLnBuZycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
@@ -2075,8 +2120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">populations</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;wrong_figure.png&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
+
+        </div>
+    </div>
+</div></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -2101,57 +2148,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 20: Dissolve + Join</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="fas fa-book fa-fw"></i> Lesson 20: Dissolve + Join</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="joins.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Joins</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="joins.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Joins</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

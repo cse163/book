@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Processing a CSV &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -91,8 +94,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Comma Separated Values (CSV)" href="comma-separated-values-csv.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1955,7 +1964,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1991,7 +2000,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2021,7 +2030,40 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Processing a CSV</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-of-dictionaries">
+   List of Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looping-over-the-list-of-dictionaries">
+   Looping over the list of dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-in-a-csv-file">
+   Reading in a CSV File
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="processing-a-csv">
@@ -2047,8 +2089,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 <p>This data structure is a <code class="docutils literal notranslate"><span class="pre">list</span></code> that stores <code class="docutils literal notranslate"><span class="pre">dict</span></code> s as its entries; therefore we call it a list of dictionaries. Each dictionary represents a single row of the dataset: this is why there are 3 dictionaries inside this list. Inside each dictionary, there is a key/value pair for every column of the data showing the values for each row and that column.</p>
-<p>This is a bit complex when you see it at first because the data structures are nested! Inside the <code class="docutils literal notranslate"><span class="pre">list</span></code> are dictionaries! This means if you stored that above data in a variable called data, you could access a dictionary by indexing into a list.  For example, to get the name of the TA at index 1, you might write:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<p>This is a bit complex when you see it at first because the data structures are nested! Inside the <code class="docutils literal notranslate"><span class="pre">list</span></code> are dictionaries! This means if you stored that above data in a variable called data, you could access a dictionary by indexing into a list. For example, to get the name of the TA at index 1, you might write:</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9IFtcbiAgICB7J05hbWUnOiAnTWFkcm9uYScsICdTYWxhcnknOiAzfSxcbiAgICB7J05hbWUnOiAnUml0JywgICAgICdTYWxhcnknOiAxfSxcbiAgICB7J05hbWUnOiAnUnlhbicsICAgICdTYWxhcnknOiAzfVxuXVxucHJpbnQoJ0RhdGE6JywgZGF0YSlcbnByaW50KCdOdW1iZXIgb2Ygcm93czonLCBsZW4oZGF0YSkpICAjIFNpbmNlIGRhdGEgaXMganVzdCBhIGxpc3RcbnByaW50KCdSb3cgMjonLCBkYXRhWzFdKVxuXG50YSA9IGRhdGFbMV0gICMgVGhpcyBpcyBhIGRpY3Rpb25hcnk6IHsnTmFtZSc6ICdSaXQnLCAnU2FsYXJ5JzogMX1cbnByaW50KCdOYW1lIG9mIFRBIGluIFJvdyAyOicsIHRhWydOYW1lJ10pXG5cbiMgSXQgaGVscHMgdG8gcHJpbnQgb3V0IHRoZSB0eXBlcyBvZiB0aGluZ3NcbnByaW50KClcbnByaW50KCdUeXBlcycpXG5wcmludCgndHlwZShkYXRhKScsIHR5cGUoZGF0YSkpXG5wcmludCgndHlwZShkYXRhWzFdKScsIHR5cGUoZGF0YVsxXSkpXG5wcmludChcInR5cGUodGFbJ05hbWUnXSlcIiwgdHlwZSh0YVsnTmFtZSddKSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>     <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span>    <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2067,9 +2112,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;type(data[1])&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;type(ta[&#39;Name&#39;])&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">ta</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]))</span>
 </pre></div>
-</div>
-<p>It turns out, it’s not necessary to save the value of <code class="docutils literal notranslate"><span class="pre">data[1]</span></code> in a variable before accessing it! It is much more common to write code like the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+
+        </div>
+    </div>
+</div><p>It turns out, it’s not necessary to save the value of <code class="docutils literal notranslate"><span class="pre">data[1]</span></code> in a variable before accessing it! It is much more common to write code like the following:</p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9IFtcbiAgICB7J05hbWUnOiAnTWFkcm9uYScsICdTYWxhcnknOiAzfSxcbiAgICB7J05hbWUnOiAnUml0JywgICAnU2FsYXJ5JzogMX0sXG4gICAgeydOYW1lJzogJ1J5YW4nLCAgJ1NhbGFyeSc6IDN9XG5dXG5cbnByaW50KCdOYW1lIG9mIFRBIGluIFJvdyAyOicsIGRhdGFbMV1bJ05hbWUnXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>   <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span>  <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2077,9 +2127,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Name of TA in Row 2:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>Let’s try another example. <strong>Before running the code snippet below, make a prediction of what each line of code will do and see if your prediction matches reality!</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+
+        </div>
+    </div>
+</div><p>Let’s try another example. <strong>Before running the code snippet below, make a prediction of what each line of code will do and see if your prediction matches reality!</strong></p>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9IFtcbiAgICB7J05hbWUnOiAnTWFkcm9uYScsICdTYWxhcnknOiAzfSxcbiAgICB7J05hbWUnOiAnUml0JywgICAnU2FsYXJ5JzogMX0sXG4gICAgeydOYW1lJzogJ1J5YW4nLCAgJ1NhbGFyeSc6IDN9XG5dXG5cbnByaW50KCdGaXJzdCBleGFtcGxlJylcbnByaW50KGRhdGFbMl1bJ05hbWUnXSlcbnByaW50KClcblxucHJpbnQoJ1NlY29uZCBleGFtcGxlJylcbnByaW50KGRhdGFbJ1NhbGFyeSddWzBdKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>   <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span>  <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2092,14 +2147,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Second example&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
-</div>
-<p>The first one should print the name “Ryan” because we go to the dictionary at index <code class="docutils literal notranslate"><span class="pre">2</span></code> and then grab its value associated with the key <code class="docutils literal notranslate"><span class="pre">'Name'</span></code> .</p>
+
+        </div>
+    </div>
+</div><p>The first one should print the name “Ryan” because we go to the dictionary at index <code class="docutils literal notranslate"><span class="pre">2</span></code> and then grab its value associated with the key <code class="docutils literal notranslate"><span class="pre">'Name'</span></code> .</p>
 <p>The second one does not work at all and causes an <code class="docutils literal notranslate"><span class="pre">Error</span></code> ! Why is that? Well <code class="docutils literal notranslate"><span class="pre">data</span></code> is a <code class="docutils literal notranslate"><span class="pre">list</span></code> , not a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> , so we can’t say <code class="docutils literal notranslate"><span class="pre">data['Salary']</span></code> ! You have to be careful about the order of the data is represented!</p>
 </div>
 <div class="section" id="looping-over-the-list-of-dictionaries">
 <h2>Looping over the list of dictionaries<a class="headerlink" href="#looping-over-the-list-of-dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>Let’s look back to our example from earlier where we want to compute the sum of the TAs’ salaries. We start by writing a loop to go over each TA in the list (each TA is a dictionary). We then access the <code class="docutils literal notranslate"><span class="pre">'Salary'</span></code> entry in each dictionary and add that to a variable for a cumulative sum.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9IFtcbiAgICB7J05hbWUnOiAnTWFkcm9uYScsICdTYWxhcnknOiAzfSxcbiAgICB7J05hbWUnOiAnUml0JywgICAnU2FsYXJ5JzogMX0sXG4gICAgeydOYW1lJzogJ1J5YW4nLCAgJ1NhbGFyeSc6IDN9XG5dXG5cbnRvdGFsX2Nvc3QgPSAwXG5mb3IgdGEgaW4gZGF0YTogICMgdGEgaXMgYSBkaWN0aW9uYXJ5XG4gICAgdG90YWxfY29zdCA9IHRvdGFsX2Nvc3QgKyB0YVsnU2FsYXJ5J11cbnByaW50KHRvdGFsX2Nvc3QpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>   <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span>  <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2110,12 +2170,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <span class="n">total_cost</span> <span class="o">=</span> <span class="n">total_cost</span> <span class="o">+</span> <span class="n">ta</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">total_cost</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>It sometimes helps to pause and think about the types again. Recall that the type of <code class="docutils literal notranslate"><span class="pre">data</span></code> in this example is <code class="docutils literal notranslate"><span class="pre">list</span></code> . The type of each value inside that <code class="docutils literal notranslate"><span class="pre">list</span></code> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">{'Name':</span> <span class="pre">'Madrona',</span> <span class="pre">'Salary':</span> <span class="pre">3}</span></code> ).  Each of these <code class="docutils literal notranslate"><span class="pre">dict</span></code> s will have the same keys (e.g. <code class="docutils literal notranslate"><span class="pre">'Name'</span></code> and <code class="docutils literal notranslate"><span class="pre">'Salary'</span></code> ).</p>
+
+        </div>
+    </div>
+</div><p>It sometimes helps to pause and think about the types again. Recall that the type of <code class="docutils literal notranslate"><span class="pre">data</span></code> in this example is <code class="docutils literal notranslate"><span class="pre">list</span></code> . The type of each value inside that <code class="docutils literal notranslate"><span class="pre">list</span></code> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">{'Name':</span> <span class="pre">'Madrona',</span> <span class="pre">'Salary':</span> <span class="pre">3}</span></code> ). Each of these <code class="docutils literal notranslate"><span class="pre">dict</span></code> s will have the same keys (e.g. <code class="docutils literal notranslate"><span class="pre">'Name'</span></code> and <code class="docutils literal notranslate"><span class="pre">'Salary'</span></code> ).</p>
 </div>
 <div class="section" id="reading-in-a-csv-file">
 <h2>Reading in a CSV File<a class="headerlink" href="#reading-in-a-csv-file" title="Permalink to this headline">¶</a></h2>
-<p>You might be asking: How do you write the code to parse this CSV into the list of dictionaries? <br />  <br /> That actually turns out to be a very hard problem that is well outside of what we have learned so far! There are lots of edge cases to handle around getting the types of the values correct (i.e. knowing when to turn the values of a column into <code class="docutils literal notranslate"><span class="pre">ints</span></code> rather than <code class="docutils literal notranslate"><span class="pre">str</span></code> s).</p>
+<p>You might be asking: How do you write the code to parse this CSV into the list of dictionaries? <br /> <br /> That actually turns out to be a very hard problem that is well outside of what we have learned so far! There are lots of edge cases to handle around getting the types of the values correct (i.e. knowing when to turn the values of a column into <code class="docutils literal notranslate"><span class="pre">ints</span></code> rather than <code class="docutils literal notranslate"><span class="pre">str</span></code> s).</p>
 <p>We write this method for you and call it <code class="docutils literal notranslate"><span class="pre">parse</span></code>. It will be made available to you on your homework and lessons in a file called <code class="docutils literal notranslate"><span class="pre">cse163_utils</span></code> and you do not need to know how it’s implemented. This is similar to how we provide <code class="docutils literal notranslate"><span class="pre">assert_equals</span></code> in <code class="docutils literal notranslate"><span class="pre">cse163_utils</span></code>.</p>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
@@ -2150,57 +2212,45 @@ already did for us?</p>
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="comma-separated-values-csv.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Comma Separated Values (CSV)</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="comma-separated-values-csv.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Comma Separated Values (CSV)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pause-and-think.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="pause-and-think.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><i class="far fa-pause-circle fa-fw"></i> Pause and Think</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

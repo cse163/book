@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Revisiting Time Efficiency &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -93,8 +96,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Lesson 17: Profiling and Program Speed" href="index.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1957,7 +1966,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1993,14 +2002,24 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Revisiting Time Efficiency</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="revisiting-time-efficiency">
@@ -2011,7 +2030,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <hr class="docutils" />
 <p>Last time we introduced the notion of efficiency, namely in terms of time taken to run the program. We saw that time was unreliable and that computer scientists instead discuss an algorithm’s efficiency in terms of its Big-O notation. Today, we will discuss some limitations of Big-O notation and highlight the importance of why it is used (since it is often misunderstood).</p>
 <p>For example, consider the following code snippet that shows three different methods for computing the maximum difference between any pair of values in a list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1heF9kaWZmMShudW1zKTpcbiAgICAjIEZpbmQgdGhlIG1heCBkaWZmZXJlbmNlIGJldHdlZW4gYW55IHBhaXIgb2YgbnVuYmVyXG4gICAgbWF4X2RpZmYgPSAwXG4gICAgZm9yIG4xIGluIG51bXM6XG4gICAgICAgIGZvciBuMiBpbiBudW1zOlxuICAgICAgICAgICAgZGlmZiA9IGFicyhuMSAtIG4yKVxuICAgICAgICAgICAgaWYgZGlmZiA%2BIG1heF9kaWZmOlxuICAgICAgICAgICAgICAgIG1heF9kaWZmID0gZGlmZlxuICAgIHJldHVybiBtYXhfZGlmZlxuXG5kZWYgbWF4X2RpZmYyKG51bXMpOlxuICAgICMgUmVhbGl6ZSB0aGUgbWF4IGRpZmZlcmVuY2UgaXMgdGhlIHNhbWUgYXMgdGhlIG1heFxuICAgICMgbnVtYmVyIG1pbnVzIHRoZSBtaW4gbnVtYmVyXG4gICAgbWluX251bSA9IG51bXNbMF1cbiAgICBtYXhfbnVtID0gbnVtc1swXVxuICAgIGZvciBudW0gaW4gbnVtczpcbiAgICAgICAgaWYgbnVtIDwgbWluX251bTpcbiAgICAgICAgICAgIG1pbl9udW0gPSBudW1cbiAgICAgICAgZWxpZiBudW0gPiBtYXhfbnVtOlxuICAgICAgICAgICAgbWF4X251bSA9IG51bVxuICAgIHJldHVybiBtYXhfbnVtIC0gbWluX251bVxuXG5kZWYgbWF4X2RpZmYzKG51bXMpOlxuICAgICMgU2FtZSBhcyBtYXhfZGlmZjIgYnV0IHVzZXMgUHl0aG9uIGJ1aWx0LWluc1xuICAgIHJldHVybiBtYXgobnVtcykgLSBtaW4obnVtcykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="c1"># Find the max difference between any pair of nunber</span>
     <span class="n">max_diff</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">n1</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
@@ -2022,7 +2044,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <span class="k">return</span> <span class="n">max_diff</span>
 
 <span class="k">def</span> <span class="nf">max_diff2</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-    <span class="c1"># Realize the max difference is the same as the max </span>
+    <span class="c1"># Realize the max difference is the same as the max</span>
     <span class="c1"># number minus the min number</span>
     <span class="n">min_num</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">max_num</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -2037,19 +2059,21 @@ commentsRunWhenDOMLoaded(addUtterances);
     <span class="c1"># Same as max_diff2 but uses Python built-ins</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-</div>
-<p>What are the Big-O run-times of each of these functions? Let <span class="math notranslate nohighlight">\(n\)</span> be the length of the input list.</p>
+
+        </div>
+    </div>
+</div><p>What are the Big-O run-times of each of these functions? Let <span class="math notranslate nohighlight">\(n\)</span> be the length of the input list.</p>
 <ul class="simple">
-<li><p>For     <code class="docutils literal notranslate"><span class="pre">max_diff1</span></code>     , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>.</p></li>
-<li><p>For     <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code>     , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p></li>
-<li><p>For     <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code>     , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">max_diff1</span></code> , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p></li>
 </ul>
 <p>So according to Big-O, <code class="docutils literal notranslate"><span class="pre">max_diff1</span></code> is clearly the worst while <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> and <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> are equivalent. We’ll see that this might not be all to this story.</p>
 <p>You have to be a bit careful when considering Big-O notation since it has some specific uses and some specific drawbacks.</p>
 <ul class="simple">
 <li><p><strong>Pros</strong></p>
 <ul>
-<li><p>It clearly describes how an algorithm will         <strong>scale</strong>         (e.g., if you double the input, it will take X time longer).</p></li>
+<li><p>It clearly describes how an algorithm will <strong>scale</strong> (e.g., if you double the input, it will take X time longer).</p></li>
 <li><p>The Big-O notation is independent of the programming language you are writing in or the computer you are writing the program on. When considering raw time taken by a program to run, these factors have a huge impact on the run-time of the program.</p></li>
 <li><p>Easy to figure out by just looking at the code (with practice 😊).</p></li>
 </ul>
@@ -2091,57 +2115,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="fas fa-book fa-fw"></i> Lesson 17: Profiling and Program Speed</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="fas fa-book fa-fw"></i> Lesson 17: Profiling and Program Speed</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="profiling-code.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Profiling Code</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="profiling-code.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Profiling Code</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

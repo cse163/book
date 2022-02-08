@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Big-O &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,15 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -76,7 +79,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -93,8 +96,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="prev" title="Practice: Count Steps" href="practice-count-steps.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+
+    <!-- Add trace snippet -->
+    <script src="https://trace-scripts.s3.amazonaws.com/trace-embed-v1.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-571NY3SGCX"></script>
@@ -1957,7 +1966,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -1993,7 +2002,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -2030,7 +2039,47 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Big-O</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reporting-steps">
+   Reporting Steps
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#another-example">
+     Another Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-is-this-useful">
+   Why is this useful?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="big-o">
@@ -2040,7 +2089,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <hr class="docutils" />
 <p>Now that we feel a little bit more comfortable counting steps, we can go back to trying to compare <code class="docutils literal notranslate"><span class="pre">sum1</span></code> and <code class="docutils literal notranslate"><span class="pre">sum2</span></code> . Recall these functions were defined as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIHN1bTEobik6XG4gICAgdG90YWwgPSAwXG4gICAgZm9yIGkgaW4gcmFuZ2UobiArIDEpOlxuICAgICAgICB0b3RhbCArPSBpXG4gICAgcmV0dXJuIHRvdGFsXG5cblxuZGVmIHN1bTIobik6XG4gICAgcmV0dXJuIG4gKiAobiArIDEpIC8vIDIiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
@@ -2050,10 +2102,15 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">def</span> <span class="nf">sum2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 </pre></div>
-</div>
-<p>To answer the question of how many steps it takes to run these functions, we now need to talk about the number of steps in terms of the input <code class="docutils literal notranslate"><span class="pre">n</span></code> (since the number of steps might depend on <code class="docutils literal notranslate"><span class="pre">n</span></code> ).</p>
+
+        </div>
+    </div>
+</div><p>To answer the question of how many steps it takes to run these functions, we now need to talk about the number of steps in terms of the input <code class="docutils literal notranslate"><span class="pre">n</span></code> (since the number of steps might depend on <code class="docutils literal notranslate"><span class="pre">n</span></code> ).</p>
 <p>Below, we annotate the code with step counting.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># Total: n + 3 steps</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIHN1bTEobik6ICAgICAgICAgICAgICAgICAjIFRvdGFsOiBuICsgMyBzdGVwc1xuICAgIHRvdGFsID0gMCAgICAgICAgICAgICAgICAjIDEgc3RlcFxuICAgIGZvciBpIGluIHJhbmdlKG4gKyAxKTogICAjIFJ1bnMgbiArIDEgdGltZXMsIGZvciBhIHRvdGFsIG9mIG4gKyAxXG4gICAgICAgIHRvdGFsICs9IGkgICAgICAgICAgICMgICAxIHN0ZXBcbiAgICByZXR1cm4gdG90YWwgICAgICAgICAgICAgIyAxIHN0ZXBcblxuXG5kZWYgc3VtMihuKTogICAgICAgICAgICAgICAgICMgVG90YWw6IDEgc3RlcFxuICAgIHJldHVybiBuICogKG4gKyAxKSAvLyAyICAjIDEgc3RlcCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># Total: n + 3 steps</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># 1 step</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>   <span class="c1"># Runs n + 1 times, for a total of n + 1</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>           <span class="c1">#   1 step</span>
@@ -2063,8 +2120,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="k">def</span> <span class="nf">sum2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># Total: 1 step</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># 1 step</span>
 </pre></div>
-</div>
-<p>So with this counting rule, <code class="docutils literal notranslate"><span class="pre">sum1(n)</span></code> runs in <code class="docutils literal notranslate"><span class="pre">n+3</span></code> steps while <code class="docutils literal notranslate"><span class="pre">sum2(n)</span></code> always runs in <code class="docutils literal notranslate"><span class="pre">1</span></code> step!</p>
+
+        </div>
+    </div>
+</div><p>So with this counting rule, <code class="docutils literal notranslate"><span class="pre">sum1(n)</span></code> runs in <code class="docutils literal notranslate"><span class="pre">n+3</span></code> steps while <code class="docutils literal notranslate"><span class="pre">sum2(n)</span></code> always runs in <code class="docutils literal notranslate"><span class="pre">1</span></code> step!</p>
 <p>Amazingly, this weird counting rule matches the graph that we produced earlier with timing code! We saw that <code class="docutils literal notranslate"><span class="pre">sum1</span></code> grew proportionally to its input <code class="docutils literal notranslate"><span class="pre">n</span></code> while <code class="docutils literal notranslate"><span class="pre">sum2</span></code> always seemed about the same. With these counting rules, it’s easier to come to that conclusion without having to go through the process of actually timing the code!</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/UEmjcGL60KC1zovZQd88i3Q4"><img alt="Graph showing runtime of sum1 and sum2 functions. sum1 is a linear function that takes more time as n increases while sum2 is a flat line that always takes &lt; 0.1 seconds to complete" class="align-center" src="https://static.us.edusercontent.com/files/UEmjcGL60KC1zovZQd88i3Q4" style="width: 640px;" /></a>
 <div class="section" id="reporting-steps">
@@ -2079,7 +2138,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="another-example">
 <h3>Another Example<a class="headerlink" href="#another-example" title="Permalink to this headline">¶</a></h3>
 <p>Consider the folllwing snippet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="trace-snippet-container">
+    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1ldGhvZChuKTpcbiAgICByZXN1bHQgPSAwXG4gICAgcHJpbnQoJ1N0YXJ0aW5nIG1ldGhvZCcpXG4gICAgZm9yIGkgaW4gcmFuZ2UoOSk6XG4gICAgICAgIGZvciBqIGluIHJhbmdlKG4pOlxuICAgICAgICAgICAgcmVzdWx0ICs9IGkgKiBqXG4gICAgICAgICAgICBwcmludChyZXN1bHQpXG4gICAgcmV0dXJuIHJlc3VsdCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Starting method&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
@@ -2088,8 +2150,10 @@ commentsRunWhenDOMLoaded(addUtterances);
             <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
-</div>
-<p>What is the run-time of this function in Big-O notation? Students will commonly come up with an answer like <span class="math notranslate nohighlight">\(\mathcal{O}(2n^2 + 3)\)</span> which is not correct on two counts:</p>
+
+        </div>
+    </div>
+</div><p>What is the run-time of this function in Big-O notation? Students will commonly come up with an answer like <span class="math notranslate nohighlight">\(\mathcal{O}(2n^2 + 3)\)</span> which is not correct on two counts:</p>
 <ul class="simple">
 <li><p>The first is a common misconception where people assume nested loops mean something like <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>. This is not the case! This is only true if both loops run <span class="math notranslate nohighlight">\(n\)</span> times! In this case, the outer loop runs 9 times and the inner-loop runs <span class="math notranslate nohighlight">\(n\)</span> times so it will be something on the order of <span class="math notranslate nohighlight">\(9n\)</span> steps, not <span class="math notranslate nohighlight">\(n^2\)</span> steps!</p></li>
 <li><p>The second is that when you report a Big-O result, you should always drop constants in front of terms and lower-order terms. This formula for steps is wrong in the first place, but assuming it was correct, you would report <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> after dropping the constants and lower-order terms.</p></li>
@@ -2160,57 +2224,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="practice-count-steps.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><i class="far fa-edit fa-fw"></i> Practice: Count Steps</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="practice-count-steps.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><i class="far fa-edit fa-fw"></i> Practice: Count Steps</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="data-structures.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Structures</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="data-structures.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Data Structures</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hunter Schafer<br/>
-        
-            &copy; Copyright 2021.<br/>
-          <div class="extra_footer">
-            Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-          </div>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Hunter Schafer<br/>
+    
+        &copy; Copyright 2021.<br/>
+      <div class="extra_footer">
+        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
