@@ -12,7 +12,7 @@ There is a convenient module called `pickle` that lets you save a Python object 
 
 The one note we will make about `pickle` , is it requires us to use one other feature of reading/writing to files. The `open` call takes a second parameter called `mode` that tells Python how you want to use the file. By default, `mode` has value `'r'` , which means you want to read the file. If you want to write to the file, you need to use the mode `'w'` by making the call `open('file.txt', 'w')` . Even more confusing, since `pickle` needs to write the data in a special binary format (i.e., not plain-text like a `.txt` ), you need to pass in the modes `'rb'` for read binary and `'wb'` for write binary respectively.
 
-```python
+```{snippet}
 import os
 import pickle
 

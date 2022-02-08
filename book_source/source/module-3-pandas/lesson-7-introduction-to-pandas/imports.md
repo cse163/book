@@ -23,7 +23,7 @@ We use importing to get values or functions defined inside one module so they ca
 
 There are 2 main (and a half, sort of) ways to import in Python that we will explore in this slide. For the following examples, assume we have defined the module `module_a` with the file `module_a.py` as shown below.
 
-```python
+```{snippet}
 # Contents of: module_a.py
 def fun1():
     print("Calling a's fun1")
@@ -42,7 +42,7 @@ Our goal is to call `fun2` inside another module, `module_b` . To do this, we ne
 
 The simplest syntax simply uses the `import` statement to import a module. The following snippet shows a short program that uses `fun2` defined in `module_a` .
 
-```python
+```{snippet}
 # Contents of: module_b.py
 import module_a
 
@@ -93,7 +93,7 @@ This syntax has the exact same semantics as the one before, but it lets you defi
 
 Here, we show the complete `module_b` that uses the syntax. The output and behavior of the program are exactly the same.
 
-```python
+```{snippet}
 # Contents of: module_b.py
 import module_a as m
 
@@ -123,7 +123,7 @@ Sometimes, it is very tedious to import a whole module and prefix every function
 
 The following snippet shows how to use this syntax.
 
-```python
+```{snippet}
 # Contents of: module_b.py
 from module_a import fun2
 

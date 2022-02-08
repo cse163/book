@@ -16,7 +16,7 @@ Why do many data scientists use Python? There are two key reasons:
 
 Conventionally in any first programming course, you learn how to make a computer print out the the text "Hello world!" So let's do that in Python!
 
-```python
+```{snippet}
 print("Hello world!")
 ```
 
@@ -74,7 +74,7 @@ func main() {
 
 Consider our "Hello world!" program from above.
 
-```python
+```{snippet}
 print("Hello world!")
 ```
 

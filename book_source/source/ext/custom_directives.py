@@ -1,9 +1,53 @@
-from logging import debug
+import base64
+import itertools
+import json
+import os
+import urllib.parse
 
 from docutils import nodes
-from docutils.parsers.rst import Directive
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
 from sphinx.addnodes import download_reference
 from sphinx.util.docutils import SphinxDirective
+
+# Run this outside the class definition once
+dir_path = os.path.dirname(os.path.realpath(__file__))
+with open(os.path.join(dir_path, "snippet-template.html")) as f:
+    TEMPLATE = f.read()
+
+
+def create_trace_files_param(code):
+    payload = {
+        "version": 0,
+        "files": [
+            {
+                "version": 0,
+                "filename": "main.py",
+                "directory": "src",
+                "contents": code,
+                "editable": True,
+            }
+        ],
+    }
+    return urllib.parse.quote(
+        base64.standard_b64encode(json.dumps(payload).encode()).decode()
+    )
+
+
+class TraceSnippet(SphinxDirective):
+    has_content = True
+
+    def run(self):
+
+        raw_code = "\n".join(self.content)
+        highlighted_code = highlight(raw_code, PythonLexer(), HtmlFormatter())
+        options = {
+            "params": create_trace_files_param(raw_code),
+            "code": highlighted_code,
+        }
+
+        return [nodes.raw("", TEMPLATE.format(**options), format="html")]
 
 
 class DataDownloadLinks(SphinxDirective):
@@ -119,6 +163,7 @@ def download(prefix):
 def setup(app):
     app.add_directive("jupyter-info", JupyterInfo)
     app.add_directive("reading-data", ReadingDataDownload)
+    app.add_directive("snippet", TraceSnippet)
     app.add_role("rel-data-download", download("./"))
     app.add_role("static-data-download", download("/_static/data/"))
 

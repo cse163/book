@@ -38,7 +38,7 @@ This can cause problems if your program runs for a long time and slowly builds u
 
 Consider the following snippet, that will make a `list` of `Dog` objects. It's designed purposefully to crash so if you run it, you will eventually get a memory error after some time.
 
-```python
+```{snippet}
 class Dog:
     def __init__(self, name):
         self._name = name

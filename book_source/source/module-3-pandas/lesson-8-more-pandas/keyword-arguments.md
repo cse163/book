@@ -10,7 +10,7 @@ This slide doesn't describe anything particular about `pandas` , but a general f
 
 In the following code cell, we define a function called `div` and show two different ways to call it! The first is the way we have seen it this whole time and the second is a brand-new way!
 
-```python
+```{snippet}
 
 def div(a, b):
     print('Dividing', a, 'by', b)
@@ -35,7 +35,7 @@ We will see these named-parameters pop-up quite often in the libraries we learn!
 
 To see how many parameters a `pandas` function actually takes, look at its documentation!
 
-```python
+```{snippet}
 import pandas as pd
 help(pd.read_csv) # Press q to quit
 ```
@@ -44,7 +44,7 @@ help(pd.read_csv) # Press q to quit
 
 Python lets you use both passing by-name and by-position in a single function call. For example, if you want to use the `print` function, but don't want the new-line on the end, you would write:
 
-```python
+```{snippet}
 # Try changing end to something else to see it print at the end!
 print('Hello world', end='')
 ```
@@ -53,7 +53,7 @@ How does Python determine which is which? It first uses the arguments passed by-
 
 This might make more sense with an example we define.
 
-```python
+```{snippet}
 def method(a, b, c):
     print(str(a) + ',' + str(b) + ',' + str(c))
 
