@@ -32,7 +32,7 @@ Suppose we were working with the following two datasets shown below. For each qu
 
 How many data rows are there in `result` ?
 
-```{snippet}
+```python
 result = movies.merge(directors, left_on='directed_by',
                       right_on='director_id')
 ```
@@ -45,7 +45,7 @@ Write your answer down in your own space.
 
 How many data rows are there in `result` ?
 
-```{snippet}
+```python
 result = directors.merge(movies, left_on='director_id',
                          right_on='directed_by', how='left')
 ```
@@ -58,7 +58,7 @@ Write your answer down in your own space.
 
 How many data rows are there in `result` ?
 
-```{snippet}
+```python
 result = movies.merge(directors, left_on='directed_by',
                       right_on='director_id', how='outer')
 ```
@@ -79,7 +79,7 @@ Select one or more options. Write your answer down in your own space.
 
 _<i class="far fa-square fa-fw"></i> Option 0_
 
-```{snippet}
+```python
 merged = movies.merge(directors,
                       left_on='directed_by',
                       right_on='director_id',
@@ -89,7 +89,7 @@ result = merged.groupby('director_id')['year'].min()
 
 _<i class="far fa-square fa-fw"></i> Option 1_
 
-```{snippet}
+```python
 merged = movies.merge(directors,
                       left_on='directed_by',
                       right_on='director_id',
@@ -99,7 +99,7 @@ result = merged.groupby('director_id')['year'].min()
 
 _<i class="far fa-square fa-fw"></i> Option 2_
 
-```{snippet}
+```python
 merged = directors.merge(movies,
                          left_on='director_id',
                          right_on='directed_by',
@@ -109,7 +109,7 @@ result = merged.groupby('director_id')['year'].min()
 
 _<i class="far fa-square fa-fw"></i> Option 3_
 
-```{snippet}
+```python
 merged = directors.merge(movies,
                          left_on='director_id',
                          right_on='directed_by',
@@ -119,7 +119,7 @@ result = merged.groupby('director_id')['year'].min()
 
 _<i class="far fa-square fa-fw"></i> Option 4_
 
-```{snippet}
+```python
 merged = movies.merge(directors,
                       left_on='directed_by',
                       right_on='director_id')
@@ -158,7 +158,7 @@ Select one option. Write your answer down in your own space.
 
 _<i class="far fa-circle fa-fw"></i> Option 0_
 
-```{snippet}
+```python
 countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='inner')
@@ -166,7 +166,7 @@ countries.merge(carbon,
 
 _<i class="far fa-circle fa-fw"></i> Option 1_
 
-```{snippet}
+```python
 countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='left')
@@ -174,7 +174,7 @@ countries.merge(carbon,
 
 _<i class="far fa-circle fa-fw"></i> Option 2_
 
-```{snippet}
+```python
 countries.merge(carbon,
                 left_on='NAME', right_on='Country')
                 how='right')
@@ -182,21 +182,21 @@ countries.merge(carbon,
 
 _<i class="far fa-circle fa-fw"></i> Option 3_
 
-```{snippet}
+```python
 gpd.sjoin(countries, carbon,
           op='intersects', how='inner')
 ```
 
 _<i class="far fa-circle fa-fw"></i> Option 4_
 
-```{snippet}
+```python
 gpd.sjoin(countries, carbon,
           op='intersects', how='left')
 ```
 
 _<i class="far fa-circle fa-fw"></i> Option 5_
 
-```{snippet}
+```python
 gpd.sjoin(countries, carbon,
           op='intersects', how='right')
 ```

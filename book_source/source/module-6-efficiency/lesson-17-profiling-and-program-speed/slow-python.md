@@ -42,7 +42,7 @@ Python brings a whole new set of challenges to this translation because the vari
 
 Consider the equivalent Python program.
 
-```{snippet}
+```python
 a = 1
 b = 2
 c = a + b
@@ -82,7 +82,7 @@ So part of the reason Python tends to be slower is that these extra steps to che
 
 For example, consider the programs below in C and Python to manually compute `m * n` using loops. You wouldn't actually write this code in practice, but it's a nice way to show why looping in Python is slow. You'll find the Python code runs MUCH slower than the C version (assuming the Python version doesn't time out).
 
-```{snippet}
+```python
 m = 10000
 n = 25000
 

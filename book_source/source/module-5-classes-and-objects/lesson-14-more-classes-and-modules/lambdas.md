@@ -8,7 +8,7 @@
 
 Recall earlier in the quarter when we were learning `pandas` , we learned that the `apply` function could take a function as another parameter! Instead of talking about `pandas` , we will simplify this to write our own `apply_fun` function that does something similar to a list of values. It takes a list of values and another function as a parameter, and returns a new list that is the result of applying the given function to each element in the input list.
 
-```{snippet}
+```python
 def apply_fun(values, function):
     # Use a list comprehension to apply function to each value
     return [function(v) for v in values]
@@ -27,7 +27,7 @@ It's a bit tedious that we have to write out a whole function called `times_two`
 
 Enter the **lambda** (commonly called an _anonymous function_). The idea behind a lambda is to let you specify a function without needing to go through the whole `def` syntax. This works best for very simple operations. Below is an example showing how to do this with our `apply_fun`.
 
-```{snippet}
+```python
 def apply_fun(values, function):
     # Use a list comprehension to apply function to each value
     return [function(v) for v in values]
@@ -45,7 +45,7 @@ By design, it is very difficult to do something more complex than a one-line exp
 
 One of the most common places `lambdas` show up is for sorting values. Suppose we wanted to use our `Dog` class to make a `list` of `Dog` s. Additionally, suppose I wanted to sort them by their name (alphabetically). There is a function in Python call `sorted` that sorts a list of values and returns a new list that has all the values of the input in sorted order.
 
-```{snippet}
+```python
 class Dog:
     def __init__(self, name):
         self._name = name
@@ -68,7 +68,7 @@ However, a common work-around is to use an optional parameter for the `sorted` f
 
 So to do this in our example, we need to pass a function as the `key` to transform each `Dog` into its name so that we can sort it by their name. This is very easy to do with a `lambda` !
 
-```{snippet}
+```python
 class Dog:
     def __init__(self, name):
         self._name = name

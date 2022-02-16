@@ -8,7 +8,7 @@
 
 Think back to our example of finding the maximum difference between elements in a list.
 
-```{snippet}
+```python
 def max_diff1(nums):
     # Find the max difference between any pair of nunber
     max_diff = 0
@@ -52,7 +52,7 @@ An easier way to identify the relative runtime of programs is to use something c
 
 A common profiler is the `line_profiler` package (also called `kernprof` ). `kernprof` is nice because it lets you annotate your functions with an `@profile` tag to have it profile your method. For example, the following snippet shows a file called `test.py` that defines these three functions with an `@profile` annotation above each function.
 
-```{snippet}
+```python
 # File: test.py
 
 @profile

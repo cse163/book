@@ -12,7 +12,7 @@ To do this, you need to write a **class** . A class is a "blueprint" for an obje
 
 We start by showing the syntax for defining our own class and then explaining what the components are.
 
-```{snippet}
+```python
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -37,7 +37,7 @@ This defines a new type called `Dog` . The state of the `Dog` will be the **fiel
 
 To use a `Dog` object, you would write the following code (we have to redefine the class in the cell below since all the snippets in these readings are independent).
 
-```{snippet}
+```python
 class Dog:
     def __init__(self, name):
         self.name = name

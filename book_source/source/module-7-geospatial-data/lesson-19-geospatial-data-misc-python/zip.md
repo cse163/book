@@ -8,7 +8,7 @@
 
 In our next example, we will need to use a very useful function in Python called `zip` . It takes two lists and "zips" them up so you can iterate over pairs of elements from both lists. This is much clearer with an example.
 
-```{snippet}
+```python
 x = [1,2,3]
 y = [4,5,6]
 z = zip(x, y)
@@ -29,7 +29,7 @@ The result of a `zip` is pairs of values from each list! The first values from b
 
 It turns out the return type of `zip` is not actually a `list` of these pairs! Try printing out the result of `zip` .
 
-```{snippet}
+```python
 x = [1, 2, 3]
 y = [4, 5, 6]
 z = zip(x, y)
@@ -42,7 +42,7 @@ The reason `zip` does not return a `list` is that the operation is **lazy**. It 
 
 A common trick if you want to get all the pairs into a list would be to just convert it to a `list` manually like in the block below.
 
-```{snippet}
+```python
 x = [1, 2, 3]
 y = [4, 5, 6]
 z = list(zip(x, y))

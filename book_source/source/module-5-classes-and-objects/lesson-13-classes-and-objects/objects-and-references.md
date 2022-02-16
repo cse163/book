@@ -10,7 +10,7 @@ An **object** (also sometimes called an **instance)** in Python is a way of enca
 
 We have used the term object a few times in this course to refer to something like a `pandas.DataFrame` or the value of `f` in `open('file.txt') as f` . These objects are things you can interact with within your programs by calling functions on them (i.e. calling one of their **behaviors** ) and the output of these functions is determined by the data inside the object (i.e. its **state** ). The following code cell creates a `pandas.DataFrame` object and then calls a function to show its state.
 
-```{snippet}
+```python
 import pandas as pd
 
 df = pd.DataFrame({'a': [1,2,3]}) # One column, three rows
@@ -45,7 +45,7 @@ In this example, we think of the `DataFrame` as having the following states and 
 
 You can make multiple objects of the same type and they will have their own, independent state. For example, in the next cell, we make two `pandas.DataFrame` that happen to have the same state, but they are two completely different objects!
 
-```{snippet}
+```python
 import pandas as pd
 
 # Create two, independent DataFrame objects
@@ -90,7 +90,7 @@ It's important to emphasize that in this drawing, the `DataFrame` objects are **
 
 Why is this distinction important? See the following code cell.
 
-```{snippet}
+```python
 import pandas as pd
 
 df1 = pd.DataFrame({'a': [1,2,3]})
@@ -119,7 +119,7 @@ Go back to the phone number analogy. This scenario is like if I had Madrona's ph
 
 How does this have an impact on the code you write? Well if we run the same code cell, but now modify `df1` , we will see the change in `df3` too (since they refer to the same object!).
 
-```{snippet}
+```python
 import pandas as pd
 
 df1 = pd.DataFrame({'a': [1,2,3]})
@@ -160,7 +160,7 @@ Recall when we call methods on `str` they will always return new `str` objects b
 
 Thinking about this memory model, this means when you call something like `df.dropna()` , this method creates a **new** `DataFrame` that stores the same state (rows/cols) as `df` but with all the `NaN` rows missing. The fact it creates a new `DataFrame` is precisely why the originally `df` wasn't modified. For example, consider the following snippet. By the end of this program, there will be 2 variables storing references to 2 different `DataFrame` objects.
 
-```{snippet}
+```python
 import numpy as np  # For NaN
 import pandas as pd
 
@@ -178,7 +178,7 @@ print(df2)
 
 Thinking back to one of our earlier snippets, shown below, we can show another example to understand more concretely this notion of a reference to an object.
 
-```{snippet}
+```python
 import pandas as pd
 
 df1 = pd.DataFrame({'a': [1,2,3]})
@@ -188,7 +188,7 @@ df3 = df1
 
 Python has a built-in function called `id` that lets you see this internal "phone number" to an object that is stored inside the variables. As a note, you will never use this `id` function in practice (explained next time), but it helps to see how this all works.
 
-```{snippet}
+```python
 import pandas as pd
 
 df1 = pd.DataFrame({'a': [1,2,3]})

@@ -26,7 +26,7 @@ Notice that `list` s are NOT immutable. This means methods like `append` , `remo
 
 The following snippet shows some example of how to call some of these methods
 
-```{snippet}
+```python
 l = []  # Empty list
 l.append(1)
 l.append(2)
@@ -55,7 +55,7 @@ The idea of checking if a `list` contains a value is incredibly important for ap
 
 There is a special keyword in Python precisely made for doing these contains queries (we also call them **membership queries** ). The following snippet shows the syntax for this keyword. The syntax goes `value in collection` and it is an expression that evaluates to `True/False` which means you could use it in an `if` statement or a `while` loop. You can try editing the code block to see what happens if you searched for the word `'cats'` instead.
 
-```{snippet}
+```python
 words = ['I', 'love', 'dogs']
 if 'dogs' in words:
     print('Found it!')
@@ -67,7 +67,7 @@ Notice that we didn't say you could only use this on lists. It turns out that yo
 
 To see if something is not in a list, you can use `not in` as shown in the next example (it's exactly the opposite of the `in` keyword)
 
-```{snippet}
+```python
 words = ['I', 'love', 'dogs']
 if 'cats' not in words:
     print('Not there!')

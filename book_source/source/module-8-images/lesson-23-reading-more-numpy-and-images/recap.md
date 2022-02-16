@@ -6,7 +6,7 @@ While there can be a lot of syntax, the nice thing is a lot of it is fairly simi
 
 ## `numpy`
 
-```{snippet}
+```python
 import numpy as np
 
 # Create numpy arrays
