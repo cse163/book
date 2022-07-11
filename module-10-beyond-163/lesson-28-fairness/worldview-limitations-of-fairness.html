@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Worldview / Limitations of Fairness &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,31 +20,28 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
@@ -78,14 +77,13 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -115,7 +113,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -124,9 +136,10 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -144,16 +157,15 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   <i class="fas fa-hand-sparkles fa-fw">
-   </i>
-   Welcome and Introduction
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    <i class="fas fa-hand-sparkles fa-fw"></i> Welcome and Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1921,92 +1933,197 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="https://cse163.github.io/book/acknowledgements.html">Acknowledgements</a><br/>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-10-beyond-163/lesson-28-fairness/worldview-limitations-of-fairness.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/cse163/book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-10-beyond-163/lesson-28-fairness/worldview-limitations-of-fairness.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-10-beyond-163/lesson-28-fairness/worldview-limitations-of-fairness.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            <a href="https://cse163.github.io/book/acknowledgements.html">Acknowledgements</a><br/>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/cse163/book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-10-beyond-163/lesson-28-fairness/worldview-limitations-of-fairness.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cse163/book/edit/main/book_source/source/module-10-beyond-163/lesson-28-fairness/worldview-limitations-of-fairness.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/module-10-beyond-163/lesson-28-fairness/worldview-limitations-of-fairness.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#construct-space">
    Construct Space
@@ -2039,12 +2156,11 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Worldview / Limitations of Fairness</h1>
@@ -2093,11 +2209,12 @@ commentsRunWhenDOMLoaded(addUtterances);
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="worldview-limitations-of-fairness">
-<h1>Worldview / Limitations of Fairness<a class="headerlink" href="#worldview-limitations-of-fairness" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="worldview-limitations-of-fairness">
+<h1>Worldview / Limitations of Fairness<a class="headerlink" href="#worldview-limitations-of-fairness" title="Permalink to this headline">#</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/d7bf9d9173c64e2da48e052d615ceeaa?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
@@ -2110,8 +2227,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>Defining two common world-views that are taken in how people believe the data should be viewed.</p></li>
 <li><p>Showing that these worldviews and their associated notions of fairness or non-discrimination are in contradiction to each other.</p></li>
 </ul>
-<div class="section" id="construct-space">
-<h2>Construct Space<a class="headerlink" href="#construct-space" title="Permalink to this headline">¶</a></h2>
+<section id="construct-space">
+<h2>Construct Space<a class="headerlink" href="#construct-space" title="Permalink to this headline">#</a></h2>
 <p>The first contribution Friedler et al. made was trying to make explicit some of the implicit assumptions we make when making ML models, particularly what the data we are working with even means. For example, let’s go back to our example of predicting college admissions. We will take data about student’s academic performance (e.g., high school grades, SAT scores, etc) and maybe their extracurriculars and try to predict whether or not they will succeed in college.</p>
 <p>Now something you probably haven’t thought about in this context, is that we don’t actually care about high school grades or SAT scores themselves. What we care about is trying to find some signal that correlates with collegiate success. So the assumption is that we can use these measurements as a proxy for some underlying qualities like intelligence or grit (perseverance). If that assumption is correct, then this process is well-founded. But what if SAT score is not a good measurement of intelligence (spoiler: it does a bad job at measuring intelligence)? What are we even doing if we are working with data that is not correlated to the concepts of interest?</p>
 <p>Friedler et al. introduce this notion of three spaces in an ML modeling task. These spaces and their relationship are shown pictorially in the image below.</p>
@@ -2122,9 +2239,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/SumuCsOERfPNPfqE6ZiXgcbF"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/SumuCsOERfPNPfqE6ZiXgcbF" style="width: 743px;" /></a>
 <p>So the importance of their contribution is trying to be explicit that the data we have (Observed Space) may or may not actually be related to the quantities that we actually care to use in our prediction (Construct Space). What can we say about fairness in the cases when we are able to make good proxy measurements, and what about in the case we can’t?</p>
-</div>
-<div class="section" id="individual-fairness">
-<h2>Individual Fairness<a class="headerlink" href="#individual-fairness" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="individual-fairness">
+<h2>Individual Fairness<a class="headerlink" href="#individual-fairness" title="Permalink to this headline">#</a></h2>
 <p>So far in the earlier sections of this lesson, we have only been discussing notions of <em>group fairness</em> or trying to prevent <em>discrimination</em> . What might a definition of fairness mean when considering individual people rather than groups of people? Friedler et al. provide a relatively straight-forward approach to defining <strong>individual fairness</strong></p>
 <blockquote>
 <div><p>A system is individually fair if people that are close together in the Construct Space receive similar decisions in the Decision Space.</p>
@@ -2132,16 +2249,16 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>In other words, if two people are near-equal in all qualities of interest in the Construct Space (e.g., for college admissions we cared about intelligence and grit in our example) then they should receive similar decisions. That’s a very straight-forward notion of fairness, but unfortunately, it’s impossible to ensure it’s true unless you make assumptions on how the world works.</p>
 <p>Remember, we generally don’t have access to the Construct Space (e.g., the abstract notion of intelligence) so it’s impossible to directly measure if two people are close together in the Construct Space. The only things we do have access to are the Observed Space and we have no idea if those proxies are or aren’t good representations of the Constructs we care about.</p>
 <p>This means that we have to make an assumption of worldview and decide how we think the world works. Friedler et al. outline two worldviews that are commonly taken by ML practitioners which we will talk about in the following sections.</p>
-</div>
-<div class="section" id="worldview-1-what-you-see-is-what-you-get-wysiwyg">
-<h2>Worldview 1: What You See is What You Get (WYSIWYG)<a class="headerlink" href="#worldview-1-what-you-see-is-what-you-get-wysiwyg" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="worldview-1-what-you-see-is-what-you-get-wysiwyg">
+<h2>Worldview 1: What You See is What You Get (WYSIWYG)<a class="headerlink" href="#worldview-1-what-you-see-is-what-you-get-wysiwyg" title="Permalink to this headline">#</a></h2>
 <p>The simplest assumption you could make about how the world works is to assume that your Observed Space <strong>is</strong> a good representation of the Construct Space. The authors call this <strong>“What You See is What You Get” (WYSIWYG)</strong> . In our college admissions example, the WYSIWYG worldview says that we are assuming SAT Score does correlate with the abstract quantities of interest in the Construct Space like intelligence.</p>
 <p>Note that this is a statement of an assumption. This is not saying that it’s the right thing to do, but a statement that many people implicitly assume is the case. When you train a model on data, you might be making the implicit assumption that data is representative of the qualities you are interested in modeling.</p>
 <p>Now, if you make the WYSIWYG assumption, guaranteeing individual fairness is very simple. Under this assumption, you can use the Observed Space data as a quality proxy for the Construct Space. So to ensure individual fairness under the WYSIWYG worldview, you just have to look at applicants that have similar features in the Observed Space and ensure they receive similar outcomes.</p>
 <p>This isn’t the only worldview though. What would we do if we don’t think the Observed Space is representative of the Construct Space?</p>
-</div>
-<div class="section" id="worldview-2-structural-bias">
-<h2>Worldview 2: Structural Bias<a class="headerlink" href="#worldview-2-structural-bias" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="worldview-2-structural-bias">
+<h2>Worldview 2: Structural Bias<a class="headerlink" href="#worldview-2-structural-bias" title="Permalink to this headline">#</a></h2>
 <p>What might we do if the Observed Space is not representative of the Construct Space? What if there was some societal or systemic factor that affected how the data in the Observed Space is measured, that cause changes in how an individual looks in the Observed Space for reasons outside of their control?</p>
 <p>To discuss this, we will continue with our toy example of college admissions in a world with the Circle/Square race, but this discussion generalizes to real-world scenarios as well. So we will focus our discussion right now on the groups of Circle people and Square people. In many real-life scenarios, the presence of <strong>structural bias</strong> can cause problems in how data reflects reality. These biases in data can then affect the ultimate decisions of the model, leading to potential discrimination against a group.</p>
 <p>To be careful, Friedler et al. describe two possible sources of discrimination in an ML pipeline:</p>
@@ -2153,9 +2270,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>So what do we do when we believe there is Structural Bias in our data? We very commonly make another assumption called <strong>We’re All Equal (WAE)</strong> . This assumption recognizes that Structural Bias is present and makes the additional assumption for the task we are trying to model, race <em>should not</em> cause a meaningful difference in things like academic preparation. So this is not saying that different subgroups are completely equal, but that they should be equal enough when considering things relevant to the task at hand. This means then that any differences observed in groups in the Observed Space should be the result of structural bias rather than some inherent quality of the group itself.</p>
 <p>So when do we make this assumption? Well, this entire lesson we have somewhat implicitly been making this assumption with the notions of group fairness we have introduced. The whole idea of equal opportunity and other group fairness metrics is to explicitly encode that different groups should have equal treatment since any differences observed are the result of factors outside of an individual’s control.</p>
 <p>How can you verify the Structural Bias and WAE worldview? Well, that’s not really possible since it’s a belief or a worldview. Just like with WYSIWYG, we don’t have access to the actual Construct Space so we have no idea if the Observed Data is actually representative or not.</p>
-</div>
-<div class="section" id="conflicting-worldviews">
-<h2>Conflicting Worldviews<a class="headerlink" href="#conflicting-worldviews" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="conflicting-worldviews">
+<h2>Conflicting Worldviews<a class="headerlink" href="#conflicting-worldviews" title="Permalink to this headline">#</a></h2>
 <p>So we have set up yet another dichotomy here where the right answer depends on our context and should be made carefully by people, not by an algorithm. Even though we haven’t introduced a definitive answer on which worldview you should use, hopefully, this terminology helps you reason about how you think the world works. And to be clear, the worldview you use should change for each problem and should be shaped by our values on how we think the world works. Even if this decision doesn’t make you comfortable, you have to make it whenever you do a modeling task since it turns out these worldviews are contradictory to each other and lead to conflicts in being able to achieve individual fairness and non-discrimination.</p>
 <p>Unfortunately, these worldviews and notions of fairness/non-discrimination are not compatible. WYSIWYG and Structural Bias are in exact contradiction if we are looking at data that shows differences between particular subgroups. And it turns out each worldview only lends itself to one of fairness or non-discrimination.</p>
 <ul class="simple">
@@ -2173,14 +2290,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 </li>
 </ul>
 <p>In fact, this contradiction is actually the result of many real-world debates on how to handle discrimination in society. After learning the topics/terms presented in this paper, I started to hear the often unsaid assumptions in arguments for/against policy decisions like affirmative action. So while we don’t provide any answers about what worldview you should take on, hopefully, you find the terms empowering for how you might think about novel situations and how something may or may not be fair.</p>
-</div>
-<div class="section" id="take-away">
-<h2>Take-away<a class="headerlink" href="#take-away" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="take-away">
+<h2>Take-away<a class="headerlink" href="#take-away" title="Permalink to this headline">#</a></h2>
 <p>So it’s clear then that your choice in worldview has a dire impact on how you can define what is fair or what is non-discriminatory in your context. While we did not necessarily provide answers in this lesson, hopefully we inspired you to ask new questions about the data you are working with and what sorts of fairness you value in a system.</p>
 <p>Note that the field of algorithmic fairness is still relatively new in the grand scheme of things. One of the seminal papers “Fairness through awareness” was only published in 2011. That’s less than a decade when many constructs you learn in school have been around for a lot longer. So even though we might not have a lot of answers now, there may be important developments that you can help work on in the future!</p>
 <p>The important part for us though at this moment is to realize that there is work going on in this space, and it constantly reaffirms the need for humans to be part of the decision-making process and that we need to be explicit in what things we assume about the world.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2204,9 +2321,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="tradeoff-between-accuracy-and-fairness.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2222,27 +2341,31 @@ commentsRunWhenDOMLoaded(addUtterances);
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hunter Schafer<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+    </div>
+</p>
+        </footer>
+    </div>
     
-      By Hunter Schafer<br/>
-    
-        &copy; Copyright 2021.<br/>
-      <div class="extra_footer">
-        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-      </div>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

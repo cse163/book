@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Defining Fairness &#8212; Intermediate Data Programming</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,31 +20,28 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script kind="utterances">
 
@@ -78,17 +77,16 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -117,7 +115,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -126,9 +138,10 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -146,16 +159,15 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   <i class="fas fa-hand-sparkles fa-fw">
-   </i>
-   Welcome and Introduction
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    <i class="fas fa-hand-sparkles fa-fw"></i> Welcome and Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../module-1-introduction-to-python/index.html">
    <i class="fas fa-layer-group fa-fw">
@@ -1923,92 +1935,197 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="https://cse163.github.io/book/acknowledgements.html">Acknowledgements</a><br/>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/module-10-beyond-163/lesson-28-fairness/defining-fairness.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/cse163/book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-10-beyond-163/lesson-28-fairness/defining-fairness.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cse163/book/edit/main/book_source/source/module-10-beyond-163/lesson-28-fairness/defining-fairness.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            <a href="https://cse163.github.io/book/acknowledgements.html">Acknowledgements</a><br/>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/cse163/book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cse163/book/issues/new?title=Issue%20on%20page%20%2Fmodule-10-beyond-163/lesson-28-fairness/defining-fairness.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cse163/book/edit/main/book_source/source/module-10-beyond-163/lesson-28-fairness/defining-fairness.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/module-10-beyond-163/lesson-28-fairness/defining-fairness.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scenario-college-admissions">
    Scenario: College Admissions
@@ -2041,12 +2158,11 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Defining Fairness</h1>
@@ -2095,11 +2211,12 @@ commentsRunWhenDOMLoaded(addUtterances);
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="defining-fairness">
-<h1>Defining Fairness<a class="headerlink" href="#defining-fairness" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="defining-fairness">
+<h1>Defining Fairness<a class="headerlink" href="#defining-fairness" title="Permalink to this headline">#</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/8ab3e18d61224f15b39ed28a7a7b2af7?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
@@ -2112,21 +2229,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>What does it mean for an algorithm to be fair? How can we come up with a definition of what makes a decision fair and what makes a decision unfair? It turns out there are many different ways to define fairness, each definition taking its own stance on what is or is not “fair”. We’ll see that many of these definitions can be useful in different contexts, but don’t always agree. Different definitions might conflict with others, so it’s not likely we will be able to settle on one universal definition of fairness.</p>
 <p>In this first part of the lesson, we will particularly be talking about the notion of <strong>group fairness</strong> which is an attempt to define a measurement of how fair a process is, in order to avoid discrimination against a particular subgroup. These subgroups are commonly thought of as being defined by race or sex, but they can be broadly defined to capture concepts like religious or political identity, different abilities, or any intersection of these traits. Usually (but not always) a subgroup is defined based on a characteristic that someone has no control over. A key goal in a system is to avoid discrimination based on membership in one of these protected groups, as to avoid them being treated unfairly due to factors outside of their control. In other words, we don’t want someone’s membership or lack thereof in this subgroup to have a negative impact on our decision making process.</p>
 <p>In this lesson, we will be focusing on a rather narrow and simplistic example a situation where we want to ensure fairness. This simplification is presented so we can better understand the core arguments of what is or is not fair in this scenario, it is not a reflection of how the world actually works. However, most of the ideas we will talk about in this lesson extend quite naturally to real-world subgroups we might care to avoid discriminating against certain groups. Please forgive the overly simple assumptions we make since they are there to make this discussion tractable; the assumptions are not an indication of how we think the world actually is. The point of showing that things can go wrong with even simple, contrived examples is to highlight that in real life where things are more complex and multi-faceted, things are likely to go even more wrong.</p>
-<div class="section" id="scenario-college-admissions">
-<h2>Scenario: College Admissions<a class="headerlink" href="#scenario-college-admissions" title="Permalink to this headline">¶</a></h2>
+<section id="scenario-college-admissions">
+<h2>Scenario: College Admissions<a class="headerlink" href="#scenario-college-admissions" title="Permalink to this headline">#</a></h2>
 <p>Suppose for the sake of simplicity, we are considering an alternate Earth inhabited by people that belong to one of two races: Circles and Squares. Circles make up about 2/3 of the population (a majority), which leaves the Squares to be 1/3 of the population (a minority). Our example today will be focusing on a process for deciding on college admissions, and talking about how to define fairness to prevent discrimination against either group: Circles or Squares.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/iqKJU5eh4KWxEbmx3THHZRdF"><img alt="Pie chart showing 2/3 of the population being circles and 1/3 squares" class="align-center" src="https://static.us.edusercontent.com/files/iqKJU5eh4KWxEbmx3THHZRdF" style="width: 743.0000000000001px;" /></a>
 <p>For this example, we will ultimately try to train a model that can make decisions about college admissions. It’s not infeasible to imagine an admissions committee trying to rely on an algorithm to help them decide. They might think relying on an algorithm can remove human bias, thus improving outcomes for their students. We’ll come back to the idea of if an algorithmic solution will actually guarantee a lack of bias.</p>
 <p>If we want to model college admissions, we likely need to have some definition of what students we want to admit. We will assume we have some historical data on who was “successful” in college and try to make predictions about new students having that success. This example can be agnostic to how you define success (e.g., it could be just graduating, or getting a job after college, or donating a bunch of money to UW after graduating) but we assume we are working with some definition of success for our future applicants, and we don’t know that true label yet.</p>
-</div>
-<div class="section" id="a-first-attempt-shape-blind">
-<h2>A first attempt: “Shape-blind”<a class="headerlink" href="#a-first-attempt-shape-blind" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-first-attempt-shape-blind">
+<h2>A first attempt: “Shape-blind”<a class="headerlink" href="#a-first-attempt-shape-blind" title="Permalink to this headline">#</a></h2>
 <p>If our goal is to prevent discrimination against either race, you might imagine the simplest thing you can do is to make sure your decision process is agnostic to an individual’s race. This is often called a “blind” approach since you remove the demographic variable you don’t want the algorithm to accidentally discriminate on. The thought is that it is impossible to discriminate if your process isn’t able to look at the features you want to protect.</p>
 <p>Unfortunately, the reality isn’t always so simple. Last time, we talked about the COMPAS algorithm having discriminatory outputs for recidivism based on race, <em>even though the model itself had no direct input telling it someone’s race</em>. This is because race and many other factors about you can be fairly accurately inferred using others. We are actually very familiar with this idea that properties of our identity can be inferred from others when we experience internet ads every day on the internet. The whole system of targeted advertisements is predicated on the ability to make inferences about your interests while only having access to correlations that are provided by your other interactions on websites (e.g., if you started searching for a crib for a baby on Amazon, you are more likely to be expecting a child).</p>
 <p>It turns out that approaches that try to constrain the inputs to a process or an algorithm tend to not work well in practice since so much can be inferred from the other wealth of data about you. Instead, a common practice for defining fairness is on the <strong>outputs</strong> or <strong>decisions</strong> of the process/algorithm rather than restriction of the inputs. In the following sections, we will define some possible ways to define fairness based on the outputs of our college admissions model.</p>
-</div>
-<div class="section" id="fairness-definition-1-statistical-parity">
-<h2>Fairness Definition 1: Statistical Parity<a class="headerlink" href="#fairness-definition-1-statistical-parity" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="fairness-definition-1-statistical-parity">
+<h2>Fairness Definition 1: Statistical Parity<a class="headerlink" href="#fairness-definition-1-statistical-parity" title="Permalink to this headline">#</a></h2>
 <p>The first, fairly natural, definition of fairness we will discuss is called <strong>statistical parity.</strong> As a reminder, we are in the running example of trying to determine college admissions (a admit/deny decision) on a population of people that fall into one of two races (Circle or Square). Statistical parity in this setting says:</p>
 <blockquote>
 <div><p>The fraction of all the Squares that are admitted to college matches the fraction of all Circles that are admitted to college.
@@ -2144,9 +2261,9 @@ For example, if we let in 30% of the Circle population into our college, to meet
 <li><p>Wrongly admit 15% of the Squares that would not have been successful to match the 30% rate in the Circles.</p></li>
 </ul>
 <p>Both of these choices seem less than desirable (but which one is worse depends on the context you are working in). So to fix this, we need to look into slightly more complex examples of fairness.</p>
-</div>
-<div class="section" id="fairness-definition-2-equal-opportunity">
-<h2>Fairness Definition 2: Equal Opportunity<a class="headerlink" href="#fairness-definition-2-equal-opportunity" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="fairness-definition-2-equal-opportunity">
+<h2>Fairness Definition 2: Equal Opportunity<a class="headerlink" href="#fairness-definition-2-equal-opportunity" title="Permalink to this headline">#</a></h2>
 <p>One rather simple fix to the idea of statistical parity is to look at the rates of the mistakes we make in admission rather than the rate of admissions themselves. So instead of looking at what percent of Circles/Squares we admit, we could look at what percent of Circles/Squares we wrongfully reject. A wrongful rejection is someone who truly would be successful, but we denied admission which we often call a <strong>false negative</strong> in the terminology of classification. A false negative is when we predicted a negative result (e.g., “not successful”) when the true label was positive.</p>
 <p>Commonly, we refer to the <strong>false-negative rate</strong> as the ratio of examples that are truly positive that got falsely labeled as negatives. So mathematically, the false-negative rate is</p>
 <div class="math notranslate nohighlight">
@@ -2157,19 +2274,19 @@ For example, if we let in 30% of the Circle population into our college, to meet
 <p>In practice, it might be hard to require <em>exact</em> equality, so this requirement of equal opportunity is often phrased as the false-negative rates being very close (e.g, maybe within 1%). This is generally just a limitation of how numbers work in the real world, where we have finite samples so there might be some small variation in the statistics just by chance (e.g., if the denominators are different numbers).</p>
 <p>This definition of fairness is generally better than statistical parity but still might not feel exactly right to you. Under the definition of equal opportunity, if our model accidentally rejects 20% of the Squares who were truly “successful” then our model is considered fair as long as it also accidentally rejects 20% of the Circles who were truly “successful”. That probably doesn’t sound “fair” to you, if you were one of those rejected Squares! It probably doesn’t make you feel better that your rejection is considered fair by our definition since an equal proportion of Circles were also wrongly denied!</p>
 <p>This is actually a key point to highlight, both definitions we have shown so far (statistical parity, and equal opportunity) are notions of <strong>group fairness</strong> . They are mathematical definitions to spot potential discrimination against a particular protected group but say <em>nothing</em> about fairness when it comes to discussing individuals within those groups. We’ll talk more about this tension between group fairness and individual fairness in our last slide of the lesson today.</p>
-</div>
-<div class="section" id="fairness-definition-3-predictive-equality">
-<h2>Fairness Definition 3: Predictive Equality<a class="headerlink" href="#fairness-definition-3-predictive-equality" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="fairness-definition-3-predictive-equality">
+<h2>Fairness Definition 3: Predictive Equality<a class="headerlink" href="#fairness-definition-3-predictive-equality" title="Permalink to this headline">#</a></h2>
 <p>We will briefly mention that there is another definition of fairness called <strong>predictive equality</strong> that focuses on the other type of mistake possible, called a <strong>false-positive</strong> . A false positive occurs in our college admissions example when we admit (making a positive prediction) on an applicant who would ultimately not be “successful”.</p>
 <p>Which type of mistake, a false-positive or a false-negative, is worse overall depends on the context you are working in. You have to think carefully about the relative harm caused by a false-negative vs. a false-positive and you usually want to make sure you provide equality in the one with more potential for harm. Pretty much everything we discussed in the last section on equal opportunity applies to predictive equality as well.</p>
-</div>
-<div class="section" id="more-definitions-of-fairness">
-<h2>More Definitions of Fairness<a class="headerlink" href="#more-definitions-of-fairness" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="more-definitions-of-fairness">
+<h2>More Definitions of Fairness<a class="headerlink" href="#more-definitions-of-fairness" title="Permalink to this headline">#</a></h2>
 <p>It turns out, there is a myriad of mathematical functions to attempt to define what fairness means. Many of them share the form of the examples we have shown far, that require some statistical similarity when looking at decisions made across groups. We are in no position to outline them all, but there are a lot. What we will see though, is that there is <strong>no</strong> universal definition of fairness. Each definition makes assumptions about how we think the world should work and what outcomes are fair.</p>
 <p>This wealth of definitions of fairness is actually a good thing, not a bad one! <strong>This just serves as a reminder that there is a crucial role that people must play in the design and use of models.</strong> Since there isn’t just a “one and done” definition of what we mean by “fair”, we have to work together in our context to critically examine what we value and collectively decide on what values our system should uphold. This emphasizes the role of people (e.g., policymakers, regulators, philosophers) in this decision-making process and that it’s very unlikely that our solution to fixing problems will be purely algorithmic in nature.</p>
 <p>In the next slide, we will explore a notion we did not bring up in this one about the tradeoff between fairness and accuracy, and then we will briefly highlight a generalized statement of worldviews that can help you reason about fairness.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2193,9 +2310,11 @@ For example, if we let in 30% of the Circle population into our college, to meet
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2211,27 +2330,31 @@ For example, if we let in 30% of the Circle population into our college, to meet
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hunter Schafer<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
+    </div>
+</p>
+        </footer>
+    </div>
     
-      By Hunter Schafer<br/>
-    
-        &copy; Copyright 2021.<br/>
-      <div class="extra_footer">
-        Have feedback or spotted a bug? Please make a <a href="https://github.com/cse163/book/issues">GitHub issue</a> or contact <a href="https://homes.cs.washington.edu/~hschafer/">Hunter Schafer</a>!
-      </div>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

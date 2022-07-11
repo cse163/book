@@ -24,18 +24,17 @@ That's it! If you just type this in a Python program and run it, it will say "He
 
 For comparison, here is how you write "Hello world" in some other popular programming languages that have some more complex syntax. Skimming these, you might begin to see what we mean by Python generally being considered to be more human-readable since it doesn't require a lot of extra syntax these other languages do. Note: we
 
-````{tabbed} Java
-```java
+````{tab-set-code}
+
+```{code-block} java
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
 }
 ```
-````
 
-````{tabbed} C
-```c
+```{code-block} c
 #include <stdio.h>
 
 int main() {
@@ -43,10 +42,8 @@ int main() {
     return 0;
 }
 ```
-````
 
-````{tabbed} C++
-```c++
+```{code-block} c++
 #include <iostream>
 
 int main()
@@ -55,12 +52,9 @@ int main()
     return 0;
 }
 ```
-````
 
-````{tabbed} Go
-```go
+```{code-block} go
 package main
-
 
 import "fmt"
 
@@ -68,6 +62,7 @@ func main() {
     fmt.Println("hello world")
 }
 ```
+
 ````
 
 ## Explore on Your Own!
