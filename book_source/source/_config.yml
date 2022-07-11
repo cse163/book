@@ -53,7 +53,7 @@ sphinx:
   extra_extensions:
     - "sphinx_comments"
     - "sphinx_copybutton"
-    - "sphinx_panels"
+    - "sphinx_design"
   local_extensions:
     "custom_directives": "ext/"
     "setup_templating": "ext/"
