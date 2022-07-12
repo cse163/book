@@ -10,7 +10,7 @@ Last time, we saw how to call functions by using keyword arguments (also called 
 
 When defining a function that takes parameters, you can use the syntax `param=value` in the parameter list to give the parameter `param` the default value of `value` when it was not specified by the client. See the following snippet for an example which you can run to see the output.
 
-```{snippet}
+```python
 def div(a=10, b=1):
     return a / b
 

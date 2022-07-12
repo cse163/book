@@ -14,7 +14,7 @@ For example, consider a `list` with $n$ elements in it. It is useful to know tha
 
 For example, to run `x in l` where `l` is a `list` , how much time would that take? You might notice it depends on if `x` is in `l` and if it is, where in `l` it is found. Internally, `in` is implemented like the following code snippet.
 
-```{snippet}
+```python
 def in_implementation(l, x):
     """
     Example showing how x in l might be implemented
@@ -35,7 +35,7 @@ One of the magic things about `set` and `dict` , is that almost all of the opera
 
 To understand why knowing these differences in performance, think back to the example we used when we introduced `set` s. Recall that we had a file and wanted to count the number of unique words in the file. We came up with two implementations that were nearly identical, except one used a `list` and the other used a `set` . These implementations are shown in the cell below.
 
-```{snippet}
+```python
 def count_unique_list(file_name):
     words = list()
     with open(file_name) as file:

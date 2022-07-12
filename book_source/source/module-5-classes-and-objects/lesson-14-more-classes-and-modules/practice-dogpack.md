@@ -26,7 +26,7 @@ In the module `dog_pack.py` write a class called `DogPack` . The `DogPack` shoul
 
 For example, after running `main.py` (command: `python main.py` ), your program should produce the following output. We first show the relevant part of `main` for context.
 
-```{snippet}
+```python
 pack = DogPack()
 pack.add_dog(Dog('Chester'))
 pack.add_dog(Dog('Scout'))

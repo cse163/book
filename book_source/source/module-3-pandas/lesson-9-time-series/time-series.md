@@ -8,7 +8,7 @@
 
 For example, here is a time series dataset showing the number of bikers over Seattle's Fremont Bridge.
 
-```{snippet}
+```python
 import pandas as pd
 
 df = pd.read_csv('bicycles.csv')
@@ -23,7 +23,7 @@ Recall that in the last lesson, we learned about keyword arguments (i.e., passin
 
 To get `pandas` to recognize the fact that this is a time-series dataset, we need to tell it which column contains the unique identifiers ( `index_col='Date'` ) and pass in a special parameter to tell it to interpret these as dates ( `parse_dates=True` ). The following snippet shows how to do this, and **notice in its output it shows the date column shows the index** !
 
-```{snippet}
+```python
 import pandas as pd
 
 df= pd.read_csv('bicycles.csv',

@@ -32,7 +32,7 @@ Let's consider some various implementation of `__hash__` for the `str` class to 
 
 The simplest hash function you could probably think of to take a `str` and output its `len` . If you used this hash function with this implementation, you would see the following behavior.
 
-```{snippet}
+```python
 hash('')     # 0
 hash('hi')   # 2
 hash('abc')  # 3
@@ -50,7 +50,7 @@ Your computer uses an encoding to represent each character in some text as a num
 
 So then a more clever hash function could take each `str` and turn it into the sum of the ASCII values of its characters. In the snippet below, we show some example computations for the same strings as before.
 
-```{snippet}
+```python
 hash('')     # 0
 hash('hi')   # 104 (h) + 105 (i) = 209
 hash('dog')  # 97 (d) + 111 (o) + 103 (g) = 314

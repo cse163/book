@@ -35,13 +35,13 @@ This idea of how many times you have to press "next" in a tool like PythonTutor 
 
 This notion of a "step" is very loosey-goosey on purpose and we will see later that it's not important that you get the exact number of steps correct as long as you get an approximation of their relative scale (more on this later). Below we show some example code blocks and annotate their number of steps in the first comment of the code block.
 
-```{snippet}
+```python
 # Total: 1 step
 
 print(1 + 2 * 3 / 2 % 4)  # 1 step
 ```
 
-```{snippet}
+```python
 # Total: 4 steps
 
 print(1 + 2)    # 1 step
@@ -50,7 +50,7 @@ x = 14 - 2      # 1 step
 y = x ** 2      # 1 step
 ```
 
-```{snippet}
+```python
 # Total: 21 steps
 
 print('Starting loop')          # 1 step
@@ -61,7 +61,7 @@ for i in range(10):             # Runs 10 times
     print(i ** 2)               #   - 1 step
 ```
 
-```{snippet}
+```python
 # Total: 51 steps
 
 print('Starting loop')  # 1 step
@@ -78,7 +78,7 @@ for i in range(10):     # Runs 10 times
 
 What about if we introduce nested loops (we put extra lines to make room for our comments).
 
-```{snippet}
+```python
 # Total: 521 steps
 
 print('Starting loop')   # 1 step

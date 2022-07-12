@@ -88,7 +88,7 @@ Write your answer down in your own space.
 
 Consider the class definition for a `Dog` class below. Which of the following implementations of `__hash__` is the best, in the sense that it is functional and does the best job at meeting the properties of a good hash function
 
-```{snippet}
+```python
 class Dog:
 
     def __init__(self, name, age):
@@ -105,14 +105,14 @@ Select one option. Write your answer down in your own space.
 
 _<i class="far fa-circle fa-fw"></i> Option 0_
 
-```{snippet}
+```python
 def __hash__(self):
     return hash(self._name)
 ```
 
 _<i class="far fa-circle fa-fw"></i> Option 1_
 
-```{snippet}
+```python
 def __hash__(self):
     return 0
 ```
@@ -121,14 +121,14 @@ _<i class="far fa-circle fa-fw"></i> Option 2_
 
 Assume `random` is a function that generates a random number.
 
-```{snippet}
+```python
 def __hash__(self):
     return hash(self._name) + random()
 ```
 
 _<i class="far fa-circle fa-fw"></i> Option 3_
 
-```{snippet}
+```python
 def __hash__(self):
     return hash(self._name) + hash(self._age)
 ```

@@ -26,7 +26,7 @@ For example, we have a dataset of fMRI (brain scan) data that, like most real-li
 
 If we tried to load it into a `DataFrame`, we would see the following.
 
-```{snippet}
+```python
 import pandas as pd
 
 df = pd.read_csv('fmri.csv')
@@ -53,7 +53,7 @@ In Python, `NaN` operates by two rules:
 
 We can access the value `NaN` most easily by using the library `numpy` (commonly imported as `np` ). We will learn more about `numpy` in Module 7!
 
-```{snippet}
+```python
 import numpy as np
 
 print(np.nan)            # nan
@@ -67,7 +67,7 @@ That last line is pretty surprising since we compared `np.nan` to `np.nan`. Reme
 
 How is `NaN` different than `None` ? `None` doesn't allow any numeric operations on it, it will cause an error!
 
-```{snippet}
+```python
 print(1 + None)
 ```
 
@@ -75,7 +75,7 @@ print(1 + None)
 
 So now that we know what this magic-value `NaN` is in our dataset. Let's see how to handle it in `pandas`. Let's start by taking the average of the `'signal'` column (that contains `NaN` values).
 
-```{snippet}
+```python
 import pandas as pd
 
 df = pd.read_csv('fmri.csv')
@@ -98,7 +98,7 @@ Luckily for us, `pandas` has some logic built into it to skip `NaN` values for m
 
 The following code block shows how these operations work
 
-```{snippet}
+```python
 import pandas as pd
 
 df = pd.read_csv('fmri.csv')

@@ -6,7 +6,7 @@ For the following problems, select which Big-O complexity best describes the run
 
 For this problem, let $n$ be the input value `n` .
 
-```{snippet}
+```python
 def method1(n):
     value = 0
     for i in range(n):
@@ -47,7 +47,7 @@ $\mathcal{O}(n^2)$
 
 For this problem, let $n$ be the input value `n` .
 
-```{snippet}
+```python
 def method(n):
     t = 0
     for i in range(3):
@@ -91,7 +91,7 @@ $\mathcal{O}(n^3)$
 
 For this problem, let $n$ be the length of the given list of numbers `nums` .
 
-```{snippet}
+```python
 def method(nums):
     max_diff = None
     for n1 in nums:
@@ -130,7 +130,7 @@ $\mathcal{O}(n^3)$
 
 For this problem, let $n$ be the length of the given list of numbers `nums` . For this problem, you will need to assume that the `max` and `min` functions will be implemented by having to search the whole list.
 
-```{snippet}
+```python
 def method(nums):
     return max(nums) * min(nums)
 ```
@@ -163,7 +163,7 @@ $\mathcal{O}(n^2)$
 
 For this problem, let $n$ be the length of the given list of numbers `nums` .
 
-```{snippet}
+```python
 def method(nums):
     x = len(nums)
     t = 0

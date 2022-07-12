@@ -8,7 +8,7 @@ You can assume the client will only access index 0 or 1 for a `Pair` .
 
 The `Pair` class should be immutable so that the client can't change its state. This means all fields should be private and if they try to modify a value in the pair, like in the last line of the code cell below, it should print an error message and do nothing else. Notice that you will still need to define the method to allow the syntax for assignment, but the behavior just prints the error without changing the state of the object.
 
-```{snippet}
+```python
 p1 = Pair(1, 2)
 p2 = Pair(3, 4)
 p3 = Pair(1, 2)

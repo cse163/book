@@ -28,7 +28,7 @@ In order to process this special column format to encode geospatial information,
 
 In the code cell below, we show how to load in one of these geospatial datasets with `geopandas` . The dataset contains information about various countries of the world and information like their population and GDP. The file we will use a is a shapefile ( `.shp` ). The file format itself is actually pretty complex so we will only look at the data after parsing it in `geopandas` rather than looking at the file directly.
 
-```{snippet}
+```python
 import geopandas as gpd
 
 df = gpd.read_file('geo_data/ne_110m_admin_0_countries.shp')
@@ -45,7 +45,7 @@ print(df.loc[0])
 
 The type of the value `df` in the cell above is a `GeoDataFrame` . It behaves exactly like a `DataFrame` but knows how to do some extra geospatial processing. There is also a `GeoSeries` type unsurprisingly. To start seeing the power of `geopandas` , you can see what happens if you ask the `GeoDataFrame` to plot itself.
 
-```{snippet}
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
@@ -57,7 +57,7 @@ plt.savefig('world.png')
 
 You can get fancier have it color each country by its population using the `column` parameter, like in the snippet below.
 
-```{snippet}
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
@@ -73,7 +73,7 @@ plt.savefig('world_population.png')
 
 Each row in the data corresponds to one country. The dataset has a special column called `'geometry'` that stores the shape of each country with a **geometry** .
 
-```{snippet}
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 

@@ -27,7 +27,7 @@ the sea shore
 With Python, you can open and read files using the `open` built-in function. The syntax is shown in the following snippet. Note that the value you pass into the `open` is a **path** to the file. We will talk about file paths in a bit, but think of it like a full-name of a file on a computer! For example,
 if there is a file named `poem.txt` in the same directory as your Python script, the following code snippet will print the content of that file:
 
-```{snippet}
+```python
 with open('poem.txt') as f:
     content = f.read()  # returns the file contents as a str
     print(content)
@@ -68,7 +68,7 @@ For example, the following code snippet will print out the file with a line numb
 
 As a minor detail, each line will still contain a special **new-line** character ( `\n` ) at the end. To make sure our output doesn't have extra new-lines in it, we `strip` each line to remove this trailing whitespace.
 
-```{snippet}
+```python
 def number_lines(file_name):
     """
     Takes a file name as a parameter and prints out the file
@@ -122,7 +122,7 @@ This might sound complicated at first, but we can actually use what we know abou
 
 It will help to start by solving a sub-part of this problem before trying to solve the entire thing. What if I was given a string, and wanted to count the number of odd-length words in that string? You could write code that splits the string up by spaces and then loops over that list of words to count up all the ones with odd lengths.
 
-```{snippet}
+```python
 s = 'I am a really cool sentence.'
 words = s.split()
 count = 0
@@ -138,7 +138,7 @@ Now that we have this sub-problem solved, we can tackle the larger problem of do
 
 We start with the code with the general pattern of looping over the lines of a file
 
-```{snippet}
+```python
 def count_odd(file_name):
     """
     Takes a file name as a parameter and prints out the file
@@ -152,7 +152,7 @@ def count_odd(file_name):
 
 Now that we have that starter code, we can go ahead and use the ideas we saw to count the number of odd length words in a single line inside this loop over the lines! The only other thing that needs to be added is some book-keeping to keep track of the line number for printing.
 
-```{snippet}
+```python
 def count_odd(file_name):
     """
     Takes a file name as a parameter and for each line
