@@ -15,7 +15,7 @@ s = 'hello world'
 print(s[2:len(s) - 2])
 ```
 
-This is the same idea of slices that we saw in the last slide. To understand why this prints `llo wor` , we can think of the picture showing the indices of the `str` Tas shown in the following image ( _Hint: Think of where `2` and `len(s)-2` fall on this picture_ ).
+This is the same idea of slices that we saw in the last slide. To understand why this prints `llo wor` , we can think of the picture showing the indices of the `str` as shown in the following image ( _Hint: Think of where `2` and `len(s)-2` fall on this picture_ ).
 
 ```{image} https://static.us.edusercontent.com/files/O6DgXxSxp4AtJg2JsGibHOpf
 :alt: hello world string indexing

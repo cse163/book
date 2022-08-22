@@ -7,7 +7,7 @@ Below, we highlight some strategies while using this book to maximize your learn
 Good active reading strategies for this book include:
 
 - Don't just skim the readings, but make sure you are spending time on them.
-- You should almost always have VS Code or your editor opened so that you can try out the code snippets when learning a new topic. Many students as "What if you do X?" in classes, but you can actually just try it and find out for yourself in your editor!
+- You should almost always have VS Code or your editor opened so that you can try out the code snippets when learning a new topic. Many students ask "What if you do X?" in classes, but you can actually just try it and find out for yourself in your editor!
 - It's easy to passively read some text and convince yourself you understand. Take time to pause and ask yourself critical questions about how you understand a new topic.
 - Take notes! See below for rationale.
 
@@ -41,7 +41,7 @@ We also recommend you do more long-term reflection. Do a similar reflection acti
 
 ## Practice
 
-Make sure you are doing all of the practice problems as they show up in the lessons! This is your chance to be more active in your learning and actually test your understanding. **It's totally expected to find the practice problems challenging!**. That challenging sense you feel when you don't quite know how to solve a problem is a sign that you are learning! You should try to persevere and try to solve the problem even if you struggle on the way; you will grow through that experience.
+Make sure you are doing all of the practice problems as they show up in the lessons! This is your chance to be more active in your learning and actually test your understanding. **It's totally expected to find the practice problems challenging!** That challenging sense you feel when you don't quite know how to solve a problem is a sign that you are learning! You should try to persevere and try to solve the problem even if you struggle on the way; you will grow through that experience.
 
 ## Relate
 
