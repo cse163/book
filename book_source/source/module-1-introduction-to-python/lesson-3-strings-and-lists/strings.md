@@ -41,7 +41,7 @@ since Python would read the apostrophe as the closing of the string. So if you w
 
 ## String Concatenation
 
-Strings provide lots of ways of accessing and transforming the text data to do almost anything you want! One of the most common things you want to do with strings is to combine them. In the following snippet, we use **string concatenation** to add on one string to the end of another
+Strings provide lots of ways of accessing and transforming the text data to do almost anything you want! One of the most common things you want to do with strings is to combine them. In the following snippet, we use **string concatenation** to add on one string to the end of another.
 
 ```{snippet}
 s1 = 'hello world'
