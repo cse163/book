@@ -35,7 +35,7 @@ in Python can do so much more (as we'll see in Lesson 4)!
 
 ```
 
-The great thing about `list` s in Python, is that they share a lot of the same syntax for operations as `str` s. The following snippet shows you all of the string syntaxes we learned this lecture also applies to lists.
+The great thing about `list` s in Python, is that they share a lot of the same syntax for operations as `str` s. The following snippet shows you all of the string syntaxes we learned this lecture also apply to lists.
 
 ```{snippet}
 l = ['dog', 'says', 'woof']
