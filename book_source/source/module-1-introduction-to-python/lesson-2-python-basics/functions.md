@@ -10,7 +10,7 @@
 
 A **function** is a named procedure with a series of instructions that can be **called** in your program to execute those instructions.
 
-To call a function, you use its name and use `()` after it to make it a call For example, `print` is actually a function defined by Python, so a "print statement" is really just calling this `print` function.
+To call a function, you use its name and use `()` after it to make it a call. For example, `print` is actually a function defined by Python, so a "print statement" is really just calling this `print` function.
 
 ```{snippet}
 print()  # Prints a blank line
