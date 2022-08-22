@@ -24,7 +24,7 @@ Just like with strings, `list` also has methods you can call on a `list` object 
 
 Notice that `list` s are NOT immutable. This means methods like `append` , `remove` actually modify the list you call the method on.
 
-The following snippet shows some example of how to call some of these methods
+The following snippet shows some examples of how to call some of these methods.
 
 ```{snippet}
 l = []  # Empty list

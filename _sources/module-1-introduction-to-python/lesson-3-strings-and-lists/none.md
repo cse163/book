@@ -33,13 +33,13 @@ Remember: for your take-home assessments, you should always write your code with
 
 ```
 
-`None` should not be confused with the value `0` ! `0` is a valid number in Python (i.e. `1 + 0` is well defined to be `1` ) while `None` is the absence of a number all together! If you were to run `1 + None` it would cause an error since it doesn't make sense to add `1` to something that is entirely missing!
+`None` should not be confused with the value `0` ! `0` is a valid number in Python (i.e. `1 + 0` is well defined to be `1` ) while `None` is the absence of a number altogether! If you were to run `1 + None` it would cause an error since it doesn't make sense to add `1` to something that is entirely missing!
 
 A very common error in Python comes from trying to manipulate a `None` value in such a way that causes an error like described in the last paragraph.
 
 ## Checking for `None`
 
-A very common task in Python is to check if a particular value is `None` or not. This is quite easy to do with the `is` keyword in Python. `is` and `==` are quite similar and in this context, you could use either. We will see in a later lecture the difference between `is` and `==` is and we'll understand why `is` is more common for comparing to `None` . For now just know that you use `is` for `None` checks and `==` for most other things.
+A very common task in Python is to check if a particular value is `None` or not. This is quite easy to do with the `is` keyword in Python. `is` and `==` are quite similar and in this context, you could use either. We will see in a later lecture the difference between `is` and `==` and we'll understand why `is` is more common for comparing to `None` . For now just know that you use `is` for `None` checks and `==` for most other things.
 
 ```{snippet}
 def increment(x):

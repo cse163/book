@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -2180,7 +2180,7 @@ title="Print to PDF"
 
         </div>
     </div>
-</div><p>This is the same idea of slices that we saw in the last slide. To understand why this prints <code class="docutils literal notranslate"><span class="pre">llo</span> <span class="pre">wor</span></code> , we can think of the picture showing the indices of the <code class="docutils literal notranslate"><span class="pre">str</span></code> Tas shown in the following image ( <em>Hint: Think of where <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">len(s)-2</span></code> fall on this picture</em> ).</p>
+</div><p>This is the same idea of slices that we saw in the last slide. To understand why this prints <code class="docutils literal notranslate"><span class="pre">llo</span> <span class="pre">wor</span></code> , we can think of the picture showing the indices of the <code class="docutils literal notranslate"><span class="pre">str</span></code> as shown in the following image ( <em>Hint: Think of where <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">len(s)-2</span></code> fall on this picture</em> ).</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/O6DgXxSxp4AtJg2JsGibHOpf"><img alt="hello world string indexing" class="align-center" src="https://static.us.edusercontent.com/files/O6DgXxSxp4AtJg2JsGibHOpf" style="width: 744px;" /></a>
 <p>Asking Python to go ” <code class="docutils literal notranslate"><span class="pre">n</span></code> before the end” is such a common task, they provide another scheme for indexing that uses negative numbers! The idea is you start at the last character ( <code class="docutils literal notranslate"><span class="pre">'d'</span></code> ) being at index <code class="docutils literal notranslate"><span class="pre">-1</span></code> (since it is at index <code class="docutils literal notranslate"><span class="pre">len(s)</span> <span class="pre">-</span> <span class="pre">1</span></code> in our indexing scheme), the second to last ( <code class="docutils literal notranslate"><span class="pre">'l'</span></code> ) being <code class="docutils literal notranslate"><span class="pre">-2</span></code> , etc. Pictorially, the negative indices are shown in the following image.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/oeDlJkGmqUtQXpUmO1wtDBXH"><img alt="hello world string with negative indexing" class="align-center" src="https://static.us.edusercontent.com/files/oeDlJkGmqUtQXpUmO1wtDBXH" style="width: 744px;" /></a>

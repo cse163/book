@@ -6,11 +6,11 @@
 
 ---
 
-Each string is an **object**. We will talk more about objects in detail in Week 5, but the basic idea is that each string is its own, independent unit that has some **state** and some **behaviors.** The **state** of a string is its characters and their ordering. The **behaviors** of the string are the functions we are allowed to call on them to access or transform the data. You don't need to worry too much about this state/behavior terminology right now as we will emphasize it in Module 5.
+Each string is an **object**. We will talk more about objects in detail in Module 5, but the basic idea is that each string is its own, independent unit that has some **state** and some **behaviors.** The **state** of a string is its characters and their ordering. The **behaviors** of the string are the functions we are allowed to call on them to access or transform the data. You don't need to worry too much about this state/behavior terminology right now as we will emphasize it in Module 5.
 
 We have seen a simple function already that allows us to index into the string so it can return the character at that index. You can imagine this indexing as just one special function provided to us by the string (although the syntax looks different than the general notion we will show below).
 
-For example, there is also an `find` function that you can call on a string `s1` , that returns the index of a given string `s2` inside `s1`. For example, you could write the following:
+For example, there is also a `find` function that you can call on a string `s1` , that returns the index of a given string `s2` inside `s1`. For example, you could write the following:
 
 ```{snippet}
 source = 'I really like dogs'

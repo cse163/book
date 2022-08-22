@@ -6,12 +6,12 @@
 
 ---
 
-Whenever you write a function, you should provide some documentation for what it does and any information someone needs to know to use it. Reading code can be hard so we want to provide some instructions people can understand. Code without documentation requires anyone trying to use your code to try and recreate what you were thinking, which essentially ends up with them making guesses at what it does
+Whenever you write a function, you should provide some documentation for what it does and any information someone needs to know to use it. Reading code can be hard so we want to provide some instructions people can understand. Code without documentation requires anyone trying to use your code to try and recreate what you were thinking, which essentially ends up with them making guesses at what it does.
 
 ```{admonition} Warning
 :class: warning
 
-When I'm trying to understand code without documentation, it often feels like I'm like a way-less-capable version of Amy Adam's character in the movie
+When I'm trying to understand code without documentation, it often feels like I'm like a way-less-capable version of Amy Adams' character in the movie
 [Arrival](https://www.imdb.com/title/tt2543164/). Don't write code where I have to feel like that. Write documentation in English (or whichever language you and your team work in) so people know how to use the code you write!
 ```
 
