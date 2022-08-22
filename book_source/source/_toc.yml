@@ -49,8 +49,8 @@ chapters:
           - file: module-2-data-structures-and-files/lesson-4-lists-and-files/file-paths
           - file: module-2-data-structures-and-files/lesson-4-lists-and-files/python-modes
           - file: module-2-data-structures-and-files/lesson-4-lists-and-files/jupyter-notebooks/DemoNotebook
-          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/practice-build-a-list
           - file: module-2-data-structures-and-files/lesson-4-lists-and-files/pause-and-think
+          - file: module-2-data-structures-and-files/lesson-4-lists-and-files/practice-build-a-list
           - file: module-2-data-structures-and-files/lesson-4-lists-and-files/practice-filter-long-lines
           - file: module-2-data-structures-and-files/lesson-4-lists-and-files/practice-count-unique-words
       - file: module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/index
