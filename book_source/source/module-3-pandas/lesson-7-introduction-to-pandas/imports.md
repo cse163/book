@@ -21,7 +21,7 @@ As a bit of a preview, the reason the main-method pattern is necessary is to mak
 
 We use importing to get values or functions defined inside one module so they can be used in another module. You have already been using this on your homework! We defined a module `cse163_utils` and in order to use the function `assert_equals` defined in that module, you had to import it.
 
-There are 2 main (and a half, sort of) ways to import in Python that we will explore in this slide. For the following examples, assume we have defined the module `module_a` with the file `module_a.py` as shown below.
+There are 2 (and a half, sort of) main ways to import in Python that we will explore in this slide. For the following examples, assume we have defined the module `module_a` with the file `module_a.py` as shown below.
 
 ```{snippet}
 # Contents of: module_a.py
@@ -136,6 +136,6 @@ if __name__ == '__main__':
     main()
 ```
 
-This syntax is nice when you know exactly which function you want from `module_a` and you now you will call it often.
+This syntax is nice when you know exactly which function you want from `module_a` and you know you will call it often.
 
 You might wonder what would happen if I defined a `fun2` in `module_b.py` (since we removed that from the previous examples). How would Python know which `fun2` to call if there was one that came from `module_a` and one from `module_b` and both are in the same scope? It turns out, if you define two functions with the same name, it will always use the one most recently defined. This is because by defining a function, you essentially are storing it in a variable with that function name. If you redefine, it will just update which function is stored at that variable name (just like updating a plain-old variable). That means if we defined a `fun2` after importing it from `module_a` using this syntax, we would essentially lose the value we imported.
