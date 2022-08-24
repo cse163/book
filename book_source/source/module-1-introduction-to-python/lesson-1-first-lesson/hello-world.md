@@ -22,7 +22,7 @@ print("Hello world!")
 
 That's it! If you just type this in a Python program and run it, it will say "Hello world!" to you!
 
-For comparison, here is how you write "Hello world" in some other popular programming languages that have some more complex syntax. Skimming these, you might begin to see what we mean by Python generally being considered to be more human-readable since it doesn't require a lot of extra syntax these other languages do. Note: we
+For comparison, here is how you write "Hello world" in some other popular programming languages that have some more complex syntax. Skimming these, you might begin to see what we mean by Python generally being considered to be more human-readable since it doesn't require a lot of extra syntax these other languages do.
 
 ````{tab-set-code}
 
