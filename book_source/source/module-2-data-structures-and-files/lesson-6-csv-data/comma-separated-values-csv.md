@@ -7,7 +7,7 @@
 
 ---
 
-The first type of data we will explore this quarter will be a well-structured type of text-data called a CSV. If you are familiar with an Excel Spreadsheet, you already understand the basic idea behind what a CSV is!  
+The first type of data we will explore will be a well-structured type of text-data called a CSV. If you are familiar with an Excel Spreadsheet, you already understand the basic idea behind what a CSV is!  
 
 Consider a spreadsheet of TA salaries:  
 
@@ -25,7 +25,7 @@ A table has two main components to it:
 -  Columns: Each column defines a different aspect or component of your data. In this case we have one column for the TA's name and the other for the TA's salary.  
 
 
-A CSV file is just a well-formatted file that preserves this tabular structure of rows/columns in a format that is more easily read by programs written in Python. The CSV file that corresponds to this table looks like the following  
+A CSV file is just a well-formatted file that preserves this tabular structure of rows/columns in a format that is more easily read by programs written in Python. The CSV file that corresponds to this table looks like the following:  
 
 ```text
 Name,Salary
