@@ -6,13 +6,13 @@
 
 ---
 
-For one of your practice problems for today, you will be implementing a function to find the count of each word in a file. It's not clear how you could use a `list` or `set` to solve this problem since you need to be able to answer the question: "for a given word, how many of them have we seen?"
+For one of your practice problems in this lesson, you will be implementing a function to find the count of each word in a file. It's not clear how you could use a `list` or `set` to solve this problem since you need to be able to answer the question: "for a given word, how many of them have we seen?"
 
 A `list` seems like it's more on the right track, but unfortunately, the indices have to be numbers! There is no way of using a `list` to say that a word should be an index.
 
 ## Introduction to `dict`
 
-The last data structure we are going to learn today is called a dictionary (in Python, written as `dict` ). A `dict` is a very powerful data structure since it acts, in some sense, as a more generalized `list` . Essentially a `dict` is much like a `list` , but allows you to store any type as the index while a `list` only allows numbers from `0` to `len - 1` as valid indices.
+The last data structure we are going to learn in this lesson is called a dictionary (in Python, written as `dict` ). A `dict` is a very powerful data structure since it acts, in some sense, as a more generalized `list` . Essentially a `dict` is much like a `list` , but allows you to store any type as the index while a `list` only allows numbers from `0` to `len - 1` as valid indices.
 
 To create a `dict` in Python, you use the syntax in the following snippet. Note that `dict` supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, `dict` uses a different term for the index to reduce confusion with `list` s: we call the "index" of an entry in a `dict` its **key**. We describe a `dict` as a bunch of key/value pairs that are accessible via the key.
 
@@ -58,7 +58,7 @@ else:
 
 ## Example
 
-Imagine we had a list of strings, and we wanted to find sum of the word lengths that start with each letter. For example, with the list `['cats', 'dogs', 'deers']` we would report the sum of the lengths of strings that start with `'c'` is 4 while the sum of the lengths of strings that start with `d` is 9. We will write a function called `count_lengths` to solve this problem. The function should take a `list` of words (all `str` ) and we can assume none of the `str` are the empty string.
+Imagine we had a list of strings, and we wanted to find the sum of the word lengths that start with each letter. For example, with the list `['cats', 'dogs', 'deers']` we would report the sum of the lengths of strings that start with `'c'` is 4 while the sum of the lengths of strings that start with `'d'` is 9. We will write a function called `count_lengths` to solve this problem. The function should take a `list` of words (all `str` ) and we can assume none of the `str` are the empty string.
 
 This seems like the task of a `dict` where the keys are the first letters of the words, and the values are the sum of the lengths. Let's try to write a function to use the things we have seen so far to do this!
 

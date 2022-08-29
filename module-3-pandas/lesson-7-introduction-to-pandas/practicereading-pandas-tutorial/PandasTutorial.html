@@ -2488,7 +2488,7 @@ Name: Name, dtype: object
 </div>
 </div>
 </div>
-<p>Now, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> isn’t useful just because it not only lets you access this data conveniently, but also perform computations on them.</p>
+<p>Now, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is useful because it not only lets you access this data conveniently, but also perform computations on them.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">Series</span></code> object has many methods you can call on them to perform computation. Here is a list of some of the most useful ones:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">mean</span></code>: Calculates the average value of the <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
@@ -2496,7 +2496,7 @@ Name: Name, dtype: object
 <li><p><code class="docutils literal notranslate"><span class="pre">max</span></code>: Calculates the maximum value of the <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">idxmin</span></code>: Calculates the index of the minimum value of the <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">idxmax</span></code>: Calculates the index of the maximum value of the <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: Calculates the number values in the <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: Calculates the number of values in the <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">unique</span></code>: Returns a new <code class="docutils literal notranslate"><span class="pre">Series</span></code> with all the unique values from the <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p></li>
 <li><p>And many more!</p></li>
 </ul>
@@ -2696,7 +2696,7 @@ Name: population, dtype: int64
 </div>
 </div>
 </div>
-<p>You can see here that the output of the <code class="docutils literal notranslate"><span class="pre">Series</span></code> actually tells you a bit about the values to help you out! The <code class="docutils literal notranslate"><span class="pre">dtype</span></code> property tells you the type of the data. In this case it uses a specialized integer type called <code class="docutils literal notranslate"><span class="pre">int64</span></code>, but for all intents and purposes that’s really just like an <code class="docutils literal notranslate"><span class="pre">int</span></code>. As a minor detail, it also stores the Name of the column the <code class="docutils literal notranslate"><span class="pre">Series</span></code> came from for refernce.</p>
+<p>You can see here that the output of the <code class="docutils literal notranslate"><span class="pre">Series</span></code> actually tells you a bit about the values to help you out! The <code class="docutils literal notranslate"><span class="pre">dtype</span></code> property tells you the type of the data. In this case it uses a specialized integer type called <code class="docutils literal notranslate"><span class="pre">int64</span></code>, but for all intents and purposes that’s really just like an <code class="docutils literal notranslate"><span class="pre">int</span></code>. As a minor detail, it also stores the Name of the column the <code class="docutils literal notranslate"><span class="pre">Series</span></code> came from for reference.</p>
 <p>Another useful case for something like this is to compare the values of a column to a value. For example, the following cell computes which cities have an emissions value of 200 or more. Notice that the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> here is <code class="docutils literal notranslate"><span class="pre">bool</span></code> since each value is a <code class="docutils literal notranslate"><span class="pre">True/False</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2737,7 +2737,7 @@ Name: city, dtype: object
 </div>
 </div>
 <p>That’s pretty cool how we can get this result without having to write any loops!</p>
-<p>Notice the return value has type <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, so we can than use the syntax we learned at the beginning to grab a single column from that <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> (thus returning a <code class="docutils literal notranslate"><span class="pre">Series</span></code>).</p>
+<p>Notice the return value has type <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, so we can then use the syntax we learned at the beginning to grab a single column from that <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> (thus returning a <code class="docutils literal notranslate"><span class="pre">Series</span></code>).</p>
 <p>The way this works is the indexing-notation for <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> has special cases for which type of value you pass it.</p>
 <ul class="simple">
 <li><p>If you pass it a <code class="docutils literal notranslate"><span class="pre">str</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">df2['emissions']</span></code>), it returns that column as a <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p></li>
@@ -2779,7 +2779,7 @@ Name: city, dtype: object
         </div>
     </div>
 </div><p>The problem comes from <strong>precedence</strong> (order of operations). Just like how <code class="docutils literal notranslate"><span class="pre">*</span></code> gets evaluated before <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code> gets evaluated first because it has the highest precedence (so does <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>). This makes Python interpret the first sub-expression as (<code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">|</span> <span class="pre">df['country']</span></code>), which causes an error since this operator is not defined for these types.</p>
-<p>Whenever you run into ambiguities from precedence, on way you can always fix it is to the sub-expressions in parentheses like in the following cell.</p>
+<p>Whenever you run into ambiguities from precedence, one way you can always fix it is to put the sub-expressions in parentheses like in the following cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;USA&#39;</span><span class="p">)]</span>
@@ -2912,9 +2912,9 @@ Name: city, dtype: object
 </section>
 <section id="location">
 <h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">#</a></h2>
-<p>We’ve shown you how to select specific columns or select specific rows based on a mask. In some sense, it’s a little confusiong that <code class="docutils literal notranslate"><span class="pre">df[val]</span></code> can be used to grab columns or rows depending on what is passed. This is because this syntax we have shown below, is really just special cases of a more generic syntax that lets you specific some location in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provides this shorthand for convencience in some cases, but this more general syntax below works in many more!</p>
+<p>We’ve shown you how to select specific columns or select specific rows based on a mask. In some sense, it’s a little confusing that <code class="docutils literal notranslate"><span class="pre">df[val]</span></code> can be used to grab columns or rows depending on what is passed. This is because this syntax we have shown below, is really just special cases of a more generic syntax that lets you specify some location in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provides this shorthand for convenience in some cases, but this more general syntax below works in many more!</p>
 <p>In its most general form, the <code class="docutils literal notranslate"><span class="pre">loc</span></code> property lets you specify a <strong>row indexer</strong> and a <strong>column indexer</strong> to specify which rows/columns you want. The syntax looks like the following (where things in <code class="docutils literal notranslate"><span class="pre">&lt;...&gt;</span></code> are placeholders)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">&lt;</span><span class="n">row</span> <span class="n">indexer</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">column</span> <span class="n">index</span><span class="o">&gt;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">&lt;</span><span class="n">row</span> <span class="n">indexer</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">column</span> <span class="n">indexer</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The row indexer refers to the index of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Recall, when we display a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, it shows values to the left of each row to identify each row in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
@@ -2949,7 +2949,7 @@ Name: 0, dtype: object
 </div>
 </div>
 </div>
-<p>Now this was a bit tedious to have to use double <code class="docutils literal notranslate"><span class="pre">[]</span></code> to acess the column as well, which is exactly why <code class="docutils literal notranslate"><span class="pre">loc</span></code> lets you specify a column as a “column indexer”. Instead, it’s more common to write:</p>
+<p>Now this was a bit tedious to have to use double <code class="docutils literal notranslate"><span class="pre">[]</span></code> to access the column as well, which is exactly why <code class="docutils literal notranslate"><span class="pre">loc</span></code> lets you specify a column as a “column indexer”. Instead, it’s more common to write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
@@ -2962,7 +2962,7 @@ Name: 0, dtype: object
 </div>
 </div>
 </div>
-<p>You might be wondering: I’ve used the word “indexer” a few times but haven’t defined what that means! By indexer, I mean some value to indicate which rows/columns you want. So far, I have shown how to specify a single value as an indexer, but there are actually many options to chose from! You can always mix-and-match these and use different ones for the rows/cols.</p>
+<p>You might be wondering: I’ve used the word “indexer” a few times but haven’t defined what that means! By indexer, I mean some value to indicate which rows/columns you want. So far, I have shown how to specify a single value as an indexer, but there are actually many options to choose from! You can always mix-and-match these and use different ones for the rows/cols.</p>
 <section id="list-of-indices-and-slices">
 <h3>List of indices and slices<a class="headerlink" href="#list-of-indices-and-slices" title="Permalink to this headline">#</a></h3>
 <p>For example, you can use a list of values as an indexer to select many rows or many columns:</p>
@@ -3084,7 +3084,7 @@ Name: 0, dtype: object
 </section>
 <section id="mask">
 <h3>Mask<a class="headerlink" href="#mask" title="Permalink to this headline">#</a></h3>
-<p>You can also use a <code class="docutils literal notranslate"><span class="pre">bool</span></code> Series as an indexer to grab all the rows or columns that are marked <code class="docutils literal notranslate"><span class="pre">True</span></code>. This is similar to masking we saw before, but can now put the mask as a possible indexer.</p>
+<p>You can also use a <code class="docutils literal notranslate"><span class="pre">bool</span></code> Series as an indexer to grab all the rows or columns that are marked <code class="docutils literal notranslate"><span class="pre">True</span></code>. This is similar to masking we saw before, but you can now put the mask as a possible indexer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_emissions</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">200</span>
@@ -3144,7 +3144,7 @@ Name: 0, dtype: object
 </table>
 </div></div></div>
 </div>
-<p>Notice in the last cell, I left out the column indexer and it gave me all the column (that is the default for the column indexer).</p>
+<p>Notice in the last cell, I left out the column indexer and it gave me all the columns (that is the default for the column indexer).</p>
 </section>
 <section id="for-everything">
 <h3><code class="docutils literal notranslate"><span class="pre">:</span></code> for everything<a class="headerlink" href="#for-everything" title="Permalink to this headline">#</a></h3>
@@ -3228,7 +3228,7 @@ Name: city, dtype: object
 </section>
 <section id="recap-indexers">
 <h3>Recap Indexers<a class="headerlink" href="#recap-indexers" title="Permalink to this headline">#</a></h3>
-<p>So we saw the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> property here is kind of like a universal way of asking your data. You can specify a row indexer and a column indexer to select your data. We saw the following things used as indexers:</p>
+<p>So we saw the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> property here is kind of like a universal way of asking for your data. You can specify a row indexer and a column indexer to select your data. We saw the following things used as indexers:</p>
 <ul class="simple">
 <li><p>A single value (row index for rows, column name for columns)</p></li>
 <li><p>A list of values or a slice (row index for for rows, column names for columns)</p></li>
@@ -3238,11 +3238,11 @@ Name: city, dtype: object
 </section>
 <section id="return-values">
 <h3>Return Values<a class="headerlink" href="#return-values" title="Permalink to this headline">#</a></h3>
-<p>One thing that is also complex about <code class="docutils literal notranslate"><span class="pre">.loc</span></code> is the type of the value returns depends on the types of the indexers. Recall that a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a 2-dimensional strucutre (rows and columns) while a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a single <code class="docutils literal notranslate"><span class="pre">row</span></code> or single <code class="docutils literal notranslate"><span class="pre">column</span></code>.</p>
+<p>One thing that is also complex about <code class="docutils literal notranslate"><span class="pre">.loc</span></code> is the type of the value returned depends on the types of the indexers. Recall that a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a 2-dimensional structure (rows and columns) while a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a single <code class="docutils literal notranslate"><span class="pre">row</span></code> or single <code class="docutils literal notranslate"><span class="pre">column</span></code>.</p>
 <p>To tell what the return type of a <code class="docutils literal notranslate"><span class="pre">.loc</span></code> call is, you need to look for the “single value” type of indexer.</p>
 <ul class="simple">
 <li><p>If both the row and column indexers are a single value, returns a single value. This will be whatever the value is at the location so its type will be the same as the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of the column it comes from.</p></li>
-<li><p>If only one of the row and colum indexers is a single value (meaning the other is multiple values), returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p></li>
+<li><p>If only one of the row and column indexers is a single value (meaning the other is multiple values), returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p></li>
 <li><p>If neither of the row and column indexers are single values (meaning both are multiple values), returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p></li>
 </ul>
 </section>

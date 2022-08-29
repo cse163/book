@@ -2202,7 +2202,7 @@ title="Print to PDF"
 
         </div>
     </div>
-</div><p>What about numbers 1 to 100? That would be ridiculous to type out! You might be thinking back to the <code class="docutils literal notranslate"><span class="pre">list</span></code> bmethods we learned in Lesson 4, and might realize we could do build up the <code class="docutils literal notranslate"><span class="pre">list</span></code> programmatically. Here is an example using the <code class="docutils literal notranslate"><span class="pre">list</span></code> methods we have learned.</p>
+</div><p>What about numbers 1 to 100? That would be ridiculous to type out! You might be thinking back to the <code class="docutils literal notranslate"><span class="pre">list</span></code> methods we learned in Lesson 4, and might realize we could build up the <code class="docutils literal notranslate"><span class="pre">list</span></code> programmatically. Here is an example using the <code class="docutils literal notranslate"><span class="pre">list</span></code> methods we have learned.</p>
 <div class="trace-snippet-container">
     <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibnVtcyA9IFtdXG5mb3IgaSBpbiByYW5nZSgxLCAxMDEpOlxuICAgIG51bXMuYXBwZW5kKGkpXG5wcmludChudW1zKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
         <div class="highlight-python">
@@ -2241,7 +2241,7 @@ title="Print to PDF"
 </div><p>This is just a compact syntax for writing the full loop we showed earlier! It’s a bit weird when you first see it that the <code class="docutils literal notranslate"><span class="pre">for</span></code> comes after the value, but you get used to it with practice. This syntax can be very handy for specifying things really quickly.</p>
 <section id="transforming-values">
 <h2>Transforming Values<a class="headerlink" href="#transforming-values" title="Permalink to this headline">#</a></h2>
-<p>One of the nice things about list comprehensions is they let you pretty easily transform your values before putting them in the list. In the last example, we just put <code class="docutils literal notranslate"><span class="pre">i</span></code> in the list but that isn’t the only option! For example, what if we wanted to put in the squares of all the even numbers between 1 and 10? We could write a list comprehension for that too!</p>
+<p>One of the nice things about list comprehensions is they let you pretty easily transform your values before putting them in the list. In the last example, we just put <code class="docutils literal notranslate"><span class="pre">i</span></code> in the list but that isn’t the only option! For example, what if we wanted to put in the squares of all the numbers between 1 and 10? We could write a list comprehension for that too!</p>
 <div class="trace-snippet-container">
     <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAic3F1YXJlcyA9IFtpICoqIDIgZm9yIGkgaW4gcmFuZ2UoMSwgMTEpXVxucHJpbnQoc3F1YXJlcykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
         <div class="highlight-python">
@@ -2260,7 +2260,7 @@ title="Print to PDF"
 </section>
 <section id="filtering-values">
 <h2>Filtering Values<a class="headerlink" href="#filtering-values" title="Permalink to this headline">#</a></h2>
-<p>One last thing list comprehensions allow you to do is filter values from the original sequence to just the ones you want! For example, what if we only wanted the squares of numbers divisible by 3 between 1 and 10? Now you could implement this specific task by changing the <code class="docutils literal notranslate"><span class="pre">range</span></code> call to include a step-size, but you could imagine having a more complex condition that you can’t simply solve it using that approach.</p>
+<p>One last thing list comprehensions allow you to do is filter values from the original sequence to just the ones you want! For example, what if we only wanted the squares of numbers divisible by 3 between 1 and 10? Now you could implement this specific task by changing the <code class="docutils literal notranslate"><span class="pre">range</span></code> call to include a step-size, but you could imagine having a more complex condition that you can’t simply solve using that approach.</p>
 <p><strong>Take a second to think about how we would write this without a list comprehension.</strong></p>
 <p>It would be similar to our approach above that uses a call to <code class="docutils literal notranslate"><span class="pre">append</span></code> , but would be different in that it has an if-statement to only <code class="docutils literal notranslate"><span class="pre">append</span></code> some times. It would look something like the snippet below.</p>
 <div class="trace-snippet-container">

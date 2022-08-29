@@ -2245,7 +2245,7 @@ title="Print to PDF"
 </div>
 <p>We could then run the function to see its output. The three cells below try it for three different files of different sizes (from smallest to largest: Green Eggs and Ham, the Bee Movie script, and the text of Moby-Dick).</p>
 <p>There is a special command at the top of each cell called a “magic command” that lets the Jupyter Notebook print out how long it takes the cell to run. You do not need to understand the magic commands.</p>
-<p>You can see when running the cells that it shows you the amount of time that elapsed from the time you pressed run after the “Wall time:” in the output. You might notice if your run the same cell multiple times, you’ll get different times. The reason the run-time is not constant is the computer is actually running more than one program at once and is allocating a small amount of time to each; this causes a lot of randomness in the actual runtime of a program</p>
+<p>You can see when running the cells that it shows you the amount of time that elapsed from the time you pressed run after the “Wall time:” in the output. You might notice if you run the same cell multiple times, you’ll get different times. The reason the run-time is not constant is the computer is actually running more than one program at once and is allocating a small amount of time to each; this causes a lot of randomness in the actual runtime of a program</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
@@ -2306,7 +2306,7 @@ Wall time: 8.57 s
 <p>Since that requires looping over the whole list of unique words for each word in the file to see if this condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>! We’ll understand exactly how this causes a slow-down later.</p>
 <section id="set">
 <h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">#</a></h2>
-<p>The problem here is trying to use a <code class="docutils literal notranslate"><span class="pre">list</span></code> to solve a task that it’s not well-designed for. <code class="docutils literal notranslate"><span class="pre">list</span></code>s have no notion of preventing duplicates, so this extra work we have to do to avoid duplicates in the <code class="docutils literal notranslate"><span class="pre">list</span></code> cause a huge slowdown.</p>
+<p>The problem here is trying to use a <code class="docutils literal notranslate"><span class="pre">list</span></code> to solve a task that it’s not well-designed for. <code class="docutils literal notranslate"><span class="pre">list</span></code>s have no notion of preventing duplicates, so this extra work we have to do to avoid duplicates in the <code class="docutils literal notranslate"><span class="pre">list</span></code> causes a huge slowdown.</p>
 <p>Instead, let’s see another data structure called a <code class="docutils literal notranslate"><span class="pre">set</span></code> that is designed with the idea of finding a set of unique values in mind. A <code class="docutils literal notranslate"><span class="pre">set</span></code> is like a <code class="docutils literal notranslate"><span class="pre">list</span></code> in the sense that it is a sequence of values, but differs in two major ways:</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">set</span></code> does not allow duplicate values.</p></li>
@@ -2449,7 +2449,7 @@ Wall time: 26.2 ms
 </div>
 </div>
 </div>
-<p>Wow! All three files can be counted the unique words in less than ~100ms! Because we used a data structure that is all about storing unique values, we gained a huge speedup from just allowing it to do its thing.</p>
+<p>Wow! All three files can have their unique words be counted in less than ~100ms! Because we used a data structure that is all about storing unique values, we gained a huge speedup from just allowing it to do its thing.</p>
 <p>Later in the quarter, we will learn the “magic” that allows <code class="docutils literal notranslate"><span class="pre">set</span></code>s to be so fast at finding duplicates.</p>
 </section>
 </section>

@@ -22,7 +22,7 @@ nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(nums)
 ```
 
-What about numbers 1 to 100? That would be ridiculous to type out! You might be thinking back to the `list` bmethods we learned in Lesson 4, and might realize we could do build up the `list` programmatically. Here is an example using the `list` methods we have learned.
+What about numbers 1 to 100? That would be ridiculous to type out! You might be thinking back to the `list` methods we learned in Lesson 4, and might realize we could build up the `list` programmatically. Here is an example using the `list` methods we have learned.
 
 ```{snippet}
 nums = []
@@ -54,7 +54,7 @@ This is just a compact syntax for writing the full loop we showed earlier! It's 
 
 ## Transforming Values
 
-One of the nice things about list comprehensions is they let you pretty easily transform your values before putting them in the list. In the last example, we just put `i` in the list but that isn't the only option! For example, what if we wanted to put in the squares of all the even numbers between 1 and 10? We could write a list comprehension for that too!
+One of the nice things about list comprehensions is they let you pretty easily transform your values before putting them in the list. In the last example, we just put `i` in the list but that isn't the only option! For example, what if we wanted to put in the squares of all the numbers between 1 and 10? We could write a list comprehension for that too!
 
 ```{snippet}
 squares = [i ** 2 for i in range(1, 11)]
@@ -71,7 +71,7 @@ Again, you should read it in the order we showed above:
 
 ## Filtering Values
 
-One last thing list comprehensions allow you to do is filter values from the original sequence to just the ones you want! For example, what if we only wanted the squares of numbers divisible by 3 between 1 and 10? Now you could implement this specific task by changing the `range` call to include a step-size, but you could imagine having a more complex condition that you can't simply solve it using that approach.
+One last thing list comprehensions allow you to do is filter values from the original sequence to just the ones you want! For example, what if we only wanted the squares of numbers divisible by 3 between 1 and 10? Now you could implement this specific task by changing the `range` call to include a step-size, but you could imagine having a more complex condition that you can't simply solve using that approach.
 
 **Take a second to think about how we would write this without a list comprehension.**
 
