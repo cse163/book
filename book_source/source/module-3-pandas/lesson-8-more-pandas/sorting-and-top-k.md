@@ -14,7 +14,7 @@
 
 For this slide, let's change the data up a bit to give you a sense of how generic this work in `pandas` can be. We have been using examples with earthquake data that came from a CSV format, but many datasets provide CSV formats of their data.
 
-In this slide, we will use an example from fMRI (e.g., brain scans) data to show activation in various regions of the brain. Don't worry, you don't need to actually understand how brains work to follow along with this example, but we did want to show how all of these examples are just stand-ins for basically anything you want to compute (assuming it's in a CSV). Note that this dataset has a special value called `NaN` in it that we will talk more about next week!
+In this slide, we will use an example from fMRI (e.g., brain scans) data to show activation in various regions of the brain. Don't worry, you don't need to actually understand how brains work to follow along with this example, but we did want to show how all of these examples are just stand-ins for basically anything you want to compute (assuming it's in a CSV). Note that this dataset has a special value called `NaN` in it that we will talk more about in the next module!
 
 ```{snippet}
 import pandas as pd
