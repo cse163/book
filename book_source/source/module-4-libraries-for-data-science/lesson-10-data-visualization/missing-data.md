@@ -10,7 +10,7 @@
 
 ---
 
-[Most data in the world is messy](https://github.com/Quartz/bad-data-guide). It might be in a format that you will have trouble reading from or it might have errors in the data! One of the most common types of errors in datasets is **missing data** , where a row might have some of its column entries just missing!
+[Most data in the world is messy](https://github.com/Quartz/bad-data-guide). It might be in a format that you will have trouble reading from or it might have errors in the data! One of the most common types of errors in datasets is **missing data**, where a row might have some of its column entries just missing!
 
 For example, we have a dataset of fMRI (brain scan) data that, like most real-life datasets, is a little messy. The dataset has the following columns:
 
@@ -39,7 +39,7 @@ Notice that row 1059 has this weird value `NaN` for both the timepoint and the s
 
 The fact that we see `NaN` values in our data means the dataset is messy and we will have to deal with it. There is a myriad of ways to try to handle missing data, some more complicated than others. For right now, we will focus on how to detect missing data in the dataset and how to filter it out!
 
-By default most `pandas` operations just ignore missing values so this isn't a problem if you are just in the `pandas` world. However, we will see this next week that other libraries for data visualization and machine learning will crash if we give them datasets that contain missing values, so we should learn how to deal with that now.
+By default most `pandas` operations just ignore missing values so this isn't a problem if you are just in the `pandas` world. However, we will see in the next module that other libraries for data visualization and machine learning will crash if we give them datasets that contain missing values, so we should learn how to deal with that now.
 
 ## `NaN` vs. `None`
 
@@ -65,7 +65,7 @@ print(np.nan == np.nan)  # False
 
 That last line is pretty surprising since we compared `np.nan` to `np.nan`. Remember though, one of the rules of `NaN` is that every boolean comparison on `NaN` is `False` !
 
-How is `NaN` different than `None` ? `None` doesn't allow any numeric operations on it, it will cause an error!
+How is `NaN` different than `None`? `None` doesn't allow any numeric operations on it, it will cause an error!
 
 ```{snippet}
 print(1 + None)
@@ -73,7 +73,7 @@ print(1 + None)
 
 ## `NaN` in `pandas`
 
-So now that we know what this magic-value `NaN` is in our dataset. Let's see how to handle it in `pandas`. Let's start by taking the average of the `'signal'` column (that contains `NaN` values).
+So now that we know what this magic-value `NaN` is in our dataset, let's see how to handle it in `pandas`. Let's start by taking the average of the `'signal'` column (that contains `NaN` values).
 
 ```{snippet}
 import pandas as pd
@@ -96,7 +96,7 @@ Luckily for us, `pandas` has some logic built into it to skip `NaN` values for m
 
   - `fillna(val)` replaces missing data with the given value
 
-The following code block shows how these operations work
+The following code block shows how these operations work.
 
 ```{snippet}
 import pandas as pd
