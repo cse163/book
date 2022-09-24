@@ -10,7 +10,7 @@ Select one or more options. Write your answer down in your own space.
 
 _<i class="far fa-circle fa-fw"></i> Option 0_
 
-```{snippet}
+```python
 def cumulative_sum(n):
     total = 0
     for i in range(n + 1):
@@ -20,14 +20,14 @@ def cumulative_sum(n):
 
 _<i class="far fa-circle fa-fw"></i> Option 1_
 
-```{snippet}
+```python
 def cumulative_sum(n):
     return n * (n + 1) / 2
 ```
 
 _<i class="far fa-circle fa-fw"></i> Option 2_
 
-```{snippet}
+```python
 def cumulative_sum(n):
     nums = [i for i in range(n + 1)]
     return sum(nums)

@@ -6,7 +6,7 @@ In this checkpoint, you will test your understanding how to evaluate expressions
 
 What is the output of the following code snippet?
 
-```{snippet}
+```python
 x = 2.4
 y = 1.2
 x = x / y

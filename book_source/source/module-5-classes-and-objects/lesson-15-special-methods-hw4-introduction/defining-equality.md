@@ -8,7 +8,7 @@
 
 Recall the `Dog` class we wrote in Lesson 13.
 
-```{snippet}
+```python
 class Dog:
     def __init__(self, name):
         self._name = name
@@ -51,7 +51,7 @@ class, so you should know how to use their private fields without causing any er
 
 ```
 
-```{snippet}
+```python
 class Dog:
     def __init__(self, name):
         """

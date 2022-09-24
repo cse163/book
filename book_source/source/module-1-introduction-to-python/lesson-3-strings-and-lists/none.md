@@ -10,7 +10,7 @@ Python has a special value in the language called `None` to represent the absenc
 
 For example, suppose we had the following `increment` function that we decided should only increment positive values. You could write code to throw an error if it was given a negative value, but it's very common in Python to instead return this "missing value" `None` .
 
-```{snippet}
+```python
 def increment(x):
     """
     Returns the value of incrementing a non-negative value x by 1.
@@ -41,7 +41,7 @@ A very common error in Python comes from trying to manipulate a `None` value in 
 
 A very common task in Python is to check if a particular value is `None` or not. This is quite easy to do with the `is` keyword in Python. `is` and `==` are quite similar and in this context, you could use either. We will see in a later lecture the difference between `is` and `==` and we'll understand why `is` is more common for comparing to `None` . For now just know that you use `is` for `None` checks and `==` for most other things.
 
-```{snippet}
+```python
 def increment(x):
     """
     Returns the value of incrementing a non-negative value x by 1.

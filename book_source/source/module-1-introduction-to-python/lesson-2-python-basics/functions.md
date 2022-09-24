@@ -12,13 +12,13 @@ A **function** is a named procedure with a series of instructions that can be **
 
 To call a function, you use its name and use `()` after it to make it a call. For example, `print` is actually a function defined by Python, so a "print statement" is really just calling this `print` function.
 
-```{snippet}
+```python
 print()  # Prints a blank line
 ```
 
 As we saw earlier, we can pass **parameters** to this function call to give it inputs. For example, the `print` function takes parameters for the things to print.
 
-```{snippet}
+```python
 print('Hello world!')
 ```
 
@@ -42,7 +42,7 @@ Functions defined by Python are commonly called **built-in** functions. Some exa
 
 Many functions can also **return** a value from their computation. For example `min` returns the minimum value of its inputs. You can do some more complex operations by combining the inputs and outputs of various functions like in the snippet below:
 
-```{snippet}
+```python
 x = min(4, 7)  # x will store 4 (the return value of this function)
 y = max(5, x)  # y will store 5 (the return value of this function)
 ```
@@ -51,7 +51,7 @@ y = max(5, x)  # y will store 5 (the return value of this function)
 
 In the following snippet, we show how to define a function called `greetings` .
 
-```{snippet}
+```python
 def greetings():
     print('hola!')
 ```
@@ -60,7 +60,7 @@ Note that by putting nothing in the parentheses, we are saying it takes no param
 
 To call the function, you need to actually use a function call like we showed before!
 
-```{snippet}
+```python
 def greetings():
     print('hola!')
 
@@ -71,7 +71,7 @@ greetings()
 
 If you want to define a function that takes parameters, you put variable names in between the `()` for each parameter you want the function to take. If you want the function to return a value, you use a `return` statement like the example below.
 
-```{snippet}
+```python
 def mean(a, b):
     print('Calling mean with', a, b)
     return (a + b) / 2
@@ -86,7 +86,7 @@ Recall that we said our reading snippets normally don't show the main-method pat
 
 Notice, we are having you define a function called `main` by saying `def main():` ! The `mean` function only gets called when we are actually running the program and the `main` method calls it.
 
-```{snippet}
+```python
 def mean(a, b):
     print('Calling mean with', a, b)
     return (a + b) / 2

@@ -12,7 +12,7 @@ We have seen a simple function already that allows us to index into the string s
 
 For example, there is also a `find` function that you can call on a string `s1` , that returns the index of a given string `s2` inside `s1`. For example, you could write the following:
 
-```{snippet}
+```python
 source = 'I really like dogs'
 target = 'll'
 print(source.find(target))
@@ -20,7 +20,7 @@ print(source.find(target))
 
 In this case, it prints 5 because the first occurrence of the substring `'ll'` in `source` appears at index 5. Notice that we call a function on the string `source` by saying `source.<function_name>(...)` where `...` is the parameters we need to pass to that function. If we were to call `target.find(source)` it would be looking for `source` inside `target` and would instead return -1 (as defined in the documentation for `find` ). You can try this in the snippet below.
 
-```{snippet}
+```python
 source = 'I really like dogs'
 target = 'll'
 print(target.find(source))
@@ -56,7 +56,7 @@ The last two functions are the most complex, so we will do a short example to cl
 
 Suppose we had a string that contained a series of values separated by the `,` character, but we want to print the string out in all upper-case letters separated by `|` characters. We put print statements in between to make the sequence of transformations clearer and to provide comments explaining the step.
 
-```{snippet}
+```python
 data = 'hunter,madrona,alex,sylvia'
 print('Original   :', data)
 

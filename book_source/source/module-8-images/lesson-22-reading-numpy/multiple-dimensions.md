@@ -8,7 +8,7 @@
 
 As we alluded to in the applications above, it's possible to make a nested `numpy.array` (can think of it as an array of arrays). A core concept for a `numpy.array` is its **shape**. The shape determines the number of dimensions and how many elements are in one. The `numpy.ones` function actually takes a tuple specifying the shape instead of just a number.
 
-```{snippet}
+```python
 import numpy as np
 
 x = np.ones((3, 4))
@@ -19,7 +19,7 @@ Notice how it prints out as an array of arrays. Since we passed in `(3, 4)` as t
 
 You can also use the `reshape` function to transform an `numpy.array` from one shape to another. For example, we can use `reshape` to change a single-dimension array to one with two-dimensions. This will only work if the `numpy.array` you are reshaping has the same number of elements as the target shape; it would break if you had 3 values that you tried to reshape into a 10x10.
 
-```{snippet}
+```python
 import numpy as np
 
 # Create an array of the values 0 to 20 (exclusive)
@@ -38,7 +38,7 @@ print(x)
 
 When you have one of these 2D arrays, you can use syntax very similar to `pandas`' `.loc` to access a particular row or column. You can even use the "slice" syntax from before to access multiple rows and columns.
 
-```{snippet}
+```python
 import numpy as np
 
 x = np.arange(20).reshape((5, 4))
@@ -71,7 +71,7 @@ print(x[:, 2])
 
 Since the shape of a `numpy.array` is so important, it is common that you will want to access them. The `numpy.array` has a property called `shape` that returns a `tuple` describing the shape of the array. If it returns `(a, b)`, that means its a 2D array with `a` rows and `b` columns.
 
-```{snippet}
+```python
 import numpy as np
 
 x = np.arange(4)
@@ -99,7 +99,7 @@ Notice that `y` and `z` have different shapes since we specified the `reshape` d
 
 You might be wondering, what's the shape of `x` from the last example?
 
-```{snippet}
+```python
 import numpy as np
 
 x = np.arange(4)

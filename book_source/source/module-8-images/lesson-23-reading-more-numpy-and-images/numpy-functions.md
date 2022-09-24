@@ -2,7 +2,7 @@
 
 Consider the case where you have a `numpy.array` and want to find the sums of the values. One way to do this is to write a loop over the array since arrays support iteration and it also supports the `len` function. For example, you could write this solution in two ways:
 
-```{snippet}
+```python
 import numpy as np
 
 x = np.arange(10)
@@ -22,7 +22,7 @@ print(result)
 
 While this works, remember that whenever possible you want to avoid using loops since Python is slow. Conveniently, `numpy` provides a `sum` function to take the sum for us. Like with `pandas` , this `numpy` code is written in that fast language C, so calling out to that is incredibly fast. Kind of confusingly, there are two common ways to call `sum` that are essentially equivalent. We show both since you will probably run into both.
 
-```{snippet}
+```python
 import numpy as np
 
 x = np.arange(10)

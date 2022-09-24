@@ -10,7 +10,7 @@ Last time we introduced the notion of efficiency, namely in terms of time taken 
 
 For example, consider the following code snippet that shows three different methods for computing the maximum difference between any pair of values in a list.
 
-```{snippet}
+```python
 def max_diff1(nums):
     # Find the max difference between any pair of nunber
     max_diff = 0

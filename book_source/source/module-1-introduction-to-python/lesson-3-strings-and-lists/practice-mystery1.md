@@ -2,7 +2,7 @@
 
 What are the values of the elements in list `a1` after the following code executes?
 
-```{snippet}
+```python
 def mystery1(a1, a2):
     for i in range(len(a1)):
         a1[i] += a2[len(a2) - i - 1]
@@ -25,7 +25,7 @@ This problem was borrowed from
 
 ## Question 0
 
-```{snippet}
+```python
 a1[0]
 ```
 
@@ -35,7 +35,7 @@ Write your answer down in your own space.
 
 ## Question 1
 
-```{snippet}
+```python
 a1[1]
 ```
 
@@ -45,7 +45,7 @@ Write your answer down in your own space.
 
 ## Question 2
 
-```{snippet}
+```python
 a1[2]
 ```
 
@@ -55,7 +55,7 @@ Write your answer down in your own space.
 
 ## Question 3
 
-```{snippet}
+```python
 a1[3]
 ```
 
@@ -65,7 +65,7 @@ Write your answer down in your own space.
 
 ## Question 4
 
-```{snippet}
+```python
 a1[4]
 ```
 

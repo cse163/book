@@ -8,7 +8,7 @@
 
 Now that we feel a little bit more comfortable counting steps, we can go back to trying to compare `sum1` and `sum2` . Recall these functions were defined as:
 
-```{snippet}
+```python
 def sum1(n):
     total = 0
     for i in range(n + 1):
@@ -24,7 +24,7 @@ To answer the question of how many steps it takes to run these functions, we now
 
 Below, we annotate the code with step counting.
 
-```{snippet}
+```python
 def sum1(n):                 # Total: n + 3 steps
     total = 0                # 1 step
     for i in range(n + 1):   # Runs n + 1 times, for a total of n + 1
@@ -62,7 +62,7 @@ Suppose we did the step counting procedure for some block of code that depends o
 
 Consider the folllwing snippet.
 
-```{snippet}
+```python
 def method(n):
     result = 0
     print('Starting method')

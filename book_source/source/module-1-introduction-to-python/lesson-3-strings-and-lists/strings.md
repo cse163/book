@@ -10,7 +10,7 @@ You should have seen strings in your previous programming course. As a reminder,
 
 In Python, you define a `str` by putting texts in quotes as shown in the following snippet. You can use either a `'` or a `"` , they are the same (but the opening one has to match the closing one).
 
-```{snippet}
+```python
 s1 = 'hello world'
 s2 = "CSE 163 is fun!"
 
@@ -43,7 +43,7 @@ since Python would read the apostrophe as the closing of the string. So if you w
 
 Strings provide lots of ways of accessing and transforming the text data to do almost anything you want! One of the most common things you want to do with strings is to combine them. In the following snippet, we use **string concatenation** to add on one string to the end of another.
 
-```{snippet}
+```python
 s1 = 'hello world'
 s2 = "CSE 163 is fun!"
 
@@ -54,7 +54,7 @@ The `+` operator in this context will work with two values of type `str` to crea
 
 Take a second and think about what the following code snippet should be based on this description of string concatenation before copying and running the code snippet in your own editor... Okay! Go ahead and run it! Did it do what you expected?
 
-```{snippet}
+```python
 s = 'hello world'
 n = 163
 print(s + n)
@@ -68,7 +68,7 @@ To fix this, you have to explicitly turn the value `163` into a `str` ! You coul
 
 The fixed code snippet would look like the following:
 
-```{snippet}
+```python
 s = 'hello world'
 n = 163
 print(s + str(n))
@@ -86,7 +86,7 @@ When we think of strings, we commonly think of them as a sequence of characters,
 
 Python lets you access a character at a specific index by using this `[]` notation to index into the `str` itself. Consider the following code snippet ( _think about what it will print before you press run)._
 
-```{snippet}
+```python
 s = 'hello world'
 print(s[0])
 print(s[2])
@@ -99,7 +99,7 @@ Trying to get the last character is a very common operation, so it would be anno
 
 Let's try to grab that last character using the `len` function in the following snippet
 
-```{snippet}
+```python
 s = 'hello world'
 print('Length of string:', len(s))
 print('Last character:', s[len(s)])
@@ -109,7 +109,7 @@ The crash this time was because we went "out of bounds" of the string. What went
 
 The last valid index of this string is 10. Even though there are 11 characters, the valid indices go from 0 to 10. This is precisely because the first index of the string starts at 0. To fix this, we need to ask for one-index earlier in our code.
 
-```{snippet}
+```python
 s = 'hello world'
 print('Length of string:', len(s))
 print('Last character:', s[len(s) - 1])
@@ -121,7 +121,7 @@ Suppose that I needed to print the characters of a string out, one on each line.
 
 One idea to solve this is to use a for loop that loops over all the possible indices. The loop would need to start at 0 (inclusive) to the length of the string (exclusive).
 
-```{snippet}
+```python
 s = 'hello world'
 for i in range(len(s)):
     print(s[i])
@@ -131,7 +131,7 @@ This works perfectly well, but Python provides a much clearer way to loop over a
 
 How does the for loop know to start `i` at `0` , then `1` , then `2` , then all the way to `len(s) - 1` ? This is how the `range` function is defined based on the parameter. A for loop simply iterates over the sequence you tell it to. The trick here is that we have to think carefully about how to call the `range` function, so that the sequence of values it returns represent valid indices in our `str` . <br /> <br /> So if a for loop can loop over a sequence of indices returned the case, would it also be possible to just loop over the `str` directly? Earlier, we defined a `str` as a sequence of characters, so it seems like it should be a candidate to be looped over. That intuition is exactly right! The following snippet shows how to do this!
 
-```{snippet}
+```python
 s = 'hello world'
 for c in s:
     print(c)

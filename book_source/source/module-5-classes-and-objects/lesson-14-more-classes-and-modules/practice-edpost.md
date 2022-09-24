@@ -43,7 +43,7 @@ Comments:
 
 For example, the following main program would produce the following output
 
-```{snippet}
+```python
 post1 = EdPost('Typo in spec?', 'Assignment 1')
 post1.add_comment('There was a typo!')
 post1.add_comment('And maybe another typo?')

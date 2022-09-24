@@ -2,7 +2,7 @@
 
 Recall in the last two lessons, we have used `lists` to represent an indexed-sequence of values. A list can store values of any type. The snippet below shows a quick recap of all the syntax we have introduced for lists (not included: the list of `list` methods).
 
-```{snippet}
+```python
 # Create a list
 l = [1, 2, 'hello']
 

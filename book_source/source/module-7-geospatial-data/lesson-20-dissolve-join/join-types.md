@@ -22,7 +22,7 @@ There are four common types of joins:
 
 With the same, modified, dataset from the last slide, try out the various join strategies by changing the value of the `how` parameter!
 
-```{snippet}
+```python
 import pandas as pd
 
 # Make the tas DataFrame

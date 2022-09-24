@@ -10,7 +10,7 @@ We have already seen how to make plots using `seaborn` to make simple data visua
 
 Before, when we were using `seaborn` , whenever we were plotting we were plotting on a global **figure** behind the scenes. Some of you might have experienced bugs on HW3 where you used different functions than we instructed. These bugs stem from how different functions interact with this figure. Just like `seaborn` , `pandas` has a way to make simple plots that, by default, also plot on a global figure. Take the following toy-example:
 
-```{snippet}
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -30,7 +30,7 @@ This only produced one plot because the second one overwrote the first one on th
 
 A **figure** is a `matplotlib` term for a canvas to store the drawings. A **figure** may have one or more **axes** and each **axes** can have multiple plots drawn on them. You can make very interesting visualizations by putting multiple **axes** on a single **figure**. Instead of using the default-global figure from `seaborn`, we have a way to create our own using `matplotlib`. The code looks like the following.
 
-```{snippet}
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -59,7 +59,7 @@ From what we have seen so far, it's not very clear why we need to distinguish be
 
 For example, to plot the same graphs as above side-by-side, we could write code like the following.
 
-```{snippet}
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -84,7 +84,7 @@ The `subplots` call returns a `Figure` and a list of `Axes` objects. In this cas
 
 `subplots` is actually really generic in the sense that you can make as many axes as you want! `subplots` takes two optional parameters `nrows` and `ncols` to specify how many rows and columns of axes you want. The returned list of `Axes` will be a `list` of `lists` if you ask for multiple rows and multiple columns.
 
-```{snippet}
+```python
 import matplotlib.pyplot as plt
 
 fig, axs = plt.subplots(nrows=3, ncols=2)
@@ -117,7 +117,7 @@ For example, you will be making a plot like the following on your next take-home
 
 There are generally two ways of working with axes return of `subplots` , index into it or unpack it. For example, the following snippet shows how to make two small plots using both styles.
 
-```{snippet}
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -145,7 +145,7 @@ Usually either suffices, but if you start getting more than 4 or so plots, the s
 
 Before you run the code snippet below, think about what the final plot should look like; when we plot `a` and `b` , it is a line with a positive slope ( `/` ) and when we plot `a` and `c` , it is a line with a negative slope ( `\` ).
 
-```{snippet}
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 

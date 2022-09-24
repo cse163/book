@@ -12,7 +12,7 @@
 
 Consider our world dataset from last time. Recall we use `geopandas` to process and plot datasets that contain information about the location of an event. As a reminder, the following snippet shows a preview of the data and a plot of the world's GDP.
 
-```{snippet}
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
@@ -38,7 +38,7 @@ However, don't worry! `geopandas` provides another function called `dissolve` th
 
 Below, we run a full example that dissolves by the continent to show the total population in each continent, and then below explain the syntax. When you run the snippet, you should see an output that looks like we would expect: where each continent is its own color that looks like to have a value that is the sum of all the countries in that continent.
 
-```{snippet}
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
@@ -58,7 +58,7 @@ Notice this `dissolve` call has a lot of the same components as a `groupby` , bu
 
 Don't believe us when we say that you can't use `groupby` here? Try it out in the following snippet and see what the resulting plot looks like! The problem comes from the fact that our `groupby` call throws away the geometry column, making this a non-geospatial dataset; it would not be easy to modify this to account for the geometry in the way that `dissolve` is designed to do!
 
-```{snippet}
+```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
 

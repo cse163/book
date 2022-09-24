@@ -2,7 +2,7 @@
 
 For all the following questions, assume we are using the string
 
-```{snippet}
+```python
 s = 'I have eaten the plums that were in the icebox'
 ```
 
@@ -20,7 +20,7 @@ Make sure you get the casing/spacing right!
 
 What is the value of the following slice?
 
-```{snippet}
+```python
 s[3:10]
 ```
 
@@ -32,7 +32,7 @@ Write your answer down in your own space.
 
 What is the value of the following slice?
 
-```{snippet}
+```python
 s[s.find('p'):]
 ```
 
@@ -44,7 +44,7 @@ Write your answer down in your own space.
 
 What is the value of the following slice?
 
-```{snippet}
+```python
 s[:s.find('t'):3]
 ```
 
