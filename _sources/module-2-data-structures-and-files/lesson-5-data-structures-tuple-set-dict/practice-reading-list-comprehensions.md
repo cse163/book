@@ -4,7 +4,7 @@
 
 What is the result of the following code block? You should not run the code cell, but instead, simulate the result with a pencil and paper.
 
-```{snippet}
+```python
 words = ['I', 'saw', 'a', 'dog', 'today']
 new_words = [word[1] for word in words if len(word) >= 2]
 ```

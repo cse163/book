@@ -20,13 +20,13 @@ We are indicating that you should read the contents of that code block being in 
 
 Recall from the first lesson, we saw that there were two ways of writing a "Hello world" program
 
-```{snippet}
+```python
 # File: hello_world.py
 
 print('Hello world')
 ```
 
-```{snippet}
+```python
 # File: hello_world.py
 
 def main():
@@ -47,7 +47,7 @@ The case where these two approaches differ is when your program uses `import` st
 
 Suppose I have the following three files that did not use the main-method pattern.
 
-```{snippet}
+```python
 # File: module_a.py
 
 def function_a():
@@ -56,14 +56,14 @@ def function_a():
 print('I love File A')
 ```
 
-```{snippet}
+```python
 # File: module_b.py
 
 def function_b():
     print('Hello from Function B')
 ```
 
-```{snippet}
+```python
 # File: module_c.py
 
 import module_a
@@ -103,7 +103,7 @@ The main-method pattern prevents some of the code in a file from being run on im
 
 Let's go back and explain the components of the "Hello world" program to understand how this happens. Below, we have annotated the "Hello world" program with comments explaining its components.
 
-```{snippet}
+```python
 # File: hello_world.py
 
 # This defines a function called main (nothing special here)
@@ -124,7 +124,7 @@ So in reality, the only "special" part of the main-method pattern is the if-stat
 
 You could imagine making a toy module that just prints out whether it is being run as a program or imported:
 
-```{snippet}
+```python
 # File: toy_module.py
 
 if __name__ == '__main__':

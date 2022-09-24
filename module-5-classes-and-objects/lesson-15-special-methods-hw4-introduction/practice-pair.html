@@ -2132,10 +2132,7 @@ title="Print to PDF"
 <p>Write a class called <code class="docutils literal notranslate"><span class="pre">Pair</span></code> that stores two values and can be used just like a tuple containing two elements. The class you implement should produce the behavior shown in the code cell below. Define the class in <code class="docutils literal notranslate"><span class="pre">pair.py</span></code> .</p>
 <p>You can assume the client will only access index 0 or 1 for a <code class="docutils literal notranslate"><span class="pre">Pair</span></code> .</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Pair</span></code> class should be immutable so that the client can’t change its state. This means all fields should be private and if they try to modify a value in the pair, like in the last line of the code cell below, it should print an error message and do nothing else. Notice that you will still need to define the method to allow the syntax for assignment, but the behavior just prints the error without changing the state of the object.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicDEgPSBQYWlyKDEsIDIpXG5wMiA9IFBhaXIoMywgNClcbnAzID0gUGFpcigxLCAyKVxuXG5wcmludChwMSA9PSBwMilcbnByaW50KHAxID09IHAzKVxuXG5wcmludChwMSlcblxucHJpbnQocDFbMF0pXG5cbnAxWzBdID0gMTQiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Pair</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Pair</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">Pair</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">Pair</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -2148,10 +2145,8 @@ title="Print to PDF"
 
 <span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>False
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>False
 True
 (1, 2)
 1

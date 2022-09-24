@@ -16,7 +16,7 @@ Like always, you get better at things with practice and we will continue to get 
 
 `numpy`'s primary data structure is the `numpy.array`. An array will store a sequence of values **of the same type** . You can think of a `numpy.array` as being something a lot like a `pandas.Series`, but the index is always integer values like a `list`. The syntax to create one of these `numpy.array` s looks like the following.
 
-```{snippet}
+```python
 import numpy as np
 x = np.array([1, 2, 3, 4])
 print(x)
@@ -56,7 +56,7 @@ Some example applications include:
 
 We showed you how to create `numpy.array`s, but there are a few more helpful ones that are used commonly to make an array of any size.
 
-```{snippet}
+```python
 import numpy as np
 
 # array initializer takes a list of values

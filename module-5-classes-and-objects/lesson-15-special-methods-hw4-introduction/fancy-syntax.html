@@ -2161,10 +2161,7 @@ title="Print to PDF"
 </tbody>
 </table>
 <p>For example, here is a toy class that implements all of these methods to prove that they get called when you use the syntax shown above.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgU29tZUNsYXNzOlxuICAgIGRlZiBfX2x0X18oc2VsZiwgb3RoZXIpOlxuICAgICAgICBwcmludCgnQ2FsbGluZyBfX2x0X18nKVxuICAgICAgICByZXR1cm4gRmFsc2VcblxuICAgIGRlZiBfX2VxX18oc2VsZiwgb3RoZXIpOlxuICAgICAgICBwcmludCgnQ2FsbGluZyBfX2VxX18nKVxuICAgICAgICByZXR1cm4gRmFsc2VcblxuICAgIGRlZiBfX3JlcHJfXyhzZWxmKTpcbiAgICAgICAgcHJpbnQoJ0NhbGxpbmcgX19yZXByX18nKVxuICAgICAgICByZXR1cm4gJ1NvbWVTdHJpbmcnXG5cbiAgICBkZWYgX19nZXRpdGVtX18oc2VsZiwgaSk6XG4gICAgICAgIHByaW50KGYnQ2FsbGluZyBfX2dldGl0ZW1fXyB3aXRoIHtpfScpXG4gICAgICAgIHJldHVybiAtMVxuXG4gICAgZGVmIF9fc2V0aXRlbV9fKHNlbGYsIGksIHYpOlxuICAgICAgICBwcmludChmJ0NhbGxpbmcgX19zZXRpdGVtX18gd2l0aCB7aX0gYW5kIHt2fScpXG4gICAgICAgIHJldHVybiAtMVxuXG5cbnggPSBTb21lQ2xhc3MoKVxueSA9IFNvbWVDbGFzcygpXG5cbnByaW50KCdMZXNzIFRoYW4nKVxucHJpbnQoeCA8IHkpXG5wcmludCgpXG5cbnByaW50KCdHcmVhdGVyIFRoYW4nKVxucHJpbnQoeCA%2BIHkpXG5wcmludCgpXG5cbnByaW50KCdFcXVhbCcpXG5wcmludCh4ID09IHkpXG5wcmludCgpXG5cbnByaW50KCdOb3QgZXF1YWwnKVxucHJpbnQoeCAhPSB5KVxucHJpbnQoKVxuXG5wcmludCgnUHJpbnQnKVxucHJpbnQoeClcbnByaW50KClcblxucHJpbnQoJ0JyYWNrZXQgTm90YXRpb24nKVxucHJpbnQoeFswXSlcbnhbMTRdID0gNCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calling __lt__&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
@@ -2213,10 +2210,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">x</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><div class="note admonition">
+</div>
+<div class="note admonition">
 <p class="admonition-title">Note</p>
 <p>It turns out that because we implement <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> and <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>
 there is no need to implement any other comparison operators ( <code class="docutils literal notranslate"><span class="pre">__le__</span></code> , <code class="docutils literal notranslate"><span class="pre">__gt__</span></code>, <code class="docutils literal notranslate"><span class="pre">__ge__</span></code>). This is why when we wrote <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code> it can figure it out just from <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>! For example, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code> can be implemented as <code class="docutils literal notranslate"><span class="pre">y.__lt__(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">y</span></code> could be implemented as <code class="docutils literal notranslate"><span class="pre">x.__lt__(y)</span> <span class="pre">or</span> <span class="pre">x.__eq_(y)</span></code>!

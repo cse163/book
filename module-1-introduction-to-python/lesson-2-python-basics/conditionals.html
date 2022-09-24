@@ -2135,10 +2135,7 @@ title="Print to PDF"
 <p>Conditional statements let you execute code conditionally based on some condition; they are similar in nature to the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop but only run at most once.</p>
 <p>In Python, the keywords to control these conditionals are <code class="docutils literal notranslate"><span class="pre">if</span></code> , <code class="docutils literal notranslate"><span class="pre">elif</span></code> (read “else if”) and <code class="docutils literal notranslate"><span class="pre">else</span></code> . For those that know Java, these keywords exactly match the semantics of Java’s <code class="docutils literal notranslate"><span class="pre">if</span></code> , <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> keywords.</p>
 <p>A conditional block is an <code class="docutils literal notranslate"><span class="pre">if</span></code> block optionally followed by any number of <code class="docutils literal notranslate"><span class="pre">elif</span></code> blocks optionally followed by at most one <code class="docutils literal notranslate"><span class="pre">else</span></code> block.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IDE0XG5pZiB4IDwgMTA6XG4gICAgcHJpbnQoJ0EnKVxuZWxpZiB4ID49IDEzOlxuICAgIHByaW50KCdCJylcbmVsaWYgeCA%2BIDIwOlxuICAgIHByaW50KCdOb3QgcG9zc2libGUnKVxuZWxzZTpcbiAgICBwcmludCgnQycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">14</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">14</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">13</span><span class="p">:</span>
@@ -2148,10 +2145,8 @@ title="Print to PDF"
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This code prints <code class="docutils literal notranslate"><span class="pre">B</span></code> because the first <code class="docutils literal notranslate"><span class="pre">if</span></code> test fails ( <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> ) and then the second test succeeds ( <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">13</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> ) so we enter the second body.</p>
+</div>
+<p>This code prints <code class="docutils literal notranslate"><span class="pre">B</span></code> because the first <code class="docutils literal notranslate"><span class="pre">if</span></code> test fails ( <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> ) and then the second test succeeds ( <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">13</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> ) so we enter the second body.</p>
 <p>Two questions you should consider (you should think about these questions before expanding the output to see the answer!):</p>
 <ul class="simple">
 <li><p>What values of <code class="docutils literal notranslate"><span class="pre">x</span></code> enter the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement?</p></li>

@@ -8,7 +8,7 @@
 
 Consider the code block below and the question: Are `l1` and `l2` equal?
 
-```{snippet}
+```python
 l1 = [1, 2, 3]
 l2 = [1, 2, 3]
 ```
@@ -41,7 +41,7 @@ To capture these two notions of equality, Python has two ways to check "equals" 
 
 With that knowledge, you should try to predict what the following code block will output before running the code!
 
-```{snippet}
+```python
 l1 = [1, 2, 3]
 l2 = [1, 2, 3]
 l3 = l1

@@ -2134,58 +2134,38 @@ title="Print to PDF"
 </div>
 <p>In Lesson 8, we introduced a new <strong>library</strong> named <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . Recall that a library is some code someone else wrote and packaged up for us to use. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is a very popular library used by data scientists to process tabular data (i.e. data that comes from a spreadsheet).</p>
 <p>In the lecture, we saw the Earthquakes dataset stored in <code class="docutils literal notranslate"><span class="pre">earthquakes.csv</span></code> . To read that CSV into <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , we would run the code:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignZWFydGhxdWFrZXMuY3N2JylcblxucHJpbnQoZGYpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>We discussed the notion of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> having a notion of <strong>columns</strong> and <strong>rows</strong> . Each column has a <strong>column name</strong> that identifies it, while the rows have an <strong>index</strong> that lets you identify each row.</p>
+</div>
+<p>We discussed the notion of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> having a notion of <strong>columns</strong> and <strong>rows</strong> . Each column has a <strong>column name</strong> that identifies it, while the rows have an <strong>index</strong> that lets you identify each row.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/GfJqb4XtPdxZXyasISaKFK8I"><img alt="Image of a data table showing rows and columns. Column names are highlighted as &quot;columns&quot; and row labels are highlighted as &quot;index&quot;." class="align-center" src="https://static.us.edusercontent.com/files/GfJqb4XtPdxZXyasISaKFK8I" style="width: 744px;" /></a>
 <p>We saw that we can access the data columns from <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using the following syntax:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignZWFydGhxdWFrZXMuY3N2JylcblxucHJpbnQoZGZbJ2RheSddKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>We also saw we can use a <strong>mask</strong> to select which subset of the rows we want by filtering our data to rows that have some specific value. For example, if we want to find all the earthquakes in California from 2016, we would write</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignZWFydGhxdWFrZXMuY3N2JylcblxucHJpbnQoZGZbKGRmWyduYW1lJ10gPT0gJ0NhbGlmb3JuaWEnKSAmIChkZlsneWVhciddID09IDIwMTYpXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</div>
+<p>We also saw we can use a <strong>mask</strong> to select which subset of the rows we want by filtering our data to rows that have some specific value. For example, if we want to find all the earthquakes in California from 2016, we would write</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;California&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2016</span><span class="p">)])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>It can be much more readable to save the sub-parts of the query in variables so your query doesn’t all have to be in one line. For example, you can achieve the same results in a much more readable way like in the following cell.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignZWFydGhxdWFrZXMuY3N2JylcblxuaXNfY2FsaWZvcm5pYSA9IGRmWyduYW1lJ10gPT0gJ0NhbGlmb3JuaWEnXG5pc18yMDE2ID0gZGZbJ3llYXInXSA9PSAyMDE2XG5wcmludChkZltpc19jYWxpZm9ybmlhICYgaXNfMjAxNl0pIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</div>
+<p>It can be much more readable to save the sub-parts of the query in variables so your query doesn’t all have to be in one line. For example, you can achieve the same results in a much more readable way like in the following cell.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;earthquakes.csv&#39;</span><span class="p">)</span>
 
 <span class="n">is_california</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;California&#39;</span>
 <span class="n">is_2016</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2016</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">is_california</span> <span class="o">&amp;</span> <span class="n">is_2016</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><div class="warning admonition">
+</div>
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Remember: When you want to filter by multiple conditions using the
 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>

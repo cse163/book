@@ -22,7 +22,7 @@ while condition:
 
 For example, the code below shows an example of a very simple loop.
 
-```{snippet}
+```python
 x = 1
 while x < 100:
     print(x)

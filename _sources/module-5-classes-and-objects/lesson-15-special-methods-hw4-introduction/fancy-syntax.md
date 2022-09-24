@@ -19,7 +19,7 @@ It turns out that most of the common syntax in Python is really just "special me
 
 For example, here is a toy class that implements all of these methods to prove that they get called when you use the syntax shown above.
 
-```{snippet}
+```python
 class SomeClass:
     def __lt__(self, other):
         print('Calling __lt__')

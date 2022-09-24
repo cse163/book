@@ -2181,10 +2181,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>Python has a special value in the language called <code class="docutils literal notranslate"><span class="pre">None</span></code> to represent the absence of a value. It is common to use <code class="docutils literal notranslate"><span class="pre">None</span></code> to represent a result of an invalid query without throwing an explicit error.</p>
 <p>For example, suppose we had the following <code class="docutils literal notranslate"><span class="pre">increment</span></code> function that we decided should only increment positive values. You could write code to throw an error if it was given a negative value, but it’s very common in Python to instead return this “missing value” <code class="docutils literal notranslate"><span class="pre">None</span></code> .</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGluY3JlbWVudCh4KTpcbiAgICBcIlwiXCJcbiAgICBSZXR1cm5zIHRoZSB2YWx1ZSBvZiBpbmNyZW1lbnRpbmcgYSBub24tbmVnYXRpdmUgdmFsdWUgeCBieSAxLlxuICAgIElmIHggaXMgbmVnYXRpdmUsIHJldHVybnMgTm9uZS5cbiAgICBcIlwiXCJcbiAgICBpZiB4IDwgMDpcbiAgICAgICAgcmV0dXJuIE5vbmVcbiAgICBlbHNlOlxuICAgICAgICByZXR1cm4geCArIDFcblxuXG5wcmludChpbmNyZW1lbnQoMykpXG5wcmludChpbmNyZW1lbnQoLTMpKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the value of incrementing a non-negative value x by 1.</span>
 <span class="sd">    If x is negative, returns None.</span>
@@ -2198,10 +2195,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">increment</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">increment</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><div class="warning admonition">
+</div>
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Remember: for your take-home assessments, you should always write your code with the main-method pattern. We omit that in most of our lecture readings to keep these snippets shorter.</p>
 </div>
@@ -2210,10 +2205,7 @@ title="Print to PDF"
 <section id="checking-for-none">
 <h2>Checking for <code class="docutils literal notranslate"><span class="pre">None</span></code><a class="headerlink" href="#checking-for-none" title="Permalink to this headline">#</a></h2>
 <p>A very common task in Python is to check if a particular value is <code class="docutils literal notranslate"><span class="pre">None</span></code> or not. This is quite easy to do with the <code class="docutils literal notranslate"><span class="pre">is</span></code> keyword in Python. <code class="docutils literal notranslate"><span class="pre">is</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code> are quite similar and in this context, you could use either. We will see in a later lecture the difference between <code class="docutils literal notranslate"><span class="pre">is</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code> and we’ll understand why <code class="docutils literal notranslate"><span class="pre">is</span></code> is more common for comparing to <code class="docutils literal notranslate"><span class="pre">None</span></code> . For now just know that you use <code class="docutils literal notranslate"><span class="pre">is</span></code> for <code class="docutils literal notranslate"><span class="pre">None</span></code> checks and <code class="docutils literal notranslate"><span class="pre">==</span></code> for most other things.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGluY3JlbWVudCh4KTpcbiAgICBcIlwiXCJcbiAgICBSZXR1cm5zIHRoZSB2YWx1ZSBvZiBpbmNyZW1lbnRpbmcgYSBub24tbmVnYXRpdmUgdmFsdWUgeCBieSAxLlxuICAgIElmIHggaXMgbmVnYXRpdmUsIHJldHVybnMgTm9uZS5cbiAgICBcIlwiXCJcbiAgICBpZiB4IDwgMDpcbiAgICAgICAgcmV0dXJuIE5vbmVcbiAgICBlbHNlOlxuICAgICAgICByZXR1cm4geCArIDFcblxuXG54ID0gaW5jcmVtZW50KC0xKVxuaWYgeCBpcyBOb25lOlxuICAgIHByaW50KCdGYWlsZWQnKVxuZWxzZTpcbiAgICBwcmludCh4KVxuXG5cIlwiXCIgQWx0ZXJuYXRpdmVseSB5b3UgY291bGQgd3JpdGVcbmlmIHggaXMgbm90IE5vbmU6XG4gICAgcHJpbnQoeClcbmVsc2U6XG4gICAgcHJpbnQoJ0ZhaWxlZCcpXG5cIlwiXCIiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the value of incrementing a non-negative value x by 1.</span>
 <span class="sd">    If x is negative, returns None.</span>
@@ -2237,10 +2229,8 @@ title="Print to PDF"
 <span class="sd">    print(&#39;Failed&#39;)</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

@@ -2139,34 +2139,21 @@ title="Print to PDF"
 <a class="reference external" href="https://www.imdb.com/title/tt2543164/">Arrival</a>. Don’t write code where I have to feel like that. Write documentation in English (or whichever language you and your team work in) so people know how to use the code you write!</p>
 </div>
 <p>You can always use the <code class="docutils literal notranslate"><span class="pre">#</span></code> to leave a note in your code, but we are specifically going to talk about a special notion in Python called a <strong>doc-string</strong> that lets you add special documentation for a function. To do this, you use this special triple-quote string (i.e. <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">documentation</span> <span class="pre">&quot;&quot;&quot;</span></code> ) as the first lines of the function.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1lYW4oYSwgYik6XG4gICAgXCJcIlwiXG4gICAgUmV0dXJucyB0aGUgYXZlcmFnZSBvZiBhIGFuZCBiXG4gICAgXCJcIlwiXG4gICAgcmV0dXJuIChhICsgYikgLyAyIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the average of a and b</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Everything that goes inside these triple-quotes now becomes the documentation for a function.</p>
+</div>
+<p>Everything that goes inside these triple-quotes now becomes the documentation for a function.</p>
 <p>Why does it help to specify this special doc-string? Well Python has built-in tools to help you view the doc-strings for any function!</p>
 <p>Python provides a <code class="docutils literal notranslate"><span class="pre">help</span></code> function that lets you see the documentation for any function! For long documentation, it brings up a special viewer where you can move up/down with the keys <code class="docutils literal notranslate"><span class="pre">j</span></code> / <code class="docutils literal notranslate"><span class="pre">k</span></code> and you can quit with the key <code class="docutils literal notranslate"><span class="pre">q</span></code> .</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaGVscChwcmludCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>To see how this works with code you write, suppose I wrote the function with the following doc-string and asked for help on it.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGZ1bmN0aW9uX3dpdGhfZ29vZF9jb21tZW50KCk6XG4gICAgXCJcIlwiXG4gICAgVGhpcyBmdW5jdGlvbiBkb2VzIHNvbWUgcmVhbGx5IGNvb2wgc3R1ZmZcbiAgICBcIlwiXCJcbiAgICBwcmludCgnQUJDJylcblxuaGVscChmdW5jdGlvbl93aXRoX2dvb2RfY29tbWVudCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_good_comment</span><span class="p">():</span>
+</div>
+<p>To see how this works with code you write, suppose I wrote the function with the following doc-string and asked for help on it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_good_comment</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function does some really cool stuff</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2174,23 +2161,16 @@ title="Print to PDF"
 
 <span class="n">help</span><span class="p">(</span><span class="n">function_with_good_comment</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>What if instead of using the triple-quote docstring, I just put everything after a <code class="docutils literal notranslate"><span class="pre">#</span></code> comment since I’m more comfortable with that</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGZ1bmN0aW9uX3dpdGhfYmFkX2NvbW1lbnQoKTpcbiAgICAjIFRoaXMgZnVuY3Rpb24gZG9lcyBzb21lIHJlYWxseSBjb29sIHN0dWZmLCBidXQgd2l0aCBhIGJhZCBjb21tZW50XG4gICAgcHJpbnQoJ0FCQycpXG5cbmhlbHAoZnVuY3Rpb25fd2l0aF9iYWRfY29tbWVudCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_bad_comment</span><span class="p">():</span>
+</div>
+<p>What if instead of using the triple-quote docstring, I just put everything after a <code class="docutils literal notranslate"><span class="pre">#</span></code> comment since I’m more comfortable with that</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_bad_comment</span><span class="p">():</span>
     <span class="c1"># This function does some really cool stuff, but with a bad comment</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC&#39;</span><span class="p">)</span>
 
 <span class="n">help</span><span class="p">(</span><span class="n">function_with_bad_comment</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Unfortunately, it doesn’t show anything! This is why using the doc-string format is so important!</p>
+</div>
+<p>Unfortunately, it doesn’t show anything! This is why using the doc-string format is so important!</p>
 <p><strong>We will ask that every function you write has one of these doc-string comments describing what it does!</strong></p>
 </section>
 

@@ -2232,10 +2232,7 @@ title="Print to PDF"
 <h2>Grayscale Image Code<a class="headerlink" href="#grayscale-image-code" title="Permalink to this headline">#</a></h2>
 <p>We are going to use a library called <code class="docutils literal notranslate"><span class="pre">imageio</span></code> to help read in an image to a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. The following snippet reads in an image, prints some values about it, and then uses a slightly new <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> feature to plot an image from a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. We have to pass in a colormap <code class="docutils literal notranslate"><span class="pre">cmap</span></code> to tell <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to plot the values as grayscale since by default, it uses that yellow/purple color scheme (if you take out the parameter, you can see what it does when you run it!).</p>
 <p>The last example in the snippet modifies the array (using slice syntax). Before you open <code class="docutils literal notranslate"><span class="pre">pic2.png</span></code> , what do you think the image will look like?</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGltYWdlaW9cbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmltcG9ydCBudW1weSBhcyBucFxuXG4jIFJlYWQgaW4gdGhlIGltYWdlXG5wZW5ndWluID0gaW1hZ2Vpby5pbXJlYWQoJy9jb3Vyc2UvbGVjdHVyZS1yZWFkaW5ncy9wZW5ndWluLmpwZycpXG5cbiMgUHJpbnQgc29tZSB2YWx1ZXNcbnByaW50KCdTaGFwZScsIHBlbmd1aW4uc2hhcGUpXG5wcmludCgnVG9wLWxlZnQgcGl4ZWwnLCBwZW5ndWluWzAsIDBdKVxuXG4jIFBsb3QgaW1hZ2UgYW5kIHNhdmUgaXQgdG8gYSBmaWxlIChoYXZlIHRvIHNwZWNpZnkgdG8gcGxvdCBhcyBncmF5c2NhbGUpXG5wbHQuaW1zaG93KHBlbmd1aW4sIGNtYXA9cGx0LmNtLmdyYXkpXG5wbHQuc2F2ZWZpZygncGljMS5wbmcnKVxuXG4jIE1vZGlmeSB0aGUgbnVtcHkgYXJyYXkgYW5kIHNhdmUgdGhhdFxucGVuZ3VpblszNTA6NDAwLCA6XSA9IDEwMFxuXG4jIFBsb3QgaW1hZ2UgYW5kIHNhdmUgaXQgdG8gYSBmaWxlIChoYXZlIHRvIHNwZWNpZnkgdG8gcGxvdCBhcyBncmF5c2NhbGUpXG5wbHQuaW1zaG93KHBlbmd1aW4sIGNtYXA9cGx0LmNtLmdyYXkpXG5wbHQuc2F2ZWZpZygncGljMi5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -2257,10 +2254,8 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">penguin</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pic2.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 <section id="color-images">
 <h2>Color Images<a class="headerlink" href="#color-images" title="Permalink to this headline">#</a></h2>
 <p>Let’s brighten up the world a bit and switch to color images. A color image is commonly represented in a format called RGB. RGB stands for “Red, Blue, Green”. An RGB image is really just 3 “grayscale” images stacked on top of each other, but each sub-image corresponds to a particular color channel.</p>
@@ -2274,10 +2269,7 @@ title="Print to PDF"
 <section id="color-image-code">
 <h2>Color Image Code<a class="headerlink" href="#color-image-code" title="Permalink to this headline">#</a></h2>
 <p>We start with a simple example as we did with grayscale. Notice in this example, the shape printed has 3 dimensions and the third one has shape 3 (for the 3 color channels). As a note, we do not need to specify a <code class="docutils literal notranslate"><span class="pre">cmap</span></code> since <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> does the right thing for 3D <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s by default.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGltYWdlaW9cbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmltcG9ydCBudW1weSBhcyBucFxuXG4jIFJlYWQgaW4gdGhlIGltYWdlXG5kdWNrID0gaW1hZ2Vpby5pbXJlYWQoJ2R1Y2suanBnJylcblxuIyBQcmludCBzb21lIHZhbHVlc1xucHJpbnQoJ1NoYXBlJywgZHVjay5zaGFwZSlcbnByaW50KCdUb3AtbGVmdCBwaXhlbDogUmVkID0nLCBkdWNrWzAsIDAsIDBdKVxucHJpbnQoJ1RvcC1sZWZ0IHBpeGVsOiBHcmVuID0nLCBkdWNrWzAsIDAsIDFdKVxucHJpbnQoJ1RvcC1sZWZ0IHBpeGVsOiBCbHVlID0nLCBkdWNrWzAsIDAsIDJdKVxuXG4jIFBsb3QgaW1hZ2UgYW5kIHNhdmUgaXQgdG8gYSBmaWxlXG5wbHQuaW1zaG93KGR1Y2spXG5wbHQuc2F2ZWZpZygncGljMS5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -2294,14 +2286,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">duck</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pic1.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Now let’s do something slightly more complex where we modify the colors in the image. Notice in the last example we had to specify three values to index into the image. The same applies here. As we modify each section, we are setting one of the R, G, or B values respectively.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGltYWdlaW9cbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmltcG9ydCBudW1weSBhcyBucFxuXG4jIFJlYWQgaW4gdGhlIGltYWdlXG5kdWNrID0gaW1hZ2Vpby5pbXJlYWQoJ2R1Y2suanBnJylcblxuIyBSZW1vdmUgcmVkIGZyb20gYSByb3cgb2YgcGl4ZWxzXG5kdWNrWzEwMDoxNTAsIDosIDBdID0gMFxuXG4jIFJlbW92ZSBncmVlbiBmcm9tIGEgcm93IG9mIHBpeGVsc1xuZHVja1syMDA6MjUwLCA6LCAxXSA9IDBcblxuIyBNYWtlIGEgd2hpdGUgY29sdW1uIGJ5IHNldHRpbmcgYWxsIGNvbG9yIGNoYW5uZWxzIHRvIDBcbmR1Y2tbOiwgMTc1OjIwMCwgOl0gPSAyNTVcblxuIyBQbG90IGltYWdlIGFuZCBzYXZlIGl0IHRvIGEgZmlsZVxucGx0Lmltc2hvdyhkdWNrKVxucGx0LnNhdmVmaWcoJ3BpYzEucG5nJykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+</div>
+<p>Now let’s do something slightly more complex where we modify the colors in the image. Notice in the last example we had to specify three values to index into the image. The same applies here. As we modify each section, we are setting one of the R, G, or B values respectively.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -2321,10 +2308,8 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">duck</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pic1.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

@@ -4,7 +4,7 @@ For each of the following code block, count the number of steps using the rules 
 
 ## Question 0
 
-```{snippet}
+```python
 print(1 + 2)
 
 for i in range(25):
@@ -20,7 +20,7 @@ Write your answer down in your own space.
 
 ## Question 1
 
-```{snippet}
+```python
 for i in range(42):
     print(i)
 
@@ -39,7 +39,7 @@ Write your answer down in your own space.
 
 ## Question 2
 
-```{snippet}
+```python
 for i in range(10):
   <i class="far fa-edit fa-fw"></i>for j in range(20):
         print(i * j)

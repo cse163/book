@@ -10,7 +10,7 @@ The `countdown` function should take one `int` parameter for the starting point.
 
 Here are four example calls to the function and their output is shown after ( `print` statements included to space out output).
 
-```{snippet}
+```python
 countdown(60)
 print()
 countdown(15)

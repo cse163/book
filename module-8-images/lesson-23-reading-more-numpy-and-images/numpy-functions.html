@@ -2129,10 +2129,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="numpy-functions">
 <h1>numpy functions<a class="headerlink" href="#numpy-functions" title="Permalink to this headline">#</a></h1>
 <p>Consider the case where you have a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> and want to find the sums of the values. One way to do this is to write a loop over the array since arrays support iteration and it also supports the <code class="docutils literal notranslate"><span class="pre">len</span></code> function. For example, you could write this solution in two ways:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG51bXB5IGFzIG5wXG5cbnggPSBucC5hcmFuZ2UoMTApXG5cbiMgT3B0aW9uIDE6IEluZGV4aW5nIHdpdGggcmFuZ2VcbnJlc3VsdCA9IDBcbmZvciBpIGluIHJhbmdlKGxlbih4KSk6XG4gICAgcmVzdWx0ICs9IHhbaV1cbnByaW50KHJlc3VsdClcblxuIyBPcHRpb24gMjogSXRlcmF0aW5nIG92ZXIgYXJyYXlcbnJlc3VsdCA9IDBcbmZvciB2YWwgaW4geDpcbiAgICByZXN1bHQgKz0gdmFsXG5wcmludChyZXN1bHQpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
@@ -2148,14 +2145,9 @@ title="Print to PDF"
     <span class="n">result</span> <span class="o">+=</span> <span class="n">val</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>While this works, remember that whenever possible you want to avoid using loops since Python is slow. Conveniently, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> provides a <code class="docutils literal notranslate"><span class="pre">sum</span></code> function to take the sum for us. Like with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , this <code class="docutils literal notranslate"><span class="pre">numpy</span></code> code is written in that fast language C, so calling out to that is incredibly fast. Kind of confusingly, there are two common ways to call <code class="docutils literal notranslate"><span class="pre">sum</span></code> that are essentially equivalent. We show both since you will probably run into both.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG51bXB5IGFzIG5wXG5cbnggPSBucC5hcmFuZ2UoMTApXG5cbiMgT3B0aW9uIDE6IENhbGwgaXQgb24gdGhlIGFycmF5XG5yZXN1bHQgPSB4LnN1bSgpXG5wcmludChyZXN1bHQpXG5cbiMgT3B0aW9uIDI6IENhbGwgaXQgb24gbnVtcHlcbnJlc3VsdCA9IG5wLnN1bSh4KVxucHJpbnQocmVzdWx0KSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</div>
+<p>While this works, remember that whenever possible you want to avoid using loops since Python is slow. Conveniently, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> provides a <code class="docutils literal notranslate"><span class="pre">sum</span></code> function to take the sum for us. Like with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , this <code class="docutils literal notranslate"><span class="pre">numpy</span></code> code is written in that fast language C, so calling out to that is incredibly fast. Kind of confusingly, there are two common ways to call <code class="docutils literal notranslate"><span class="pre">sum</span></code> that are essentially equivalent. We show both since you will probably run into both.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
@@ -2167,10 +2159,8 @@ title="Print to PDF"
 <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Just like <code class="docutils literal notranslate"><span class="pre">sum</span></code> , <code class="docutils literal notranslate"><span class="pre">numpy</span></code> also provides functions for <code class="docutils literal notranslate"><span class="pre">min</span></code> , <code class="docutils literal notranslate"><span class="pre">max</span></code> , and <code class="docutils literal notranslate"><span class="pre">mean</span></code> which are also commonly used.</p>
+</div>
+<p>Just like <code class="docutils literal notranslate"><span class="pre">sum</span></code> , <code class="docutils literal notranslate"><span class="pre">numpy</span></code> also provides functions for <code class="docutils literal notranslate"><span class="pre">min</span></code> , <code class="docutils literal notranslate"><span class="pre">max</span></code> , and <code class="docutils literal notranslate"><span class="pre">mean</span></code> which are also commonly used.</p>
 </section>
 
     <script type="text/x-thebe-config">

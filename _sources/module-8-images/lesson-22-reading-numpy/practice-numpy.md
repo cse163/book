@@ -8,7 +8,7 @@ Recall that learning a new library can be a daunting task since there is just so
 
 What is the shape of the following `numpy.array`?
 
-```{snippet}
+```python
 np.arange(14)
 ```
 
@@ -22,7 +22,7 @@ Write your answer down in your own space.
 
 What is the shape of `m` in the following code block?
 
-```{snippet}
+```python
 x = np.arange(20).reshape((4, 5))
 m = x / 2 + 1
 ```
@@ -37,7 +37,7 @@ Write your answer down in your own space.
 
 What is the shape of `m` in the following code block?
 
-```{snippet}
+```python
 x = np.arange(20).reshape((4, 5))
 m = x[1:, 2:4]
 ```

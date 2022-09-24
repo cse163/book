@@ -2181,10 +2181,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>We have already seen how to make plots using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to make simple data visualizations and using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to customize the titles and axes. This week, we are going to explore <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> a little more in-depth so we can understand how to make even more rich visualizations.</p>
 <p>Before, when we were using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> , whenever we were plotting we were plotting on a global <strong>figure</strong> behind the scenes. Some of you might have experienced bugs on HW3 where you used different functions than we instructed. These bugs stem from how different functions interact with this figure. Just like <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> , <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has a way to make simple plots that, by default, also plot on a global figure. Take the following toy-example:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLkRhdGFGcmFtZSh7XG4gICAgJ2EnOiBbMSwgMiwgM10sXG4gICAgJ2InOiBbMSwgMiwgM10sXG4gICAgJ2MnOiBbMywgMiwgMV1cbn0pXG5cbmRmLnBsb3QoeD0nYScsIHk9J2InKVxuZGYucGxvdCh4PSdhJywgeT0nYycpXG5cbnBsdC5zYXZlZmlnKCdwbG90LnBuZycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -2198,15 +2195,10 @@ title="Print to PDF"
 
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This only produced one plot because the second one overwrote the first one on this global figure! If we want to plot these on the same figure, we would need something a little more complex.</p>
+</div>
+<p>This only produced one plot because the second one overwrote the first one on this global figure! If we want to plot these on the same figure, we would need something a little more complex.</p>
 <p>A <strong>figure</strong> is a <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> term for a canvas to store the drawings. A <strong>figure</strong> may have one or more <strong>axes</strong> and each <strong>axes</strong> can have multiple plots drawn on them. You can make very interesting visualizations by putting multiple <strong>axes</strong> on a single <strong>figure</strong>. Instead of using the default-global figure from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, we have a way to create our own using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. The code looks like the following.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLkRhdGFGcmFtZSh7XG4gICAgJ2EnOiBbMSwgMiwgM10sXG4gICAgJ2InOiBbMSwgMiwgM10sXG4gICAgJ2MnOiBbMywgMiwgMV1cbn0pXG5cbiMgTWFrZSBhIGZpZ3VyZSB3aXRoIG9uZSBheGlzXG5maWcsIGF4ID0gcGx0LnN1YnBsb3RzKDEpXG5cbiMgVXNlIHRoZSBzcGVjaWFsIHBhcmFtIGBheGAgdG8gdGVsbCBwYW5kYXMgd2hpY2ggYXhpcyB0byBkcmF3IG9uXG5kZi5wbG90KHg9J2EnLCB5PSdiJywgYXg9YXgpXG5kZi5wbG90KHg9J2EnLCB5PSdjJywgYXg9YXgpXG5cbiMgQXNrIHRoZSBmaWd1cmUgdG8gc2F2ZSBpdHNlbGZcbmZpZy5zYXZlZmlnKCdwbG90LnBuZycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -2225,18 +2217,13 @@ title="Print to PDF"
 <span class="c1"># Ask the figure to save itself</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice that the code is mostly the same, but now we explicitly tell <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to plot on the axis we created. The <code class="docutils literal notranslate"><span class="pre">ax</span></code> parameter for <code class="docutils literal notranslate"><span class="pre">plot</span></code> instructs the plotter to use that particular axis to draw on.</p>
+</div>
+<p>Notice that the code is mostly the same, but now we explicitly tell <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to plot on the axis we created. The <code class="docutils literal notranslate"><span class="pre">ax</span></code> parameter for <code class="docutils literal notranslate"><span class="pre">plot</span></code> instructs the plotter to use that particular axis to draw on.</p>
 <section id="subplots">
 <h2>Subplots<a class="headerlink" href="#subplots" title="Permalink to this headline">#</a></h2>
 <p>From what we have seen so far, it’s not very clear why we need to distinguish between a figure and axis. It becomes more clear when you want multiple axes on a single figure. You should think of the figure being the whole window that you can plot in and each axis as being a single set of x/y axes. If you wanted two plots side-by-side, you would have one figure and two axes.</p>
 <p>For example, to plot the same graphs as above side-by-side, we could write code like the following.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLkRhdGFGcmFtZSh7XG4gICAgJ2EnOiBbMSwgMiwgM10sXG4gICAgJ2InOiBbMSwgMiwgM10sXG4gICAgJ2MnOiBbMywgMiwgMV1cbn0pXG5cbiMgTWFrZSBhIGZpZ3VyZSB3aXRoIG9uZSBheGlzXG5maWcsIFtheDEsIGF4Ml0gPSBwbHQuc3VicGxvdHMoMilcblxuIyBVc2UgdGhlIHNwZWNpYWwgcGFyYW0gYGF4YCB0byB0ZWxsIHBhbmRhcyB3aGljaCBheGlzIHRvIGRyYXcgb25cbmRmLnBsb3QoeD0nYScsIHk9J2InLCBheD1heDEpXG5kZi5wbG90KHg9J2EnLCB5PSdjJywgYXg9YXgyKVxuXG4jIEFzayB0aGUgZmlndXJlIHRvIHNhdmUgaXRzZWxmXG5maWcuc2F2ZWZpZygncGxvdC5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -2255,15 +2242,10 @@ title="Print to PDF"
 <span class="c1"># Ask the figure to save itself</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The <code class="docutils literal notranslate"><span class="pre">subplots</span></code> call returns a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and a list of <code class="docutils literal notranslate"><span class="pre">Axes</span></code> objects. In this case, we asked for a subplot with 2 <code class="docutils literal notranslate"><span class="pre">Axes</span></code> objects, so it returned them as a list. We had each call to <code class="docutils literal notranslate"><span class="pre">plot</span></code> use a different <code class="docutils literal notranslate"><span class="pre">Axes</span></code> to draw on. The <code class="docutils literal notranslate"><span class="pre">Figure</span></code> still holds both of the <code class="docutils literal notranslate"><span class="pre">Axes</span></code> , so to save the figure we will ask the <code class="docutils literal notranslate"><span class="pre">Figure</span></code> to do that.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">subplots</span></code> call returns a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and a list of <code class="docutils literal notranslate"><span class="pre">Axes</span></code> objects. In this case, we asked for a subplot with 2 <code class="docutils literal notranslate"><span class="pre">Axes</span></code> objects, so it returned them as a list. We had each call to <code class="docutils literal notranslate"><span class="pre">plot</span></code> use a different <code class="docutils literal notranslate"><span class="pre">Axes</span></code> to draw on. The <code class="docutils literal notranslate"><span class="pre">Figure</span></code> still holds both of the <code class="docutils literal notranslate"><span class="pre">Axes</span></code> , so to save the figure we will ask the <code class="docutils literal notranslate"><span class="pre">Figure</span></code> to do that.</p>
 <p><code class="docutils literal notranslate"><span class="pre">subplots</span></code> is actually really generic in the sense that you can make as many axes as you want! <code class="docutils literal notranslate"><span class="pre">subplots</span></code> takes two optional parameters <code class="docutils literal notranslate"><span class="pre">nrows</span></code> and <code class="docutils literal notranslate"><span class="pre">ncols</span></code> to specify how many rows and columns of axes you want. The returned list of <code class="docutils literal notranslate"><span class="pre">Axes</span></code> will be a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">lists</span></code> if you ask for multiple rows and multiple columns.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuXG5maWcsIGF4cyA9IHBsdC5zdWJwbG90cyhucm93cz0zLCBuY29scz0yKVxucHJpbnQoYXhzKVxuXG5wcmludCgnTnVtIHJvd3MnLCBsZW4oYXhzKSlcbnByaW50KCdOdW0gY29scycsIGxlbihheHNbMV0pKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">axs</span><span class="p">)</span>
@@ -2271,10 +2253,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Num rows&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axs</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Num cols&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>If you wanted to visualize this return value, it would look something like this:</p>
+</div>
+<p>If you wanted to visualize this return value, it would look something like this:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[
   [ax1, ax2]
   [ax3, ax4]
@@ -2289,10 +2269,7 @@ title="Print to PDF"
 <section id="subplots-examples">
 <h2>Subplots Examples<a class="headerlink" href="#subplots-examples" title="Permalink to this headline">#</a></h2>
 <p>There are generally two ways of working with axes return of <code class="docutils literal notranslate"><span class="pre">subplots</span></code> , index into it or unpack it. For example, the following snippet shows how to make two small plots using both styles.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG4jIE1ha2UgdGhlIGRhdGFcbmRmID0gcGQuRGF0YUZyYW1lKHtcbiAgICAnYSc6IFsxLCAyLCAzXSxcbiAgICAnYic6IFsxLCAyLCAzXSxcbiAgICAnYyc6IFszLCAyLCAxXVxufSlcblxuIyBPcHRpb24gMTogSW5kZXggaW50byB0aGUgc3RydWN0dXJlXG5maWcsIGF4cyA9IHBsdC5zdWJwbG90cyhucm93cz0yKVxuZGYucGxvdCh4PSdhJywgeT0nYicsIGF4PWF4c1swXSlcbmRmLnBsb3QoeD0nYScsIHk9J2MnLCBheD1heHNbMV0pXG5maWcuc2F2ZWZpZygnb3B0aW9uMS5wbmcnKVxuXG4jIE9wdGlvbiAyOiBVbnBhY2sgdGhlIGF4ZXNcbmZpZywgW2F4MSwgYXgyXSA9IHBsdC5zdWJwbG90cyhucm93cz0yKVxuZGYucGxvdCh4PSdhJywgeT0nYicsIGF4PWF4MSlcbmRmLnBsb3QoeD0nYScsIHk9J2MnLCBheD1heDIpXG5maWcuc2F2ZWZpZygnb3B0aW9uMi5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the data</span>
@@ -2314,15 +2291,10 @@ title="Print to PDF"
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;option2.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Usually either suffices, but if you start getting more than 4 or so plots, the second option becomes unwieldy. Below, we show a similar example but with a 2x2 plot.</p>
+</div>
+<p>Usually either suffices, but if you start getting more than 4 or so plots, the second option becomes unwieldy. Below, we show a similar example but with a 2x2 plot.</p>
 <p>Before you run the code snippet below, think about what the final plot should look like; when we plot <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> , it is a line with a positive slope ( <code class="docutils literal notranslate"><span class="pre">/</span></code> ) and when we plot <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code> , it is a line with a negative slope ( <code class="docutils literal notranslate"><span class="pre">\</span></code> ).</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG4jIE1ha2UgdGhlIGRhdGFcbmRmID0gcGQuRGF0YUZyYW1lKHtcbiAgICAnYSc6IFsxLCAyLCAzXSxcbiAgICAnYic6IFsxLCAyLCAzXSxcbiAgICAnYyc6IFszLCAyLCAxXVxufSlcblxuIyBPcHRpb24gMTogSW5kZXggaW50byB0aGUgc3RydWN0dXJlXG5maWcsIGF4cyA9IHBsdC5zdWJwbG90cyhucm93cz0yLCBuY29scz0yKVxuZGYucGxvdCh4PSdhJywgeT0nYicsIGF4PWF4c1swLCAwXSkgICMgVG9wLWxlZnRcbmRmLnBsb3QoeD0nYScsIHk9J2MnLCBheD1heHNbMCwgMV0pICAjIFRvcC1yaWdodFxuZGYucGxvdCh4PSdhJywgeT0nYycsIGF4PWF4c1sxLCAwXSkgICMgQm90dG9tLWxlZnRcbmRmLnBsb3QoeD0nYScsIHk9J2InLCBheD1heHNbMSwgMV0pICAjIEJvdHRvbS1yaWdodFxuZmlnLnNhdmVmaWcoJ29wdGlvbjEucG5nJylcblxuIyBPcHRpb24gMjogVW5wYWNrIHRoZSBheGVzXG5maWcsIFtbYXgxLCBheDJdLCBbYXgzLCBheDRdXSA9IHBsdC5zdWJwbG90cyhucm93cz0yLCBuY29scz0yKVxuZGYucGxvdCh4PSdhJywgeT0nYicsIGF4PWF4MSkgICMgVG9wLWxlZnRcbmRmLnBsb3QoeD0nYScsIHk9J2MnLCBheD1heDIpICAjIFRvcC1yaWdodFxuZGYucGxvdCh4PSdhJywgeT0nYycsIGF4PWF4MykgICMgQm90dG9tLWxlZnRcbmRmLnBsb3QoeD0nYScsIHk9J2InLCBheD1heDQpICAjIEJvdHRvbS1yaWdodFxuZmlnLnNhdmVmaWcoJ29wdGlvbjIucG5nJykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the data</span>
@@ -2348,10 +2320,8 @@ title="Print to PDF"
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax4</span><span class="p">)</span>  <span class="c1"># Bottom-right</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;option2.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

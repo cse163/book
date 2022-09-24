@@ -16,7 +16,7 @@ The last data structure we are going to learn in this lesson is called a diction
 
 To create a `dict` in Python, you use the syntax in the following snippet. Note that `dict` supports the square-bracket notation for accessing a value, but now you can use any value for the index. In fact, `dict` uses a different term for the index to reduce confusion with `list` s: we call the "index" of an entry in a `dict` its **key**. We describe a `dict` as a bunch of key/value pairs that are accessible via the key.
 
-```{snippet}
+```python
 d = {'a': 1, 'b': 17, 47: 'scurvy'}
 print(d)
 # This makes a dictionary with the following keys/values:
@@ -39,7 +39,7 @@ The nice thing is you have a pretty solid understanding of how to use a `dict` a
 
 If you try to look up a key that is not in the `dict` , you will run into a `KeyError` , as shown in the following snippet. As a note, we also show how to make an empty `dict` with the syntax `{}` (just like an empty `list` is `[]` ).
 
-```{snippet}
+```python
 d = {}
 d['dogs'] = 'very cute'
 print(d['cats'])
@@ -47,7 +47,7 @@ print(d['cats'])
 
 To prevent this error, you can use the `in` keyword to see if a key is in a `dict` before trying to access it.
 
-```{snippet}
+```python
 d = {}
 d['dogs'] = 'very cute'
 if 'cats' in d:
@@ -62,7 +62,7 @@ Imagine we had a list of strings, and we wanted to find the sum of the word leng
 
 This seems like the task of a `dict` where the keys are the first letters of the words, and the values are the sum of the lengths. Let's try to write a function to use the things we have seen so far to do this!
 
-```{snippet}
+```python
 def count_lengths(words):
     counts = {}
     for word in words:
@@ -85,7 +85,7 @@ To fix this, we need to introduce a common pattern when working with `dict` s. I
 
 Depending on which case you are in, you need to write different code to handle the fact that the key is not present in the `dict` in the first case. We can easily fix this by introducing a check that uses `in` , but the pattern does look a bit odd at first. All of the added code is inside the loop, and is there to avoid getting this `KeyError` .
 
-```{snippet}
+```python
 def count_lengths(words):
     counts = {}
     for word in words:

@@ -2243,10 +2243,7 @@ nums.add(21)
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h2>
 <p>Consider the class definition for a <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class below. Which of the following implementations of <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> is the best, in the sense that it is functional and does the best job at meeting the properties of a good hash function</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgRG9nOlxuXG4gICAgZGVmIF9faW5pdF9fKHNlbGYsIG5hbWUsIGFnZSk6XG4gICAgICAgIHNlbGYuX25hbWUgPSBuYW1lXG4gICAgICAgIHNlbGYuX2FnZSA9IGFnZVxuXG4gICAgZGVmIF9fZXFfXyhzZWxmLCBvdGhlcik6XG4gICAgICAgIHJldHVybiBzZWxmLl9uYW1lID09IG90aGVyLl9uYW1lIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
@@ -2255,53 +2252,31 @@ nums.add(21)
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_name</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
+</div>
+<p><strong><i class="far fa-edit fa-fw"></i> Your Task</strong></p>
 <p>Select one option. Write your answer down in your own space.</p>
 <p><em><i class="far fa-circle fa-fw"></i> Option 0</em></p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIF9faGFzaF9fKHNlbGYpOlxuICAgIHJldHVybiBoYXNoKHNlbGYuX25hbWUpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p><em><i class="far fa-circle fa-fw"></i> Option 1</em></p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIF9faGFzaF9fKHNlbGYpOlxuICAgIHJldHVybiAwIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</div>
+<p><em><i class="far fa-circle fa-fw"></i> Option 1</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">0</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p><em><i class="far fa-circle fa-fw"></i> Option 2</em></p>
+</div>
+<p><em><i class="far fa-circle fa-fw"></i> Option 2</em></p>
 <p>Assume <code class="docutils literal notranslate"><span class="pre">random</span></code> is a function that generates a random number.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIF9faGFzaF9fKHNlbGYpOlxuICAgIHJldHVybiBoYXNoKHNlbGYuX25hbWUpICsgcmFuZG9tKCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span> <span class="o">+</span> <span class="n">random</span><span class="p">()</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p><em><i class="far fa-circle fa-fw"></i> Option 3</em></p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIF9faGFzaF9fKHNlbGYpOlxuICAgIHJldHVybiBoYXNoKHNlbGYuX25hbWUpICsgaGFzaChzZWxmLl9hZ2UpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</div>
+<p><em><i class="far fa-circle fa-fw"></i> Option 3</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span> <span class="o">+</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_age</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

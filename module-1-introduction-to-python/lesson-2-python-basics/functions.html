@@ -2207,24 +2207,14 @@ title="Print to PDF"
 <h2>Functions<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>A <strong>function</strong> is a named procedure with a series of instructions that can be <strong>called</strong> in your program to execute those instructions.</p>
 <p>To call a function, you use its name and use <code class="docutils literal notranslate"><span class="pre">()</span></code> after it to make it a call. For example, <code class="docutils literal notranslate"><span class="pre">print</span></code> is actually a function defined by Python, so a “print statement” is really just calling this <code class="docutils literal notranslate"><span class="pre">print</span></code> function.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicHJpbnQoKSAgIyBQcmludHMgYSBibGFuayBsaW5lIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>  <span class="c1"># Prints a blank line</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>  <span class="c1"># Prints a blank line</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>As we saw earlier, we can pass <strong>parameters</strong> to this function call to give it inputs. For example, the <code class="docutils literal notranslate"><span class="pre">print</span></code> function takes parameters for the things to print.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicHJpbnQoJ0hlbGxvIHdvcmxkIScpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
+</div>
+<p>As we saw earlier, we can pass <strong>parameters</strong> to this function call to give it inputs. For example, the <code class="docutils literal notranslate"><span class="pre">print</span></code> function takes parameters for the things to print.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Functions defined by Python are commonly called <strong>built-in</strong> functions. Some examples of built-in functions we will use commonly in CSE 163 are:</p>
+</div>
+<p>Functions defined by Python are commonly called <strong>built-in</strong> functions. Some examples of built-in functions we will use commonly in CSE 163 are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">print</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">range</span></code></p></li>
@@ -2239,67 +2229,44 @@ title="Print to PDF"
 </li>
 </ul>
 <p>Many functions can also <strong>return</strong> a value from their computation. For example <code class="docutils literal notranslate"><span class="pre">min</span></code> returns the minimum value of its inputs. You can do some more complex operations by combining the inputs and outputs of various functions like in the snippet below:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IG1pbig0LCA3KSAgIyB4IHdpbGwgc3RvcmUgNCAodGhlIHJldHVybiB2YWx1ZSBvZiB0aGlzIGZ1bmN0aW9uKVxueSA9IG1heCg1LCB4KSAgIyB5IHdpbGwgc3RvcmUgNSAodGhlIHJldHVybiB2YWx1ZSBvZiB0aGlzIGZ1bmN0aW9uKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># x will store 4 (the return value of this function)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># x will store 4 (the return value of this function)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># y will store 5 (the return value of this function)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 <section id="define-your-own-functions">
 <h2>Define your own Functions<a class="headerlink" href="#define-your-own-functions" title="Permalink to this headline">#</a></h2>
 <p>In the following snippet, we show how to define a function called <code class="docutils literal notranslate"><span class="pre">greetings</span></code> .</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGdyZWV0aW5ncygpOlxuICAgIHByaW50KCdob2xhIScpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greetings</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greetings</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hola!&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Note that by putting nothing in the parentheses, we are saying it takes no parameters.</p>
+</div>
+<p>Note that by putting nothing in the parentheses, we are saying it takes no parameters.</p>
 <p>To call the function, you need to actually use a function call like we showed before!</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGdyZWV0aW5ncygpOlxuICAgIHByaW50KCdob2xhIScpXG5cbmdyZWV0aW5ncygpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greetings</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greetings</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hola!&#39;</span><span class="p">)</span>
 
 <span class="n">greetings</span><span class="p">()</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><section id="defining-parameters-or-returns">
+</div>
+<section id="defining-parameters-or-returns">
 <h3>Defining Parameters or Returns<a class="headerlink" href="#defining-parameters-or-returns" title="Permalink to this headline">#</a></h3>
 <p>If you want to define a function that takes parameters, you put variable names in between the <code class="docutils literal notranslate"><span class="pre">()</span></code> for each parameter you want the function to take. If you want the function to return a value, you use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement like the example below.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1lYW4oYSwgYik6XG4gICAgcHJpbnQoJ0NhbGxpbmcgbWVhbiB3aXRoJywgYSwgYilcbiAgICByZXR1cm4gKGEgKyBiKSAvIDJcblxuXG5tZWFuKDEsIDIpICAjIEhhdmUgdG8gY2FsbCBpdCBwYXNzaW5nIGluIHR3byBwYXJhbWV0ZXJzISIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calling mean with&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
 
 <span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Have to call it passing in two parameters!</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 <section id="functions-in-context">
 <h2>Functions in Context<a class="headerlink" href="#functions-in-context" title="Permalink to this headline">#</a></h2>
 <p>Recall that we said our reading snippets normally don’t show the main-method pattern. We make an exception in the next snippet to show a full Python program.</p>
 <p>Notice, we are having you define a function called <code class="docutils literal notranslate"><span class="pre">main</span></code> by saying <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">main():</span></code> ! The <code class="docutils literal notranslate"><span class="pre">mean</span></code> function only gets called when we are actually running the program and the <code class="docutils literal notranslate"><span class="pre">main</span></code> method calls it.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1lYW4oYSwgYik6XG4gICAgcHJpbnQoJ0NhbGxpbmcgbWVhbiB3aXRoJywgYSwgYilcbiAgICByZXR1cm4gKGEgKyBiKSAvIDJcblxuXG5kZWYgbWFpbigpOlxuICAgIHByaW50KCdUaGUgbWVhbiBvZiAxIGFuZCAyIGlzOicpXG4gICAgcHJpbnQobWVhbigxLCAyKSlcblxuXG4jIFRoZSB3ZWlyZCBtYWluLW1ldGhvZCBwYXR0ZXJuIHN5bnRheCFcbmlmIF9fbmFtZV9fID09ICdfX21haW5fXyc6XG4gICAgbWFpbigpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calling mean with&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
@@ -2313,10 +2280,8 @@ title="Print to PDF"
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

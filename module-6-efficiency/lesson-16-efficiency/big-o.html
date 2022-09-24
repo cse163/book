@@ -2206,10 +2206,7 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <p>Now that we feel a little bit more comfortable counting steps, we can go back to trying to compare <code class="docutils literal notranslate"><span class="pre">sum1</span></code> and <code class="docutils literal notranslate"><span class="pre">sum2</span></code> . Recall these functions were defined as:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIHN1bTEobik6XG4gICAgdG90YWwgPSAwXG4gICAgZm9yIGkgaW4gcmFuZ2UobiArIDEpOlxuICAgICAgICB0b3RhbCArPSBpXG4gICAgcmV0dXJuIHRvdGFsXG5cblxuZGVmIHN1bTIobik6XG4gICAgcmV0dXJuIG4gKiAobiArIDEpIC8vIDIiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
@@ -2219,15 +2216,10 @@ title="Print to PDF"
 <span class="k">def</span> <span class="nf">sum2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>To answer the question of how many steps it takes to run these functions, we now need to talk about the number of steps in terms of the input <code class="docutils literal notranslate"><span class="pre">n</span></code> (since the number of steps might depend on <code class="docutils literal notranslate"><span class="pre">n</span></code> ).</p>
+</div>
+<p>To answer the question of how many steps it takes to run these functions, we now need to talk about the number of steps in terms of the input <code class="docutils literal notranslate"><span class="pre">n</span></code> (since the number of steps might depend on <code class="docutils literal notranslate"><span class="pre">n</span></code> ).</p>
 <p>Below, we annotate the code with step counting.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIHN1bTEobik6ICAgICAgICAgICAgICAgICAjIFRvdGFsOiBuICsgMyBzdGVwc1xuICAgIHRvdGFsID0gMCAgICAgICAgICAgICAgICAjIDEgc3RlcFxuICAgIGZvciBpIGluIHJhbmdlKG4gKyAxKTogICAjIFJ1bnMgbiArIDEgdGltZXMsIGZvciBhIHRvdGFsIG9mIG4gKyAxXG4gICAgICAgIHRvdGFsICs9IGkgICAgICAgICAgICMgICAxIHN0ZXBcbiAgICByZXR1cm4gdG90YWwgICAgICAgICAgICAgIyAxIHN0ZXBcblxuXG5kZWYgc3VtMihuKTogICAgICAgICAgICAgICAgICMgVG90YWw6IDEgc3RlcFxuICAgIHJldHVybiBuICogKG4gKyAxKSAvLyAyICAjIDEgc3RlcCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># Total: n + 3 steps</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># Total: n + 3 steps</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># 1 step</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>   <span class="c1"># Runs n + 1 times, for a total of n + 1</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>           <span class="c1">#   1 step</span>
@@ -2237,10 +2229,8 @@ title="Print to PDF"
 <span class="k">def</span> <span class="nf">sum2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># Total: 1 step</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># 1 step</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>So with this counting rule, <code class="docutils literal notranslate"><span class="pre">sum1(n)</span></code> runs in <code class="docutils literal notranslate"><span class="pre">n+3</span></code> steps while <code class="docutils literal notranslate"><span class="pre">sum2(n)</span></code> always runs in <code class="docutils literal notranslate"><span class="pre">1</span></code> step!</p>
+</div>
+<p>So with this counting rule, <code class="docutils literal notranslate"><span class="pre">sum1(n)</span></code> runs in <code class="docutils literal notranslate"><span class="pre">n+3</span></code> steps while <code class="docutils literal notranslate"><span class="pre">sum2(n)</span></code> always runs in <code class="docutils literal notranslate"><span class="pre">1</span></code> step!</p>
 <p>Amazingly, this weird counting rule matches the graph that we produced earlier with timing code! We saw that <code class="docutils literal notranslate"><span class="pre">sum1</span></code> grew proportionally to its input <code class="docutils literal notranslate"><span class="pre">n</span></code> while <code class="docutils literal notranslate"><span class="pre">sum2</span></code> always seemed about the same. With these counting rules, it’s easier to come to that conclusion without having to go through the process of actually timing the code!</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/UEmjcGL60KC1zovZQd88i3Q4"><img alt="Graph showing runtime of sum1 and sum2 functions. sum1 is a linear function that takes more time as n increases while sum2 is a flat line that always takes &lt; 0.1 seconds to complete" class="align-center" src="https://static.us.edusercontent.com/files/UEmjcGL60KC1zovZQd88i3Q4" style="width: 640px;" /></a>
 <section id="reporting-steps">
@@ -2255,10 +2245,7 @@ title="Print to PDF"
 <section id="another-example">
 <h3>Another Example<a class="headerlink" href="#another-example" title="Permalink to this headline">#</a></h3>
 <p>Consider the folllwing snippet.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1ldGhvZChuKTpcbiAgICByZXN1bHQgPSAwXG4gICAgcHJpbnQoJ1N0YXJ0aW5nIG1ldGhvZCcpXG4gICAgZm9yIGkgaW4gcmFuZ2UoOSk6XG4gICAgICAgIGZvciBqIGluIHJhbmdlKG4pOlxuICAgICAgICAgICAgcmVzdWx0ICs9IGkgKiBqXG4gICAgICAgICAgICBwcmludChyZXN1bHQpXG4gICAgcmV0dXJuIHJlc3VsdCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Starting method&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
@@ -2267,10 +2254,8 @@ title="Print to PDF"
             <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>What is the run-time of this function in Big-O notation? Students will commonly come up with an answer like <span class="math notranslate nohighlight">\(\mathcal{O}(2n^2 + 3)\)</span> which is not correct on two counts:</p>
+</div>
+<p>What is the run-time of this function in Big-O notation? Students will commonly come up with an answer like <span class="math notranslate nohighlight">\(\mathcal{O}(2n^2 + 3)\)</span> which is not correct on two counts:</p>
 <ul class="simple">
 <li><p>The first is a common misconception where people assume nested loops mean something like <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>. This is not the case! This is only true if both loops run <span class="math notranslate nohighlight">\(n\)</span> times! In this case, the outer loop runs 9 times and the inner-loop runs <span class="math notranslate nohighlight">\(n\)</span> times so it will be something on the order of <span class="math notranslate nohighlight">\(9n\)</span> steps, not <span class="math notranslate nohighlight">\(n^2\)</span> steps!</p></li>
 <li><p>The second is that when you report a Big-O result, you should always drop constants in front of terms and lower-order terms. This formula for steps is wrong in the first place, but assuming it was correct, you would report <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> after dropping the constants and lower-order terms.</p></li>

@@ -2170,50 +2170,35 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <p>In our next example, we will need to use a very useful function in Python called <code class="docutils literal notranslate"><span class="pre">zip</span></code> . It takes two lists and “zips” them up so you can iterate over pairs of elements from both lists. This is much clearer with an example.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IFsxLDIsM11cbnkgPSBbNCw1LDZdXG56ID0gemlwKHgsIHkpXG5cbmZvciBwIGluIHo6XG4gICAgcHJpbnQocCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
 <span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The result of a <code class="docutils literal notranslate"><span class="pre">zip</span></code> is pairs of values from each list! The first values from both lists, then the second values, then the third, and so on. This can be clearer by looking at this picture showing the result of <code class="docutils literal notranslate"><span class="pre">zip</span></code></p>
+</div>
+<p>The result of a <code class="docutils literal notranslate"><span class="pre">zip</span></code> is pairs of values from each list! The first values from both lists, then the second values, then the third, and so on. This can be clearer by looking at this picture showing the result of <code class="docutils literal notranslate"><span class="pre">zip</span></code></p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/h3Jlor1N0B1k8kobm1o9vClc"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/h3Jlor1N0B1k8kobm1o9vClc" style="width: 666px;" /></a>
 <section id="warning">
 <h2>Warning<a class="headerlink" href="#warning" title="Permalink to this headline">#</a></h2>
 <p>It turns out the return type of <code class="docutils literal notranslate"><span class="pre">zip</span></code> is not actually a <code class="docutils literal notranslate"><span class="pre">list</span></code> of these pairs! Try printing out the result of <code class="docutils literal notranslate"><span class="pre">zip</span></code> .</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IFsxLCAyLCAzXVxueSA9IFs0LCA1LCA2XVxueiA9IHppcCh4LCB5KVxucHJpbnQoeikiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>It returns a special <code class="docutils literal notranslate"><span class="pre">zip</span></code> object (also called <code class="docutils literal notranslate"><span class="pre">zip</span></code> ) instead of a <code class="docutils literal notranslate"><span class="pre">list</span></code> ! The <code class="docutils literal notranslate"><span class="pre">zip</span></code> object is what we call a <strong>generator</strong>. It’s like a <code class="docutils literal notranslate"><span class="pre">list</span></code> in the sense that it is a sequence of values you can iterate over in a loop, but it’s different because you can’t actually index into it! Try editing the last block to <code class="docutils literal notranslate"><span class="pre">print(z[1])</span></code> to see that this fails.</p>
+</div>
+<p>It returns a special <code class="docutils literal notranslate"><span class="pre">zip</span></code> object (also called <code class="docutils literal notranslate"><span class="pre">zip</span></code> ) instead of a <code class="docutils literal notranslate"><span class="pre">list</span></code> ! The <code class="docutils literal notranslate"><span class="pre">zip</span></code> object is what we call a <strong>generator</strong>. It’s like a <code class="docutils literal notranslate"><span class="pre">list</span></code> in the sense that it is a sequence of values you can iterate over in a loop, but it’s different because you can’t actually index into it! Try editing the last block to <code class="docutils literal notranslate"><span class="pre">print(z[1])</span></code> to see that this fails.</p>
 <p>The reason <code class="docutils literal notranslate"><span class="pre">zip</span></code> does not return a <code class="docutils literal notranslate"><span class="pre">list</span></code> is that the operation is <strong>lazy</strong>. It doesn’t want to compute the entire sequence of values right away and, instead, waits to compute the pairs as needed. This is exactly like the <code class="docutils literal notranslate"><span class="pre">range</span></code> function! It does not produce a <code class="docutils literal notranslate"><span class="pre">list</span></code> of numbers, but instead is a generator of them.</p>
 <p>A common trick if you want to get all the pairs into a list would be to just convert it to a <code class="docutils literal notranslate"><span class="pre">list</span></code> manually like in the block below.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IFsxLCAyLCAzXVxueSA9IFs0LCA1LCA2XVxueiA9IGxpc3QoemlwKHgsIHkpKVxucHJpbnQoeikiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">z</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

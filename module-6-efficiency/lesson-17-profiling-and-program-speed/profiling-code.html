@@ -2170,10 +2170,7 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <p>Think back to our example of finding the maximum difference between elements in a list.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1heF9kaWZmMShudW1zKTpcbiAgICAjIEZpbmQgdGhlIG1heCBkaWZmZXJlbmNlIGJldHdlZW4gYW55IHBhaXIgb2YgbnVuYmVyXG4gICAgbWF4X2RpZmYgPSAwXG4gICAgZm9yIG4xIGluIG51bXM6XG4gICAgICAgIGZvciBuMiBpbiBudW1zOlxuICAgICAgICAgICAgZGlmZiA9IGFicyhuMSAtIG4yKVxuICAgICAgICAgICAgaWYgZGlmZiA%2BIG1heF9kaWZmOlxuICAgICAgICAgICAgICAgIG1heF9kaWZmID0gZGlmZlxuICAgIHJldHVybiBtYXhfZGlmZlxuXG5kZWYgbWF4X2RpZmYyKG51bXMpOlxuICAgICMgUmVhbGl6ZSB0aGUgbWF4IGRpZmZlcmVuY2UgaXMgdGhlIHNhbWUgYXMgdGhlIG1heFxuICAgICMgbnVtYmVyIG1pbnVzIHRoZSBtaW4gbnVtYmVyXG4gICAgbWluX251bSA9IG51bXNbMF1cbiAgICBtYXhfbnVtID0gbnVtc1swXVxuICAgIGZvciBudW0gaW4gbnVtczpcbiAgICAgICAgaWYgbnVtIDwgbWluX251bTpcbiAgICAgICAgICAgIG1pbl9udW0gPSBudW1cbiAgICAgICAgZWxpZiBudW0gPiBtYXhfbnVtOlxuICAgICAgICAgICAgbWF4X251bSA9IG51bVxuICAgIHJldHVybiBtYXhfbnVtIC0gbWluX251bVxuXG5kZWYgbWF4X2RpZmYzKG51bXMpOlxuICAgICMgU2FtZSBhcyBtYXhfZGlmZjIgYnV0IHVzZXMgUHl0aG9uIGJ1aWx0LWluc1xuICAgIHJldHVybiBtYXgobnVtcykgLSBtaW4obnVtcykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="c1"># Find the max difference between any pair of nunber</span>
     <span class="n">max_diff</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">n1</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
@@ -2199,10 +2196,8 @@ title="Print to PDF"
     <span class="c1"># Same as max_diff2 but uses Python built-ins</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Even though we saw that <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> and <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> have the same Big-O runtime, which one do we think is faster? It turns out <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> is <strong>MUCH</strong> faster in practice.</p>
+</div>
+<p>Even though we saw that <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> and <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> have the same Big-O runtime, which one do we think is faster? It turns out <code class="docutils literal notranslate"><span class="pre">max_diff3</span></code> is <strong>MUCH</strong> faster in practice.</p>
 <section id="profiler">
 <h2>Profiler<a class="headerlink" href="#profiler" title="Permalink to this headline">#</a></h2>
 <div class="note admonition">
@@ -2212,10 +2207,7 @@ title="Print to PDF"
 </div>
 <p>An easier way to identify the relative runtime of programs is to use something called a <strong>profiler</strong>. A profiler is a program that helps you analyze the runtime of the programs you write. Profilers are beneficial because they can give you more detailed information with relatively little code. Particularly with profiling, we rarely care about the raw times themselves, but rather, the times relative to other functions.</p>
 <p>A common profiler is the <code class="docutils literal notranslate"><span class="pre">line_profiler</span></code> package (also called <code class="docutils literal notranslate"><span class="pre">kernprof</span></code> ). <code class="docutils literal notranslate"><span class="pre">kernprof</span></code> is nice because it lets you annotate your functions with an <code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code> tag to have it profile your method. For example, the following snippet shows a file called <code class="docutils literal notranslate"><span class="pre">test.py</span></code> that defines these three functions with an <code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code> annotation above each function.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBGaWxlOiB0ZXN0LnB5XG5cbkBwcm9maWxlXG5kZWYgbWF4X2RpZmYxKG51bXMpOlxuICAgIFwiXCJcIlxuICAgIFJldHVybnMgdGhlIGxhcmdlc3QgZGlmZmVyZW5jZSBiZXR3ZWVuIGFueSB0d28gbnVtYmVycyBpbiB0aGUgZ2l2ZW4gbGlzdC5cblxuICAgIEFzc3VtZXMgdGhlcmUgaXMgYXQgbGVhc3Qgb25lIG51bWJlciBpbiB0aGUgbGlzdC5cbiAgICBcIlwiXCJcbiAgICBtYXhfZGlmZiA9IDBcbiAgICBmb3IgbjEgaW4gbnVtczpcbiAgICAgICAgZm9yIG4yIGluIG51bXM6XG4gICAgICAgICAgICBkaWZmID0gYWJzKG4xIC0gbjIpXG4gICAgICAgICAgICBpZiBkaWZmID4gbWF4X2RpZmY6XG4gICAgICAgICAgICAgICAgbWF4X2RpZmYgPSBkaWZmXG4gICAgcmV0dXJuIG1heF9kaWZmXG5cblxuQHByb2ZpbGVcbmRlZiBtYXhfZGlmZjIobnVtcyk6XG4gICAgXCJcIlwiXG4gICAgUmV0dXJucyB0aGUgbGFyZ2VzdCBkaWZmZXJlbmNlIGJldHdlZW4gYW55IHR3byBudW1iZXJzIGluIHRoZSBnaXZlbiBsaXN0LlxuXG4gICAgQXNzdW1lcyB0aGVyZSBpcyBhdCBsZWFzdCBvbmUgbnVtYmVyIGluIHRoZSBsaXN0LlxuICAgIFwiXCJcIlxuICAgIG1pbl9udW0gPSBudW1zWzBdXG4gICAgbWF4X251bSA9IG51bXNbMF1cbiAgICBmb3IgbnVtIGluIG51bXM6XG4gICAgICAgIGlmIG51bSA8IG1pbl9udW06XG4gICAgICAgICAgICBtaW5fbnVtID0gbnVtXG4gICAgICAgIGVsaWYgbnVtID4gbWF4X251bTpcbiAgICAgICAgICAgIG1heF9udW0gPSBudW1cblxuICAgIHJldHVybiBhYnMobWF4X251bSAtIG1pbl9udW0pXG5cblxuQHByb2ZpbGVcbmRlZiBtYXhfZGlmZjMobnVtcyk6XG4gICAgXCJcIlwiXG4gICAgUmV0dXJucyB0aGUgbGFyZ2VzdCBkaWZmZXJlbmNlIGJldHdlZW4gYW55IHR3byBudW1iZXJzIGluIHRoZSBnaXZlbiBsaXN0LlxuXG4gICAgQXNzdW1lcyB0aGVyZSBpcyBhdCBsZWFzdCBvbmUgbnVtYmVyIGluIHRoZSBsaXN0LlxuICAgIFwiXCJcIlxuICAgIHJldHVybiBtYXgobnVtcykgLSBtaW4obnVtcylcblxuXG5AcHJvZmlsZVxuZGVmIG1haW4oKTpcbiAgICBudW1zID0gbGlzdChyYW5nZSg1MDAwKSlcbiAgICBwcmludChtYXhfZGlmZjEobnVtcykpXG4gICAgcHJpbnQobWF4X2RpZmYyKG51bXMpKVxuICAgIHByaW50KG1heF9kaWZmMyhudW1zKSlcblxuXG5pZiBfX25hbWVfXyA9PSAnX19tYWluX18nOlxuICAgIG1haW4oKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="c1"># File: test.py</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File: test.py</span>
 
 <span class="nd">@profile</span>
 <span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -2272,10 +2264,8 @@ title="Print to PDF"
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Now, we can run this program in the profiler, we use the command <code class="docutils literal notranslate"><span class="pre">kernprof</span> <span class="pre">-v</span> <span class="pre">-l</span> <span class="pre">test.py</span></code> (assuming you have it installed) and get the following output.</p>
+</div>
+<p>Now, we can run this program in the profiler, we use the command <code class="docutils literal notranslate"><span class="pre">kernprof</span> <span class="pre">-v</span> <span class="pre">-l</span> <span class="pre">test.py</span></code> (assuming you have it installed) and get the following output.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Total time: 24.1163 s
 File: test.py
 Function: max_diff1 at line 5

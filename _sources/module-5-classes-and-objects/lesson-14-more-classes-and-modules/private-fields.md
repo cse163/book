@@ -23,7 +23,7 @@ A few things to notice:
 
 - The naming convention for classes is `CapitalCase` rather than `snake_case` . The naming convention for variables, fields, and method names is still `snake_case` .
 
-```{snippet}
+```python
 # Written in bank_account.py
 
 class BankAccount:
@@ -69,7 +69,7 @@ class BankAccount:
 
 This seems great and we can make sure that someone's balance never goes negative. However, the client can still write something like this to break our `BankAccount` .
 
-```{snippet}
+```python
 bank = BankAccount('Nicole', 20)
 bank.withdraw(400) # Returns None because I don't have enough money
 bank.amount = 200000000
@@ -103,7 +103,7 @@ to indicate that it is private.
 
 ```
 
-```{snippet}
+```python
 # Written in bank_account.py
 
 class BankAccount:

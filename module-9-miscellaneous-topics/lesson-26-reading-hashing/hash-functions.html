@@ -2247,17 +2247,12 @@ title="Print to PDF"
 <section id="attempt-1-length-of-str">
 <h3>Attempt 1: Length of <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#attempt-1-length-of-str" title="Permalink to this headline">#</a></h3>
 <p>The simplest hash function you could probably think of to take a <code class="docutils literal notranslate"><span class="pre">str</span></code> and output its <code class="docutils literal notranslate"><span class="pre">len</span></code> . If you used this hash function with this implementation, you would see the following behavior.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaGFzaCgnJykgICAgICMgMFxuaGFzaCgnaGknKSAgICMgMlxuaGFzaCgnYWJjJykgICMgMyIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>   <span class="c1"># 2</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>  <span class="c1"># 3</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This function definitely works since it follows our first two properties. Unfortunately, it doesn’t quite follow the properties of a good hash function. First, not all string lengths are equally likely, so it won’t utilize the whole range of possible integers (most words have fewer than 20 characters). Secondly, it’s very easy for someone to come up with strings that collide. Just pick two strings of the same length!</p>
+</div>
+<p>This function definitely works since it follows our first two properties. Unfortunately, it doesn’t quite follow the properties of a good hash function. First, not all string lengths are equally likely, so it won’t utilize the whole range of possible integers (most words have fewer than 20 characters). Secondly, it’s very easy for someone to come up with strings that collide. Just pick two strings of the same length!</p>
 <p>Valient first effort, but let’s try something else.</p>
 </section>
 <section id="attempt-2-ascii-values">
@@ -2265,17 +2260,12 @@ title="Print to PDF"
 <p>As we’ve discussed before, a computer is only able to understand binary (1s and 0s). This means, at the end of the day, almost any piece of data on your computer needs to be represented as a number so it can easily be translated to binary; text data is no exception.</p>
 <p>Your computer uses an encoding to represent each character in some text as a number. A common encoding is called ASCII (the American Standard Code for Information Interchange). In ASCII, the letter <code class="docutils literal notranslate"><span class="pre">'a'</span></code> is represented as the number 97, <code class="docutils literal notranslate"><span class="pre">'b'</span></code> is 98, <code class="docutils literal notranslate"><span class="pre">'c'</span></code> is 99, etc. Every character in the English language (including symbols like <code class="docutils literal notranslate"><span class="pre">.</span></code> , <code class="docutils literal notranslate"><span class="pre">:</span></code> , <code class="docutils literal notranslate"><span class="pre">!</span></code> ) get a number associated for them.</p>
 <p>So then a more clever hash function could take each <code class="docutils literal notranslate"><span class="pre">str</span></code> and turn it into the sum of the ASCII values of its characters. In the snippet below, we show some example computations for the same strings as before.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaGFzaCgnJykgICAgICMgMFxuaGFzaCgnaGknKSAgICMgMTA0IChoKSArIDEwNSAoaSkgPSAyMDlcbmhhc2goJ2RvZycpICAjIDk3IChkKSArIDExMSAobykgKyAxMDMgKGcpID0gMzE0IiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>     <span class="c1"># 0</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>   <span class="c1"># 104 (h) + 105 (i) = 209</span>
 <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>  <span class="c1"># 97 (d) + 111 (o) + 103 (g) = 314</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This is approach is definitely better than the first attempt! It will use a much wider range of outputs since it includes more information about the string. Unfortunately, it turns out to not be very difficult to cause collisions. Can you figure out two strings that will collide with each other?</p>
+</div>
+<p>This is approach is definitely better than the first attempt! It will use a much wider range of outputs since it includes more information about the string. Unfortunately, it turns out to not be very difficult to cause collisions. Can you figure out two strings that will collide with each other?</p>
 <p>You might notice that <em>anagrams</em> , or words that are made up of the same letters in different orders, will end up colliding using this approach. For example , <code class="docutils literal notranslate"><span class="pre">'dog'</span></code> and <code class="docutils literal notranslate"><span class="pre">'god'</span></code> have the same sum of ASCII values.</p>
 </section>
 <section id="attempt-3-better-sum-of-ascii-values">

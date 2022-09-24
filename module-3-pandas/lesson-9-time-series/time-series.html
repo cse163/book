@@ -2137,34 +2137,24 @@ title="Print to PDF"
 </div>
 <p><strong>Time series</strong> data is data that represents a sequence of events separated by time. This is generally more than just having a column for “date”. We think about time series data being a dataset that’s <strong>indexed</strong> by the time each event happened.</p>
 <p>For example, here is a time series dataset showing the number of bikers over Seattle’s Fremont Bridge.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLnJlYWRfY3N2KCdiaWN5Y2xlcy5jc3YnKVxucHJpbnQoZGYpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bicycles.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice that each row represents a slice of time, where each slice shows the number of bikers going over the east side or the west side of the bridge.</p>
+</div>
+<p>Notice that each row represents a slice of time, where each slice shows the number of bikers going over the east side or the west side of the bridge.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> does an excellent job working with time series data! Let’s read the dataset in again, but this time give some extra parameters to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> so that it knows to treat the date itself as the index. Remember, the index of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is just a value that uniquely identifies each row. By default, the index is a row number, but you could use any column of unique values as an index!</p>
 <p>Recall that in the last lesson, we learned about keyword arguments (i.e., passing parameters by name). This feature is incredibly useful to library writers since they can have their functions take many parameters (many of which have default values, which we will learn how to do next week) that you can specify by name rather than having to know the exact order they come in. For reference, <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> has about 49 parameters! With keyword arguments, you can just specify them by name rather than having to specify all 49 by position!</p>
 <p>To get <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to recognize the fact that this is a time-series dataset, we need to tell it which column contains the unique identifiers ( <code class="docutils literal notranslate"><span class="pre">index_col='Date'</span></code> ) and pass in a special parameter to tell it to interpret these as dates ( <code class="docutils literal notranslate"><span class="pre">parse_dates=True</span></code> ). The following snippet shows how to do this, and <strong>notice in its output it shows the date column shows the index</strong> !</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZj0gcGQucmVhZF9jc3YoJ2JpY3ljbGVzLmNzdicsXG4gICAgICAgICAgICAgICAgaW5kZXhfY29sPSdEYXRlJywgcGFyc2VfZGF0ZXM9VHJ1ZSlcbnByaW50KGRmKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bicycles.csv&#39;</span><span class="p">,</span>
                 <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>In the next slide, we will show many of the ways we can use this new-found ability to have the date as the index.</p>
+</div>
+<p>In the next slide, we will show many of the ways we can use this new-found ability to have the date as the index.</p>
 </section>
 
     <script type="text/x-thebe-config">

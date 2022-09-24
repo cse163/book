@@ -2237,10 +2237,7 @@ title="Print to PDF"
 <h2>Twitter: Text Data<a class="headerlink" href="#twitter-text-data" title="Permalink to this headline">#</a></h2>
 <p>Congrats! You have been hired as a data scientist at Twitter! Your boss comes up to you and tells you that your first task is to answer the age-old question: Which is more popular on the internet, cats or dogs?</p>
 <p>As a Twitter employee, you learned how to access all the tweets on the website in Python. Using your CSE 163 knowledge so far, you come up with a good first attempt at trying to answer this question. Your idea is to just scan through all the tweets (a list of strings) and just count the number of tweets contain the string <code class="docutils literal notranslate"><span class="pre">'dog'</span></code> or <code class="docutils literal notranslate"><span class="pre">'cat'</span></code> . You go ahead and write something like the following code.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2F0cyA9IFtdXG5kb2dzID0gW11cbmZvciB0d2VldCBpbiB0d2VldHM6XG4gICAgaWYgdHdlZXQuZmluZCgnZG9nJykgPj0gMDpcbiAgICAgICAgZG9ncy5hcHBlbmQodHdlZXQpXG4gICAgZWxpZiB0d2VldC5maW5kKCdjYXQnKSA%2BPSAwOlxuICAgICAgICBjYXRzLmFwcGVuZCh0d2VldClcblxuIyBOb3JtYWxseSBwZW9wbGUgd291bGQgd3JpdGVcbiMgICBpZiAnZG9nJyBpbiB0d2VldDpcbiMgQnV0IHdlIHdhbnQgdG8gYmUgY2xlYXIgZm9yIGV4YW1wbGUgaG93IHRoaXMgd29ya3MgZm9yIHN0cmluZ3MiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">cats</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cats</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">dogs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">tweet</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
@@ -2252,19 +2249,14 @@ title="Print to PDF"
 <span class="c1">#   if &#39;dog&#39; in tweet:</span>
 <span class="c1"># But we want to be clear for example how this works for strings</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This doesn’t capture all the complexity of the problem, but it seems like a good first try and your boss seems happy enough!</p>
+</div>
+<p>This doesn’t capture all the complexity of the problem, but it seems like a good first try and your boss seems happy enough!</p>
 <p>A big part fo the reason we are able to solve this problem, is because it’s “easy” to tell if the string <code class="docutils literal notranslate"><span class="pre">'dog'</span></code> is inside a tweet.</p>
 </section>
 <section id="instagram-image-data">
 <h2>Instagram: Image Data<a class="headerlink" href="#instagram-image-data" title="Permalink to this headline">#</a></h2>
 <p>The job market is good for data scientists so you decide to switch jobs and work at Instagram instead. Your reputation as an expert in the field of cat-vs-dog precedes you. Your new boss asks you to solve the same problem but using Instagram’s dataset of images instead. You decide to start with what you know and try something similar to what you did at Twitter by writing the following code.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2F0cyA9IFtdXG5kb2dzID0gW11cbmZvciBwaWMgaW4gcGljdHVyZXM6XG4gICAgaWYgJ3NvbWVob3cgdGVsbCB0aGVyZSBpcyBhIGRvZyBpbiB0aGlzIHBpYyc6XG4gICAgICAgIGRvZ3MuYXBwZW5kKHBpYylcbiAgICBlbGlmICdzb21laG93IHRlbGwgdGhlcmUgaXMgYSBjYXQgaW4gdGhpcyBwaWMnOlxuICAgICAgICBjYXRzLmFwcGVuZChwaWMpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">cats</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cats</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">dogs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">pic</span> <span class="ow">in</span> <span class="n">pictures</span><span class="p">:</span>
     <span class="k">if</span> <span class="s1">&#39;somehow tell there is a dog in this pic&#39;</span><span class="p">:</span>
@@ -2272,10 +2264,8 @@ title="Print to PDF"
     <span class="k">elif</span> <span class="s1">&#39;somehow tell there is a cat in this pic&#39;</span><span class="p">:</span>
         <span class="n">cats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pic</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Unfortunately, there doesn’t seem to be a straight-forward way of describing that a picture contains a dog or a cat. How could you write an if-statement indicating there is a dog there?</p>
+</div>
+<p>Unfortunately, there doesn’t seem to be a straight-forward way of describing that a picture contains a dog or a cat. How could you write an if-statement indicating there is a dog there?</p>
 <p>Think about that task for a second. Imagine your friend has never seen a cat or a dog before. Come up with an English description that lets your friend determine, for a given photo, whether there is a cat or a dog there. Even if you were able to come up with some rule that your friend could follow, I imagine it would be a nightmare to try to write a program to detect if that rule is met!</p>
 <p>We have set up why this is hard to do ourselves, so now we can explain why this thing called <strong>machine learning</strong> can help us solve this problem.</p>
 </section>

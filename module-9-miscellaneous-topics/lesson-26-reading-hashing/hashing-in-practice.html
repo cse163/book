@@ -2171,26 +2171,18 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>We mentioned before that when defining that a hash function needs to be “consistent”. Consistency is all about maintaining the deep relationship between the notions of equality and hashing.</p>
 <p>We briefly showed this in the last slide, but to get the hash for a Python object you can call the built-in <code class="docutils literal notranslate"><span class="pre">hash</span></code> function like in the snippet below.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicHJpbnQoaGFzaCgnaGVsbG8gd29ybGQnKSlcbnByaW50KGhhc2goNC4yNzUpKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="mf">4.275</span><span class="p">))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Just like most Python concepts, this is really calling a special method on a Python object named <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> . So <code class="docutils literal notranslate"><span class="pre">hash(x)</span></code> gets translated to <code class="docutils literal notranslate"><span class="pre">x.__hash__()</span></code> . You should always prefer to call the built-in function for readability rather than referring to the special method explicitly.</p>
+</div>
+<p>Just like most Python concepts, this is really calling a special method on a Python object named <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> . So <code class="docutils literal notranslate"><span class="pre">hash(x)</span></code> gets translated to <code class="docutils literal notranslate"><span class="pre">x.__hash__()</span></code> . You should always prefer to call the built-in function for readability rather than referring to the special method explicitly.</p>
 <p>Hashing and equality have an important relationship. If you define <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> (to define what <code class="docutils literal notranslate"><span class="pre">==</span></code> does), you need to implement <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> so that it is consistent with the definition of <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> .</p>
 <p>We’ve mentioned “consistent” a few times by this point: what do we mean by that? A hash function is consistent if whenever <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code> , then <code class="docutils literal notranslate"><span class="pre">hash(a)</span> <span class="pre">==</span> <span class="pre">hash(b)</span></code> . In English, this says that any objects that are equal must hash to the same value. Notice this is a one-way if statement. It says nothing about <code class="docutils literal notranslate"><span class="pre">hash(a)</span> <span class="pre">==</span> <span class="pre">hash(b)</span></code> implying <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code> . In fact, we explicitly ignore this requirement in the notion of allowing collisions in our hash table.</p>
 <section id="example-class">
 <h2>Example Class<a class="headerlink" href="#example-class" title="Permalink to this headline">#</a></h2>
 <p>So whenever you implement a class, it’s important to make sure <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> and <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> consistent. Almost all implementations of <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> just rely on using Python’s <code class="docutils literal notranslate"><span class="pre">hash</span></code> function on your fields so you don’t have to come up with something as complex as the last <code class="docutils literal notranslate"><span class="pre">str</span></code> hash function we showed on the last slide.</p>
 <p>An example of a class that does this well is shown in the following snippet.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgRXhhbXBsZTpcbiAgICBkZWYgX19pbml0X18oc2VsZiwgYSwgYiwgYyk6XG4gICAgICAgIHNlbGYuX2EgPSBhXG4gICAgICAgIHNlbGYuX2IgPSBiXG4gICAgICAgIHNlbGYuX2MgPSBjXG5cbiAgICBkZWYgX19lcV9fKHNlbGYsIG90aGVyKTpcbiAgICAgICAgcmV0dXJuIHNlbGYuX2EgPT0gb3RoZXIuX2EgYW5kIHNlbGYuX2IgPT0gb3RoZXIuX2JcblxuICAgIGRlZiBfX2hhc2hfXyhzZWxmKTpcbiAgICAgICAgcmV0dXJuIGhhc2goKHNlbGYuX2EsIHNlbGYuX2IpKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">a</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="n">b</span>
@@ -2202,10 +2194,8 @@ title="Print to PDF"
     <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span><span class="p">))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice that in this example, the <code class="docutils literal notranslate"><span class="pre">Example</span></code> class has 3 fields but we only defined <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> to check two of them. This means in the <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> method, we can only look at the fields we used for the equality check to make sure two objects that are equal will hash to the same value!.</p>
+</div>
+<p>Notice that in this example, the <code class="docutils literal notranslate"><span class="pre">Example</span></code> class has 3 fields but we only defined <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> to check two of them. This means in the <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> method, we can only look at the fields we used for the equality check to make sure two objects that are equal will hash to the same value!.</p>
 </section>
 </section>
 

@@ -22,7 +22,7 @@ In Python, the **for loop** lets you iterate over a sequence of values. The for 
 
 We'll start by showing an example and then explain the parts.
 
-```{snippet}
+```python
 for i in range(5):
     print('Loop', i)
 ```

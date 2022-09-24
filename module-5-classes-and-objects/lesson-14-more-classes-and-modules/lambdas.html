@@ -2170,10 +2170,7 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <p>Recall earlier in the quarter when we were learning <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , we learned that the <code class="docutils literal notranslate"><span class="pre">apply</span></code> function could take a function as another parameter! Instead of talking about <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , we will simplify this to write our own <code class="docutils literal notranslate"><span class="pre">apply_fun</span></code> function that does something similar to a list of values. It takes a list of values and another function as a parameter, and returns a new list that is the result of applying the given function to each element in the input list.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGFwcGx5X2Z1bih2YWx1ZXMsIGZ1bmN0aW9uKTpcbiAgICAjIFVzZSBhIGxpc3QgY29tcHJlaGVuc2lvbiB0byBhcHBseSBmdW5jdGlvbiB0byBlYWNoIHZhbHVlXG4gICAgcmV0dXJuIFtmdW5jdGlvbih2KSBmb3IgdiBpbiB2YWx1ZXNdXG5cbmRlZiB0aW1lc190d28oeCk6XG4gICAgcmV0dXJuIDIgKiB4XG5cbm51bWJlcnMgPSBbaSBmb3IgaSBpbiByYW5nZSgxMCldXG5wcmludCgnbnVtYmVycyAgOicsIG51bWJlcnMpXG5wcmludCgndGltZXMgdHdvOicsIGFwcGx5X2Z1bihudW1iZXJzLCB0aW1lc190d28pKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_fun</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_fun</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
     <span class="c1"># Use a list comprehension to apply function to each value</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">function</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]</span>
 
@@ -2184,16 +2181,11 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;numbers  :&#39;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;times two:&#39;</span><span class="p">,</span> <span class="n">apply_fun</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">times_two</span><span class="p">))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice that in this example, we treat the <code class="docutils literal notranslate"><span class="pre">function</span></code> parameter just like any other parameter, but we are now using it as a function to call (because we are saying the client passes in a function).</p>
+</div>
+<p>Notice that in this example, we treat the <code class="docutils literal notranslate"><span class="pre">function</span></code> parameter just like any other parameter, but we are now using it as a function to call (because we are saying the client passes in a function).</p>
 <p>It’s a bit tedious that we have to write out a whole function called <code class="docutils literal notranslate"><span class="pre">times_two</span></code> just so we can pass it in as a parameter. Multiplying something by two should be simple enough so it would be nice if there were a way to use a short-hand to do this for simple operations.</p>
 <p>Enter the <strong>lambda</strong> (commonly called an <em>anonymous function</em>). The idea behind a lambda is to let you specify a function without needing to go through the whole <code class="docutils literal notranslate"><span class="pre">def</span></code> syntax. This works best for very simple operations. Below is an example showing how to do this with our <code class="docutils literal notranslate"><span class="pre">apply_fun</span></code>.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGFwcGx5X2Z1bih2YWx1ZXMsIGZ1bmN0aW9uKTpcbiAgICAjIFVzZSBhIGxpc3QgY29tcHJlaGVuc2lvbiB0byBhcHBseSBmdW5jdGlvbiB0byBlYWNoIHZhbHVlXG4gICAgcmV0dXJuIFtmdW5jdGlvbih2KSBmb3IgdiBpbiB2YWx1ZXNdXG5cbm51bWJlcnMgPSBbaSBmb3IgaSBpbiByYW5nZSgxMCldXG5wcmludCgnbnVtYmVycyAgOicsIG51bWJlcnMpXG5wcmludCgndGltZXMgdHdvOicsIGFwcGx5X2Z1bihudW1iZXJzLCBsYW1iZGEgdjogMiAqIHYpKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_fun</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_fun</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
     <span class="c1"># Use a list comprehension to apply function to each value</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">function</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]</span>
 
@@ -2201,18 +2193,13 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;numbers  :&#39;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;times two:&#39;</span><span class="p">,</span> <span class="n">apply_fun</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v</span><span class="p">))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice instead of passing a function named <code class="docutils literal notranslate"><span class="pre">times_two</span></code> as the second parameter, we pass <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">v:</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">v</span></code> . The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword defines a new function without giving it a name (hence, <em>anonymous function</em> ). The way to read this is it is a function that takes a single parameter <code class="docutils literal notranslate"><span class="pre">v</span></code> and it returns the value of <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">v</span></code> . This is essentially just short-hand for the previous example, with the benefit that we don’t have to define a whole function called <code class="docutils literal notranslate"><span class="pre">times_two</span></code> to do this.</p>
+</div>
+<p>Notice instead of passing a function named <code class="docutils literal notranslate"><span class="pre">times_two</span></code> as the second parameter, we pass <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">v:</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">v</span></code> . The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword defines a new function without giving it a name (hence, <em>anonymous function</em> ). The way to read this is it is a function that takes a single parameter <code class="docutils literal notranslate"><span class="pre">v</span></code> and it returns the value of <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">v</span></code> . This is essentially just short-hand for the previous example, with the benefit that we don’t have to define a whole function called <code class="docutils literal notranslate"><span class="pre">times_two</span></code> to do this.</p>
 <p>By design, it is very difficult to do something more complex than a one-line expression inside a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> since it is meant to be a super quick-and-easy way of defining functions for simple operations.</p>
 <section id="an-application-sorting">
 <h2>An Application: Sorting<a class="headerlink" href="#an-application-sorting" title="Permalink to this headline">#</a></h2>
 <p>One of the most common places <code class="docutils literal notranslate"><span class="pre">lambdas</span></code> show up is for sorting values. Suppose we wanted to use our <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class to make a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s. Additionally, suppose I wanted to sort them by their name (alphabetically). There is a function in Python call <code class="docutils literal notranslate"><span class="pre">sorted</span></code> that sorts a list of values and returns a new list that has all the values of the input in sorted order.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgRG9nOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCBuYW1lKTpcbiAgICAgICAgc2VsZi5fbmFtZSA9IG5hbWVcblxuICAgIGRlZiBnZXRfbmFtZShzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGYuX25hbWVcblxuXG5kb2dzID0gW0RvZygnQmVsbGEnKSwgRG9nKCdTY291dCcpLCBEb2coJ0NoZXN0ZXInKV1cbmRvZ3MgPSBzb3J0ZWQoZG9ncylcblxuIyBTaG91bGQgcHJpbnQgaW4gc29ydGVkIG9yZGVyIVxuZm9yIGRvZyBpbiBkb2dzOlxuICAgIHByaW50KGRvZy5nZXRfbmFtZSgpKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
 
@@ -2227,16 +2214,11 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">dog</span> <span class="ow">in</span> <span class="n">dogs</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="o">.</span><span class="n">get_name</span><span class="p">())</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This runs into a bug though, because Python doesn’t know how we want to sort the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> objects! There are ways to define how to compare <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s, which we will see briefly on Friday’s lesson.</p>
+</div>
+<p>This runs into a bug though, because Python doesn’t know how we want to sort the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> objects! There are ways to define how to compare <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s, which we will see briefly on Friday’s lesson.</p>
 <p>However, a common work-around is to use an optional parameter for the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function named <code class="docutils literal notranslate"><span class="pre">key</span></code> . The value of <code class="docutils literal notranslate"><span class="pre">key</span></code> should a function that takes a single element of the list and returns a value that Python knows how to sort (like a number of a <code class="docutils literal notranslate"><span class="pre">str</span></code> ); this way Python will sort the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s based on the value that results from their <code class="docutils literal notranslate"><span class="pre">key</span></code> function.</p>
 <p>So to do this in our example, we need to pass a function as the <code class="docutils literal notranslate"><span class="pre">key</span></code> to transform each <code class="docutils literal notranslate"><span class="pre">Dog</span></code> into its name so that we can sort it by their name. This is very easy to do with a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> !</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgRG9nOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCBuYW1lKTpcbiAgICAgICAgc2VsZi5fbmFtZSA9IG5hbWVcblxuICAgIGRlZiBnZXRfbmFtZShzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGYuX25hbWVcblxuXG5kb2dzID0gW0RvZygnQmVsbGEnKSwgRG9nKCdTY291dCcpLCBEb2coJ0NoZXN0ZXInKV1cbmRvZ3MgPSBzb3J0ZWQoZG9ncywga2V5PWxhbWJkYSBkOiBkLmdldF9uYW1lKCkpXG5cbiMgU2hvdWxkIHByaW50IGluIHNvcnRlZCBvcmRlciFcbmZvciBkb2cgaW4gZG9nczpcbiAgICBwcmludChkb2cuZ2V0X25hbWUoKSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
 
@@ -2251,10 +2233,8 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">dog</span> <span class="ow">in</span> <span class="n">dogs</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="o">.</span><span class="n">get_name</span><span class="p">())</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The way this works is in the sorting algorithm, instead of comparing the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s themselves, the algorithm compares the results of applying <code class="docutils literal notranslate"><span class="pre">key</span></code> to each <code class="docutils literal notranslate"><span class="pre">Dog</span></code> so it is sorted by <code class="docutils literal notranslate"><span class="pre">key</span></code> . The power of this comes from if your class had multiple things that you might want to sort by. You could now tell the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function how you want them to be sorted by passing in different <code class="docutils literal notranslate"><span class="pre">key</span></code> functions each time!</p>
+</div>
+<p>The way this works is in the sorting algorithm, instead of comparing the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s themselves, the algorithm compares the results of applying <code class="docutils literal notranslate"><span class="pre">key</span></code> to each <code class="docutils literal notranslate"><span class="pre">Dog</span></code> so it is sorted by <code class="docutils literal notranslate"><span class="pre">key</span></code> . The power of this comes from if your class had multiple things that you might want to sort by. You could now tell the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function how you want them to be sorted by passing in different <code class="docutils literal notranslate"><span class="pre">key</span></code> functions each time!</p>
 </section>
 </section>
 

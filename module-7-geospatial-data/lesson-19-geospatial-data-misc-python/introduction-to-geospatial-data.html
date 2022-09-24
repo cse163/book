@@ -2204,10 +2204,7 @@ title="Print to PDF"
 <p>A very common format for geospatial data is just a plain CSV that we could parse with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> . However, they usually also contain a special column to indicate the location in the world that row corresponds to. A very simple representation uses latitude and longitude for each row, but geospatial data can store a very rich set of geospatial features in general.</p>
 <p>In order to process this special column format to encode geospatial information, we have to use a new library called <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> . Don’t worry, everything you know from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> carries over here with some added on features!</p>
 <p>In the code cell below, we show how to load in one of these geospatial datasets with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> . The dataset contains information about various countries of the world and information like their population and GDP. The file we will use a is a shapefile ( <code class="docutils literal notranslate"><span class="pre">.shp</span></code> ). The file format itself is actually pretty complex so we will only look at the data after parsing it in <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> rather than looking at the file directly.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbiMgUHJpbnQgb3V0IHRoZSBjb2x1bW5zXG5wcmludCgnPT09PT0gQ29sdW1ucyA9PT09PT0nKVxucHJpbnQoZGYuY29sdW1ucylcbnByaW50KClcblxuIyBQcmludCBvdXQgb25lIHJvdyBvZiBkYXRhXG5wcmludCgnPT09PT0gRmlyc3Qgcm93ID09PT09JylcbnByaW50KGRmLmxvY1swXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
 
@@ -2220,14 +2217,9 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===== First row =====&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The type of the value <code class="docutils literal notranslate"><span class="pre">df</span></code> in the cell above is a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . It behaves exactly like a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> but knows how to do some extra geospatial processing. There is also a <code class="docutils literal notranslate"><span class="pre">GeoSeries</span></code> type unsurprisingly. To start seeing the power of <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> , you can see what happens if you ask the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to plot itself.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbmRmLnBsb3QoKVxucGx0LnNhdmVmaWcoJ3dvcmxkLnBuZycpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+</div>
+<p>The type of the value <code class="docutils literal notranslate"><span class="pre">df</span></code> in the cell above is a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> . It behaves exactly like a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> but knows how to do some extra geospatial processing. There is also a <code class="docutils literal notranslate"><span class="pre">GeoSeries</span></code> type unsurprisingly. To start seeing the power of <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> , you can see what happens if you ask the <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to plot itself.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
@@ -2235,14 +2227,9 @@ title="Print to PDF"
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;world.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>You can get fancier have it color each country by its population using the <code class="docutils literal notranslate"><span class="pre">column</span></code> parameter, like in the snippet below.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbiMgUE9QX0VTVCBpcyB0aGUgbmFtZSBvZiB0aGUgY29sdW1tbiBjb250YWluaW5nIHBvcHVsYXRpb24gaW5mb3JtYXRpb25cbiMgbGVnZW5kPVRydWUgbWFrZXMgdGhlIGxlZ2VuZCBhcHBlYXJcbmRmLnBsb3QoY29sdW1uPSdQT1BfRVNUJywgbGVnZW5kPVRydWUpXG5wbHQuc2F2ZWZpZygnd29ybGRfcG9wdWxhdGlvbi5wbmcnKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+</div>
+<p>You can get fancier have it color each country by its population using the <code class="docutils literal notranslate"><span class="pre">column</span></code> parameter, like in the snippet below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
@@ -2252,27 +2239,20 @@ title="Print to PDF"
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;POP_EST&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;world_population.png&#39;</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 <section id="geometry">
 <h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">#</a></h2>
 <p>Each row in the data corresponds to one country. The dataset has a special column called <code class="docutils literal notranslate"><span class="pre">'geometry'</span></code> that stores the shape of each country with a <strong>geometry</strong> .</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IGdlb3BhbmRhcyBhcyBncGRcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuZGYgPSBncGQucmVhZF9maWxlKCdnZW9fZGF0YS9uZV8xMTBtX2FkbWluXzBfY291bnRyaWVzLnNocCcpXG5cbnByaW50KGRmWydnZW9tZXRyeSddKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geo_data/ne_110m_admin_0_countries.shp&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>You don’t need to memorize the different types of geometries, but it helps to be familiar with what can be represented in this column. The picture below shows different types of geometries. Most countries are represented by a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> or a <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code> (e.g. if they have multiple bodies of land) while you would likely not find any <code class="docutils literal notranslate"><span class="pre">LineString</span></code> countries in this dataset.</p>
+</div>
+<p>You don’t need to memorize the different types of geometries, but it helps to be familiar with what can be represented in this column. The picture below shows different types of geometries. Most countries are represented by a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> or a <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code> (e.g. if they have multiple bodies of land) while you would likely not find any <code class="docutils literal notranslate"><span class="pre">LineString</span></code> countries in this dataset.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC"><img alt="different types of geometries supported by geopandas, including Point, MultiPoint, LineString, MultiLineString, LinearRing, MultiPolygon, Polygon, and GeometryCollection." class="align-center" src="https://static.us.edusercontent.com/files/ssqySbFc6tlA3yol8wiEz6pC" style="width: 743px;" /></a>
 </section>
 </section>

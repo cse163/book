@@ -2209,10 +2209,7 @@ title="Print to PDF"
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> is one of the most popular Python libraries that is used for numerical processing. We have used <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (imported as <code class="docutils literal notranslate"><span class="pre">np</span></code>) a few times before, but this week we will really dive into how to use it.</p>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>’s primary data structure is the <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>. An array will store a sequence of values <strong>of the same type</strong> . You can think of a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> as being something a lot like a <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code>, but the index is always integer values like a <code class="docutils literal notranslate"><span class="pre">list</span></code>. The syntax to create one of these <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> s looks like the following.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG51bXB5IGFzIG5wXG54ID0gbnAuYXJyYXkoWzEsIDIsIDMsIDRdKVxucHJpbnQoeClcblxuIyBJZiB0aGVyZSBhcmUgbWl4ZWQgdHlwZXMsIGl0IGNvZXJjZXMgdmFsdWVzIHRvIHRoZSBzYW1lIHR5cGUgKGludCAtPiBmbG9hdClcbnggPSBucC5hcnJheShbMy4xNCwgMiwgM10pXG5wcmludCh4KSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -2220,10 +2217,8 @@ title="Print to PDF"
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice we are calling the function <code class="docutils literal notranslate"><span class="pre">np.array</span></code> passing in a list of values, the return type is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> class called an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> (stands for <span class="math notranslate nohighlight">\(n\)</span>-dimensional array).</p>
+</div>
+<p>Notice we are calling the function <code class="docutils literal notranslate"><span class="pre">np.array</span></code> passing in a list of values, the return type is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> class called an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> (stands for <span class="math notranslate nohighlight">\(n\)</span>-dimensional array).</p>
 </section>
 <section id="applications">
 <h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">#</a></h2>
@@ -2245,10 +2240,7 @@ title="Print to PDF"
 <section id="creating-numpy-arrays">
 <h2>Creating <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>s<a class="headerlink" href="#creating-numpy-arrays" title="Permalink to this headline">#</a></h2>
 <p>We showed you how to create <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>s, but there are a few more helpful ones that are used commonly to make an array of any size.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG51bXB5IGFzIG5wXG5cbiMgYXJyYXkgaW5pdGlhbGl6ZXIgdGFrZXMgYSBsaXN0IG9mIHZhbHVlc1xueCA9IG5wLmFycmF5KFsxLCAyLCAzXSlcblxuIyBhcmFuZ2Ugd29ya3MgbGlrZSByYW5nZSB0byBtYWtlIGEgYXJyYXkgb2YgbnVtYmVyIGZyb20gc3RhcnQgKGluY2x1c2l2ZSlcbiMgdG8gc3RvcCAoZXhjbHVzaXZlKVxueCA9IG5wLmFyYW5nZSgxLCA1KVxucHJpbnQoeClcblxuIyBNYWtlcyBhbiBhcnJheSBzdG9yaW5nIGFsbCAxcyBvZiB0aGUgZ2l2ZW4gbGVuZ3RoXG54ID0gbnAub25lcyg1KVxucHJpbnQoeCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># array initializer takes a list of values</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -2262,10 +2254,8 @@ title="Print to PDF"
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

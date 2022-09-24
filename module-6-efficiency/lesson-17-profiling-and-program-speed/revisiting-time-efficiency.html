@@ -2136,10 +2136,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>Last time we introduced the notion of efficiency, namely in terms of time taken to run the program. We saw that time was unreliable and that computer scientists instead discuss an algorithm’s efficiency in terms of its Big-O notation. Today, we will discuss some limitations of Big-O notation and highlight the importance of why it is used (since it is often misunderstood).</p>
 <p>For example, consider the following code snippet that shows three different methods for computing the maximum difference between any pair of values in a list.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG1heF9kaWZmMShudW1zKTpcbiAgICAjIEZpbmQgdGhlIG1heCBkaWZmZXJlbmNlIGJldHdlZW4gYW55IHBhaXIgb2YgbnVuYmVyXG4gICAgbWF4X2RpZmYgPSAwXG4gICAgZm9yIG4xIGluIG51bXM6XG4gICAgICAgIGZvciBuMiBpbiBudW1zOlxuICAgICAgICAgICAgZGlmZiA9IGFicyhuMSAtIG4yKVxuICAgICAgICAgICAgaWYgZGlmZiA%2BIG1heF9kaWZmOlxuICAgICAgICAgICAgICAgIG1heF9kaWZmID0gZGlmZlxuICAgIHJldHVybiBtYXhfZGlmZlxuXG5kZWYgbWF4X2RpZmYyKG51bXMpOlxuICAgICMgUmVhbGl6ZSB0aGUgbWF4IGRpZmZlcmVuY2UgaXMgdGhlIHNhbWUgYXMgdGhlIG1heFxuICAgICMgbnVtYmVyIG1pbnVzIHRoZSBtaW4gbnVtYmVyXG4gICAgbWluX251bSA9IG51bXNbMF1cbiAgICBtYXhfbnVtID0gbnVtc1swXVxuICAgIGZvciBudW0gaW4gbnVtczpcbiAgICAgICAgaWYgbnVtIDwgbWluX251bTpcbiAgICAgICAgICAgIG1pbl9udW0gPSBudW1cbiAgICAgICAgZWxpZiBudW0gPiBtYXhfbnVtOlxuICAgICAgICAgICAgbWF4X251bSA9IG51bVxuICAgIHJldHVybiBtYXhfbnVtIC0gbWluX251bVxuXG5kZWYgbWF4X2RpZmYzKG51bXMpOlxuICAgICMgU2FtZSBhcyBtYXhfZGlmZjIgYnV0IHVzZXMgUHl0aG9uIGJ1aWx0LWluc1xuICAgIHJldHVybiBtYXgobnVtcykgLSBtaW4obnVtcykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_diff1</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="c1"># Find the max difference between any pair of nunber</span>
     <span class="n">max_diff</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">n1</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
@@ -2165,10 +2162,8 @@ title="Print to PDF"
     <span class="c1"># Same as max_diff2 but uses Python built-ins</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>What are the Big-O run-times of each of these functions? Let <span class="math notranslate nohighlight">\(n\)</span> be the length of the input list.</p>
+</div>
+<p>What are the Big-O run-times of each of these functions? Let <span class="math notranslate nohighlight">\(n\)</span> be the length of the input list.</p>
 <ul class="simple">
 <li><p>For <code class="docutils literal notranslate"><span class="pre">max_diff1</span></code> , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>.</p></li>
 <li><p>For <code class="docutils literal notranslate"><span class="pre">max_diff2</span></code> , the runtime is <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p></li>

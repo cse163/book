@@ -2207,10 +2207,7 @@ title="Print to PDF"
 </div>
 <p>This data structure is a <code class="docutils literal notranslate"><span class="pre">list</span></code> that stores <code class="docutils literal notranslate"><span class="pre">dict</span></code> s as its entries; therefore we call it a list of dictionaries. Each dictionary represents a single row of the dataset: this is why there are 3 dictionaries inside this list. Inside each dictionary, there is a key/value pair for every column of the data showing the values for each row and that column.</p>
 <p>This is a bit complex when you see it at first because the data structures are nested! Inside the <code class="docutils literal notranslate"><span class="pre">list</span></code> are dictionaries! This means if you stored that above data in a variable called data, you could access a dictionary by indexing into a list. For example, to get the name of the TA at index 1, you might write:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9IFtcbiAgICB7J05hbWUnOiAnTWFkcm9uYScsICdTYWxhcnknOiAzfSxcbiAgICB7J05hbWUnOiAnUml0JywgICAgICdTYWxhcnknOiAxfSxcbiAgICB7J05hbWUnOiAnUnlhbicsICAgICdTYWxhcnknOiAzfVxuXVxucHJpbnQoJ0RhdGE6JywgZGF0YSlcbnByaW50KCdOdW1iZXIgb2Ygcm93czonLCBsZW4oZGF0YSkpICAjIFNpbmNlIGRhdGEgaXMganVzdCBhIGxpc3RcbnByaW50KCdSb3cgMjonLCBkYXRhWzFdKVxuXG50YSA9IGRhdGFbMV0gICMgVGhpcyBpcyBhIGRpY3Rpb25hcnk6IHsnTmFtZSc6ICdSaXQnLCAnU2FsYXJ5JzogMX1cbnByaW50KCdOYW1lIG9mIFRBIGluIFJvdyAyOicsIHRhWydOYW1lJ10pXG5cbiMgSXQgaGVscHMgdG8gcHJpbnQgb3V0IHRoZSB0eXBlcyBvZiB0aGluZ3NcbnByaW50KClcbnByaW50KCdUeXBlcycpXG5wcmludCgndHlwZShkYXRhKScsIHR5cGUoZGF0YSkpXG5wcmludCgndHlwZShkYXRhWzFdKScsIHR5cGUoZGF0YVsxXSkpXG5wcmludChcInR5cGUodGFbJ05hbWUnXSlcIiwgdHlwZSh0YVsnTmFtZSddKSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>     <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span>    <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2229,14 +2226,9 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;type(data[1])&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type(ta[&#39;Name&#39;])&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">ta</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>It turns out, it’s not necessary to save the value of <code class="docutils literal notranslate"><span class="pre">data[1]</span></code> in a variable before accessing it! It is much more common to write code like the following:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9IFtcbiAgICB7J05hbWUnOiAnTWFkcm9uYScsICdTYWxhcnknOiAzfSxcbiAgICB7J05hbWUnOiAnUml0JywgICAnU2FsYXJ5JzogMX0sXG4gICAgeydOYW1lJzogJ1J5YW4nLCAgJ1NhbGFyeSc6IDN9XG5dXG5cbnByaW50KCdOYW1lIG9mIFRBIGluIFJvdyAyOicsIGRhdGFbMV1bJ05hbWUnXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+</div>
+<p>It turns out, it’s not necessary to save the value of <code class="docutils literal notranslate"><span class="pre">data[1]</span></code> in a variable before accessing it! It is much more common to write code like the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>   <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span>  <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2244,14 +2236,9 @@ title="Print to PDF"
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Name of TA in Row 2:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Let’s try another example. <strong>Before running the code snippet below, make a prediction of what each line of code will do and see if your prediction matches reality!</strong></p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9IFtcbiAgICB7J05hbWUnOiAnTWFkcm9uYScsICdTYWxhcnknOiAzfSxcbiAgICB7J05hbWUnOiAnUml0JywgICAnU2FsYXJ5JzogMX0sXG4gICAgeydOYW1lJzogJ1J5YW4nLCAgJ1NhbGFyeSc6IDN9XG5dXG5cbnByaW50KCdGaXJzdCBleGFtcGxlJylcbnByaW50KGRhdGFbMl1bJ05hbWUnXSlcbnByaW50KClcblxucHJpbnQoJ1NlY29uZCBleGFtcGxlJylcbnByaW50KGRhdGFbJ1NhbGFyeSddWzBdKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+</div>
+<p>Let’s try another example. <strong>Before running the code snippet below, make a prediction of what each line of code will do and see if your prediction matches reality!</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>   <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span>  <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2264,19 +2251,14 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Second example&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The first one should print the name “Ryan” because we go to the dictionary at index <code class="docutils literal notranslate"><span class="pre">2</span></code> and then grab its value associated with the key <code class="docutils literal notranslate"><span class="pre">'Name'</span></code> .</p>
+</div>
+<p>The first one should print the name “Ryan” because we go to the dictionary at index <code class="docutils literal notranslate"><span class="pre">2</span></code> and then grab its value associated with the key <code class="docutils literal notranslate"><span class="pre">'Name'</span></code> .</p>
 <p>The second one does not work at all and causes an <code class="docutils literal notranslate"><span class="pre">Error</span></code> ! Why is that? Well <code class="docutils literal notranslate"><span class="pre">data</span></code> is a <code class="docutils literal notranslate"><span class="pre">list</span></code> , not a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> , so we can’t say <code class="docutils literal notranslate"><span class="pre">data['Salary']</span></code> ! You have to be careful about the order of the data is represented!</p>
 </section>
 <section id="looping-over-the-list-of-dictionaries">
 <h2>Looping over the list of dictionaries<a class="headerlink" href="#looping-over-the-list-of-dictionaries" title="Permalink to this headline">#</a></h2>
 <p>Let’s look back to our example from earlier where we want to compute the sum of the TAs’ salaries. We start by writing a loop to go over each TA in the list (each TA is a dictionary). We then access the <code class="docutils literal notranslate"><span class="pre">'Salary'</span></code> entry in each dictionary and add that to a variable for a cumulative sum.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGF0YSA9IFtcbiAgICB7J05hbWUnOiAnTWFkcm9uYScsICdTYWxhcnknOiAzfSxcbiAgICB7J05hbWUnOiAnUml0JywgICAnU2FsYXJ5JzogMX0sXG4gICAgeydOYW1lJzogJ1J5YW4nLCAgJ1NhbGFyeSc6IDN9XG5dXG5cbnRvdGFsX2Nvc3QgPSAwXG5mb3IgdGEgaW4gZGF0YTogICMgdGEgaXMgYSBkaWN0aW9uYXJ5XG4gICAgdG90YWxfY29zdCA9IHRvdGFsX2Nvc3QgKyB0YVsnU2FsYXJ5J11cbnByaW50KHRvdGFsX2Nvc3QpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrona&#39;</span><span class="p">,</span> <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Rit&#39;</span><span class="p">,</span>   <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span>  <span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2287,10 +2269,8 @@ title="Print to PDF"
     <span class="n">total_cost</span> <span class="o">=</span> <span class="n">total_cost</span> <span class="o">+</span> <span class="n">ta</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">total_cost</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>It sometimes helps to pause and think about the types again. Recall that the type of <code class="docutils literal notranslate"><span class="pre">data</span></code> in this example is <code class="docutils literal notranslate"><span class="pre">list</span></code> . The type of each value inside that <code class="docutils literal notranslate"><span class="pre">list</span></code> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">{'Name':</span> <span class="pre">'Madrona',</span> <span class="pre">'Salary':</span> <span class="pre">3}</span></code> ). Each of these <code class="docutils literal notranslate"><span class="pre">dict</span></code> s will have the same keys (e.g. <code class="docutils literal notranslate"><span class="pre">'Name'</span></code> and <code class="docutils literal notranslate"><span class="pre">'Salary'</span></code> ).</p>
+</div>
+<p>It sometimes helps to pause and think about the types again. Recall that the type of <code class="docutils literal notranslate"><span class="pre">data</span></code> in this example is <code class="docutils literal notranslate"><span class="pre">list</span></code> . The type of each value inside that <code class="docutils literal notranslate"><span class="pre">list</span></code> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">{'Name':</span> <span class="pre">'Madrona',</span> <span class="pre">'Salary':</span> <span class="pre">3}</span></code> ). Each of these <code class="docutils literal notranslate"><span class="pre">dict</span></code> s will have the same keys (e.g. <code class="docutils literal notranslate"><span class="pre">'Name'</span></code> and <code class="docutils literal notranslate"><span class="pre">'Salary'</span></code> ).</p>
 </section>
 <section id="reading-in-a-csv-file">
 <h2>Reading in a CSV File<a class="headerlink" href="#reading-in-a-csv-file" title="Permalink to this headline">#</a></h2>

@@ -2191,10 +2191,7 @@ title="Print to PDF"
 </div>
 <p>To explain in English, the process of joining them on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> finds all pairs of rows from each table, and keeps them if they match on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code>.</p>
 <p>Now this pseudo-code isn’t going to actually look like what we will write for <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Joining is such a common operation with data that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provides a function to do so that looks like the following (there is a bit of setup to create the datasets):</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG4jIE1ha2UgdGhlIHRhcyBEYXRhRnJhbWVcbnRhcyA9IHBkLkRhdGFGcmFtZShbXG4gICAgeyd0YV9uYW1lJzogJ1J5YW4nLCAgICd0YV9pZCc6IDF9LFxuICAgIHsndGFfbmFtZSc6ICdKYW1lcycsICAndGFfaWQnOiAyfSxcbiAgICB7J3RhX25hbWUnOiAnTmljb2xlJywgJ3RhX2lkJzogM30sXG5dKVxucHJpbnQoJ3RhcycpXG5wcmludCh0YXMpXG5wcmludCgpXG5cbiMgTWFrZSB0aGUgZ3JhZGluZyBEYXRhRnJhbWVcbmdyYWRpbmcgPSBwZC5EYXRhRnJhbWUoW1xuICAgIHsnZ3JhZGVyX2lkJzogMiwgJ3N0dWRlbnRfbmFtZSc6ICdGbG9yYSd9LFxuICAgIHsnZ3JhZGVyX2lkJzogMywgJ3N0dWRlbnRfbmFtZSc6ICdQYXVsJ30sXG4gICAgeydncmFkZXJfaWQnOiAxLCAnc3R1ZGVudF9uYW1lJzogJ1dlbid9LFxuICAgIHsnZ3JhZGVyX2lkJzogMywgJ3N0dWRlbnRfbmFtZSc6ICdBbmRyZXcnfSxcblxuXSlcbnByaW50KCdncmFkaW5nJylcbnByaW50KGdyYWRpbmcpXG5wcmludCgpXG5cbiMgSm9pbiB0aGUgZGF0YXNldHMgYnkgdGFfaWQgYW5kIGdyYWRlcl9pZFxubWVyZ2VkID0gdGFzLm1lcmdlKGdyYWRpbmcsIGxlZnRfb249J3RhX2lkJywgcmlnaHRfb249J2dyYWRlcl9pZCcpXG5wcmludCgnbWVyZ2VkJylcbnByaW50KG1lcmdlZCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the tas DataFrame</span>
 <span class="n">tas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
@@ -2223,10 +2220,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;merged&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice that the output contains all pairs of rows that match up on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code>! There are now two rows for <code class="docutils literal notranslate"><span class="pre">Nicole</span></code> because there were two rows in the original <code class="docutils literal notranslate"><span class="pre">grading</span></code> table that had her ID. At this point <code class="docutils literal notranslate"><span class="pre">merged</span></code> is a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the four columns shown in the output above. To compute how many students each TA was grading, we could easily solve this with a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> on this new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> !</p>
+</div>
+<p>Notice that the output contains all pairs of rows that match up on <code class="docutils literal notranslate"><span class="pre">ta_id</span></code> and <code class="docutils literal notranslate"><span class="pre">grader_id</span></code>! There are now two rows for <code class="docutils literal notranslate"><span class="pre">Nicole</span></code> because there were two rows in the original <code class="docutils literal notranslate"><span class="pre">grading</span></code> table that had her ID. At this point <code class="docutils literal notranslate"><span class="pre">merged</span></code> is a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the four columns shown in the output above. To compute how many students each TA was grading, we could easily solve this with a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> on this new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> !</p>
 <p>You might be wondering, what would happen to rows that don’t “line up”. What if there was a TA who didn’t have anyone they were grading or a student had a <code class="docutils literal notranslate"><span class="pre">grader_id</span></code> for a grader that doesn’t exist in the other table? Suppose we had the following dataset instead. We removed James from the left table and changed Wen to be graded by Nicole on the right.</p>
 <div class="table-section docutils">
 <div class="table-div docutils">
@@ -2273,10 +2268,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Let’s see what happens when we run <code class="docutils literal notranslate"><span class="pre">merge</span></code> on these datasets.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG4jIE1ha2UgdGhlIHRhcyBEYXRhRnJhbWVcbnRhcyA9IHBkLkRhdGFGcmFtZShbXG4gICAgeyd0YV9uYW1lJzogJ1J5YW4nLCAgICd0YV9pZCc6IDF9LFxuICAgIHsndGFfbmFtZSc6ICdOaWNvbGUnLCAndGFfaWQnOiAzfSxcbl0pXG5wcmludCgndGFzJylcbnByaW50KHRhcylcbnByaW50KClcblxuIyBNYWtlIHRoZSBncmFkaW5nIERhdGFGcmFtZVxuZ3JhZGluZyA9IHBkLkRhdGFGcmFtZShbXG4gICAgeydncmFkZXJfaWQnOiAyLCAnc3R1ZGVudF9uYW1lJzogJ0Zsb3JhJ30sXG4gICAgeydncmFkZXJfaWQnOiAzLCAnc3R1ZGVudF9uYW1lJzogJ1BhdWwnfSxcbiAgICB7J2dyYWRlcl9pZCc6IDMsICdzdHVkZW50X25hbWUnOiAnV2VuJ30sXG4gICAgeydncmFkZXJfaWQnOiAzLCAnc3R1ZGVudF9uYW1lJzogJ0FuZHJldyd9LFxuXG5dKVxucHJpbnQoJ2dyYWRpbmcnKVxucHJpbnQoZ3JhZGluZylcbnByaW50KClcblxuIyBKb2luIHRoZSBkYXRhc2V0cyBieSB0YV9pZCBhbmQgZ3JhZGVyX2lkXG5tZXJnZWQgPSB0YXMubWVyZ2UoZ3JhZGluZywgbGVmdF9vbj0ndGFfaWQnLCByaWdodF9vbj0nZ3JhZGVyX2lkJylcbnByaW50KCdtZXJnZWQnKVxucHJpbnQobWVyZ2VkKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Make the tas DataFrame</span>
 <span class="n">tas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
@@ -2304,10 +2296,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;merged&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Nicole is the only TA represented in this result! The rows that have IDs that did not “line up” with any other row got tossed out. This makes sense in the context of the pseudo-code we showed above since they didn’t have any matches. The topic of what to do with rows with missing values is very interesting and is the topic of the next slide.</p>
+</div>
+<p>Nicole is the only TA represented in this result! The rows that have IDs that did not “line up” with any other row got tossed out. This makes sense in the context of the pseudo-code we showed above since they didn’t have any matches. The topic of what to do with rows with missing values is very interesting and is the topic of the next slide.</p>
 </section>
 
     <script type="text/x-thebe-config">

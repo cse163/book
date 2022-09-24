@@ -2228,10 +2228,7 @@ title="Print to PDF"
 <section id="broadcasting-example">
 <h2>Broadcasting Example<a class="headerlink" href="#broadcasting-example" title="Permalink to this headline">#</a></h2>
 <p>Consider the code snippet. We print out the resulting shape and then explain using the rules of broadcasting why this is the case.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG51bXB5IGFzIG5wXG5cbm0gPSBucC5vbmVzKCgyLCAzKSkgICMgU2hhcGU6ICgyLCAzKVxudiA9IG5wLmFyYW5nZSgzKSAgICAgIyBTaGFwZTogKDMsKVxucmVzdWx0ID0gbSArIHZcbnByaW50KHJlc3VsdClcbnByaW50KHJlc3VsdC5zaGFwZSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Shape: (2, 3)</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>     <span class="c1"># Shape: (3,)</span>
@@ -2239,10 +2236,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>It helps to see that originally our data is</p>
+</div>
+<p>It helps to see that originally our data is</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>m (2, 3)
 [[1, 1, 1],
  [1, 1, 1]]

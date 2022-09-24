@@ -2181,64 +2181,39 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>So we already saw how to index into a string to get a value, but what if you wanted to index into a string to get more than one character (e.g. get the first 10 characters of a string)? Python provides a very powerful syntax for accessing multiple characters in a string called <strong>slicing.</strong></p>
 <p>The syntax slicing looks very similar to simple indexing but lets you specify a start and a stop index separated by a colon <code class="docutils literal notranslate"><span class="pre">s[&lt;start&gt;:&lt;stop&gt;]</span></code> . The start index is inclusive and the stop is exclusive. For example, you could type the following:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzI6N10pIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The slice shown above means “all characters starting at index 2 and up to (not including) 7” (because stop is exclusive, just like with <code class="docutils literal notranslate"><span class="pre">range</span></code> ). If you take this with the picture below, it can clarify why the cell above prints <code class="docutils literal notranslate"><span class="pre">llo</span> <span class="pre">w</span></code> .</p>
+</div>
+<p>The slice shown above means “all characters starting at index 2 and up to (not including) 7” (because stop is exclusive, just like with <code class="docutils literal notranslate"><span class="pre">range</span></code> ). If you take this with the picture below, it can clarify why the cell above prints <code class="docutils literal notranslate"><span class="pre">llo</span> <span class="pre">w</span></code> .</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd"><img alt="hello world string indexing" class="align-center" src="https://static.us.edusercontent.com/files/SQ9WeD8h3lvhbiC8txniO4Rd" style="width: 743px;" /></a>
 <p>Below, we show some more examples. Feel free to try modifying this to test out your own examples! Notice, you can use more complex start/stop indices like an expression based on the length of the string.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzI6NV0pXG5wcmludChzWzA6bGVuKHMpXSlcbnByaW50KHNbMTpsZW4ocyktM10pIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>It’s very common that you either want to start from the beginning of the string or go to the end in a slice. Python provides a short-hand syntax to infer the start/stop point of a slice by omitting the start/stop value by omitting them before/after a <code class="docutils literal notranslate"><span class="pre">:</span></code> .</p>
+</div>
+<p>It’s very common that you either want to start from the beginning of the string or go to the end in a slice. Python provides a short-hand syntax to infer the start/stop point of a slice by omitting the start/stop value by omitting them before/after a <code class="docutils literal notranslate"><span class="pre">:</span></code> .</p>
 <p>For example, if you were to write the following:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzozXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Python infers that the start should be 0 since the start was omitted in the <code class="docutils literal notranslate"><span class="pre">start:stop</span></code> slice.</p>
+</div>
+<p>Python infers that the start should be 0 since the start was omitted in the <code class="docutils literal notranslate"><span class="pre">start:stop</span></code> slice.</p>
 <p>Additionally, you can omit the stop point and it will go to the end</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzM6XSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><section id="step-size">
+</div>
+<section id="step-size">
 <h2>Step Size<a class="headerlink" href="#step-size" title="Permalink to this headline">#</a></h2>
 <p>The last thing that comes up with specifying slices is the fact that you can also specify a <strong>step size</strong> for a slice. For example, you might want <em>every other</em> character between 2 (inclusive) and 8 (exclusive). To do this, you can write the following</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdoZWxsbyB3b3JsZCEnXG5wcmludChzWzI6ODoyXSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice this behaves exactly the same as the <code class="docutils literal notranslate"><span class="pre">range</span></code> function! Your intuition there for how the step size works applies here.</p>
+</div>
+<p>Notice this behaves exactly the same as the <code class="docutils literal notranslate"><span class="pre">range</span></code> function! Your intuition there for how the step size works applies here.</p>
 </section>
 <section id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>

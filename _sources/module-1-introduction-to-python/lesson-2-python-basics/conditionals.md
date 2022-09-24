@@ -12,7 +12,7 @@ In Python, the keywords to control these conditionals are `if` , `elif` (read "e
 
 A conditional block is an `if` block optionally followed by any number of `elif` blocks optionally followed by at most one `else` block.
 
-```{snippet}
+```python
 x = 14
 if x < 10:
     print('A')

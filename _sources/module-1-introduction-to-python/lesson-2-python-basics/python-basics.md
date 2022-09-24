@@ -16,13 +16,13 @@ Go out and explore a bit! 😊
 
 We saw that the `print` statement in Python is very simple
 
-```{snippet}
+```python
 print('Hello world!')
 ```
 
 One thing that Python is really good at is providing slightly different ways of using the same syntax to do helpful things. For example, you can also pass multiple values to the `print` function and it adds spaces between them!
 
-```{snippet}
+```python
 print('Hello', 'world', '!')
 ```
 
@@ -34,7 +34,7 @@ In CSE 163, we will ask you to put a little bit of starter code in every program
 
 Recall that we could write a Python program in a file to print hello world like the following:
 
-```{snippet}
+```python
 print('Hello world')
 ```
 
@@ -49,7 +49,7 @@ is a comment (i.e. not real code, just a description).
 
 ```
 
-```{snippet}
+```python
 def main():
     # Put your code, indented inside here
     print('Hello world!')
@@ -82,7 +82,7 @@ Variables store values. Each Python value is composed of a value and its type. U
 
 The following snippet creates a variable named `x` that stores the value `3` of type `int` (for integer) and a variable named `y` that stores the value `4.2` of type `float` (for floating-point number). One line 3, it then re-assigned `x` to store the value `3.7` of type `float` . This is why the program prints `x = 3.7` and `y = 4.2` .
 
-```{snippet}
+```python
 x = 3
 y = 4.2
 x = 3.7
@@ -156,7 +156,7 @@ Python supports many operations for built-in types. Specifically, here are the o
 
 You can also nest expressions (and use parentheses to define order) since all expressions evaluate to some value. You can do something complex like the following:
 
-```{snippet}
+```python
 a = 3
 print(a - (2 * a) + (a ** (1 + 2)))
 ```

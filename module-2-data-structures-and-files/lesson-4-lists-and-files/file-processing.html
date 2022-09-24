@@ -2199,17 +2199,12 @@ title="Print to PDF"
 <h2>Files in Python<a class="headerlink" href="#files-in-python" title="Permalink to this headline">#</a></h2>
 <p>With Python, you can open and read files using the <code class="docutils literal notranslate"><span class="pre">open</span></code> built-in function. The syntax is shown in the following snippet. Note that the value you pass into the <code class="docutils literal notranslate"><span class="pre">open</span></code> is a <strong>path</strong> to the file. We will talk about file paths in a bit, but think of it like a full-name of a file on a computer! For example,
 if there is a file named <code class="docutils literal notranslate"><span class="pre">poem.txt</span></code> in the same directory as your Python script, the following code snippet will print the content of that file:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAid2l0aCBvcGVuKCdwb2VtLnR4dCcpIGFzIGY6XG4gICAgY29udGVudCA9IGYucmVhZCgpICAjIHJldHVybnMgdGhlIGZpbGUgY29udGVudHMgYXMgYSBzdHJcbiAgICBwcmludChjb250ZW50KSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;poem.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;poem.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># returns the file contents as a str</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This syntax looks a little confusing, but the reason why it’s necessary is a bit outside of the scope of our class. While maybe a little less satisfying, we will just have to memorize that <code class="docutils literal notranslate"><span class="pre">with</span></code> syntax since it is the “right way” of opening a file in Python. The only thing you really need to take note of on this syntax is the variable name for the file object comes after the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword. So in the example above, the variable name <code class="docutils literal notranslate"><span class="pre">f</span></code> will refer to the file we just opened inside the <code class="docutils literal notranslate"><span class="pre">with</span></code> block.</p>
+</div>
+<p>This syntax looks a little confusing, but the reason why it’s necessary is a bit outside of the scope of our class. While maybe a little less satisfying, we will just have to memorize that <code class="docutils literal notranslate"><span class="pre">with</span></code> syntax since it is the “right way” of opening a file in Python. The only thing you really need to take note of on this syntax is the variable name for the file object comes after the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword. So in the example above, the variable name <code class="docutils literal notranslate"><span class="pre">f</span></code> will refer to the file we just opened inside the <code class="docutils literal notranslate"><span class="pre">with</span></code> block.</p>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Even though we don’t expect you to understand the details of why this pattern is necessary, you should
@@ -2232,10 +2227,7 @@ syntax to do it for you!</p>
 <p>A very common pattern is to read the file <strong>line by line</strong> so that you can process each line on its own. We could accomplish this with the <code class="docutils literal notranslate"><span class="pre">split</span></code> function on the content of the file, but Python conveniently provides a <code class="docutils literal notranslate"><span class="pre">readlines</span></code> function on the file object that returns the lines in a list of strings.</p>
 <p>For example, the following code snippet will print out the file with a line number in front of each line. In this example <code class="docutils literal notranslate"><span class="pre">lines</span></code> will store a list of each line in the file and our loop over that just keeps track of a counter and prints that before the line itself.</p>
 <p>As a minor detail, each line will still contain a special <strong>new-line</strong> character ( <code class="docutils literal notranslate"><span class="pre">\n</span></code> ) at the end. To make sure our output doesn’t have extra new-lines in it, we <code class="docutils literal notranslate"><span class="pre">strip</span></code> each line to remove this trailing whitespace.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIG51bWJlcl9saW5lcyhmaWxlX25hbWUpOlxuICAgIFwiXCJcIlxuICAgIFRha2VzIGEgZmlsZSBuYW1lIGFzIGEgcGFyYW1ldGVyIGFuZCBwcmludHMgb3V0IHRoZSBmaWxlXG4gICAgbGluZSBieSBsaW5lIChwcmVmaXhlZCB3aXRoIHRoYXQgbGluZSdzIGxpbmUgbnVtYmVyKVxuICAgIFwiXCJcIlxuICAgIHdpdGggb3BlbihmaWxlX25hbWUpIGFzIGZpbGU6XG4gICAgICAgICMgR2V0IHRoZSBsaW5lcyBmcm9tIHRoZSBmaWxlXG4gICAgICAgIGxpbmVzID0gZmlsZS5yZWFkbGluZXMoKVxuXG4gICAgICAgIGxpbmVfbnVtID0gMVxuICAgICAgICBmb3IgbGluZSBpbiBsaW5lczpcbiAgICAgICAgICAgIGxpbmUgPSBsaW5lLnN0cmlwKClcbiAgICAgICAgICAgICMgUmVtZW1iZXIgd2UgaGF2ZSB0byBjYXN0IGxpbmVfbnVtIHRvIGEgc3RyIVxuICAgICAgICAgICAgcHJpbnQoc3RyKGxpbmVfbnVtKSArICc6ICcgKyBsaW5lKVxuICAgICAgICAgICAgbGluZV9udW0gKz0gMVxuXG5cbmRlZiBtYWluKCk6XG4gICAgbnVtYmVyX2xpbmVzKCdwb2VtLnR4dCcpXG5cblxuaWYgX19uYW1lX18gPT0gJ19fbWFpbl9fJzpcbiAgICBtYWluKCkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">number_lines</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">number_lines</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Takes a file name as a parameter and prints out the file</span>
 <span class="sd">    line by line (prefixed with that line&#39;s line number)</span>
@@ -2259,10 +2251,8 @@ syntax to do it for you!</p>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>So while the code is getting more complex, all of the code kind of falls into solving one of 3 sub-tasks of the problem:</p>
+</div>
+<p>So while the code is getting more complex, all of the code kind of falls into solving one of 3 sub-tasks of the problem:</p>
 <ul class="simple">
 <li><p>The standard main-method pattern code and defining the function for <code class="docutils literal notranslate"><span class="pre">number_lines</span></code></p></li>
 <li><p>The standard code for opening a file (<code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open...</span></code>) and to read the lines of a file (<code class="docutils literal notranslate"><span class="pre">f.readlines()</span></code>)</p></li>
@@ -2282,10 +2272,7 @@ syntax to do it for you!</p>
 </div>
 <p>This might sound complicated at first, but we can actually use what we know about strings in Python to solve this in our loop over the lines of the files. Why? <strong>Because each line is just a string!</strong> Recall, there is a really useful string method called <code class="docutils literal notranslate"><span class="pre">split</span></code> that lets us break apart a string into parts based on some delimiter (in this case, spaces).</p>
 <p>It will help to start by solving a sub-part of this problem before trying to solve the entire thing. What if I was given a string, and wanted to count the number of odd-length words in that string? You could write code that splits the string up by spaces and then loops over that list of words to count up all the ones with odd lengths.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicyA9ICdJIGFtIGEgcmVhbGx5IGNvb2wgc2VudGVuY2UuJ1xud29yZHMgPSBzLnNwbGl0KClcbmNvdW50ID0gMFxuZm9yIHdvcmQgaW4gd29yZHM6XG4gICAgIyBJZiB0aGUgbGVuZ3RoIGhhcyBhIHJlbWFpbmRlciB3aGVuIGRpdmlkZWQgYnkgMiwgaXQncyBvZGRcbiAgICBpZiBsZW4od29yZCkgJSAyID09IDE6XG4gICAgICAgIGNvdW50ICs9IDFcblxucHJpbnQoJ051bWJlciBvZiBvZGQtbGVuZ3RoIHdvcmRzOicsIGNvdW50KSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;I am a really cool sentence.&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;I am a really cool sentence.&#39;</span>
 <span class="n">words</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
@@ -2295,15 +2282,10 @@ syntax to do it for you!</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of odd-length words:&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Now that we have this sub-problem solved, we can tackle the larger problem of doing this task above multiple times, once for each line in the file.</p>
+</div>
+<p>Now that we have this sub-problem solved, we can tackle the larger problem of doing this task above multiple times, once for each line in the file.</p>
 <p>We start with the code with the general pattern of looping over the lines of a file</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGNvdW50X29kZChmaWxlX25hbWUpOlxuICAgIFwiXCJcIlxuICAgIFRha2VzIGEgZmlsZSBuYW1lIGFzIGEgcGFyYW1ldGVyIGFuZCBwcmludHMgb3V0IHRoZSBmaWxlXG4gICAgbGluZSBieSBsaW5lIChwcmVmaXhlZCB3aXRoIHRoYXQgbGluZSdzIGxpbmUgbnVtYmVyKVxuICAgIFwiXCJcIlxuICAgIHdpdGggb3BlbihmaWxlX25hbWUpIGFzIGZpbGU6XG4gICAgICAgIGxpbmVzID0gZmlsZS5yZWFkbGluZXMoKVxuICAgICAgICBmb3IgbGluZSBpbiBsaW5lczpcbiAgICAgICAgICAgICMgRG8gc29tZXRoaW5nIHdpdGggbGluZSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_odd</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_odd</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Takes a file name as a parameter and prints out the file</span>
 <span class="sd">    line by line (prefixed with that line&#39;s line number)</span>
@@ -2313,14 +2295,9 @@ syntax to do it for you!</p>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
             <span class="c1"># Do something with line</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Now that we have that starter code, we can go ahead and use the ideas we saw to count the number of odd length words in a single line inside this loop over the lines! The only other thing that needs to be added is some book-keeping to keep track of the line number for printing.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGNvdW50X29kZChmaWxlX25hbWUpOlxuICAgIFwiXCJcIlxuICAgIFRha2VzIGEgZmlsZSBuYW1lIGFzIGEgcGFyYW1ldGVyIGFuZCBmb3IgZWFjaCBsaW5lXG4gICAgcHJpbnRzIG91dCB0aGUgbGluZSBudW1iZXIgYW5kIHRoZSBudW1iZXIgb2Ygb2RkIGxlbmd0aCB3b3JkcyBvbiB0aGF0IGxpbmUuXG4gICAgXCJcIlwiXG4gICAgd2l0aCBvcGVuKGZpbGVfbmFtZSkgYXMgZmlsZTpcbiAgICAgICAgbGluZXMgPSBmaWxlLnJlYWRsaW5lcygpXG4gICAgICAgIGxpbmVfbnVtID0gMVxuICAgICAgICBmb3IgbGluZSBpbiBsaW5lczpcbiAgICAgICAgICAgICMgQnJlYWsgdGhlIGxpbmUgaW50byB3b3JkcyAodGhpcyBhbHNvIHJlbW92ZXMgdHJhaWxpbmcgd2hpdGVzcGFjZSlcbiAgICAgICAgICAgIHdvcmRzID0gbGluZS5zcGxpdCgpXG5cbiAgICAgICAgICAgICMgQ291bnQgdGhlIG51bWJlciBvZiBvZGQtbGVuZ3RoIHdvcmRzIGluIHRoaXMgbGluZVxuICAgICAgICAgICAgb2RkX2NvdW50ID0gMFxuICAgICAgICAgICAgZm9yIHdvcmQgaW4gd29yZHM6XG4gICAgICAgICAgICAgICAgaWYgbGVuKHdvcmQpICUgMiA9PSAxOlxuICAgICAgICAgICAgICAgICAgICBvZGRfY291bnQgKz0gMVxuXG4gICAgICAgICAgICAjIFByaW50IGl0IG91dCFcbiAgICAgICAgICAgIHByaW50KHN0cihsaW5lX251bSkgKyAnOiAnICsgc3RyKG9kZF9jb3VudCkpXG4gICAgICAgICAgICBsaW5lX251bSArPSAxXG5cblxuZGVmIG1haW4oKTpcbiAgICBjb3VudF9vZGQoJ3BvZW0udHh0JylcblxuXG5pZiBfX25hbWVfXyA9PSAnX19tYWluX18nOlxuICAgIG1haW4oKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_odd</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+</div>
+<p>Now that we have that starter code, we can go ahead and use the ideas we saw to count the number of odd length words in a single line inside this loop over the lines! The only other thing that needs to be added is some book-keeping to keep track of the line number for printing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_odd</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Takes a file name as a parameter and for each line</span>
 <span class="sd">    prints out the line number and the number of odd length words on that line.</span>
@@ -2350,10 +2327,8 @@ syntax to do it for you!</p>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

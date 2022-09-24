@@ -2133,16 +2133,11 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <p>Consider the code block below and the question: Are <code class="docutils literal notranslate"><span class="pre">l1</span></code> and <code class="docutils literal notranslate"><span class="pre">l2</span></code> equal?</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibDEgPSBbMSwgMiwgM11cbmwyID0gWzEsIDIsIDNdIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This sounds like a simple question, but the answer can be complex since it depends on what we mean by “equal”. Equality usually means one of two things:</p>
+</div>
+<p>This sounds like a simple question, but the answer can be complex since it depends on what we mean by “equal”. Equality usually means one of two things:</p>
 <ul class="simple">
 <li><p>The objects have states that are equivalent. We call this <strong>value equality.</strong></p></li>
 <li><p>The objects are actually the same object. We call this <strong>identity equality.</strong></p></li>
@@ -2158,10 +2153,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">y</span></code> compares <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> ‘s identity to see if they are the same object (i.e. identity-equivalent).</p></li>
 </ul>
 <p>With that knowledge, you should try to predict what the following code block will output before running the code!</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibDEgPSBbMSwgMiwgM11cbmwyID0gWzEsIDIsIDNdXG5sMyA9IGwxXG5cbnByaW50KCdDb21wYXJlID09JylcbnByaW50KCdsMSA9PSBsMicsIGwxID09IGwyKVxucHJpbnQoJ2wxID09IGwzJywgbDEgPT0gbDMpXG5wcmludCgnbDIgPT0gbDMnLCBsMiA9PSBsMylcbnByaW50KClcblxucHJpbnQoJ0NvbXBhcmUgaXMnKVxucHJpbnQoJ2wxIGlzIGwyJywgbDEgaXMgbDIpXG5wcmludCgnbDEgaXMgbDMnLCBsMSBpcyBsMylcbnByaW50KCdsMiBpcyBsMycsIGwyIGlzIGwzKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">l3</span> <span class="o">=</span> <span class="n">l1</span>
 
@@ -2176,10 +2168,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;l1 is l3&#39;</span><span class="p">,</span> <span class="n">l1</span> <span class="ow">is</span> <span class="n">l3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;l2 is l3&#39;</span><span class="p">,</span> <span class="n">l2</span> <span class="ow">is</span> <span class="n">l3</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

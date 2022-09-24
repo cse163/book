@@ -2183,75 +2183,45 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>In this slide, you will learn some fancy syntax to make it easier to create lists storing specific values.</p>
 <p>So far, we have seen how you can specify a list by hand. We have used the following syntax.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibnVtcyA9IFsxLCAyLCAzXVxucHJpbnQobnVtcykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>What if I wanted to make a list of the numbers from 1 to 10? We could do that, but it would take a little bit more typing.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibnVtcyA9IFsxLCAyLCAzLCA0LCA1LCA2LCA3LCA4LCA5LCAxMF1cbnByaW50KG51bXMpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</div>
+<p>What if I wanted to make a list of the numbers from 1 to 10? We could do that, but it would take a little bit more typing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>What about numbers 1 to 100? That would be ridiculous to type out! You might be thinking back to the <code class="docutils literal notranslate"><span class="pre">list</span></code> methods we learned in Lesson 4, and might realize we could build up the <code class="docutils literal notranslate"><span class="pre">list</span></code> programmatically. Here is an example using the <code class="docutils literal notranslate"><span class="pre">list</span></code> methods we have learned.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibnVtcyA9IFtdXG5mb3IgaSBpbiByYW5nZSgxLCAxMDEpOlxuICAgIG51bXMuYXBwZW5kKGkpXG5wcmludChudW1zKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[]</span>
+</div>
+<p>What about numbers 1 to 100? That would be ridiculous to type out! You might be thinking back to the <code class="docutils literal notranslate"><span class="pre">list</span></code> methods we learned in Lesson 4, and might realize we could build up the <code class="docutils literal notranslate"><span class="pre">list</span></code> programmatically. Here is an example using the <code class="docutils literal notranslate"><span class="pre">list</span></code> methods we have learned.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
     <span class="n">nums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This is handy because <code class="docutils literal notranslate"><span class="pre">range</span></code> defines a sequence of numbers we are interested in, and then we just <code class="docutils literal notranslate"><span class="pre">append</span></code> them to our list.</p>
+</div>
+<p>This is handy because <code class="docutils literal notranslate"><span class="pre">range</span></code> defines a sequence of numbers we are interested in, and then we just <code class="docutils literal notranslate"><span class="pre">append</span></code> them to our list.</p>
 <p>This is a very common pattern in Python, so it provides some nice syntax called a <strong>list comprehension</strong> to help you build up these lists. We first show the code and then explain the parts.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibnVtcyA9IFtpIGZvciBpIGluIHJhbmdlKDEsIDEwMSldXG5wcmludChudW1zKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This is very similar to our first approach, where we spelled out what was inside the list, like in <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> . However, now we are using a loop inside the definition of a list to help us specify the values. You should read a list comprehension in the following way (newlines and comments added for clarity)</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibnVtcyA9IFsgICAgICAgICAgICAgICAgICAgIyAzKSBTdG9yZSB0aGUgcmVzdWx0IGluIGEgbGlzdCBjYWxsZWQgbnVtc1xuICAgIGkgICAgICAgICAgICAgICAgICAgICAgIyAyKSBUaGUgdmFsdWUgeW91IHdpbGwgcHV0IGluIHRoZSBsaXN0XG4gICAgZm9yIGkgaW4gcmFuZ2UoMSwgMTAxKSAjIDEpIFdoYXQgeW91IGFyZSBsb29waW5nIG92ZXJcbl1cbnByaW50KG51bXMpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span>                   <span class="c1"># 3) Store the result in a list called nums</span>
+</div>
+<p>This is very similar to our first approach, where we spelled out what was inside the list, like in <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> . However, now we are using a loop inside the definition of a list to help us specify the values. You should read a list comprehension in the following way (newlines and comments added for clarity)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span>                   <span class="c1"># 3) Store the result in a list called nums</span>
     <span class="n">i</span>                      <span class="c1"># 2) The value you will put in the list</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span> <span class="c1"># 1) What you are looping over</span>
 <span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>This is just a compact syntax for writing the full loop we showed earlier! It’s a bit weird when you first see it that the <code class="docutils literal notranslate"><span class="pre">for</span></code> comes after the value, but you get used to it with practice. This syntax can be very handy for specifying things really quickly.</p>
+</div>
+<p>This is just a compact syntax for writing the full loop we showed earlier! It’s a bit weird when you first see it that the <code class="docutils literal notranslate"><span class="pre">for</span></code> comes after the value, but you get used to it with practice. This syntax can be very handy for specifying things really quickly.</p>
 <section id="transforming-values">
 <h2>Transforming Values<a class="headerlink" href="#transforming-values" title="Permalink to this headline">#</a></h2>
 <p>One of the nice things about list comprehensions is they let you pretty easily transform your values before putting them in the list. In the last example, we just put <code class="docutils literal notranslate"><span class="pre">i</span></code> in the list but that isn’t the only option! For example, what if we wanted to put in the squares of all the numbers between 1 and 10? We could write a list comprehension for that too!</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAic3F1YXJlcyA9IFtpICoqIDIgZm9yIGkgaW4gcmFuZ2UoMSwgMTEpXVxucHJpbnQoc3F1YXJlcykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Again, you should read it in the order we showed above:</p>
+</div>
+<p>Again, you should read it in the order we showed above:</p>
 <ul class="simple">
 <li><p>What are you looping over? <code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">11)</span></code> using loop variable <code class="docutils literal notranslate"><span class="pre">i</span></code></p></li>
 <li><p>What value are you storing in the result? <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">**</span> <span class="pre">2</span></code> (i.e. <span class="math notranslate nohighlight">\(i^2\)</span>)</p></li>
@@ -2263,43 +2233,28 @@ title="Print to PDF"
 <p>One last thing list comprehensions allow you to do is filter values from the original sequence to just the ones you want! For example, what if we only wanted the squares of numbers divisible by 3 between 1 and 10? Now you could implement this specific task by changing the <code class="docutils literal notranslate"><span class="pre">range</span></code> call to include a step-size, but you could imagine having a more complex condition that you can’t simply solve using that approach.</p>
 <p><strong>Take a second to think about how we would write this without a list comprehension.</strong></p>
 <p>It would be similar to our approach above that uses a call to <code class="docutils literal notranslate"><span class="pre">append</span></code> , but would be different in that it has an if-statement to only <code class="docutils literal notranslate"><span class="pre">append</span></code> some times. It would look something like the snippet below.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAic3F1YXJlcyA9IFtdXG5mb3IgaSBpbiByYW5nZSgxLCAxMSk6XG4gICAgaWYgaSAlIDMgPT0gMDogICMgVGhpcyBpcyB0aGUgbmV3IGFkZGl0aW9uIVxuICAgICAgICBzcXVhcmVzLmFwcGVuZChpICoqIDIpXG5wcmludChzcXVhcmVzKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># This is the new addition!</span>
         <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Python provides a syntax for conditionally including a value in a list comprehension using an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement inside the comprehension. Again, the syntax looks a bit weird at first.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAic3F1YXJlcyA9IFtpICoqIDIgZm9yIGkgaW4gcmFuZ2UoMSwgMTEpIGlmIGkgJSAzID09IDBdXG5wcmludChzcXVhcmVzKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</div>
+<p>Python provides a syntax for conditionally including a value in a list comprehension using an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement inside the comprehension. Again, the syntax looks a bit weird at first.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Like before, we will write this out in another way to show what is going on:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAic3F1YXJlcyA9IFsgICAgICAgICAgICAgICAjIDQpIFN0b3JlIHRoZSByZXN1bHQgaW4gYSBsaXN0IGNhbGxlZCBzcXVhcmVzXG4gICAgaSAqKiAyICAgICAgICAgICAgICAgICMgMykgV2hhdCB2YWx1ZSBzaG91bGQgYmUgc3RvcmVkIGluIHRoZSByZXN1bHQ/XG4gICAgZm9yIGkgaW4gcmFuZ2UoMSwgMTEpICMgMSkgV2hhdCB5b3UgYXJlIGxvb3Bpbmcgb3ZlclxuICAgIGlmIGkgJSAzID09IDAgICAgICAgICAjIDIpIFNob3VsZCB3ZSBpbmNsdWRlIHRoZSB2YWx1ZSBpbiB0aGUgcmVzdWx0P1xuXVxucHJpbnQoc3F1YXJlcykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span>               <span class="c1"># 4) Store the result in a list called squares</span>
+</div>
+<p>Like before, we will write this out in another way to show what is going on:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span>               <span class="c1"># 4) Store the result in a list called squares</span>
     <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>                <span class="c1"># 3) What value should be stored in the result?</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="c1"># 1) What you are looping over</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span>         <span class="c1"># 2) Should we include the value in the result?</span>
 <span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>You probably are thinking that it’s kind of weird to put the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement after the loop at the end, and you’re right, it’s not super intuitive why they decided to put it there. You get used to this ordering though for the comprehension since they are so useful!</p>
+</div>
+<p>You probably are thinking that it’s kind of weird to put the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement after the loop at the end, and you’re right, it’s not super intuitive why they decided to put it there. You get used to this ordering though for the comprehension since they are so useful!</p>
 </section>
 </section>
 

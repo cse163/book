@@ -12,7 +12,7 @@ A few slides back, we learned of some string functions (e.g. `upper` , `lower` ,
 
 Consider the following snippet.
 
-```{snippet}
+```python
 s = "I'm just going to the store, to the store"
 print(s)
 print(s.split())
@@ -37,7 +37,7 @@ in Python can do so much more (as we'll see in Lesson 4)!
 
 The great thing about `list` s in Python, is that they share a lot of the same syntax for operations as `str` s. The following snippet shows you all of the string syntaxes we learned this lecture also apply to lists.
 
-```{snippet}
+```python
 l = ['dog', 'says', 'woof']
 
 # Length
@@ -63,7 +63,7 @@ Some key differences/things to point out:
 
 First, to specify the values of a `list`, the syntax uses square brackets around a comma-separated list of values (of any type).
 
-```{snippet}
+```python
 l1 = ['I', 'love', 'dogs']
 l2 = [7, 8, 9]
 l3 = ['I', 3, 'dogs']  # can mix types too!
@@ -75,7 +75,7 @@ Second, because this is now a `list`, not a `str` , the values returned by index
 
 One way `list` s are able to do a bit more than `str` s comes from the fact that you are allowed to change the contents of a list by assigning into it. Just like you can use an index to get a value out of a list, you can use an index to set a value at a particular spot.
 
-```{snippet}
+```python
 l1 = ['I', 'love', 'dogs']
 
 print(l1)

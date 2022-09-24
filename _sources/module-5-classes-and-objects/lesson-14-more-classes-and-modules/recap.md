@@ -4,7 +4,7 @@ In Lesson 12, we learned about **classes** and **objects** . Here's a quick reca
 
 - A **class** is a blueprint that can be used to construct _instances_ of that blueprint. A class defines the _state_ of the _object_ and what _behaviors_ it has. For example, we defined the `Dog` class as follows:
 
-  ```{snippet}
+  ```python
   class Dog:
   def __init__(self, name):
       self.name = name
@@ -15,7 +15,7 @@ In Lesson 12, we learned about **classes** and **objects** . Here's a quick reca
 
 - An **object** (or **instance** ) is an instantiation of a _class_ that has its own set of fields. You can create an instance of the `Dog` class by using the following syntax.
 
-  ```{snippet}
+  ```python
   d = Dog('Fido')
   ```
 
@@ -25,7 +25,7 @@ In Lesson 12, we learned about **classes** and **objects** . Here's a quick reca
 
 - Variables store **references** to objects rather than the objects themselves. This means the following program has 2 `Dog` objects and 3 `Dog` references.
 
-  ```{snippet}
+  ```python
   d1 = Dog('Chester')
   d2 = Dog('Scout')
   d3 = d1
@@ -43,7 +43,7 @@ In Lesson 12, we learned about **classes** and **objects** . Here's a quick reca
 
 - Every method defined in a class needs to take a parameter `self` so the method can access the fields/methods of the instance the method is being called on.
 
-  ```{snippet}
+  ```python
   d1 = Dog('Chester')
   d2 = Dog('Scout')
   d3 = d1

@@ -2217,20 +2217,15 @@ title="Print to PDF"
 <section id="an-example-set-of-int">
 <h2>An Example: <code class="docutils literal notranslate"><span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">int</span></code><a class="headerlink" href="#an-example-set-of-int" title="Permalink to this headline">#</a></h2>
 <p>Suppose I wanted to make a <code class="docutils literal notranslate"><span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">int</span></code> s like in the code cell below. Our goal is to figure out how this structure is interpreted internally such that it can add and check membership of values in <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> time. After the code cell, we illustrate how we use this big idea from above to implement this <code class="docutils literal notranslate"><span class="pre">set</span></code> . Below, we show a line of code in the gray code-block and then explain how it affects the hash table idea discussed above.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAibnVtcyA9IHNldCgpXG5udW1zLmFkZCgxMSlcbm51bXMuYWRkKDQ5KVxubnVtcy5hZGQoMjQpXG5wcmludCg0OSBpbiBudW1zKSAgIyBUcnVlXG5wcmludCg1IGluIG51bXMpICAgIyBGYWxzZSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="n">nums</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
 <span class="n">nums</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span>
 <span class="n">nums</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">49</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">)</span>  <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">)</span>   <span class="c1"># False</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><section id="walkthrough">
+</div>
+<section id="walkthrough">
 <h3>Walkthrough<a class="headerlink" href="#walkthrough" title="Permalink to this headline">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nums = set()
 </pre></div>

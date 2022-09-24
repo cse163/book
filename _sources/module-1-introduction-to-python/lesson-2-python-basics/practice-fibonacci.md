@@ -8,7 +8,7 @@ The Fibonacci Sequence is the following sequence of numbers: 1, 1, 2, 3, 5, 8, 1
 
 Your function should **return** the first Fibonacci number in the sequence that exceeds the given value `n` . For example, the following snippet that uses your function shows the output in the comments next to each line.
 
-```{snippet}
+```python
 print(fibonacci(3))  # 5
 print(fibonacci(6))  # 8
 print(fibonacci(-2)) # 1

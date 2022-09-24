@@ -2140,18 +2140,13 @@ title="Print to PDF"
 <li><p>A method name <code class="docutils literal notranslate"><span class="pre">display</span></code> that returns a <code class="docutils literal notranslate"><span class="pre">str</span></code> representation of the point. It should return <code class="docutils literal notranslate"><span class="pre">'(x,</span> <span class="pre">y)'</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span></code> is its <code class="docutils literal notranslate"><span class="pre">x</span></code> value and <code class="docutils literal notranslate"><span class="pre">y</span></code> is its y value.</p></li>
 </ul>
 <p>For example, your class should have the following behavior (return value shown in comments). This is essentially the same as <code class="docutils literal notranslate"><span class="pre">main.py</span></code> (which you don’t need to edit).</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicCA9IFBvaW50KDEsIDIpXG5wLmdldF94KCkgICAgIyAxXG5wLnNldF95KDQpXG5wLmRpc3BsYXkoKSAgIyAnKDEsIDQpJyIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span>    <span class="c1"># 1</span>
 <span class="n">p</span><span class="o">.</span><span class="n">set_y</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>  <span class="c1"># &#39;(1, 4)&#39;</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

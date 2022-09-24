@@ -2213,21 +2213,13 @@ title="Print to PDF"
 .</p>
 </div>
 <p>Just like any other value, you can store <code class="docutils literal notranslate"><span class="pre">bool</span></code> s in variables.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiYjEgPSBUcnVlXG5iMiA9IEZhbHNlXG5wcmludChiMSwgYjIpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">b2</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>With <code class="docutils literal notranslate"><span class="pre">bool</span></code> it’s common to do logical operations to combine different <code class="docutils literal notranslate"><span class="pre">bool</span></code> values. Below is a sample program that shows the different operations you can use on <code class="docutils literal notranslate"><span class="pre">bool</span></code> types.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiYjEgPSBGYWxzZVxuYjIgPSBUcnVlXG5cbiMgYW5kOiBUcnVlIGlmIGFuZCBvbmx5IGlmIGJvdGggdmFsdWVzIGFyZSBUcnVlXG5wcmludChiMSBhbmQgYjIpXG5cbiMgb3I6IFRydWUgaWYgZWl0aGVyIHZhbHVlIChvciBib3RoISkgaXMgVHJ1ZVxucHJpbnQoYjEgb3IgYjIpXG5cbiMgbm90OiBOZWdhdGVzIHRoZSB2YWx1ZSBvZiB0aGUgYm9vbGVhbiBleHByZXNzaW9uXG4jICAgICAgKFRydWUgYmVjb21lcyBGYWxzZSwgRmFsc2UgYmVjb21lcyBUcnVlKVxucHJpbnQobm90IGIyIGFuZCBiMSlcbnByaW50KG5vdCAoYjIgYW5kIGIxKSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="kc">False</span>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">bool</span></code> it’s common to do logical operations to combine different <code class="docutils literal notranslate"><span class="pre">bool</span></code> values. Below is a sample program that shows the different operations you can use on <code class="docutils literal notranslate"><span class="pre">bool</span></code> types.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">b2</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="c1"># and: True if and only if both values are True</span>
@@ -2241,10 +2233,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">b2</span> <span class="ow">and</span> <span class="n">b1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">b2</span> <span class="ow">and</span> <span class="n">b1</span><span class="p">))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The following table shows how <code class="docutils literal notranslate"><span class="pre">and</span></code> , <code class="docutils literal notranslate"><span class="pre">or</span></code> , and <code class="docutils literal notranslate"><span class="pre">not</span></code> evaluate.</p>
+</div>
+<p>The following table shows how <code class="docutils literal notranslate"><span class="pre">and</span></code> , <code class="docutils literal notranslate"><span class="pre">or</span></code> , and <code class="docutils literal notranslate"><span class="pre">not</span></code> evaluate.</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/NOJE62A1lo1V9wG3GSxFedc5"><img alt="TODO" class="align-center" src="https://static.us.edusercontent.com/files/NOJE62A1lo1V9wG3GSxFedc5" style="width: 480px;" /></a>
 <p>Notice that the last two lines printed different values! In this case, the parentheses matter in this example because of the <strong>precedence of operators.</strong> Much like with arithmetic operators like <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code> , logical operators have different “order of operations” (which programmers call “precedence”).</p>
 <p>For example, the expression <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> is <strong>not</strong> the same as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">*</span> <span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span></code> because <code class="docutils literal notranslate"><span class="pre">*</span></code> has higher precedence (you might have learned PEMDAS to remember precedence for numeric operators).</p>
@@ -2253,46 +2243,31 @@ title="Print to PDF"
 <section id="comparisons">
 <h3>Comparisons<a class="headerlink" href="#comparisons" title="Permalink to this headline">#</a></h3>
 <p>You can also create <code class="docutils literal notranslate"><span class="pre">bool</span></code> values by doing comparisons between other values. There are additional operators in Python that let you logically compare values.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IDNcbnByaW50KHggPCA0KSAgICMgXCJJcyB4IGlzIGxlc3MgdGhhbiA0P1wiXG5wcmludCh4ID49IDUpICAjIFwiSXMgeCBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gNT9cIlxucHJpbnQoeCA9PSAyKSAgIyBcIklzIHggZXF1YWwgdG8gMj9cIlxucHJpbnQoeCAhPSAyKSAgIyBcIklzIHggbm90IGVxdWFsIHRvIDI/XCIiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span>   <span class="c1"># &quot;Is x is less than 4?&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># &quot;Is x greater than or equal to 5?&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># &quot;Is x equal to 2?&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># &quot;Is x not equal to 2?&quot;</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 <section id="casting-types">
 <h2>Casting Types<a class="headerlink" href="#casting-types" title="Permalink to this headline">#</a></h2>
 <p>You can convert a value between types with <strong>casting</strong>. Casting takes a value of one type and converts it to its corresponding value in another type.</p>
 <p>For example, the following program shows how a number like <code class="docutils literal notranslate"><span class="pre">1.4</span></code> (a <code class="docutils literal notranslate"><span class="pre">float</span></code> ) can be converted to an <code class="docutils literal notranslate"><span class="pre">int</span></code> using casting.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IDEuNFxucHJpbnQoJ3ggPScsIHgpXG5wcmludCgnVG8gaW50OicsIGludCh4KSkiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.4</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.4</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x =&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To int:&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Casting has a lot of complex rules of which values can or can’t be cast to another type. For example, Python provides a convenient way of converting data in text (type <code class="docutils literal notranslate"><span class="pre">str</span></code> ) to the cast-type. For example, below you can see casting can extract the value from the <code class="docutils literal notranslate"><span class="pre">str</span></code> but it might fail if it doesn’t make sense to do a particular conversion.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IFwiMS43XCJcbnByaW50KCdUbyBmbG9hdDonLCBmbG9hdCh4KSlcbnByaW50KCdUbyBpbnQ6JywgaW50KHgpKSAgICMgVGhpcyBjYXVzZXMgYW4gZXJyb3IhIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;1.7&quot;</span>
+</div>
+<p>Casting has a lot of complex rules of which values can or can’t be cast to another type. For example, Python provides a convenient way of converting data in text (type <code class="docutils literal notranslate"><span class="pre">str</span></code> ) to the cast-type. For example, below you can see casting can extract the value from the <code class="docutils literal notranslate"><span class="pre">str</span></code> but it might fail if it doesn’t make sense to do a particular conversion.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;1.7&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To float:&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To int:&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   <span class="c1"># This causes an error!</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

@@ -2200,36 +2200,23 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <p>In the last module, we learned about how to define <strong>default parameters</strong> for your function. What this means is we specify what a default value should be for a parameter and the client can optionally provide a value for that parameter (it takes the default value if not specified). For example,</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIHNvbWVfZnVuY3Rpb24oeCwgeT0yKTpcbiAgICBwcmludCh4ICogeSlcblxuc29tZV9mdW5jdGlvbig0LCA1KVxuc29tZV9mdW5jdGlvbigzKSAgIyBkZWZhdWx0IHdpbGwgYmUgeT0yIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="n">some_function</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">some_function</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># default will be y=2</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>One important thing to mention: you are allowed to give default values for any parameter you want, however, there is a rule about the order of parameters when you define default values. If you define a default value for a parameter, every parameter after that one in the list of parameters must also have a default value. This means you would not be able to write a function like the one below. If you run it, you will see an error.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIHNvbWVfZnVuY3Rpb24oYSwgYj0yLCBjKTpcbiAgIHByaW50KGEgKiBiICogYykiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+</div>
+<p>One important thing to mention: you are allowed to give default values for any parameter you want, however, there is a rule about the order of parameters when you define default values. If you define a default value for a parameter, every parameter after that one in the list of parameters must also have a default value. This means you would not be able to write a function like the one below. If you run it, you will see an error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><section id="a-curious-case">
+</div>
+<section id="a-curious-case">
 <h2>A Curious Case<a class="headerlink" href="#a-curious-case" title="Permalink to this headline">#</a></h2>
 <p>Default parameters are great, but there is one case you have usually think about when you are programming in Python.</p>
 <p>Suppose I wanted to write a function called <code class="docutils literal notranslate"><span class="pre">append_to</span></code> that takes a value and a <code class="docutils literal notranslate"><span class="pre">list</span></code> and appends the value to the end of the list, returning the <code class="docutils literal notranslate"><span class="pre">list</span></code> back to the caller. Suppose we wanted to make the <code class="docutils literal notranslate"><span class="pre">list</span></code> parameter optional, in which case the default value is the empty list. In the following cell, we define such a method and then call it a couple of times. <strong>Before you run the code snippet below, think about what this program should print out.</strong></p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGFwcGVuZF90byhlbGVtZW50LCB0bz1bXSk6XG4gICAgdG8uYXBwZW5kKGVsZW1lbnQpXG4gICAgcmV0dXJuIHRvXG5cbm15X2xpc3QgPSBhcHBlbmRfdG8oMTIpXG5wcmludChteV9saXN0KVxubXlfb3RoZXJfbGlzdCA9IGFwcGVuZF90byg0MilcbnByaW50KG15X290aGVyX2xpc3QpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">append_to</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="p">[]):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">append_to</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">to</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">to</span>
 
@@ -2238,10 +2225,8 @@ title="Print to PDF"
 <span class="n">my_other_list</span> <span class="o">=</span> <span class="n">append_to</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_other_list</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>If you’re like me, you would have expected it to print:</p>
+</div>
+<p>If you’re like me, you would have expected it to print:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[12]
 [42]
 </pre></div>
@@ -2262,10 +2247,7 @@ title="Print to PDF"
 <section id="how-do-we-fix-this">
 <h2>How do we fix this?<a class="headerlink" href="#how-do-we-fix-this" title="Permalink to this headline">#</a></h2>
 <p>The general pattern is to make the default value <code class="docutils literal notranslate"><span class="pre">None</span></code> and then write code inside the method to create an empty <code class="docutils literal notranslate"><span class="pre">list</span></code> if the value is <code class="docutils literal notranslate"><span class="pre">None</span></code> . For example, the fixed code block using this pattern would look like:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGFwcGVuZF90byhlbGVtZW50LCB0bz1Ob25lKTpcbiAgICBpZiB0byBpcyBOb25lOlxuICAgICAgICB0byA9IFtdXG4gICAgdG8uYXBwZW5kKGVsZW1lbnQpXG4gICAgcmV0dXJuIHRvXG5cbm15X2xpc3QgPSBhcHBlbmRfdG8oMTIpXG5wcmludChteV9saXN0KVxubXlfb3RoZXJfbGlzdCA9IGFwcGVuZF90byg0MilcbnByaW50KG15X290aGVyX2xpc3QpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">append_to</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">append_to</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">to</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">to</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">to</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
@@ -2276,18 +2258,13 @@ title="Print to PDF"
 <span class="n">my_other_list</span> <span class="o">=</span> <span class="n">append_to</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_other_list</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>And now it prints the output we expected originally! Each time <code class="docutils literal notranslate"><span class="pre">append_to</span></code> was called and the default-value <code class="docutils literal notranslate"><span class="pre">None</span></code> was used, we then created a new <code class="docutils literal notranslate"><span class="pre">list</span></code> to return so there are now 2 <code class="docutils literal notranslate"><span class="pre">list</span></code> objects in this program above.</p>
+</div>
+<p>And now it prints the output we expected originally! Each time <code class="docutils literal notranslate"><span class="pre">append_to</span></code> was called and the default-value <code class="docutils literal notranslate"><span class="pre">None</span></code> was used, we then created a new <code class="docutils literal notranslate"><span class="pre">list</span></code> to return so there are now 2 <code class="docutils literal notranslate"><span class="pre">list</span></code> objects in this program above.</p>
 </section>
 <section id="fancier-syntax">
 <h2>Fancier Syntax<a class="headerlink" href="#fancier-syntax" title="Permalink to this headline">#</a></h2>
 <p>It can be kind of tedious to sometimes write out an entire if-else block to set a value. Python has a <strong>conditional expression</strong> that lets you write this in shorter syntax (some call this the “ternary operator”). Below we show the original if-else block (the original way you’re familiar with) and then we show the conditional expression that achieve the same value assignment.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY29uZGl0aW9uID0gVHJ1ZSAgIyBPciBhbnkgYm9vbGVhbiB2YWx1ZVxuXG4jIE9wdGlvbiAxXG5pZiBjb25kaXRpb246XG4gICAgeCA9IDE0XG5lbHNlOlxuICAgIHggPSA0MlxucHJpbnQoeClcblxuIyBPcHRpb24gMlxueCA9IDE0IGlmIGNvbmRpdGlvbiBlbHNlIDQyXG5wcmludCh4KSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">condition</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Or any boolean value</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">condition</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Or any boolean value</span>
 
 <span class="c1"># Option 1</span>
 <span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
@@ -2300,15 +2277,10 @@ title="Print to PDF"
 <span class="n">x</span> <span class="o">=</span> <span class="mi">14</span> <span class="k">if</span> <span class="n">condition</span> <span class="k">else</span> <span class="mi">42</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The syntax looks a little weird at first, but it’s meant to read like English “x should have the value 14 if the condition is true, otherwise, it should be 42”.</p>
+</div>
+<p>The syntax looks a little weird at first, but it’s meant to read like English “x should have the value 14 if the condition is true, otherwise, it should be 42”.</p>
 <p>We could then rewrite our <code class="docutils literal notranslate"><span class="pre">append_to</span></code> example using this slightly cleaner syntax:</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiZGVmIGFwcGVuZF90byhlbGVtZW50LCB0bz1Ob25lKTpcbiAgICB0byA9IFtdIGlmIHRvIGlzIE5vbmUgZWxzZSB0b1xuICAgIHRvLmFwcGVuZChlbGVtZW50KVxuICAgIHJldHVybiB0b1xuXG5teV9saXN0ID0gYXBwZW5kX3RvKDEyKVxucHJpbnQobXlfbGlzdClcbm15X290aGVyX2xpc3QgPSBhcHBlbmRfdG8oNDIpXG5wcmludChteV9vdGhlcl9saXN0KSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">append_to</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">append_to</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">to</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">to</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">to</span>
     <span class="n">to</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">to</span>
@@ -2318,10 +2290,8 @@ title="Print to PDF"
 <span class="n">my_other_list</span> <span class="o">=</span> <span class="n">append_to</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_other_list</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Line 2 of this code block can be read to mean ” <code class="docutils literal notranslate"><span class="pre">to</span></code> should reference a new <code class="docutils literal notranslate"><span class="pre">list</span></code> if <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">is</span> <span class="pre">None</span></code> (the default), otherwise <code class="docutils literal notranslate"><span class="pre">to</span></code> should be <code class="docutils literal notranslate"><span class="pre">to</span></code> (whatever was passed to the call).</p>
+</div>
+<p>Line 2 of this code block can be read to mean ” <code class="docutils literal notranslate"><span class="pre">to</span></code> should reference a new <code class="docutils literal notranslate"><span class="pre">list</span></code> if <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">is</span> <span class="pre">None</span></code> (the default), otherwise <code class="docutils literal notranslate"><span class="pre">to</span></code> should be <code class="docutils literal notranslate"><span class="pre">to</span></code> (whatever was passed to the call).</p>
 </section>
 </section>
 

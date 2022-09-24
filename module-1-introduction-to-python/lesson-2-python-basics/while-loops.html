@@ -2195,20 +2195,15 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>For example, the code below shows an example of a very simple loop.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAieCA9IDFcbndoaWxlIHggPCAxMDA6XG4gICAgcHJpbnQoeClcbiAgICB4ID0geCAqIDJcblxucHJpbnQoJ0FmdGVyIGxvb3AnLCB4KSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After loop&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice that the condition here is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code> so the loop keeps executing the body ( <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">2</span></code> ) until the next iteration it is false (when <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">128</span></code> ). After the loop ends, it continues on to the code after the loop ( <code class="docutils literal notranslate"><span class="pre">print('After</span> <span class="pre">loop',</span> <span class="pre">x)</span></code> )</p>
+</div>
+<p>Notice that the condition here is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code> so the loop keeps executing the body ( <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">2</span></code> ) until the next iteration it is false (when <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">128</span></code> ). After the loop ends, it continues on to the code after the loop ( <code class="docutils literal notranslate"><span class="pre">print('After</span> <span class="pre">loop',</span> <span class="pre">x)</span></code> )</p>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>It was probably easy to miss, but you need a

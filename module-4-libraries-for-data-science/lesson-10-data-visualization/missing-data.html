@@ -2236,18 +2236,13 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">signal</span></code>: The measurement value</p></li>
 </ul>
 <p>If we tried to load it into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, we would see the following.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLnJlYWRfY3N2KCdmbXJpLmNzdicpXG5wcmludChkZi50YWlsKCkpICAjIFByaW50cyB0aGUgbGFzdCByb3dzIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fmri.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>  <span class="c1"># Prints the last rows</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice that row 1059 has this weird value <code class="docutils literal notranslate"><span class="pre">NaN</span></code> for both the timepoint and the signal!</p>
+</div>
+<p>Notice that row 1059 has this weird value <code class="docutils literal notranslate"><span class="pre">NaN</span></code> for both the timepoint and the signal!</p>
 <p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> , or “Not a Number”, is a common value in Python to represent the absence of a data-value. You should think of it a lot like <code class="docutils literal notranslate"><span class="pre">None</span></code> but has some slightly different properties that make it a little more usable in some numerical processing applications (will be explained in the next section).</p>
 <p>The fact that we see <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values in our data means the dataset is messy and we will have to deal with it. There is a myriad of ways to try to handle missing data, some more complicated than others. For right now, we will focus on how to detect missing data in the dataset and how to filter it out!</p>
 <p>By default most <code class="docutils literal notranslate"><span class="pre">pandas</span></code> operations just ignore missing values so this isn’t a problem if you are just in the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> world. However, we will see this next week that other libraries for data visualization and machine learning will crash if we give them datasets that contain missing values, so we should learn how to deal with that now.</p>
@@ -2260,10 +2255,7 @@ title="Print to PDF"
 <li><p>Any boolean comparison on <code class="docutils literal notranslate"><span class="pre">NaN</span></code> , evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 <p>We can access the value <code class="docutils literal notranslate"><span class="pre">NaN</span></code> most easily by using the library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (commonly imported as <code class="docutils literal notranslate"><span class="pre">np</span></code> ). We will learn more about <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in Module 7!</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG51bXB5IGFzIG5wXG5cbnByaW50KG5wLm5hbikgICAgICAgICAgICAjIG5hblxucHJpbnQoMSArIG5wLm5hbikgICAgICAgICMgbmFuXG5wcmludChucC5uYW4gKiAxKSAgICAgICAgIyBuYW5cbnByaW50KDEgPT0gbnAubmFuKSAgICAgICAjIEZhbHNlXG5wcmludChucC5uYW4gPT0gbnAubmFuKSAgIyBGYWxzZSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>            <span class="c1"># nan</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>        <span class="c1"># nan</span>
@@ -2271,35 +2263,23 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>       <span class="c1"># False</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>  <span class="c1"># False</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>That last line is pretty surprising since we compared <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> to <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>. Remember though, one of the rules of <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is that every boolean comparison on <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> !</p>
+</div>
+<p>That last line is pretty surprising since we compared <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> to <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>. Remember though, one of the rules of <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is that every boolean comparison on <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> !</p>
 <p>How is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> different than <code class="docutils literal notranslate"><span class="pre">None</span></code> ? <code class="docutils literal notranslate"><span class="pre">None</span></code> doesn’t allow any numeric operations on it, it will cause an error!</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAicHJpbnQoMSArIE5vbmUpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="kc">None</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 <section id="nan-in-pandas">
 <h2><code class="docutils literal notranslate"><span class="pre">NaN</span></code> in <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#nan-in-pandas" title="Permalink to this headline">#</a></h2>
 <p>So now that we know what this magic-value <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is in our dataset. Let’s see how to handle it in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Let’s start by taking the average of the <code class="docutils literal notranslate"><span class="pre">'signal'</span></code> column (that contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values).</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLnJlYWRfY3N2KCdmbXJpLmNzdicpXG5wcmludChkZlsnc2lnbmFsJ10ubWVhbigpKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fmri.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;signal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Luckily for us, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has some logic built into it to skip <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values for many of the simple operations like <code class="docutils literal notranslate"><span class="pre">mean</span></code> ! However, this won’t always work so we will need some special <code class="docutils literal notranslate"><span class="pre">pandas</span></code> methods for finding and removing <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (although, they have a weird naming convention).</p>
+</div>
+<p>Luckily for us, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has some logic built into it to skip <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values for many of the simple operations like <code class="docutils literal notranslate"><span class="pre">mean</span></code> ! However, this won’t always work so we will need some special <code class="docutils literal notranslate"><span class="pre">pandas</span></code> methods for finding and removing <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (although, they have a weird naming convention).</p>
 <ul class="simple">
 <li><p>To detect if there are missing values:</p>
 <ul>
@@ -2315,10 +2295,7 @@ title="Print to PDF"
 </li>
 </ul>
 <p>The following code block shows how these operations work</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLnJlYWRfY3N2KCdmbXJpLmNzdicpXG5cbiMgUmV0dXJucyBhbGwgdGhlIHJvd3MgaW4gZGYgd2hlcmUgdGhlIHNpZ25hbCBpcyBub3QgTmFOXG5kZltkZlsnc2lnbmFsJ10ubm90bnVsbCgpXVxuXG4jIFJldHVybnMgYWxsIHRoZSByb3dzIGluIGRmIHRoYXQgZGlkIG5vdCBjb250YWluIGEgTmFOIHZhbHVlXG5kZi5kcm9wbmEoKVxuXG4jIFJlcGxhY2VzIGFsbCBOYU4gc2lnbmFscyB3aXRoIDBcbmRmWydzaWduYWwnXSA9IGRmWydzaWduYWwnXS5maWxsbmEoMClcbnByaW50KGRmKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fmri.csv&#39;</span><span class="p">)</span>
 
@@ -2332,10 +2309,8 @@ title="Print to PDF"
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;signal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;signal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><div class="warning admonition">
+</div>
+<div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>Notice that the first two examples don’t modify <code class="docutils literal notranslate"><span class="pre">df</span></code>. Why is that? Almost every operation on <code class="docutils literal notranslate"><span class="pre">pandas</span></code> returns a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code>! For example, <code class="docutils literal notranslate"><span class="pre">df.dropna()</span></code> returns a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> rows missing. It’s not until the last example, do we actually save the return value into
 <code class="docutils literal notranslate"><span class="pre">df</span></code> so the result stays.</p>

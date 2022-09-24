@@ -2135,10 +2135,7 @@ title="Print to PDF"
 <p>Even though we talked about disk being slow, it’s convenient because it is persistent. This means after your computer shuts down, everything on disk will still be there after your restart. This can sometimes be very helpful for data analysis. For example, what if you trained a really great machine learning model and want to save that exact model for the future? This would not be possible if you just stored it in a Python variable, since if your computer restarted or the Python session ended, then <em>poof</em>, that model is gone!</p>
 <p>There is a convenient module called <code class="docutils literal notranslate"><span class="pre">pickle</span></code> that lets you save a Python object to a file so that you can read it in later! The following program makes a list of numbers, saves it to a file (and prints out that it was saved) before reading it in again! This is not the most convincing example in an Ed snippet since we run it all at once, but believe us that you can write the “reading” code from a pickle you made yesterday and it will work just fine!</p>
 <p>The one note we will make about <code class="docutils literal notranslate"><span class="pre">pickle</span></code> , is it requires us to use one other feature of reading/writing to files. The <code class="docutils literal notranslate"><span class="pre">open</span></code> call takes a second parameter called <code class="docutils literal notranslate"><span class="pre">mode</span></code> that tells Python how you want to use the file. By default, <code class="docutils literal notranslate"><span class="pre">mode</span></code> has value <code class="docutils literal notranslate"><span class="pre">'r'</span></code> , which means you want to read the file. If you want to write to the file, you need to use the mode <code class="docutils literal notranslate"><span class="pre">'w'</span></code> by making the call <code class="docutils literal notranslate"><span class="pre">open('file.txt',</span> <span class="pre">'w')</span></code> . Even more confusing, since <code class="docutils literal notranslate"><span class="pre">pickle</span></code> needs to write the data in a special binary format (i.e., not plain-text like a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> ), you need to pass in the modes <code class="docutils literal notranslate"><span class="pre">'rb'</span></code> for read binary and <code class="docutils literal notranslate"><span class="pre">'wb'</span></code> for write binary respectively.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG9zXG5pbXBvcnQgcGlja2xlXG5cbiMgQ3JlYXRlIGEgbGlzdCAoY2FuIGJlIGFueSBkYXRhIHN0cnVjdHVyZSwgdmFsdWUsIG9yIE1MIG1vZGVsKVxuc3BlY2lhbF92YWx1ZXMgPSBbMSwgMiwgM11cblxuIyBTYXZlIGEgcGlja2xlIG9mIHRoZSB2YWx1ZS4gTmVlZCB0byBvcGVuIGZpbGUgaW4gd3JpdGUtYmluYXJ5IG1vZGUgKHdiKVxud2l0aCBvcGVuKCdnb29kX3ZhbHVlcy5waWNrbGUnLCAnd2InKSBhcyBmOlxuICAgIHBpY2tsZS5kdW1wKHNwZWNpYWxfdmFsdWVzLCBmKVxuXG5cbiMgVmVyaWZ5aW5nIGl0IHNhdmVkIGEgZmlsZSBjYWxsZWQgZ29vZF9tb2RlbC5waWNrbGVcbnByaW50KCdGaWxlcyBpbiBEaXJlY3Rvcnk6Jywgb3MubGlzdGRpcignLicpKVxuXG4jIFJlYWQgdGhlIHZhbHVlcyBiYWNrIGluIGxhdGVyIChlLmcuLCB0aGUgbmV4dCBkYXkpIGZyb20gdGhlIHBpY2tsZSBmaWxlXG4jIE5lZWQgdG8gb3BlbiBmaWxlIGluIHJlYWQtYmluYXJ5IG1vZGUgKHJiKVxuXG53aXRoIG9wZW4oJ2dvb2RfdmFsdWVzLnBpY2tsZScsICdyYicpIGFzIGY6XG4gICAgbmV3X3NwZWNpYWxfdmFsdWVzID0gcGlja2xlLmxvYWQoZilcblxuIyBWZXJpZnkgaXQgc3RvcmVzIHRoZSBzYW1lIHZhbHVlc1xucHJpbnQobmV3X3NwZWNpYWxfdmFsdWVzKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 
 <span class="c1"># Create a list (can be any data structure, value, or ML model)</span>
@@ -2161,10 +2158,8 @@ title="Print to PDF"
 <span class="c1"># Verify it stores the same values</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_special_values</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

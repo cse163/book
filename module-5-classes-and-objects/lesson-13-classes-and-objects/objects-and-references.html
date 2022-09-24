@@ -2211,18 +2211,13 @@ title="Print to PDF"
 <hr class="docutils" />
 <p>An <strong>object</strong> (also sometimes called an <strong>instance)</strong> in Python is a way of encapsulating <strong>state</strong> (the data it represents) and <strong>behavior</strong> (the functions it can perform) in one distinct unit. This is horribly vague because it’s quite a general notion (just like the word “object” in English is hard to describe).</p>
 <p>We have used the term object a few times in this course to refer to something like a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or the value of <code class="docutils literal notranslate"><span class="pre">f</span></code> in <code class="docutils literal notranslate"><span class="pre">open('file.txt')</span> <span class="pre">as</span> <span class="pre">f</span></code> . These objects are things you can interact with within your programs by calling functions on them (i.e. calling one of their <strong>behaviors</strong> ) and the output of these functions is determined by the data inside the object (i.e. its <strong>state</strong> ). The following code cell creates a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object and then calls a function to show its state.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLkRhdGFGcmFtZSh7J2EnOiBbMSwyLDNdfSkgIyBPbmUgY29sdW1uLCB0aHJlZSByb3dzXG5wcmludChkZi50b19zdHJpbmcoKSkgICMgTWV0aG9kIHRvIGxvb2sgYXQgYWxsIGRhdGEgYXMgYSBgc3RyYCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span> <span class="c1"># One column, three rows</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>  <span class="c1"># Method to look at all data as a `str`</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><section id="state-and-behavior">
+</div>
+<section id="state-and-behavior">
 <h2>State and Behavior<a class="headerlink" href="#state-and-behavior" title="Permalink to this headline">#</a></h2>
 <p>In this example, we think of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as having the following states and behaviors.</p>
 <ul class="simple">
@@ -2247,10 +2242,7 @@ title="Print to PDF"
 <section id="objects">
 <h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">#</a></h2>
 <p>You can make multiple objects of the same type and they will have their own, independent state. For example, in the next cell, we make two <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> that happen to have the same state, but they are two completely different objects!</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG4jIENyZWF0ZSB0d28sIGluZGVwZW5kZW50IERhdGFGcmFtZSBvYmplY3RzXG5kZjEgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjIgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5cbiMgUHJpbnQgYm90aCBvdXRcbnByaW50KCdkZjEgQmVmb3JlIENoYW5nZScpXG5wcmludChkZjEpXG5wcmludCgpXG5wcmludCgnZGYyIEJlZm9yZSBDaGFuZ2UnKVxucHJpbnQoZGYyKVxucHJpbnQoKVxuXG4jIE9ubHkgbW9kaWZ5IGRmMVxuZGYxLmxvY1sxLCAnYSddID0gMTRcblxuIyBQcmludCBib3RoIG91dFxucHJpbnQoJ2RmMSBBZnRlciBDaGFuZ2UnKVxucHJpbnQoZGYxKVxucHJpbnQoKVxucHJpbnQoJ2RmMiBBZnRlciBDaGFuZ2UnKVxucHJpbnQoZGYyKVxucHJpbnQoKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Create two, independent DataFrame objects</span>
 <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
@@ -2275,10 +2267,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Both <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df2</span></code> refer to completely different objects so updating one will not update the other! This is similar to having two different people, who happen to be wearing identical shirts. Just because they have shirts that look the same, they are still two different people!</p>
+</div>
+<p>Both <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df2</span></code> refer to completely different objects so updating one will not update the other! This is similar to having two different people, who happen to be wearing identical shirts. Just because they have shirts that look the same, they are still two different people!</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
@@ -2287,19 +2277,14 @@ title="Print to PDF"
 <p>In this program, we have two variables <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df2</span></code> and two <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> objects that contain the same sequence of values. This memory model highlights the fact we stated earlier that these two <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> s are completely separate objects that happen to have the same values. This is just like how two people can have the same name and same age, but are still two distinct human beings.</p>
 <p>It’s important to emphasize that in this drawing, the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> objects are <strong>not</strong> inside the variables <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df2</span></code> . This is because Python stores <strong>references</strong> to the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> s in the variables rather than the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> itself. You should think of references as phone numbers. <code class="docutils literal notranslate"><span class="pre">df1</span></code> stores the phone number to call the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> on the left.</p>
 <p>Why is this distinction important? See the following code cell.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZjEgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjIgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjMgPSBkZjEiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
 <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
 <span class="n">df3</span> <span class="o">=</span> <span class="n">df1</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Now we will ask a simple question with potentially a surprising result:</p>
+</div>
+<p>Now we will ask a simple question with potentially a surprising result:</p>
 <blockquote>
 <div><p>How many
 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>
@@ -2311,10 +2296,7 @@ Is the answer 3? Is it 2?</p>
 <p>This is why it’s so important that we are careful about distinguishing between an <strong>object</strong> and a <strong>reference to an object</strong> . When we write <code class="docutils literal notranslate"><span class="pre">df3</span> <span class="pre">=</span> <span class="pre">df1</span></code> , it does <strong>NOT</strong> make a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> , but rather makes a new variable <code class="docutils literal notranslate"><span class="pre">df3</span></code> that stores the same reference as <code class="docutils literal notranslate"><span class="pre">df1</span></code> .</p>
 <p>Go back to the phone number analogy. This scenario is like if I had Madrona’s phone number in a variable labeled <code class="docutils literal notranslate"><span class="pre">phone1</span></code> (you could say that <code class="docutils literal notranslate"><span class="pre">phone1</span></code> has a way of referring to Madrona). What should happen if I shared Madrona’s phone number with Wen? She would write the phone number stored in my <code class="docutils literal notranslate"><span class="pre">phone1</span></code> variable into her own variable, <code class="docutils literal notranslate"><span class="pre">phone2</span></code> so she could refer to Madrona later. Would we expect that another copy of Madrona now exists in the world? No! We just have two ways to call the same person.</p>
 <p>How does this have an impact on the code you write? Well if we run the same code cell, but now modify <code class="docutils literal notranslate"><span class="pre">df1</span></code> , we will see the change in <code class="docutils literal notranslate"><span class="pre">df3</span></code> too (since they refer to the same object!).</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZjEgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjIgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjMgPSBkZjFcblxuIyBQcmludCBib3RoIG91dFxucHJpbnQoJ2RmMSBCZWZvcmUgQ2hhbmdlJylcbnByaW50KGRmMSlcbnByaW50KClcbnByaW50KCdkZjIgQmVmb3JlIENoYW5nZScpXG5wcmludChkZjIpXG5wcmludCgpXG5wcmludCgnZGYzIEJlZm9yZSBDaGFuZ2UnKVxucHJpbnQoZGYzKVxucHJpbnQoKVxuXG4jIE9ubHkgbW9kaWZ5IGRmMVxuZGYxLmxvY1sxLCAnYSddID0gMTRcblxuIyBQcmludCBib3RoIG91dFxucHJpbnQoJ2RmMSBBZnRlciBDaGFuZ2UnKVxucHJpbnQoZGYxKVxucHJpbnQoKVxucHJpbnQoJ2RmMiBBZnRlciBDaGFuZ2UnKVxucHJpbnQoZGYyKVxucHJpbnQoKVxucHJpbnQoJ2RmMyBBZnRlciBDaGFuZ2UnKVxucHJpbnQoZGYzKVxucHJpbnQoKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
 <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
@@ -2345,19 +2327,14 @@ Is the answer 3? Is it 2?</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">df3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Why did we see the change in <code class="docutils literal notranslate"><span class="pre">df3</span></code> ? When we say <code class="docutils literal notranslate"><span class="pre">df1.loc[0,</span> <span class="pre">'a']</span> <span class="pre">=</span> <span class="pre">14</span></code> we are “calling up” the phone number and changing the state of the object!</p>
+</div>
+<p>Why did we see the change in <code class="docutils literal notranslate"><span class="pre">df3</span></code> ? When we say <code class="docutils literal notranslate"><span class="pre">df1.loc[0,</span> <span class="pre">'a']</span> <span class="pre">=</span> <span class="pre">14</span></code> we are “calling up” the phone number and changing the state of the object!</p>
 </section>
 <section id="recall-methods-returning-new-objects">
 <h2>Recall: Methods Returning New Objects<a class="headerlink" href="#recall-methods-returning-new-objects" title="Permalink to this headline">#</a></h2>
 <p>Recall when we call methods on <code class="docutils literal notranslate"><span class="pre">str</span></code> they will always return new <code class="docutils literal notranslate"><span class="pre">str</span></code> objects because the <code class="docutils literal notranslate"><span class="pre">str</span></code> is immutable. Additionally, <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code> functions generally return new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> s and <code class="docutils literal notranslate"><span class="pre">Series</span></code> as a convention rather than modifying the object (even though they are mutable and there are ways of mutating their state).</p>
 <p>Thinking about this memory model, this means when you call something like <code class="docutils literal notranslate"><span class="pre">df.dropna()</span></code> , this method creates a <strong>new</strong> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that stores the same state (rows/cols) as <code class="docutils literal notranslate"><span class="pre">df</span></code> but with all the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> rows missing. The fact it creates a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is precisely why the originally <code class="docutils literal notranslate"><span class="pre">df</span></code> wasn’t modified. For example, consider the following snippet. By the end of this program, there will be 2 variables storing references to 2 different <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> objects.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IG51bXB5IGFzIG5wICAjIEZvciBOYU5cbmltcG9ydCBwYW5kYXMgYXMgcGRcblxuZGYgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsIG5wLm5hbiwgM119KVxuZGYyID0gZGYuZHJvcG5hKClcblxucHJpbnQoJ2RmJylcbnByaW50KGRmKVxucHJpbnQoKVxucHJpbnQoJ2RmMicpXG5wcmludChkZjIpIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># For NaN</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># For NaN</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
@@ -2369,30 +2346,20 @@ Is the answer 3? Is it 2?</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;df2&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div></section>
+</div>
+</section>
 <section id="identity">
 <h2>Identity<a class="headerlink" href="#identity" title="Permalink to this headline">#</a></h2>
 <p>Thinking back to one of our earlier snippets, shown below, we can show another example to understand more concretely this notion of a reference to an object.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZjEgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjIgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjMgPSBkZjEiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
 <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
 <span class="n">df3</span> <span class="o">=</span> <span class="n">df1</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Python has a built-in function called <code class="docutils literal notranslate"><span class="pre">id</span></code> that lets you see this internal “phone number” to an object that is stored inside the variables. As a note, you will never use this <code class="docutils literal notranslate"><span class="pre">id</span></code> function in practice (explained next time), but it helps to see how this all works.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZjEgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjIgPSBwZC5EYXRhRnJhbWUoeydhJzogWzEsMiwzXX0pXG5kZjMgPSBkZjFcblxucHJpbnQoJ2RmMTonLCBpZChkZjEpKVxucHJpbnQoJ2RmMjonLCBpZChkZjIpKVxucHJpbnQoJ2RmMzonLCBpZChkZjMpKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</div>
+<p>Python has a built-in function called <code class="docutils literal notranslate"><span class="pre">id</span></code> that lets you see this internal “phone number” to an object that is stored inside the variables. As a note, you will never use this <code class="docutils literal notranslate"><span class="pre">id</span></code> function in practice (explained next time), but it helps to see how this all works.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
 <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
@@ -2402,10 +2369,8 @@ Is the answer 3? Is it 2?</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;df2:&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">df2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;df3:&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">df3</span><span class="p">))</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>Notice that this <code class="docutils literal notranslate"><span class="pre">id</span></code> function returns this “phone number” and the values for <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df3</span></code> are the same while the one for <code class="docutils literal notranslate"><span class="pre">df2</span></code> is different. This tells us that <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df3</span></code> are actually variables referencing the same object since they both store this same phone number.</p>
+</div>
+<p>Notice that this <code class="docutils literal notranslate"><span class="pre">id</span></code> function returns this “phone number” and the values for <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df3</span></code> are the same while the one for <code class="docutils literal notranslate"><span class="pre">df2</span></code> is different. This tells us that <code class="docutils literal notranslate"><span class="pre">df1</span></code> and <code class="docutils literal notranslate"><span class="pre">df3</span></code> are actually variables referencing the same object since they both store this same phone number.</p>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
 <p>If you’re curious, for most implementations of Python, this “phone number” is actually a number describing the location of the object in your computer’s memory. Later in the quarter we will talk about how your computer’s memory is like a big array where you can write data, and this “phone number” is precisely the location of this object in your computer’s memory.</p>

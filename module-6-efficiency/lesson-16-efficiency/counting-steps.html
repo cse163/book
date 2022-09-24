@@ -2157,33 +2157,20 @@ title="Print to PDF"
 <li><p>The number of steps in a function is just the sum of all the steps of the code in its body. The number of steps for a function is the number of steps made whenever that function is called (e.g if a function has 100 steps in it and is called twice, that is 200 steps total).</p></li>
 </ul>
 <p>This notion of a “step” is very loosey-goosey on purpose and we will see later that it’s not important that you get the exact number of steps correct as long as you get an approximation of their relative scale (more on this later). Below we show some example code blocks and annotate their number of steps in the first comment of the code block.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBUb3RhbDogMSBzdGVwXG5cbnByaW50KDEgKyAyICogMyAvIDIgJSA0KSAgIyAxIHN0ZXAiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="c1"># Total: 1 step</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Total: 1 step</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># 1 step</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBUb3RhbDogNCBzdGVwc1xuXG5wcmludCgxICsgMikgICAgIyAxIHN0ZXBcbnByaW50KCdoZWxsbycpICAjIDEgc3RlcFxueCA9IDE0IC0gMiAgICAgICMgMSBzdGVwXG55ID0geCAqKiAyICAgICAgIyAxIHN0ZXAiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="c1"># Total: 4 steps</span>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Total: 4 steps</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1"># 1 step</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>  <span class="c1"># 1 step</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">14</span> <span class="o">-</span> <span class="mi">2</span>      <span class="c1"># 1 step</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>      <span class="c1"># 1 step</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBUb3RhbDogMjEgc3RlcHNcblxucHJpbnQoJ1N0YXJ0aW5nIGxvb3AnKSAgICAgICAgICAjIDEgc3RlcFxuXG4jIExvb3AgYm9keSBoYXMgYSB0b3RhbCBvZiAyIHN0ZXBzLiBJdCBydW5zIDEwIHRpbWVzIGZvciBhIHRvdGFsIG9mIDIwXG5mb3IgaSBpbiByYW5nZSgxMCk6ICAgICAgICAgICAgICMgUnVucyAxMCB0aW1lc1xuICAgIHByaW50KGYnT24gaXRlcmF0aW9uIHtpfScpICAjICAgLSAxIHN0ZXBcbiAgICBwcmludChpICoqIDIpICAgICAgICAgICAgICAgIyAgIC0gMSBzdGVwIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="c1"># Total: 21 steps</span>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Total: 21 steps</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Starting loop&#39;</span><span class="p">)</span>          <span class="c1"># 1 step</span>
 
@@ -2192,13 +2179,8 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;On iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">#   - 1 step</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>               <span class="c1">#   - 1 step</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBUb3RhbDogNTEgc3RlcHNcblxucHJpbnQoJ1N0YXJ0aW5nIGxvb3AnKSAgIyAxIHN0ZXBcblxuIyBMb29wIGJvZHkgaGFzIGEgdG90YWwgb2YgMSBzdGVwLiBJdCBydW5zIDMwIHRpbWVzIGZvciBhIHRvdGFsIG9mIDMwXG5mb3IgaSBpbiByYW5nZSgzMCk6ICAgICAjIFJ1bnMgMzAgdGltZXNcbiAgICBwcmludChpKSAgICAgICAgICAgICMgICAtIDEgc3RlcFxuXG4jIExvb3AgYm9keSBoYXMgYSB0b3RhbCBvZiAyIHN0ZXBzLiBJdCBydW5zIDEwIHRpbWVzIGZvciBhIHRvdGFsIG9mIDIwXG5mb3IgaSBpbiByYW5nZSgxMCk6ICAgICAjIFJ1bnMgMTAgdGltZXNcbiAgICBwcmludChpKSAgICAgICAgICAgICMgICAtIDEgc3RlcFxuICAgIHByaW50KGkgKiogMikgICAgICAgIyAgIC0gMSBzdGVwIiwgImVkaXRhYmxlIjogdHJ1ZX1dfQ%3D%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="c1"># Total: 51 steps</span>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Total: 51 steps</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Starting loop&#39;</span><span class="p">)</span>  <span class="c1"># 1 step</span>
 
@@ -2211,14 +2193,9 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>            <span class="c1">#   - 1 step</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>       <span class="c1">#   - 1 step</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>What about if we introduce nested loops (we put extra lines to make room for our comments).</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiIyBUb3RhbDogNTIxIHN0ZXBzXG5cbnByaW50KCdTdGFydGluZyBsb29wJykgICAjIDEgc3RlcFxuXG4jIExvb3AgYm9keSBoYXMgYSB0b3RhbCBvZiAyNiBzdGVwcy4gSXQgcnVucyAyMCB0aW1lcyBmb3IgYSB0b3RhbCBvZiA1MjBcbmZvciBpIGluIHJhbmdlKDIwKTogICAgICAjIFJ1bnMgMjAgdGltZXNcbiAgICBwcmludChpKSAgICAgICAgICAgICAjICAgLSAxIHN0ZXBcblxuICAgICAgICAgICAgICAgICAgICAgICAgICMgICBMb29wIGJvZHkgaGFzIGEgdG90YWwgb2YgMSBzdGVwLlxuICAgICAgICAgICAgICAgICAgICAgICAgICMgICBJdCBydW5zIDI1IHRpbWVzIGZvciB0b3RhbCBvZiAyNS5cbiAgICBmb3IgaiBpbiByYW5nZSgyNSk6ICAjICAgLSBSdW5zIDI1IHRpbWVzXG4gICAgICAgIHByaW50KGkgKiBqKSAgICAgIyAgICAgICAtIDEgc3RlcCIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="c1"># Total: 521 steps</span>
+</div>
+<p>What about if we introduce nested loops (we put extra lines to make room for our comments).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Total: 521 steps</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Starting loop&#39;</span><span class="p">)</span>   <span class="c1"># 1 step</span>
 
@@ -2231,10 +2208,8 @@ title="Print to PDF"
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>  <span class="c1">#   - Runs 25 times</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span>     <span class="c1">#       - 1 step</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>The nice thing is that for the nested loop case, there is nothing really new!</p>
+</div>
+<p>The nice thing is that for the nested loop case, there is nothing really new!</p>
 </section>
 
     <script type="text/x-thebe-config">

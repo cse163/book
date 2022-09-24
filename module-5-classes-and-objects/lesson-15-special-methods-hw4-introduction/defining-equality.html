@@ -2133,10 +2133,7 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <p>Recall the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class we wrote in Lesson 13.</p>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgRG9nOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCBuYW1lKTpcbiAgICAgICAgc2VsZi5fbmFtZSA9IG5hbWVcblxuICAgIGRlZiBiYXJrKHNlbGYpOlxuICAgICAgICBwcmludChmJ3tzZWxmLl9uYW1lfTogV29vZiEnKVxuXG5cbmQxID0gRG9nKCdDaGVzdGVyJylcbmQyID0gRG9nKCdDaGVzdGVyJylcbmQzID0gZDFcblxucHJpbnQoZDEgaXMgZDIpXG5wcmludChkMSBpcyBkMylcbnByaW50KGQxID09IGQyKSIsICJlZGl0YWJsZSI6IHRydWV9XX0%3D&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
 
@@ -2152,10 +2149,8 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">d1</span> <span class="ow">is</span> <span class="n">d3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d1</span> <span class="o">==</span> <span class="n">d2</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>With our understanding of <code class="docutils literal notranslate"><span class="pre">is</span></code> , the first two examples should hopefully make sense. However, the third example ( <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">==</span> <span class="pre">d2</span></code> ) seems a bit surprising! It seems like these two <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s should be considered value equal since they have the exact same state!</p>
+</div>
+<p>With our understanding of <code class="docutils literal notranslate"><span class="pre">is</span></code> , the first two examples should hopefully make sense. However, the third example ( <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">==</span> <span class="pre">d2</span></code> ) seems a bit surprising! It seems like these two <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s should be considered value equal since they have the exact same state!</p>
 <p>Unfortunately, Python does not automatically know how you want to define value-equality between <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s. By default, Python will treat <code class="docutils literal notranslate"><span class="pre">==</span></code> on your object to mean the same thing as <code class="docutils literal notranslate"><span class="pre">is</span></code> , unless you tell it that value equality should be defined otherwise. In this reading, we will talk about how to tell Python what you want <code class="docutils literal notranslate"><span class="pre">==</span></code> to mean for your object.</p>
 <p>To define what <code class="docutils literal notranslate"><span class="pre">==</span></code> should mean, you have to implement a special method called <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> . <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> will be called whenever you use <code class="docutils literal notranslate"><span class="pre">==</span></code> and its return value ( <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> ) determines the value of <code class="docutils literal notranslate"><span class="pre">==</span></code> . To be more concrete, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code> gets translate to <code class="docutils literal notranslate"><span class="pre">x.__eq__(y)</span></code> behind the scenes!</p>
 <p>So let’s define the <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method so that <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s can be compared. Notice we are defining what equality means here for the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. Let’s define it that two <code class="docutils literal notranslate"><span class="pre">Dog</span></code> s are equal if they have the same name (notice we could define it however we want, but with only one field, there isn’t a lot of options).</p>
@@ -2173,10 +2168,7 @@ to access the private fields of another
 <code class="docutils literal notranslate"><span class="pre">Dog</span></code>
 class, so you should know how to use their private fields without causing any errors.</p>
 </div>
-<div class="trace-snippet-container">
-    <div data-trace-payload="files=eyJ2ZXJzaW9uIjogMCwgImZpbGVzIjogW3sidmVyc2lvbiI6IDAsICJmaWxlbmFtZSI6ICJtYWluLnB5IiwgImRpcmVjdG9yeSI6ICJzcmMiLCAiY29udGVudHMiOiAiY2xhc3MgRG9nOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCBuYW1lKTpcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIENyZWF0ZXMgYSBuZXcgRG9nIG9iamVjdCB3aXRoIHRoZSBnaXZlbiBuYW1lXG4gICAgICAgIFwiXCJcIlxuICAgICAgICBzZWxmLl9uYW1lID0gbmFtZVxuXG4gICAgZGVmIGJhcmsoc2VsZik6XG4gICAgICAgIFwiXCJcIlxuICAgICAgICBQcmludHMgYSBtZXNzYWdlIGZvciB0aGlzIGRvZyBiYXJraW5nLlxuICAgICAgICBcIlwiXCJcbiAgICAgICAgIyBVc2VzIGEgc2xpZ2h0bHkgZmFuY2llciBzeW50YXggY2FsbGVkIHN0cmluZyBpbnRlcnBvbGF0aW9uXG4gICAgICAgICMgWW91IGRvbid0IG5lZWQgdG8gYmUgYWJsZSB0byB3cml0ZSB0aGVzZSwgYnV0IHdlIHdhbnRlZFxuICAgICAgICAjIHRvIHNob3cgb2ZmIHRoaXMgZmVhdHVyZS4gRXZlcnl0aGluZyBpbnNpZGUge30gZ2V0c1xuICAgICAgICAjIGV2YWx1YXRlZCBpbiBQeXRob24hXG4gICAgICAgIHByaW50KGYne3NlbGYuX25hbWV9OiBXb29mIScpXG5cbiAgICBkZWYgX19lcV9fKHNlbGYsIG90aGVyKTpcbiAgICAgICAgXCJcIlwiXG4gICAgICAgIFJldHVybnMgdHJ1ZSBpZiBvdGhlciBoYXMgdGhlIHNhbWUgbmFtZSBhcyB0aGlzIERvZ1xuICAgICAgICBcIlwiXCJcbiAgICAgICAgcmV0dXJuIHNlbGYuX25hbWUgPT0gb3RoZXIuX25hbWVcblxuXG5kMSA9IERvZygnQ2hlc3RlcicpXG5kMiA9IERvZygnQ2hlc3RlcicpXG5kMyA9IGQxXG5cbnByaW50KGQxIGlzIGQyKVxucHJpbnQoZDEgaXMgZDMpXG5wcmludChkMSA9PSBkMikiLCAiZWRpdGFibGUiOiB0cnVlfV19&language=PYTHON&hideReadonlyFiles=true&autosubmit=true&autoplay=true">
-        <div class="highlight-python">
-            <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a new Dog object with the given name</span>
@@ -2208,10 +2200,8 @@ class, so you should know how to use their private fields without causing any er
 <span class="nb">print</span><span class="p">(</span><span class="n">d1</span> <span class="ow">is</span> <span class="n">d3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d1</span> <span class="o">==</span> <span class="n">d2</span><span class="p">)</span>
 </pre></div>
-
-        </div>
-    </div>
-</div><p>And now this code block prints what we would expect.</p>
+</div>
+<p>And now this code block prints what we would expect.</p>
 </section>
 
     <script type="text/x-thebe-config">
