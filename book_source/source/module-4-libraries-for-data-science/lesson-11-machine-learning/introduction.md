@@ -47,7 +47,7 @@ for tweet in tweets:
 
 This doesn't capture all the complexity of the problem, but it seems like a good first try and your boss seems happy enough!
 
-A big part fo the reason we are able to solve this problem, is because it's "easy" to tell if the string `'dog'` is inside a tweet.
+A big part of the reason we are able to solve this problem, is because it's "easy" to tell if the string `'dog'` is inside a tweet.
 
 ## Instagram: Image Data
 
