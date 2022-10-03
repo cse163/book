@@ -6,7 +6,7 @@
 
 ---
 
-Last time, we saw how to call functions by using keyword arguments (also called named parameters or pass by name). We mentioned briefly that one motivation for having this feature is it allows libraries to define methods that take many parameters and you can pass them in by name without needing to memorize the order the parameters were defined. We also mentioned that they also have some functionality for specifying **default values** for parameters not passed. That's what we are going to see today!
+In the previous lesson, we saw how to call functions by using keyword arguments (also called named parameters or pass by name). We mentioned briefly that one motivation for having this feature is it allows libraries to define methods that take many parameters and you can pass them in by name without needing to memorize the order the parameters were defined. We also mentioned that they also have some functionality for specifying **default values** for parameters not passed. That's what we are going to see in this lesson!
 
 When defining a function that takes parameters, you can use the syntax `param=value` in the parameter list to give the parameter `param` the default value of `value` when it was not specified by the client. See the following snippet for an example which you can run to see the output.
 
@@ -25,4 +25,4 @@ Notice that on many of the calls, we omit passing one of `a` or `b` . This does 
 
 Notice that the features for default parameters and keyword arguments are _orthogonal_ . What this means is you could have one without the other, but the fact that Python provides both allows library writers to write some truly flexible code!
 
-You'll see that in the library we learn today, we will commonly always pass in keyword arguments to the functions. The functions take many possible parameters and it helps to be explicit with what we are passing in rather than relying on the order the parameters were defined! What we mean by that is even though you could call the `div` function above with `div(1, 2)` , we will commonly be more explicit and write out the parameter names as in `div(a=1, b=2)` when calling library functions that take many parameters.
+You'll see that in the library we learn in this lesson, we will commonly always pass in keyword arguments to the functions. The functions take many possible parameters and it helps to be explicit with what we are passing in rather than relying on the order the parameters were defined! What we mean by that is even though you could call the `div` function above with `div(1, 2)` , we will commonly be more explicit and write out the parameter names as in `div(a=1, b=2)` when calling library functions that take many parameters.
