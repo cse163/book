@@ -110,7 +110,7 @@ Let's go back and explain the components of the "Hello world" program to underst
 def main():
     print('Hello world')
 
-# This if-statement only runs this file is being run via: python hello_world.py
+# This if-statement only runs if this file is being run via: python hello_world.py
 if __name__ == '__main__':
     # If this condition is true, then call the main method (nothing special here)
     main()
