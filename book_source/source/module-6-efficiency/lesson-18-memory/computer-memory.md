@@ -6,7 +6,7 @@
 
 ---
 
-One of the resources your computer uses in addition to time is **memory**. In the abstract, memory is just any form of a way for your computer to "write down" information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM you want (e.g., my Windows Computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).
+One of the resources your computer uses in addition to time is **memory**. In the abstract, memory is just any form of a way for your computer to "write down" information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM (short for Random Access Memory) you want (e.g., my Windows computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).
 
 When talking about memory, we commonly are referring to the storage provided by your RAM; this is sometimes called flash memory or volatile memory. These names come from the fact that after you power your computer off, the memory stored there is lost! This is opposed to your disk storage (or persistent storage) which remains after shutdown. This is why if your computer crashes before you save, you lose your progress! While disk does have its benefits in the sense that it is persistent and can generally be larger in volume (notice that 500 GB of disk vs 16 GB of RAM), the big downside is it's _slow_; more on this later.
 
@@ -16,7 +16,7 @@ When we think of RAM from a programmer's perspective, we really think of it as a
 
 Some programming languages, like that older one called C, let you access memory directly. More modern programming languages give you less access to do this since that comes with a whole host of security and correctness difficulties, but having some mental model of memory is sometimes helpful for understanding how your programs work.
 
-The following image shows a common layout of the memory allocated to a program by your operating system. There is no inherent restriction on how the RAM is partitioned for the program, but most programs generally separate areas of memory to store specifc things. While memorizing the names in the image below is not important, it's generally good to realize that programs generally organize their memory usage in a systematic way.
+The following image shows a common layout of the memory allocated to a program by your operating system. There is no inherent restriction on how the RAM is partitioned for the program, but most programs generally separate areas of memory to store specifc things. While memorizing the names in the image below is not important, it's good to realize that programs generally organize their memory usage in a systematic way.
 
 - Data in the "Stack" is data like your local variables in your functions.
 
