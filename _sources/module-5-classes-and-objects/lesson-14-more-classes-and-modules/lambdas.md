@@ -6,7 +6,7 @@
 
 ---
 
-Recall earlier in the quarter when we were learning `pandas` , we learned that the `apply` function could take a function as another parameter! Instead of talking about `pandas` , we will simplify this to write our own `apply_fun` function that does something similar to a list of values. It takes a list of values and another function as a parameter, and returns a new list that is the result of applying the given function to each element in the input list.
+Recall earlier when we were learning `pandas` , we learned that the `apply` function could take a function as another parameter! Instead of talking about `pandas` , we will simplify this to write our own `apply_fun` function that does something similar to a list of values. It takes a list of values and another function as a parameter, and returns a new list that is the result of applying the given function to each element in the input list.
 
 ```python
 def apply_fun(values, function):
@@ -62,9 +62,9 @@ for dog in dogs:
     print(dog.get_name())
 ```
 
-This runs into a bug though, because Python doesn't know how we want to sort the `Dog` objects! There are ways to define how to compare `Dog` s, which we will see briefly on Friday's lesson.
+This runs into a bug though, because Python doesn't know how we want to sort the `Dog` objects! There are ways to define how to compare `Dog` s, which we will see briefly in the next lesson.
 
-However, a common work-around is to use an optional parameter for the `sorted` function named `key` . The value of `key` should a function that takes a single element of the list and returns a value that Python knows how to sort (like a number of a `str` ); this way Python will sort the `Dog` s based on the value that results from their `key` function.
+However, a common workaround is to use an optional parameter for the `sorted` function named `key` . The value of `key` should be a function that takes a single element of the list and returns a value that Python knows how to sort (like a number or a `str` ); this way Python will sort the `Dog` s based on the value that results from their `key` function.
 
 So to do this in our example, we need to pass a function as the `key` to transform each `Dog` into its name so that we can sort it by their name. This is very easy to do with a `lambda` !
 

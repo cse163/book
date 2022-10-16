@@ -158,7 +158,7 @@ Why did we see the change in `df3` ? When we say `df1.loc[0, 'a'] = 14` we are "
 
 Recall when we call methods on `str` they will always return new `str` objects because the `str` is immutable. Additionally, `DataFrame` and `Series` functions generally return new `DataFrame` s and `Series` as a convention rather than modifying the object (even though they are mutable and there are ways of mutating their state).
 
-Thinking about this memory model, this means when you call something like `df.dropna()` , this method creates a **new** `DataFrame` that stores the same state (rows/cols) as `df` but with all the `NaN` rows missing. The fact it creates a new `DataFrame` is precisely why the originally `df` wasn't modified. For example, consider the following snippet. By the end of this program, there will be 2 variables storing references to 2 different `DataFrame` objects.
+Thinking about this memory model, this means when you call something like `df.dropna()` , this method creates a **new** `DataFrame` that stores the same state (rows/cols) as `df` but with all the `NaN` rows missing. The fact it creates a new `DataFrame` is precisely why the original `df` wasn't modified. For example, consider the following snippet. By the end of this program, there will be 2 variables storing references to 2 different `DataFrame` objects.
 
 ```python
 import numpy as np  # For NaN
@@ -205,6 +205,6 @@ Notice that this `id` function returns this "phone number" and the values for `d
 ```{admonition} Note
 :class: note
 
-If you're curious, for most implementations of Python, this "phone number" is actually a number describing the location of the object in your computer's memory. Later in the quarter we will talk about how your computer's memory is like a big array where you can write data, and this "phone number" is precisely the location of this object in your computer's memory.
+If you're curious, for most implementations of Python, this "phone number" is actually a number describing the location of the object in your computer's memory. In a later lesson, we will talk about how your computer's memory is like a big array where you can write data, and this "phone number" is precisely the location of this object in your computer's memory.
 
 ```
