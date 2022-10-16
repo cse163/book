@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Memory Hiearchy" href="memory-hiearchy.html" />
+    <link rel="next" title="Memory Hierarchy" href="memory-hiearchy.html" />
     <link rel="prev" title="Lesson 18: Memory" href="index.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -1284,7 +1284,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="memory-hiearchy.html">
-       Memory Hiearchy
+       Memory Hierarchy
       </a>
      </li>
      <li class="toctree-l3">
@@ -2181,13 +2181,13 @@ title="Print to PDF"
     <iframe src="https://www.loom.com/embed/db9e0b7b8af5451ea8296f6dd6440469?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 <hr class="docutils" />
-<p>One of the resources your computer uses in addition to time is <strong>memory</strong>. In the abstract, memory is just any form of a way for your computer to “write down” information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM you want (e.g., my Windows Computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).</p>
+<p>One of the resources your computer uses in addition to time is <strong>memory</strong>. In the abstract, memory is just any form of a way for your computer to “write down” information to access later. Memory is something you are probably familiar with as a user of a computer. Whenever you buy a computer, you specify how much RAM (short for Random Access Memory) you want (e.g., my Windows computer has 16 GB of RAM) and how much disk space you want (e.g., my Windows computer has 1 TB of disk space).</p>
 <p>When talking about memory, we commonly are referring to the storage provided by your RAM; this is sometimes called flash memory or volatile memory. These names come from the fact that after you power your computer off, the memory stored there is lost! This is opposed to your disk storage (or persistent storage) which remains after shutdown. This is why if your computer crashes before you save, you lose your progress! While disk does have its benefits in the sense that it is persistent and can generally be larger in volume (notice that 500 GB of disk vs 16 GB of RAM), the big downside is it’s <em>slow</em>; more on this later.</p>
 <section id="computer-memory-ram">
 <h2>Computer Memory (RAM)<a class="headerlink" href="#computer-memory-ram" title="Permalink to this headline">#</a></h2>
 <p>When we think of RAM from a programmer’s perspective, we really think of it as a giant array or list for us to write values to. So when we are talking about 16 GB of RAM, that’s one big array that lets us write 17,179,869,184 separate bytes (<span class="math notranslate nohighlight">\(16 \times 1024 \times 1024 \times 1024\)</span>) of data wherever we want; a byte is a number that stores eight ones or zeros (a bit).</p>
 <p>Some programming languages, like that older one called C, let you access memory directly. More modern programming languages give you less access to do this since that comes with a whole host of security and correctness difficulties, but having some mental model of memory is sometimes helpful for understanding how your programs work.</p>
-<p>The following image shows a common layout of the memory allocated to a program by your operating system. There is no inherent restriction on how the RAM is partitioned for the program, but most programs generally separate areas of memory to store specifc things. While memorizing the names in the image below is not important, it’s generally good to realize that programs generally organize their memory usage in a systematic way.</p>
+<p>The following image shows a common layout of the memory allocated to a program by your operating system. There is no inherent restriction on how the RAM is partitioned for the program, but most programs generally separate areas of memory to store specifc things. While memorizing the names in the image below is not important, it’s good to realize that programs generally organize their memory usage in a systematic way.</p>
 <ul class="simple">
 <li><p>Data in the “Stack” is data like your local variables in your functions.</p></li>
 <li><p>Data in the “Heap” is for longer-lived data like objects (more on this later).</p></li>
@@ -2258,7 +2258,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="memory-hiearchy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Memory Hiearchy</p>
+        <p class="prev-next-title">Memory Hierarchy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

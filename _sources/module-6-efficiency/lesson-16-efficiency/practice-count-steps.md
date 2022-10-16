@@ -41,7 +41,7 @@ Write your answer down in your own space.
 
 ```python
 for i in range(10):
-  <i class="far fa-edit fa-fw"></i>for j in range(20):
+    for j in range(20):
         print(i * j)
         print(i ** j)
 ```

@@ -1284,7 +1284,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-18-memory/memory-hiearchy.html">
-       Memory Hiearchy
+       Memory Hierarchy
       </a>
      </li>
      <li class="toctree-l3">
@@ -2150,7 +2150,7 @@ title="Print to PDF"
 </div>
 <p>The second one uses a clever formula discovered by Gauss that computes the sum of the numbers from 1 to n using the formula <span class="math notranslate nohighlight">\(Sum(n) = \frac{n(n + 1)}{2}\)</span>.</p>
 <p><strong>Which one is more efficient?</strong></p>
-<p>Most people probably have an intuition that the second seems better, but it’s hard to state exactly “why” that’s the case. Is it because it has fewer lines to code? While it’s definitely shorter, it’s also less easy to understand since it requires knowing this obscure formula from math.</p>
+<p>Most people probably have an intuition that the second seems better, but it’s hard to state exactly “why” that’s the case. Is it because it has fewer lines of code? While it’s definitely shorter, it’s also less easy to understand since it requires knowing this obscure formula from math.</p>
 <p>Remember, it’s important to state what resources we care about before deciding which is more efficient. As we said before, the most common resource to worry about is <strong>time</strong> (if we ever omit this, you should assume we are discussing time). To answer which one is more efficient, we might actually try to write code to time how long it takes them to finish.</p>
 <p>The details of the snippet below are not important, but we could try timing each implementation by using the <code class="docutils literal notranslate"><span class="pre">time</span></code> package that is built into Python. <code class="docutils literal notranslate"><span class="pre">time</span></code> has a method called <code class="docutils literal notranslate"><span class="pre">time</span></code> that reports the number of seconds since the “epoch” (midnight on Jan 1, 1970 in UTC time). We can then figure out how much time each method call takes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -2244,7 +2244,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">sum2</span></code> almost always takes the same amount of time to run in comparison to <code class="docutils literal notranslate"><span class="pre">sum1</span></code> , which takes time proportional to <code class="docutils literal notranslate"><span class="pre">n</span></code> ! Another way to say this is that if we double the input size <code class="docutils literal notranslate"><span class="pre">n</span></code> , it seems like <code class="docutils literal notranslate"><span class="pre">sum1</span></code> takes twice as long to run while <code class="docutils literal notranslate"><span class="pre">sum2</span></code> takes about the same time.</p>
-<p>This gives us more certainty that <code class="docutils literal notranslate"><span class="pre">sum2</span></code> seems more efficient, in terms of time, than <code class="docutils literal notranslate"><span class="pre">sum1</span></code> since we have empirically have seen that it scales very well. However, it would be nice if we could have some way of describing how one algorithm scales when compared to another without having to rely on something as unreliable like time (or requiring us to write so much code to measure the time).</p>
+<p>This gives us more certainty that <code class="docutils literal notranslate"><span class="pre">sum2</span></code> seems more efficient, in terms of time, than <code class="docutils literal notranslate"><span class="pre">sum1</span></code> since we have empirically have seen that it scales very well. However, it would be nice if we could have some way of describing how one algorithm scales when compared to another without having to rely on something as unreliable as time (or requiring us to write so much code to measure the time).</p>
 </section>
 
     <script type="text/x-thebe-config">

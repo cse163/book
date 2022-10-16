@@ -56,7 +56,7 @@ You get used to this process of dropping information with practice.
 
 ### Example
 
-Suppose we did the step counting procedure for some block of code that depends on its input `n` and counted $2n^2 + 5n+ 3$ (we can get $n^2$ from nested loops that both go to `n` ). Instead of reporting this entire formula, we will report the part that has the **biggest impact** on its run-time. Out of all the terms, when `n` is very large, the term $2n^2$ contributes the most to the overall run-time. This is why we will report $\mathcal{O}(n^2)$ instead of the whole formula we counted (we also drop constants since they don't matter as much when `n` is very large).
+Suppose we did the step counting procedure for some block of code that depends on its input `n` and counted $2n^2 + 5n+ 3$ (we can get $n^2$ from nested loops that both go to `n` ). Instead of reporting this entire formula, we will report the part that has the **biggest impact** on its run-time. Out of all the terms, when `n` is very large, the term $2n^2$ contributes the most to the overall run-time. This is why we will report $\mathcal{O}(n^2)$ instead of the whole formula we counted (we also drop coefficients since they don't matter as much when `n` is very large).
 
 ### Another Example
 
@@ -77,13 +77,13 @@ What is the run-time of this function in Big-O notation? Students will commonly 
 
 - The first is a common misconception where people assume nested loops mean something like $\mathcal{O}(n^2)$. This is not the case! This is only true if both loops run $n$ times! In this case, the outer loop runs 9 times and the inner-loop runs $n$ times so it will be something on the order of $9n$ steps, not $n^2$ steps!
 
-- The second is that when you report a Big-O result, you should always drop constants in front of terms and lower-order terms. This formula for steps is wrong in the first place, but assuming it was correct, you would report $\mathcal{O}(n^2)$ after dropping the constants and lower-order terms.
+- The second is that when you report a Big-O result, you should always drop coefficients in front of terms, and lower-order terms. This formula for steps is wrong in the first place, but assuming it was correct, you would report $\mathcal{O}(n^2)$ after dropping the coefficient and lower-order terms.
 
 Putting these together, this means the correct answer would be $\mathcal{O}(n)$!
 
 ## Why is this useful?
 
-Even though it feels weird to throw away things like constants and low-order terms, the Big-O notation is helpful because it lets us communicate how our algorithms scale very simply. By scale, we mean quantifying approximately how much longer a program will run if you were to increase its input size. For example, if I told you an algorithm was $\mathcal{O}(n^2)$, you would know that if I were to double the input size $n$, that the program would take _about_ 4x as long to run (because of the squared)!
+Even though it feels weird to throw away things like coefficients and low-order terms, the Big-O notation is helpful because it lets us communicate how our algorithms scale very simply. By scale, we mean quantifying approximately how much longer a program will run if you were to increase its input size. For example, if I told you an algorithm was $\mathcal{O}(n^2)$, you would know that if I were to double the input size $n$, that the program would take _about_ 4x as long to run (because of the squared)!
 
 Computer scientists use Big-O notation so much, we consider algorithms by which **complexity class** they are in. The word complexity is a CS term for Big-O run-time. Here are some common complexity classes
 

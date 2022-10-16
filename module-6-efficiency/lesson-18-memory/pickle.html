@@ -89,7 +89,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Pause and Think" href="pause-and-think.html" />
-    <link rel="prev" title="Memory Hiearchy" href="memory-hiearchy.html" />
+    <link rel="prev" title="Memory Hierarchy" href="memory-hiearchy.html" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -1282,7 +1282,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="memory-hiearchy.html">
-       Memory Hiearchy
+       Memory Hierarchy
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -2133,7 +2133,7 @@ title="Print to PDF"
 </div>
 <hr class="docutils" />
 <p>Even though we talked about disk being slow, it’s convenient because it is persistent. This means after your computer shuts down, everything on disk will still be there after your restart. This can sometimes be very helpful for data analysis. For example, what if you trained a really great machine learning model and want to save that exact model for the future? This would not be possible if you just stored it in a Python variable, since if your computer restarted or the Python session ended, then <em>poof</em>, that model is gone!</p>
-<p>There is a convenient module called <code class="docutils literal notranslate"><span class="pre">pickle</span></code> that lets you save a Python object to a file so that you can read it in later! The following program makes a list of numbers, saves it to a file (and prints out that it was saved) before reading it in again! This is not the most convincing example in an Ed snippet since we run it all at once, but believe us that you can write the “reading” code from a pickle you made yesterday and it will work just fine!</p>
+<p>There is a convenient module called <code class="docutils literal notranslate"><span class="pre">pickle</span></code> that lets you save a Python object to a file so that you can read it in later! The following program makes a list of numbers, saves it to a file (and prints out that it was saved) before reading it in again! This is not the most convincing example in a code snippet since we run it all at once, but believe us that you can write the “reading” code from a pickle you made yesterday and it will work just fine!</p>
 <p>The one note we will make about <code class="docutils literal notranslate"><span class="pre">pickle</span></code> , is it requires us to use one other feature of reading/writing to files. The <code class="docutils literal notranslate"><span class="pre">open</span></code> call takes a second parameter called <code class="docutils literal notranslate"><span class="pre">mode</span></code> that tells Python how you want to use the file. By default, <code class="docutils literal notranslate"><span class="pre">mode</span></code> has value <code class="docutils literal notranslate"><span class="pre">'r'</span></code> , which means you want to read the file. If you want to write to the file, you need to use the mode <code class="docutils literal notranslate"><span class="pre">'w'</span></code> by making the call <code class="docutils literal notranslate"><span class="pre">open('file.txt',</span> <span class="pre">'w')</span></code> . Even more confusing, since <code class="docutils literal notranslate"><span class="pre">pickle</span></code> needs to write the data in a special binary format (i.e., not plain-text like a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> ), you need to pass in the modes <code class="docutils literal notranslate"><span class="pre">'rb'</span></code> for read binary and <code class="docutils literal notranslate"><span class="pre">'wb'</span></code> for write binary respectively.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
@@ -2192,7 +2192,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Memory Hiearchy</p>
+            <p class="prev-next-title">Memory Hierarchy</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="pause-and-think.html" title="next page">

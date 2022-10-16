@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Memory Hiearchy &#8212; Intermediate Data Programming</title>
+    <title>Memory Hierarchy &#8212; Intermediate Data Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1282,7 +1282,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Memory Hiearchy
+       Memory Hierarchy
       </a>
      </li>
      <li class="toctree-l3">
@@ -2138,7 +2138,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Memory Hiearchy</h1>
+                <h1>Memory Hierarchy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -2163,16 +2163,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="memory-hiearchy">
-<h1>Memory Hiearchy<a class="headerlink" href="#memory-hiearchy" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="memory-hierarchy">
+<h1>Memory Hierarchy<a class="headerlink" href="#memory-hierarchy" title="Permalink to this headline">#</a></h1>
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/92ab1d6e18634399834149f455c11739?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 <hr class="docutils" />
 <p>One thing that is important to know about memory is that there is a hierarchy of different types of memory that your computer uses that have various tradeoffs. We think about this as being a pyramid in the image shown below (your computer probably doesn’t have magnetic tape, that’s more old-school).</p>
-<p>At the top of the pyramid is a register, which is an extremely small memory location located right on the CPU chip to store small, frequently accessed values. There is a cache (in reality, multiple levels of caches) that site between your CPU and your main memory RAM to store frequently accessed pieces of memory. Caching is a general technique to store frequently accessed items so they can be accessed more quickly in the future. At the bottom, there is your hard disk (or more recently called Solid State Drives or SSDs).</p>
+<p>At the top of the pyramid is a register, which is an extremely small memory location located right on the CPU chip to store small, frequently accessed values. There is a cache (in reality, multiple levels of caches) that sit between your CPU and your main memory RAM to store frequently accessed pieces of memory. Caching is a general technique to store frequently accessed items so they can be accessed more quickly in the future. At the bottom, there is your hard disk (or more recently called Solid State Drives or SSDs).</p>
 <a class="reference internal image-reference" href="https://static.us.edusercontent.com/files/DXacRUQrKM9ff9kUrdH4OTrI"><img alt="A pyramid showing register, cache, main memory or RAM, hard disk, and magnetic tape from top to bottom, with access time and storage increasing for each level" class="align-center" src="https://static.us.edusercontent.com/files/DXacRUQrKM9ff9kUrdH4OTrI" style="width: 639px;" /></a>
-<p>As you go down the pyramid, the amount of memory variable generally increases. At the top registers provide on the order of 1 kilobyte of space while you can get up to terabytes of space on your hard disk or SSD. However, the increasing volume also comes at an increasing access time. This means it takes longer and longer for your computer to actually access the data as you go down the pyramid.</p>
+<p>As you go down the pyramid, the amount of memory variable generally increases. At the top, registers provide on the order of 1 kilobyte of space, while you can get up to terabytes of space on your hard disk or SSD. However, the increasing volume also comes at an increasing access time. This means it takes longer and longer for your computer to actually access the data as you go down the pyramid.</p>
 <p>There is a cute analogy to give you a sense of scale how much slower reading/writing to disk is in comparison to accessing a register. Since people generally confuse you with millennials, they assume you also enjoy avocado toast as much as we do. So think of fetching data being like the processing of fetching an avocado to make avocado toast.</p>
 <ul class="simple">
 <li><p>If your data is stored in a register, that’s like the avocado already being in your hand. There is almost no time to use the avocado to make avocado toast.</p></li>

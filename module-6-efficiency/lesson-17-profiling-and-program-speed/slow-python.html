@@ -1284,7 +1284,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../lesson-18-memory/memory-hiearchy.html">
-       Memory Hiearchy
+       Memory Hierarchy
       </a>
      </li>
      <li class="toctree-l3">
@@ -2248,7 +2248,7 @@ title="Print to PDF"
 <span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-<p>When people usually use C, they use a compiler to translate their C code into something the computer can understand (commonly <code class="docutils literal notranslate"><span class="pre">gcc</span></code>). This roughly translates to machine instructions in the following way</p>
+<p>When people usually use C, they use a compiler to translate their C code into something the computer can understand (commonly <code class="docutils literal notranslate"><span class="pre">gcc</span></code>). This roughly translates to machine instructions in the following way.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Assign &lt;int&gt; 1 to a
 Assign &lt;int&gt; 2 to b
 call add&lt;int, int&gt;(a, b)
@@ -2336,9 +2336,9 @@ Assign &lt;int&gt; the result to c
 <h2>Why Use Python<a class="headerlink" href="#why-use-python" title="Permalink to this headline">#</a></h2>
 <p>Even though Python is slow, it has a lot of benefits going for it that make it a <em>fantastic</em> language to use, especially for data scientists.</p>
 <ul class="simple">
-<li><p>It is way easier to program than languages like C. Even though its is fast to run, trying to write a correct program in C is a pain in the *#!$&#64;!</p>
+<li><p>It is way easier to program than languages like C. Even though it is fast to run, trying to write a correct program in C is a pain in the *#!$&#64;!</p>
 <ul>
-<li><p>This is important because developer time is also a valuable resource! Sometimes it’s best to be able to write something quick and easy for other people to read (in Python). This lets you iterate on ideas and experiment with prototypes rather than pre-maturely trying to optimize by writing a program in a difficult to use language like C.</p></li>
+<li><p>This is important because developer time is also a valuable resource! Sometimes it’s best to be able to write something quick and easy for other people to read (in Python). This lets you iterate on ideas and experiment with prototypes rather than prematurely trying to optimize by writing a program in a difficult to use language like C.</p></li>
 </ul>
 </li>
 <li><p>Python provides incredible support for pre-compiled libraries to leverage the best of both worlds. For example, consider <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Most of the library is actually written in C! By letting them figure out how to write the gross, efficient code, we can leverage it with the nice Python syntax while still gaining speed benefits. This is why we made you avoid loops with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> in HW2 and HW3. Writing a loop for something that can be done with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> itself is WAY slower.</p></li>
@@ -2346,10 +2346,10 @@ Assign &lt;int&gt; the result to c
 <p>If you find your program is running slower than you expected, use a profiler to identify the slower part of the program. More likely than not, you can rewrite that portion to use a pre-compiled library like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to speed up your program! <br /></p>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
-<p>Editor’s Note: It’s technically incorrect to say that one language is faster/slower than another. A programming language is just a language defining what words and grammar is allowed. It puts no constrains on how the program can be run. To those that study the design and implementation of programming languages, saying “Python is slow” makes as little sense as the claim “The English language is faster than the Japanese language”.
+<p>Editor’s Note: It’s technically incorrect to say that one language is faster/slower than another. A programming language is just a language defining what words and grammar are allowed. It puts no constrains on how the program can be run. To those that study the design and implementation of programming languages, saying “Python is slow” makes as little sense as the claim “The English language is faster than the Japanese language”.
 <br /></p>
 <br />
-<p>People often confuse the language itself for the tools we generally use to run programs in the language. The language Python is different than the program <code class="docutils literal notranslate"><span class="pre">python</span></code> that runs Python programs you write (kind of meta to think about a program running your program, no?). It might be the case that the design of the language lends itself to be run in an interpreter rather an a compiler, there technically isn’t a fundamental limitation between the two. There exists compilers that turn Python code into machine code, but those tools tend to not be very popular since their artificats are usually not very fast and it makes it hard to use other tools in the Python ecosystem.
+<p>People often confuse the language itself for the tools we generally use to run programs in the language. The language Python is different than the program <code class="docutils literal notranslate"><span class="pre">python</span></code> that runs Python programs you write (kind of meta to think about a program running your program, no?). It might be the case that the design of the language lends itself to be run in an interpreter rather an a compiler, but there technically isn’t a fundamental limitation between the two. There exist compilers that turn Python code into machine code, but those tools tend to not be very popular since their artifacts are usually not very fast and it makes it hard to use other tools in the Python ecosystem.
 <br /></p>
 <br />
 <p>It’s also not the case that programming languages that don’t force you to write down types are slower. There are many languages (see SML) that don’t require you to write types down, but have very strict rules that allow for certain operations on data in how they automatically infer types. Python’s lack of type annotations and the fact that they allow very flexible use of variables, make it pretty tough to write sound type-checkers for their programs.
