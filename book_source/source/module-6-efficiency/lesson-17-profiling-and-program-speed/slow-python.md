@@ -24,7 +24,7 @@ int b = 2;
 int c = a + b;
 ```
 
-When people usually use C, they use a compiler to translate their C code into something the computer can understand (commonly `gcc`). This roughly translates to machine instructions in the following way
+When people usually use C, they use a compiler to translate their C code into something the computer can understand (commonly `gcc`). This roughly translates to machine instructions in the following way.
 
 ```text
 Assign <int> 1 to a
@@ -130,9 +130,9 @@ So not only is it more readable to use the `max` function rather than writing it
 
 Even though Python is slow, it has a lot of benefits going for it that make it a _fantastic_ language to use, especially for data scientists.
 
-- It is way easier to program than languages like C. Even though its is fast to run, trying to write a correct program in C is a pain in the \*#!$@!
+- It is way easier to program than languages like C. Even though it is fast to run, trying to write a correct program in C is a pain in the \*#!$@!
 
-  - This is important because developer time is also a valuable resource! Sometimes it's best to be able to write something quick and easy for other people to read (in Python). This lets you iterate on ideas and experiment with prototypes rather than pre-maturely trying to optimize by writing a program in a difficult to use language like C.
+  - This is important because developer time is also a valuable resource! Sometimes it's best to be able to write something quick and easy for other people to read (in Python). This lets you iterate on ideas and experiment with prototypes rather than prematurely trying to optimize by writing a program in a difficult to use language like C.
 
 - Python provides incredible support for pre-compiled libraries to leverage the best of both worlds. For example, consider `pandas`. Most of the library is actually written in C! By letting them figure out how to write the gross, efficient code, we can leverage it with the nice Python syntax while still gaining speed benefits. This is why we made you avoid loops with `pandas` in HW2 and HW3. Writing a loop for something that can be done with `pandas` itself is WAY slower.
 
@@ -141,12 +141,12 @@ If you find your program is running slower than you expected, use a profiler to 
 ```{admonition} Note
 :class: note
 
-Editor's Note: It's technically incorrect to say that one language is faster/slower than another. A programming language is just a language defining what words and grammar is allowed. It puts no constrains on how the program can be run. To those that study the design and implementation of programming languages, saying "Python is slow" makes as little sense as the claim "The English language is faster than the Japanese language".
+Editor's Note: It's technically incorrect to say that one language is faster/slower than another. A programming language is just a language defining what words and grammar are allowed. It puts no constrains on how the program can be run. To those that study the design and implementation of programming languages, saying "Python is slow" makes as little sense as the claim "The English language is faster than the Japanese language".
 <br />
 
 <br />
 
-People often confuse the language itself for the tools we generally use to run programs in the language. The language Python is different than the program `python` that runs Python programs you write (kind of meta to think about a program running your program, no?). It might be the case that the design of the language lends itself to be run in an interpreter rather an a compiler, there technically isn't a fundamental limitation between the two. There exists compilers that turn Python code into machine code, but those tools tend to not be very popular since their artificats are usually not very fast and it makes it hard to use other tools in the Python ecosystem.
+People often confuse the language itself for the tools we generally use to run programs in the language. The language Python is different than the program `python` that runs Python programs you write (kind of meta to think about a program running your program, no?). It might be the case that the design of the language lends itself to be run in an interpreter rather an a compiler, but there technically isn't a fundamental limitation between the two. There exist compilers that turn Python code into machine code, but those tools tend to not be very popular since their artifacts are usually not very fast and it makes it hard to use other tools in the Python ecosystem.
 <br />
 
 <br />
