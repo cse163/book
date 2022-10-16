@@ -6,11 +6,11 @@ In Lesson 12, we learned about **classes** and **objects** . Here's a quick reca
 
   ```python
   class Dog:
-  def __init__(self, name):
-      self.name = name
+      def __init__(self, name):
+          self.name = name
 
-  def bark(self):
-      print(self.name + ': Woof')
+      def bark(self):
+          print(self.name + ': Woof')
   ```
 
 - An **object** (or **instance** ) is an instantiation of a _class_ that has its own set of fields. You can create an instance of the `Dog` class by using the following syntax.
