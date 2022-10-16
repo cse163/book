@@ -62,11 +62,11 @@ You have to be a bit careful when considering Big-O notation since it has some s
 
   - It can be overly-simplistic. It's not actually the case that every step takes the same amount of time (e.g., multiplication is actually slower than addition).
 
-  - The constants and lower-order terms we drop can sometimes have a BIG impact on performance.
+  - The coefficients and lower-order terms we drop can sometimes have a BIG impact on performance.
 
-To understand the last point, consider the algorithm for matrix multiplication that you might use in a linear algebra class. Don't worry, you don't need to understand what matrix multiplication is, but just know it's a problem that there is an algorithm to tell you the answer for multiplying to $n \times n$ matrices. The algorithm that you would learn in a linear algebra class is sometimes called the "naive" algorithm, which takes $\mathcal{O}(n^3)$ time.
+To understand the last point, consider the algorithm for matrix multiplication that you might use in a linear algebra class. Don't worry, you don't need to understand what matrix multiplication is, but just know it's a problem that there is an algorithm to tell you the answer for multiplying two $n \times n$ matrices. The algorithm that you would learn in a linear algebra class is sometimes called the "naive" algorithm, which takes $\mathcal{O}(n^3)$ time.
 
-This operation is so important in computing in science, $\mathcal{O}(n^3)$ does not suffice for many modern applications where $n$ is large. Many researchers have spent their careers trying to find asymptotically faster algorithms. In the graph below, we show the progress on finding algorithm that scale faster than $\mathcal{O}(n^3)$. The x-axis shows years and the y-axis shows $\omega$ which represents the exponent in $\mathcal{O}(n^\omega)$.
+This operation is so important in computing in science, $\mathcal{O}(n^3)$ does not suffice for many modern applications where $n$ is large. Many researchers have spent their careers trying to find asymptotically faster algorithms. In the graph below, we show the progress on finding algorithms that scale faster than $\mathcal{O}(n^3)$. The x-axis shows years and the y-axis shows $\omega$ which represents the exponent in $\mathcal{O}(n^\omega)$.
 
 ```{image} https://static.us.edusercontent.com/files/bG0KLngTwRwJkcDM6erV1Nea
 :alt: Graph of matrix multiply runtime over time. The graph shows that the runtime has improved starting a O(n^3) in 1950 going down to about O(n^2.4) in 2010.
@@ -74,8 +74,8 @@ This operation is so important in computing in science, $\mathcal{O}(n^3)$ does 
 :align: center
 ```
 
-Although recent advancements in algorithm design have found algorithms to do matrix multiplication in time less than $\mathcal{O}(n^{2.5})$, those algorithms are rarely used in practice! The reason is that the constants that $\mathcal{O}(n^{2.5})$ hides are so large, that the run-time still ends up being way slower than a simpler algorithm with a larger exponent. So while these algorithms are asymptotically faster (as $n$ goes to infinity), in practice for sizes of $n$ that can actually fit on a computer, sometimes an asymptotically slower algorithm is faster because there are lower constants.
+Although recent advancements in algorithm design have found algorithms to do matrix multiplication in time less than $\mathcal{O}(n^{2.5})$, those algorithms are rarely used in practice! The reason is that the coefficients that $\mathcal{O}(n^{2.5})$ hides are so large, that the run-time still ends up being way slower than a simpler algorithm with a larger exponent. So while these algorithms are asymptotically faster (as $n$ goes to infinity), in practice for sizes of $n$ that can actually fit on a computer, sometimes an asymptotically slower algorithm is faster because there are lower coefficients.
 
-For a concrete example, consider how $2n^2 \leq100n$ for all $0 \leq n \leq 50$. So while the $\mathcal{O}(n)$ equation on the right-hand side is asymptotically faster than the $\mathcal{O}(n^2)$ on the left, the constants it hides can make it slower for some smaller $n$.
+For a concrete example, consider how $2n^2 \leq100n$ for all $0 \leq n \leq 50$. So while the $\mathcal{O}(n)$ equation on the right-hand side is asymptotically faster than the $\mathcal{O}(n^2)$ on the left, the coefficient it hides can make it slower for some smaller $n$.
 
 In the next slide, we will see another tool that can help us understand the performance of our programs.
