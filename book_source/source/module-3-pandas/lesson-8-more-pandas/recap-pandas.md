@@ -75,7 +75,7 @@ We also learned about the `loc` property that let us select rows and columns wit
 
 - `:` to select all values
 
-One thing that is also complex about `.loc` is the type of the value returns depends on the types of the indexers. Recall that a `pandas` `DataFrame` is a 2-dimensional strucutre (rows and columns) while a `Series` is a single `row` or single `column` .
+One thing that is also complex about `.loc` is the type of the value returns depends on the types of the indexers. Recall that a `pandas` `DataFrame` is a 2-dimensional structure (rows and columns) while a `Series` is a single `row` or single `column` .
 
 To tell what the return type of a `.loc` call is, you need to look for the "single value" type of indexer.
 
