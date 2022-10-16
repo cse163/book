@@ -26,7 +26,7 @@ The second one uses a clever formula discovered by Gauss that computes the sum o
 
 **Which one is more efficient?**
 
-Most people probably have an intuition that the second seems better, but it's hard to state exactly "why" that's the case. Is it because it has fewer lines to code? While it's definitely shorter, it's also less easy to understand since it requires knowing this obscure formula from math.
+Most people probably have an intuition that the second seems better, but it's hard to state exactly "why" that's the case. Is it because it has fewer lines of code? While it's definitely shorter, it's also less easy to understand since it requires knowing this obscure formula from math.
 
 Remember, it's important to state what resources we care about before deciding which is more efficient. As we said before, the most common resource to worry about is **time** (if we ever omit this, you should assume we are discussing time). To answer which one is more efficient, we might actually try to write code to time how long it takes them to finish.
 
@@ -132,4 +132,4 @@ fig.savefig('sum1-vs-sum2.png')
 
 Notice that `sum2` almost always takes the same amount of time to run in comparison to `sum1` , which takes time proportional to `n` ! Another way to say this is that if we double the input size `n` , it seems like `sum1` takes twice as long to run while `sum2` takes about the same time.
 
-This gives us more certainty that `sum2` seems more efficient, in terms of time, than `sum1` since we have empirically have seen that it scales very well. However, it would be nice if we could have some way of describing how one algorithm scales when compared to another without having to rely on something as unreliable like time (or requiring us to write so much code to measure the time).
+This gives us more certainty that `sum2` seems more efficient, in terms of time, than `sum1` since we have empirically have seen that it scales very well. However, it would be nice if we could have some way of describing how one algorithm scales when compared to another without having to rely on something as unreliable as time (or requiring us to write so much code to measure the time).
