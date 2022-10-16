@@ -2172,8 +2172,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#built-in-functions-on-pandas">
-   Built-in Functions on
+  <a class="reference internal nav-link" href="#built-in-functions-in-pandas">
+   Built-in Functions in
    <code class="docutils literal notranslate">
     <span class="pre">
      pandas
@@ -2211,8 +2211,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#built-in-functions-on-pandas">
-   Built-in Functions on
+  <a class="reference internal nav-link" href="#built-in-functions-in-pandas">
+   Built-in Functions in
    <code class="docutils literal notranslate">
     <span class="pre">
      pandas
@@ -2426,7 +2426,7 @@ title="Print to PDF"
 <p>8394 rows × 8 columns</p>
 </div></div></div>
 </div>
-<p>Last time, we learned that we can use regular arithmetic operators on <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code> to transform them. For example, if we were working with the earthquakes data, we could multiple each magnitude by 2 using the following syntax to do an element-wise computation.</p>
+<p>Last time, we learned that we can use regular arithmetic operators on <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code> to transform them. For example, if we were working with the earthquakes data, we could multiply each magnitude by 2 using the following syntax to do an element-wise computation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;magnitude&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
@@ -2471,9 +2471,9 @@ Name: magnitude, Length: 8394, dtype: float64
 <li><p>Logical operators (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code>)</p></li>
 </ul>
 <p>This means anything else will act on the <code class="docutils literal notranslate"><span class="pre">Series</span></code> itself, just like this <code class="docutils literal notranslate"><span class="pre">len</span></code> function did!</p>
-<section id="built-in-functions-on-pandas">
-<h2>Built-in Functions on <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#built-in-functions-on-pandas" title="Permalink to this headline">#</a></h2>
-<p>The syntax looks a bit weird at first, but if you want to call the <code class="docutils literal notranslate"><span class="pre">len</span></code> function on a each <code class="docutils literal notranslate"><span class="pre">str</span></code>, you have to use this syntax below.</p>
+<section id="built-in-functions-in-pandas">
+<h2>Built-in Functions in <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#built-in-functions-in-pandas" title="Permalink to this headline">#</a></h2>
+<p>The syntax looks a bit weird at first, but if you want to call the <code class="docutils literal notranslate"><span class="pre">len</span></code> function on each <code class="docutils literal notranslate"><span class="pre">str</span></code>, you have to use this syntax below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>

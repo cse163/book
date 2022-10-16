@@ -2280,8 +2280,8 @@ an interactive version of this notebook.</p>
 </ul>
 <p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clickin the “Run All” button above.</p>
 </div>
-<p>Think back to the list of dictionaries problem we did last week computing how “shaky” each location was (a made-up metric by Hunter, the wannabe seismologist). The Shake Factor for each location is just the sum of all the magnitudes of earthquakes in that location across all time.</p>
-<p>On your next take-home assessment, we will ask you to make computations like this (albeit for a different dataset) and we will ask you to do each problem twice: once processing the data as a list of dictionaries (like you did last week), and again using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. It is helpful to understand that the “magic” behind pandas is really just code like you would write for the list of dictionaries! So before showing you how to solve this problem with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, let’s walk through the solution here.</p>
+<p>Think back to the list of dictionaries problem we did in the previous module, computing how “shaky” each location was (a made-up metric by Hunter, the wannabe seismologist). The Shake Factor for each location is just the sum of all the magnitudes of earthquakes in that location across all time.</p>
+<p>On your next take-home assessment, we will ask you to make computations like this (albeit for a different dataset) and we will ask you to do each problem twice: once processing the data as a list of dictionaries (like you did in the previous module), and again using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. It is helpful to understand that the “magic” behind <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is really just code like you would write for the list of dictionaries! So before showing you how to solve this problem with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, let’s walk through the solution here.</p>
 <section id="processing-a-list-of-dictionaries">
 <h2>Processing a List of Dictionaries<a class="headerlink" href="#processing-a-list-of-dictionaries" title="Permalink to this headline">#</a></h2>
 <p>For this problem, we want to process the <code class="docutils literal notranslate"><span class="pre">earthquakes.csv</span></code> as a list of dictionaries and return the result as a dictionary (where the keys are place names and the values are ShakeFactor).</p>
@@ -2381,7 +2381,7 @@ an interactive version of this notebook.</p>
 </div>
 </div>
 </div>
-<p>Oops! We ran into the same error we saw earlier in the week when trying to count the number of words in a file. When you use a <code class="docutils literal notranslate"><span class="pre">dict</span></code> as a counter, you have to make sure the key is present before trying to modify its value with a <code class="docutils literal notranslate"><span class="pre">+=</span></code>. To fix this, we can add cases for whether or not we have seen this place before.</p>
+<p>Oops! We ran into the same error we saw earlier in the module when trying to count the number of words in a file. When you use a <code class="docutils literal notranslate"><span class="pre">dict</span></code> as a counter, you have to make sure the key is present before trying to modify its value with a <code class="docutils literal notranslate"><span class="pre">+=</span></code>. To fix this, we can add cases for whether or not we have seen this place before.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shake_factors</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Empty dictionary</span>
@@ -2761,13 +2761,13 @@ Name: magnitude, Length: 118, dtype: float64
 <h2>What’s going on here?<a class="headerlink" href="#what-s-going-on-here" title="Permalink to this headline">#</a></h2>
 <p>It’s pretty incredible that such a short line of code can do something so complex. In the bullet-list above, I described the steps that happen here but I find it easier to think about it with a small example. The figure below shows a visual explanation of what is going on when you do a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>.</p>
 <ol class="simple">
-<li><p>(Teal, <code class="docutils literal notranslate"><span class="pre">data</span></code>) You start by specifying <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> you want to do this computation on</p></li>
+<li><p>(Teal, <code class="docutils literal notranslate"><span class="pre">data</span></code>) You start by specifying the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> you want to do this computation on</p></li>
 <li><p>(Purple, <code class="docutils literal notranslate"><span class="pre">.groupby('col1')</span></code>) You then call the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> function on that <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> passing as a parameter the column that will form the groups. This splits the data up into groups based on the provided column.</p>
 <ul class="simple">
 <li><p>Notice this does NOT use the <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation! This is not accessing a column of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, but rather is calling a function passing a parameter</p></li>
 </ul>
 </li>
-<li><p>(Red, <code class="docutils literal notranslate"><span class="pre">['col2'].sum()</span></code>) Specify which column we want to aggregate (e.g., <code class="docutils literal notranslate"><span class="pre">col2</span></code>) and what function we should use to make the aggregate (e.g. <code class="docutils literal notranslate"><span class="pre">.sum()</span></code>). The turns each group into a single value.</p>
+<li><p>(Red, <code class="docutils literal notranslate"><span class="pre">['col2'].sum()</span></code>) Specify which column we want to aggregate (e.g., <code class="docutils literal notranslate"><span class="pre">col2</span></code>) and what function we should use to make the aggregate (e.g. <code class="docutils literal notranslate"><span class="pre">.sum()</span></code>). This turns each group into a single value.</p>
 <ul class="simple">
 <li><p>Notice in this part we DO use the <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation since we are accessing a particular column</p></li>
 </ul>
@@ -3016,7 +3016,7 @@ Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;], dtype=&#39;object&#39;, name=&#39
 </section>
 <section id="when-to-use-this">
 <h2>When to use this?<a class="headerlink" href="#when-to-use-this" title="Permalink to this headline">#</a></h2>
-<p>Whenever you want to separate your data into groups to get some value for each one, this is the natural time to ues a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>! Whenever you see “for each” or “per” in a question, it’s likely you will want to use a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>.</p>
+<p>Whenever you want to separate your data into groups to get some value for each one, this is the natural time to use a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>! Whenever you see “for each” or “per” in a question, it’s likely you will want to use a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>.</p>
 <p>Here are some example questions you can solve with a groupby. We provide some “code” to compute each one, assuming the data had columns with the relevant names.</p>
 <ul>
 <li><p>Compute the number of students per section</p>

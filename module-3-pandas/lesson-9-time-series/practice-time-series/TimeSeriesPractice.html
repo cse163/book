@@ -2266,7 +2266,7 @@ title="Print to PDF"
 <p>You will need to run all the cells of the notebook to see the output. You can do this with hitting <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> on each cell or clicking the “Run All” button above.</p>
 </div>
 <blockquote>
-<div><p>In this notebook, we use a few features of this library called <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (renamed as <code class="docutils literal notranslate"><span class="pre">plt</span></code>) to save a plot to a file. You do not need to understand this part and can leave those parts of the code untouched. We will discuss <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> next week!</p>
+<div><p>In this notebook, we use a few features of this library called <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (renamed as <code class="docutils literal notranslate"><span class="pre">plt</span></code>) to save a plot to a file. You do not need to understand this part and can leave those parts of the code untouched. We will discuss <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> in the next module!</p>
 </div></blockquote>
 <figure class="margin align-default" id="id1">
 <a class="reference internal image-reference" href="../../../_images/stonks.jpeg"><img alt="../../../_images/stonks.jpeg" src="../../../_images/stonks.jpeg" style="width: 192.0px; height: 108.0px;" /></a>
@@ -2298,7 +2298,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>For this notebook, we will only be looking at the column <code class="docutils literal notranslate"><span class="pre">Adj</span> <span class="pre">Close</span></code> that represents the value of the stock on the end of the day. Whenever we ask you to plot something, you should grab the <code class="docutils literal notranslate"><span class="pre">Series</span></code> for that column and plot with the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function in it (e.g., <code class="docutils literal notranslate"><span class="pre">df['col'].plot()</span></code>)</p>
+<p>For this notebook, we will only be looking at the column <code class="docutils literal notranslate"><span class="pre">Adj</span> <span class="pre">Close</span></code> that represents the value of the stock at the end of the day. Whenever we ask you to plot something, you should grab the <code class="docutils literal notranslate"><span class="pre">Series</span></code> for that column and plot with the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function in it (e.g., <code class="docutils literal notranslate"><span class="pre">df['col'].plot()</span></code>)</p>
 </section>
 <section id="problem-1">
 <h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h2>
@@ -2320,7 +2320,7 @@ title="Print to PDF"
 </section>
 <section id="problem-2">
 <h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">#</a></h2>
-<p>Let’s get a closer look to see how the pandemic we are experiencing has impacted Google’s stocks. Select the subset of the data from October 2019 (month 10) to April 2020 (month 4). You should not specify any days in your indexing. Store your result of the <code class="docutils literal notranslate"><span class="pre">Adj</span> <span class="pre">Close</span></code> prices for this range of dates as a <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
+<p>Let’s get a closer look to see how the Covid-19 pandemic impacted Google’s stock price. Select the subset of the data from October 2019 (month 10) to April 2020 (month 4). You should not specify any days in your indexing. Store your result of the <code class="docutils literal notranslate"><span class="pre">Adj</span> <span class="pre">Close</span></code> prices for this range of dates as a <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
 <p><strong>For testing purproses, store your result in a variable called <code class="docutils literal notranslate"><span class="pre">ans2</span></code>.</strong></p>
 <p>At the end of the testing cell, we plot your <code class="docutils literal notranslate"><span class="pre">ans2</span></code> to visually inspect the change in the stock price.</p>
 <div class="cell docutils container">
