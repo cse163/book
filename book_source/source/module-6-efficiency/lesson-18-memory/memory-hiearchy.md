@@ -1,4 +1,4 @@
-# Memory Hiearchy
+# Memory Hierarchy
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;">
     <iframe src="https://www.loom.com/embed/92ab1d6e18634399834149f455c11739?sharedAppSource=personal_library" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
@@ -8,7 +8,7 @@
 
 One thing that is important to know about memory is that there is a hierarchy of different types of memory that your computer uses that have various tradeoffs. We think about this as being a pyramid in the image shown below (your computer probably doesn't have magnetic tape, that's more old-school).
 
-At the top of the pyramid is a register, which is an extremely small memory location located right on the CPU chip to store small, frequently accessed values. There is a cache (in reality, multiple levels of caches) that site between your CPU and your main memory RAM to store frequently accessed pieces of memory. Caching is a general technique to store frequently accessed items so they can be accessed more quickly in the future. At the bottom, there is your hard disk (or more recently called Solid State Drives or SSDs).
+At the top of the pyramid is a register, which is an extremely small memory location located right on the CPU chip to store small, frequently accessed values. There is a cache (in reality, multiple levels of caches) that sit between your CPU and your main memory RAM to store frequently accessed pieces of memory. Caching is a general technique to store frequently accessed items so they can be accessed more quickly in the future. At the bottom, there is your hard disk (or more recently called Solid State Drives or SSDs).
 
 ```{image} https://static.us.edusercontent.com/files/DXacRUQrKM9ff9kUrdH4OTrI
 :alt: A pyramid showing register, cache, main memory or RAM, hard disk, and magnetic tape from top to bottom, with access time and storage increasing for each level
@@ -16,7 +16,7 @@ At the top of the pyramid is a register, which is an extremely small memory loca
 :align: center
 ```
 
-As you go down the pyramid, the amount of memory variable generally increases. At the top registers provide on the order of 1 kilobyte of space while you can get up to terabytes of space on your hard disk or SSD. However, the increasing volume also comes at an increasing access time. This means it takes longer and longer for your computer to actually access the data as you go down the pyramid.
+As you go down the pyramid, the amount of memory variable generally increases. At the top, registers provide on the order of 1 kilobyte of space, while you can get up to terabytes of space on your hard disk or SSD. However, the increasing volume also comes at an increasing access time. This means it takes longer and longer for your computer to actually access the data as you go down the pyramid.
 
 There is a cute analogy to give you a sense of scale how much slower reading/writing to disk is in comparison to accessing a register. Since people generally confuse you with millennials, they assume you also enjoy avocado toast as much as we do. So think of fetching data being like the processing of fetching an avocado to make avocado toast.
 
