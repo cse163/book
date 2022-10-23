@@ -6,9 +6,9 @@
 
 ---
 
-We have already seen how to make plots using `seaborn` to make simple data visualizations and using `matplotlib` to customize the titles and axes. This week, we are going to explore `matplotlib` a little more in-depth so we can understand how to make even more rich visualizations.
+We have already seen how to make plots using `seaborn` to make simple data visualizations and using `matplotlib` to customize the titles and axes. This week, we are going to explore `matplotlib` a little more in-depth so we can understand how to make even richer visualizations.
 
-Before, when we were using `seaborn` , whenever we were plotting we were plotting on a global **figure** behind the scenes. Some of you might have experienced bugs on HW3 where you used different functions than we instructed. These bugs stem from how different functions interact with this figure. Just like `seaborn` , `pandas` has a way to make simple plots that, by default, also plot on a global figure. Take the following toy-example:
+Before, when we were using `seaborn` , whenever we were plotting, we were plotting on a global **figure** behind the scenes. Some of you might have experienced bugs on HW3 where you used different functions than we instructed. These bugs stem from how different functions interact with this figure. Just like `seaborn` , `pandas` has a way to make simple plots that, by default, also plot on a global figure. Take the following toy-example:
 
 ```python
 import matplotlib.pyplot as plt
@@ -28,7 +28,7 @@ plt.savefig('plot.png')
 
 This only produced one plot because the second one overwrote the first one on this global figure! If we want to plot these on the same figure, we would need something a little more complex.
 
-A **figure** is a `matplotlib` term for a canvas to store the drawings. A **figure** may have one or more **axes** and each **axes** can have multiple plots drawn on them. You can make very interesting visualizations by putting multiple **axes** on a single **figure**. Instead of using the default-global figure from `seaborn`, we have a way to create our own using `matplotlib`. The code looks like the following.
+A **figure** is a `matplotlib` term for a canvas to store the drawings. A **figure** may have one or more **axes** and each **axis** can have multiple plots drawn on it. You can make very interesting visualizations by putting multiple **axes** on a single **figure**. Instead of using the default-global figure from `seaborn`, we have a way to create our own using `matplotlib`. The code looks like the following.
 
 ```python
 import matplotlib.pyplot as plt
@@ -104,7 +104,7 @@ If you wanted to visualize this return value, it would look something like this:
 ]
 ```
 
-This is an example of a **2d-array** (or a `list` of `list` s). This is actually using a library we will dive deeper into next week called `numpy` . This `numpy` array allows you to access a specific row/column with the bracket notation. For example `axs[0, 0]` is the top left axes ( `ax1` in the output above). In general, the syntax is `axs[row, col]` where row 0, column 0 is the top left and the rows increase going down and columns increase going right; for example, `axs[2, 1]` would be `ax6` in the output above.
+This is an example of a **2d-array** (or a `list` of `list` s). This is actually using a library we will dive deeper into in the next module, called `numpy` . This `numpy` array allows you to access a specific row/column with the bracket notation. For example `axs[0, 0]` is the top left axes ( `ax1` in the output above). In general, the syntax is `axs[row, col]` where row 0, column 0 is the top left and the rows increase going down and columns increase going right; for example, `axs[2, 1]` would be `ax6` in the output above.
 
 For example, you will be making a plot like the following on your next take-home assignment.
 
