@@ -26,7 +26,7 @@ A very common format for geospatial data is just a plain CSV that we could parse
 
 In order to process this special column format to encode geospatial information, we have to use a new library called `geopandas` . Don't worry, everything you know from `pandas` carries over here with some added on features!
 
-In the code cell below, we show how to load in one of these geospatial datasets with `geopandas` . The dataset contains information about various countries of the world and information like their population and GDP. The file we will use a is a shapefile ( `.shp` ). The file format itself is actually pretty complex so we will only look at the data after parsing it in `geopandas` rather than looking at the file directly.
+In the code cell below, we show how to load in one of these geospatial datasets with `geopandas` . The dataset contains information about various countries of the world and information like their population and GDP. The file we will use is a shapefile ( `.shp` ). The file format itself is actually pretty complex so we will only look at the data after parsing it in `geopandas` rather than looking at the file directly.
 
 ```python
 import geopandas as gpd
@@ -55,7 +55,7 @@ df.plot()
 plt.savefig('world.png')
 ```
 
-You can get fancier have it color each country by its population using the `column` parameter, like in the snippet below.
+You can get fancier and have it color each country by its population using the `column` parameter, like in the snippet below.
 
 ```python
 import geopandas as gpd
