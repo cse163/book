@@ -10,7 +10,7 @@
 {static-data-download}`duck.jpg`
 ```
 
-One of the applications of `numpy` we discussed earlier was representing image data. We will discuss analyzing images and manipulating them for the rest of the week. While we will show some code, the more important bit for today is just the conceptual understanding of how we will represent an image in Python.
+One of the applications of `numpy` we discussed earlier was representing image data. We will discuss analyzing images and manipulating them for the rest of the module. While we will show some code, the more important bit for this lesson is just the conceptual understanding of how we will represent an image in Python.
 
 ## Grayscale Images
 
