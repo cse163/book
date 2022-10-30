@@ -7,7 +7,7 @@
 
 ---
 
-So far we have seen some very simple ways of transforming images. In this slide, we will describe a very type of operation done in image analysis to help extract **local** **information** in an image. An example of local information would be something like "is there an edge in this part of the image?" This type of approach for analyzing images has been instrumental in building state-of-the-art image recognition systems used today (more on this later). The type of operation we are going to describe here is called a **convolution**.  
+So far we have seen some very simple ways of transforming images. In this slide, we will describe a very useful type of operation done in image analysis to help extract **local** **information** in an image. An example of local information would be something like "is there an edge in this part of the image?" This type of approach for analyzing images has been instrumental in building state-of-the-art image recognition systems used today (more on this later). The type of operation we are going to describe here is called a **convolution**.  
 
 The idea of a convolution follows from it being a **sliding window algorithm**: an algorithm that moves through the data looking at a certain-sized region of the data at a time. A convolution is a special type of sliding window algorithm that we run over an image. In a convolution, we use another 2D array, called a **kernel**, that we use to compute a value for each location. The result of a convolution is a smaller "image" that stores the result of the computation for each sub-region. This is much easier to understand visually with an example.  
 
@@ -37,11 +37,11 @@ This whole process is best seen in an animated fashion to show all locations the
 
 Notice how this convolution computes a value for each part of the image. This is what we mean by "local information". The kernel (which you choose) computes some value for each part of the image, and the result can then be used to do some analysis based on those values.  
 
-You are probably thinking that these kernels numbers don't make a lot of sense and this process doesn't seem that useful, which is fair. However, you can do some pretty clever things using this approach depending on which kernel you use!  
+You are probably thinking that these kernel numbers don't make a lot of sense and this process doesn't seem that useful, which is fair. However, you can do some pretty clever things using this approach depending on which kernel you use!  
 
 ##  Types of Kernels  
 
-There is a bit of an art to deciding how big (i.e. its shape) the kernel should be or what numbers you should use inside of it. For a while in the late 90s and early '00s, computer vision experts spent a lot of time hand picking numbers that seemed to work in practice with okay performance. Nowadays we use machine learning to learn the kernel values for us!  
+There is a bit of an art to deciding how big (i.e. its shape) the kernel should be or what numbers you should use inside of it. For a while in the late '90s and early '00s, computer vision experts spent a lot of time hand picking numbers that seemed to work in practice with okay performance. Nowadays we use machine learning to learn the kernel values for us!  
 
 The image below has some example kernels that are used in practice and what they are used for. We won't explain all of them because the numbers themselves aren't important. The cool thing is that all of the operations they implement (edge detection, sharpen, box blur) are all different from our perspective, but are actually just the same convolution operation with different kernels!  
 
@@ -57,11 +57,11 @@ Why does this kernel accomplish this? Consider an image that was all the same sh
 
 ##  Code Consideration  
 
-The rules of Python being slow still apply to `numpy`: you want to avoid loops whenever possible. It turns out that for convolutions, there is not a clean way of writing this sliding window algorithm without loops. You'll get practice writing code with loops in the practice problem for today.
+The rules of Python being slow still apply to `numpy`: you want to avoid loops whenever possible. It turns out that for convolutions, there is not a clean way of writing this sliding window algorithm without loops. You'll get practice writing code with loops in the practice problem for this lesson.
 
 ##  Your Task  
 
-To reiterate, understanding the specific numbers in these kernels or why they compute what they do is not incredibly important. For us, the important part is the *algorithm* to compute the result of a convolution using some given kernel. The reason is we want you to be familiar with this algorithm since it has many different applications in image analysis (primarily in applications of machine learning to image analyses). This can be something helpful or interesting to look at in your project. So for this lesson, the goal will be to practice our understanding of convolutions and get some practice with with `numpy` code with images!  
+To reiterate, understanding the specific numbers in these kernels or why they compute what they do is not incredibly important. For us, the important part is the *algorithm* to compute the result of a convolution using some given kernel. The reason is we want you to be familiar with this algorithm since it has many different applications in image analysis (primarily in applications of machine learning to image analyses). This can be something helpful or interesting to look at in your project. So for this lesson, the goal will be to practice our understanding of convolutions and get some practice with `numpy` code with images!  
 
  
 
