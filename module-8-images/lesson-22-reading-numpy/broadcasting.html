@@ -2219,7 +2219,7 @@ title="Print to PDF"
 <h2>Broadcasting Rules<a class="headerlink" href="#broadcasting-rules" title="Permalink to this headline">#</a></h2>
 <p>Consider some element-wise operation like <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> that operates on two <code class="docutils literal notranslate"><span class="pre">numpy.arrays</span></code>. This operation is well-defined if both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> have the shape. If <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> disagree on their shape, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> will run the following steps in order to make the shapes match up.</p>
 <ul class="simple">
-<li><p>If the two arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded on it’s left side.</p></li>
+<li><p>If the two arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded on its left side with 1’s.</p></li>
 <li><p>If the shape of two arrays does not match on any dimension, the array with shape equal to 1 in that dimension is stretched to match the other shape. This will happen for all dimensions that don’t match and one has a shape equal to 1.</p></li>
 <li><p>If in any dimension the sizes disagree and neither is equal to 1, an error is raised.</p></li>
 </ul>

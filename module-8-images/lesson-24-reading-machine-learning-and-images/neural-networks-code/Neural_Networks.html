@@ -2252,7 +2252,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We then load in the MNIST dataset of hand-written digits with their labels. Each example is a 28x28 grayscale image and its label is a number from 0 to 9. As we mentioned, it’s common to start “unroll” images for machine learning, so the return value for the training set will be a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">784)</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of examples in the dataset.</p>
+<p>We then load in the MNIST dataset of hand-written digits with their labels. Each example is a 28x28 grayscale image and its label is a number from 0 to 9. As we mentioned, it’s common to “unroll” images for machine learning, so the return value for the training set will be a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">784)</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of examples in the dataset.</p>
 <p>Many machine learning algorithms require the inputs be scaled to appropriate values, so we first change the range of the pixel values to be between 0 and 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2319,9 +2319,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can then train the model on the training set and then look at what it’s training and test accuracy are. Some things to notice</p>
+<p>We can then train the model on the training set and then look at what its training and test accuracy are. Some things to notice</p>
 <ul class="simple">
-<li><p>While runnning <code class="docutils literal notranslate"><span class="pre">fit</span></code>, it prints out lines starting with “Iteration:”. This is signifying each phase of updating the network weights based on the mis-classified examples. The number after called the “loss” is a measurement of how much error there is (but slightly different than accuracy).</p></li>
+<li><p>While runnning <code class="docutils literal notranslate"><span class="pre">fit</span></code>, it prints out lines starting with “Iteration:”. This is signifying each phase of updating the network weights based on the mis-classified examples. The number after, called the “loss”, is a measurement of how much error there is (but slightly different than accuracy).</p></li>
 <li><p>With this architecture, we get really high training and test accuracy!</p></li>
 </ul>
 <p><em>Note: You can ignore the convergence warning.</em></p>
@@ -2357,7 +2357,7 @@ Testing score 0.968
 </div>
 </div>
 <p>These networks are very sensitive to the hyper-parameters we use (parameters that specify the algorithm or model we are using). If you go ahead and add more layers and shorten the number of nodes at each layer, you get a pretty different accuracy! In the following example, we change the architecture of the network to have 5 hidden layers of 10 nodes each.</p>
-<p>This is one example of the complexities of neural networks! It’s hard to predict how changing the architecture will affect the performance of the model. You can see in <a class="reference external" href="https://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=circle%C2%AEDataset=reg-plane&amp;learningRate=0.03%C2%AEularizationRate=0&amp;noise=0&amp;networkShape=4,2&amp;seed=0.81962&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false">this tool</a> how there are tons of knobs to tune for a neural network and it’s very tough to predict how the output will be affected by those settings. This leads us to our next point of trying to find the best setting of these hyper-parameters.</p>
+<p>This is one example of the complexities of neural networks! It’s hard to predict how changing the architecture will affect the performance of the model. You can see in <a class="reference external" href="https://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=circle%C2%AEDataset=reg-plane&amp;learningRate=0.03%C2%AEularizationRate=0&amp;noise=0&amp;networkShape=4,2&amp;seed=0.81962&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false">this tool</a> how there are tons of knobs to tune for a neural network and it’s very tough to predict how the output will be affected by those settings. This leads us to our next point of trying to find the best setting of these hyperparameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> 
@@ -2395,7 +2395,7 @@ Testing score 0.9192
 <h2>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Permalink to this headline">#</a></h2>
 <p>Since there is no good way of telling “what the best settings are”, the only thing really left is to try them all and see which one is best.</p>
 <p>For this example, we will try a few different network architectures as well as modifying a new parameter called the “learning rate”; this parameter essentially controls how much we update the weights by on each iteration.</p>
-<p>The nested loop below trying every possible setting is a very common piece of code for machine learning where we have to try all combinations of the hyper-parameters.</p>
+<p>The nested loop below trying every possible setting is a very common piece of code for machine learning where we have to try all combinations of the hyperparameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">learning_rates</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
@@ -2497,12 +2497,12 @@ Learning Rate 0.5, Size (10, 10, 10, 10)
 </div>
 </div>
 </div>
-<p>How would we choose which hyper-parameters to use?</p>
+<p>How would we choose which hyperparameters to use?</p>
 <ul class="simple">
 <li><p>Should we use the ones that maximize the training accuracy? Not necessarily since this might just select the most complicated model that is most likely to overfit to the data.</p></li>
-<li><p>Should we use the ones that maximize the test accuracy? This is a better idea since we we won’t necessarily pick a model that overfit to the training set. However, this is not a good idea since it ruins the point of a test set! Why did we want the test set? We wanted a test set to let use give a good estimate of how our model will do in the future. If we picked a model that maximized the test-accuracy, this accuracy is no longer a good estimate of how it will do on future data since we chose the model that did best on that specific dataset.</p></li>
+<li><p>Should we use the ones that maximize the test accuracy? This is a better idea since we we won’t necessarily pick a model that overfit to the training set. However, this is not a good idea since it ruins the point of a test set! Why did we want the test set? We wanted a test set to let us give a good estimate of how our model will do in the future. If we picked a model that maximized the test-accuracy, this accuracy is no longer a good estimate of how it will do on future data since we chose the model that did best on that specific dataset.</p></li>
 </ul>
-<p>So to make this work, we generally split the training set into another set called the “validation” or “dev” set that we use to pick the hyper-parameter settings. Then we can leave the test set untouched until the very end of our project. At that point, we can test our final model we selected on that test set and get an accurate estimate of its performance in the future!</p>
+<p>So to make this work, we generally split the training set into another set called the “validation” or “dev” set that we use to pick the hyperparameter settings. Then we can leave the test set untouched until the very end of our project. At that point, we can test our final model we selected on that test set and get an accurate estimate of its performance in the future!</p>
 </section>
 <section id="convolutional-neural-network">
 <h2>Convolutional Neural Network<a class="headerlink" href="#convolutional-neural-network" title="Permalink to this headline">#</a></h2>

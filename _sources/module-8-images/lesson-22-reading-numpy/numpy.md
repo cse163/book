@@ -26,7 +26,7 @@ x = np.array([3.14, 2, 3])
 print(x)
 ```
 
-Notice we are calling the function `np.array` passing in a list of values, the return type is a `numpy` class called an `ndarray` (stands for $n$-dimensional array).
+Notice we are calling the function `np.array` passing in a list of values, the return type is a `numpy` object called an `ndarray` (stands for $n$-dimensional array).
 
 ## Applications
 
@@ -36,7 +36,7 @@ Some example applications include:
 
 - Representing images (each pixel stores a value indicating color)
 
-  - More complex representation where we make an `numpy.array` of `numpy.array`s.
+  - More complex representation where we make a `numpy.array` of `numpy.array`s.
 
 ```{image} https://static.us.edusercontent.com/files/5yqR3Z3mkqzYtYSuGzv30lej
 :alt: Representing a black and white picture of a cute puppy using a 2-D numpy array.
@@ -62,7 +62,7 @@ import numpy as np
 # array initializer takes a list of values
 x = np.array([1, 2, 3])
 
-# arange works like range to make a array of number from start (inclusive)
+# arange works like range to make an array of numbers from start (inclusive)
 # to stop (exclusive)
 x = np.arange(1, 5)
 print(x)

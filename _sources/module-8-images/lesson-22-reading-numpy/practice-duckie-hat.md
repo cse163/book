@@ -6,7 +6,7 @@ Write a function called `duckie_hat` that takes an RGB image of a duck (a `numpy
 
 Our algorithm won't do anything fancy like detect where the duck is. Instead, we will just hard-code where the hat should be.
 
-You should make a hat but setting all the pixels in the following regions to be fully green and the other channels off. The locations below are in terms of `(0, 0)` being the top left and the first dimension going down the image and the second dimension going to the right.
+You should make a hat by setting all the pixels in the following regions to be fully green and the other channels off. The locations below are in terms of `(0, 0)` being the top left and the first dimension going down the image and the second dimension going to the right.
 
 -  The main-hat should be a rectangle with the top-left corner at     `(20, 85)`     and  the bottom-right corner at     `(75, 135)`     .
 

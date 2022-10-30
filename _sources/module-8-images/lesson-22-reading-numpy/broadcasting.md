@@ -14,7 +14,7 @@ Before we state the rules, let us point out that this is in some sense an arbitr
 
 Consider some element-wise operation like `x + y` that operates on two `numpy.arrays`. This operation is well-defined if both `x` and `y` have the shape. If `x` and `y` disagree on their shape, `numpy` will run the following steps in order to make the shapes match up.
 
-- If the two arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded on it’s left side.
+- If the two arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded on its left side with 1's.
 
 - If the shape of two arrays does not match on any dimension, the array with shape equal to 1 in that dimension is stretched to match the other shape. This will happen for all dimensions that don't match and one has a shape equal to 1.
 
