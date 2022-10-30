@@ -8,7 +8,7 @@
 
 We're going to take a quick step away from geospatial data for the next flew slides, but this concept will be very relevant for the example we will be doing with geospatial data.
 
-Let's go back to the world of CSV data that we would process with `pandas` . Suppose I had two different `DataFrame` shown below. The left one `tas` stores information about the TAs and `grading` on the right stores information about students and which TA will be grading them ( `ta_id` and `grader_id` will match if that TA is grading that student). Our final goal will be trying to find the number of students each TA will grade.
+Let's go back to the world of CSV data that we would process with `pandas` . Suppose I had two different `DataFrame`s shown below. The left one `tas` stores information about the TAs and `grading` on the right stores information about students and which TA will be grading them ( `ta_id` and `grader_id` will match if that TA is grading that student). Our final goal will be trying to find the number of students each TA will grade.
 
 ````{div} table-section
 ```{div} table-div
@@ -82,7 +82,7 @@ print(merged)
 
 Notice that the output contains all pairs of rows that match up on `ta_id` and `grader_id`! There are now two rows for `Nicole` because there were two rows in the original `grading` table that had her ID. At this point `merged` is a new `DataFrame` with the four columns shown in the output above. To compute how many students each TA was grading, we could easily solve this with a `groupby` on this new `DataFrame` !
 
-You might be wondering, what would happen to rows that don't "line up". What if there was a TA who didn't have anyone they were grading or a student had a `grader_id` for a grader that doesn't exist in the other table? Suppose we had the following dataset instead. We removed James from the left table and changed Wen to be graded by Nicole on the right.
+You might be wondering, what would happen to rows that don't "line up"? What if there was a TA who didn't have anyone they were grading or a student had a `grader_id` for a grader that doesn't exist in the other table? Suppose we had the following dataset instead. We removed James from the left table and changed Wen to be graded by Nicole on the right.
 
 ````{div} table-section
 ```{div} table-div

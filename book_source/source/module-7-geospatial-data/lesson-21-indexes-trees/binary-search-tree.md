@@ -37,7 +37,7 @@ If we made it outside this loop and still haven't found the shirt,
   we can report that the shirt size is not in the list of shirts
 ```
 
-We call this algorithm binary search because it splits the half and eliminates half the choices each time (binary means having 2 possible choices).  
+We call this algorithm binary search because it splits the group in half and eliminates half the choices each time (binary means having 2 possible choices).  
 
 We can use this exact strategy to find the Spacebook user from the user ID as long as we make sure the list of users is sorted by user ID! Now the question is: Is this binary search procedure more efficient?  
 
@@ -61,19 +61,19 @@ To get a sense of just how little $\mathcal{O}(\log(n))$ grows, consider making 
 
 ##  Binary Search Trees  
 
-While binary search has these really nice scaling properties in theory, there are sometimes some slight modifications we make to the algorithm to work faster in practice when working with large datasets. This section is mostly is inspired from the world of databases, where we usually are managing large amounts of data that might not fit into memory so it will need to be stored on disk (you may have heard of this thing called SQL which is a common language for querying a database).  
+While binary search has these really nice scaling properties in theory, there are sometimes some slight modifications we make to the algorithm to work faster in practice when working with large datasets. This section is mostly is inspired by the world of databases, where we usually are managing large amounts of data that might not fit into memory so it will need to be stored on disk (you may have heard of this thing called SQL which is a common language for querying a database).  
 
 
 ```{admonition} Note
 :class: note
 
-We weren't able to talk about computer memory this quarter due to the holiday schedule. At a very high level, your computer has memory (sometimes called RAM) which provides relatively fast access to the working data your program leaves. Modern computers have between 4GB and 16GB of RAM. This is opposed to the long-term storage of disk (sometimes called a hard drive or a SSD) which provides much more capacity (>128 GB)  but is very slow to access. A big slowdown in data-intensive applications is reading large data files from disk that might not completely fit into your RAM.
+Here's a brief recap of memory from Lesson 18: Your computer has memory (sometimes called RAM) which provides relatively fast access to the working data your program leaves. Modern computers have between 4GB and 16GB of RAM. This is opposed to the long-term storage of disk (sometimes called a hard drive or a SSD) which provides much more capacity (>128 GB)  but is very slow to access. A big slowdown in data-intensive applications is reading large data files from disk that might not completely fit into your RAM.
 
 ```
 
 Binary search can sometimes be inefficient in practice since it avoids the principle of locality! It jumps around the list and rarely accesses adjacent elements! This means if data has to be constantly read from disk, even though it is asymptotically more efficient, it can be much slower in practice since it can require many disk reads!  
 
-One trick database people have come up with is to make a data structure called a **binary search tree** that encodes this search information that gets computed once and reused many times. A binary search tree is much like a decision tree from ML, where at each node in the tree it has you go left/right based on some condition. So for example, in our shirts example, we could construct a tree that records the choices you make during any possible binary search as in the picture below.  
+One trick database people have come up with is to make a data structure called a **binary search tree** that encodes this search information that gets computed once and reused many times. A binary search tree is much like a decision tree from ML, where at each node in the tree you go left/right based on some condition. So for example, in our shirts example, we could construct a tree that records the choices you make during any possible binary search as in the picture below.  
 
 ```{image} https://static.us.edusercontent.com/files/L1acPpljKePoYxYCo2PGaIHB
 :alt: Binary search tree for different sizes of Supreme shirts
@@ -83,7 +83,7 @@ One trick database people have come up with is to make a data structure called a
 
 This doesn't involve anything complicated like machine learning to find this tree, it just requires a bit of pre-computing to find the sequence of mid-points for any search. While this does require a bit of work to compute, the idea is that if we compute this tree ahead of time, it can speed up queries later on because they can efficiently traverse down this structure while minimizing the number of times they go to disk to actually look at values in the data.  
 
-While it does take a bit of pre-processing to build up the right tree, the binary search tree enjoys the same complexity as binary search. That means if there are $n$ items to search over, a correctly constructed binary search tree will have a search time of $\mathcal{O}(\log(n))$ since it will be created in this halving-algorithm.  
+While it does take a bit of pre-processing to build up the right tree, the binary search tree enjoys the same complexity as binary search. That means if there are $n$ items to search over, a correctly constructed binary search tree will have a search time of $\mathcal{O}(\log(n))$ since it will be created by this halving-algorithm.  
 
 One of the nice things about this tree structure is it allows you to easily answer **range queries.** Say if you're looking for all the shirts between sizes 1 and 42, you can follow the low-end and high-end paths down the tree to find everything in between!  
 
