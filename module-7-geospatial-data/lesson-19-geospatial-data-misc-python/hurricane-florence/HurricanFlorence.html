@@ -2363,7 +2363,7 @@ title="Print to PDF"
 </div>
 <p>This is a VERY tiny graph because it’s trying to show states not in the mainland. It turns out, the visualization won’t involve Alaska or Hawaii, so we leave them out of this analysis for clarity.</p>
 <blockquote>
-<div><p>Note, this comes back to the discussion of how a data analysist has to choose what they include/exclude (e.g., what they deem “relevant”), which is where a lot of tricky biases can sneak in. Think carefully about the assumptions you make in an analysis and the impact of potentially excluding some aspect of the data.</p>
+<div><p>Note, this comes back to the discussion of how a data analyst has to choose what they include/exclude (e.g., what they deem “relevant”), which is where a lot of tricky biases can sneak in. Think carefully about the assumptions you make in an analysis and the impact of potentially excluding some aspect of the data.</p>
 </div></blockquote>
 <p>We start by filtering out the rows for Hawaii/Alaska.</p>
 <div class="cell docutils container">
@@ -2508,12 +2508,12 @@ title="Print to PDF"
 <img alt="../../../_images/HurricanFlorence_9_1.png" src="../../../_images/HurricanFlorence_9_1.png" />
 </div>
 </div>
-<p>Huh, this doesn’t look like the path of hurricane Florence at all! In fact, this data viz doesn’t really tell us much at all! The reason is this <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> doesn’t have any notion of geospatial data. Even though there are columns for the longitude (<code class="docutils literal notranslate"><span class="pre">Long</span></code>) and the latitude (<code class="docutils literal notranslate"><span class="pre">Lat</span></code>), it is just plotting them as if they were any-other numeric column!</p>
-<p>To fix this, we will need to turn it to <code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code>. In order to do this, we will need to construct a <code class="docutils literal notranslate"><span class="pre">Point</span></code> geometry since each row corresponds to a single point that the hurricane was. We will create a new column called <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> that stores these <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects from the <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library of geometric shapes. The code to do this is relatively complex so do not worry too much about understanding it. If you’re curious how we turn the <code class="docutils literal notranslate"><span class="pre">Lat</span></code> and <code class="docutils literal notranslate"><span class="pre">Long</span></code> columns to these points, we explain the follwoing code:</p>
+<p>Huh, this doesn’t look like the path of hurricane Florence at all! In fact, this data viz doesn’t really tell us much at all! The reason is this <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> doesn’t have any notion of geospatial data. Even though there are columns for the longitude (<code class="docutils literal notranslate"><span class="pre">Long</span></code>) and the latitude (<code class="docutils literal notranslate"><span class="pre">Lat</span></code>), it is just plotting them as if they were any other numeric column!</p>
+<p>To fix this, we will need to turn it to <code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code>. In order to do this, we will need to construct a <code class="docutils literal notranslate"><span class="pre">Point</span></code> geometry since each row corresponds to a single point where the hurricane was. We will create a new column called <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> that stores these <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects from the <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library of geometric shapes. The code to do this is relatively complex so do not worry too much about understanding it. If you’re curious how we turn the <code class="docutils literal notranslate"><span class="pre">Lat</span></code> and <code class="docutils literal notranslate"><span class="pre">Long</span></code> columns to these points, we explain the following code:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">zip</span></code> the <code class="docutils literal notranslate"><span class="pre">Long</span></code> and <code class="docutils literal notranslate"><span class="pre">Lat</span></code> column to get a series of <code class="docutils literal notranslate"><span class="pre">(long,</span> <span class="pre">lat)</span></code> pairs.</p></li>
 <li><p>Loop over this generator and create a <code class="docutils literal notranslate"><span class="pre">Point</span></code> for each one. As a technical note, we need to negate the longitude because our US dataset stores longitudes for the US as negative values.</p></li>
-<li><p>Store the result <code class="docutils literal notranslate"><span class="pre">Point</span></code>s in a new column of <code class="docutils literal notranslate"><span class="pre">florence.</span></code></p></li>
+<li><p>Store the resulting <code class="docutils literal notranslate"><span class="pre">Point</span></code>s in a new column of <code class="docutils literal notranslate"><span class="pre">florence.</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2529,7 +2529,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can then turn convert this to a <code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code> with the following cell. Notice the new column <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> stores the geometry for each row!</p>
+<p>We can then convert this to a <code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code> with the following cell. Notice the new column <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> stores the geometry for each row!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">florence</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">florence</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;coordinates&#39;</span><span class="p">)</span>
@@ -2663,7 +2663,7 @@ title="Print to PDF"
 <img alt="../../../_images/HurricanFlorence_14_1.png" src="../../../_images/HurricanFlorence_14_1.png" />
 </div>
 </div>
-<p>And now it prints out the path of the hurricane! Remember, understanding the details of the transformation from lat/long columns to a single column is not import. <strong>What is important to understand is you need to make a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> if you want to leverage geospatial displays/processing.</strong></p>
+<p>And now it prints out the path of the hurricane! Remember, understanding the details of the transformation from lat/long columns to a single column is not important. <strong>What is important to understand is you need to make a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> if you want to leverage geospatial displays/processing.</strong></p>
 </section>
 <section id="plot-the-hurricane">
 <h2>Plot the Hurricane<a class="headerlink" href="#plot-the-hurricane" title="Permalink to this headline">#</a></h2>
@@ -2701,13 +2701,13 @@ title="Print to PDF"
 <img alt="../../../_images/HurricanFlorence_19_1.png" src="../../../_images/HurricanFlorence_19_1.png" />
 </div>
 </div>
-<p>That looks much better! This can show the power of geospatial data, since it very naturally lets you overlap data if the occurr in the same location in the world.</p>
-<p>Next time, we will pick up with this example and do something more complex that involves highlighting which intersect with the hurricane’s path!</p>
+<p>That looks much better! This can show the power of geospatial data, since it very naturally lets you overlap data if they occur in the same location in the world.</p>
+<p>Next time, we will pick up with this example and do something more complex that involves highlighting which states intersect with the hurricane’s path!</p>
 </section>
 <section id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code> lets you make plots that captuer geospatial information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geopandas.GeoDataFrame</span></code> lets you make plots that capture geospatial information.</p></li>
 <li><p>If you want to plot multiple plots on the same axes, you need to explicitly make a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and <code class="docutils literal notranslate"><span class="pre">Axes</span></code> and pass the axes in.</p></li>
 <li><p>(Less important) Unless your data comes in a geospatial format, converting them to one can be pretty tedious.</p></li>
 </ul>
